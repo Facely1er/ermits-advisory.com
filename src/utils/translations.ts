@@ -343,8 +343,8 @@ export const translations = {
       contact: {
         title: 'Contact Information',
         email: 'advisory@ermits.com',
-        phone: '+1 (555) 123-4567',
-        headquarters: 'New York, NY',
+        phone: '+1 (888) 618-6160',
+        headquarters: 'Gaithersburg, MD',
         requestConsultation: 'Request a Consultation'
       },
       steelFramework: {
@@ -963,8 +963,8 @@ export const translations = {
       contact: {
         title: 'Información de Contacto',
         email: 'advisory@ermits.com',
-        phone: '+1 (555) 123-4567',
-        headquarters: 'Nueva York, NY',
+        phone: '+1 (888) 618-6160',
+        headquarters: 'Gaithersburg, MD',
         requestConsultation: 'Solicitar una Consulta'
       },
       steelFramework: {
@@ -1432,8 +1432,8 @@ export const translations = {
       contact: {
         title: 'Informations de Contact',
         email: 'advisory@ermits.com',
-        phone: '+1 (555) 123-4567',
-        headquarters: 'New York, NY',
+        phone: '+1 (888) 618-6160',
+        headquarters: 'Gaithersburg, MD',
         requestConsultation: 'Demander une Consultation'
       },
       steelFramework: {
