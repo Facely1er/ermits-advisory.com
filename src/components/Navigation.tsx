@@ -7,7 +7,7 @@ import { Button } from './shared/Button';
 import { 
   Sun, Moon, Menu, X, Globe, ChevronDown, 
   Home, BarChart2, Shield, RadarIcon, 
-  Briefcase, Presentation, Mail
+  Briefcase, Presentation, Mail, Users
 } from 'lucide-react';
 import logoImg from '../assets/LOGO-ERMITS-ADVISORY.png';
 import { cn } from '../utils/cn';
@@ -37,10 +37,11 @@ export const Navigation: React.FC = () => {
 
   const navLinks = [
     { to: '/', label: t('navigation.home'), icon: <Home size={16} /> },
-    { to: '/dashboard', label: t('navigation.dashboard'), icon: <BarChart2 size={16} /> },
+    { to: '/about', label: t('navigation.about'), icon: <Users size={16} /> },
+    { to: '/services', label: t('navigation.services'), icon: <Briefcase size={16} /> },
     { to: '/steel', label: t('navigation.steel'), icon: <Shield size={16} /> },
     { to: '/risk-radar', label: t('navigation.riskRadar'), icon: <RadarIcon size={16} /> },
-    { to: '/services', label: t('navigation.services'), icon: <Briefcase size={16} /> },
+    { to: '/dashboard', label: t('navigation.dashboard'), icon: <BarChart2 size={16} /> },
     { to: '/presentation', label: t('navigation.presentation'), icon: <Presentation size={16} /> },
   ];
 

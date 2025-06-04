@@ -11,6 +11,7 @@ import { RiskRadar } from './pages/RiskRadar';
 import { ServiceOffering } from './pages/ServiceOffering';
 import { BoardPresentation } from './pages/BoardPresentation';
 import { ContactPage } from './pages/ContactPage';
+import { AboutPage } from './pages/AboutPage';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
                 <Route path="/services" element={<ServiceOffering />} />
                 <Route path="/presentation" element={<BoardPresentation />} />
                 <Route path="/contact" element={<ContactPage />} />
+                <Route path="/about" element={<AboutPage />} />
               </Routes>
             </main>
             
