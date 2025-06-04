@@ -30,16 +30,16 @@ export const NotFoundPage: React.FC = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <Button 
-              variant="primary" 
-              size="lg"
-              icon={<Home size={18} />}
-              iconPosition="left"
-              as={Link}
-              to="/"
-            >
-              {t('notFound.returnHome')}
-            </Button>
+            <Link to="/">
+              <Button 
+                variant="primary" 
+                size="lg"
+                icon={<Home size={18} />}
+                iconPosition="left"
+              >
+                {t('notFound.returnHome')}
+              </Button>
+            </Link>
             
             <Button 
               variant="outline" 
