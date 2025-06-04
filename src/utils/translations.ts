@@ -2,7 +2,7 @@ export const translations = {
   en: {
     common: {
       tagline: "Strategic Insight for Resilience",
-      copyright: "© 2025 ERMITS Advisory + STEEL™. All rights reserved.",
+      copyright: "© 2025 ERMITS LLC. All rights reserved.",
       learnMore: "Learn More",
       viewDashboard: "View Dashboard",
       demo: "This is a demonstration application",
@@ -626,7 +626,7 @@ export const translations = {
   es: {
     common: {
       tagline: "Visión Estratégica para la Resiliencia",
-      copyright: "© 2025 ERMITS Advisory + STEEL™. Todos los derechos reservados.",
+      copyright: "© 2025 ERMITS LLC. Todos los derechos reservados.",
       learnMore: "Saber más",
       viewDashboard: "Ver Dashboard",
       demo: "Esta es una aplicación de demostración"
@@ -1250,7 +1250,7 @@ export const translations = {
   fr: {
     common: {
       tagline: "Vision Stratégique pour la Résilience",
-      copyright: "© 2025 ERMITS Advisory + STEEL™. Tous droits réservés.",
+      copyright: "© 2025 ERMITS LLC. Tous droits réservés.",
       learnMore: "En Savoir Plus",
       viewDashboard: "Voir le Tableau de Bord",
       demo: "Ceci est une application de démonstration"
