@@ -87,6 +87,34 @@ export const STEELVisualization: React.FC = () => {
     }
   };
 
+  // Download button animation
+  const downloadButtonVariants = {
+    initial: { scale: 1 },
+    hover: { 
+      scale: 1.05,
+      boxShadow: "0 10px 25px -5px rgba(0, 75, 135, 0.3)",
+      transition: { 
+        type: "spring", 
+        stiffness: 400,
+        damping: 10
+      }
+    },
+    tap: { scale: 0.98 }
+  };
+
+  // Glowing effect animation
+  const glowingEffectVariants = {
+    initial: { opacity: 0.5 },
+    animate: { 
+      opacity: [0.5, 0.8, 0.5],
+      transition: { 
+        duration: 2,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
   return (
     <div className="pt-24 pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
       <div className="container mx-auto px-4">
@@ -263,13 +291,29 @@ export const STEELVisualization: React.FC = () => {
             </div>
             
             <div className="flex justify-center mt-12">
-              <Button 
-                variant="primary" 
-                icon={<Download size={16} />}
-                iconPosition="left"
+              <motion.div
+                initial="initial"
+                whileHover="hover"
+                whileTap="tap"
+                variants={downloadButtonVariants}
+                className="relative"
               >
-                {t('steel.integration.downloadGuide')}
-              </Button>
+                <motion.div
+                  variants={glowingEffectVariants}
+                  initial="initial"
+                  animate="animate"
+                  className="absolute inset-0 rounded-btn bg-navy opacity-30 blur-md"
+                ></motion.div>
+                <Button 
+                  variant="primary" 
+                  size="lg"
+                  icon={<Download size={20} />}
+                  iconPosition="left"
+                  className="relative z-10 px-6 py-3 shadow-lg"
+                >
+                  {t('steel.integration.downloadGuide')}
+                </Button>
+              </motion.div>
             </div>
           </Card>
         </motion.div>
