@@ -24,7 +24,7 @@ export const Navigation: React.FC = () => {
   const toggleLanguageDropdown = () => setIsLanguageOpen(!isLanguageOpen);
   
   const handleContactClick = () => {
-    navigate('/services');
+    navigate('/contact');
     setIsMenuOpen(false);
   };
 
