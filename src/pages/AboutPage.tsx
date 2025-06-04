@@ -179,10 +179,10 @@ export const AboutPage: React.FC = () => {
                 <Shield size={64} className="text-silver opacity-50" />
               </div>
               <div className="p-5">
-                <h3 className="text-xl font-bold mb-1 dark:text-white">Cybersecurity Leadership</h3>
-                <p className="text-navy dark:text-silver font-medium mb-2">Executive Advisory</p>
+                <h3 className="text-xl font-bold mb-1 dark:text-white">{t('about.team.cybersecurity.title')}</h3>
+                <p className="text-navy dark:text-silver font-medium mb-2">{t('about.team.cybersecurity.subtitle')}</p>
                 <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
-                  Our team includes former CISOs with 20+ years of experience in financial services, healthcare, and critical infrastructure security.
+                  {t('about.team.cybersecurity.description')}
                 </p>
                 <Button 
                   variant="outline" 
@@ -201,10 +201,10 @@ export const AboutPage: React.FC = () => {
                 <Briefcase size={64} className="text-silver opacity-50" />
               </div>
               <div className="p-5">
-                <h3 className="text-xl font-bold mb-1 dark:text-white">Strategic Advisory</h3>
-                <p className="text-navy dark:text-silver font-medium mb-2">Board-Level Guidance</p>
+                <h3 className="text-xl font-bold mb-1 dark:text-white">{t('about.team.strategic.title')}</h3>
+                <p className="text-navy dark:text-silver font-medium mb-2">{t('about.team.strategic.subtitle')}</p>
                 <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
-                  Our strategists have advised Fortune 500 companies on cyber resilience, digital transformation, and governance frameworks.
+                  {t('about.team.strategic.description')}
                 </p>
                 <Button 
                   variant="outline" 
@@ -223,10 +223,10 @@ export const AboutPage: React.FC = () => {
                 <BookOpen size={64} className="text-silver opacity-50" />
               </div>
               <div className="p-5">
-                <h3 className="text-xl font-bold mb-1 dark:text-white">Research & Analytics</h3>
-                <p className="text-navy dark:text-silver font-medium mb-2">Threat Intelligence</p>
+                <h3 className="text-xl font-bold mb-1 dark:text-white">{t('about.team.research.title')}</h3>
+                <p className="text-navy dark:text-silver font-medium mb-2">{t('about.team.research.subtitle')}</p>
                 <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
-                  Our research team holds advanced degrees in Information Security with specialized expertise in emerging threat analysis and risk modeling.
+                  {t('about.team.research.description')}
                 </p>
                 <Button 
                   variant="outline" 
@@ -245,10 +245,10 @@ export const AboutPage: React.FC = () => {
                 <Target size={64} className="text-silver opacity-50" />
               </div>
               <div className="p-5">
-                <h3 className="text-xl font-bold mb-1 dark:text-white">M&A Security</h3>
-                <p className="text-navy dark:text-silver font-medium mb-2">Due Diligence & Integration</p>
+                <h3 className="text-xl font-bold mb-1 dark:text-white">{t('about.team.mAndA.title')}</h3>
+                <p className="text-navy dark:text-silver font-medium mb-2">{t('about.team.mAndA.subtitle')}</p>
                 <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
-                  Our M&A specialists have led cybersecurity due diligence for complex acquisitions and post-merger integration strategies across industries.
+                  {t('about.team.mAndA.description')}
                 </p>
                 <Button 
                   variant="outline" 
