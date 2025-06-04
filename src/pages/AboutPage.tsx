@@ -27,34 +27,6 @@ export const AboutPage: React.FC = () => {
     show: { opacity: 1, y: 0 }
   };
 
-  // Team members data
-  const teamMembers = [
-    {
-      name: 'Dr. Eleanor Richards',
-      title: 'CEO & Founder',
-      bio: 'Former CISO with 20+ years of experience in financial services cybersecurity and risk management.',
-      image: 'https://images.pexels.com/photos/5792641/pexels-photo-5792641.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-    },
-    {
-      name: 'Michael Thornton',
-      title: 'Chief Strategy Officer',
-      bio: 'Strategic advisor to Fortune 500 companies on cyber resilience and board governance.',
-      image: 'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-    },
-    {
-      name: 'Dr. Amara Patel',
-      title: 'Head of Research',
-      bio: 'Ph.D. in Information Security with expertise in emerging threat analysis and risk modeling.',
-      image: 'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-    },
-    {
-      name: 'David Chen',
-      title: 'Director of Advisory Services',
-      bio: 'Specialized in M&A cybersecurity due diligence and post-merger integration strategy.',
-      image: 'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-    }
-  ];
-
   // Company values
   const companyValues = [
     {
@@ -228,32 +200,97 @@ export const AboutPage: React.FC = () => {
           className="mb-16"
         >
           <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center dark:text-white">{t('about.team.title')}</h2>
+          
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {teamMembers.map((member, index) => (
-              <Card key={index} variant="glass" padding="none" className="overflow-hidden">
-                <div className="h-64 overflow-hidden">
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
-                    className="w-full h-full object-cover object-center"
-                  />
-                </div>
-                <div className="p-5">
-                  <h3 className="text-xl font-bold mb-1 dark:text-white">{member.name}</h3>
-                  <p className="text-navy dark:text-silver font-medium mb-2">{member.title}</p>
-                  <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">{member.bio}</p>
-                  <Button 
-                    variant="outline" 
-                    size="sm"
-                    icon={<ChevronRight size={16} />}
-                    iconPosition="right"
-                  >
-                    {t('about.team.viewProfile')}
-                  </Button>
-                </div>
-              </Card>
-            ))}
+            {/* Cybersecurity Leadership Expertise */}
+            <Card variant="glass" padding="none" className="overflow-hidden">
+              <div className="h-64 overflow-hidden bg-navy-dark/90 flex items-center justify-center">
+                <Shield size={64} className="text-silver opacity-50" />
+              </div>
+              <div className="p-5">
+                <h3 className="text-xl font-bold mb-1 dark:text-white">Cybersecurity Leadership</h3>
+                <p className="text-navy dark:text-silver font-medium mb-2">Executive Advisory</p>
+                <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
+                  Our team includes former CISOs with 20+ years of experience in financial services, healthcare, and critical infrastructure security.
+                </p>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  icon={<ChevronRight size={16} />}
+                  iconPosition="right"
+                >
+                  {t('about.team.viewExpertise')}
+                </Button>
+              </div>
+            </Card>
+            
+            {/* Strategic Advisory Expertise */}
+            <Card variant="glass" padding="none" className="overflow-hidden">
+              <div className="h-64 overflow-hidden bg-navy-dark/90 flex items-center justify-center">
+                <Briefcase size={64} className="text-silver opacity-50" />
+              </div>
+              <div className="p-5">
+                <h3 className="text-xl font-bold mb-1 dark:text-white">Strategic Advisory</h3>
+                <p className="text-navy dark:text-silver font-medium mb-2">Board-Level Guidance</p>
+                <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
+                  Our strategists have advised Fortune 500 companies on cyber resilience, digital transformation, and governance frameworks.
+                </p>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  icon={<ChevronRight size={16} />}
+                  iconPosition="right"
+                >
+                  {t('about.team.viewExpertise')}
+                </Button>
+              </div>
+            </Card>
+            
+            {/* Research & Analytics Expertise */}
+            <Card variant="glass" padding="none" className="overflow-hidden">
+              <div className="h-64 overflow-hidden bg-navy-dark/90 flex items-center justify-center">
+                <BookOpen size={64} className="text-silver opacity-50" />
+              </div>
+              <div className="p-5">
+                <h3 className="text-xl font-bold mb-1 dark:text-white">Research & Analytics</h3>
+                <p className="text-navy dark:text-silver font-medium mb-2">Threat Intelligence</p>
+                <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
+                  Our research team holds advanced degrees in Information Security with specialized expertise in emerging threat analysis and risk modeling.
+                </p>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  icon={<ChevronRight size={16} />}
+                  iconPosition="right"
+                >
+                  {t('about.team.viewExpertise')}
+                </Button>
+              </div>
+            </Card>
+            
+            {/* M&A Security Expertise */}
+            <Card variant="glass" padding="none" className="overflow-hidden">
+              <div className="h-64 overflow-hidden bg-navy-dark/90 flex items-center justify-center">
+                <Target size={64} className="text-silver opacity-50" />
+              </div>
+              <div className="p-5">
+                <h3 className="text-xl font-bold mb-1 dark:text-white">M&A Security</h3>
+                <p className="text-navy dark:text-silver font-medium mb-2">Due Diligence & Integration</p>
+                <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
+                  Our M&A specialists have led cybersecurity due diligence for complex acquisitions and post-merger integration strategies across industries.
+                </p>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  icon={<ChevronRight size={16} />}
+                  iconPosition="right"
+                >
+                  {t('about.team.viewExpertise')}
+                </Button>
+              </div>
+            </Card>
           </div>
+          
           <div className="text-center mt-8">
             <Button 
               variant="primary" 
