@@ -219,7 +219,7 @@ export const AboutPage: React.FC = () => {
                   icon={<ChevronRight size={16} />}
                   iconPosition="right"
                 >
-                  {t('about.team.viewExpertise')}
+                  View Expertise
                 </Button>
               </div>
             </Card>
@@ -241,7 +241,7 @@ export const AboutPage: React.FC = () => {
                   icon={<ChevronRight size={16} />}
                   iconPosition="right"
                 >
-                  {t('about.team.viewExpertise')}
+                  View Expertise
                 </Button>
               </div>
             </Card>
@@ -263,7 +263,7 @@ export const AboutPage: React.FC = () => {
                   icon={<ChevronRight size={16} />}
                   iconPosition="right"
                 >
-                  {t('about.team.viewExpertise')}
+                  View Expertise
                 </Button>
               </div>
             </Card>
@@ -285,7 +285,7 @@ export const AboutPage: React.FC = () => {
                   icon={<ChevronRight size={16} />}
                   iconPosition="right"
                 >
-                  {t('about.team.viewExpertise')}
+                  View Expertise
                 </Button>
               </div>
             </Card>
