@@ -12,6 +12,7 @@ import { ServiceOffering } from './pages/ServiceOffering';
 import { BoardPresentation } from './pages/BoardPresentation';
 import { ContactPage } from './pages/ContactPage';
 import { AboutPage } from './pages/AboutPage';
+import { ResourcesPage } from './pages/ResourcesPage';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
                 <Route path="/presentation" element={<BoardPresentation />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/about" element={<AboutPage />} />
+                <Route path="/resources" element={<ResourcesPage />} />
               </Routes>
             </main>
             

@@ -5,7 +5,7 @@ import logoImg from '../assets/LOGO-ERMITS-ADVISORY.png';
 import { 
   Presentation, Search, Shield, UserCheck, 
   BarChart2, RadarIcon, LayoutDashboard, 
-  Mail, Phone, MapPin, Lock, FileText, Cookie
+  Mail, Phone, MapPin, Lock, FileText, Cookie, Users, BookOpen
 } from 'lucide-react';
 
 export const Footer: React.FC = () => {
@@ -79,9 +79,15 @@ export const Footer: React.FC = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/presentation" className="text-silver hover:text-white transition-colors flex items-center">
-                    <Presentation size={16} className="mr-2" />
-                    {t('footer.resources.presentation')}
+                  <Link to="/resources" className="text-silver hover:text-white transition-colors flex items-center">
+                    <BookOpen size={16} className="mr-2" />
+                    {t('footer.resources.library')}
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/about" className="text-silver hover:text-white transition-colors flex items-center">
+                    <Users size={16} className="mr-2" />
+                    {t('footer.resources.about')}
                   </Link>
                 </li>
               </ul>

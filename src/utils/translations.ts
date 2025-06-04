@@ -2,13 +2,14 @@ export const translations = {
   en: {
     navigation: {
       home: 'Home',
-      about: 'About',
       dashboard: 'Dashboard',
       steel: 'STEEL Methodology',
       riskRadar: 'Risk Radar',
       services: 'Services',
       presentation: 'Board Presentation',
-      contact: 'Contact Us'
+      contact: 'Contact Us',
+      about: 'About Us',
+      resources: 'Resources'
     },
     common: {
       learnMore: 'Learn More',
@@ -129,33 +130,42 @@ export const translations = {
       },
       actions: {
         title: 'Strategic Actions',
+        priority: 'Priority',
+        action: 'Action',
+        impact: 'Impact',
+        status: 'Status',
         details: 'Details',
         items: [
           {
+            id: '1',
             priority: 'Critical',
             action: 'Implement multi-factor authentication across all systems',
             impact: 'Reduces account compromise risk by 99%',
             status: 'In Progress'
           },
           {
+            id: '2',
             priority: 'High',
             action: 'Update incident response plan for ransomware scenarios',
             impact: 'Reduces potential downtime by 72%',
             status: 'Completed'
           },
           {
+            id: '3',
             priority: 'Medium',
             action: 'Conduct executive tabletop exercise',
             impact: 'Improves executive decision-making during incidents',
             status: 'Not Started'
           },
           {
+            id: '4',
             priority: 'High',
             action: 'Review and update third-party security requirements',
             impact: 'Reduces supply chain risk exposure',
             status: 'In Progress'
           },
           {
+            id: '5',
             priority: 'Critical',
             action: 'Enhance network segmentation to isolate critical systems',
             impact: 'Limits lateral movement during compromise',
@@ -231,36 +241,41 @@ export const translations = {
         action: 'Action',
         impact: 'Impact',
         effort: 'Effort',
+        generateReport: 'Generate Report',
         impactLabel: 'Impact',
         immediateAction: 'Immediate action recommended',
         quickWin: 'Quick win',
-        generateReport: 'Generate Report',
         items: [
           {
+            id: '1',
             priority: 'Critical',
             action: 'Implement enhanced data protection for sensitive customer information',
             impact: 'Reduces data breach risk by 78%',
             effort: 'Medium'
           },
           {
+            id: '2',
             priority: 'High',
             action: 'Establish third-party risk management program',
             impact: 'Improves visibility into supply chain risks',
             effort: 'High'
           },
           {
+            id: '3',
             priority: 'Medium',
             action: 'Update security awareness training with industry-specific scenarios',
             impact: 'Reduces successful social engineering attempts by 62%',
             effort: 'Low'
           },
           {
+            id: '4',
             priority: 'High',
             action: 'Implement compliance monitoring automation',
             impact: 'Reduces manual effort and improves accuracy',
             effort: 'Medium'
           },
           {
+            id: '5',
             priority: 'Critical',
             action: 'Enhance network segmentation to isolate critical systems',
             impact: 'Limits lateral movement during compromise',
@@ -325,18 +340,18 @@ export const translations = {
         step4: 'Implementation Support',
         step5: 'Ongoing Advisory'
       },
-      steelFramework: {
-        title: 'The STEEL™ Methodology',
-        description1: 'Our services are built on the foundation of the STEEL™ methodology, which provides a holistic view of cyber risk across six key dimensions: Political, Economic, Social, Technology, Environmental, and Legal.',
-        description2: 'This comprehensive approach ensures that all aspects of risk are considered, allowing for more effective risk management strategies and better decision-making.',
-        exploreButton: 'Explore STEEL™ Methodology'
-      },
       contact: {
         title: 'Contact Information',
         email: 'advisory@ermits.com',
         phone: '+1 (555) 123-4567',
         headquarters: 'New York, NY',
         requestConsultation: 'Request a Consultation'
+      },
+      steelFramework: {
+        title: 'The STEEL™ Methodology',
+        description1: 'Our services are built on the foundation of the STEEL™ methodology, which provides a holistic view of cyber risk across six key dimensions: Political, Economic, Social, Technology, Environmental, and Legal.',
+        description2: 'This comprehensive approach ensures that all aspects of risk are considered, allowing for more effective risk management strategies and better decision-making.',
+        exploreButton: 'Explore STEEL™ Methodology'
       }
     },
     presentation: {
@@ -389,32 +404,32 @@ export const translations = {
     },
     contact: {
       title: 'Contact Us',
-      subtitle: 'Get in touch with our expert team for personalized cybersecurity guidance',
+      subtitle: 'Get in touch with our advisory team',
       form: {
         title: 'Send Us a Message',
-        nameLabel: 'Your Name',
-        namePlaceholder: 'Enter your full name',
-        emailLabel: 'Email Address',
-        emailPlaceholder: 'Enter your email address',
+        nameLabel: 'Name',
+        namePlaceholder: 'Your full name',
+        emailLabel: 'Email',
+        emailPlaceholder: 'your.email@company.com',
         companyLabel: 'Company',
-        companyPlaceholder: 'Enter your company name',
-        phoneLabel: 'Phone Number (Optional)',
-        phonePlaceholder: 'Enter your phone number',
+        companyPlaceholder: 'Your company name',
+        phoneLabel: 'Phone (optional)',
+        phonePlaceholder: '+1 (123) 456-7890',
         messageLabel: 'Message',
         messagePlaceholder: 'How can we help you?',
         submitButton: 'Send Message',
         requiredFields: 'Required fields',
-        successTitle: 'Message Sent Successfully!',
-        successMessage: 'Thank you for reaching out. Our team will get back to you within 24 hours.',
-        errorTitle: 'Error Sending Message',
-        errorMessage: 'There was a problem sending your message. Please try again or contact us directly.',
+        successTitle: 'Message Sent!',
+        successMessage: 'Thank you for reaching out. Our team will get back to you within 1 business day.',
+        errorTitle: 'Message Not Sent',
+        errorMessage: 'There was an error sending your message. Please try again or contact us directly.',
         errors: {
           nameRequired: 'Name is required',
           emailRequired: 'Email is required',
           emailInvalid: 'Please enter a valid email address',
-          companyRequired: 'Company name is required',
+          companyRequired: 'Company is required',
           messageRequired: 'Message is required',
-          messageTooShort: 'Message is too short (minimum 10 characters)',
+          messageTooShort: 'Message must be at least 10 characters',
           phoneInvalid: 'Please enter a valid phone number'
         }
       },
@@ -423,32 +438,32 @@ export const translations = {
         emailTitle: 'Email',
         emailDescription: 'For general inquiries and information:',
         phoneTitle: 'Phone',
-        phoneDescription: 'For immediate assistance:',
-        addressTitle: 'Address',
+        phoneDescription: 'Our advisory team is available Monday-Friday:',
+        addressTitle: 'Office Location',
         addressDescription: 'Our headquarters:',
         hoursTitle: 'Business Hours',
         weekdays: 'Monday - Friday',
-        weekends: 'Saturday & Sunday',
+        weekends: 'Saturday - Sunday',
         closed: 'Closed'
       },
       map: {
         title: 'Our Location',
-        placeholder: 'Interactive map would appear here',
-        apiNote: 'Google Maps integration available in production'
+        placeholder: 'Interactive map would be displayed here.',
+        apiNote: 'Using Google Maps or Mapbox integration'
       },
       faq: {
         title: 'Frequently Asked Questions',
         response: {
-          title: 'How quickly will I receive a response?',
-          content: 'We typically respond to all inquiries within 24 business hours. For urgent matters, we recommend calling our direct line.'
+          title: 'What is your typical response time?',
+          content: 'We typically respond to all inquiries within 1 business day. For urgent matters related to cybersecurity incidents, we have an emergency response team available 24/7.'
         },
         international: {
           title: 'Do you work with international clients?',
-          content: 'Yes, we work with organizations worldwide. Our team has experience with global regulatory requirements and can provide services remotely or on-site.'
+          content: 'Yes, we work with organizations worldwide. Our team has experience dealing with global regulatory requirements and can provide support across different time zones.'
         },
         confidentiality: {
-          title: 'How do you ensure confidentiality?',
-          content: 'All client information is protected under strict NDAs. We maintain industry-leading security practices for all client communications and data.'
+          title: 'How do you handle confidential information?',
+          content: 'All client information is treated with the highest level of confidentiality. We use secure communication channels and can sign NDAs before any detailed discussions.'
         },
         preparation: {
           title: 'What should I prepare for an initial consultation?',
@@ -465,77 +480,113 @@ export const translations = {
       },
       story: {
         title: 'Our Story',
-        paragraph1: 'ERMITS Advisory was founded in 2018 by a team of veteran cybersecurity leaders who recognized that traditional technical approaches to security were failing to address the strategic needs of executive teams and boards.',
-        paragraph2: 'We developed the STEEL™ methodology to bridge this gap, providing a holistic framework that translates complex technical risks into business-relevant insights that drive better strategic decisions.',
-        paragraph3: 'Today, we work with organizations across industries to improve their cyber resilience through strategic advisory services that connect security to business outcomes.',
+        paragraph1: 'ERMITS Advisory was founded in 2018 by a team of senior cybersecurity leaders who recognized that organizations needed a new approach to understanding and managing cyber risk—one that bridges the gap between technical security concerns and business strategy.',
+        paragraph2: 'Our founding team developed the STEEL™ methodology based on years of experience advising Fortune 500 companies, government agencies, and leading organizations across various industries on their most complex cybersecurity challenges.',
+        paragraph3: 'Today, we continue to evolve our approach, staying at the forefront of emerging threats and new regulatory requirements to provide our clients with the most relevant, actionable guidance for their specific needs.',
         clients: 'Global Clients',
         countries: 'Countries',
-        projects: 'Completed Projects'
+        projects: 'Projects Completed'
       },
       values: {
-        title: 'Our Values',
+        title: 'Our Core Values',
         integrity: {
           title: 'Integrity',
-          description: 'We provide honest, unbiased advice that puts client interests first, even when the truth is challenging.'
+          description: 'We provide honest, unbiased advice that puts our clients\' best interests first, even when the truth is difficult.'
         },
         excellence: {
           title: 'Excellence',
-          description: 'We deliver exceptional quality in everything we do, constantly striving to exceed expectations.'
+          description: 'We are committed to delivering exceptional quality in everything we do, constantly raising the bar for ourselves.'
         },
         collaboration: {
           title: 'Collaboration',
-          description: 'We work as partners with our clients, sharing knowledge and building capabilities together.'
+          description: 'We work alongside our clients as true partners, integrating with their teams and culture to achieve shared goals.'
         },
         innovation: {
           title: 'Innovation',
-          description: 'We continuously evolve our approaches to address the changing risk landscape.'
+          description: 'We continuously evolve our approaches and methodologies to address emerging challenges in the rapidly changing risk landscape.'
         }
       },
       team: {
-        title: 'Leadership Team',
+        title: 'Our Leadership Team',
         viewProfile: 'View Profile',
         viewAll: 'View All Team Members'
       },
       timeline: {
         title: 'Our Journey',
         founding: {
-          title: 'Company Founded',
-          description: 'ERMITS Advisory established to provide strategic cybersecurity guidance to executive leadership.'
+          title: 'ERMITS Advisory Founded',
+          description: 'Established with a mission to transform how organizations understand and manage cyber risk.'
         },
         methodology: {
-          title: 'STEEL™ Methodology',
-          description: 'Development and launch of our proprietary STEEL™ risk assessment framework.'
+          title: 'STEEL™ Methodology Launched',
+          description: 'Introduced our comprehensive framework for holistic cyber risk assessment and management.'
         },
         expansion: {
-          title: 'Service Expansion',
-          description: 'Added M&A due diligence and crisis leadership services to our portfolio.'
+          title: 'Global Expansion',
+          description: 'Opened international offices and expanded our team of advisors to serve clients worldwide.'
         },
         global: {
-          title: 'Global Presence',
-          description: 'Opened offices in London, Singapore, and Sydney to better serve international clients.'
+          title: 'Fortune 500 Recognition',
+          description: 'Recognized as a leading cybersecurity advisory firm serving over 50 Fortune 500 companies.'
         },
         today: {
-          title: 'Where We Are Today',
-          description: 'Recognized as a leading advisor for executive cybersecurity strategy and risk management.'
+          title: 'Looking Forward',
+          description: 'Continuing to innovate and expand our services to address emerging cyber risks and challenges.'
         }
       },
       global: {
         title: 'Global Presence',
-        description: 'With offices in key financial centers around the world, we provide consistent, high-quality advisory services to multinational organizations.',
+        description: 'With offices in strategic locations worldwide and a team of advisors with diverse international experience, we provide consistent, high-quality service to our global clients while understanding local regulatory environments and business cultures.',
         offices: {
           us: 'New York, USA (Headquarters)',
           uk: 'London, United Kingdom',
           sg: 'Singapore',
           au: 'Sydney, Australia'
         },
-        contact: 'Contact a Regional Office',
-        mapPlaceholder: 'Global office locations map would appear here'
+        contact: 'Contact Our Local Teams',
+        mapPlaceholder: 'Interactive global presence map would be displayed here'
       },
       cta: {
         title: 'Ready to Work With Us?',
-        description: 'Schedule a consultation with our team to discuss how we can help your organization improve its cyber resilience and strategic risk management.',
+        description: 'Schedule a consultation with our advisory team to discuss your organization\'s specific cybersecurity challenges and how we can help.',
         schedule: 'Schedule a Consultation',
         learn: 'Learn About Our Services'
+      }
+    },
+    resources: {
+      title: 'Resource Library',
+      subtitle: 'Educational content and tools to support your cyber risk management journey',
+      featured: 'Featured Resource',
+      download: 'Download',
+      view: 'View Resource',
+      searchPlaceholder: 'Search resources...',
+      filters: 'Filters',
+      clearFilters: 'Clear Filters',
+      categories: {
+        title: 'Categories',
+        all: 'All Resources',
+        whitepapers: 'Whitepapers',
+        articles: 'Articles',
+        casestudies: 'Case Studies',
+        webinars: 'Webinars'
+      },
+      tags: {
+        title: 'Topics',
+        compliance: 'Compliance',
+        risk: 'Risk Management',
+        leadership: 'Executive Leadership',
+        technology: 'Technology'
+      },
+      noResults: {
+        title: 'No resources found',
+        message: 'Try adjusting your search or filter criteria to find what you\'re looking for.'
+      },
+      newsletter: {
+        title: 'Stay Informed',
+        description: 'Subscribe to our newsletter for the latest insights, research, and resources on cybersecurity and risk management.',
+        emailPlaceholder: 'Enter your email address',
+        subscribe: 'Subscribe',
+        privacy: 'We respect your privacy and will never share your information. You can unsubscribe at any time.'
       }
     },
     footer: {
@@ -551,7 +602,9 @@ export const translations = {
         steel: 'STEEL™ Methodology',
         riskRadar: 'Risk Radar Tool',
         dashboard: 'Executive Dashboard',
-        presentation: 'Board Presentation'
+        presentation: 'Board Presentation',
+        library: 'Resource Library',
+        about: 'About Us'
       },
       contact: {
         title: 'Contact',
@@ -569,13 +622,14 @@ export const translations = {
   es: {
     navigation: {
       home: 'Inicio',
-      about: 'Nosotros',
       dashboard: 'Panel',
       steel: 'Metodología STEEL',
       riskRadar: 'Radar de Riesgo',
       services: 'Servicios',
       presentation: 'Presentación',
-      contact: 'Contacto'
+      contact: 'Contacto',
+      about: 'Nosotros',
+      resources: 'Recursos'
     },
     common: {
       learnMore: 'Más Información',
@@ -696,33 +750,42 @@ export const translations = {
       },
       actions: {
         title: 'Acciones Estratégicas',
+        priority: 'Prioridad',
+        action: 'Acción',
+        impact: 'Impacto',
+        status: 'Estado',
         details: 'Detalles',
         items: [
           {
+            id: '1',
             priority: 'Crítico',
-            action: 'Implementar autenticación multifactor en todos los sistemas',
-            impact: 'Reduce el riesgo de compromiso de cuenta en un 99%',
+            action: 'Implementar autenticación de múltiples factores en todos los sistemas',
+            impact: 'Reduce el riesgo de compromiso de cuentas en un 99%',
             status: 'En Progreso'
           },
           {
+            id: '2',
             priority: 'Alto',
             action: 'Actualizar el plan de respuesta a incidentes para escenarios de ransomware',
             impact: 'Reduce el tiempo de inactividad potencial en un 72%',
             status: 'Completado'
           },
           {
+            id: '3',
             priority: 'Medio',
             action: 'Realizar ejercicio de simulación para ejecutivos',
-            impact: 'Mejora la toma de decisiones ejecutivas durante incidentes',
+            impact: 'Mejora la toma de decisiones durante incidentes',
             status: 'No Iniciado'
           },
           {
+            id: '4',
             priority: 'Alto',
             action: 'Revisar y actualizar los requisitos de seguridad de terceros',
             impact: 'Reduce la exposición al riesgo de la cadena de suministro',
             status: 'En Progreso'
           },
           {
+            id: '5',
             priority: 'Crítico',
             action: 'Mejorar la segmentación de red para aislar sistemas críticos',
             impact: 'Limita el movimiento lateral durante un compromiso',
@@ -774,7 +837,7 @@ export const translations = {
       },
       cta: {
         title: '¿Listo para Implementar STEEL™?',
-        description: 'Nuestro equipo de asesores puede ayudarlo a implementar la metodología STEEL™ en su organización.',
+        description: 'Nuestro equipo de asesores puede ayudarle a implementar la metodología STEEL™ en su organización.',
         scheduleConsultation: 'Programar una Consulta',
         requestCaseStudy: 'Solicitar Caso de Estudio'
       }
@@ -798,36 +861,41 @@ export const translations = {
         action: 'Acción',
         impact: 'Impacto',
         effort: 'Esfuerzo',
-        impactLabel: 'Impacto',
-        immediateAction: 'Acción inmediata recomendada',
-        quickWin: 'Victoria rápida',
         generateReport: 'Generar Informe',
+        impactLabel: 'Impacto',
+        immediateAction: 'Se recomienda acción inmediata',
+        quickWin: 'Victoria rápida',
         items: [
           {
+            id: '1',
             priority: 'Crítico',
-            action: 'Implementar protección de datos mejorada para información sensible de clientes',
-            impact: 'Reduce el riesgo de violación de datos en un 78%',
+            action: 'Implementar protección de datos mejorada para información sensible del cliente',
+            impact: 'Reduce el riesgo de filtración de datos en un 78%',
             effort: 'Medio'
           },
           {
+            id: '2',
             priority: 'Alto',
             action: 'Establecer programa de gestión de riesgos de terceros',
             impact: 'Mejora la visibilidad de los riesgos de la cadena de suministro',
             effort: 'Alto'
           },
           {
+            id: '3',
             priority: 'Medio',
-            action: 'Actualizar la formación de concienciación de seguridad con escenarios específicos de la industria',
+            action: 'Actualizar la capacitación de concientización con escenarios específicos de la industria',
             impact: 'Reduce los intentos exitosos de ingeniería social en un 62%',
             effort: 'Bajo'
           },
           {
+            id: '4',
             priority: 'Alto',
             action: 'Implementar automatización de monitoreo de cumplimiento',
             impact: 'Reduce el esfuerzo manual y mejora la precisión',
             effort: 'Medio'
           },
           {
+            id: '5',
             priority: 'Crítico',
             action: 'Mejorar la segmentación de red para aislar sistemas críticos',
             impact: 'Limita el movimiento lateral durante un compromiso',
@@ -839,7 +907,7 @@ export const translations = {
     services: {
       title: 'Oferta de Servicios',
       subtitle: 'Orientación experta para liderazgo ejecutivo',
-      keyFeatures: 'Características Clave',
+      keyFeatures: 'Características Principales',
       boardBriefings: {
         title: 'Informes para Juntas',
         description: 'Informes de ciberseguridad claros, concisos y prácticos diseñados específicamente para miembros de la junta y liderazgo ejecutivo.',
@@ -892,18 +960,18 @@ export const translations = {
         step4: 'Soporte de Implementación',
         step5: 'Asesoramiento Continuo'
       },
-      steelFramework: {
-        title: 'La Metodología STEEL™',
-        description1: 'Nuestros servicios se basan en la metodología STEEL™, que proporciona una visión holística del riesgo cibernético en seis dimensiones clave: Política, Económica, Social, Tecnológica, Ambiental y Legal.',
-        description2: 'Este enfoque integral asegura que se consideren todos los aspectos del riesgo, permitiendo estrategias de gestión de riesgos más efectivas y mejor toma de decisiones.',
-        exploreButton: 'Explorar Metodología STEEL™'
-      },
       contact: {
         title: 'Información de Contacto',
         email: 'advisory@ermits.com',
         phone: '+1 (555) 123-4567',
         headquarters: 'Nueva York, NY',
         requestConsultation: 'Solicitar una Consulta'
+      },
+      steelFramework: {
+        title: 'La Metodología STEEL™',
+        description1: 'Nuestros servicios se basan en la metodología STEEL™, que proporciona una visión holística del riesgo cibernético en seis dimensiones clave: Política, Económica, Social, Tecnológica, Ambiental y Legal.',
+        description2: 'Este enfoque integral asegura que se consideren todos los aspectos del riesgo, permitiendo estrategias de gestión de riesgos más efectivas y una mejor toma de decisiones.',
+        exploreButton: 'Explorar Metodología STEEL™'
       }
     },
     presentation: {
@@ -914,7 +982,7 @@ export const translations = {
         next: 'Siguiente',
         fullscreen: 'Pantalla Completa'
       },
-      keyboardShortcuts: 'Atajos de teclado: Teclas de flecha para navegar, \'F\' para pantalla completa, \'Esc\' para salir de pantalla completa',
+      keyboardShortcuts: 'Atajos de teclado: Flechas para navegar, \'F\' para pantalla completa, \'Esc\' para salir',
       download: 'Descargar Presentación',
       slides: {
         slide1: {
@@ -930,7 +998,7 @@ export const translations = {
         slide3: {
           title: 'Evaluación de Riesgo STEEL™',
           subtitle: 'Visión holística del riesgo organizacional',
-          content: 'Evaluación detallada del riesgo a través de las seis dimensiones STEEL con puntos de referencia comparativos de la industria.'
+          content: 'Evaluación detallada del riesgo en las seis dimensiones STEEL con comparativas de la industria.'
         },
         slide4: {
           title: 'Vulnerabilidades Estratégicas',
@@ -945,7 +1013,7 @@ export const translations = {
         slide6: {
           title: 'Consideraciones de Inversión',
           subtitle: 'Asignación de recursos para máximo impacto',
-          content: 'Análisis de opciones de inversión con cálculos esperados de retorno de inversión en seguridad.'
+          content: 'Análisis de opciones de inversión con cálculos de retorno esperado de inversión en seguridad.'
         },
         slide7: {
           title: 'Próximos Pasos y Cronograma',
@@ -954,155 +1022,40 @@ export const translations = {
         }
       }
     },
-    contact: {
-      title: 'Contáctenos',
-      subtitle: 'Póngase en contacto con nuestro equipo de expertos para obtener orientación personalizada sobre ciberseguridad',
-      form: {
-        title: 'Envíenos un Mensaje',
-        nameLabel: 'Su Nombre',
-        namePlaceholder: 'Ingrese su nombre completo',
-        emailLabel: 'Dirección de Correo Electrónico',
+    resources: {
+      title: 'Biblioteca de Recursos',
+      subtitle: 'Contenido educativo y herramientas para apoyar su gestión de riesgos cibernéticos',
+      featured: 'Recurso Destacado',
+      download: 'Descargar',
+      view: 'Ver Recurso',
+      searchPlaceholder: 'Buscar recursos...',
+      filters: 'Filtros',
+      clearFilters: 'Limpiar Filtros',
+      categories: {
+        title: 'Categorías',
+        all: 'Todos los Recursos',
+        whitepapers: 'Libros Blancos',
+        articles: 'Artículos',
+        casestudies: 'Casos de Estudio',
+        webinars: 'Webinars'
+      },
+      tags: {
+        title: 'Temas',
+        compliance: 'Cumplimiento',
+        risk: 'Gestión de Riesgos',
+        leadership: 'Liderazgo Ejecutivo',
+        technology: 'Tecnología'
+      },
+      noResults: {
+        title: 'No se encontraron recursos',
+        message: 'Intente ajustar su búsqueda o criterios de filtro para encontrar lo que está buscando.'
+      },
+      newsletter: {
+        title: 'Manténgase Informado',
+        description: 'Suscríbase a nuestro boletín para recibir las últimas perspectivas, investigaciones y recursos sobre ciberseguridad y gestión de riesgos.',
         emailPlaceholder: 'Ingrese su dirección de correo electrónico',
-        companyLabel: 'Empresa',
-        companyPlaceholder: 'Ingrese el nombre de su empresa',
-        phoneLabel: 'Número de Teléfono (Opcional)',
-        phonePlaceholder: 'Ingrese su número de teléfono',
-        messageLabel: 'Mensaje',
-        messagePlaceholder: '¿Cómo podemos ayudarle?',
-        submitButton: 'Enviar Mensaje',
-        requiredFields: 'Campos requeridos',
-        successTitle: '¡Mensaje Enviado Exitosamente!',
-        successMessage: 'Gracias por ponerse en contacto. Nuestro equipo se comunicará con usted dentro de las 24 horas.',
-        errorTitle: 'Error al Enviar Mensaje',
-        errorMessage: 'Hubo un problema al enviar su mensaje. Intente nuevamente o contáctenos directamente.',
-        errors: {
-          nameRequired: 'El nombre es obligatorio',
-          emailRequired: 'El correo electrónico es obligatorio',
-          emailInvalid: 'Por favor, ingrese una dirección de correo electrónico válida',
-          companyRequired: 'El nombre de la empresa es obligatorio',
-          messageRequired: 'El mensaje es obligatorio',
-          messageTooShort: 'El mensaje es demasiado corto (mínimo 10 caracteres)',
-          phoneInvalid: 'Por favor, ingrese un número de teléfono válido'
-        }
-      },
-      info: {
-        title: 'Información de Contacto',
-        emailTitle: 'Correo Electrónico',
-        emailDescription: 'Para consultas generales e información:',
-        phoneTitle: 'Teléfono',
-        phoneDescription: 'Para asistencia inmediata:',
-        addressTitle: 'Dirección',
-        addressDescription: 'Nuestra sede:',
-        hoursTitle: 'Horario de Atención',
-        weekdays: 'Lunes - Viernes',
-        weekends: 'Sábado y Domingo',
-        closed: 'Cerrado'
-      },
-      map: {
-        title: 'Nuestra Ubicación',
-        placeholder: 'Aquí aparecería un mapa interactivo',
-        apiNote: 'Integración con Google Maps disponible en producción'
-      },
-      faq: {
-        title: 'Preguntas Frecuentes',
-        response: {
-          title: '¿Qué tan rápido recibiré una respuesta?',
-          content: 'Normalmente respondemos a todas las consultas dentro de las 24 horas laborables. Para asuntos urgentes, recomendamos llamar a nuestra línea directa.'
-        },
-        international: {
-          title: '¿Trabajan con clientes internacionales?',
-          content: 'Sí, trabajamos con organizaciones de todo el mundo. Nuestro equipo tiene experiencia con requisitos regulatorios globales y puede proporcionar servicios de forma remota o presencial.'
-        },
-        confidentiality: {
-          title: '¿Cómo garantizan la confidencialidad?',
-          content: 'Toda la información del cliente está protegida bajo estrictos acuerdos de confidencialidad. Mantenemos prácticas de seguridad líderes en la industria para todas las comunicaciones y datos de los clientes.'
-        },
-        preparation: {
-          title: '¿Qué debo preparar para una consulta inicial?',
-          content: 'Es útil tener una visión general de su programa de seguridad actual, preocupaciones clave y objetivos específicos que le gustaría lograr a través de nuestra asociación.'
-        }
-      }
-    },
-    about: {
-      title: 'Sobre ERMITS Advisory',
-      subtitle: 'Orientación estratégica en ciberseguridad para liderazgo ejecutivo',
-      hero: {
-        meetTeam: 'Conocer a Nuestro Equipo',
-        bookCall: 'Programar una Llamada'
-      },
-      story: {
-        title: 'Nuestra Historia',
-        paragraph1: 'ERMITS Advisory fue fundada en 2018 por un equipo de líderes veteranos en ciberseguridad que reconocieron que los enfoques técnicos tradicionales de seguridad estaban fallando en abordar las necesidades estratégicas de los equipos ejecutivos y juntas directivas.',
-        paragraph2: 'Desarrollamos la metodología STEEL™ para cerrar esta brecha, proporcionando un marco holístico que traduce riesgos técnicos complejos en información relevante para el negocio que impulsa mejores decisiones estratégicas.',
-        paragraph3: 'Hoy, trabajamos con organizaciones en todas las industrias para mejorar su resiliencia cibernética a través de servicios de asesoramiento estratégico que conectan la seguridad con los resultados empresariales.',
-        clients: 'Clientes Globales',
-        countries: 'Países',
-        projects: 'Proyectos Completados'
-      },
-      values: {
-        title: 'Nuestros Valores',
-        integrity: {
-          title: 'Integridad',
-          description: 'Proporcionamos asesoramiento honesto e imparcial que pone los intereses del cliente en primer lugar, incluso cuando la verdad es desafiante.'
-        },
-        excellence: {
-          title: 'Excelencia',
-          description: 'Entregamos calidad excepcional en todo lo que hacemos, esforzándonos constantemente por superar las expectativas.'
-        },
-        collaboration: {
-          title: 'Colaboración',
-          description: 'Trabajamos como socios con nuestros clientes, compartiendo conocimientos y construyendo capacidades juntos.'
-        },
-        innovation: {
-          title: 'Innovación',
-          description: 'Evolucionamos continuamente nuestros enfoques para abordar el cambiante panorama de riesgos.'
-        }
-      },
-      team: {
-        title: 'Equipo de Liderazgo',
-        viewProfile: 'Ver Perfil',
-        viewAll: 'Ver Todos los Miembros del Equipo'
-      },
-      timeline: {
-        title: 'Nuestra Trayectoria',
-        founding: {
-          title: 'Fundación de la Empresa',
-          description: 'ERMITS Advisory establecida para proporcionar orientación estratégica en ciberseguridad al liderazgo ejecutivo.'
-        },
-        methodology: {
-          title: 'Metodología STEEL™',
-          description: 'Desarrollo y lanzamiento de nuestro marco propietario de evaluación de riesgos STEEL™.'
-        },
-        expansion: {
-          title: 'Expansión de Servicios',
-          description: 'Añadimos servicios de diligencia debida M&A y liderazgo en crisis a nuestro portafolio.'
-        },
-        global: {
-          title: 'Presencia Global',
-          description: 'Abrimos oficinas en Londres, Singapur y Sídney para servir mejor a clientes internacionales.'
-        },
-        today: {
-          title: 'Donde Estamos Hoy',
-          description: 'Reconocidos como un asesor líder para estrategia de ciberseguridad ejecutiva y gestión de riesgos.'
-        }
-      },
-      global: {
-        title: 'Presencia Global',
-        description: 'Con oficinas en centros financieros clave alrededor del mundo, proporcionamos servicios de asesoramiento consistentes y de alta calidad a organizaciones multinacionales.',
-        offices: {
-          us: 'Nueva York, EE.UU. (Sede Central)',
-          uk: 'Londres, Reino Unido',
-          sg: 'Singapur',
-          au: 'Sídney, Australia'
-        },
-        contact: 'Contactar a una Oficina Regional',
-        mapPlaceholder: 'Aquí aparecería un mapa de ubicaciones de oficinas globales'
-      },
-      cta: {
-        title: '¿Listo para Trabajar con Nosotros?',
-        description: 'Programe una consulta con nuestro equipo para discutir cómo podemos ayudar a su organización a mejorar su resiliencia cibernética y gestión estratégica de riesgos.',
-        schedule: 'Programar una Consulta',
-        learn: 'Conocer Nuestros Servicios'
+        subscribe: 'Suscribirse',
+        privacy: 'Respetamos su privacidad y nunca compartiremos su información. Puede darse de baja en cualquier momento.'
       }
     },
     footer: {
@@ -1116,9 +1069,11 @@ export const translations = {
       resources: {
         title: 'Recursos',
         steel: 'Metodología STEEL™',
-        riskRadar: 'Herramienta de Radar de Riesgo',
+        riskRadar: 'Herramienta Radar de Riesgo',
         dashboard: 'Panel Ejecutivo',
-        presentation: 'Presentación para Juntas'
+        presentation: 'Presentación para Juntas',
+        library: 'Biblioteca de Recursos',
+        about: 'Sobre Nosotros'
       },
       contact: {
         title: 'Contacto',
@@ -1136,13 +1091,14 @@ export const translations = {
   fr: {
     navigation: {
       home: 'Accueil',
-      about: 'À Propos',
       dashboard: 'Tableau de Bord',
       steel: 'Méthodologie STEEL',
       riskRadar: 'Radar de Risque',
       services: 'Services',
       presentation: 'Présentation',
-      contact: 'Contact'
+      contact: 'Contact',
+      about: 'À Propos',
+      resources: 'Ressources'
     },
     common: {
       learnMore: 'En Savoir Plus',
@@ -1263,33 +1219,42 @@ export const translations = {
       },
       actions: {
         title: 'Actions Stratégiques',
+        priority: 'Priorité',
+        action: 'Action',
+        impact: 'Impact',
+        status: 'Statut',
         details: 'Détails',
         items: [
           {
+            id: '1',
             priority: 'Critique',
             action: 'Mettre en œuvre l\'authentification multi-facteurs sur tous les systèmes',
             impact: 'Réduit le risque de compromission de compte de 99%',
             status: 'En Cours'
           },
           {
+            id: '2',
             priority: 'Élevé',
             action: 'Mettre à jour le plan de réponse aux incidents pour les scénarios de ransomware',
             impact: 'Réduit les temps d\'arrêt potentiels de 72%',
             status: 'Terminé'
           },
           {
+            id: '3',
             priority: 'Moyen',
-            action: 'Mener un exercice de simulation pour les dirigeants',
+            action: 'Organiser un exercice de simulation pour les dirigeants',
             impact: 'Améliore la prise de décision des dirigeants pendant les incidents',
             status: 'Non Démarré'
           },
           {
+            id: '4',
             priority: 'Élevé',
             action: 'Examiner et mettre à jour les exigences de sécurité des tiers',
             impact: 'Réduit l\'exposition aux risques de la chaîne d\'approvisionnement',
             status: 'En Cours'
           },
           {
+            id: '5',
             priority: 'Critique',
             action: 'Améliorer la segmentation du réseau pour isoler les systèmes critiques',
             impact: 'Limite les mouvements latéraux lors d\'une compromission',
@@ -1365,36 +1330,41 @@ export const translations = {
         action: 'Action',
         impact: 'Impact',
         effort: 'Effort',
+        generateReport: 'Générer un Rapport',
         impactLabel: 'Impact',
         immediateAction: 'Action immédiate recommandée',
-        quickWin: 'Gain rapide',
-        generateReport: 'Générer un Rapport',
+        quickWin: 'Victoire rapide',
         items: [
           {
+            id: '1',
             priority: 'Critique',
-            action: 'Mettre en œuvre une protection des données améliorée pour les informations sensibles des clients',
+            action: 'Mettre en œuvre une protection des données améliorée pour les informations clients sensibles',
             impact: 'Réduit le risque de violation de données de 78%',
             effort: 'Moyen'
           },
           {
+            id: '2',
             priority: 'Élevé',
             action: 'Établir un programme de gestion des risques tiers',
-            impact: 'Améliore la visibilité sur les risques de la chaîne d\'approvisionnement',
+            impact: 'Améliore la visibilité des risques de la chaîne d\'approvisionnement',
             effort: 'Élevé'
           },
           {
+            id: '3',
             priority: 'Moyen',
-            action: 'Mettre à jour la formation de sensibilisation à la sécurité avec des scénarios spécifiques à l\'industrie',
-            impact: 'Réduit les tentatives d\'ingénierie sociale réussies de 62%',
+            action: 'Mettre à jour la formation de sensibilisation avec des scénarios spécifiques à l\'industrie',
+            impact: 'Réduit les tentatives réussies d\'ingénierie sociale de 62%',
             effort: 'Faible'
           },
           {
+            id: '4',
             priority: 'Élevé',
             action: 'Mettre en œuvre l\'automatisation de la surveillance de la conformité',
             impact: 'Réduit l\'effort manuel et améliore la précision',
             effort: 'Moyen'
           },
           {
+            id: '5',
             priority: 'Critique',
             action: 'Améliorer la segmentation du réseau pour isoler les systèmes critiques',
             impact: 'Limite les mouvements latéraux lors d\'une compromission',
@@ -1459,18 +1429,18 @@ export const translations = {
         step4: 'Support d\'Implémentation',
         step5: 'Conseil Continu'
       },
-      steelFramework: {
-        title: 'La Méthodologie STEEL™',
-        description1: 'Nos services sont basés sur la méthodologie STEEL™, qui fournit une vue holistique du risque cyber à travers six dimensions clés : Politique, Économique, Sociale, Technologique, Environnementale et Juridique.',
-        description2: 'Cette approche globale garantit que tous les aspects du risque sont pris en compte, permettant des stratégies de gestion des risques plus efficaces et une meilleure prise de décision.',
-        exploreButton: 'Explorer la Méthodologie STEEL™'
-      },
       contact: {
         title: 'Informations de Contact',
         email: 'advisory@ermits.com',
         phone: '+1 (555) 123-4567',
         headquarters: 'New York, NY',
         requestConsultation: 'Demander une Consultation'
+      },
+      steelFramework: {
+        title: 'La Méthodologie STEEL™',
+        description1: 'Nos services sont fondés sur la méthodologie STEEL™, qui offre une vision holistique du risque cyber à travers six dimensions clés : Politique, Économique, Sociale, Technologique, Environnementale et Juridique.',
+        description2: 'Cette approche complète garantit que tous les aspects du risque sont pris en compte, permettant des stratégies de gestion des risques plus efficaces et une meilleure prise de décision.',
+        exploreButton: 'Explorer la Méthodologie STEEL™'
       }
     },
     presentation: {
@@ -1481,13 +1451,13 @@ export const translations = {
         next: 'Suivant',
         fullscreen: 'Plein Écran'
       },
-      keyboardShortcuts: 'Raccourcis clavier : Touches fléchées pour naviguer, \'F\' pour le plein écran, \'Esc\' pour quitter le plein écran',
+      keyboardShortcuts: 'Raccourcis clavier : Flèches pour naviguer, \'F\' pour plein écran, \'Esc\' pour quitter',
       download: 'Télécharger la Présentation',
       slides: {
         slide1: {
           title: 'Briefing Exécutif de Cybersécurité',
           subtitle: 'Analyse stratégique et recommandations',
-          content: 'Vue d\'ensemble complète de la posture de cybersécurité de l\'organisation avec des insights au niveau exécutif.'
+          content: 'Aperçu complet de la posture de cybersécurité de l\'organisation avec des perspectives au niveau exécutif.'
         },
         slide2: {
           title: 'Paysage de Risque Actuel',
@@ -1497,7 +1467,7 @@ export const translations = {
         slide3: {
           title: 'Évaluation des Risques STEEL™',
           subtitle: 'Vue holistique du risque organisationnel',
-          content: 'Évaluation détaillée du risque à travers les six dimensions STEEL avec des benchmarks comparatifs de l\'industrie.'
+          content: 'Évaluation détaillée du risque à travers les six dimensions STEEL avec des références comparatives de l\'industrie.'
         },
         slide4: {
           title: 'Vulnérabilités Stratégiques',
@@ -1507,169 +1477,54 @@ export const translations = {
         slide5: {
           title: 'Actions Recommandées',
           subtitle: 'Initiatives prioritaires pour la réduction des risques',
-          content: 'Recommandations priorisées pour adresser les risques identifiés avec les résultats attendus.'
+          content: 'Recommandations prioritaires pour traiter les risques identifiés avec les résultats attendus.'
         },
         slide6: {
           title: 'Considérations d\'Investissement',
           subtitle: 'Allocation de ressources pour un impact maximal',
-          content: 'Analyse des options d\'investissement avec des calculs de retour sur investissement en sécurité attendus.'
+          content: 'Analyse des options d\'investissement avec calculs du retour attendu sur l\'investissement en sécurité.'
         },
         slide7: {
           title: 'Prochaines Étapes et Calendrier',
           subtitle: 'Feuille de route de mise en œuvre',
-          content: 'Feuille de route de mise en œuvre proposée avec les jalons clés et les besoins en ressources.'
+          content: 'Feuille de route proposée pour la mise en œuvre avec les jalons clés et les besoins en ressources.'
         }
       }
     },
-    contact: {
-      title: 'Contactez-Nous',
-      subtitle: 'Prenez contact avec notre équipe d\'experts pour des conseils personnalisés en cybersécurité',
-      form: {
-        title: 'Envoyez-Nous un Message',
-        nameLabel: 'Votre Nom',
-        namePlaceholder: 'Entrez votre nom complet',
-        emailLabel: 'Adresse Email',
-        emailPlaceholder: 'Entrez votre adresse email',
-        companyLabel: 'Entreprise',
-        companyPlaceholder: 'Entrez le nom de votre entreprise',
-        phoneLabel: 'Numéro de Téléphone (Optionnel)',
-        phonePlaceholder: 'Entrez votre numéro de téléphone',
-        messageLabel: 'Message',
-        messagePlaceholder: 'Comment pouvons-nous vous aider?',
-        submitButton: 'Envoyer le Message',
-        requiredFields: 'Champs obligatoires',
-        successTitle: 'Message Envoyé avec Succès!',
-        successMessage: 'Merci de nous avoir contactés. Notre équipe vous répondra dans les 24 heures.',
-        errorTitle: 'Erreur lors de l\'Envoi du Message',
-        errorMessage: 'Un problème est survenu lors de l\'envoi de votre message. Veuillez réessayer ou nous contacter directement.',
-        errors: {
-          nameRequired: 'Le nom est requis',
-          emailRequired: 'L\'email est requis',
-          emailInvalid: 'Veuillez entrer une adresse email valide',
-          companyRequired: 'Le nom de l\'entreprise est requis',
-          messageRequired: 'Le message est requis',
-          messageTooShort: 'Le message est trop court (minimum 10 caractères)',
-          phoneInvalid: 'Veuillez entrer un numéro de téléphone valide'
-        }
+    resources: {
+      title: 'Bibliothèque de Ressources',
+      subtitle: 'Contenu éducatif et outils pour soutenir votre parcours de gestion des risques cyber',
+      featured: 'Ressource Vedette',
+      download: 'Télécharger',
+      view: 'Voir la Ressource',
+      searchPlaceholder: 'Rechercher des ressources...',
+      filters: 'Filtres',
+      clearFilters: 'Effacer les Filtres',
+      categories: {
+        title: 'Catégories',
+        all: 'Toutes les Ressources',
+        whitepapers: 'Livres Blancs',
+        articles: 'Articles',
+        casestudies: 'Études de Cas',
+        webinars: 'Webinaires'
       },
-      info: {
-        title: 'Informations de Contact',
-        emailTitle: 'Email',
-        emailDescription: 'Pour les demandes générales et informations:',
-        phoneTitle: 'Téléphone',
-        phoneDescription: 'Pour une assistance immédiate:',
-        addressTitle: 'Adresse',
-        addressDescription: 'Notre siège:',
-        hoursTitle: 'Heures d\'Ouverture',
-        weekdays: 'Lundi - Vendredi',
-        weekends: 'Samedi & Dimanche',
-        closed: 'Fermé'
+      tags: {
+        title: 'Sujets',
+        compliance: 'Conformité',
+        risk: 'Gestion des Risques',
+        leadership: 'Leadership Exécutif',
+        technology: 'Technologie'
       },
-      map: {
-        title: 'Notre Emplacement',
-        placeholder: 'Une carte interactive apparaîtrait ici',
-        apiNote: 'Intégration Google Maps disponible en production'
+      noResults: {
+        title: 'Aucune ressource trouvée',
+        message: 'Essayez d\'ajuster votre recherche ou vos critères de filtrage pour trouver ce que vous cherchez.'
       },
-      faq: {
-        title: 'Questions Fréquemment Posées',
-        response: {
-          title: 'Combien de temps faut-il pour recevoir une réponse?',
-          content: 'Nous répondons généralement à toutes les demandes dans les 24 heures ouvrables. Pour les questions urgentes, nous recommandons d\'appeler notre ligne directe.'
-        },
-        international: {
-          title: 'Travaillez-vous avec des clients internationaux?',
-          content: 'Oui, nous travaillons avec des organisations du monde entier. Notre équipe a de l\'expérience avec les exigences réglementaires mondiales et peut fournir des services à distance ou sur site.'
-        },
-        confidentiality: {
-          title: 'Comment assurez-vous la confidentialité?',
-          content: 'Toutes les informations des clients sont protégées par des accords de confidentialité stricts. Nous maintenons des pratiques de sécurité de pointe pour toutes les communications et données des clients.'
-        },
-        preparation: {
-          title: 'Que dois-je préparer pour une consultation initiale?',
-          content: 'Il est utile d\'avoir un aperçu général de votre programme de sécurité actuel, vos préoccupations principales et les objectifs spécifiques que vous souhaitez atteindre grâce à notre partenariat.'
-        }
-      }
-    },
-    about: {
-      title: 'À Propos d\'ERMITS Advisory',
-      subtitle: 'Conseils stratégiques en cybersécurité pour les dirigeants',
-      hero: {
-        meetTeam: 'Rencontrer Notre Équipe',
-        bookCall: 'Réserver un Appel'
-      },
-      story: {
-        title: 'Notre Histoire',
-        paragraph1: 'ERMITS Advisory a été fondée en 2018 par une équipe de leaders expérimentés en cybersécurité qui ont reconnu que les approches techniques traditionnelles de la sécurité ne répondaient pas aux besoins stratégiques des équipes de direction et des conseils d\'administration.',
-        paragraph2: 'Nous avons développé la méthodologie STEEL™ pour combler cette lacune, fournissant un cadre holistique qui traduit des risques techniques complexes en informations pertinentes pour l\'entreprise qui permettent de meilleures décisions stratégiques.',
-        paragraph3: 'Aujourd\'hui, nous travaillons avec des organisations de tous secteurs pour améliorer leur résilience cyber grâce à des services de conseil stratégique qui connectent la sécurité aux résultats commerciaux.',
-        clients: 'Clients Mondiaux',
-        countries: 'Pays',
-        projects: 'Projets Réalisés'
-      },
-      values: {
-        title: 'Nos Valeurs',
-        integrity: {
-          title: 'Intégrité',
-          description: 'Nous fournissons des conseils honnêtes et impartiaux qui mettent les intérêts du client en premier, même lorsque la vérité est difficile.'
-        },
-        excellence: {
-          title: 'Excellence',
-          description: 'Nous offrons une qualité exceptionnelle dans tout ce que nous faisons, nous efforçant constamment de dépasser les attentes.'
-        },
-        collaboration: {
-          title: 'Collaboration',
-          description: 'Nous travaillons en partenariat avec nos clients, partageant les connaissances et renforçant les capacités ensemble.'
-        },
-        innovation: {
-          title: 'Innovation',
-          description: 'Nous faisons évoluer continuellement nos approches pour faire face à l\'évolution du paysage des risques.'
-        }
-      },
-      team: {
-        title: 'Équipe de Direction',
-        viewProfile: 'Voir le Profil',
-        viewAll: 'Voir Tous les Membres de l\'Équipe'
-      },
-      timeline: {
-        title: 'Notre Parcours',
-        founding: {
-          title: 'Fondation de l\'Entreprise',
-          description: 'ERMITS Advisory établie pour fournir des conseils stratégiques en cybersécurité aux dirigeants.'
-        },
-        methodology: {
-          title: 'Méthodologie STEEL™',
-          description: 'Développement et lancement de notre cadre propriétaire d\'évaluation des risques STEEL™.'
-        },
-        expansion: {
-          title: 'Expansion des Services',
-          description: 'Ajout des services de due diligence M&A et de leadership de crise à notre portefeuille.'
-        },
-        global: {
-          title: 'Présence Mondiale',
-          description: 'Ouverture de bureaux à Londres, Singapour et Sydney pour mieux servir les clients internationaux.'
-        },
-        today: {
-          title: 'Où Nous Sommes Aujourd\'hui',
-          description: 'Reconnus comme un conseiller de premier plan pour la stratégie de cybersécurité des dirigeants et la gestion des risques.'
-        }
-      },
-      global: {
-        title: 'Présence Mondiale',
-        description: 'Avec des bureaux dans les principaux centres financiers du monde, nous fournissons des services de conseil cohérents et de haute qualité aux organisations multinationales.',
-        offices: {
-          us: 'New York, États-Unis (Siège)',
-          uk: 'Londres, Royaume-Uni',
-          sg: 'Singapour',
-          au: 'Sydney, Australie'
-        },
-        contact: 'Contacter un Bureau Régional',
-        mapPlaceholder: 'La carte des bureaux mondiaux apparaîtrait ici'
-      },
-      cta: {
-        title: 'Prêt à Travailler Avec Nous?',
-        description: 'Planifiez une consultation avec notre équipe pour discuter de la façon dont nous pouvons aider votre organisation à améliorer sa résilience cyber et sa gestion stratégique des risques.',
-        schedule: 'Planifier une Consultation',
-        learn: 'En Savoir Plus Sur Nos Services'
+      newsletter: {
+        title: 'Restez Informé',
+        description: 'Abonnez-vous à notre newsletter pour les dernières perspectives, recherches et ressources sur la cybersécurité et la gestion des risques.',
+        emailPlaceholder: 'Entrez votre adresse e-mail',
+        subscribe: 'S\'abonner',
+        privacy: 'Nous respectons votre vie privée et ne partagerons jamais vos informations. Vous pouvez vous désabonner à tout moment.'
       }
     },
     footer: {
@@ -1685,13 +1540,15 @@ export const translations = {
         steel: 'Méthodologie STEEL™',
         riskRadar: 'Outil Radar de Risque',
         dashboard: 'Tableau de Bord Exécutif',
-        presentation: 'Présentation au Conseil'
+        presentation: 'Présentation au Conseil',
+        library: 'Bibliothèque de Ressources',
+        about: 'À Propos de Nous'
       },
       contact: {
         title: 'Contact',
         emailLabel: 'Email:',
         phoneLabel: 'Téléphone:',
-        headquartersLabel: 'Siège:'
+        headquartersLabel: 'Siège Social:'
       },
       policy: {
         privacy: 'Politique de Confidentialité',
