@@ -452,7 +452,7 @@ export const translations = {
         },
         preparation: {
           title: 'What should I prepare for an initial consultation?',
-          content: 'It\'s helpful to have a general overview of your current security program, key concerns, and specific goals you'd like to achieve through our partnership.'
+          content: 'It\'s helpful to have a general overview of your current security program, key concerns, and specific goals you\'d like to achieve through our partnership.'
         }
       }
     },
