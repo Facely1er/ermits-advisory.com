@@ -129,7 +129,7 @@ export const AboutPage: React.FC = () => {
               <div className="md:w-1/2">
                 <div className="rounded-lg overflow-hidden h-80 relative">
                   <img 
-                    src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                    src="https://images.pexels.com/photos/3153198/pexels-photo-3153198.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
                     alt="ERMITS Advisory team" 
                     className="object-cover w-full h-full"
                   />
