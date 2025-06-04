@@ -36,7 +36,7 @@ export const ResourcesPage: React.FC = () => {
   const resources: Resource[] = [
     {
       id: 'wp-001',
-      title: 'The Executive's Guide to Modern Cyber Risk Management',
+      title: 'The Executive\'s Guide to Modern Cyber Risk Management',
       description: 'A comprehensive guide for C-suite executives on implementing effective cyber risk management strategies using the STEEL methodology.',
       category: 'whitepapers',
       tags: ['steel', 'risk', 'leadership'],
