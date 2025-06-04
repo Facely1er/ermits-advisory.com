@@ -15,9 +15,7 @@ import slide3 from '../assets/slides/BP-Slide3.jpg';
 import slide4 from '../assets/slides/BP-Slide4.jpg';
 import slide5 from '../assets/slides/BP-Slide5.jpg';
 import slide6 from '../assets/slides/BP-Slide6.jpg';
-// Note: slide7 is referenced but BP-Slide7.jpg doesn't appear to exist
-// Using slide6 as fallback for slide7 to prevent errors
-import slide7 from '../assets/slides/BP-Slide6.jpg';
+import slide7 from '../assets/slides/BP-Slide7.jpg';
 
 export const BoardPresentation: React.FC = () => {
   const { t } = useLanguage();
