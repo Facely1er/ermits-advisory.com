@@ -51,35 +51,6 @@ export const AboutPage: React.FC = () => {
     }
   ];
 
-  // Company timeline
-  const timeline = [
-    {
-      year: '2018',
-      title: t('about.timeline.founding.title'),
-      description: t('about.timeline.founding.description')
-    },
-    {
-      year: '2019',
-      title: t('about.timeline.methodology.title'),
-      description: t('about.timeline.methodology.description')
-    },
-    {
-      year: '2021',
-      title: t('about.timeline.expansion.title'),
-      description: t('about.timeline.expansion.description')
-    },
-    {
-      year: '2023',
-      title: t('about.timeline.global.title'),
-      description: t('about.timeline.global.description')
-    },
-    {
-      year: '2025',
-      title: t('about.timeline.today.title'),
-      description: t('about.timeline.today.description')
-    }
-  ];
-
   return (
     <div className="pt-24 pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
       <div className="container mx-auto px-4">
@@ -300,43 +271,6 @@ export const AboutPage: React.FC = () => {
               {t('about.team.viewAll')}
             </Button>
           </div>
-        </motion.div>
-
-        {/* Our Timeline */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="mb-16"
-        >
-          <Card variant="glass" padding="lg">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center dark:text-white">{t('about.timeline.title')}</h2>
-            <div className="relative">
-              {/* Timeline line */}
-              <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-navy/20 dark:bg-silver/20 transform md:translate-x-0"></div>
-              
-              <div className="space-y-12">
-                {timeline.map((event, index) => (
-                  <div key={index} className={`relative flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
-                    <div className="md:w-1/2 mb-4 md:mb-0">
-                      <div className={`bg-white dark:bg-dark-surface rounded-lg p-5 shadow-md relative ${index % 2 === 0 ? 'md:ml-8' : 'md:mr-8'}`}>
-                        <h3 className="text-xl font-bold mb-2 text-navy dark:text-white">{event.title}</h3>
-                        <p className="text-gray-600 dark:text-gray-200">{event.description}</p>
-                      </div>
-                    </div>
-                    <div className="md:w-1/2 flex flex-row md:flex-column">
-                      <div className="absolute left-0 md:left-1/2 w-8 h-8 rounded-full bg-navy dark:bg-silver transform -translate-x-1/2 flex items-center justify-center text-white font-bold z-10">
-                        <Clock size={16} />
-                      </div>
-                      <div className={`pl-12 md:pl-0 ${index % 2 === 0 ? 'md:pr-8 md:text-right' : 'md:pl-8'}`}>
-                        <span className="text-2xl font-bold text-navy dark:text-silver">{event.year}</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Card>
         </motion.div>
 
         {/* Global Presence */}
