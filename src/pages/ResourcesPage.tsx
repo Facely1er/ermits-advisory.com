@@ -43,7 +43,7 @@ export const ResourcesPage: React.FC = () => {
       date: '2025-04-15',
       readTime: '25 min',
       downloadUrl: '#',
-      imageUrl: 'https://images.pexels.com/photos/7319086/pexels-photo-7319086.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      imageUrl: 'https://images.pexels.com/photos/5473955/pexels-photo-5473955.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       featured: true
     },
     {
