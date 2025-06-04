@@ -1,0 +1,223 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply font-inter text-navy-dark;
+  }
+
+  .dark {
+    color-scheme: dark;
+  }
+
+  .dark body {
+    @apply bg-dark-bg text-gray-100;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-outfit font-semibold;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  h5 {
+    @apply text-lg md:text-xl;
+  }
+
+  h6 {
+    @apply text-base md:text-lg;
+  }
+
+  body {
+    @apply bg-silver-light dark:bg-dark-bg dark:text-gray-100 transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/80 dark:bg-dark-surface/90 backdrop-blur-md border border-white/20 dark:border-white/10;
+  }
+  
+  .glass-card {
+    @apply glass rounded shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+
+  .glass-nav {
+    @apply backdrop-blur-lg bg-white/90 shadow-lg z-50 border-b border-transparent;
+  }
+
+  .container-padding {
+    @apply px-4 md:px-8 lg:px-16;
+  }
+
+  .section-padding {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+
+  .hexagon {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+  
+  /* Dark theme specific improvements */
+  .dark .text-gray-600 {
+    @apply text-gray-300;
+  }
+  
+  .dark .text-gray-500 {
+    @apply text-gray-400;
+  }
+  
+  .dark .border-gray-200 {
+    @apply border-gray-700;
+  }
+
+  /* Navigation specific dark mode improvements */
+  .dark .glass-nav {
+    @apply bg-black border-b border-gray-800 shadow-xl;
+  }
+
+  .dark .nav-link {
+    @apply text-white/95 hover:text-white;
+  }
+  
+  /* Footer dark mode improvements */
+  .dark footer {
+    @apply bg-black border-t border-gray-800;
+  }
+  
+  .dark footer h3 {
+    @apply text-white;
+  }
+  
+  .dark footer a, .dark footer .text-silver {
+    @apply text-gray-300 hover:text-white;
+  }
+  
+  /* Improved navigation elements */
+  .dark .dropdown-menu {
+    @apply bg-dark-surface border border-white/10 shadow-xl;
+  }
+
+  .dark .dropdown-item {
+    @apply text-white/95 hover:bg-navy/20 hover:text-white;
+  }
+
+  /* Steel methodology section in dark mode */
+  .dark .steel-section {
+    @apply bg-navy-dark/80;
+  }
+
+  .dark .steel-title {
+    @apply text-white;
+  }
+
+  .dark .steel-subtitle {
+    @apply text-gray-100;
+  }
+
+  .dark .steel-card {
+    @apply bg-dark-surface/90;
+  }
+
+  .dark .steel-dimension-title {
+    @apply text-white;
+  }
+
+  .dark .steel-dimension-desc {
+    @apply text-gray-100;
+  }
+  
+  /* Board presentation dark mode improvements */
+  .dark .presentation-container {
+    @apply bg-dark-bg;
+  }
+  
+  .dark .presentation-slide {
+    @apply bg-navy-dark text-white;
+  }
+  
+  .dark .presentation-controls {
+    @apply bg-dark-surface text-white;
+  }
+}
+
+.dark-transition {
+  @apply transition-colors duration-300;
+}
+
+/* Enhanced dark mode text contrast */
+.dark .card-title {
+  @apply text-white;
+}
+
+.dark .card-text {
+  @apply text-gray-200;
+}
+
+/* Improved input contrast in dark mode */
+.dark input, .dark select, .dark textarea {
+  @apply bg-dark-surface border-gray-700 text-white;
+}
+
+/* Better button contrast in dark mode */
+.dark .btn-outline {
+  @apply border-gray-500 text-gray-200 hover:bg-gray-800;
+}
+
+/* Dark mode dropdown menu improvements */
+.dark .dropdown-menu {
+  @apply bg-dark-surface/95 border border-white/10 shadow-lg;
+}
+
+.dark .dropdown-item {
+  @apply text-white/95 hover:bg-navy/20 hover:text-white;
+}
+
+/* Chart improvements for dark mode */
+.dark canvas {
+  filter: brightness(1.05);
+}
+
+/* Custom range slider styling for dark mode */
+.dark input[type=range] {
+  height: 8px;
+  border-radius: 4px;
+  background: rgba(55, 65, 81, 0.8);
+  outline: none;
+}
+
+.dark input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--range-color, #c9e6ff);
+  cursor: pointer;
+  border: 2px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.dark input[type=range]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--range-color, #c9e6ff);
+  cursor: pointer;
+  border: 2px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
