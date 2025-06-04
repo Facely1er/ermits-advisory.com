@@ -23,33 +23,6 @@ export const translations = {
       tagline: 'Strategic Insight for Resilience',
       copyright: '© 2025 ERMITS Advisory + STEEL™. All rights reserved.'
     },
-    footer: {
-      services: {
-        title: 'Services',
-        boardBriefings: 'Board Briefings',
-        mAndA: 'M&A Due Diligence',
-        crisis: 'Crisis Leadership',
-        vCISO: 'Virtual CISO'
-      },
-      resources: {
-        title: 'Resources',
-        steel: 'STEEL™ Methodology',
-        riskRadar: 'Risk Radar Tool',
-        dashboard: 'Executive Dashboard',
-        presentation: 'Board Presentation'
-      },
-      contact: {
-        title: 'Contact',
-        emailLabel: 'Email:',
-        phoneLabel: 'Phone:',
-        headquartersLabel: 'Headquarters:'
-      },
-      policy: {
-        privacy: 'Privacy Policy',
-        terms: 'Terms of Service',
-        cookie: 'Cookie Policy'
-      }
-    },
     landing: {
       hero: {
         title: 'Transform Cyber Risk Into Strategic Intelligence',
@@ -155,50 +128,45 @@ export const translations = {
       },
       actions: {
         title: 'Strategic Actions',
+        priority: 'Priority',
         action: 'Action',
         impact: 'Impact',
         status: 'Status',
         details: 'Details',
-        priorities: {
-          critical: 'Critical',
-          high: 'High',
-          medium: 'Medium',
-          low: 'Low'
-        },
-        statuses: {
-          notStarted: 'Not Started',
-          inProgress: 'In Progress',
-          completed: 'Completed'
-        },
         items: [
           {
+            id: '1',
+            priority: 'Critical',
             action: 'Implement multi-factor authentication across all systems',
             impact: 'Reduces account compromise risk by 99%',
-            priority: 'Critical',
             status: 'In Progress'
           },
           {
+            id: '2',
+            priority: 'High',
             action: 'Update incident response plan for ransomware scenarios',
             impact: 'Reduces potential downtime by 72%',
-            priority: 'High',
             status: 'Completed'
           },
           {
+            id: '3',
+            priority: 'Medium',
             action: 'Conduct executive tabletop exercise',
             impact: 'Improves executive decision-making during incidents',
-            priority: 'Medium',
             status: 'Not Started'
           },
           {
+            id: '4',
+            priority: 'High',
             action: 'Review and update third-party security requirements',
             impact: 'Reduces supply chain risk exposure',
-            priority: 'High',
             status: 'In Progress'
           },
           {
+            id: '5',
+            priority: 'Medium',
             action: 'Implement enhanced email security controls',
             impact: 'Reduces successful phishing attempts by 85%',
-            priority: 'Medium',
             status: 'Not Started'
           }
         ]
@@ -267,53 +235,48 @@ export const translations = {
       },
       recommendations: {
         title: 'Recommendations',
+        priority: 'Priority',
         action: 'Action',
         impact: 'Impact',
         effort: 'Effort',
-        generateReport: 'Generate Report',
-        quickWin: 'Quick win',
-        immediateAction: 'Immediate action recommended',
         impactLabel: 'Impact',
-        priorities: {
-          critical: 'Critical',
-          high: 'High',
-          medium: 'Medium',
-          low: 'Low'
-        },
-        efforts: {
-          low: 'Low Effort',
-          medium: 'Medium Effort',
-          high: 'High Effort'
-        },
+        immediateAction: 'Immediate action recommended',
+        quickWin: 'Quick win',
+        generateReport: 'Generate Report',
         items: [
           {
+            id: '1',
+            priority: 'Critical',
             action: 'Implement enhanced data protection for sensitive customer information',
             impact: 'Reduces data breach risk by 78%',
-            priority: 'Critical',
             effort: 'Medium'
           },
           {
+            id: '2',
+            priority: 'High',
             action: 'Establish third-party risk management program',
             impact: 'Improves visibility into supply chain risks',
-            priority: 'High',
             effort: 'High'
           },
           {
+            id: '3',
+            priority: 'Medium',
             action: 'Update security awareness training with industry-specific scenarios',
             impact: 'Reduces successful social engineering attempts by 62%',
-            priority: 'Medium',
             effort: 'Low'
           },
           {
+            id: '4',
+            priority: 'High',
             action: 'Implement compliance monitoring automation',
             impact: 'Reduces manual effort and improves accuracy',
-            priority: 'High',
             effort: 'Medium'
           },
           {
+            id: '5',
+            priority: 'Critical',
             action: 'Enhance network segmentation to isolate critical systems',
             impact: 'Limits lateral movement during compromise',
-            priority: 'Critical',
             effort: 'High'
           }
         ]
@@ -384,8 +347,8 @@ export const translations = {
       contact: {
         title: 'Contact Information',
         email: 'advisory@ermits.com',
-        phone: '+1 (888) 618-6160',
-        headquarters: 'Gaithersburg, MD',
+        phone: '+1 (555) 123-4567',
+        headquarters: 'New York, NY',
         requestConsultation: 'Request a Consultation'
       }
     },
@@ -436,6 +399,102 @@ export const translations = {
           content: 'Proposed implementation roadmap with key milestones and resource requirements.'
         }
       }
+    },
+    contact: {
+      title: 'Contact Us',
+      subtitle: 'Get in touch with our advisory team to discuss your organization\'s needs',
+      form: {
+        title: 'Send us a message',
+        nameLabel: 'Full Name',
+        namePlaceholder: 'Enter your full name',
+        emailLabel: 'Email Address',
+        emailPlaceholder: 'Enter your email address',
+        companyLabel: 'Company',
+        companyPlaceholder: 'Enter your company name',
+        phoneLabel: 'Phone Number',
+        phonePlaceholder: 'Enter your phone number (optional)',
+        messageLabel: 'Message',
+        messagePlaceholder: 'How can we help you?',
+        submitButton: 'Send Message',
+        requiredFields: 'Required fields',
+        errors: {
+          nameRequired: 'Please enter your name',
+          emailRequired: 'Please enter your email address',
+          emailInvalid: 'Please enter a valid email address',
+          companyRequired: 'Please enter your company name',
+          messageRequired: 'Please enter your message',
+          messageTooShort: 'Message must be at least 10 characters',
+          phoneInvalid: 'Please enter a valid phone number'
+        },
+        successTitle: 'Message sent successfully',
+        successMessage: 'Thank you for contacting us. Our team will get back to you within 24 hours.',
+        errorTitle: 'Error sending message',
+        errorMessage: 'There was a problem sending your message. Please try again or contact us directly.'
+      },
+      info: {
+        title: 'Contact Information',
+        emailTitle: 'Email',
+        emailDescription: 'For general inquiries and information:',
+        phoneTitle: 'Phone',
+        phoneDescription: 'For immediate assistance:',
+        addressTitle: 'Address',
+        addressDescription: 'Our headquarters:',
+        hoursTitle: 'Business Hours',
+        weekdays: 'Monday - Friday',
+        weekends: 'Saturday - Sunday',
+        closed: 'Closed'
+      },
+      map: {
+        title: 'Our Location',
+        placeholder: 'Map will be displayed here',
+        apiNote: 'Google Maps API will be integrated in production'
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        response: {
+          title: 'How quickly will I receive a response?',
+          content: 'We typically respond to all inquiries within 24 business hours. For urgent matters, we recommend calling our office directly.'
+        },
+        international: {
+          title: 'Do you work with international clients?',
+          content: 'Yes, we work with organizations worldwide. Our team has experience navigating global regulatory frameworks and international security standards.'
+        },
+        confidentiality: {
+          title: 'How is confidentiality handled?',
+          content: 'All communications are treated with strict confidentiality. We can sign NDAs before initial discussions if required for sensitive matters.'
+        },
+        preparation: {
+          title: 'What should I prepare for our first meeting?',
+          content: 'To make our initial consultation productive, consider your main security concerns, any recent incidents, and your organization\'s strategic priorities.'
+        }
+      }
+    },
+    footer: {
+      services: {
+        title: 'Services',
+        boardBriefings: 'Board Briefings',
+        mAndA: 'M&A Due Diligence',
+        crisis: 'Crisis Leadership',
+        vCISO: 'Virtual CISO'
+      },
+      resources: {
+        title: 'Resources',
+        steel: 'STEEL™ Methodology',
+        riskRadar: 'Risk Radar Tool',
+        dashboard: 'Executive Dashboard',
+        presentation: 'Board Presentation'
+      },
+      contact: {
+        title: 'Contact',
+        emailLabel: 'Email:',
+        phoneLabel: 'Phone:',
+        headquartersLabel: 'Headquarters:'
+      },
+      policy: {
+        privacy: 'Privacy Policy',
+        terms: 'Terms of Service',
+        cookie: 'Cookie Policy'
+      }
     }
   },
   es: {
@@ -461,33 +520,6 @@ export const translations = {
       demo: 'Datos de Demo',
       tagline: 'Visión Estratégica para la Resiliencia',
       copyright: '© 2025 ERMITS Advisory + STEEL™. Todos los derechos reservados.'
-    },
-    footer: {
-      services: {
-        title: 'Servicios',
-        boardBriefings: 'Informes para Juntas',
-        mAndA: 'Diligencia Debida M&A',
-        crisis: 'Liderazgo en Crisis',
-        vCISO: 'CISO Virtual'
-      },
-      resources: {
-        title: 'Recursos',
-        steel: 'Metodología STEEL™',
-        riskRadar: 'Herramienta de Radar de Riesgo',
-        dashboard: 'Panel Ejecutivo',
-        presentation: 'Presentación para Juntas'
-      },
-      contact: {
-        title: 'Contacto',
-        emailLabel: 'Correo electrónico:',
-        phoneLabel: 'Teléfono:',
-        headquartersLabel: 'Sede central:'
-      },
-      policy: {
-        privacy: 'Política de Privacidad',
-        terms: 'Términos de Servicio',
-        cookie: 'Política de Cookies'
-      }
     },
     landing: {
       hero: {
@@ -594,50 +626,45 @@ export const translations = {
       },
       actions: {
         title: 'Acciones Estratégicas',
+        priority: 'Prioridad',
         action: 'Acción',
         impact: 'Impacto',
         status: 'Estado',
         details: 'Detalles',
-        priorities: {
-          critical: 'Crítico',
-          high: 'Alto',
-          medium: 'Medio',
-          low: 'Bajo'
-        },
-        statuses: {
-          notStarted: 'No Iniciado',
-          inProgress: 'En Progreso',
-          completed: 'Completado'
-        },
         items: [
           {
-            action: 'Implementar autenticación multifactor en todos los sistemas',
-            impact: 'Reduce el riesgo de compromiso de cuenta en un 99%',
+            id: '1',
             priority: 'Crítico',
+            action: 'Implementar autenticación multifactor en todos los sistemas',
+            impact: 'Reduce el riesgo de compromiso de cuentas en un 99%',
             status: 'En Progreso'
           },
           {
-            action: 'Actualizar plan de respuesta a incidentes para escenarios de ransomware',
-            impact: 'Reduce el tiempo potencial de inactividad en un 72%',
+            id: '2',
             priority: 'Alto',
+            action: 'Actualizar plan de respuesta a incidentes para escenarios de ransomware',
+            impact: 'Reduce el tiempo de inactividad potencial en un 72%',
             status: 'Completado'
           },
           {
-            action: 'Realizar ejercicio de simulación para ejecutivos',
-            impact: 'Mejora la toma de decisiones ejecutivas durante incidentes',
+            id: '3',
             priority: 'Medio',
+            action: 'Realizar ejercicio de simulación ejecutiva',
+            impact: 'Mejora la toma de decisiones ejecutivas durante incidentes',
             status: 'No Iniciado'
           },
           {
+            id: '4',
+            priority: 'Alto',
             action: 'Revisar y actualizar requisitos de seguridad de terceros',
             impact: 'Reduce la exposición al riesgo de la cadena de suministro',
-            priority: 'Alto',
             status: 'En Progreso'
           },
           {
+            id: '5',
+            priority: 'Medio',
             action: 'Implementar controles mejorados de seguridad de correo electrónico',
             impact: 'Reduce los intentos exitosos de phishing en un 85%',
-            priority: 'Medio',
             status: 'No Iniciado'
           }
         ]
@@ -685,8 +712,8 @@ export const translations = {
         downloadGuide: 'Descargar Guía de Integración'
       },
       cta: {
-        title: '¿Listo para Implementar STEEL™?',
-        description: 'Nuestro equipo de asesores puede ayudarle a implementar la metodología STEEL™ en su organización.',
+        title: '¿Listo para implementar STEEL™?',
+        description: 'Nuestro equipo de asesores puede ayudarlo a implementar la metodología STEEL™ en su organización.',
         scheduleConsultation: 'Programar una Consulta',
         requestCaseStudy: 'Solicitar Caso de Estudio'
       }
@@ -706,53 +733,48 @@ export const translations = {
       },
       recommendations: {
         title: 'Recomendaciones',
+        priority: 'Prioridad',
         action: 'Acción',
         impact: 'Impacto',
         effort: 'Esfuerzo',
-        generateReport: 'Generar Informe',
-        quickWin: 'Victoria rápida',
-        immediateAction: 'Acción inmediata recomendada',
         impactLabel: 'Impacto',
-        priorities: {
-          critical: 'Crítico',
-          high: 'Alto',
-          medium: 'Medio',
-          low: 'Bajo'
-        },
-        efforts: {
-          low: 'Esfuerzo Bajo',
-          medium: 'Esfuerzo Medio',
-          high: 'Esfuerzo Alto'
-        },
+        immediateAction: 'Se recomienda acción inmediata',
+        quickWin: 'Victoria rápida',
+        generateReport: 'Generar Informe',
         items: [
           {
+            id: '1',
+            priority: 'Crítico',
             action: 'Implementar protección de datos mejorada para información sensible de clientes',
             impact: 'Reduce el riesgo de violación de datos en un 78%',
-            priority: 'Crítico',
             effort: 'Medio'
           },
           {
+            id: '2',
+            priority: 'Alto',
             action: 'Establecer programa de gestión de riesgos de terceros',
             impact: 'Mejora la visibilidad de los riesgos de la cadena de suministro',
-            priority: 'Alto',
             effort: 'Alto'
           },
           {
-            action: 'Actualizar capacitación de concientización de seguridad con escenarios específicos de la industria',
-            impact: 'Reduce los intentos exitosos de ingeniería social en un 62%',
+            id: '3',
             priority: 'Medio',
+            action: 'Actualizar capacitación de concientización sobre seguridad con escenarios específicos de la industria',
+            impact: 'Reduce los intentos exitosos de ingeniería social en un 62%',
             effort: 'Bajo'
           },
           {
+            id: '4',
+            priority: 'Alto',
             action: 'Implementar automatización de monitoreo de cumplimiento',
             impact: 'Reduce el esfuerzo manual y mejora la precisión',
-            priority: 'Alto',
             effort: 'Medio'
           },
           {
-            action: 'Mejorar la segmentación de red para aislar sistemas críticos',
-            impact: 'Limita el movimiento lateral durante un compromiso',
+            id: '5',
             priority: 'Crítico',
+            action: 'Mejorar la segmentación de la red para aislar sistemas críticos',
+            impact: 'Limita el movimiento lateral durante un compromiso',
             effort: 'Alto'
           }
         ]
@@ -808,7 +830,7 @@ export const translations = {
       },
       steelFramework: {
         title: 'La Metodología STEEL™',
-        description1: 'Nuestros servicios se basan en la metodología STEEL™, que proporciona una visión holística del riesgo cibernético a través de seis dimensiones clave: Política, Económica, Social, Tecnológica, Ambiental y Legal.',
+        description1: 'Nuestros servicios se basan en la metodología STEEL™, que proporciona una visión holística del riesgo cibernético en seis dimensiones clave: Política, Económica, Social, Tecnológica, Ambiental y Legal.',
         description2: 'Este enfoque integral asegura que se consideren todos los aspectos del riesgo, permitiendo estrategias de gestión de riesgos más efectivas y mejor toma de decisiones.',
         exploreButton: 'Explorar Metodología STEEL™'
       },
@@ -823,8 +845,8 @@ export const translations = {
       contact: {
         title: 'Información de Contacto',
         email: 'advisory@ermits.com',
-        phone: '+1 (888) 618-6160',
-        headquarters: 'Gaithersburg, MD',
+        phone: '+1 (555) 123-4567',
+        headquarters: 'Nueva York, NY',
         requestConsultation: 'Solicitar una Consulta'
       }
     },
@@ -842,7 +864,7 @@ export const translations = {
         slide1: {
           title: 'Informe Ejecutivo de Ciberseguridad',
           subtitle: 'Análisis estratégico y recomendaciones',
-          content: 'Visión integral de la postura de ciberseguridad de la organización con información a nivel ejecutivo.'
+          content: 'Visión general completa de la postura de ciberseguridad de la organización con información a nivel ejecutivo.'
         },
         slide2: {
           title: 'Panorama de Riesgo Actual',
@@ -852,7 +874,7 @@ export const translations = {
         slide3: {
           title: 'Evaluación de Riesgo STEEL™',
           subtitle: 'Visión holística del riesgo organizacional',
-          content: 'Evaluación detallada del riesgo en las seis dimensiones STEEL con puntos de referencia comparativos de la industria.'
+          content: 'Evaluación detallada del riesgo en las seis dimensiones STEEL con comparativas de referencia de la industria.'
         },
         slide4: {
           title: 'Vulnerabilidades Estratégicas',
@@ -867,13 +889,109 @@ export const translations = {
         slide6: {
           title: 'Consideraciones de Inversión',
           subtitle: 'Asignación de recursos para máximo impacto',
-          content: 'Análisis de opciones de inversión con cálculos esperados de retorno de inversión en seguridad.'
+          content: 'Análisis de opciones de inversión con cálculos esperados de retorno de la inversión en seguridad.'
         },
         slide7: {
           title: 'Próximos Pasos y Cronograma',
           subtitle: 'Hoja de ruta de implementación',
           content: 'Hoja de ruta de implementación propuesta con hitos clave y requisitos de recursos.'
         }
+      }
+    },
+    contact: {
+      title: 'Contáctenos',
+      subtitle: 'Póngase en contacto con nuestro equipo de asesores para discutir las necesidades de su organización',
+      form: {
+        title: 'Envíenos un mensaje',
+        nameLabel: 'Nombre Completo',
+        namePlaceholder: 'Ingrese su nombre completo',
+        emailLabel: 'Correo Electrónico',
+        emailPlaceholder: 'Ingrese su correo electrónico',
+        companyLabel: 'Empresa',
+        companyPlaceholder: 'Ingrese el nombre de su empresa',
+        phoneLabel: 'Número de Teléfono',
+        phonePlaceholder: 'Ingrese su número de teléfono (opcional)',
+        messageLabel: 'Mensaje',
+        messagePlaceholder: '¿Cómo podemos ayudarle?',
+        submitButton: 'Enviar Mensaje',
+        requiredFields: 'Campos requeridos',
+        errors: {
+          nameRequired: 'Por favor ingrese su nombre',
+          emailRequired: 'Por favor ingrese su correo electrónico',
+          emailInvalid: 'Por favor ingrese un correo electrónico válido',
+          companyRequired: 'Por favor ingrese el nombre de su empresa',
+          messageRequired: 'Por favor ingrese su mensaje',
+          messageTooShort: 'El mensaje debe tener al menos 10 caracteres',
+          phoneInvalid: 'Por favor ingrese un número de teléfono válido'
+        },
+        successTitle: 'Mensaje enviado exitosamente',
+        successMessage: 'Gracias por contactarnos. Nuestro equipo se pondrá en contacto con usted dentro de las próximas 24 horas.',
+        errorTitle: 'Error al enviar el mensaje',
+        errorMessage: 'Hubo un problema al enviar su mensaje. Por favor, intente nuevamente o contáctenos directamente.'
+      },
+      info: {
+        title: 'Información de Contacto',
+        emailTitle: 'Correo Electrónico',
+        emailDescription: 'Para consultas generales e información:',
+        phoneTitle: 'Teléfono',
+        phoneDescription: 'Para asistencia inmediata:',
+        addressTitle: 'Dirección',
+        addressDescription: 'Nuestra sede:',
+        hoursTitle: 'Horario de Atención',
+        weekdays: 'Lunes - Viernes',
+        weekends: 'Sábado - Domingo',
+        closed: 'Cerrado'
+      },
+      map: {
+        title: 'Nuestra Ubicación',
+        placeholder: 'El mapa se mostrará aquí',
+        apiNote: 'La API de Google Maps se integrará en producción'
+      },
+      faq: {
+        title: 'Preguntas Frecuentes',
+        response: {
+          title: '¿Qué tan rápido recibiré una respuesta?',
+          content: 'Normalmente respondemos a todas las consultas dentro de las 24 horas hábiles. Para asuntos urgentes, recomendamos llamar directamente a nuestra oficina.'
+        },
+        international: {
+          title: '¿Trabajan con clientes internacionales?',
+          content: 'Sí, trabajamos con organizaciones de todo el mundo. Nuestro equipo tiene experiencia navegando marcos regulatorios globales y estándares de seguridad internacionales.'
+        },
+        confidentiality: {
+          title: '¿Cómo se maneja la confidencialidad?',
+          content: 'Todas las comunicaciones se tratan con estricta confidencialidad. Podemos firmar acuerdos de confidencialidad antes de las discusiones iniciales si se requiere para asuntos sensibles.'
+        },
+        preparation: {
+          title: '¿Qué debo preparar para nuestra primera reunión?',
+          content: 'Para hacer productiva nuestra consulta inicial, considere sus principales preocupaciones de seguridad, cualquier incidente reciente y las prioridades estratégicas de su organización.'
+        }
+      }
+    },
+    footer: {
+      services: {
+        title: 'Servicios',
+        boardBriefings: 'Informes para Juntas',
+        mAndA: 'Diligencia Debida M&A',
+        crisis: 'Liderazgo en Crisis',
+        vCISO: 'CISO Virtual'
+      },
+      resources: {
+        title: 'Recursos',
+        steel: 'Metodología STEEL™',
+        riskRadar: 'Herramienta de Radar de Riesgo',
+        dashboard: 'Panel Ejecutivo',
+        presentation: 'Presentación para Juntas'
+      },
+      contact: {
+        title: 'Contacto',
+        emailLabel: 'Correo:',
+        phoneLabel: 'Teléfono:',
+        headquartersLabel: 'Sede:'
+      },
+      policy: {
+        privacy: 'Política de Privacidad',
+        terms: 'Términos de Servicio',
+        cookie: 'Política de Cookies'
       }
     }
   },
@@ -900,33 +1018,6 @@ export const translations = {
       demo: 'Données de Démo',
       tagline: 'Vision Stratégique pour la Résilience',
       copyright: '© 2025 ERMITS Advisory + STEEL™. Tous droits réservés.'
-    },
-    footer: {
-      services: {
-        title: 'Services',
-        boardBriefings: 'Briefings pour Conseils',
-        mAndA: 'Due Diligence M&A',
-        crisis: 'Leadership de Crise',
-        vCISO: 'CISO Virtuel'
-      },
-      resources: {
-        title: 'Ressources',
-        steel: 'Méthodologie STEEL™',
-        riskRadar: 'Outil Radar de Risque',
-        dashboard: 'Tableau de Bord Exécutif',
-        presentation: 'Présentation au Conseil'
-      },
-      contact: {
-        title: 'Contact',
-        emailLabel: 'Email:',
-        phoneLabel: 'Téléphone:',
-        headquartersLabel: 'Siège social:'
-      },
-      policy: {
-        privacy: 'Politique de Confidentialité',
-        terms: 'Conditions d\'Utilisation',
-        cookie: 'Politique de Cookies'
-      }
     },
     landing: {
       hero: {
@@ -1033,50 +1124,45 @@ export const translations = {
       },
       actions: {
         title: 'Actions Stratégiques',
+        priority: 'Priorité',
         action: 'Action',
         impact: 'Impact',
         status: 'Statut',
         details: 'Détails',
-        priorities: {
-          critical: 'Critique',
-          high: 'Élevé',
-          medium: 'Moyen',
-          low: 'Faible'
-        },
-        statuses: {
-          notStarted: 'Non Démarré',
-          inProgress: 'En Cours',
-          completed: 'Terminé'
-        },
         items: [
           {
-            action: 'Mettre en œuvre l\'authentification multi-facteurs sur tous les systèmes',
-            impact: 'Réduit le risque de compromission de compte de 99%',
+            id: '1',
             priority: 'Critique',
+            action: 'Mettre en œuvre l\'authentification multifacteur sur tous les systèmes',
+            impact: 'Réduit le risque de compromission de compte de 99%',
             status: 'En Cours'
           },
           {
-            action: 'Mettre à jour le plan de réponse aux incidents pour les scénarios de rançongiciel',
-            impact: 'Réduit le temps d\'arrêt potentiel de 72%',
+            id: '2',
             priority: 'Élevé',
+            action: 'Mettre à jour le plan de réponse aux incidents pour les scénarios de ransomware',
+            impact: 'Réduit le temps d\'arrêt potentiel de 72%',
             status: 'Terminé'
           },
           {
-            action: 'Réaliser un exercice de simulation pour les dirigeants',
-            impact: 'Améliore la prise de décision des dirigeants pendant les incidents',
+            id: '3',
             priority: 'Moyen',
+            action: 'Mener un exercice de simulation pour les dirigeants',
+            impact: 'Améliore la prise de décision des dirigeants pendant les incidents',
             status: 'Non Démarré'
           },
           {
-            action: 'Réviser et mettre à jour les exigences de sécurité des tiers',
-            impact: 'Réduit l\'exposition aux risques de la chaîne d\'approvisionnement',
+            id: '4',
             priority: 'Élevé',
+            action: 'Revoir et mettre à jour les exigences de sécurité des tiers',
+            impact: 'Réduit l\'exposition aux risques de la chaîne d\'approvisionnement',
             status: 'En Cours'
           },
           {
-            action: 'Mettre en œuvre des contrôles de sécurité email améliorés',
-            impact: 'Réduit les tentatives de phishing réussies de 85%',
+            id: '5',
             priority: 'Moyen',
+            action: 'Mettre en œuvre des contrôles de sécurité de messagerie améliorés',
+            impact: 'Réduit les tentatives de phishing réussies de 85%',
             status: 'Non Démarré'
           }
         ]
@@ -1124,7 +1210,7 @@ export const translations = {
         downloadGuide: 'Télécharger le Guide d\'Intégration'
       },
       cta: {
-        title: 'Prêt à Mettre en Œuvre STEEL™?',
+        title: 'Prêt à mettre en œuvre STEEL™?',
         description: 'Notre équipe de conseillers peut vous aider à mettre en œuvre la méthodologie STEEL™ dans votre organisation.',
         scheduleConsultation: 'Planifier une Consultation',
         requestCaseStudy: 'Demander une Étude de Cas'
@@ -1145,53 +1231,48 @@ export const translations = {
       },
       recommendations: {
         title: 'Recommandations',
+        priority: 'Priorité',
         action: 'Action',
         impact: 'Impact',
         effort: 'Effort',
-        generateReport: 'Générer un Rapport',
-        quickWin: 'Victoire rapide',
-        immediateAction: 'Action immédiate recommandée',
         impactLabel: 'Impact',
-        priorities: {
-          critical: 'Critique',
-          high: 'Élevé',
-          medium: 'Moyen',
-          low: 'Faible'
-        },
-        efforts: {
-          low: 'Effort Faible',
-          medium: 'Effort Moyen',
-          high: 'Effort Élevé'
-        },
+        immediateAction: 'Action immédiate recommandée',
+        quickWin: 'Victoire rapide',
+        generateReport: 'Générer un Rapport',
         items: [
           {
+            id: '1',
+            priority: 'Critique',
             action: 'Mettre en œuvre une protection des données améliorée pour les informations sensibles des clients',
             impact: 'Réduit le risque de violation de données de 78%',
-            priority: 'Critique',
             effort: 'Moyen'
           },
           {
+            id: '2',
+            priority: 'Élevé',
             action: 'Établir un programme de gestion des risques tiers',
             impact: 'Améliore la visibilité des risques de la chaîne d\'approvisionnement',
-            priority: 'Élevé',
             effort: 'Élevé'
           },
           {
-            action: 'Mettre à jour la formation de sensibilisation à la sécurité avec des scénarios spécifiques à l\'industrie',
-            impact: 'Réduit les tentatives réussies d\'ingénierie sociale de 62%',
+            id: '3',
             priority: 'Moyen',
+            action: 'Mettre à jour la formation de sensibilisation à la sécurité avec des scénarios spécifiques à l\'industrie',
+            impact: 'Réduit les tentatives d\'ingénierie sociale réussies de 62%',
             effort: 'Faible'
           },
           {
-            action: 'Mettre en œuvre l\'automatisation de la surveillance de la conformité',
-            impact: 'Réduit l\'effort manuel et améliore la précision',
+            id: '4',
             priority: 'Élevé',
+            action: 'Mettre en œuvre l\'automatisation de la surveillance de conformité',
+            impact: 'Réduit l\'effort manuel et améliore la précision',
             effort: 'Moyen'
           },
           {
-            action: 'Améliorer la segmentation du réseau pour isoler les systèmes critiques',
-            impact: 'Limite le mouvement latéral lors d\'une compromission',
+            id: '5',
             priority: 'Critique',
+            action: 'Améliorer la segmentation du réseau pour isoler les systèmes critiques',
+            impact: 'Limite le mouvement latéral pendant la compromission',
             effort: 'Élevé'
           }
         ]
@@ -1200,7 +1281,7 @@ export const translations = {
     services: {
       title: 'Offres de Services',
       subtitle: 'Conseils d\'experts pour la direction',
-      keyFeatures: 'Fonctionnalités Clés',
+      keyFeatures: 'Caractéristiques Clés',
       boardBriefings: {
         title: 'Briefings pour Conseils',
         description: 'Briefings de cybersécurité clairs, concis et exploitables conçus spécifiquement pour les membres du conseil et la direction.',
@@ -1247,8 +1328,8 @@ export const translations = {
       },
       steelFramework: {
         title: 'La Méthodologie STEEL™',
-        description1: 'Nos services sont basés sur la méthodologie STEEL™, qui fournit une vision holistique du risque cyber à travers six dimensions clés: Politique, Économique, Sociale, Technologique, Environnementale et Juridique.',
-        description2: 'Cette approche globale garantit que tous les aspects du risque sont pris en compte, permettant des stratégies de gestion des risques plus efficaces et une meilleure prise de décision.',
+        description1: 'Nos services sont basés sur la méthodologie STEEL™, qui fournit une vision holistique du risque cyber à travers six dimensions clés : Politique, Économique, Sociale, Technologique, Environnementale et Juridique.',
+        description2: 'Cette approche complète garantit que tous les aspects du risque sont pris en compte, permettant des stratégies de gestion des risques plus efficaces et une meilleure prise de décision.',
         exploreButton: 'Explorer la Méthodologie STEEL™'
       },
       process: {
@@ -1262,8 +1343,8 @@ export const translations = {
       contact: {
         title: 'Informations de Contact',
         email: 'advisory@ermits.com',
-        phone: '+1 (888) 618-6160',
-        headquarters: 'Gaithersburg, MD',
+        phone: '+1 (555) 123-4567',
+        headquarters: 'New York, NY',
         requestConsultation: 'Demander une Consultation'
       }
     },
@@ -1276,12 +1357,12 @@ export const translations = {
         fullscreen: 'Plein Écran'
       },
       download: 'Télécharger la Présentation',
-      keyboardShortcuts: 'Raccourcis clavier: Flèches pour naviguer, \'F\' pour le plein écran, \'Échap\' pour quitter le plein écran',
+      keyboardShortcuts: 'Raccourcis clavier : Flèches pour naviguer, \'F\' pour plein écran, \'Échap\' pour quitter le plein écran',
       slides: {
         slide1: {
           title: 'Briefing Exécutif de Cybersécurité',
           subtitle: 'Analyse stratégique et recommandations',
-          content: 'Aperçu complet de la posture de cybersécurité de l\'organisation avec des insights de niveau exécutif.'
+          content: 'Aperçu complet de la posture de cybersécurité de l\'organisation avec des informations de niveau exécutif.'
         },
         slide2: {
           title: 'Paysage de Risque Actuel',
@@ -1291,7 +1372,7 @@ export const translations = {
         slide3: {
           title: 'Évaluation des Risques STEEL™',
           subtitle: 'Vue holistique du risque organisationnel',
-          content: 'Évaluation détaillée du risque à travers les six dimensions STEEL avec des benchmarks comparatifs de l\'industrie.'
+          content: 'Évaluation détaillée du risque à travers les six dimensions STEEL avec des comparaisons de référence de l\'industrie.'
         },
         slide4: {
           title: 'Vulnérabilités Stratégiques',
@@ -1301,18 +1382,114 @@ export const translations = {
         slide5: {
           title: 'Actions Recommandées',
           subtitle: 'Initiatives prioritaires pour la réduction des risques',
-          content: 'Recommandations priorisées pour traiter les risques identifiés avec les résultats attendus.'
+          content: 'Recommandations hiérarchisées pour traiter les risques identifiés avec les résultats attendus.'
         },
         slide6: {
           title: 'Considérations d\'Investissement',
           subtitle: 'Allocation de ressources pour un impact maximal',
-          content: 'Analyse des options d\'investissement avec des calculs de retour sur investissement en sécurité attendus.'
+          content: 'Analyse des options d\'investissement avec calculs de retour sur investissement en sécurité attendus.'
         },
         slide7: {
           title: 'Prochaines Étapes et Calendrier',
           subtitle: 'Feuille de route de mise en œuvre',
-          content: 'Feuille de route de mise en œuvre proposée avec des jalons clés et des exigences de ressources.'
+          content: 'Feuille de route de mise en œuvre proposée avec jalons clés et besoins en ressources.'
         }
+      }
+    },
+    contact: {
+      title: 'Contactez-Nous',
+      subtitle: 'Entrez en contact avec notre équipe de conseillers pour discuter des besoins de votre organisation',
+      form: {
+        title: 'Envoyez-nous un message',
+        nameLabel: 'Nom Complet',
+        namePlaceholder: 'Entrez votre nom complet',
+        emailLabel: 'Adresse Email',
+        emailPlaceholder: 'Entrez votre adresse email',
+        companyLabel: 'Entreprise',
+        companyPlaceholder: 'Entrez le nom de votre entreprise',
+        phoneLabel: 'Numéro de Téléphone',
+        phonePlaceholder: 'Entrez votre numéro de téléphone (optionnel)',
+        messageLabel: 'Message',
+        messagePlaceholder: 'Comment pouvons-nous vous aider?',
+        submitButton: 'Envoyer le Message',
+        requiredFields: 'Champs obligatoires',
+        errors: {
+          nameRequired: 'Veuillez entrer votre nom',
+          emailRequired: 'Veuillez entrer votre adresse email',
+          emailInvalid: 'Veuillez entrer une adresse email valide',
+          companyRequired: 'Veuillez entrer le nom de votre entreprise',
+          messageRequired: 'Veuillez entrer votre message',
+          messageTooShort: 'Le message doit comporter au moins 10 caractères',
+          phoneInvalid: 'Veuillez entrer un numéro de téléphone valide'
+        },
+        successTitle: 'Message envoyé avec succès',
+        successMessage: 'Merci de nous avoir contactés. Notre équipe vous répondra dans les 24 heures.',
+        errorTitle: 'Erreur lors de l\'envoi du message',
+        errorMessage: 'Un problème est survenu lors de l\'envoi de votre message. Veuillez réessayer ou nous contacter directement.'
+      },
+      info: {
+        title: 'Informations de Contact',
+        emailTitle: 'Email',
+        emailDescription: 'Pour les demandes générales et informations:',
+        phoneTitle: 'Téléphone',
+        phoneDescription: 'Pour une assistance immédiate:',
+        addressTitle: 'Adresse',
+        addressDescription: 'Notre siège:',
+        hoursTitle: 'Heures d\'Ouverture',
+        weekdays: 'Lundi - Vendredi',
+        weekends: 'Samedi - Dimanche',
+        closed: 'Fermé'
+      },
+      map: {
+        title: 'Notre Emplacement',
+        placeholder: 'La carte sera affichée ici',
+        apiNote: 'L\'API Google Maps sera intégrée en production'
+      },
+      faq: {
+        title: 'Questions Fréquemment Posées',
+        response: {
+          title: 'Dans quel délai recevrai-je une réponse?',
+          content: 'Nous répondons généralement à toutes les demandes dans un délai de 24 heures ouvrables. Pour les questions urgentes, nous vous recommandons d\'appeler directement notre bureau.'
+        },
+        international: {
+          title: 'Travaillez-vous avec des clients internationaux?',
+          content: 'Oui, nous travaillons avec des organisations du monde entier. Notre équipe a de l\'expérience dans la navigation des cadres réglementaires mondiaux et des normes de sécurité internationales.'
+        },
+        confidentiality: {
+          title: 'Comment la confidentialité est-elle gérée?',
+          content: 'Toutes les communications sont traitées avec une stricte confidentialité. Nous pouvons signer des accords de confidentialité avant les discussions initiales si nécessaire pour des questions sensibles.'
+        },
+        preparation: {
+          title: 'Que dois-je préparer pour notre première réunion?',
+          content: 'Pour rendre notre consultation initiale productive, considérez vos principales préoccupations de sécurité, tout incident récent et les priorités stratégiques de votre organisation.'
+        }
+      }
+    },
+    footer: {
+      services: {
+        title: 'Services',
+        boardBriefings: 'Briefings pour Conseils',
+        mAndA: 'Due Diligence M&A',
+        crisis: 'Leadership de Crise',
+        vCISO: 'CISO Virtuel'
+      },
+      resources: {
+        title: 'Ressources',
+        steel: 'Méthodologie STEEL™',
+        riskRadar: 'Outil Radar de Risque',
+        dashboard: 'Tableau de Bord Exécutif',
+        presentation: 'Présentation au Conseil'
+      },
+      contact: {
+        title: 'Contact',
+        emailLabel: 'Email:',
+        phoneLabel: 'Téléphone:',
+        headquartersLabel: 'Siège:'
+      },
+      policy: {
+        privacy: 'Politique de Confidentialité',
+        terms: 'Conditions d\'Utilisation',
+        cookie: 'Politique de Cookies'
       }
     }
   }

@@ -10,6 +10,7 @@ import { STEELVisualization } from './pages/STEELVisualization';
 import { RiskRadar } from './pages/RiskRadar';
 import { ServiceOffering } from './pages/ServiceOffering';
 import { BoardPresentation } from './pages/BoardPresentation';
+import { ContactPage } from './pages/ContactPage';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
                 <Route path="/risk-radar" element={<RiskRadar />} />
                 <Route path="/services" element={<ServiceOffering />} />
                 <Route path="/presentation" element={<BoardPresentation />} />
+                <Route path="/contact" element={<ContactPage />} />
               </Routes>
             </main>
             
