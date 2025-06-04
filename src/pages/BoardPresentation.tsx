@@ -8,6 +8,15 @@ import {
   TrendingUp, Target, FileText, Clock, DollarSign
 } from 'lucide-react';
 
+// Import slide images
+import slide1 from '../assets/slides/slide1.jpg';
+import slide2 from '../assets/slides/slide2.jpg';
+import slide3 from '../assets/slides/slide3.jpg';
+import slide4 from '../assets/slides/slide4.jpg';
+import slide5 from '../assets/slides/slide5.jpg';
+import slide6 from '../assets/slides/slide6.jpg';
+import slide7 from '../assets/slides/slide7.jpg';
+
 export const BoardPresentation: React.FC = () => {
   const { t } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -18,13 +27,13 @@ export const BoardPresentation: React.FC = () => {
 
   // Background images for each slide
   const slideBackgrounds = [
-    'https://images.pexels.com/photos/5466780/pexels-photo-5466780.jpeg?auto=compress&cs=tinysrgb&w=1600', // Executive briefing - modern office/meeting room
-    'https://images.pexels.com/photos/12303090/pexels-photo-12303090.jpeg?auto=compress&cs=tinysrgb&w=1600', // Risk landscape - cyber security concept
-    'https://images.pexels.com/photos/6229187/pexels-photo-6229187.jpeg?auto=compress&cs=tinysrgb&w=1600', // STEEL assessment - data visualization
-    'https://images.pexels.com/photos/1181345/pexels-photo-1181345.jpeg?auto=compress&cs=tinysrgb&w=1600', // Strategic vulnerabilities - security concept
-    'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1600', // Recommended actions - team planning
-    'https://images.pexels.com/photos/5673488/pexels-photo-5673488.jpeg?auto=compress&cs=tinysrgb&w=1600', // Investment considerations - finance concept
-    'https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1600', // Next steps - roadmap/planning
+    slide1, // Executive briefing - modern office/meeting room
+    slide2, // Risk landscape - cyber security concept
+    slide3, // STEEL assessment - data visualization
+    slide4, // Strategic vulnerabilities - security concept
+    slide5, // Recommended actions - team planning
+    slide6, // Investment considerations - finance concept
+    slide7, // Next steps - roadmap/planning
   ];
 
   // Handle keyboard navigation
