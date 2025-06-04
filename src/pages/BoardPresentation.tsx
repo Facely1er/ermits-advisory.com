@@ -15,6 +15,17 @@ export const BoardPresentation: React.FC = () => {
   // Get the total number of slides from translations
   const totalSlides = 7; // There are 7 slides in total as per the translations
 
+  // Background images for each slide
+  const slideBackgrounds = [
+    'https://images.pexels.com/photos/5466780/pexels-photo-5466780.jpeg?auto=compress&cs=tinysrgb&w=1600', // Executive briefing - modern office/meeting room
+    'https://images.pexels.com/photos/12303090/pexels-photo-12303090.jpeg?auto=compress&cs=tinysrgb&w=1600', // Risk landscape - cyber security concept
+    'https://images.pexels.com/photos/6229187/pexels-photo-6229187.jpeg?auto=compress&cs=tinysrgb&w=1600', // STEEL assessment - data visualization
+    'https://images.pexels.com/photos/1181345/pexels-photo-1181345.jpeg?auto=compress&cs=tinysrgb&w=1600', // Strategic vulnerabilities - security concept
+    'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1600', // Recommended actions - team planning
+    'https://images.pexels.com/photos/5673488/pexels-photo-5673488.jpeg?auto=compress&cs=tinysrgb&w=1600', // Investment considerations - finance concept
+    'https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1600', // Next steps - roadmap/planning
+  ];
+
   // Handle keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -59,18 +70,14 @@ export const BoardPresentation: React.FC = () => {
     }
   };
 
-  // Function to generate slide background
+  // Function to generate slide background style
   const getSlideBackground = (index: number) => {
-    const colors = [
-      'bg-gradient-to-br from-navy to-navy-dark',
-      'bg-gradient-to-br from-navy-dark to-navy',
-      'bg-gradient-to-br from-navy to-navy-dark',
-      'bg-gradient-to-br from-navy-dark to-navy',
-      'bg-gradient-to-br from-navy to-navy-dark',
-      'bg-gradient-to-br from-navy-dark to-navy',
-      'bg-gradient-to-br from-navy to-navy-dark',
-    ];
-    return colors[index % colors.length];
+    return {
+      backgroundImage: `url(${slideBackgrounds[index]})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat'
+    };
   };
 
   return (
@@ -95,9 +102,13 @@ export const BoardPresentation: React.FC = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.3 }}
-              className={`w-full h-full rounded-lg overflow-hidden shadow-xl presentation-slide ${getSlideBackground(currentSlide)}`}
+              className="w-full h-full rounded-lg overflow-hidden shadow-xl presentation-slide"
+              style={getSlideBackground(currentSlide)}
             >
-              <div className="h-full flex flex-col text-white p-8 md:p-12">
+              {/* Dark overlay for better text readability */}
+              <div className="absolute inset-0 bg-black opacity-70"></div>
+              
+              <div className="relative h-full flex flex-col text-white p-8 md:p-12">
                 <div className="flex-grow flex flex-col justify-center max-w-3xl mx-auto text-center">
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
                     {t(`presentation.slides.slide${currentSlide + 1}.title`)}
