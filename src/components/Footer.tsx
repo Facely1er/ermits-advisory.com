@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
                 <span className="text-xs tracking-wider">+ STEEL™</span>
               </span>
             </Link>
-            <p className="mt-4 text-silver">Global Intelligence. Resilient Strategy. Streamlined for Success.</p>
+            <p className="mt-4 text-silver whitespace-normal">Global Intelligence. Resilient Strategy. Streamlined for Success.</p>
           </div>
           
           <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-8">
