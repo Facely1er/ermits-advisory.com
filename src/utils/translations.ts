@@ -1,7 +1,7 @@
 export const translations = {
   en: {
     common: {
-      tagline: "Strategic Insight for Resilience",
+      tagline: "Global Intelligence. Resilient Strategy. Streamlined for Success.",
       copyright: "© 2025 ERMITS LLC. All rights reserved.",
       learnMore: "Learn More",
       viewDashboard: "View Dashboard",
@@ -625,7 +625,7 @@ export const translations = {
   },
   es: {
     common: {
-      tagline: "Visión Estratégica para la Resiliencia",
+      tagline: "Inteligencia global. Estrategia resiliente. Optimizado para el éxito.",
       copyright: "© 2025 ERMITS LLC. Todos los derechos reservados.",
       learnMore: "Saber más",
       viewDashboard: "Ver Dashboard",
@@ -1249,7 +1249,7 @@ export const translations = {
   },
   fr: {
     common: {
-      tagline: "Vision Stratégique pour la Résilience",
+      tagline: "Intelligence globale. Stratégie résiliente. Optimisé pour la réussite.",
       copyright: "© 2025 ERMITS LLC. Tous droits réservés.",
       learnMore: "En Savoir Plus",
       viewDashboard: "Voir le Tableau de Bord",
