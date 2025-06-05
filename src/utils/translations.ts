@@ -519,7 +519,7 @@ export const translations: Translations = {
         },
         preparation: {
           title: 'How should I prepare for an initial consultation?',
-          content: 'It's helpful to have a general understanding of your current security posture and specific challenges you'd like to address. Our team will guide you through the rest of the process.'
+          content: 'It\'s helpful to have a general understanding of your current security posture and specific challenges you'd like to address. Our team will guide you through the rest of the process.'
         }
       }
     },
