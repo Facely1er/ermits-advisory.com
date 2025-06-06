@@ -850,9 +850,6 @@ export const translations = {
         description: "With team members and partners around the world, we provide local expertise with global perspective.",
         offices: {
           us: "United States - Headquarters in Gaithersburg, MD",
-          uk: "United Kingdom - London office for European clients",
-          sg: "Singapore - Asia-Pacific regional hub",
-          au: "Australia - Sydney office for Australian and New Zealand markets"
         },
         contact: "Contact Global Team",
         mapPlaceholder: "Interactive world map showing our global presence"
