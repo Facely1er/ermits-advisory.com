@@ -90,6 +90,12 @@ export const Footer: React.FC = () => {
                     {t('footer.resources.about')}
                   </Link>
                 </li>
+                <li>
+                  <Link to="/team" className="text-silver hover:text-white transition-colors flex items-center">
+                    <Users size={16} className="mr-2" />
+                    Our Team
+                  </Link>
+                </li>
               </ul>
             </div>
             
@@ -118,18 +124,18 @@ export const Footer: React.FC = () => {
             {t('common.copyright')}
           </p>
           <div className="flex space-x-6">
-            <a href="#" className="text-silver hover:text-white transition-colors flex items-center">
+            <Link to="/privacy" className="text-silver hover:text-white transition-colors flex items-center">
               <Lock size={14} className="mr-1.5" />
               {t('footer.policy.privacy')}
-            </a>
-            <a href="#" className="text-silver hover:text-white transition-colors flex items-center">
+            </Link>
+            <Link to="/terms" className="text-silver hover:text-white transition-colors flex items-center">
               <FileText size={14} className="mr-1.5" />
               {t('footer.policy.terms')}
-            </a>
-            <a href="#" className="text-silver hover:text-white transition-colors flex items-center">
+            </Link>
+            <Link to="/cookies" className="text-silver hover:text-white transition-colors flex items-center">
               <Cookie size={14} className="mr-1.5" />
               {t('footer.policy.cookie')}
-            </a>
+            </Link>
           </div>
         </div>
       </div>
