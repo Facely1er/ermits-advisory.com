@@ -298,20 +298,7 @@ export const AboutPage: React.FC = () => {
                     <div className="p-1 rounded-full bg-navy/10 dark:bg-silver/10 mr-3 mt-1">
                       <Globe size={16} className="text-navy dark:text-silver" />
                     </div>
-                    <span className="text-gray-600 dark:text-gray-200">{t('about.global.offices.uk')}</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="p-1 rounded-full bg-navy/10 dark:bg-silver/10 mr-3 mt-1">
-                      <Globe size={16} className="text-navy dark:text-silver" />
-                    </div>
-                    <span className="text-gray-600 dark:text-gray-200">{t('about.global.offices.sg')}</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="p-1 rounded-full bg-navy/10 dark:bg-silver/10 mr-3 mt-1">
-                      <Globe size={16} className="text-navy dark:text-silver" />
-                    </div>
-                    <span className="text-gray-600 dark:text-gray-200">{t('about.global.offices.au')}</span>
-                  </li>
+                   </li>
                 </ul>
                 <Button
                   variant="outline"
