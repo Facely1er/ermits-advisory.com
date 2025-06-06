@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import logoImg from '../assets/LOGO-ERMITS-ADVISORY.png';
 import { 
-  Presentation, Search, Shield, UserCheck, 
-  BarChart2, RadarIcon, LayoutDashboard, 
-  Mail, Phone, MapPin, Lock, FileText, Cookie, Users, BookOpen
+  Mail, Phone, MapPin, Shield, BarChart2, Users, FileText
 } from 'lucide-react';
 
 export const Footer: React.FC = () => {
@@ -14,80 +12,76 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-navy dark:bg-black text-white">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Company Info */}
           <div className="md:col-span-1">
-            <Link to="/" className="flex items-center">
+            <Link to="/" className="flex items-center mb-4">
               <img src={logoImg} alt="ERMITS Advisory + STEEL" className="h-10" />
               <span className="ml-2 font-outfit font-semibold text-white">
                 <span className="block text-sm">ERMITS Advisory</span>
                 <span className="text-xs tracking-wider">+ STEEL™</span>
               </span>
             </Link>
-            <p className="mt-4 text-silver whitespace-normal">{t('common.tagline')}</p>
+            <p className="text-silver mb-6 leading-relaxed">{t('common.tagline')}</p>
+            
+            {/* Contact Info */}
+            <div className="space-y-3">
+              <div className="flex items-center text-silver">
+                <Mail size={16} className="mr-3 flex-shrink-0" />
+                <a href="mailto:advisory@ermits.com" className="hover:text-white transition-colors">
+                  advisory@ermits.com
+                </a>
+              </div>
+              <div className="flex items-center text-silver">
+                <Phone size={16} className="mr-3 flex-shrink-0" />
+                <span>+1 (888) 618-6160</span>
+              </div>
+              <div className="flex items-center text-silver">
+                <MapPin size={16} className="mr-3 flex-shrink-0" />
+                <span>Gaithersburg, MD, USA</span>
+              </div>
+            </div>
           </div>
           
-          <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-8">
+          {/* Quick Links */}
+          <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-lg font-semibold mb-4">{t('footer.services.title')}</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link to="/services" className="text-silver hover:text-white transition-colors flex items-center">
-                    <Presentation size={16} className="mr-2" />
-                    {t('footer.services.boardBriefings')}
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/services" className="text-silver hover:text-white transition-colors flex items-center">
-                    <Search size={16} className="mr-2" />
-                    {t('footer.services.mAndA')}
-                  </Link>
-                </li>
+              <h3 className="text-lg font-semibold mb-4">Services & Solutions</h3>
+              <ul className="space-y-3">
                 <li>
                   <Link to="/services" className="text-silver hover:text-white transition-colors flex items-center">
                     <Shield size={16} className="mr-2" />
-                    {t('footer.services.crisis')}
+                    Advisory Services
                   </Link>
                 </li>
                 <li>
-                  <Link to="/services" className="text-silver hover:text-white transition-colors flex items-center">
-                    <UserCheck size={16} className="mr-2" />
-                    {t('footer.services.vCISO')}
+                  <Link to="/steel" className="text-silver hover:text-white transition-colors flex items-center">
+                    <BarChart2 size={16} className="mr-2" />
+                    STEEL™ Framework
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/dashboard" className="text-silver hover:text-white transition-colors flex items-center">
+                    <BarChart2 size={16} className="mr-2" />
+                    Risk Dashboard
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/resources" className="text-silver hover:text-white transition-colors flex items-center">
+                    <FileText size={16} className="mr-2" />
+                    Resources
                   </Link>
                 </li>
               </ul>
             </div>
             
             <div>
-              <h3 className="text-lg font-semibold mb-4">{t('footer.resources.title')}</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link to="/steel" className="text-silver hover:text-white transition-colors flex items-center">
-                    <Shield size={16} className="mr-2" />
-                    {t('footer.resources.steel')}
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/risk-radar" className="text-silver hover:text-white transition-colors flex items-center">
-                    <RadarIcon size={16} className="mr-2" />
-                    {t('footer.resources.riskRadar')}
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/dashboard" className="text-silver hover:text-white transition-colors flex items-center">
-                    <LayoutDashboard size={16} className="mr-2" />
-                    {t('footer.resources.dashboard')}
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/resources" className="text-silver hover:text-white transition-colors flex items-center">
-                    <BookOpen size={16} className="mr-2" />
-                    {t('footer.resources.library')}
-                  </Link>
-                </li>
+              <h3 className="text-lg font-semibold mb-4">Company</h3>
+              <ul className="space-y-3">
                 <li>
                   <Link to="/about" className="text-silver hover:text-white transition-colors flex items-center">
                     <Users size={16} className="mr-2" />
-                    {t('footer.resources.about')}
+                    About Us
                   </Link>
                 </li>
                 <li>
@@ -96,23 +90,11 @@ export const Footer: React.FC = () => {
                     Our Team
                   </Link>
                 </li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-semibold mb-4">{t('footer.contact.title')}</h3>
-              <ul className="space-y-2">
-                <li className="text-silver flex items-center">
-                  <Mail size={16} className="mr-2" />
-                  {t('footer.contact.emailLabel')} <a href="mailto:advisory@ermits.com" className="ml-1 hover:text-white transition-colors">{t('services.contact.email')}</a>
-                </li>
-                <li className="text-silver flex items-center">
-                  <Phone size={16} className="mr-2" />
-                  {t('footer.contact.phoneLabel')} {t('services.contact.phone')}
-                </li>
-                <li className="text-silver flex items-center">
-                  <MapPin size={16} className="mr-2" />
-                  {t('footer.contact.headquartersLabel')} {t('services.contact.headquarters')}
+                <li>
+                  <Link to="/contact" className="text-silver hover:text-white transition-colors flex items-center">
+                    <Mail size={16} className="mr-2" />
+                    Contact
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -123,18 +105,15 @@ export const Footer: React.FC = () => {
           <p className="text-sm text-silver mb-4 md:mb-0">
             {t('common.copyright')}
           </p>
-          <div className="flex space-x-6">
-            <Link to="/privacy" className="text-silver hover:text-white transition-colors flex items-center">
-              <Lock size={14} className="mr-1.5" />
-              {t('footer.policy.privacy')}
+          <div className="flex space-x-6 text-sm">
+            <Link to="/privacy" className="text-silver hover:text-white transition-colors">
+              Privacy Policy
             </Link>
-            <Link to="/terms" className="text-silver hover:text-white transition-colors flex items-center">
-              <FileText size={14} className="mr-1.5" />
-              {t('footer.policy.terms')}
+            <Link to="/terms" className="text-silver hover:text-white transition-colors">
+              Terms of Service
             </Link>
-            <Link to="/cookies" className="text-silver hover:text-white transition-colors flex items-center">
-              <Cookie size={14} className="mr-1.5" />
-              {t('footer.policy.cookie')}
+            <Link to="/cookies" className="text-silver hover:text-white transition-colors">
+              Cookie Policy
             </Link>
           </div>
         </div>
