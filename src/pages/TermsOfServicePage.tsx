@@ -73,7 +73,7 @@ export const TermsOfServicePage: React.FC = () => {
         >
           <Link to="/" className="inline-flex items-center text-navy dark:text-silver hover:underline mb-4">
             <ArrowLeft size={16} className="mr-2" />
-            Back to Home
+            {t('terms.backToHome')}
           </Link>
           <h1 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">Terms of Service</h1>
           <p className="text-gray-600 dark:text-gray-200 mb-4">

@@ -100,7 +100,7 @@ export const CookiePolicyPage: React.FC = () => {
         >
           <Link to="/" className="inline-flex items-center text-navy dark:text-silver hover:underline mb-4">
             <ArrowLeft size={16} className="mr-2" />
-            Back to Home
+            {t('cookies.backToHome')}
           </Link>
           <h1 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">Cookie Policy</h1>
           <p className="text-gray-600 dark:text-gray-200 mb-4">
@@ -181,7 +181,7 @@ export const CookiePolicyPage: React.FC = () => {
                       {type.required ? (
                         <div className="flex items-center">
                           <CheckCircle size={20} className="text-green-500" />
-                          <span className="text-xs text-green-600 dark:text-green-400 ml-1">Required</span>
+                          <span className="text-xs text-green-600 dark:text-green-400 ml-1">{t('cookies.preferences.required')}</span>
                         </div>
                       ) : (
                         <label className="relative inline-flex items-center cursor-pointer">

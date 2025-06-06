@@ -986,7 +986,11 @@ export const translations = {
         phoneTitle: "Call Us",
         phoneDescription: "Speak directly with our advisory team",
         addressTitle: "Visit Us",
-        addressDescription: "Our headquarters in Maryland, USA"
+        addressDescription: "Our headquarters in Maryland, USA",
+        hoursTitle: "Business Hours",
+        weekdays: "Monday - Friday",
+        weekends: "Saturday - Sunday",
+        closed: "Closed"
       },
       map: {
         title: "Our Location",
