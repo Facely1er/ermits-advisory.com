@@ -85,12 +85,6 @@ export const Footer: React.FC = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/team" className="text-silver hover:text-white transition-colors flex items-center">
-                    <Users size={16} className="mr-2" />
-                    {t('footer.company.team')}
-                  </Link>
-                </li>
-                <li>
                   <Link to="/contact" className="text-silver hover:text-white transition-colors flex items-center">
                     <Mail size={16} className="mr-2" />
                     {t('footer.company.contact')}
