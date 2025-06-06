@@ -46,54 +46,54 @@ export const Footer: React.FC = () => {
           {/* Quick Links */}
           <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-lg font-semibold mb-4">Services & Solutions</h3>
+              <h3 className="text-lg font-semibold mb-4">{t('footer.services.title')}</h3>
               <ul className="space-y-3">
                 <li>
                   <Link to="/services" className="text-silver hover:text-white transition-colors flex items-center">
                     <Shield size={16} className="mr-2" />
-                    Advisory Services
+                    {t('footer.services.advisory')}
                   </Link>
                 </li>
                 <li>
                   <Link to="/steel" className="text-silver hover:text-white transition-colors flex items-center">
                     <BarChart2 size={16} className="mr-2" />
-                    STEEL™ Framework
+                    {t('footer.services.steel')}
                   </Link>
                 </li>
                 <li>
                   <Link to="/dashboard" className="text-silver hover:text-white transition-colors flex items-center">
                     <BarChart2 size={16} className="mr-2" />
-                    Risk Dashboard
+                    {t('footer.services.dashboard')}
                   </Link>
                 </li>
                 <li>
                   <Link to="/resources" className="text-silver hover:text-white transition-colors flex items-center">
                     <FileText size={16} className="mr-2" />
-                    Resources
+                    {t('footer.services.resources')}
                   </Link>
                 </li>
               </ul>
             </div>
             
             <div>
-              <h3 className="text-lg font-semibold mb-4">Company</h3>
+              <h3 className="text-lg font-semibold mb-4">{t('footer.company.title')}</h3>
               <ul className="space-y-3">
                 <li>
                   <Link to="/about" className="text-silver hover:text-white transition-colors flex items-center">
                     <Users size={16} className="mr-2" />
-                    About Us
+                    {t('footer.company.about')}
                   </Link>
                 </li>
                 <li>
                   <Link to="/team" className="text-silver hover:text-white transition-colors flex items-center">
                     <Users size={16} className="mr-2" />
-                    Our Team
+                    {t('footer.company.team')}
                   </Link>
                 </li>
                 <li>
                   <Link to="/contact" className="text-silver hover:text-white transition-colors flex items-center">
                     <Mail size={16} className="mr-2" />
-                    Contact
+                    {t('footer.company.contact')}
                   </Link>
                 </li>
               </ul>
@@ -107,13 +107,13 @@ export const Footer: React.FC = () => {
           </p>
           <div className="flex space-x-6 text-sm">
             <Link to="/privacy" className="text-silver hover:text-white transition-colors">
-              Privacy Policy
+              {t('footer.legal.privacy')}
             </Link>
             <Link to="/terms" className="text-silver hover:text-white transition-colors">
-              Terms of Service
+              {t('footer.legal.terms')}
             </Link>
             <Link to="/cookies" className="text-silver hover:text-white transition-colors">
-              Cookie Policy
+              {t('footer.legal.cookies')}
             </Link>
           </div>
         </div>
