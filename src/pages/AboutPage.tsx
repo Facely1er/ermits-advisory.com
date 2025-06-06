@@ -296,7 +296,6 @@ export const AboutPage: React.FC = () => {
                   </li>
                   <li className="flex items-start">
                     <div className="p-1 rounded-full bg-navy/10 dark:bg-silver/10 mr-3 mt-1">
-                      <Globe size={16} className="text-navy dark:text-silver" />
                     </div>
                    </li>
                 </ul>
