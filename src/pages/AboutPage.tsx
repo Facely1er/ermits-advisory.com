@@ -192,12 +192,18 @@ export const AboutPage: React.FC = () => {
                 </Button>
               </div>
               <div className="md:w-1/2">
-                <div className="rounded-lg overflow-hidden h-80 bg-gray-200 dark:bg-gray-700 relative">
-                  {/* This would be a map component in a real implementation */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <p className="text-gray-500 dark:text-gray-400 text-center">
-                      {t('about.global.mapPlaceholder')}
-                    </p>
+                <div className="rounded-lg overflow-hidden h-80 relative">
+                  <img 
+                    src="https://images.pexels.com/photos/335393/pexels-photo-335393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="Global presence world map" 
+                    className="object-cover w-full h-full"
+                  />
+                  <div className="absolute inset-0 bg-navy/40 flex items-center justify-center">
+                    <div className="text-center text-white">
+                      <Globe size={48} className="mx-auto mb-3 opacity-80" />
+                      <h3 className="text-xl font-bold mb-2">Global Reach</h3>
+                      <p className="text-sm opacity-90">Serving clients worldwide</p>
+                    </div>
                   </div>
                 </div>
               </div>
