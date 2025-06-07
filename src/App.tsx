@@ -19,7 +19,6 @@ import { NotFoundPage } from './pages/NotFoundPage';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { TermsOfServicePage } from './pages/TermsOfServicePage';
 import { CookiePolicyPage } from './pages/CookiePolicyPage';
-import { TeamPage } from './pages/TeamPage';
 
 function App() {
   return (
@@ -42,7 +41,6 @@ function App() {
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/resources" element={<ResourcesPage />} />
                 <Route path="/resources/:id" element={<ResourceDetailPage />} />
-                <Route path="/team" element={<TeamPage />} />
                 <Route path="/privacy" element={<PrivacyPolicyPage />} />
                 <Route path="/terms" element={<TermsOfServicePage />} />
                 <Route path="/cookies" element={<CookiePolicyPage />} />

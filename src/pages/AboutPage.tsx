@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
-import {
+import { 
   Award, Users, Target, Clock, ChevronRight, Globe,
   Calendar, BookOpen, Briefcase, ArrowRight, Shield
 } from 'lucide-react';
@@ -67,14 +67,6 @@ export const AboutPage: React.FC = () => {
             {t('about.subtitle')}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button 
-              variant="primary" 
-              size="lg"
-              icon={<Users size={18} />}
-              onClick={() => navigate('/team')}
-            >
-              {t('about.hero.meetTeam')}
-            </Button>
             <Button 
               variant="outline" 
               size="lg"
@@ -164,121 +156,6 @@ export const AboutPage: React.FC = () => {
                 </Card>
               </motion.div>
             ))}
-          </div>
-        </motion.div>
-
-        {/* Our Team Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="mb-16"
-        >
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center dark:text-white">{t('about.team.title')}</h2>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Cybersecurity Leadership Expertise */}
-            <Card variant="glass" padding="none" className="overflow-hidden">
-              <div className="h-64 overflow-hidden bg-navy-dark/90 flex items-center justify-center">
-                <Shield size={64} className="text-silver opacity-50" />
-              </div>
-              <div className="p-5">
-                <h3 className="text-xl font-bold mb-1 dark:text-white">{t('about.team.cybersecurity.title')}</h3>
-                <p className="text-navy dark:text-silver font-medium mb-2">{t('about.team.cybersecurity.subtitle')}</p>
-                <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
-                  {t('about.team.cybersecurity.description')}
-                </p>
-                <Button 
-                  variant="outline" 
-                  size="sm"
-                  icon={<ChevronRight size={16} />}
-                  iconPosition="right"
-                  onClick={() => navigate('/team')}
-                >
-                  {t('about.team.viewExpertise')}
-                </Button>
-              </div>
-            </Card>
-            
-            {/* Strategic Advisory Expertise */}
-            <Card variant="glass" padding="none" className="overflow-hidden">
-              <div className="h-64 overflow-hidden bg-navy-dark/90 flex items-center justify-center">
-                <Briefcase size={64} className="text-silver opacity-50" />
-              </div>
-              <div className="p-5">
-                <h3 className="text-xl font-bold mb-1 dark:text-white">{t('about.team.strategic.title')}</h3>
-                <p className="text-navy dark:text-silver font-medium mb-2">{t('about.team.strategic.subtitle')}</p>
-                <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
-                  {t('about.team.strategic.description')}
-                </p>
-                <Button 
-                  variant="outline" 
-                  size="sm"
-                  icon={<ChevronRight size={16} />}
-                  iconPosition="right"
-                  onClick={() => navigate('/team')}
-                >
-                  {t('about.team.viewExpertise')}
-                </Button>
-              </div>
-            </Card>
-            
-            {/* Research & Analytics Expertise */}
-            <Card variant="glass" padding="none" className="overflow-hidden">
-              <div className="h-64 overflow-hidden bg-navy-dark/90 flex items-center justify-center">
-                <BookOpen size={64} className="text-silver opacity-50" />
-              </div>
-              <div className="p-5">
-                <h3 className="text-xl font-bold mb-1 dark:text-white">{t('about.team.research.title')}</h3>
-                <p className="text-navy dark:text-silver font-medium mb-2">{t('about.team.research.subtitle')}</p>
-                <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
-                  {t('about.team.research.description')}
-                </p>
-                <Button 
-                  variant="outline" 
-                  size="sm"
-                  icon={<ChevronRight size={16} />}
-                  iconPosition="right"
-                  onClick={() => navigate('/team')}
-                >
-                  {t('about.team.viewExpertise')}
-                </Button>
-              </div>
-            </Card>
-            
-            {/* M&A Security Expertise */}
-            <Card variant="glass" padding="none" className="overflow-hidden">
-              <div className="h-64 overflow-hidden bg-navy-dark/90 flex items-center justify-center">
-                <Target size={64} className="text-silver opacity-50" />
-              </div>
-              <div className="p-5">
-                <h3 className="text-xl font-bold mb-1 dark:text-white">{t('about.team.mAndA.title')}</h3>
-                <p className="text-navy dark:text-silver font-medium mb-2">{t('about.team.mAndA.subtitle')}</p>
-                <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
-                  {t('about.team.mAndA.description')}
-                </p>
-                <Button 
-                  variant="outline" 
-                  size="sm"
-                  icon={<ChevronRight size={16} />}
-                  iconPosition="right"
-                  onClick={() => navigate('/team')}
-                >
-                  {t('about.team.viewExpertise')}
-                </Button>
-              </div>
-            </Card>
-          </div>
-          
-          <div className="text-center mt-8">
-            <Button 
-              variant="primary" 
-              icon={<Users size={16} />}
-              iconPosition="left"
-              onClick={() => navigate('/team')}
-            >
-              {t('about.team.viewAll')}
-            </Button>
           </div>
         </motion.div>
 
