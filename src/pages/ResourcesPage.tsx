@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -9,23 +9,11 @@ import {
   BookOpen, FileCode, Video, Clock, Eye, Calendar,
   ArrowRight, Mail
 } from 'lucide-react';
-import { resourcesData } from '../data/mockData';
+import { resourceService, newsletterService } from '../services/supabaseService';
+import type { Resource } from '../lib/supabase';
 
 type ResourceCategory = 'all' | 'whitepapers' | 'articles' | 'casestudies' | 'webinars';
 type ResourceTag = 'steel' | 'compliance' | 'risk' | 'leadership' | 'technology';
-
-interface Resource {
-  id: string;
-  title: string;
-  description: string;
-  category: ResourceCategory;
-  tags: ResourceTag[];
-  date: string;
-  readTime?: string;
-  downloadUrl?: string;
-  imageUrl: string;
-  featured?: boolean;
-}
 
 export const ResourcesPage: React.FC = () => {
   const { t } = useLanguage();
@@ -35,32 +23,44 @@ export const ResourcesPage: React.FC = () => {
   const [selectedTags, setSelectedTags] = useState<ResourceTag[]>([]);
   const [showFilters, setShowFilters] = useState(false);
   const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [resources, setResources] = useState<Resource[]>([]);
+  const [featuredResource, setFeaturedResource] = useState<Resource | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [subscribing, setSubscribing] = useState(false);
   
-  // Use translated resource content or fallback to mock data
-  const resources: Resource[] = resourcesData.map(resource => ({
-    ...resource,
-    title: t(`resources.content.${resource.id}.title`) || resource.title,
-    description: t(`resources.content.${resource.id}.description`) || resource.description
-  }));
+  // Fetch resources from Supabase
+  useEffect(() => {
+    const fetchResources = async () => {
+      try {
+        setLoading(true);
+        const data = await resourceService.getResources({
+          category: selectedCategory,
+          tags: selectedTags,
+        });
+        
+        setResources(data || []);
+        
+        // Get featured resource
+        const featured = data?.find(resource => resource.featured);
+        setFeaturedResource(featured || null);
+      } catch (error) {
+        console.error('Error fetching resources:', error);
+        setResources([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchResources();
+  }, [selectedCategory, selectedTags]);
   
-  // Get the featured resource
-  const featuredResource = resources.find(resource => resource.featured);
-  
-  // Filter resources based on search, category and tags
+  // Filter resources based on search query
   const filteredResources = resources.filter(resource => {
-    // Filter by search query
-    const matchesSearch = searchQuery === '' || 
-      resource.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      resource.description.toLowerCase().includes(searchQuery.toLowerCase());
-    
-    // Filter by category
-    const matchesCategory = selectedCategory === 'all' || resource.category === selectedCategory;
-    
-    // Filter by tags
-    const matchesTags = selectedTags.length === 0 || 
-      selectedTags.some(tag => resource.tags.includes(tag));
-    
-    return matchesSearch && matchesCategory && matchesTags && !resource.featured;
+    if (!resource.featured && searchQuery) {
+      return resource.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+             resource.description.toLowerCase().includes(searchQuery.toLowerCase());
+    }
+    return !resource.featured;
   });
   
   const handleTagToggle = (tag: ResourceTag) => {
@@ -83,31 +83,46 @@ export const ResourcesPage: React.FC = () => {
   };
 
   // Handle download - create and click a download link
-  const handleDownloadResource = (resource: Resource) => {
-    if (resource.downloadUrl) {
-      const link = document.createElement('a');
-      link.href = resource.downloadUrl;
-      link.download = resource.title.replace(/[^a-z0-9]/gi, '_') + '.pdf';
-      link.target = '_blank';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+  const handleDownloadResource = async (resource: Resource) => {
+    if (resource.download_url) {
+      try {
+        // Track download in analytics
+        await resourceService.incrementDownloads(resource.id);
+        
+        const link = document.createElement('a');
+        link.href = resource.download_url;
+        link.download = resource.title.replace(/[^a-z0-9]/gi, '_') + '.pdf';
+        link.target = '_blank';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } catch (error) {
+        console.error('Error tracking download:', error);
+        alert(`Download error for: ${resource.title}`);
+      }
     } else {
       alert(`Download not available for: ${resource.title}`);
     }
   };
 
   // Handle newsletter subscription
-  const handleNewsletterSubscribe = () => {
+  const handleNewsletterSubscribe = async () => {
     if (!newsletterEmail || !newsletterEmail.includes('@')) {
       alert('Please enter a valid email address');
       return;
     }
     
-    // In a real implementation, this would send the email to your backend
-    console.log('Newsletter subscription for:', newsletterEmail);
-    alert(`Thank you for subscribing with email: ${newsletterEmail}`);
-    setNewsletterEmail(''); // Clear the input after successful subscription
+    setSubscribing(true);
+    try {
+      await newsletterService.subscribe(newsletterEmail, 'resources_page');
+      alert(`Thank you for subscribing with email: ${newsletterEmail}`);
+      setNewsletterEmail(''); // Clear the input after successful subscription
+    } catch (error) {
+      console.error('Newsletter subscription error:', error);
+      alert('There was an error subscribing to the newsletter. Please try again.');
+    } finally {
+      setSubscribing(false);
+    }
   };
   
   // Get category icon
@@ -176,6 +191,21 @@ export const ResourcesPage: React.FC = () => {
     show: { opacity: 1, y: 0 }
   };
 
+  if (loading) {
+    return (
+      <div className="pt-24 pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-center h-64">
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-navy mx-auto mb-4"></div>
+              <p className="text-gray-600 dark:text-gray-300">{t('common.loading')}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="pt-24 pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
       <div className="container mx-auto px-4">
@@ -202,7 +232,7 @@ export const ResourcesPage: React.FC = () => {
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-1/2 h-64 md:h-auto overflow-hidden">
                   <img 
-                    src={featuredResource.imageUrl}
+                    src={featuredResource.image_url}
                     alt={featuredResource.title}
                     className="w-full h-full object-cover"
                   />
@@ -224,12 +254,12 @@ export const ResourcesPage: React.FC = () => {
                   
                   <div>
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {featuredResource.tags.map(tag => (
+                      {featuredResource.tags?.map(tag => (
                         <span 
                           key={tag} 
                           className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded"
                         >
-                          {getTagLabel(tag)}
+                          {getTagLabel(tag as ResourceTag)}
                         </span>
                       ))}
                     </div>
@@ -238,11 +268,11 @@ export const ResourcesPage: React.FC = () => {
                       <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
                         <Calendar size={14} className="mr-1" />
                         <span>{new Date(featuredResource.date).toLocaleDateString()}</span>
-                        {featuredResource.readTime && (
+                        {featuredResource.read_time && (
                           <>
                             <span className="mx-2">•</span>
                             <Clock size={14} className="mr-1" />
-                            <span>{featuredResource.readTime}</span>
+                            <span>{featuredResource.read_time}</span>
                           </>
                         )}
                       </div>
@@ -256,7 +286,7 @@ export const ResourcesPage: React.FC = () => {
                         >
                           {t('resources.view')}
                         </Button>
-                        {featuredResource.downloadUrl && (
+                        {featuredResource.download_url && (
                           <Button 
                             variant="primary" 
                             size="sm" 
@@ -510,7 +540,7 @@ export const ResourcesPage: React.FC = () => {
                   <Card variant="glass" padding="none" className="h-full flex flex-col overflow-hidden">
                     <div className="h-48 overflow-hidden">
                       <img 
-                        src={resource.imageUrl} 
+                        src={resource.image_url} 
                         alt={resource.title}
                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                       />
@@ -527,12 +557,12 @@ export const ResourcesPage: React.FC = () => {
                       
                       <div className="mt-auto">
                         <div className="flex flex-wrap gap-2 mb-4">
-                          {resource.tags.map(tag => (
+                          {resource.tags?.map(tag => (
                             <span 
                               key={tag} 
                               className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded"
                             >
-                              {getTagLabel(tag)}
+                              {getTagLabel(tag as ResourceTag)}
                             </span>
                           ))}
                         </div>
@@ -541,11 +571,11 @@ export const ResourcesPage: React.FC = () => {
                           <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
                             <Calendar size={14} className="mr-1" />
                             <span>{new Date(resource.date).toLocaleDateString()}</span>
-                            {resource.readTime && (
+                            {resource.read_time && (
                               <>
                                 <span className="mx-2">•</span>
                                 <Clock size={14} className="mr-1" />
-                                <span>{resource.readTime}</span>
+                                <span>{resource.read_time}</span>
                               </>
                             )}
                           </div>
@@ -559,7 +589,7 @@ export const ResourcesPage: React.FC = () => {
                             >
                               {t('resources.view')}
                             </Button>
-                            {resource.downloadUrl && (
+                            {resource.download_url && (
                               <Button 
                                 variant="outline" 
                                 size="sm" 
@@ -617,6 +647,7 @@ export const ResourcesPage: React.FC = () => {
                     icon={<Mail size={16} />}
                     iconPosition="left"
                     onClick={handleNewsletterSubscribe}
+                    isLoading={subscribing}
                   >
                     {t('resources.newsletter.subscribe')}
                   </Button>

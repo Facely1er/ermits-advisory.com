@@ -7,6 +7,7 @@ import {
   Mail, Phone, MapPin, Send, AlertCircle, CheckCircle,
   Briefcase, User, MessageSquare
 } from 'lucide-react';
+import { contactService } from '../services/supabaseService';
 
 type FormState = {
   name: string;
@@ -95,11 +96,13 @@ export const ContactPage: React.FC = () => {
     setIsSubmitting(true);
     
     try {
-      // Simulate API call with timeout
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // This is where you would typically send the form data to your backend
-      // For now we'll just simulate a successful submission
+      await contactService.submitContact({
+        name: formState.name,
+        email: formState.email,
+        company: formState.company,
+        phone: formState.phone || undefined,
+        message: formState.message
+      });
       
       setSubmitStatus('success');
       setFormState({
@@ -115,6 +118,7 @@ export const ContactPage: React.FC = () => {
         setSubmitStatus('idle');
       }, 5000);
     } catch (error) {
+      console.error('Error submitting contact form:', error);
       setSubmitStatus('error');
       
       // Reset error status after 5 seconds
