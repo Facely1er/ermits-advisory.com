@@ -7,6 +7,7 @@ import { Footer } from './components/Footer';
 import { LandingPage } from './pages/LandingPage';
 import { Dashboard } from './pages/Dashboard';
 import { STEELVisualization } from './pages/STEELVisualization';
+import { ImplementationGuidePage } from './pages/ImplementationGuidePage';
 import { RiskRadar } from './pages/RiskRadar';
 import { ServiceOffering } from './pages/ServiceOffering';
 import { BoardPresentation } from './pages/BoardPresentation';
@@ -33,6 +34,7 @@ function App() {
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/steel" element={<STEELVisualization />} />
+                <Route path="/steel/implementation-guide" element={<ImplementationGuidePage />} />
                 <Route path="/risk-radar" element={<RiskRadar />} />
                 <Route path="/services" element={<ServiceOffering />} />
                 <Route path="/presentation" element={<BoardPresentation />} />
