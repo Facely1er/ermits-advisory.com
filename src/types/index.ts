@@ -6,7 +6,7 @@ export interface RiskDimension {
   color: string;
 }
 
-export interface STEELScore {
+interface STEELScore {
   overall: number;
   dimensions: {
     political: number;
@@ -67,4 +67,4 @@ export interface SteelDimension {
 }
 
 export type Theme = 'light' | 'dark' | 'system';
-export type Language = 'en' | 'es' | 'fr';
+export type Language = 'en' | 'fr';

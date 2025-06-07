@@ -20,13 +20,13 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     // Check if a language preference is stored in localStorage
     const savedLanguage = localStorage.getItem('language') as Language | null;
     
-    if (savedLanguage && ['en', 'es', 'fr'].includes(savedLanguage)) {
+    if (savedLanguage && ['en', 'fr'].includes(savedLanguage)) {
       return savedLanguage;
     }
     
     // Check browser language
     const browserLanguage = navigator.language.split('-')[0];
-    if (browserLanguage && ['en', 'es', 'fr'].includes(browserLanguage)) {
+    if (browserLanguage && ['en', 'fr'].includes(browserLanguage)) {
       return browserLanguage as Language;
     }
     

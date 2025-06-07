@@ -28,10 +28,9 @@ export const Navigation: React.FC = () => {
     setIsMenuOpen(false);
   };
 
-  // Language options with flags
+  // Language options with flags (removed Spanish)
   const languages: { code: Language; name: string; flag: string }[] = [
     { code: 'en', name: 'English', flag: '🇺🇸' },
-    { code: 'es', name: 'Español', flag: '🇪🇸' },
     { code: 'fr', name: 'Français', flag: '🇫🇷' },
   ];
 

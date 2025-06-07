@@ -42,6 +42,283 @@ export const en = {
       cookies: "Cookie Policy"
     }
   },
+  resourceData: [
+    {
+      id: "wp-001",
+      title: "The Executive's Guide to Modern Cyber Risk Management",
+      description: "A comprehensive guide for C-suite executives on implementing effective cyber risk management strategies using the STEEL methodology.",
+      category: "whitepapers",
+      tags: ["steel", "risk", "leadership"],
+      date: "2025-04-15",
+      readTime: "25 min",
+      downloadUrl: "#",
+      imageUrl: "https://images.pexels.com/photos/5473955/pexels-photo-5473955.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      author: "ERMITS Research Team",
+      fileSize: "15.2 MB",
+      downloads: 1247,
+      views: 3892,
+      featured: true,
+      language: "English",
+      format: "PDF",
+      pages: 120,
+      content: {
+        summary: "This comprehensive implementation guide provides a detailed roadmap for successfully deploying the STEEL™ methodology in your organization. Developed by our cybersecurity experts, this 120-page document includes practical templates, detailed checklists, and industry-specific guidance.",
+        keyTopics: [
+          "STEEL™ methodology overview",
+          "5-phase implementation process",
+          "Ready-to-use templates and tools",
+          "Successful implementation case studies",
+          "Performance measures and metrics",
+          "Industry-specific adaptations"
+        ],
+        benefits: [
+          "67% average cyber risk reduction",
+          "3.4x ROI within 18 months",
+          "83% faster time to insight",
+          "92% board confidence improvement"
+        ]
+      }
+    },
+    {
+      id: "art-001",
+      title: "Five Critical Questions Every Board Should Ask About Cybersecurity",
+      description: "Learn the essential questions board members should be asking to fulfill their cyber governance responsibilities effectively.",
+      category: "articles",
+      tags: ["leadership", "compliance"],
+      date: "2025-03-22",
+      readTime: "12 min",
+      imageUrl: "https://images.pexels.com/photos/3183165/pexels-photo-3183165.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      author: "Sarah Johnson, CISO Advisory",
+      fileSize: "2.1 MB",
+      downloads: 856,
+      views: 2341,
+      featured: false,
+      language: "English",
+      format: "PDF",
+      pages: 8,
+      content: {
+        summary: "Board members need to ask the right questions to effectively oversee cybersecurity. This article provides five critical questions that every board should be asking their cybersecurity teams, along with guidance on what to listen for in the answers.",
+        keyTopics: [
+          "Board governance responsibilities",
+          "Key cybersecurity metrics",
+          "Risk appetite and tolerance",
+          "Incident response preparedness",
+          "Third-party risk management"
+        ],
+        benefits: [
+          "Improved board oversight",
+          "Better risk visibility",
+          "Enhanced governance",
+          "Clearer accountability"
+        ]
+      }
+    },
+    {
+      id: "cs-001",
+      title: "How a Global Financial Institution Reduced Risk Exposure by 67%",
+      description: "A detailed case study of how our STEEL methodology helped a major financial institution transform their cyber risk posture.",
+      category: "casestudies",
+      tags: ["steel", "risk", "compliance"],
+      date: "2025-02-10",
+      readTime: "18 min",
+      downloadUrl: "#",
+      imageUrl: "https://images.pexels.com/photos/936722/pexels-photo-936722.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      author: "Michael Chen, Principal Consultant",
+      fileSize: "5.7 MB",
+      downloads: 1089,
+      views: 2876,
+      featured: false,
+      language: "English",
+      format: "PDF",
+      pages: 16,
+      content: {
+        summary: "This case study examines how a Fortune 500 financial institution successfully implemented the STEEL™ methodology across 40+ countries, achieving a remarkable 67% reduction in cyber risk exposure while improving regulatory compliance.",
+        keyTopics: [
+          "Multi-country implementation strategy",
+          "Regulatory compliance improvements",
+          "Risk reduction methodologies",
+          "Stakeholder engagement approach",
+          "Measurable business outcomes"
+        ],
+        benefits: [
+          "67% risk exposure reduction",
+          "340% ROI achievement",
+          "99.2% compliance rate",
+          "Zero security incidents"
+        ]
+      }
+    },
+    {
+      id: "web-001",
+      title: "Navigating Geopolitical Cyber Risks in a Turbulent World",
+      description: "An on-demand webinar featuring experts discussing how political factors impact cybersecurity strategy and resilience.",
+      category: "webinars",
+      tags: ["steel", "risk"],
+      date: "2025-01-30",
+      imageUrl: "https://images.pexels.com/photos/8386423/pexels-photo-8386423.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      author: "Panel of Experts",
+      fileSize: "N/A",
+      downloads: 0,
+      views: 1654,
+      featured: false,
+      language: "English",
+      format: "Video",
+      pages: 0,
+      content: {
+        summary: "Join our panel of cybersecurity experts as they discuss the growing impact of geopolitical tensions on cybersecurity strategy. Learn how to navigate political risks and build organizational resilience.",
+        keyTopics: [
+          "Geopolitical risk assessment",
+          "Nation-state threat analysis",
+          "Supply chain vulnerabilities",
+          "Regulatory compliance across borders",
+          "Crisis response strategies"
+        ],
+        benefits: [
+          "Enhanced threat awareness",
+          "Improved risk assessment",
+          "Better crisis preparedness",
+          "Strategic planning insights"
+        ]
+      }
+    },
+    {
+      id: "art-002",
+      title: "Emerging Technology Risks: What You Need to Know About AI Security",
+      description: "An analysis of the rapidly evolving security landscape around artificial intelligence and machine learning technologies.",
+      category: "articles",
+      tags: ["technology", "risk"],
+      date: "2025-03-05",
+      readTime: "15 min",
+      imageUrl: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      author: "Dr. Elena Rodriguez, AI Security Researcher",
+      fileSize: "3.2 MB",
+      downloads: 743,
+      views: 1987,
+      featured: false,
+      language: "English",
+      format: "PDF",
+      pages: 12,
+      content: {
+        summary: "As AI technologies become increasingly prevalent, organizations must understand and address the unique security challenges they present. This article examines key AI security risks and mitigation strategies.",
+        keyTopics: [
+          "AI threat landscape overview",
+          "Machine learning vulnerabilities",
+          "Data poisoning attacks",
+          "Model security best practices",
+          "Governance frameworks for AI"
+        ],
+        benefits: [
+          "Comprehensive AI risk understanding",
+          "Practical security measures",
+          "Risk mitigation strategies",
+          "Governance framework guidance"
+        ]
+      }
+    },
+    {
+      id: "wp-002",
+      title: "Building Cyber Resilience Through the STEEL Framework",
+      description: "A detailed technical paper on implementing the STEEL methodology to enhance organizational resilience against cyber threats.",
+      category: "whitepapers",
+      tags: ["steel", "technology"],
+      date: "2025-02-28",
+      readTime: "30 min",
+      downloadUrl: "#",
+      imageUrl: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      author: "ERMITS Research Division",
+      fileSize: "8.9 MB",
+      downloads: 892,
+      views: 2456,
+      featured: false,
+      language: "English",
+      format: "PDF",
+      pages: 45,
+      content: {
+        summary: "This technical whitepaper provides an in-depth examination of how the STEEL framework can be used to build organizational cyber resilience. It includes technical implementation details and real-world applications.",
+        keyTopics: [
+          "Resilience framework architecture",
+          "Technical implementation guidelines",
+          "Integration with existing systems",
+          "Measurement and monitoring approaches",
+          "Continuous improvement processes"
+        ],
+        benefits: [
+          "Enhanced organizational resilience",
+          "Improved incident recovery",
+          "Better threat adaptation",
+          "Systematic risk management"
+        ]
+      }
+    },
+    {
+      id: "cs-002",
+      title: "Securing the Supply Chain: A Manufacturing Success Story",
+      description: "How a global manufacturing firm secured their complex supply chain using our advisory services and STEEL methodology.",
+      category: "casestudies",
+      tags: ["risk", "technology"],
+      date: "2025-01-15",
+      readTime: "14 min",
+      downloadUrl: "#",
+      imageUrl: "https://images.pexels.com/photos/4481326/pexels-photo-4481326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      author: "James Wilson, Supply Chain Security Lead",
+      fileSize: "4.3 MB",
+      downloads: 567,
+      views: 1432,
+      featured: false,
+      language: "English",
+      format: "PDF",
+      pages: 10,
+      content: {
+        summary: "This case study details how a global manufacturing company successfully secured their complex supply chain network using the STEEL methodology, achieving significant risk reduction and operational improvements.",
+        keyTopics: [
+          "Supply chain risk assessment",
+          "Vendor security requirements",
+          "Third-party monitoring",
+          "Incident response coordination",
+          "Performance measurement"
+        ],
+        benefits: [
+          "85% supply chain risk reduction",
+          "Improved vendor compliance",
+          "Enhanced visibility",
+          "Faster incident response"
+        ]
+      }
+    },
+    {
+      id: "web-002",
+      title: "Regulatory Landscape 2025: Preparing for New Compliance Requirements",
+      description: "Expert panel discussion on upcoming regulatory changes and how organizations can prepare effectively.",
+      category: "webinars",
+      tags: ["compliance", "leadership"],
+      date: "2025-03-18",
+      imageUrl: "https://images.pexels.com/photos/3153204/pexels-photo-3153204.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      author: "Regulatory Experts Panel",
+      fileSize: "N/A",
+      downloads: 0,
+      views: 2103,
+      featured: false,
+      language: "English",
+      format: "Video",
+      pages: 0,
+      content: {
+        summary: "Join our panel of regulatory experts as they discuss the evolving compliance landscape for 2025 and beyond. Learn about upcoming requirements and how to prepare your organization.",
+        keyTopics: [
+          "2025 regulatory changes",
+          "Compliance preparation strategies",
+          "Industry-specific requirements",
+          "Implementation timelines",
+          "Cost-benefit analysis"
+        ],
+        benefits: [
+          "Regulatory readiness",
+          "Compliance strategy development",
+          "Risk mitigation planning",
+          "Cost optimization"
+        ]
+      }
+    }
+  ],
   implementationGuide: {
     title: "STEEL™ Implementation Guide",
     subtitle: "Your comprehensive roadmap to implementing the STEEL™ methodology in your organization. Transform your approach to cyber risk management with our proven framework.",
