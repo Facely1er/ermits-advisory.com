@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 import { resourceService, newsletterService } from '../services/supabaseService';
 import type { Resource } from '../lib/supabase';
-import backgroundCopyImage from '../assets/background-copy.jpg';
+import backgroundImage from '../assets/background.jpg';
 
 type ResourceCategory = 'all' | 'whitepapers' | 'articles' | 'casestudies' | 'webinars';
 type ResourceTag = 'steel' | 'compliance' | 'risk' | 'leadership' | 'technology';
@@ -42,8 +42,8 @@ export const ResourcesPage: React.FC = () => {
   // Get proper image source for resources
   const getResourceImageSrc = (resource: Resource) => {
     // Map specific resource IDs to imported assets
-    if (resource.id === 'wp-001' || resource.image_url === '/background-copy.jpg') {
-      return backgroundCopyImage;
+    if (resource.id === 'wp-001' || resource.image_url === 'wp-001') {
+      return backgroundImage;
     }
     // For other resources, use the provided image_url (which should be external URLs)
     return resource.image_url;
