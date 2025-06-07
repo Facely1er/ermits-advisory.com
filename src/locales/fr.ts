@@ -747,6 +747,8 @@ export const fr = {
     clearFilters: "Effacer les Filtres",
     download: "Télécharger",
     view: "Voir",
+    read: "Lire",
+    watch: "Regarder",
     categories: {
       title: "Catégories",
       all: "Toutes les Ressources",
@@ -762,16 +764,96 @@ export const fr = {
       leadership: "Leadership",
       technology: "Technologie"
     },
+    filters: {
+      title: "Filtres",
+      byCategory: "Par Catégorie",
+      byTopic: "Par Sujet",
+      byType: "Par Type",
+      clear: "Effacer les Filtres",
+      showingResults: "Affichage de {count} ressources",
+      noResults: "Aucune ressource trouvée"
+    },
+    sorting: {
+      newest: "Plus Récents",
+      oldest: "Plus Anciens",
+      popular: "Plus Populaires",
+      title: "Par Titre"
+    },
+    resourceTypes: {
+      whitepaper: "Livre Blanc",
+      article: "Article",
+      caseStudy: "Étude de Cas",
+      webinar: "Webinaire",
+      guide: "Guide",
+      report: "Rapport",
+      infographic: "Infographie",
+      video: "Vidéo"
+    },
     noResults: {
       title: "Aucune Ressource Trouvée",
-      message: "Essayez d'ajuster vos termes de recherche ou d'effacer les filtres pour voir plus de ressources."
+      message: "Essayez d'ajuster vos termes de recherche ou d'effacer les filtres pour voir plus de ressources.",
+      suggestions: "Suggestions:",
+      suggestion1: "Vérifiez l'orthographe de vos termes de recherche",
+      suggestion2: "Essayez des mots-clés plus généraux",
+      suggestion3: "Utilisez moins de filtres",
+      suggestion4: "Explorez nos ressources populaires ci-dessous",
+      browseAll: "Parcourir Toutes les Ressources"
+    },
+    relatedResources: {
+      title: "Ressources Connexes",
+      basedOnCategory: "Basé sur la catégorie actuelle",
+      basedOnTags: "Basé sur des sujets similaires",
+      viewAll: "Voir Toutes les Ressources"
     },
     newsletter: {
       title: "Restez Informé",
       description: "Abonnez-vous à notre newsletter pour les derniers insights en cybersécurité, résultats de recherche et analyses de l'industrie.",
       emailPlaceholder: "Entrez votre adresse e-mail",
       subscribe: "S'abonner",
-      privacy: "Nous respectons votre vie privée et ne partagerons jamais vos informations."
+      subscribing: "Abonnement...",
+      subscribed: "Abonné!",
+      error: "Erreur d'abonnement",
+      privacy: "Nous respectons votre vie privée et ne partagerons jamais vos informations.",
+      frequency: "Fréquence: Hebdomadaire",
+      benefits: {
+        title: "Pourquoi s'abonner?",
+        benefit1: "Insights exclusifs d'experts en cybersécurité",
+        benefit2: "Accès anticipé aux nouvelles ressources",
+        benefit3: "Analyse des tendances de l'industrie",
+        benefit4: "Invitations à des webinaires exclusifs"
+      }
+    },
+    actions: {
+      downloadPdf: "Télécharger PDF",
+      viewOnline: "Voir en Ligne",
+      readMore: "Lire Plus",
+      watchVideo: "Regarder Vidéo",
+      joinWebinar: "Rejoindre Webinaire",
+      requestAccess: "Demander Accès",
+      shareResource: "Partager Ressource",
+      bookmarkResource: "Marquer Ressource",
+      printResource: "Imprimer Ressource"
+    },
+    metadata: {
+      publishedDate: "Date de Publication",
+      lastUpdated: "Dernière Mise à Jour",
+      readTime: "Temps de Lecture",
+      downloadSize: "Taille de Téléchargement",
+      language: "Langue",
+      format: "Format",
+      pages: "Pages",
+      duration: "Durée",
+      fileSize: "Taille du Fichier",
+      downloads: "Téléchargements",
+      views: "Vues"
+    },
+    sharing: {
+      title: "Partager Cette Ressource",
+      copyLink: "Copier Lien",
+      shareViaEmail: "Partager par E-mail",
+      shareOnLinkedIn: "Partager sur LinkedIn",
+      shareOnTwitter: "Partager sur Twitter",
+      linkCopied: "Lien copié dans le presse-papiers"
     }
   },
   presentation: {

@@ -747,6 +747,8 @@ export const es = {
     clearFilters: "Limpiar Filtros",
     download: "Descargar",
     view: "Ver",
+    read: "Leer",
+    watch: "Ver",
     categories: {
       title: "Categorías",
       all: "Todos los Recursos",
@@ -762,16 +764,96 @@ export const es = {
       leadership: "Liderazgo",
       technology: "Tecnología"
     },
+    filters: {
+      title: "Filtros",
+      byCategory: "Por Categoría",
+      byTopic: "Por Tema",
+      byType: "Por Tipo",
+      clear: "Limpiar Filtros",
+      showingResults: "Mostrando {count} recursos",
+      noResults: "No se encontraron recursos"
+    },
+    sorting: {
+      newest: "Más Recientes",
+      oldest: "Más Antiguos",
+      popular: "Más Populares",
+      title: "Por Título"
+    },
+    resourceTypes: {
+      whitepaper: "Documento Técnico",
+      article: "Artículo",
+      caseStudy: "Caso de Estudio",
+      webinar: "Webinar",
+      guide: "Guía",
+      report: "Reporte",
+      infographic: "Infografía",
+      video: "Video"
+    },
     noResults: {
       title: "No se Encontraron Recursos",
-      message: "Intente ajustar sus términos de búsqueda o limpiar los filtros para ver más recursos."
+      message: "Intente ajustar sus términos de búsqueda o limpiar los filtros para ver más recursos.",
+      suggestions: "Sugerencias:",
+      suggestion1: "Verifique la ortografía de sus términos de búsqueda",
+      suggestion2: "Intente palabras clave más generales",
+      suggestion3: "Use menos filtros",
+      suggestion4: "Explore nuestros recursos populares abajo",
+      browseAll: "Explorar Todos los Recursos"
+    },
+    relatedResources: {
+      title: "Recursos Relacionados",
+      basedOnCategory: "Basado en la categoría actual",
+      basedOnTags: "Basado en temas similares",
+      viewAll: "Ver Todos los Recursos"
     },
     newsletter: {
       title: "Manténgase Informado",
       description: "Suscríbase a nuestro boletín para los últimos insights de ciberseguridad, hallazgos de investigación y análisis de la industria.",
       emailPlaceholder: "Ingrese su dirección de correo",
       subscribe: "Suscribirse",
-      privacy: "Respetamos su privacidad y nunca compartiremos su información."
+      subscribing: "Suscribiendo...",
+      subscribed: "¡Suscrito!",
+      error: "Error en la suscripción",
+      privacy: "Respetamos su privacidad y nunca compartiremos su información.",
+      frequency: "Frecuencia: Semanal",
+      benefits: {
+        title: "¿Por qué suscribirse?",
+        benefit1: "Insights exclusivos de expertos en ciberseguridad",
+        benefit2: "Acceso temprano a nuevos recursos",
+        benefit3: "Análisis de tendencias de la industria",
+        benefit4: "Invitaciones a webinars exclusivos"
+      }
+    },
+    actions: {
+      downloadPdf: "Descargar PDF",
+      viewOnline: "Ver en Línea",
+      readMore: "Leer Más",
+      watchVideo: "Ver Video",
+      joinWebinar: "Unirse al Webinar",
+      requestAccess: "Solicitar Acceso",
+      shareResource: "Compartir Recurso",
+      bookmarkResource: "Marcar Recurso",
+      printResource: "Imprimir Recurso"
+    },
+    metadata: {
+      publishedDate: "Fecha de Publicación",
+      lastUpdated: "Última Actualización",
+      readTime: "Tiempo de Lectura",
+      downloadSize: "Tamaño de Descarga",
+      language: "Idioma",
+      format: "Formato",
+      pages: "Páginas",
+      duration: "Duración",
+      fileSize: "Tamaño del Archivo",
+      downloads: "Descargas",
+      views: "Visualizaciones"
+    },
+    sharing: {
+      title: "Compartir Este Recurso",
+      copyLink: "Copiar Enlace",
+      shareViaEmail: "Compartir por Correo",
+      shareOnLinkedIn: "Compartir en LinkedIn",
+      shareOnTwitter: "Compartir en Twitter",
+      linkCopied: "Enlace copiado al portapapeles"
     }
   },
   presentation: {
