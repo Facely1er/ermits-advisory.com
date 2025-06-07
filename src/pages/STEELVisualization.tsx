@@ -14,6 +14,7 @@ export const STEELVisualization: React.FC = () => {
   const { t } = useLanguage();
   const navigate = useNavigate();
   const [selectedDimension, setSelectedDimension] = useState<string | null>(null);
+  const [showDownloadModal, setShowDownloadModal] = useState(false);
   
   const handleDimensionClick = (id: string) => {
     setSelectedDimension(id === selectedDimension ? null : id);
@@ -47,6 +48,31 @@ export const STEELVisualization: React.FC = () => {
     { id: 'monitoring', label: t('steel.integration.step5') },
     { id: 'optimization', label: t('steel.integration.step6') }
   ];
+
+  // Handle download implementation guide
+  const handleDownloadGuide = () => {
+    setShowDownloadModal(true);
+  };
+
+  const handleDownloadConfirm = () => {
+    // In a real implementation, this would trigger the actual download
+    // For now, we'll simulate a download and redirect to contact for follow-up
+    setShowDownloadModal(false);
+    
+    // Simulate download
+    const link = document.createElement('a');
+    link.href = '#'; // In real implementation, this would be the actual file URL
+    link.download = 'STEEL-Implementation-Guide.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    // Show success message and redirect to contact for follow-up
+    setTimeout(() => {
+      alert('Download started! Our team will contact you shortly to schedule a consultation.');
+      navigate('/contact');
+    }, 1000);
+  };
 
   // Animation variants
   const containerVariants = {
@@ -317,10 +343,7 @@ export const STEELVisualization: React.FC = () => {
                   icon={<Download size={20} />}
                   iconPosition="left"
                   className="relative z-10 px-6 py-3 shadow-lg"
-                  onClick={() => {
-                    // In a real implementation, this would trigger a download
-                    alert('Implementation guide download started');
-                  }}
+                  onClick={handleDownloadGuide}
                 >
                   {t('steel.integration.downloadGuide')}
                 </Button>
@@ -365,6 +388,72 @@ export const STEELVisualization: React.FC = () => {
             </div>
           </Card>
         </motion.div>
+
+        {/* Download Modal */}
+        <AnimatePresence>
+          {showDownloadModal && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+              onClick={() => setShowDownloadModal(false)}
+            >
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                className="bg-white dark:bg-dark-surface rounded-lg p-6 max-w-md w-full"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <h3 className="text-xl font-bold dark:text-white">Download Implementation Guide</h3>
+                  <button
+                    onClick={() => setShowDownloadModal(false)}
+                    className="p-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                  >
+                    <X size={20} className="dark:text-white" />
+                  </button>
+                </div>
+                
+                <p className="text-gray-600 dark:text-gray-200 mb-6">
+                  Our comprehensive STEEL™ Implementation Guide includes detailed frameworks, best practices, 
+                  and step-by-step instructions for deploying the methodology in your organization.
+                </p>
+                
+                <div className="bg-silver/20 dark:bg-navy/20 rounded-lg p-4 mb-6">
+                  <h4 className="font-semibold mb-2 dark:text-white">What's Included:</h4>
+                  <ul className="text-sm space-y-1 text-gray-600 dark:text-gray-200">
+                    <li>• Complete STEEL™ framework documentation</li>
+                    <li>• Implementation templates and checklists</li>
+                    <li>• Risk assessment worksheets</li>
+                    <li>• Executive presentation templates</li>
+                    <li>• Industry-specific guidance</li>
+                  </ul>
+                </div>
+                
+                <div className="flex space-x-3">
+                  <Button
+                    variant="outline"
+                    onClick={() => setShowDownloadModal(false)}
+                    className="flex-1"
+                  >
+                    Cancel
+                  </Button>
+                  <Button
+                    variant="primary"
+                    onClick={handleDownloadConfirm}
+                    icon={<Download size={16} />}
+                    iconPosition="left"
+                    className="flex-1"
+                  >
+                    Download Now
+                  </Button>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );
