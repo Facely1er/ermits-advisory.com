@@ -16,6 +16,7 @@ export const fr = {
     about: "À Propos",
     services: "Services",
     resources: "Ressources",
+    insights: "Analyses",
     steel: "STEEL™",
     riskRadar: "Radar des Risques",
     dashboard: "Tableau de Bord",

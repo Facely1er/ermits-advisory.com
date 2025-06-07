@@ -6,8 +6,7 @@ import { useTheme } from '../contexts/ThemeContext';
 import { Button } from './shared/Button';
 import { 
   Sun, Moon, Menu, X, Globe, ChevronDown, 
-  Home, BarChart2, Shield, RadarIcon, 
-  Briefcase, Presentation, Mail, Users, FileText
+  Home, Briefcase, Mail, Users, FileText, Lightbulb
 } from 'lucide-react';
 import logoImg from '../assets/LOGO-ERMITS-ADVISORY.png';
 import { cn } from '../utils/cn';
@@ -18,13 +17,20 @@ export const Navigation: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
+  const [isInsightsOpen, setIsInsightsOpen] = useState(false);
   const navigate = useNavigate();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleLanguageDropdown = () => setIsLanguageOpen(!isLanguageOpen);
+  const toggleInsightsDropdown = () => setIsInsightsOpen(!isInsightsOpen);
   
   const handleContactClick = () => {
     navigate('/contact');
+    setIsMenuOpen(false);
+  };
+
+  const handleInsightsItemClick = () => {
+    setIsInsightsOpen(false);
     setIsMenuOpen(false);
   };
 
@@ -39,10 +45,13 @@ export const Navigation: React.FC = () => {
     { to: '/about', label: t('navigation.about'), icon: <Users size={16} /> },
     { to: '/services', label: t('navigation.services'), icon: <Briefcase size={16} /> },
     { to: '/resources', label: t('navigation.resources'), icon: <FileText size={16} /> },
-    { to: '/steel', label: t('navigation.steel'), icon: <Shield size={16} /> },
-    { to: '/risk-radar', label: t('navigation.riskRadar'), icon: <RadarIcon size={16} /> },
-    { to: '/dashboard', label: t('navigation.dashboard'), icon: <BarChart2 size={16} /> },
-    { to: '/presentation', label: t('navigation.presentation'), icon: <Presentation size={16} /> },
+  ];
+
+  const insightsLinks = [
+    { to: '/steel', label: t('navigation.steel') },
+    { to: '/risk-radar', label: t('navigation.riskRadar') },
+    { to: '/dashboard', label: t('navigation.dashboard') },
+    { to: '/presentation', label: t('navigation.presentation') },
   ];
 
   return (
@@ -77,6 +86,48 @@ export const Navigation: React.FC = () => {
                   {link.label}
                 </NavLink>
               ))}
+              
+              {/* Insights Dropdown */}
+              <div className="relative">
+                <button 
+                  onClick={toggleInsightsDropdown}
+                  className="flex items-center text-sm font-medium text-gray-600 dark:text-white/95 hover:text-navy dark:hover:text-white transition-colors nav-link"
+                >
+                  <span className="mr-1.5"><Lightbulb size={16} /></span>
+                  {t('navigation.insights')}
+                  <ChevronDown size={14} className="ml-1" />
+                </button>
+
+                <AnimatePresence>
+                  {isInsightsOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -5 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -5 }}
+                      className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-dark-surface ring-1 ring-black ring-opacity-5 focus:outline-none dropdown-menu"
+                    >
+                      <div className="py-1" role="menu" aria-orientation="vertical">
+                        {insightsLinks.map((link) => (
+                          <NavLink
+                            key={link.to}
+                            to={link.to}
+                            className={({ isActive }) => cn(
+                              'block px-4 py-2 text-sm dropdown-item',
+                              isActive
+                                ? 'bg-silver/20 text-navy dark:bg-navy/30 dark:text-white'
+                                : 'text-gray-700 dark:text-white/95 hover:bg-silver/10 dark:hover:bg-navy/20'
+                            )}
+                            role="menuitem"
+                            onClick={handleInsightsItemClick}
+                          >
+                            {link.label}
+                          </NavLink>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             </div>
 
             {/* Controls */}
@@ -195,6 +246,29 @@ export const Navigation: React.FC = () => {
                   {link.label}
                 </NavLink>
               ))}
+              
+              {/* Mobile Insights Section */}
+              <div className="border-t border-gray-200 dark:border-gray-700 pt-2 mt-2">
+                <div className="flex items-center px-3 py-2 text-sm font-medium text-gray-500 dark:text-gray-400">
+                  <Lightbulb size={16} className="mr-2" />
+                  {t('navigation.insights')}
+                </div>
+                {insightsLinks.map((link) => (
+                  <NavLink
+                    key={link.to}
+                    to={link.to}
+                    className={({ isActive }) => cn(
+                      'flex items-center px-6 py-2 rounded-md text-sm font-medium',
+                      isActive
+                        ? 'bg-navy/10 text-navy dark:bg-silver/20 dark:text-white'
+                        : 'text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10'
+                    )}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.label}
+                  </NavLink>
+                ))}
+              </div>
             </div>
             <div className="pt-4 pb-3 border-t border-gray-200 dark:border-gray-700">
               <div className="flex items-center justify-between px-4">

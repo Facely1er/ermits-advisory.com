@@ -16,6 +16,7 @@ export const en = {
     about: "About",
     services: "Services",
     resources: "Resources",
+    insights: "Insights",
     steel: "STEEL™",
     riskRadar: "Risk Radar",
     dashboard: "Dashboard",
@@ -759,6 +760,7 @@ export const en = {
     },
     tags: {
       title: "Topics",
+      steel: "STEEL™",
       compliance: "Compliance",
       risk: "Risk Management",
       leadership: "Leadership",
