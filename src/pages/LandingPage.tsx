@@ -389,6 +389,7 @@ export const LandingPage: React.FC = () => {
             <Button 
               variant="secondary" 
               size="lg"
+              onClick={() => navigate('/contact')}
             >
               {t('landing.cta.button')}
             </Button>
