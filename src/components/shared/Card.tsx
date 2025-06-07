@@ -2,7 +2,7 @@ import React, { HTMLAttributes } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '../../utils/cn';
 
-interface CardProps extends HTMLAttributes<HTMLDivElement> {
+export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   variant?: 'default' | 'glass' | 'solid' | 'outline';
   padding?: 'none' | 'sm' | 'md' | 'lg';
   hover?: boolean;

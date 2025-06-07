@@ -164,7 +164,7 @@ export const threats: Threat[] = [
 ];
 
 // Strategic Actions
-const strategicActions: StrategicAction[] = [
+export const strategicActions: StrategicAction[] = [
   {
     id: '1',
     priority: 'Critical',
@@ -203,7 +203,7 @@ const strategicActions: StrategicAction[] = [
 ];
 
 // Services
-const services: Service[] = [
+export const services: Service[] = [
   {
     id: 'board-briefings',
     title: 'Board Briefings',
@@ -259,7 +259,7 @@ const services: Service[] = [
 ];
 
 // Risk Radar Recommendations
-const recommendations: Recommendation[] = [
+export const recommendations: Recommendation[] = [
   {
     id: '1',
     priority: 'Critical',
@@ -334,7 +334,7 @@ export const scenarios = {
 };
 
 // Board presentation slides
-const presentationSlides = [
+export const presentationSlides = [
   {
     id: 'slide1',
     title: 'Cybersecurity Executive Briefing',

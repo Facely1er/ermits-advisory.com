@@ -1,10 +1,10 @@
 // Format a number with thousand separators according to the locale
-const formatNumber = (value: number, locale = 'en-US'): string => {
+export const formatNumber = (value: number, locale = 'en-US'): string => {
   return new Intl.NumberFormat(locale).format(value);
 };
 
 // Format currency with symbol according to the locale
-const formatCurrency = (value: number, locale = 'en-US', currency = 'USD'): string => {
+export const formatCurrency = (value: number, locale = 'en-US', currency = 'USD'): string => {
   return new Intl.NumberFormat(locale, {
     style: 'currency',
     currency,
@@ -23,7 +23,7 @@ export const formatPercentage = (value: number, locale = 'en-US', decimals = 1):
 };
 
 // Format a date according to the locale
-const formatDate = (date: Date, locale = 'en-US', options?: Intl.DateTimeFormatOptions): string => {
+export const formatDate = (date: Date, locale = 'en-US', options?: Intl.DateTimeFormatOptions): string => {
   const defaultOptions: Intl.DateTimeFormatOptions = {
     year: 'numeric',
     month: 'short',
@@ -34,7 +34,7 @@ const formatDate = (date: Date, locale = 'en-US', options?: Intl.DateTimeFormatO
 };
 
 // Format a date in relative time (e.g., "2 days ago")
-const formatRelativeTime = (date: Date, locale = 'en-US'): string => {
+export const formatRelativeTime = (date: Date, locale = 'en-US'): string => {
   const now = new Date();
   const diffInSeconds = Math.floor((now.getTime() - date.getTime()) / 1000);
   
