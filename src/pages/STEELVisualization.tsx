@@ -166,25 +166,27 @@ export const STEELVisualization: React.FC = () => {
                     const y = radius * Math.sin(angle);
                     
                     return (
-                      <motion.div
+                      <motion.button
                         key={dimension.id}
                         variants={hexagonVariants}
                         whileHover="hover"
                         whileTap="tap"
                         onClick={() => handleDimensionClick(dimension.id)}
-                        className="w-24 h-20 hexagon flex flex-col items-center justify-center absolute cursor-pointer transition-colors"
+                        className="w-24 h-20 hexagon flex flex-col items-center justify-center absolute transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2 dark:focus:ring-offset-dark-bg focus:ring-offset-white dark:focus:ring-silver"
                         style={{ 
                           left: `calc(50% + ${x}px - 3rem)`, 
                           top: `calc(50% + ${y}px - 2.5rem)`,
                           backgroundColor: dimension.color,
                           color: '#fff'
                         }}
+                        aria-label={`Select ${t(`steel.dimensions.${dimension.id}.title`)} dimension`}
+                        type="button"
                       >
-                        <div className="flex flex-col items-center justify-center">
+                        <div className="flex flex-col items-center justify-center pointer-events-none">
                           {getDimensionIcon(dimension.id, 16)}
                           <span className="text-xs font-medium mt-1">{t(`steel.dimensions.${dimension.id}.title`)}</span>
                         </div>
-                      </motion.div>
+                      </motion.button>
                     );
                   })}
                 </motion.div>
@@ -201,7 +203,9 @@ export const STEELVisualization: React.FC = () => {
                   >
                     <button 
                       onClick={() => setSelectedDimension(null)}
-                      className="absolute top-4 right-4 p-1 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+                      className="absolute top-4 right-4 p-1 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2 dark:focus:ring-offset-dark-bg dark:focus:ring-silver"
+                      aria-label="Close dimension details"
+                      type="button"
                     >
                       <X size={16} className="dark:text-white" />
                     </button>
