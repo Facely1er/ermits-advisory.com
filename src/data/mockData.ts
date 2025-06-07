@@ -390,7 +390,7 @@ export const resourcesData = [
     date: '2025-04-15',
     readTime: '25 min',
     downloadUrl: 'https://www.africau.edu/images/default/sample.pdf',
-    imageUrl: '/src/assets/image.png',
+    imageUrl: '/src/assets/background-copy.jpg',
     featured: true
   },
   {
