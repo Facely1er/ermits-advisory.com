@@ -35,12 +35,12 @@ export const ResourcesPage: React.FC = () => {
   const [showFilters, setShowFilters] = useState(false);
   const [newsletterEmail, setNewsletterEmail] = useState('');
   
-  // Sample resources data
+  // Sample resources data with translated content
   const resources: Resource[] = [
     {
       id: 'wp-001',
-      title: 'The Executive\'s Guide to Modern Cyber Risk Management',
-      description: 'A comprehensive guide for C-suite executives on implementing effective cyber risk management strategies using the STEEL methodology.',
+      title: t('resources.content.wp-001.title'),
+      description: t('resources.content.wp-001.description'),
       category: 'whitepapers',
       tags: ['steel', 'risk', 'leadership'],
       date: '2025-04-15',
@@ -51,8 +51,8 @@ export const ResourcesPage: React.FC = () => {
     },
     {
       id: 'art-001',
-      title: 'Five Critical Questions Every Board Should Ask About Cybersecurity',
-      description: 'Learn the essential questions board members should be asking to fulfill their cyber governance responsibilities effectively.',
+      title: t('resources.content.art-001.title'),
+      description: t('resources.content.art-001.description'),
       category: 'articles',
       tags: ['leadership', 'compliance'],
       date: '2025-03-22',
@@ -61,8 +61,8 @@ export const ResourcesPage: React.FC = () => {
     },
     {
       id: 'cs-001',
-      title: 'How a Global Financial Institution Reduced Risk Exposure by 67%',
-      description: 'A detailed case study of how our STEEL methodology helped a major financial institution transform their cyber risk posture.',
+      title: t('resources.content.cs-001.title'),
+      description: t('resources.content.cs-001.description'),
       category: 'casestudies',
       tags: ['steel', 'risk', 'compliance'],
       date: '2025-02-10',
@@ -72,8 +72,8 @@ export const ResourcesPage: React.FC = () => {
     },
     {
       id: 'web-001',
-      title: 'Navigating Geopolitical Cyber Risks in a Turbulent World',
-      description: 'An on-demand webinar featuring experts discussing how political factors impact cybersecurity strategy and resilience.',
+      title: t('resources.content.web-001.title'),
+      description: t('resources.content.web-001.description'),
       category: 'webinars',
       tags: ['steel', 'risk'],
       date: '2025-01-30',
@@ -81,8 +81,8 @@ export const ResourcesPage: React.FC = () => {
     },
     {
       id: 'art-002',
-      title: 'Emerging Technology Risks: What You Need to Know About AI Security',
-      description: 'An analysis of the rapidly evolving security landscape around artificial intelligence and machine learning technologies.',
+      title: t('resources.content.art-002.title'),
+      description: t('resources.content.art-002.description'),
       category: 'articles',
       tags: ['technology', 'risk'],
       date: '2025-03-05',
@@ -91,8 +91,8 @@ export const ResourcesPage: React.FC = () => {
     },
     {
       id: 'wp-002',
-      title: 'Building Cyber Resilience Through the STEEL Framework',
-      description: 'A detailed technical paper on implementing the STEEL methodology to enhance organizational resilience against cyber threats.',
+      title: t('resources.content.wp-002.title'),
+      description: t('resources.content.wp-002.description'),
       category: 'whitepapers',
       tags: ['steel', 'technology'],
       date: '2025-02-28',
@@ -102,8 +102,8 @@ export const ResourcesPage: React.FC = () => {
     },
     {
       id: 'cs-002',
-      title: 'Securing the Supply Chain: A Manufacturing Success Story',
-      description: 'How a global manufacturing firm secured their complex supply chain using our advisory services and STEEL methodology.',
+      title: t('resources.content.cs-002.title'),
+      description: t('resources.content.cs-002.description'),
       category: 'casestudies',
       tags: ['risk', 'technology'],
       date: '2025-01-15',
@@ -113,8 +113,8 @@ export const ResourcesPage: React.FC = () => {
     },
     {
       id: 'web-002',
-      title: 'Regulatory Landscape 2025: Preparing for New Compliance Requirements',
-      description: 'Expert panel discussion on upcoming regulatory changes and how organizations can prepare effectively.',
+      title: t('resources.content.web-002.title'),
+      description: t('resources.content.web-002.description'),
       category: 'webinars',
       tags: ['compliance', 'leadership'],
       date: '2025-03-18',

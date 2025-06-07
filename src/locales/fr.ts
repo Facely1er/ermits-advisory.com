@@ -854,6 +854,40 @@ export const fr = {
       shareOnLinkedIn: "Partager sur LinkedIn",
       shareOnTwitter: "Partager sur Twitter",
       linkCopied: "Lien copié dans le presse-papiers"
+    },
+    content: {
+      "wp-001": {
+        title: "Guide de l'Exécutif pour la Gestion Moderne des Risques Cyber",
+        description: "Un guide complet pour les dirigeants C-suite sur l'implémentation de stratégies efficaces de gestion des risques cyber en utilisant la méthodologie STEEL."
+      },
+      "art-001": {
+        title: "Cinq Questions Critiques que Tout Conseil d'Administration Devrait Poser sur la Cybersécurité",
+        description: "Apprenez les questions essentielles que les membres du conseil d'administration devraient poser pour remplir efficacement leurs responsabilités de gouvernance cyber."
+      },
+      "cs-001": {
+        title: "Comment une Institution Financière Mondiale a Réduit son Exposition aux Risques de 67%",
+        description: "Une étude de cas détaillée de la façon dont notre méthodologie STEEL a aidé une institution financière majeure à transformer sa posture de risque cyber."
+      },
+      "web-001": {
+        title: "Naviguer les Risques Cyber Géopolitiques dans un Monde Turbulent",
+        description: "Un webinaire à la demande avec des experts discutant de la façon dont les facteurs politiques impactent la stratégie et la résilience de cybersécurité."
+      },
+      "art-002": {
+        title: "Risques des Technologies Émergentes : Ce que Vous Devez Savoir sur la Sécurité de l'IA",
+        description: "Une analyse du paysage de sécurité en évolution rapide autour de l'intelligence artificielle et des technologies d'apprentissage automatique."
+      },
+      "wp-002": {
+        title: "Construire la Résilience Cyber à travers le Cadre STEEL",
+        description: "Un document technique détaillé sur l'implémentation de la méthodologie STEEL pour améliorer la résilience organisationnelle contre les menaces cyber."
+      },
+      "cs-002": {
+        title: "Sécuriser la Chaîne d'Approvisionnement : Histoire de Succès Manufacturier",
+        description: "Comment une entreprise manufacturière mondiale a sécurisé sa chaîne d'approvisionnement complexe en utilisant nos services de conseil et la méthodologie STEEL."
+      },
+      "web-002": {
+        title: "Paysage Réglementaire 2025 : Se Préparer aux Nouvelles Exigences de Conformité",
+        description: "Discussion de panel d'experts sur les changements réglementaires à venir et comment les organisations peuvent se préparer efficacement."
+      }
     }
   },
   presentation: {
