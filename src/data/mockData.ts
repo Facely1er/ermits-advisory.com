@@ -390,7 +390,7 @@ export const resourcesData = [
     date: '2025-04-15',
     readTime: '25 min',
     downloadUrl: 'https://www.africau.edu/images/default/sample.pdf',
-    imageUrl: 'https://images.pexels.com/photos/5473955/pexels-photo-5473955.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    imageUrl: 'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     featured: true
   },
   {
