@@ -31,15 +31,11 @@ export const ResourcesPage: React.FC = () => {
   
   // Get translated resource content
   const getTranslatedResourceContent = (resourceId: string) => {
-    console.log('🔍 Getting translated content for resource:', resourceId);
     const translatedContent = getNestedTranslation(`resources.content.${resourceId}`);
-    console.log('🔍 Translated content result:', translatedContent);
     
     if (translatedContent && typeof translatedContent === 'object' && translatedContent.title) {
-      console.log('✅ Found valid translated content:', translatedContent);
       return translatedContent;
     }
-    console.log('❌ No valid translated content found, returning null');
     return null;
   };
 
