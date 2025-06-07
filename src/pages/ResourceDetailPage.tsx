@@ -425,6 +425,342 @@ const resourcesData = [
         'Economic frameworks provide structure for consistent ROI assessment'
       ]
     }
+  },
+  {
+    id: 'cs-003',
+    title: 'Healthcare System Transforms Cyber Defense Against Patient Data Threats',
+    description: 'How a multi-hospital health system implemented comprehensive cybersecurity measures to protect patient data and ensure HIPAA compliance.',
+    category: 'casestudies',
+    tags: ['compliance', 'risk', 'technology'],
+    date: '2025-03-12',
+    readTime: '16 min',
+    downloadUrl: '#',
+    imageUrl: 'https://images.pexels.com/photos/4033148/pexels-photo-4033148.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    author: 'Dr. Amanda Foster, Healthcare Security Specialist',
+    content: {
+      summary: 'This case study details how a regional healthcare system with five hospitals and dozens of clinics transformed their cybersecurity posture to protect sensitive patient data while maintaining operational efficiency and regulatory compliance.',
+      sections: [
+        {
+          title: 'Healthcare Security Challenges',
+          content: 'The healthcare industry faces unique cybersecurity challenges, including legacy medical devices, complex regulatory requirements, and the critical need to maintain patient care continuity during security incidents.'
+        },
+        {
+          title: 'Initial Risk Assessment',
+          content: 'Our comprehensive assessment revealed significant vulnerabilities in medical device networks, inadequate data encryption practices, and gaps in employee security awareness training.'
+        },
+        {
+          title: 'HIPAA Compliance Framework',
+          content: 'We developed a comprehensive HIPAA compliance framework that addressed administrative, physical, and technical safeguards while ensuring minimal disruption to patient care operations.'
+        },
+        {
+          title: 'Medical Device Security',
+          content: 'Implementation of specialized security controls for medical devices, including network segmentation, device inventory management, and vulnerability assessment programs tailored for healthcare environments.'
+        },
+        {
+          title: 'Incident Response Planning',
+          content: 'Development of healthcare-specific incident response procedures that prioritize patient safety while ensuring effective containment and recovery from cyber incidents.'
+        },
+        {
+          title: 'Results and Patient Impact',
+          content: 'The implementation achieved 95% HIPAA compliance scores, reduced security incidents by 78%, and enabled the organization to maintain continuous patient care during two major cybersecurity incidents.'
+        }
+      ],
+      keyTakeaways: [
+        'Healthcare cybersecurity requires specialized approaches that prioritize patient safety',
+        'Medical device security presents unique challenges that require dedicated strategies',
+        'HIPAA compliance can be achieved without compromising operational efficiency',
+        'Employee training is critical for healthcare cybersecurity success',
+        'Incident response plans must account for patient care continuity requirements'
+      ]
+    }
+  },
+  {
+    id: 'web-003',
+    title: 'Crisis Management Masterclass: Leading Through Cyber Incidents',
+    description: 'Interactive webinar focused on executive leadership strategies during major cybersecurity incidents and crisis communication.',
+    category: 'webinars',
+    tags: ['leadership', 'risk'],
+    date: '2025-04-08',
+    readTime: '55 min',
+    imageUrl: 'https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    author: 'ERMITS Advisory Crisis Leadership Panel',
+    content: {
+      summary: 'Join our expert panel of former CISOs, crisis management specialists, and executive leaders as they share insights from real-world cyber incidents and provide practical guidance for effective crisis leadership.',
+      sections: [
+        {
+          title: 'Crisis Leadership Fundamentals',
+          content: 'Essential principles of effective crisis leadership during cybersecurity incidents, including decision-making frameworks, communication strategies, and stakeholder management approaches.'
+        },
+        {
+          title: 'The First 24 Hours: Critical Decisions',
+          content: 'Detailed walkthrough of the critical decisions that must be made in the first 24 hours of a major cyber incident, including tactical and strategic considerations.'
+        },
+        {
+          title: 'Stakeholder Communication Strategies',
+          content: 'Best practices for communicating with various stakeholders during a crisis, including employees, customers, regulators, media, and law enforcement agencies.'
+        },
+        {
+          title: 'Legal and Regulatory Considerations',
+          content: 'Understanding the legal and regulatory landscape during cyber incidents, including notification requirements, evidence preservation, and coordination with authorities.'
+        },
+        {
+          title: 'Business Continuity and Recovery',
+          content: 'Strategies for maintaining business operations during extended cyber incidents and planning for effective recovery and restoration of normal operations.'
+        },
+        {
+          title: 'Post-Incident Leadership',
+          content: 'Leading the organization through the recovery and lessons-learned phases, including reputation management, process improvements, and organizational resilience building.'
+        },
+        {
+          title: 'Interactive Crisis Simulation',
+          content: 'Participants engage in a real-time crisis simulation exercise, making decisions and experiencing the challenges of leading through a major cyber incident.'
+        }
+      ],
+      keyTakeaways: [
+        'Crisis leadership requires pre-planning and regular practice through simulations',
+        'Clear communication is essential for maintaining stakeholder confidence during incidents',
+        'Legal and regulatory considerations must be integrated into crisis response planning',
+        'Business continuity decisions often require balancing security and operational needs',
+        'Post-incident leadership is critical for building long-term organizational resilience'
+      ]
+    }
+  },
+  {
+    id: 'wp-003',
+    title: 'M&A Cybersecurity Due Diligence: A Comprehensive Framework',
+    description: 'Complete guide to cybersecurity considerations in mergers and acquisitions, including assessment methodologies and integration strategies.',
+    category: 'whitepapers',
+    tags: ['risk', 'compliance', 'leadership'],
+    date: '2025-01-25',
+    readTime: '35 min',
+    downloadUrl: '#',
+    imageUrl: 'https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    author: 'Marcus Thompson, M&A Security Director',
+    content: {
+      summary: 'This comprehensive whitepaper provides a detailed framework for conducting cybersecurity due diligence in M&A transactions, covering pre-acquisition assessment, risk valuation, and post-merger integration strategies.',
+      sections: [
+        {
+          title: 'M&A Cybersecurity Landscape',
+          content: 'Overview of the current M&A cybersecurity landscape, including common risks, regulatory considerations, and the financial impact of cybersecurity issues on deal valuations.'
+        },
+        {
+          title: 'Pre-Acquisition Assessment Framework',
+          content: 'Comprehensive framework for assessing target company cybersecurity posture, including technical assessments, governance reviews, and risk quantification methodologies.'
+        },
+        {
+          title: 'Risk Valuation Methodologies',
+          content: 'Detailed approaches for quantifying cybersecurity risks in financial terms, enabling informed decision-making about deal structure, pricing, and risk allocation.'
+        },
+        {
+          title: 'Legal and Regulatory Considerations',
+          content: 'Analysis of legal and regulatory factors that can impact M&A transactions, including data protection laws, industry regulations, and cross-border considerations.'
+        },
+        {
+          title: 'Integration Planning and Execution',
+          content: 'Strategic guidance for planning and executing cybersecurity integration following M&A transactions, including cultural integration, technology consolidation, and risk management alignment.'
+        },
+        {
+          title: 'Post-Merger Optimization',
+          content: 'Best practices for optimizing cybersecurity posture following M&A integration, including synergy realization, risk reduction, and long-term strategic planning.'
+        }
+      ],
+      keyTakeaways: [
+        'Cybersecurity due diligence is essential for successful M&A transactions',
+        'Risk quantification enables better deal structuring and pricing decisions',
+        'Integration planning must begin during the due diligence phase',
+        'Regulatory compliance considerations vary significantly across jurisdictions',
+        'Post-merger optimization requires ongoing attention and investment'
+      ]
+    }
+  },
+  {
+    id: 'art-004',
+    title: 'Zero Trust Architecture: Beyond the Buzzword',
+    description: 'A practical guide to implementing Zero Trust principles in modern enterprise environments with real-world examples and lessons learned.',
+    category: 'articles',
+    tags: ['technology', 'steel'],
+    date: '2025-02-18',
+    readTime: '13 min',
+    imageUrl: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    author: 'Alex Chen, Principal Security Architect',
+    content: {
+      summary: 'Zero Trust has become a security industry buzzword, but successful implementation requires careful planning and a deep understanding of organizational needs. This article provides practical guidance for moving beyond the hype to build effective Zero Trust architectures.',
+      sections: [
+        {
+          title: 'Demystifying Zero Trust',
+          content: 'Zero Trust is not a product or single technology, but rather a security model that requires verification for every user and device attempting to access resources, regardless of their location relative to the network perimeter.'
+        },
+        {
+          title: 'Core Zero Trust Principles',
+          content: 'Examination of the fundamental principles that underpin Zero Trust architecture, including never trust always verify, least privilege access, and assume breach scenarios.'
+        },
+        {
+          title: 'Implementation Roadmap',
+          content: 'Step-by-step guidance for implementing Zero Trust principles, starting with identity and access management, progressing through network segmentation, and culminating in full architecture maturity.'
+        },
+        {
+          title: 'Technology Components and Integration',
+          content: 'Overview of the key technology components required for Zero Trust implementation, including identity providers, network access controls, endpoint protection, and data security solutions.'
+        },
+        {
+          title: 'Common Implementation Challenges',
+          content: 'Analysis of the most common challenges organizations face when implementing Zero Trust, including legacy system integration, user experience considerations, and organizational change management.'
+        },
+        {
+          title: 'Measuring Zero Trust Success',
+          content: 'Frameworks and metrics for measuring the effectiveness of Zero Trust implementations, including security metrics, operational efficiency indicators, and business impact assessments.'
+        }
+      ],
+      keyTakeaways: [
+        'Zero Trust is a security model, not a technology product',
+        'Successful implementation requires a phased approach with clear milestones',
+        'Identity and access management forms the foundation of Zero Trust architecture',
+        'User experience must be carefully considered to ensure adoption success',
+        'Measurement and continuous improvement are essential for long-term success'
+      ]
+    }
+  },
+  {
+    id: 'cs-004',
+    title: 'Government Agency Achieves 99.9% Uptime During Cyber Modernization',
+    description: 'How a federal agency successfully modernized their cybersecurity infrastructure while maintaining critical service availability.',
+    category: 'casestudies',
+    tags: ['technology', 'compliance', 'steel'],
+    date: '2025-01-08',
+    readTime: '20 min',
+    downloadUrl: '#',
+    imageUrl: 'https://images.pexels.com/photos/5466271/pexels-photo-5466271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    author: 'Patricia Williams, Government Security Consultant',
+    content: {
+      summary: 'This case study examines how a large federal agency with over 50,000 employees successfully modernized their cybersecurity infrastructure while maintaining 99.9% service availability and achieving FedRAMP compliance.',
+      sections: [
+        {
+          title: 'The Modernization Challenge',
+          content: 'The agency faced the complex challenge of modernizing legacy cybersecurity infrastructure while maintaining critical services that support millions of citizens and ensuring compliance with federal security requirements.'
+        },
+        {
+          title: 'STEEL™ Assessment for Government',
+          content: 'Our STEEL™ assessment was adapted for the government environment, incorporating unique political, regulatory, and operational considerations specific to federal agencies.'
+        },
+        {
+          title: 'Phased Modernization Approach',
+          content: 'Implementation of a carefully planned phased approach that minimized service disruption while progressively enhancing security capabilities across the agency\'s diverse technology portfolio.'
+        },
+        {
+          title: 'FedRAMP Compliance Achievement',
+          content: 'Detailed process for achieving and maintaining FedRAMP compliance throughout the modernization process, including continuous monitoring and security control implementation.'
+        },
+        {
+          title: 'Change Management and Training',
+          content: 'Comprehensive change management program that ensured successful adoption of new security technologies and processes across the large, distributed federal workforce.'
+        },
+        {
+          title: 'Results and Citizen Impact',
+          content: 'The modernization achieved 99.9% service availability, improved security posture by 85%, and enhanced citizen service delivery while reducing operational costs by 23%.'
+        }
+      ],
+      keyTakeaways: [
+        'Government cybersecurity modernization requires specialized approaches and compliance considerations',
+        'Phased implementation strategies are essential for maintaining service availability',
+        'FedRAMP compliance can be achieved alongside modernization efforts with proper planning',
+        'Change management is critical for success in large government organizations',
+        'Citizen service improvement can be achieved alongside security enhancements'
+      ]
+    }
+  },
+  {
+    id: 'web-004',
+    title: 'The Future of Cybersecurity: Trends and Predictions for 2025-2030',
+    description: 'Forward-looking discussion with industry experts about emerging cybersecurity trends, technologies, and threats over the next five years.',
+    category: 'webinars',
+    tags: ['technology', 'leadership', 'steel'],
+    date: '2025-04-20',
+    readTime: '48 min',
+    imageUrl: 'https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    author: 'ERMITS Advisory Future Trends Panel',
+    content: {
+      summary: 'Join our panel of cybersecurity visionaries, technology leaders, and policy experts as they explore the future of cybersecurity, discussing emerging threats, technological advances, and the evolving role of security in business strategy.',
+      sections: [
+        {
+          title: 'Emerging Threat Landscape',
+          content: 'Analysis of how the threat landscape is evolving, including new attack vectors, the weaponization of emerging technologies, and the changing motivations of threat actors.'
+        },
+        {
+          title: 'Artificial Intelligence in Cybersecurity',
+          content: 'Exploration of how AI and machine learning are transforming both offensive and defensive cybersecurity capabilities, including automation, threat detection, and response optimization.'
+        },
+        {
+          title: 'Quantum Computing Impact',
+          content: 'Discussion of the potential impact of quantum computing on cybersecurity, including implications for encryption, security protocols, and long-term strategic planning.'
+        },
+        {
+          title: 'Regulatory Evolution',
+          content: 'Examination of how cybersecurity regulations are expected to evolve over the next five years, including privacy laws, industry standards, and international cooperation frameworks.'
+        },
+        {
+          title: 'Workforce and Skills Development',
+          content: 'Analysis of the changing cybersecurity workforce requirements, skills gaps, and strategies for developing the next generation of security professionals.'
+        },
+        {
+          title: 'Strategic Business Integration',
+          content: 'Discussion of how cybersecurity is becoming increasingly integrated with business strategy, including its role in digital transformation, competitive advantage, and business model evolution.'
+        }
+      ],
+      keyTakeaways: [
+        'The cybersecurity landscape will continue to evolve rapidly over the next five years',
+        'AI and automation will transform both attack and defense capabilities',
+        'Quantum computing presents both opportunities and challenges for cybersecurity',
+        'Regulatory frameworks will become more complex and internationally coordinated',
+        'Cybersecurity will become increasingly integrated with business strategy'
+      ]
+    }
+  },
+  {
+    id: 'art-005',
+    title: 'Building a Cyber-Resilient Remote Workforce',
+    description: 'Strategies for securing distributed teams and maintaining productivity while protecting sensitive data in remote work environments.',
+    category: 'articles',
+    tags: ['technology', 'risk', 'leadership'],
+    date: '2025-03-28',
+    readTime: '11 min',
+    imageUrl: 'https://images.pexels.com/photos/4050344/pexels-photo-4050344.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    author: 'Lisa Chang, Remote Security Specialist',
+    content: {
+      summary: 'The shift to remote and hybrid work models has fundamentally changed the cybersecurity landscape. This article provides practical strategies for building security into distributed work environments while maintaining productivity and employee satisfaction.',
+      sections: [
+        {
+          title: 'The Remote Security Challenge',
+          content: 'Remote work introduces unique security challenges, including endpoint security, network protection, data access controls, and maintaining security culture across distributed teams.'
+        },
+        {
+          title: 'Secure Remote Infrastructure',
+          content: 'Building secure infrastructure for remote work, including VPN strategies, cloud security, endpoint protection, and secure communication platforms.'
+        },
+        {
+          title: 'Identity and Access Management',
+          content: 'Implementing robust identity and access management solutions for remote workers, including multi-factor authentication, privileged access management, and zero trust principles.'
+        },
+        {
+          title: 'Data Protection Strategies',
+          content: 'Protecting sensitive data in remote environments through encryption, data loss prevention, cloud security controls, and secure file sharing solutions.'
+        },
+        {
+          title: 'Security Culture and Training',
+          content: 'Building and maintaining a strong security culture among remote teams through targeted training, regular communication, and engagement strategies.'
+        },
+        {
+          title: 'Monitoring and Incident Response',
+          content: 'Adapting monitoring and incident response capabilities for distributed environments, including endpoint detection and response, user behavior analytics, and remote investigation procedures.'
+        }
+      ],
+      keyTakeaways: [
+        'Remote work security requires a comprehensive, multi-layered approach',
+        'Zero trust principles are especially important for distributed environments',
+        'Employee engagement and training are critical for remote security success',
+        'Technology solutions must balance security with user experience',
+        'Continuous monitoring and adaptation are essential for maintaining security posture'
+      ]
+    }
   }
 ];
 
@@ -692,7 +1028,7 @@ export const ResourceDetailPage: React.FC = () => {
             >
               {/* Download CTA */}
               {resource.downloadUrl && (
-                <Card variant="glass\" padding="lg\" className="bg-navy text-white">
+                <Card variant="glass" padding="lg" className="bg-navy text-white">
                   <h3 className="text-lg font-bold mb-3">Download This Resource</h3>
                   <p className="text-silver mb-4 text-sm">
                     Get the complete guide with detailed analysis, implementation strategies, and actionable recommendations.
