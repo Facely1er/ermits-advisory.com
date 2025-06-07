@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
@@ -27,10 +28,12 @@ interface Resource {
 
 export const ResourcesPage: React.FC = () => {
   const { t } = useLanguage();
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<ResourceCategory>('all');
   const [selectedTags, setSelectedTags] = useState<ResourceTag[]>([]);
   const [showFilters, setShowFilters] = useState(false);
+  const [newsletterEmail, setNewsletterEmail] = useState('');
   
   // Sample resources data
   const resources: Resource[] = [
@@ -151,6 +154,32 @@ export const ResourcesPage: React.FC = () => {
     setSelectedCategory('all');
     setSelectedTags([]);
     setSearchQuery('');
+  };
+
+  // Handle resource view
+  const handleViewResource = (resourceId: string) => {
+    // Navigate to a specific resource page or show more details
+    navigate(`/resources?view=${resourceId}`);
+  };
+
+  // Handle download
+  const handleDownloadResource = (resource: Resource) => {
+    // In a real implementation, this would trigger the actual download
+    console.log('Downloading resource:', resource.title);
+    alert(`Download started for: ${resource.title}`);
+  };
+
+  // Handle newsletter subscription
+  const handleNewsletterSubscribe = () => {
+    if (!newsletterEmail || !newsletterEmail.includes('@')) {
+      alert('Please enter a valid email address');
+      return;
+    }
+    
+    // In a real implementation, this would send the email to your backend
+    console.log('Newsletter subscription for:', newsletterEmail);
+    alert(`Thank you for subscribing with email: ${newsletterEmail}`);
+    setNewsletterEmail(''); // Clear the input after successful subscription
   };
   
   // Get category icon
@@ -296,6 +325,7 @@ export const ResourcesPage: React.FC = () => {
                           size="sm" 
                           icon={<Download size={16} />}
                           iconPosition="right"
+                          onClick={() => handleDownloadResource(featuredResource)}
                         >
                           {t('resources.download')}
                         </Button>
@@ -587,6 +617,7 @@ export const ResourcesPage: React.FC = () => {
                               variant="outline" 
                               size="sm" 
                               icon={<Download size={16} />}
+                              onClick={() => handleDownloadResource(resource)}
                             >
                               {t('resources.download')}
                             </Button>
@@ -595,6 +626,7 @@ export const ResourcesPage: React.FC = () => {
                               variant="outline" 
                               size="sm" 
                               icon={<Eye size={16} />}
+                              onClick={() => handleViewResource(resource.id)}
                             >
                               {t('resources.view')}
                             </Button>
@@ -636,13 +668,16 @@ export const ResourcesPage: React.FC = () => {
                 <div className="flex flex-col sm:flex-row gap-3">
                   <input
                     type="email"
-                    className="flex-grow px-4 py-2 border border-silver/30 bg-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-silver"
+                    className="flex-grow px-4 py-2 border border-silver/30 bg-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-silver text-white placeholder-silver/70"
                     placeholder={t('resources.newsletter.emailPlaceholder')}
+                    value={newsletterEmail}
+                    onChange={(e) => setNewsletterEmail(e.target.value)}
                   />
                   <Button 
                     variant="secondary" 
                     icon={<Mail size={16} />}
                     iconPosition="left"
+                    onClick={handleNewsletterSubscribe}
                   >
                     {t('resources.newsletter.subscribe')}
                   </Button>
