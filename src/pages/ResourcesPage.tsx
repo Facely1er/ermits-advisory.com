@@ -156,10 +156,9 @@ export const ResourcesPage: React.FC = () => {
     setSearchQuery('');
   };
 
-  // Handle resource view
+  // Handle resource view - navigate to detail page
   const handleViewResource = (resourceId: string) => {
-    // Navigate to a specific resource page or show more details
-    navigate(`/resources?view=${resourceId}`);
+    navigate(`/resources/${resourceId}`);
   };
 
   // Handle download
@@ -319,17 +318,27 @@ export const ResourcesPage: React.FC = () => {
                         )}
                       </div>
                       
-                      {featuredResource.downloadUrl && (
+                      <div className="flex gap-2">
                         <Button 
-                          variant="primary" 
+                          variant="outline" 
                           size="sm" 
-                          icon={<Download size={16} />}
-                          iconPosition="right"
-                          onClick={() => handleDownloadResource(featuredResource)}
+                          icon={<Eye size={16} />}
+                          onClick={() => handleViewResource(featuredResource.id)}
                         >
-                          {t('resources.download')}
+                          {t('resources.view')}
                         </Button>
-                      )}
+                        {featuredResource.downloadUrl && (
+                          <Button 
+                            variant="primary" 
+                            size="sm" 
+                            icon={<Download size={16} />}
+                            iconPosition="right"
+                            onClick={() => handleDownloadResource(featuredResource)}
+                          >
+                            {t('resources.download')}
+                          </Button>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -612,16 +621,7 @@ export const ResourcesPage: React.FC = () => {
                             )}
                           </div>
                           
-                          {resource.downloadUrl ? (
-                            <Button 
-                              variant="outline" 
-                              size="sm" 
-                              icon={<Download size={16} />}
-                              onClick={() => handleDownloadResource(resource)}
-                            >
-                              {t('resources.download')}
-                            </Button>
-                          ) : (
+                          <div className="flex gap-2">
                             <Button 
                               variant="outline" 
                               size="sm" 
@@ -630,7 +630,17 @@ export const ResourcesPage: React.FC = () => {
                             >
                               {t('resources.view')}
                             </Button>
-                          )}
+                            {resource.downloadUrl && (
+                              <Button 
+                                variant="outline" 
+                                size="sm" 
+                                icon={<Download size={16} />}
+                                onClick={() => handleDownloadResource(resource)}
+                              >
+                                {t('resources.download')}
+                              </Button>
+                            )}
+                          </div>
                         </div>
                       </div>
                     </div>

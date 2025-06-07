@@ -13,6 +13,7 @@ import { BoardPresentation } from './pages/BoardPresentation';
 import { ContactPage } from './pages/ContactPage';
 import { AboutPage } from './pages/AboutPage';
 import { ResourcesPage } from './pages/ResourcesPage';
+import { ResourceDetailPage } from './pages/ResourceDetailPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { TermsOfServicePage } from './pages/TermsOfServicePage';
@@ -38,6 +39,7 @@ function App() {
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/resources" element={<ResourcesPage />} />
+                <Route path="/resources/:id" element={<ResourceDetailPage />} />
                 <Route path="/team" element={<TeamPage />} />
                 <Route path="/privacy" element={<PrivacyPolicyPage />} />
                 <Route path="/terms" element={<TermsOfServicePage />} />
