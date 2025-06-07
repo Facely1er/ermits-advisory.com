@@ -16,7 +16,7 @@ type ResourceCategory = 'all' | 'whitepapers' | 'articles' | 'casestudies' | 'we
 type ResourceTag = 'steel' | 'compliance' | 'risk' | 'leadership' | 'technology';
 
 export const ResourcesPage: React.FC = () => {
-  const { t, language } = useLanguage();
+  const { t, language, getNestedTranslation } = useLanguage();
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<ResourceCategory>('all');
@@ -30,10 +30,15 @@ export const ResourcesPage: React.FC = () => {
   
   // Get translated resource content
   const getTranslatedResourceContent = (resourceId: string) => {
-    const translatedContent = t(`resources.content.${resourceId}`);
-    if (typeof translatedContent === 'object' && translatedContent.title) {
+    console.log('🔍 Getting translated content for resource:', resourceId);
+    const translatedContent = getNestedTranslation(`resources.content.${resourceId}`);
+    console.log('🔍 Translated content result:', translatedContent);
+    
+    if (translatedContent && typeof translatedContent === 'object' && translatedContent.title) {
+      console.log('✅ Found valid translated content:', translatedContent);
       return translatedContent;
     }
+    console.log('❌ No valid translated content found, returning null');
     return null;
   };
   
