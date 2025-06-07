@@ -44,209 +44,209 @@ export const fr = {
   },
   implementationGuide: {
     title: "Guide d'Implémentation STEEL™",
-    subtitle: "Votre feuille de route complète pour implémenter la méthodologie STEEL™ dans votre organisation. Transformez votre approche de gestion des risques cyber avec notre cadre éprouvé.",
+    subtitle: "Votre feuille de route complète pour implémenter la méthodologie STEEL™ dans votre organisation. Transformez votre approche de gestion des risques cyber avec notre cadre éprouvé et scientifiquement validé.",
     backToSteel: "Retour au Cadre STEEL™",
     completePackage: {
       title: "Package d'Implémentation Complet",
-      description: "Téléchargez notre guide d'implémentation complet de 120 pages avec modèles, listes de vérification et guidance spécifique à l'industrie pour assurer le déploiement réussi de STEEL™.",
+      description: "Téléchargez notre guide d'implémentation complet de 120 pages avec modèles prêts à l'emploi, listes de vérification détaillées et orientations spécifiques à votre secteur d'activité pour garantir le déploiement réussi de STEEL™ dans votre organisation.",
       features: {
-        pages: "120+ pages de guidance détaillée",
-        templates: "25+ modèles et feuilles de travail",
-        industry: "Adaptations spécifiques à l'industrie",
-        presentations: "Présentations exécutives"
+        pages: "120+ pages de guidance détaillée et méthodologique",
+        templates: "25+ modèles et feuilles de travail personnalisables",
+        industry: "Adaptations spécifiques par secteur d'activité",
+        presentations: "Présentations exécutives prêtes à présenter"
       },
-      downloadButton: "Télécharger Guide Complet",
-      downloadStarted: "Téléchargement Commencé!",
-      fileInfo: "PDF • 120 pages • 15.2 MB"
+      downloadButton: "Télécharger le Guide Complet",
+      downloadStarted: "Téléchargement Commencé !",
+      fileInfo: "PDF • 120 pages • 15.2 MB • Version française"
     },
     benefits: {
-      riskReduction: "67% Réduction Risque",
-      riskReductionDesc: "Réduction moyenne exposition risque cyber global",
-      roi: "3.4x ROI",
-      roiDesc: "Retour investissement sécurité sous 18 mois",
+      riskReduction: "67% Réduction des Risques",
+      riskReductionDesc: "Réduction moyenne de l'exposition aux risques cyber globaux",
+      roi: "ROI de 3.4x",
+      roiDesc: "Retour sur investissement sécurité sous 18 mois",
       faster: "83% Plus Rapide",
-      fasterDesc: "Temps vers insights risque actionnables",
-      confidence: "92% Confiance",
-      confidenceDesc: "Confiance conseil en posture sécurité"
+      fasterDesc: "Délai d'obtention d'insights risque actionnables",
+      confidence: "92% de Confiance",
+      confidenceDesc: "Niveau de confiance du conseil d'administration en la posture sécurité"
     },
     guideContents: {
-      title: "Contenu du Guide",
+      title: "Contenu Détaillé du Guide",
       executiveSummary: {
         title: "Résumé Exécutif",
         items: [
-          "Vue d'ensemble méthodologie STEEL™",
-          "Analyse cas d'affaires et ROI",
-          "Chronologie d'implémentation",
-          "Critères succès et métriques"
+          "Vue d'ensemble complète de la méthodologie STEEL™",
+          "Analyse du cas d'affaires et calcul précis du ROI",
+          "Chronologie détaillée d'implémentation par phases",
+          "Critères de succès et métriques de performance clés"
         ]
       },
       frameworkFoundation: {
-        title: "Fondations du Cadre",
+        title: "Fondations du Cadre Méthodologique",
         items: [
-          "Six dimensions STEEL expliquées",
-          "Méthodologie évaluation risque",
-          "Systèmes notation et mesure",
-          "Intégration avec cadres existants"
+          "Explication approfondie des six dimensions STEEL",
+          "Méthodologie complète d'évaluation des risques",
+          "Systèmes avancés de notation et de mesure",
+          "Guide d'intégration avec les cadres existants (ISO, NIST, etc.)"
         ]
       },
       implementationRoadmap: {
-        title: "Feuille Route Implémentation",
+        title: "Feuille de Route d'Implémentation",
         items: [
-          "Guide implémentation phase par phase",
-          "Exigences ressources et planification",
-          "Stratégies engagement parties prenantes",
-          "Meilleures pratiques gestion changement"
+          "Guide détaillé d'implémentation phase par phase",
+          "Planification des ressources et estimation des besoins",
+          "Stratégies éprouvées d'engagement des parties prenantes",
+          "Meilleures pratiques de gestion du changement organisationnel"
         ]
       },
       toolsTemplates: {
-        title: "Outils et Modèles",
+        title: "Outils et Modèles Opérationnels",
         items: [
-          "Feuilles travail et listes vérification évaluation",
-          "Modèles présentation exécutive",
-          "Tableaux bord rapport risque",
-          "Matériaux formation et guides"
+          "Feuilles de travail d'évaluation et listes de vérification complètes",
+          "Modèles de présentation exécutive personnalisables",
+          "Tableaux de bord de rapport de risque interactifs",
+          "Matériaux de formation et guides pédagogiques détaillés"
         ]
       },
       industryApplications: {
-        title: "Applications Industrie",
+        title: "Applications Sectorielles Spécialisées",
         items: [
-          "Implémentation services financiers",
-          "Adaptations secteur santé",
-          "Spécificités industrie manufacturière",
-          "Gouvernement et secteur public"
+          "Implémentation adaptée aux services financiers et bancaires",
+          "Adaptations spécifiques au secteur de la santé et HIPAA",
+          "Spécificités de l'industrie manufacturière et IoT",
+          "Guide pour le secteur gouvernemental et les organismes publics"
         ]
       },
       successStories: {
-        title: "Histoires de Succès",
+        title: "Études de Cas et Histoires de Succès",
         items: [
-          "Étude cas: Transformation Fortune 500",
-          "Modernisation agence gouvernementale",
-          "Implémentation entreprise marché moyen",
-          "Leçons apprises et meilleures pratiques"
+          "Étude de cas détaillée : Transformation complète Fortune 500",
+          "Modernisation réussie d'une agence gouvernementale",
+          "Implémentation efficace dans une entreprise de marché moyen",
+          "Leçons apprises et meilleures pratiques consolidées"
         ]
       }
     },
     implementationPhases: {
-      title: "Feuille Route Implémentation 5 Phases",
+      title: "Feuille de Route d'Implémentation en 5 Phases",
       phase1: {
-        title: "Évaluation et Planification",
+        title: "Phase 1 : Évaluation et Planification Stratégique",
         duration: "2-4 semaines",
-        description: "Évaluation complète ligne base et phase planification stratégique",
+        description: "Évaluation complète de l'état actuel et développement de la stratégie d'implémentation personnalisée",
         deliverables: [
-          "Évaluation sécurité état actuel",
-          "Mappage dimensions STEEL",
-          "Identification parties prenantes",
-          "Feuille route implémentation",
-          "Plan allocation ressources"
+          "Évaluation complète de la posture sécurité actuelle",
+          "Cartographie détaillée des six dimensions STEEL",
+          "Identification et analyse des parties prenantes clés",
+          "Feuille de route d'implémentation personnalisée",
+          "Plan détaillé d'allocation des ressources et budget"
         ],
         keyActivities: [
-          "Ateliers exécutifs",
-          "Évaluations techniques",
-          "Établissement ligne base risque",
-          "Formation équipe"
+          "Ateliers exécutifs et sessions de formation",
+          "Évaluations techniques approfondies des systèmes",
+          "Établissement de la ligne de base des risques",
+          "Formation et constitution de l'équipe projet"
         ]
       },
       phase2: {
-        title: "Configuration Fondations",
+        title: "Phase 2 : Configuration des Fondations",
         duration: "3-6 semaines",
-        description: "Établir éléments fondamentaux du cadre STEEL",
+        description: "Mise en place des éléments fondamentaux du cadre STEEL et configuration des outils",
         deliverables: [
-          "Structure gouvernance STEEL",
-          "Cadre mesure risque",
-          "Modèles rapport",
-          "Protocoles communication",
-          "Matériaux formation"
+          "Structure complète de gouvernance STEEL",
+          "Cadre opérationnel de mesure des risques",
+          "Modèles standardisés de rapports et dashboards",
+          "Protocoles de communication internes et externes",
+          "Matériaux de formation personnalisés à l'organisation"
         ],
         keyActivities: [
-          "Personnalisation cadre",
-          "Configuration outils",
-          "Documentation processus",
-          "Formation équipe"
+          "Personnalisation du cadre aux spécificités organisationnelles",
+          "Configuration et paramétrage des outils technologiques",
+          "Documentation exhaustive des processus et procédures",
+          "Formation intensive des équipes opérationnelles"
         ]
       },
       phase3: {
-        title: "Implémentation Pilote",
+        title: "Phase 3 : Implémentation Pilote Contrôlée",
         duration: "4-8 semaines",
-        description: "Déployer méthodologie STEEL en environnement pilote contrôlé",
+        description: "Déploiement contrôlé de la méthodologie STEEL dans un environnement pilote sélectionné",
         deliverables: [
-          "Résultats évaluation pilote",
-          "Raffinements processus",
-          "Leçons apprises",
-          "Métriques succès",
-          "Plan déploiement"
+          "Résultats complets de l'évaluation pilote",
+          "Raffinements et optimisations des processus",
+          "Documentation des leçons apprises et bonnes pratiques",
+          "Métriques de succès validées et approuvées",
+          "Plan détaillé de déploiement à grande échelle"
         ],
         keyActivities: [
-          "Exécution pilote",
-          "Collecte données",
-          "Retour parties prenantes",
-          "Optimisation processus"
+          "Exécution minutieuse du pilote dans l'environnement sélectionné",
+          "Collecte systématique et analyse des données",
+          "Recueil et intégration des retours des parties prenantes",
+          "Optimisation continue des processus basée sur les résultats"
         ]
       },
       phase4: {
-        title: "Déploiement Complet",
+        title: "Phase 4 : Déploiement Organisationnel Complet",
         duration: "6-12 semaines",
-        description: "Déploiement organisationnel du cadre STEEL",
+        description: "Extension du cadre STEEL à l'ensemble de l'organisation avec support complet",
         deliverables: [
-          "Implémentation complète STEEL",
-          "Tableaux bord exécutifs",
-          "Cycle rapport régulier",
-          "Intégration avec systèmes existants",
-          "Support gestion changement"
+          "Implémentation complète et opérationnelle de STEEL",
+          "Tableaux de bord exécutifs en temps réel",
+          "Cycle de rapports réguliers automatisés",
+          "Intégration complète avec les systèmes existants",
+          "Support continu de gestion du changement"
         ],
         keyActivities: [
-          "Déploiement grande échelle",
-          "Intégration systèmes",
-          "Intégration utilisateurs",
-          "Surveillance processus"
+          "Déploiement coordonné à grande échelle",
+          "Intégration technique avec l'écosystème IT existant",
+          "Programme d'intégration utilisateur personnalisé",
+          "Surveillance proactive et support opérationnel"
         ]
       },
       phase5: {
-        title: "Optimisation et Maturité",
+        title: "Phase 5 : Optimisation Continue et Montée en Maturité",
         duration: "3-6 mois",
-        description: "Amélioration continue et enhancement maturité",
+        description: "Amélioration continue des processus et développement de la maturité organisationnelle",
         deliverables: [
-          "Évaluation maturité",
-          "Recommandations optimisation",
-          "Analyses avancées",
-          "Rapports benchmarking",
-          "Feuille route future"
+          "Évaluation complète du niveau de maturité atteint",
+          "Recommandations d'optimisation personnalisées",
+          "Analyses avancées et intelligence prédictive",
+          "Rapports de benchmarking sectoriels",
+          "Feuille de route d'évolution future"
         ],
         keyActivities: [
-          "Analyse performance",
-          "Identification meilleures pratiques",
-          "Déploiement fonctionnalités avancées",
-          "Amélioration continue"
+          "Analyse approfondie des performances et résultats",
+          "Identification et documentation des meilleures pratiques",
+          "Déploiement de fonctionnalités avancées et innovations",
+          "Mise en place d'un processus d'amélioration continue"
         ]
       },
       keyDeliverables: "Livrables Clés",
-      keyActivities: "Activités Clés"
+      keyActivities: "Activités Principales"
     },
     successStoriesPreview: {
-      title: "Histoires de Succès en Vedette",
+      title: "Histoires de Succès Remarquables",
       fortune500: {
-        category: "Fortune 500 Financier",
-        title: "Banque Globale Atteint 78% Réduction Risque",
-        description: "Banque internationale majeure implémente STEEL™ dans 40+ pays, réduisant exposition risque cyber tout en améliorant conformité réglementaire.",
-        metrics: "Temps implémentation: 6 mois • ROI: 340%"
+        category: "Institution Financière Fortune 500",
+        title: "Banque Internationale : 78% de Réduction des Risques Cyber",
+        description: "Une banque internationale de premier plan implémente STEEL™ dans plus de 40 pays, réduisant drastiquement son exposition aux risques cyber tout en améliorant significativement sa conformité réglementaire et sa résilience opérationnelle.",
+        metrics: "Durée d'implémentation : 6 mois • ROI : 340% • Conformité : 99.2%"
       },
       healthcare: {
-        category: "Système Santé",
-        title: "Transformation Réseau Santé Régional",
-        description: "Système multi-hospitalier déploie STEEL™ pour protéger données patients et assurer conformité HIPAA dans toutes installations.",
-        metrics: "Temps implémentation: 4 mois • Conformité: 99.8%"
+        category: "Réseau de Santé Régional",
+        title: "Transformation Digitale Sécurisée du Secteur Santé",
+        description: "Un système hospitalier multi-sites déploie STEEL™ pour protéger efficacement les données patients sensibles et assurer une conformité HIPAA exemplaire dans toutes ses installations médicales et administratives.",
+        metrics: "Durée d'implémentation : 4 mois • Conformité HIPAA : 99.8% • Zéro incident"
       },
       government: {
-        category: "Agence Gouvernementale",
-        title: "Succès Modernisation Agence Fédérale",
-        description: "Grande agence fédérale modernise approche cybersécurité utilisant STEEL™, atteignant autorisation FedRAMP et architecture zero-trust.",
-        metrics: "Temps implémentation: 8 mois • Temps fonctionnement: 99.9%"
+        category: "Agence Gouvernementale Fédérale",
+        title: "Modernisation Cyber d'une Agence Fédérale Stratégique",
+        description: "Une grande agence fédérale modernise complètement son approche cybersécurité en utilisant STEEL™, atteignant l'autorisation FedRAMP et déployant une architecture zero-trust de niveau enterprise.",
+        metrics: "Durée d'implémentation : 8 mois • Disponibilité : 99.9% • Certification FedRAMP"
       }
     },
     cta: {
-      title: "Prêt à Commencer Votre Implémentation STEEL™?",
-      description: "Nos experts en implémentation sont prêts à vous aider à déployer avec succès la méthodologie STEEL™ dans votre organisation. Planifiez une consultation pour discuter de vos exigences spécifiques et chronologie.",
-      scheduleConsultation: "Planifier Consultation Implémentation",
-      viewResources: "Voir Ressources Additionnelles"
+      title: "Prêt à Démarrer Votre Transformation STEEL™ ?",
+      description: "Nos experts certifiés en implémentation STEEL™ sont prêts à vous accompagner dans le déploiement réussi de notre méthodologie au sein de votre organisation. Planifiez dès maintenant une consultation personnalisée pour discuter de vos exigences spécifiques, de votre calendrier et de votre stratégie d'implémentation.",
+      scheduleConsultation: "Planifier une Consultation d'Implémentation",
+      viewResources: "Explorer nos Ressources Complémentaires"
     }
   },
   privacy: {
