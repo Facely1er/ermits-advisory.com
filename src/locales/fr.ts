@@ -759,6 +759,7 @@ export const fr = {
     },
     tags: {
       title: "Sujets",
+      steel: "STEEL™",
       compliance: "Conformité",
       risk: "Gestion des Risques",
       leadership: "Leadership",

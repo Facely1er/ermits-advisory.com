@@ -16,7 +16,7 @@ type ResourceCategory = 'all' | 'whitepapers' | 'articles' | 'casestudies' | 'we
 type ResourceTag = 'steel' | 'compliance' | 'risk' | 'leadership' | 'technology';
 
 export const ResourcesPage: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<ResourceCategory>('all');
@@ -27,6 +27,15 @@ export const ResourcesPage: React.FC = () => {
   const [featuredResource, setFeaturedResource] = useState<Resource | null>(null);
   const [loading, setLoading] = useState(true);
   const [subscribing, setSubscribing] = useState(false);
+  
+  // Get translated resource content
+  const getTranslatedResourceContent = (resourceId: string) => {
+    const translatedContent = t(`resources.content.${resourceId}`);
+    if (typeof translatedContent === 'object' && translatedContent.title) {
+      return translatedContent;
+    }
+    return null;
+  };
   
   // Fetch resources from Supabase
   useEffect(() => {
@@ -57,8 +66,13 @@ export const ResourcesPage: React.FC = () => {
   // Filter resources based on search query
   const filteredResources = resources.filter(resource => {
     if (!resource.featured && searchQuery) {
-      return resource.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-             resource.description.toLowerCase().includes(searchQuery.toLowerCase());
+      // Check if there's a translation for this resource
+      const translatedContent = getTranslatedResourceContent(resource.id);
+      const titleToSearch = translatedContent?.title || resource.title;
+      const descToSearch = translatedContent?.description || resource.description;
+      
+      return titleToSearch.toLowerCase().includes(searchQuery.toLowerCase()) ||
+             descToSearch.toLowerCase().includes(searchQuery.toLowerCase());
     }
     return !resource.featured;
   });
@@ -248,8 +262,21 @@ export const ResourcesPage: React.FC = () => {
                         <span className="ml-1">{getCategoryLabel(featuredResource.category)}</span>
                       </span>
                     </div>
-                    <h2 className="text-2xl font-bold mb-3 dark:text-white">{featuredResource.title}</h2>
-                    <p className="text-gray-600 dark:text-gray-200 mb-6">{featuredResource.description}</p>
+                    
+                    {/* Use translated content if available */}
+                    {(() => {
+                      const translatedContent = getTranslatedResourceContent(featuredResource.id);
+                      return (
+                        <>
+                          <h2 className="text-2xl font-bold mb-3 dark:text-white">
+                            {translatedContent?.title || featuredResource.title}
+                          </h2>
+                          <p className="text-gray-600 dark:text-gray-200 mb-6">
+                            {translatedContent?.description || featuredResource.description}
+                          </p>
+                        </>
+                      );
+                    })()}
                   </div>
                   
                   <div>
@@ -535,77 +562,86 @@ export const ResourcesPage: React.FC = () => {
         >
           {filteredResources.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredResources.map((resource) => (
-                <motion.div key={resource.id} variants={item}>
-                  <Card variant="glass" padding="none" className="h-full flex flex-col overflow-hidden">
-                    <div className="h-48 overflow-hidden">
-                      <img 
-                        src={resource.image_url} 
-                        alt={resource.title}
-                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                      />
-                    </div>
-                    <div className="p-5 flex-grow flex flex-col">
-                      <div className="flex items-center mb-3">
-                        <span className="bg-silver/30 dark:bg-navy/30 text-navy dark:text-silver text-xs font-medium px-2.5 py-1 rounded-md flex items-center">
-                          {getCategoryIcon(resource.category)}
-                          <span className="ml-1">{getCategoryLabel(resource.category)}</span>
-                        </span>
+              {filteredResources.map((resource) => {
+                // Get translated content if available
+                const translatedContent = getTranslatedResourceContent(resource.id);
+                
+                return (
+                  <motion.div key={resource.id} variants={item}>
+                    <Card variant="glass" padding="none" className="h-full flex flex-col overflow-hidden">
+                      <div className="h-48 overflow-hidden">
+                        <img 
+                          src={resource.image_url} 
+                          alt={translatedContent?.title || resource.title}
+                          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                        />
                       </div>
-                      <h3 className="text-lg font-bold mb-2 dark:text-white">{resource.title}</h3>
-                      <p className="text-gray-600 dark:text-gray-200 text-sm mb-4 flex-grow">{resource.description}</p>
-                      
-                      <div className="mt-auto">
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {resource.tags?.map(tag => (
-                            <span 
-                              key={tag} 
-                              className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded"
-                            >
-                              {getTagLabel(tag as ResourceTag)}
-                            </span>
-                          ))}
+                      <div className="p-5 flex-grow flex flex-col">
+                        <div className="flex items-center mb-3">
+                          <span className="bg-silver/30 dark:bg-navy/30 text-navy dark:text-silver text-xs font-medium px-2.5 py-1 rounded-md flex items-center">
+                            {getCategoryIcon(resource.category)}
+                            <span className="ml-1">{getCategoryLabel(resource.category)}</span>
+                          </span>
                         </div>
+                        <h3 className="text-lg font-bold mb-2 dark:text-white">
+                          {translatedContent?.title || resource.title}
+                        </h3>
+                        <p className="text-gray-600 dark:text-gray-200 text-sm mb-4 flex-grow">
+                          {translatedContent?.description || resource.description}
+                        </p>
                         
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
-                            <Calendar size={14} className="mr-1" />
-                            <span>{new Date(resource.date).toLocaleDateString()}</span>
-                            {resource.read_time && (
-                              <>
-                                <span className="mx-2">•</span>
-                                <Clock size={14} className="mr-1" />
-                                <span>{resource.read_time}</span>
-                              </>
-                            )}
+                        <div className="mt-auto">
+                          <div className="flex flex-wrap gap-2 mb-4">
+                            {resource.tags?.map(tag => (
+                              <span 
+                                key={tag} 
+                                className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded"
+                              >
+                                {getTagLabel(tag as ResourceTag)}
+                              </span>
+                            ))}
                           </div>
                           
-                          <div className="flex gap-2">
-                            <Button 
-                              variant="outline" 
-                              size="sm" 
-                              icon={<Eye size={16} />}
-                              onClick={() => handleViewResource(resource.id)}
-                            >
-                              {t('resources.view')}
-                            </Button>
-                            {resource.download_url && (
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                              <Calendar size={14} className="mr-1" />
+                              <span>{new Date(resource.date).toLocaleDateString()}</span>
+                              {resource.read_time && (
+                                <>
+                                  <span className="mx-2">•</span>
+                                  <Clock size={14} className="mr-1" />
+                                  <span>{resource.read_time}</span>
+                                </>
+                              )}
+                            </div>
+                            
+                            <div className="flex gap-2">
                               <Button 
                                 variant="outline" 
                                 size="sm" 
-                                icon={<Download size={16} />}
-                                onClick={() => handleDownloadResource(resource)}
+                                icon={<Eye size={16} />}
+                                onClick={() => handleViewResource(resource.id)}
                               >
-                                {t('resources.download')}
+                                {t('resources.view')}
                               </Button>
-                            )}
+                              {resource.download_url && (
+                                <Button 
+                                  variant="outline" 
+                                  size="sm" 
+                                  icon={<Download size={16} />}
+                                  onClick={() => handleDownloadResource(resource)}
+                                >
+                                  {t('resources.download')}
+                                </Button>
+                              )}
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </Card>
-                </motion.div>
-              ))}
+                    </Card>
+                  </motion.div>
+                );
+              })}
             </div>
           ) : (
             <Card variant="glass" padding="lg" className="text-center">
