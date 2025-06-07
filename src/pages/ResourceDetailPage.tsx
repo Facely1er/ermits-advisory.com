@@ -18,37 +18,37 @@ export const ResourceDetailPage: React.FC = () => {
   // Mock resource data - in real implementation, this would be fetched based on ID
   const resource = {
     id: id || 'wp-001',
-    title: "Guide d'Implémentation STEEL™ - Version Complète",
-    description: "Guide complet de 120 pages pour implémenter la méthodologie STEEL™ dans votre organisation. Incluant modèles, listes de vérification et guidance spécifique par secteur.",
+    title: "STEEL™ Implementation Guide - Complete Version",
+    description: "Comprehensive 120-page guide for implementing the STEEL™ methodology in your organization. Including templates, checklists, and sector-specific guidance.",
     category: 'whitepapers',
-    tags: ['steel', 'implémentation', 'méthodologie', 'guide'],
+    tags: ['steel', 'implementation', 'methodology', 'guide'],
     date: '2025-01-15',
     readTime: '45 min',
-    downloadUrl: '#',
+    downloadUrl: 'https://www.africau.edu/images/default/sample.pdf',
     imageUrl: 'https://images.pexels.com/photos/5473955/pexels-photo-5473955.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    author: 'Équipe de Recherche ERMITS',
+    author: 'ERMITS Research Team',
     fileSize: '15.2 MB',
     downloads: 1247,
     views: 3892,
     featured: true,
-    language: 'Français',
+    language: 'English',
     format: 'PDF',
     pages: 120,
     content: {
-      summary: "Ce guide d'implémentation complet fournit une feuille de route détaillée pour déployer avec succès la méthodologie STEEL™ dans votre organisation. Développé par nos experts en cybersécurité, ce document de 120 pages comprend des modèles pratiques, des listes de vérification détaillées et des conseils spécifiques à l'industrie.",
+      summary: "This comprehensive implementation guide provides a detailed roadmap for successfully deploying the STEEL™ methodology in your organization. Developed by our cybersecurity experts, this 120-page document includes practical templates, detailed checklists, and industry-specific guidance.",
       keyTopics: [
-        "Vue d'ensemble de la méthodologie STEEL™",
-        "Processus d'implémentation en 5 phases",
-        "Modèles et outils prêts à l'emploi",
-        "Études de cas d'implémentation réussie",
-        "Mesures de performance et métriques",
-        "Adaptation par secteur d'activité"
+        "Overview of STEEL™ methodology",
+        "5-phase implementation process",
+        "Ready-to-use templates and tools",
+        "Successful implementation case studies",
+        "Performance measures and metrics",
+        "Industry-specific adaptations"
       ],
       benefits: [
-        "Réduction moyenne de 67% des risques cyber",
-        "ROI de 3.4x en moins de 18 mois",
-        "Amélioration de 83% du temps d'insight",
-        "92% de confiance du conseil d'administration"
+        "Average 67% reduction in cyber risks",
+        "3.4x ROI in less than 18 months",
+        "83% improvement in insight time",
+        "92% board confidence"
       ]
     }
   };
@@ -56,21 +56,21 @@ export const ResourceDetailPage: React.FC = () => {
   const relatedResources = [
     {
       id: 'art-001',
-      title: "Cinq Questions Critiques pour le Conseil d'Administration",
+      title: "Five Critical Questions for the Board",
       category: 'articles',
       readTime: '12 min',
       imageUrl: 'https://images.pexels.com/photos/3183165/pexels-photo-3183165.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&dpr=2'
     },
     {
       id: 'cs-001',
-      title: "Transformation d'une Institution Financière Fortune 500",
+      title: "Fortune 500 Financial Institution Transformation",
       category: 'casestudies',
       readTime: '18 min',
       imageUrl: 'https://images.pexels.com/photos/936722/pexels-photo-936722.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&dpr=2'
     },
     {
       id: 'web-001',
-      title: "Naviguer les Risques Géopolitiques Cyber",
+      title: "Navigating Geopolitical Cyber Risks",
       category: 'webinars',
       readTime: '45 min',
       imageUrl: 'https://images.pexels.com/photos/8386423/pexels-photo-8386423.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&dpr=2'
@@ -78,8 +78,17 @@ export const ResourceDetailPage: React.FC = () => {
   ];
 
   const handleDownload = () => {
-    console.log('Downloading resource:', resource.title);
-    alert(`Téléchargement commencé pour: ${resource.title}`);
+    if (resource.downloadUrl) {
+      const link = document.createElement('a');
+      link.href = resource.downloadUrl;
+      link.download = resource.title.replace(/[^a-z0-9]/gi, '_') + '.pdf';
+      link.target = '_blank';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else {
+      alert(`Download not available for: ${resource.title}`);
+    }
   };
 
   const handleShare = () => {
@@ -91,7 +100,7 @@ export const ResourceDetailPage: React.FC = () => {
       });
     } else {
       navigator.clipboard.writeText(window.location.href);
-      alert('Lien copié dans le presse-papiers!');
+      alert('Link copied to clipboard!');
     }
   };
 
@@ -109,7 +118,7 @@ export const ResourceDetailPage: React.FC = () => {
             className="inline-flex items-center text-navy dark:text-silver hover:underline mb-4 transition-colors"
           >
             <ArrowLeft size={16} className="mr-2" />
-            Retour aux Ressources
+            Back to Resources
           </button>
         </motion.div>
 
@@ -135,7 +144,7 @@ export const ResourceDetailPage: React.FC = () => {
                         <div className="absolute top-3 left-3">
                           <div className="bg-navy text-white text-xs font-medium px-2 py-1 rounded-md flex items-center">
                             <Star size={12} className="mr-1" />
-                            En Vedette
+                            Featured
                           </div>
                         </div>
                       )}
@@ -145,7 +154,7 @@ export const ResourceDetailPage: React.FC = () => {
                   <div className="md:w-2/3">
                     <div className="flex items-center mb-3">
                       <span className="bg-navy/10 dark:bg-navy/30 text-navy dark:text-silver text-sm font-medium px-3 py-1 rounded-md mr-3">
-                        {resource.category === 'whitepapers' ? 'Livre Blanc' : resource.category}
+                        {resource.category === 'whitepapers' ? 'Whitepaper' : resource.category}
                       </span>
                       {resource.tags.map(tag => (
                         <span 
@@ -168,7 +177,7 @@ export const ResourceDetailPage: React.FC = () => {
                     <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-6">
                       <div className="flex items-center">
                         <Calendar size={14} className="mr-1" />
-                        <span>{new Date(resource.date).toLocaleDateString('fr-FR')}</span>
+                        <span>{new Date(resource.date).toLocaleDateString()}</span>
                       </div>
                       <div className="flex items-center">
                         <Clock size={14} className="mr-1" />
@@ -176,11 +185,11 @@ export const ResourceDetailPage: React.FC = () => {
                       </div>
                       <div className="flex items-center">
                         <Eye size={14} className="mr-1" />
-                        <span>{resource.views.toLocaleString()} vues</span>
+                        <span>{resource.views.toLocaleString()} views</span>
                       </div>
                       <div className="flex items-center">
                         <Download size={14} className="mr-1" />
-                        <span>{resource.downloads.toLocaleString()} téléchargements</span>
+                        <span>{resource.downloads.toLocaleString()} downloads</span>
                       </div>
                     </div>
                     
@@ -190,21 +199,21 @@ export const ResourceDetailPage: React.FC = () => {
                         icon={<Download size={16} />}
                         onClick={handleDownload}
                       >
-                        Télécharger ({resource.fileSize})
+                        Download ({resource.fileSize})
                       </Button>
                       <Button 
                         variant="outline" 
                         icon={<Share2 size={16} />}
                         onClick={handleShare}
                       >
-                        Partager
+                        Share
                       </Button>
                       <Button 
                         variant="outline" 
                         icon={<ExternalLink size={16} />}
                         onClick={() => navigate('/contact')}
                       >
-                        Contacter un Expert
+                        Contact Expert
                       </Button>
                     </div>
                   </div>
@@ -220,7 +229,7 @@ export const ResourceDetailPage: React.FC = () => {
               className="mb-8"
             >
               <Card variant="glass" padding="lg">
-                <h2 className="text-xl font-bold mb-4 dark:text-white">Résumé du Contenu</h2>
+                <h2 className="text-xl font-bold mb-4 dark:text-white">Content Summary</h2>
                 <p className="text-gray-600 dark:text-gray-200 mb-6">
                   {resource.content.summary}
                 </p>
@@ -229,7 +238,7 @@ export const ResourceDetailPage: React.FC = () => {
                   <div>
                     <h3 className="font-semibold mb-3 dark:text-white flex items-center">
                       <BookOpen size={16} className="mr-2" />
-                      Sujets Clés Couverts
+                      Key Topics Covered
                     </h3>
                     <ul className="space-y-2">
                       {resource.content.keyTopics.map((topic, index) => (
@@ -244,7 +253,7 @@ export const ResourceDetailPage: React.FC = () => {
                   <div>
                     <h3 className="font-semibold mb-3 dark:text-white flex items-center">
                       <Star size={16} className="mr-2" />
-                      Bénéfices Attendus
+                      Expected Benefits
                     </h3>
                     <ul className="space-y-2">
                       {resource.content.benefits.map((benefit, index) => (
@@ -267,7 +276,7 @@ export const ResourceDetailPage: React.FC = () => {
               className="mb-8"
             >
               <Card variant="glass" padding="lg">
-                <h2 className="text-xl font-bold mb-4 dark:text-white">Détails de la Publication</h2>
+                <h2 className="text-xl font-bold mb-4 dark:text-white">Publication Details</h2>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
@@ -275,13 +284,13 @@ export const ResourceDetailPage: React.FC = () => {
                       <Users size={20} className="text-navy dark:text-silver mr-3" />
                       <div>
                         <h3 className="font-semibold dark:text-white">{resource.author}</h3>
-                        <p className="text-gray-600 dark:text-gray-200 text-sm">Experts en Cybersécurité</p>
+                        <p className="text-gray-600 dark:text-gray-200 text-sm">Cybersecurity Experts</p>
                       </div>
                     </div>
                     
                     <div className="space-y-2 text-sm">
                       <div className="flex justify-between">
-                        <span className="text-gray-600 dark:text-gray-300">Langue:</span>
+                        <span className="text-gray-600 dark:text-gray-300">Language:</span>
                         <span className="dark:text-white">{resource.language}</span>
                       </div>
                       <div className="flex justify-between">
@@ -296,16 +305,16 @@ export const ResourceDetailPage: React.FC = () => {
                   </div>
                   
                   <div>
-                    <h3 className="font-semibold mb-3 dark:text-white">Expertise Requise</h3>
+                    <h3 className="font-semibold mb-3 dark:text-white">Required Expertise</h3>
                     <div className="flex flex-wrap gap-2 mb-4">
                       <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 text-xs font-medium px-2 py-1 rounded">
-                        Niveau Exécutif
+                        Executive Level
                       </span>
                       <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-100 text-xs font-medium px-2 py-1 rounded">
-                        Gestionnaire IT
+                        IT Manager
                       </span>
                       <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-100 text-xs font-medium px-2 py-1 rounded">
-                        Équipe Sécurité
+                        Security Team
                       </span>
                     </div>
                     
@@ -315,7 +324,7 @@ export const ResourceDetailPage: React.FC = () => {
                       icon={<Mail size={16} />}
                       onClick={() => navigate('/contact')}
                     >
-                      Questions sur ce Guide?
+                      Questions about this Guide?
                     </Button>
                   </div>
                 </div>
@@ -333,7 +342,7 @@ export const ResourceDetailPage: React.FC = () => {
               className="mb-6"
             >
               <Card variant="glass" padding="md">
-                <h3 className="font-semibold mb-4 dark:text-white">Actions Rapides</h3>
+                <h3 className="font-semibold mb-4 dark:text-white">Quick Actions</h3>
                 <div className="space-y-3">
                   <Button 
                     variant="primary" 
@@ -341,7 +350,7 @@ export const ResourceDetailPage: React.FC = () => {
                     icon={<Download size={16} />}
                     onClick={handleDownload}
                   >
-                    Télécharger le Guide
+                    Download Guide
                   </Button>
                   <Button 
                     variant="outline" 
@@ -349,7 +358,7 @@ export const ResourceDetailPage: React.FC = () => {
                     icon={<Share2 size={16} />}
                     onClick={handleShare}
                   >
-                    Partager
+                    Share
                   </Button>
                   <Button 
                     variant="outline" 
@@ -357,7 +366,7 @@ export const ResourceDetailPage: React.FC = () => {
                     icon={<Mail size={16} />}
                     onClick={() => navigate('/contact')}
                   >
-                    Consultation Expert
+                    Expert Consultation
                   </Button>
                 </div>
               </Card>
@@ -371,7 +380,7 @@ export const ResourceDetailPage: React.FC = () => {
               className="mb-6"
             >
               <Card variant="glass" padding="md">
-                <h3 className="font-semibold mb-4 dark:text-white">Ressources Connexes</h3>
+                <h3 className="font-semibold mb-4 dark:text-white">Related Resources</h3>
                 <div className="space-y-4">
                   {relatedResources.map((related) => (
                     <div 
@@ -409,7 +418,7 @@ export const ResourceDetailPage: React.FC = () => {
                     iconPosition="right"
                     onClick={() => navigate('/resources')}
                   >
-                    Voir Toutes les Ressources
+                    View All Resources
                   </Button>
                 </div>
               </Card>
@@ -422,9 +431,9 @@ export const ResourceDetailPage: React.FC = () => {
               transition={{ delay: 0.3 }}
             >
               <Card variant="solid" padding="md" className="bg-navy text-white">
-                <h3 className="font-semibold mb-2">Besoin d'Aide?</h3>
+                <h3 className="font-semibold mb-2">Need Help?</h3>
                 <p className="text-silver text-sm mb-4">
-                  Nos experts sont disponibles pour vous aider avec l'implémentation de STEEL™.
+                  Our experts are available to help you with STEEL™ implementation.
                 </p>
                 <Button 
                   variant="secondary" 
@@ -433,7 +442,7 @@ export const ResourceDetailPage: React.FC = () => {
                   icon={<Mail size={16} />}
                   onClick={() => navigate('/contact')}
                 >
-                  Contacter un Expert
+                  Contact an Expert
                 </Button>
               </Card>
             </motion.div>

@@ -378,3 +378,90 @@ const presentationSlides = [
     content: 'Proposed implementation roadmap with key milestones and resource requirements.'
   }
 ];
+
+// Sample resources with downloadable URLs
+export const resourcesData = [
+  {
+    id: 'wp-001',
+    title: 'The Executive\'s Guide to Modern Cyber Risk Management',
+    description: 'A comprehensive guide for C-suite executives on implementing effective cyber risk management strategies using the STEEL methodology.',
+    category: 'whitepapers' as const,
+    tags: ['steel', 'risk', 'leadership'] as const,
+    date: '2025-04-15',
+    readTime: '25 min',
+    downloadUrl: 'https://www.africau.edu/images/default/sample.pdf',
+    imageUrl: 'https://images.pexels.com/photos/5473955/pexels-photo-5473955.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    featured: true
+  },
+  {
+    id: 'art-001',
+    title: 'Five Critical Questions Every Board Should Ask About Cybersecurity',
+    description: 'Learn the essential questions board members should be asking to fulfill their cyber governance responsibilities effectively.',
+    category: 'articles' as const,
+    tags: ['leadership', 'compliance'] as const,
+    date: '2025-03-22',
+    readTime: '12 min',
+    imageUrl: 'https://images.pexels.com/photos/3183165/pexels-photo-3183165.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+  },
+  {
+    id: 'cs-001',
+    title: 'How a Global Financial Institution Reduced Risk Exposure by 67%',
+    description: 'A detailed case study of how our STEEL methodology helped a major financial institution transform their cyber risk posture.',
+    category: 'casestudies' as const,
+    tags: ['steel', 'risk', 'compliance'] as const,
+    date: '2025-02-10',
+    readTime: '18 min',
+    downloadUrl: 'https://www.africau.edu/images/default/sample.pdf',
+    imageUrl: 'https://images.pexels.com/photos/936722/pexels-photo-936722.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+  },
+  {
+    id: 'web-001',
+    title: 'Navigating Geopolitical Cyber Risks in a Turbulent World',
+    description: 'An on-demand webinar featuring experts discussing how political factors impact cybersecurity strategy and resilience.',
+    category: 'webinars' as const,
+    tags: ['steel', 'risk'] as const,
+    date: '2025-01-30',
+    imageUrl: 'https://images.pexels.com/photos/8386423/pexels-photo-8386423.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+  },
+  {
+    id: 'art-002',
+    title: 'Emerging Technology Risks: What You Need to Know About AI Security',
+    description: 'An analysis of the rapidly evolving security landscape around artificial intelligence and machine learning technologies.',
+    category: 'articles' as const,
+    tags: ['technology', 'risk'] as const,
+    date: '2025-03-05',
+    readTime: '15 min',
+    imageUrl: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+  },
+  {
+    id: 'wp-002',
+    title: 'Building Cyber Resilience Through the STEEL Framework',
+    description: 'A detailed technical paper on implementing the STEEL methodology to enhance organizational resilience against cyber threats.',
+    category: 'whitepapers' as const,
+    tags: ['steel', 'technology'] as const,
+    date: '2025-02-28',
+    readTime: '30 min',
+    downloadUrl: 'https://www.africau.edu/images/default/sample.pdf',
+    imageUrl: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+  },
+  {
+    id: 'cs-002',
+    title: 'Securing the Supply Chain: A Manufacturing Success Story',
+    description: 'How a global manufacturing firm secured their complex supply chain using our advisory services and STEEL methodology.',
+    category: 'casestudies' as const,
+    tags: ['risk', 'technology'] as const,
+    date: '2025-01-15',
+    readTime: '14 min',
+    downloadUrl: 'https://www.africau.edu/images/default/sample.pdf',
+    imageUrl: 'https://images.pexels.com/photos/4481326/pexels-photo-4481326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+  },
+  {
+    id: 'web-002',
+    title: 'Regulatory Landscape 2025: Preparing for New Compliance Requirements',
+    description: 'Expert panel discussion on upcoming regulatory changes and how organizations can prepare effectively.',
+    category: 'webinars' as const,
+    tags: ['compliance', 'leadership'] as const,
+    date: '2025-03-18',
+    imageUrl: 'https://images.pexels.com/photos/3153204/pexels-photo-3153204.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+  }
+];

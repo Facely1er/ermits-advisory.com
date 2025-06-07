@@ -9,6 +9,7 @@ import {
   BookOpen, FileCode, Video, Clock, Eye, Calendar,
   ArrowRight, Mail
 } from 'lucide-react';
+import { resourcesData } from '../data/mockData';
 
 type ResourceCategory = 'all' | 'whitepapers' | 'articles' | 'casestudies' | 'webinars';
 type ResourceTag = 'steel' | 'compliance' | 'risk' | 'leadership' | 'technology';
@@ -35,92 +36,12 @@ export const ResourcesPage: React.FC = () => {
   const [showFilters, setShowFilters] = useState(false);
   const [newsletterEmail, setNewsletterEmail] = useState('');
   
-  // Sample resources data with translated content
-  const resources: Resource[] = [
-    {
-      id: 'wp-001',
-      title: t('resources.content.wp-001.title'),
-      description: t('resources.content.wp-001.description'),
-      category: 'whitepapers',
-      tags: ['steel', 'risk', 'leadership'],
-      date: '2025-04-15',
-      readTime: '25 min',
-      downloadUrl: '#',
-      imageUrl: 'https://images.pexels.com/photos/5473955/pexels-photo-5473955.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      featured: true
-    },
-    {
-      id: 'art-001',
-      title: t('resources.content.art-001.title'),
-      description: t('resources.content.art-001.description'),
-      category: 'articles',
-      tags: ['leadership', 'compliance'],
-      date: '2025-03-22',
-      readTime: '12 min',
-      imageUrl: 'https://images.pexels.com/photos/3183165/pexels-photo-3183165.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-    },
-    {
-      id: 'cs-001',
-      title: t('resources.content.cs-001.title'),
-      description: t('resources.content.cs-001.description'),
-      category: 'casestudies',
-      tags: ['steel', 'risk', 'compliance'],
-      date: '2025-02-10',
-      readTime: '18 min',
-      downloadUrl: '#',
-      imageUrl: 'https://images.pexels.com/photos/936722/pexels-photo-936722.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-    },
-    {
-      id: 'web-001',
-      title: t('resources.content.web-001.title'),
-      description: t('resources.content.web-001.description'),
-      category: 'webinars',
-      tags: ['steel', 'risk'],
-      date: '2025-01-30',
-      imageUrl: 'https://images.pexels.com/photos/8386423/pexels-photo-8386423.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-    },
-    {
-      id: 'art-002',
-      title: t('resources.content.art-002.title'),
-      description: t('resources.content.art-002.description'),
-      category: 'articles',
-      tags: ['technology', 'risk'],
-      date: '2025-03-05',
-      readTime: '15 min',
-      imageUrl: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-    },
-    {
-      id: 'wp-002',
-      title: t('resources.content.wp-002.title'),
-      description: t('resources.content.wp-002.description'),
-      category: 'whitepapers',
-      tags: ['steel', 'technology'],
-      date: '2025-02-28',
-      readTime: '30 min',
-      downloadUrl: '#',
-      imageUrl: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-    },
-    {
-      id: 'cs-002',
-      title: t('resources.content.cs-002.title'),
-      description: t('resources.content.cs-002.description'),
-      category: 'casestudies',
-      tags: ['risk', 'technology'],
-      date: '2025-01-15',
-      readTime: '14 min',
-      downloadUrl: '#',
-      imageUrl: 'https://images.pexels.com/photos/4481326/pexels-photo-4481326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-    },
-    {
-      id: 'web-002',
-      title: t('resources.content.web-002.title'),
-      description: t('resources.content.web-002.description'),
-      category: 'webinars',
-      tags: ['compliance', 'leadership'],
-      date: '2025-03-18',
-      imageUrl: 'https://images.pexels.com/photos/3153204/pexels-photo-3153204.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-    }
-  ];
+  // Use translated resource content or fallback to mock data
+  const resources: Resource[] = resourcesData.map(resource => ({
+    ...resource,
+    title: t(`resources.content.${resource.id}.title`) || resource.title,
+    description: t(`resources.content.${resource.id}.description`) || resource.description
+  }));
   
   // Get the featured resource
   const featuredResource = resources.find(resource => resource.featured);
@@ -161,11 +82,19 @@ export const ResourcesPage: React.FC = () => {
     navigate(`/resources/${resourceId}`);
   };
 
-  // Handle download
+  // Handle download - create and click a download link
   const handleDownloadResource = (resource: Resource) => {
-    // In a real implementation, this would trigger the actual download
-    console.log('Downloading resource:', resource.title);
-    alert(`Download started for: ${resource.title}`);
+    if (resource.downloadUrl) {
+      const link = document.createElement('a');
+      link.href = resource.downloadUrl;
+      link.download = resource.title.replace(/[^a-z0-9]/gi, '_') + '.pdf';
+      link.target = '_blank';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else {
+      alert(`Download not available for: ${resource.title}`);
+    }
   };
 
   // Handle newsletter subscription

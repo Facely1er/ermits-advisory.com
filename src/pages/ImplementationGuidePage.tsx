@@ -19,10 +19,11 @@ export const ImplementationGuidePage: React.FC = () => {
   const handleDownload = () => {
     setDownloadStarted(true);
     
-    // Simulate download
+    // Create a download link with actual file URL
     const link = document.createElement('a');
-    link.href = '#'; // In real implementation, this would be the actual file URL
+    link.href = 'https://www.africau.edu/images/default/sample.pdf';
     link.download = 'STEEL-Implementation-Guide-Complete.pdf';
+    link.target = '_blank';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
