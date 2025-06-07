@@ -1028,7 +1028,7 @@ export const ResourceDetailPage: React.FC = () => {
             >
               {/* Download CTA */}
               {resource.downloadUrl && (
-                <Card variant="glass" padding="lg" className="bg-navy text-white">
+                <Card variant="glass\" padding="lg\" className="bg-navy text-white">
                   <h3 className="text-lg font-bold mb-3">Download This Resource</h3>
                   <p className="text-silver mb-4 text-sm">
                     Get the complete guide with detailed analysis, implementation strategies, and actionable recommendations.
