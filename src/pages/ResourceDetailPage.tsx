@@ -97,8 +97,335 @@ const resourcesData = [
         'Incident response planning requires board-level attention and preparation'
       ]
     }
+  },
+  {
+    id: 'cs-001',
+    title: 'How a Global Financial Institution Reduced Risk Exposure by 67%',
+    description: 'A detailed case study of how our STEEL methodology helped a major financial institution transform their cyber risk posture.',
+    category: 'casestudies',
+    tags: ['steel', 'risk', 'compliance'],
+    date: '2025-02-10',
+    readTime: '18 min',
+    downloadUrl: '#',
+    imageUrl: 'https://images.pexels.com/photos/936722/pexels-photo-936722.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    author: 'Michael Chen, Principal Consultant',
+    content: {
+      summary: 'This case study examines how a Fortune 500 financial services company partnered with ERMITS Advisory to implement the STEEL™ methodology, resulting in significant risk reduction and improved regulatory compliance posture.',
+      sections: [
+        {
+          title: 'The Challenge',
+          content: 'The client, a global financial institution with operations in 15 countries, was struggling with fragmented risk assessment processes and increasing regulatory pressure. Traditional risk frameworks were not providing the holistic view needed for effective decision-making.'
+        },
+        {
+          title: 'The STEEL™ Implementation',
+          content: 'We implemented our comprehensive STEEL™ assessment across all six dimensions, revealing critical interdependencies between political, economic, and technology risks that had previously been overlooked.'
+        },
+        {
+          title: 'Political Dimension Analysis',
+          content: 'The political assessment revealed significant regulatory compliance gaps across different jurisdictions, particularly in emerging markets where the institution was expanding operations.'
+        },
+        {
+          title: 'Economic Impact Assessment',
+          content: 'Our economic analysis quantified the potential financial impact of various threat scenarios, enabling the client to make more informed investment decisions in cybersecurity controls.'
+        },
+        {
+          title: 'Technology Risk Evaluation',
+          content: 'The technology assessment identified critical infrastructure vulnerabilities and provided a roadmap for modernization that balanced security improvements with operational efficiency.'
+        },
+        {
+          title: 'Results and Outcomes',
+          content: 'Within 18 months, the client achieved a 67% reduction in overall risk exposure, improved regulatory compliance scores by 45%, and realized $12M in avoided incident costs.'
+        }
+      ],
+      keyTakeaways: [
+        'Holistic risk assessment reveals hidden interdependencies between risk factors',
+        'Quantifying economic impact enables better investment prioritization',
+        'Regulatory compliance improves significantly with comprehensive risk visibility',
+        'Technology modernization can be aligned with risk reduction objectives',
+        'Continuous monitoring and adjustment are essential for sustained improvement'
+      ]
+    }
+  },
+  {
+    id: 'web-001',
+    title: 'Navigating Geopolitical Cyber Risks in a Turbulent World',
+    description: 'An on-demand webinar featuring experts discussing how political factors impact cybersecurity strategy and resilience.',
+    category: 'webinars',
+    tags: ['steel', 'risk'],
+    date: '2025-01-30',
+    readTime: '45 min',
+    imageUrl: 'https://images.pexels.com/photos/8386423/pexels-photo-8386423.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    author: 'ERMITS Advisory Expert Panel',
+    content: {
+      summary: 'Join our panel of geopolitical and cybersecurity experts as they explore the intersection of global politics and cyber risk, providing insights into how organizations can build resilience against nation-state threats and geopolitical instability.',
+      sections: [
+        {
+          title: 'Webinar Overview',
+          content: 'This 45-minute expert panel discussion brings together former government officials, cybersecurity leaders, and geopolitical analysts to examine the growing impact of international relations on organizational cyber risk.'
+        },
+        {
+          title: 'Current Geopolitical Threat Landscape',
+          content: 'Our experts analyze the current state of nation-state cyber activities, discussing recent trends in state-sponsored attacks and their implications for private sector organizations.'
+        },
+        {
+          title: 'The Political Dimension of STEEL™',
+          content: 'Deep dive into how the Political dimension of our STEEL™ methodology helps organizations assess and prepare for geopolitically-motivated cyber threats and regulatory changes.'
+        },
+        {
+          title: 'Regional Risk Variations',
+          content: 'Examination of how geopolitical risks vary by region and industry, with specific focus on critical infrastructure, financial services, and technology sectors.'
+        },
+        {
+          title: 'Building Organizational Resilience',
+          content: 'Practical strategies for building resilience against geopolitical cyber risks, including threat intelligence integration, scenario planning, and stakeholder communication.'
+        },
+        {
+          title: 'Q&A Session',
+          content: 'Extended question and answer session where panelists address specific audience questions about geopolitical risk management and practical implementation strategies.'
+        }
+      ],
+      keyTakeaways: [
+        'Geopolitical tensions directly impact organizational cyber risk exposure',
+        'Nation-state threats require specialized detection and response capabilities',
+        'Supply chain risks are amplified during periods of geopolitical instability',
+        'Regulatory requirements vary significantly across geopolitical boundaries',
+        'Scenario planning is essential for preparing for geopolitical cyber events'
+      ]
+    }
+  },
+  {
+    id: 'art-002',
+    title: 'Emerging Technology Risks: What You Need to Know About AI Security',
+    description: 'An analysis of the rapidly evolving security landscape around artificial intelligence and machine learning technologies.',
+    category: 'articles',
+    tags: ['technology', 'risk'],
+    date: '2025-03-05',
+    readTime: '15 min',
+    imageUrl: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    author: 'Dr. Elena Rodriguez, Chief Technology Officer',
+    content: {
+      summary: 'As organizations increasingly adopt artificial intelligence and machine learning technologies, new security challenges emerge. This article explores the unique risks associated with AI systems and provides guidance for building secure AI implementations.',
+      sections: [
+        {
+          title: 'The AI Security Challenge',
+          content: 'Artificial intelligence systems introduce novel attack vectors and security considerations that traditional cybersecurity frameworks may not adequately address. Organizations must adapt their security strategies to account for these emerging risks.'
+        },
+        {
+          title: 'AI-Specific Threat Vectors',
+          content: 'From adversarial attacks that can fool machine learning models to data poisoning attacks that corrupt training datasets, AI systems face unique threats that require specialized defensive measures.'
+        },
+        {
+          title: 'Data Privacy and AI Ethics',
+          content: 'The use of AI systems raises significant privacy and ethical concerns, particularly around bias, transparency, and the responsible use of personal data in machine learning algorithms.'
+        },
+        {
+          title: 'Securing AI Development Pipelines',
+          content: 'Organizations must implement security controls throughout the AI development lifecycle, from data collection and model training to deployment and ongoing monitoring.'
+        },
+        {
+          title: 'Regulatory Considerations',
+          content: 'Emerging regulations around AI use and data protection create compliance challenges that organizations must navigate while maintaining security and operational effectiveness.'
+        },
+        {
+          title: 'Best Practices for AI Security',
+          content: 'Practical recommendations for securing AI systems, including model validation, adversarial testing, data governance, and continuous monitoring approaches.'
+        }
+      ],
+      keyTakeaways: [
+        'AI systems introduce novel security risks that require specialized approaches',
+        'Data quality and integrity are critical for AI security and reliability',
+        'Regulatory compliance for AI is an evolving landscape that requires ongoing attention',
+        'Security must be integrated throughout the AI development lifecycle',
+        'Organizations need specialized expertise to manage AI-related risks effectively'
+      ]
+    }
+  },
+  {
+    id: 'wp-002',
+    title: 'Building Cyber Resilience Through the STEEL Framework',
+    description: 'A detailed technical paper on implementing the STEEL methodology to enhance organizational resilience against cyber threats.',
+    category: 'whitepapers',
+    tags: ['steel', 'technology'],
+    date: '2025-02-28',
+    readTime: '30 min',
+    downloadUrl: '#',
+    imageUrl: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    author: 'ERMITS Advisory Technical Team',
+    content: {
+      summary: 'This comprehensive technical whitepaper provides detailed guidance on implementing the STEEL™ framework to build organizational cyber resilience. It includes technical implementation details, measurement frameworks, and real-world application examples.',
+      sections: [
+        {
+          title: 'Introduction to Cyber Resilience',
+          content: 'Cyber resilience goes beyond traditional cybersecurity by focusing on an organization\'s ability to continue operating effectively during and after cyber attacks. This requires a comprehensive approach that considers all aspects of organizational risk.'
+        },
+        {
+          title: 'The STEEL™ Resilience Model',
+          content: 'Our STEEL™ framework provides a structured approach to building resilience by examining risk across six critical dimensions and their interdependencies. This holistic view enables organizations to identify and address systemic vulnerabilities.'
+        },
+        {
+          title: 'Technical Implementation Architecture',
+          content: 'Detailed technical guidance for implementing STEEL™ assessments, including data collection methodologies, risk calculation algorithms, and integration with existing security tools and processes.'
+        },
+        {
+          title: 'Measurement and Metrics Framework',
+          content: 'Comprehensive framework for measuring resilience across STEEL™ dimensions, including key performance indicators, risk scoring methodologies, and reporting mechanisms for different stakeholder audiences.'
+        },
+        {
+          title: 'Technology Integration Strategies',
+          content: 'Practical guidance for integrating STEEL™ assessments with existing technology infrastructure, including SIEM platforms, risk management systems, and business intelligence tools.'
+        },
+        {
+          title: 'Continuous Improvement Process',
+          content: 'Framework for establishing continuous improvement processes that enable organizations to adapt their resilience strategies as threats evolve and business requirements change.'
+        }
+      ],
+      keyTakeaways: [
+        'Cyber resilience requires a holistic approach that goes beyond traditional security controls',
+        'The STEEL™ framework provides a comprehensive structure for building organizational resilience',
+        'Technical implementation requires integration with existing security and business systems',
+        'Measurement and metrics are essential for demonstrating resilience improvement',
+        'Continuous improvement processes ensure resilience strategies remain effective over time'
+      ]
+    }
+  },
+  {
+    id: 'cs-002',
+    title: 'Securing the Supply Chain: A Manufacturing Success Story',
+    description: 'How a global manufacturing firm secured their complex supply chain using our advisory services and STEEL methodology.',
+    category: 'casestudies',
+    tags: ['risk', 'technology'],
+    date: '2025-01-15',
+    readTime: '14 min',
+    downloadUrl: '#',
+    imageUrl: 'https://images.pexels.com/photos/4481326/pexels-photo-4481326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    author: 'Jennifer Park, Senior Security Consultant',
+    content: {
+      summary: 'This case study examines how a global manufacturing company with a complex international supply chain implemented comprehensive security measures to protect against cyber threats and ensure business continuity.',
+      sections: [
+        {
+          title: 'The Supply Chain Challenge',
+          content: 'The client, a Fortune 100 manufacturing company, operated a complex global supply chain involving hundreds of suppliers across multiple countries. Traditional security approaches were inadequate for managing the distributed nature of their operations.'
+        },
+        {
+          title: 'STEEL™ Assessment Approach',
+          content: 'We conducted a comprehensive STEEL™ assessment that examined not only the client\'s internal operations but also the risk exposure from their extended supply chain network.'
+        },
+        {
+          title: 'Technology Risk Analysis',
+          content: 'Our technology assessment revealed critical vulnerabilities in industrial control systems and identified gaps in network segmentation between operational technology and information technology systems.'
+        },
+        {
+          title: 'Supply Chain Risk Mapping',
+          content: 'We developed a detailed risk map of the client\'s supply chain, identifying critical suppliers and potential points of failure that could disrupt operations or compromise security.'
+        },
+        {
+          title: 'Implementation of Security Controls',
+          content: 'Working with the client, we implemented a comprehensive set of security controls including supplier security requirements, network segmentation, and continuous monitoring capabilities.'
+        },
+        {
+          title: 'Results and Business Impact',
+          content: 'The implementation resulted in improved supply chain visibility, reduced cyber risk exposure, and enhanced operational resilience, with measurable improvements in security metrics and operational efficiency.'
+        }
+      ],
+      keyTakeaways: [
+        'Supply chain security requires visibility and control beyond organizational boundaries',
+        'Industrial control systems present unique security challenges that require specialized approaches',
+        'Supplier security requirements must be clearly defined and regularly assessed',
+        'Network segmentation is critical for protecting operational technology systems',
+        'Continuous monitoring provides essential visibility into supply chain security posture'
+      ]
+    }
+  },
+  {
+    id: 'web-002',
+    title: 'Regulatory Landscape 2025: Preparing for New Compliance Requirements',
+    description: 'Expert panel discussion on upcoming regulatory changes and how organizations can prepare effectively.',
+    category: 'webinars',
+    tags: ['compliance', 'leadership'],
+    date: '2025-03-18',
+    readTime: '50 min',
+    imageUrl: 'https://images.pexels.com/photos/3153204/pexels-photo-3153204.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    author: 'ERMITS Advisory Compliance Panel',
+    content: {
+      summary: 'Join our expert panel as they discuss the evolving regulatory landscape for cybersecurity and data protection, providing insights into upcoming requirements and practical guidance for achieving compliance.',
+      sections: [
+        {
+          title: 'Regulatory Update Overview',
+          content: 'Comprehensive review of new and upcoming cybersecurity and privacy regulations across major jurisdictions, including their implications for different industry sectors.'
+        },
+        {
+          title: 'GDPR Evolution and Global Impact',
+          content: 'Discussion of how GDPR continues to influence global privacy regulations and what organizations need to know about evolving enforcement trends.'
+        },
+        {
+          title: 'Sector-Specific Requirements',
+          content: 'Analysis of industry-specific regulatory requirements, including financial services, healthcare, critical infrastructure, and emerging technology sectors.'
+        },
+        {
+          title: 'Compliance Strategy Development',
+          content: 'Practical guidance for developing effective compliance strategies that balance regulatory requirements with business objectives and operational efficiency.'
+        },
+        {
+          title: 'Technology Solutions for Compliance',
+          content: 'Overview of technology tools and platforms that can help organizations achieve and maintain compliance with evolving regulatory requirements.'
+        },
+        {
+          title: 'Interactive Q&A',
+          content: 'Extended question and answer session addressing specific compliance challenges and implementation questions from the audience.'
+        }
+      ],
+      keyTakeaways: [
+        'Regulatory requirements continue to evolve rapidly across all major jurisdictions',
+        'Compliance strategies must be integrated with overall business and risk management strategies',
+        'Technology solutions can significantly improve compliance efficiency and effectiveness',
+        'Industry-specific requirements require specialized knowledge and approach',
+        'Proactive compliance planning is essential for managing regulatory risk'
+      ]
+    }
+  },
+  {
+    id: 'art-003',
+    title: 'The Economics of Cybersecurity: ROI Metrics That Matter',
+    description: 'Understanding how to measure and communicate the return on investment for cybersecurity initiatives.',
+    category: 'articles',
+    tags: ['risk', 'leadership'],
+    date: '2025-04-02',
+    readTime: '10 min',
+    imageUrl: 'https://images.pexels.com/photos/590041/pexels-photo-590041.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    author: 'Robert Kim, Financial Risk Analyst',
+    content: {
+      summary: 'Measuring the return on investment for cybersecurity initiatives remains a significant challenge for many organizations. This article provides practical frameworks and metrics for quantifying cybersecurity value and communicating ROI to stakeholders.',
+      sections: [
+        {
+          title: 'The Challenge of Cybersecurity ROI',
+          content: 'Traditional ROI calculations don\'t always apply directly to cybersecurity investments, which often focus on risk reduction and loss prevention rather than direct revenue generation.'
+        },
+        {
+          title: 'Economic Impact Assessment Framework',
+          content: 'A structured approach to assessing the economic impact of cyber risks and the value of security investments, incorporating both quantitative and qualitative factors.'
+        },
+        {
+          title: 'Key Metrics for Cybersecurity ROI',
+          content: 'Overview of the most important metrics for measuring cybersecurity return on investment, including risk reduction metrics, efficiency improvements, and avoided costs.'
+        },
+        {
+          title: 'Cost-Benefit Analysis Methodologies',
+          content: 'Practical approaches to conducting cost-benefit analysis for cybersecurity investments, including how to account for uncertainty and intangible benefits.'
+        },
+        {
+          title: 'Communicating Value to Stakeholders',
+          content: 'Strategies for effectively communicating cybersecurity ROI to different stakeholder audiences, from technical teams to executive leadership and board members.'
+        }
+      ],
+      keyTakeaways: [
+        'Cybersecurity ROI requires specialized measurement approaches beyond traditional financial metrics',
+        'Risk reduction and loss prevention are key value drivers that must be quantified',
+        'Stakeholder communication should focus on business impact rather than technical details',
+        'Regular measurement and reporting help demonstrate ongoing value creation',
+        'Economic frameworks provide structure for consistent ROI assessment'
+      ]
+    }
   }
-  // Add more resources as needed
 ];
 
 export const ResourceDetailPage: React.FC = () => {
@@ -365,7 +692,7 @@ export const ResourceDetailPage: React.FC = () => {
             >
               {/* Download CTA */}
               {resource.downloadUrl && (
-                <Card variant="glass\" padding="lg\" className="bg-navy text-white">
+                <Card variant="glass" padding="lg" className="bg-navy text-white">
                   <h3 className="text-lg font-bold mb-3">Download This Resource</h3>
                   <p className="text-silver mb-4 text-sm">
                     Get the complete guide with detailed analysis, implementation strategies, and actionable recommendations.
