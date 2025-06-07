@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import { resourceService, newsletterService } from '../services/supabaseService';
 import type { Resource } from '../lib/supabase';
+import backgroundCopyImage from '../assets/background-copy.jpg';
 
 type ResourceCategory = 'all' | 'whitepapers' | 'articles' | 'casestudies' | 'webinars';
 type ResourceTag = 'steel' | 'compliance' | 'risk' | 'leadership' | 'technology';
@@ -40,6 +41,16 @@ export const ResourcesPage: React.FC = () => {
     }
     console.log('❌ No valid translated content found, returning null');
     return null;
+  };
+
+  // Get proper image source for resources
+  const getResourceImageSrc = (resource: Resource) => {
+    // Map specific resource IDs to imported assets
+    if (resource.id === 'wp-001' || resource.image_url === '/background-copy.jpg') {
+      return backgroundCopyImage;
+    }
+    // For other resources, use the provided image_url (which should be external URLs)
+    return resource.image_url;
   };
   
   // Fetch resources from Supabase
@@ -251,7 +262,7 @@ export const ResourcesPage: React.FC = () => {
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-1/2 h-64 md:h-auto overflow-hidden">
                   <img 
-                    src={featuredResource.image_url}
+                    src={getResourceImageSrc(featuredResource)}
                     alt={featuredResource.title}
                     className="w-full h-full object-cover"
                   />
@@ -576,7 +587,7 @@ export const ResourcesPage: React.FC = () => {
                     <Card variant="glass" padding="none" className="h-full flex flex-col overflow-hidden">
                       <div className="h-48 overflow-hidden">
                         <img 
-                          src={resource.image_url} 
+                          src={getResourceImageSrc(resource)}
                           alt={translatedContent?.title || resource.title}
                           className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                         />
