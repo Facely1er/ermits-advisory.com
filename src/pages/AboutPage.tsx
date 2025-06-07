@@ -8,6 +8,7 @@ import {
   Award, Users, Target, Clock, ChevronRight, Globe,
   Calendar, BookOpen, Briefcase, ArrowRight, Shield
 } from 'lucide-react';
+import teamImage from '../assets/image.png';
 
 export const AboutPage: React.FC = () => {
   const { t } = useLanguage();
@@ -125,7 +126,7 @@ export const AboutPage: React.FC = () => {
               <div className="md:w-1/2">
                 <div className="rounded-lg overflow-hidden h-80 relative">
                   <img 
-                    src="/src/assets/image.png" 
+                    src={teamImage} 
                     alt="ERMITS Advisory team" 
                     className="object-cover w-full h-full"
                   />
