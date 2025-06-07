@@ -417,7 +417,7 @@ export const fr = {
     trust: {
       title: "Fait Confiance par les Leaders de l'Industrie",
       subtitle: "Notre équipe apporte des décennies d'expérience d'organisations leaders et d'agences gouvernementales",
-      cert1: "Certifié SOC 2 Type II",
+      cert1: "Aligné au NIST CSF",
       cert2: "Conforme ISO 27001",
       cert3: "Autorisé FedRAMP",
       cert4: "Conforme GDPR"
