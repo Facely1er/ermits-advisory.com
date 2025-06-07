@@ -42,6 +42,213 @@ export const en = {
       cookies: "Cookie Policy"
     }
   },
+  implementationGuide: {
+    title: "STEEL™ Implementation Guide",
+    subtitle: "Your comprehensive roadmap to implementing the STEEL™ methodology in your organization. Transform your approach to cyber risk management with our proven framework.",
+    backToSteel: "Back to STEEL™ Framework",
+    completePackage: {
+      title: "Complete Implementation Package",
+      description: "Download our comprehensive 120-page implementation guide with templates, checklists, and industry-specific guidance to ensure successful STEEL™ deployment.",
+      features: {
+        pages: "120+ pages of detailed guidance",
+        templates: "25+ templates and worksheets", 
+        industry: "Industry-specific adaptations",
+        presentations: "Executive presentation decks"
+      },
+      downloadButton: "Download Complete Guide",
+      downloadStarted: "Download Started!",
+      fileInfo: "PDF • 120 pages • 15.2 MB"
+    },
+    benefits: {
+      riskReduction: "67% Risk Reduction",
+      riskReductionDesc: "Average reduction in overall cyber risk exposure",
+      roi: "3.4x ROI", 
+      roiDesc: "Return on security investment within 18 months",
+      faster: "83% Faster",
+      fasterDesc: "Time to actionable risk insights",
+      confidence: "92% Confidence",
+      confidenceDesc: "Board confidence in security posture"
+    },
+    guideContents: {
+      title: "What's Inside the Guide",
+      executiveSummary: {
+        title: "Executive Summary",
+        items: [
+          "STEEL™ methodology overview",
+          "Business case and ROI analysis", 
+          "Implementation timeline",
+          "Success criteria and metrics"
+        ]
+      },
+      frameworkFoundation: {
+        title: "Framework Foundation",
+        items: [
+          "Six STEEL dimensions explained",
+          "Risk assessment methodology",
+          "Scoring and measurement systems",
+          "Integration with existing frameworks"
+        ]
+      },
+      implementationRoadmap: {
+        title: "Implementation Roadmap",
+        items: [
+          "Phase-by-phase implementation guide",
+          "Resource requirements and planning",
+          "Stakeholder engagement strategies",
+          "Change management best practices"
+        ]
+      },
+      toolsTemplates: {
+        title: "Tools & Templates",
+        items: [
+          "Assessment worksheets and checklists",
+          "Executive presentation templates",
+          "Risk reporting dashboards",
+          "Training materials and guides"
+        ]
+      },
+      industryApplications: {
+        title: "Industry Applications",
+        items: [
+          "Financial services implementation",
+          "Healthcare sector adaptations",
+          "Manufacturing industry specifics",
+          "Government and public sector"
+        ]
+      },
+      successStories: {
+        title: "Success Stories",
+        items: [
+          "Case study: Fortune 500 transformation",
+          "Government agency modernization",
+          "Mid-market company implementation",
+          "Lessons learned and best practices"
+        ]
+      }
+    },
+    implementationPhases: {
+      title: "5-Phase Implementation Roadmap",
+      phase1: {
+        title: "Assessment & Planning",
+        duration: "2-4 weeks",
+        description: "Comprehensive baseline assessment and strategic planning phase",
+        deliverables: [
+          "Current state security assessment",
+          "STEEL dimension mapping",
+          "Stakeholder identification",
+          "Implementation roadmap",
+          "Resource allocation plan"
+        ],
+        keyActivities: [
+          "Executive workshops",
+          "Technical assessments",
+          "Risk baseline establishment",
+          "Team formation"
+        ]
+      },
+      phase2: {
+        title: "Foundation Setup",
+        duration: "3-6 weeks",
+        description: "Establish the foundational elements of the STEEL framework",
+        deliverables: [
+          "STEEL governance structure",
+          "Risk measurement framework",
+          "Reporting templates",
+          "Communication protocols",
+          "Training materials"
+        ],
+        keyActivities: [
+          "Framework customization",
+          "Tool configuration",
+          "Process documentation",
+          "Team training"
+        ]
+      },
+      phase3: {
+        title: "Pilot Implementation",
+        duration: "4-8 weeks",
+        description: "Deploy STEEL methodology in controlled pilot environment",
+        deliverables: [
+          "Pilot assessment results",
+          "Process refinements",
+          "Lessons learned",
+          "Success metrics",
+          "Rollout plan"
+        ],
+        keyActivities: [
+          "Pilot execution",
+          "Data collection",
+          "Stakeholder feedback",
+          "Process optimization"
+        ]
+      },
+      phase4: {
+        title: "Full Deployment",
+        duration: "6-12 weeks",
+        description: "Organization-wide rollout of STEEL framework",
+        deliverables: [
+          "Complete STEEL implementation",
+          "Executive dashboards",
+          "Regular reporting cycle",
+          "Integration with existing systems",
+          "Change management support"
+        ],
+        keyActivities: [
+          "Full-scale deployment",
+          "System integration",
+          "User onboarding",
+          "Process monitoring"
+        ]
+      },
+      phase5: {
+        title: "Optimization & Maturity",
+        duration: "3-6 months",
+        description: "Continuous improvement and maturity enhancement",
+        deliverables: [
+          "Maturity assessment",
+          "Optimization recommendations",
+          "Advanced analytics",
+          "Benchmarking reports",
+          "Future roadmap"
+        ],
+        keyActivities: [
+          "Performance analysis",
+          "Best practice identification",
+          "Advanced feature deployment",
+          "Continuous improvement"
+        ]
+      },
+      keyDeliverables: "Key Deliverables",
+      keyActivities: "Key Activities"
+    },
+    successStoriesPreview: {
+      title: "Featured Success Stories",
+      fortune500: {
+        category: "Fortune 500 Financial",
+        title: "Global Bank Achieves 78% Risk Reduction",
+        description: "Major international bank implements STEEL™ across 40+ countries, reducing cyber risk exposure while improving regulatory compliance.",
+        metrics: "Implementation time: 6 months • ROI: 340%"
+      },
+      healthcare: {
+        category: "Healthcare System",
+        title: "Regional Healthcare Network Transformation",
+        description: "Multi-hospital system deploys STEEL™ to protect patient data and ensure HIPAA compliance across all facilities.",
+        metrics: "Implementation time: 4 months • Compliance: 99.8%"
+      },
+      government: {
+        category: "Government Agency",
+        title: "Federal Agency Modernization Success",
+        description: "Large federal agency modernizes cybersecurity approach using STEEL™, achieving FedRAMP authorization and zero-trust architecture.",
+        metrics: "Implementation time: 8 months • Uptime: 99.9%"
+      }
+    },
+    cta: {
+      title: "Ready to Start Your STEEL™ Implementation?",
+      description: "Our implementation experts are standing by to help you successfully deploy the STEEL™ methodology in your organization. Schedule a consultation to discuss your specific requirements and timeline.",
+      scheduleConsultation: "Schedule Implementation Consultation",
+      viewResources: "View Additional Resources"
+    }
+  },
   privacy: {
     title: "Privacy Policy",
     subtitle: "ERMITS Advisory is committed to protecting your privacy and ensuring the security of your personal information. This policy explains how we collect, use, and safeguard your data.",

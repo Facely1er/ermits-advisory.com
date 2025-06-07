@@ -36,178 +36,93 @@ export const ImplementationGuidePage: React.FC = () => {
   const implementationPhases = [
     {
       phase: 1,
-      title: "Assessment & Planning",
-      duration: "2-4 weeks",
-      description: "Comprehensive baseline assessment and strategic planning phase",
-      deliverables: [
-        "Current state security assessment",
-        "STEEL dimension mapping",
-        "Stakeholder identification",
-        "Implementation roadmap",
-        "Resource allocation plan"
-      ],
-      keyActivities: [
-        "Executive workshops",
-        "Technical assessments",
-        "Risk baseline establishment",
-        "Team formation"
-      ]
+      title: t('implementationGuide.implementationPhases.phase1.title'),
+      duration: t('implementationGuide.implementationPhases.phase1.duration'),
+      description: t('implementationGuide.implementationPhases.phase1.description'),
+      deliverables: t('implementationGuide.implementationPhases.phase1.deliverables'),
+      keyActivities: t('implementationGuide.implementationPhases.phase1.keyActivities')
     },
     {
       phase: 2,
-      title: "Foundation Setup",
-      duration: "3-6 weeks",
-      description: "Establish the foundational elements of the STEEL framework",
-      deliverables: [
-        "STEEL governance structure",
-        "Risk measurement framework",
-        "Reporting templates",
-        "Communication protocols",
-        "Training materials"
-      ],
-      keyActivities: [
-        "Framework customization",
-        "Tool configuration",
-        "Process documentation",
-        "Team training"
-      ]
+      title: t('implementationGuide.implementationPhases.phase2.title'),
+      duration: t('implementationGuide.implementationPhases.phase2.duration'),
+      description: t('implementationGuide.implementationPhases.phase2.description'),
+      deliverables: t('implementationGuide.implementationPhases.phase2.deliverables'),
+      keyActivities: t('implementationGuide.implementationPhases.phase2.keyActivities')
     },
     {
       phase: 3,
-      title: "Pilot Implementation",
-      duration: "4-8 weeks",
-      description: "Deploy STEEL methodology in controlled pilot environment",
-      deliverables: [
-        "Pilot assessment results",
-        "Process refinements",
-        "Lessons learned",
-        "Success metrics",
-        "Rollout plan"
-      ],
-      keyActivities: [
-        "Pilot execution",
-        "Data collection",
-        "Stakeholder feedback",
-        "Process optimization"
-      ]
+      title: t('implementationGuide.implementationPhases.phase3.title'),
+      duration: t('implementationGuide.implementationPhases.phase3.duration'),
+      description: t('implementationGuide.implementationPhases.phase3.description'),
+      deliverables: t('implementationGuide.implementationPhases.phase3.deliverables'),
+      keyActivities: t('implementationGuide.implementationPhases.phase3.keyActivities')
     },
     {
       phase: 4,
-      title: "Full Deployment",
-      duration: "6-12 weeks",
-      description: "Organization-wide rollout of STEEL framework",
-      deliverables: [
-        "Complete STEEL implementation",
-        "Executive dashboards",
-        "Regular reporting cycle",
-        "Integration with existing systems",
-        "Change management support"
-      ],
-      keyActivities: [
-        "Full-scale deployment",
-        "System integration",
-        "User onboarding",
-        "Process monitoring"
-      ]
+      title: t('implementationGuide.implementationPhases.phase4.title'),
+      duration: t('implementationGuide.implementationPhases.phase4.duration'),
+      description: t('implementationGuide.implementationPhases.phase4.description'),
+      deliverables: t('implementationGuide.implementationPhases.phase4.deliverables'),
+      keyActivities: t('implementationGuide.implementationPhases.phase4.keyActivities')
     },
     {
       phase: 5,
-      title: "Optimization & Maturity",
-      duration: "3-6 months",
-      description: "Continuous improvement and maturity enhancement",
-      deliverables: [
-        "Maturity assessment",
-        "Optimization recommendations",
-        "Advanced analytics",
-        "Benchmarking reports",
-        "Future roadmap"
-      ],
-      keyActivities: [
-        "Performance analysis",
-        "Best practice identification",
-        "Advanced feature deployment",
-        "Continuous improvement"
-      ]
+      title: t('implementationGuide.implementationPhases.phase5.title'),
+      duration: t('implementationGuide.implementationPhases.phase5.duration'),
+      description: t('implementationGuide.implementationPhases.phase5.description'),
+      deliverables: t('implementationGuide.implementationPhases.phase5.deliverables'),
+      keyActivities: t('implementationGuide.implementationPhases.phase5.keyActivities')
     }
   ];
 
   const guideContents = [
     {
-      section: "Executive Summary",
-      items: [
-        "STEEL™ methodology overview",
-        "Business case and ROI analysis", 
-        "Implementation timeline",
-        "Success criteria and metrics"
-      ]
+      section: t('implementationGuide.guideContents.executiveSummary.title'),
+      items: t('implementationGuide.guideContents.executiveSummary.items')
     },
     {
-      section: "Framework Foundation",
-      items: [
-        "Six STEEL dimensions explained",
-        "Risk assessment methodology",
-        "Scoring and measurement systems",
-        "Integration with existing frameworks"
-      ]
+      section: t('implementationGuide.guideContents.frameworkFoundation.title'),
+      items: t('implementationGuide.guideContents.frameworkFoundation.items')
     },
     {
-      section: "Implementation Roadmap",
-      items: [
-        "Phase-by-phase implementation guide",
-        "Resource requirements and planning",
-        "Stakeholder engagement strategies",
-        "Change management best practices"
-      ]
+      section: t('implementationGuide.guideContents.implementationRoadmap.title'),
+      items: t('implementationGuide.guideContents.implementationRoadmap.items')
     },
     {
-      section: "Tools & Templates",
-      items: [
-        "Assessment worksheets and checklists",
-        "Executive presentation templates",
-        "Risk reporting dashboards",
-        "Training materials and guides"
-      ]
+      section: t('implementationGuide.guideContents.toolsTemplates.title'),
+      items: t('implementationGuide.guideContents.toolsTemplates.items')
     },
     {
-      section: "Industry Applications",
-      items: [
-        "Financial services implementation",
-        "Healthcare sector adaptations",
-        "Manufacturing industry specifics",
-        "Government and public sector"
-      ]
+      section: t('implementationGuide.guideContents.industryApplications.title'),
+      items: t('implementationGuide.guideContents.industryApplications.items')
     },
     {
-      section: "Success Stories",
-      items: [
-        "Case study: Fortune 500 transformation",
-        "Government agency modernization",
-        "Mid-market company implementation",
-        "Lessons learned and best practices"
-      ]
+      section: t('implementationGuide.guideContents.successStories.title'),
+      items: t('implementationGuide.guideContents.successStories.items')
     }
   ];
 
   const benefits = [
     {
       icon: <Shield size={24} className="text-blue-500" />,
-      title: "67% Risk Reduction",
-      description: "Average reduction in overall cyber risk exposure"
+      title: t('implementationGuide.benefits.riskReduction'),
+      description: t('implementationGuide.benefits.riskReductionDesc')
     },
     {
       icon: <TrendingUp size={24} className="text-green-500" />,
-      title: "3.4x ROI",
-      description: "Return on security investment within 18 months"
+      title: t('implementationGuide.benefits.roi'),
+      description: t('implementationGuide.benefits.roiDesc')
     },
     {
       icon: <Clock size={24} className="text-purple-500" />,
-      title: "83% Faster",
-      description: "Time to actionable risk insights"
+      title: t('implementationGuide.benefits.faster'),
+      description: t('implementationGuide.benefits.fasterDesc')
     },
     {
       icon: <Target size={24} className="text-orange-500" />,
-      title: "92% Confidence",
-      description: "Board confidence in security posture"
+      title: t('implementationGuide.benefits.confidence'),
+      description: t('implementationGuide.benefits.confidenceDesc')
     }
   ];
 
@@ -241,14 +156,13 @@ export const ImplementationGuidePage: React.FC = () => {
             className="inline-flex items-center text-navy dark:text-silver hover:underline mb-4 transition-colors"
           >
             <ArrowLeft size={16} className="mr-2" />
-            Back to STEEL™ Framework
+            {t('implementationGuide.backToSteel')}
           </button>
           <h1 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-            STEEL™ Implementation Guide
+            {t('implementationGuide.title')}
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl">
-            Your comprehensive roadmap to implementing the STEEL™ methodology in your organization. 
-            Transform your approach to cyber risk management with our proven framework.
+            {t('implementationGuide.subtitle')}
           </p>
         </motion.div>
 
@@ -287,27 +201,26 @@ export const ImplementationGuidePage: React.FC = () => {
           <Card variant="solid" padding="lg" className="bg-navy text-white">
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="md:w-2/3">
-                <h2 className="text-2xl font-bold mb-3">Complete Implementation Package</h2>
+                <h2 className="text-2xl font-bold mb-3">{t('implementationGuide.completePackage.title')}</h2>
                 <p className="text-silver mb-6">
-                  Download our comprehensive 120-page implementation guide with templates, 
-                  checklists, and industry-specific guidance to ensure successful STEEL™ deployment.
+                  {t('implementationGuide.completePackage.description')}
                 </p>
                 <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
                   <div className="flex items-center">
                     <CheckCircle size={16} className="text-green-400 mr-2" />
-                    <span>120+ pages of detailed guidance</span>
+                    <span>{t('implementationGuide.completePackage.features.pages')}</span>
                   </div>
                   <div className="flex items-center">
                     <CheckCircle size={16} className="text-green-400 mr-2" />
-                    <span>25+ templates and worksheets</span>
+                    <span>{t('implementationGuide.completePackage.features.templates')}</span>
                   </div>
                   <div className="flex items-center">
                     <CheckCircle size={16} className="text-green-400 mr-2" />
-                    <span>Industry-specific adaptations</span>
+                    <span>{t('implementationGuide.completePackage.features.industry')}</span>
                   </div>
                   <div className="flex items-center">
                     <CheckCircle size={16} className="text-green-400 mr-2" />
-                    <span>Executive presentation decks</span>
+                    <span>{t('implementationGuide.completePackage.features.presentations')}</span>
                   </div>
                 </div>
               </div>
@@ -325,11 +238,11 @@ export const ImplementationGuidePage: React.FC = () => {
                     disabled={downloadStarted}
                     className="w-full mb-4"
                   >
-                    {downloadStarted ? 'Download Started!' : 'Download Complete Guide'}
+                    {downloadStarted ? t('implementationGuide.completePackage.downloadStarted') : t('implementationGuide.completePackage.downloadButton')}
                   </Button>
                 </motion.div>
                 <p className="text-xs text-silver">
-                  PDF • 120 pages • 15.2 MB
+                  {t('implementationGuide.completePackage.fileInfo')}
                 </p>
               </div>
             </div>
@@ -343,7 +256,7 @@ export const ImplementationGuidePage: React.FC = () => {
           transition={{ delay: 0.3 }}
           className="mb-12"
         >
-          <h2 className="text-2xl font-bold mb-6 dark:text-white">What's Inside the Guide</h2>
+          <h2 className="text-2xl font-bold mb-6 dark:text-white">{t('implementationGuide.guideContents.title')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {guideContents.map((section, index) => (
               <Card key={index} variant="glass" padding="md">
@@ -356,7 +269,7 @@ export const ImplementationGuidePage: React.FC = () => {
                       {section.section}
                     </h3>
                     <ul className="space-y-1">
-                      {section.items.map((item, itemIndex) => (
+                      {Array.isArray(section.items) && section.items.map((item: string, itemIndex: number) => (
                         <li key={itemIndex} className="text-gray-600 dark:text-gray-200 text-sm flex items-start">
                           <div className="w-1.5 h-1.5 rounded-full bg-navy dark:bg-silver mt-2 mr-2 flex-shrink-0"></div>
                           {item}
@@ -377,7 +290,7 @@ export const ImplementationGuidePage: React.FC = () => {
           transition={{ delay: 0.4 }}
           className="mb-12"
         >
-          <h2 className="text-2xl font-bold mb-6 dark:text-white">5-Phase Implementation Roadmap</h2>
+          <h2 className="text-2xl font-bold mb-6 dark:text-white">{t('implementationGuide.implementationPhases.title')}</h2>
           <div className="space-y-4">
             {implementationPhases.map((phase, index) => (
               <Card key={index} variant="glass" padding="none" className="overflow-hidden">
@@ -420,10 +333,10 @@ export const ImplementationGuidePage: React.FC = () => {
                           <div>
                             <h4 className="font-semibold mb-3 dark:text-white flex items-center">
                               <FileText size={16} className="mr-2" />
-                              Key Deliverables
+                              {t('implementationGuide.implementationPhases.keyDeliverables')}
                             </h4>
                             <ul className="space-y-2">
-                              {phase.deliverables.map((deliverable, dIndex) => (
+                              {Array.isArray(phase.deliverables) && phase.deliverables.map((deliverable: string, dIndex: number) => (
                                 <li key={dIndex} className="text-gray-600 dark:text-gray-200 text-sm flex items-start">
                                   <CheckCircle size={14} className="text-green-500 mt-0.5 mr-2 flex-shrink-0" />
                                   {deliverable}
@@ -434,10 +347,10 @@ export const ImplementationGuidePage: React.FC = () => {
                           <div>
                             <h4 className="font-semibold mb-3 dark:text-white flex items-center">
                               <Clipboard size={16} className="mr-2" />
-                              Key Activities
+                              {t('implementationGuide.implementationPhases.keyActivities')}
                             </h4>
                             <ul className="space-y-2">
-                              {phase.keyActivities.map((activity, aIndex) => (
+                              {Array.isArray(phase.keyActivities) && phase.keyActivities.map((activity: string, aIndex: number) => (
                                 <li key={aIndex} className="text-gray-600 dark:text-gray-200 text-sm flex items-start">
                                   <Play size={14} className="text-blue-500 mt-0.5 mr-2 flex-shrink-0" />
                                   {activity}
@@ -462,56 +375,53 @@ export const ImplementationGuidePage: React.FC = () => {
           transition={{ delay: 0.5 }}
           className="mb-12"
         >
-          <h2 className="text-2xl font-bold mb-6 dark:text-white">Featured Success Stories</h2>
+          <h2 className="text-2xl font-bold mb-6 dark:text-white">{t('implementationGuide.successStoriesPreview.title')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Card variant="glass" padding="md">
               <div className="flex items-center mb-3">
                 <Star size={20} className="text-yellow-500 mr-2" />
-                <span className="text-sm font-medium text-gray-600 dark:text-gray-300">Fortune 500 Financial</span>
+                <span className="text-sm font-medium text-gray-600 dark:text-gray-300">{t('implementationGuide.successStoriesPreview.fortune500.category')}</span>
               </div>
               <h3 className="font-semibold mb-2 dark:text-white">
-                Global Bank Achieves 78% Risk Reduction
+                {t('implementationGuide.successStoriesPreview.fortune500.title')}
               </h3>
               <p className="text-gray-600 dark:text-gray-200 text-sm mb-3">
-                Major international bank implements STEEL™ across 40+ countries, 
-                reducing cyber risk exposure while improving regulatory compliance.
+                {t('implementationGuide.successStoriesPreview.fortune500.description')}
               </p>
               <div className="text-xs text-navy dark:text-silver font-medium">
-                Implementation time: 6 months • ROI: 340%
+                {t('implementationGuide.successStoriesPreview.fortune500.metrics')}
               </div>
             </Card>
 
             <Card variant="glass" padding="md">
               <div className="flex items-center mb-3">
                 <Star size={20} className="text-yellow-500 mr-2" />
-                <span className="text-sm font-medium text-gray-600 dark:text-gray-300">Healthcare System</span>
+                <span className="text-sm font-medium text-gray-600 dark:text-gray-300">{t('implementationGuide.successStoriesPreview.healthcare.category')}</span>
               </div>
               <h3 className="font-semibold mb-2 dark:text-white">
-                Regional Healthcare Network Transformation
+                {t('implementationGuide.successStoriesPreview.healthcare.title')}
               </h3>
               <p className="text-gray-600 dark:text-gray-200 text-sm mb-3">
-                Multi-hospital system deploys STEEL™ to protect patient data 
-                and ensure HIPAA compliance across all facilities.
+                {t('implementationGuide.successStoriesPreview.healthcare.description')}
               </p>
               <div className="text-xs text-navy dark:text-silver font-medium">
-                Implementation time: 4 months • Compliance: 99.8%
+                {t('implementationGuide.successStoriesPreview.healthcare.metrics')}
               </div>
             </Card>
 
             <Card variant="glass" padding="md">
               <div className="flex items-center mb-3">
                 <Star size={20} className="text-yellow-500 mr-2" />
-                <span className="text-sm font-medium text-gray-600 dark:text-gray-300">Government Agency</span>
+                <span className="text-sm font-medium text-gray-600 dark:text-gray-300">{t('implementationGuide.successStoriesPreview.government.category')}</span>
               </div>
               <h3 className="font-semibold mb-2 dark:text-white">
-                Federal Agency Modernization Success
+                {t('implementationGuide.successStoriesPreview.government.title')}
               </h3>
               <p className="text-gray-600 dark:text-gray-200 text-sm mb-3">
-                Large federal agency modernizes cybersecurity approach using STEEL™, 
-                achieving FedRAMP authorization and zero-trust architecture.
+                {t('implementationGuide.successStoriesPreview.government.description')}
               </p>
               <div className="text-xs text-navy dark:text-silver font-medium">
-                Implementation time: 8 months • Uptime: 99.9%
+                {t('implementationGuide.successStoriesPreview.government.metrics')}
               </div>
             </Card>
           </div>
@@ -526,12 +436,10 @@ export const ImplementationGuidePage: React.FC = () => {
           <Card variant="glass" padding="lg">
             <div className="text-center">
               <h2 className="text-2xl font-bold mb-4 dark:text-white">
-                Ready to Start Your STEEL™ Implementation?
+                {t('implementationGuide.cta.title')}
               </h2>
               <p className="text-gray-600 dark:text-gray-100 max-w-2xl mx-auto mb-8">
-                Our implementation experts are standing by to help you successfully deploy 
-                the STEEL™ methodology in your organization. Schedule a consultation to discuss 
-                your specific requirements and timeline.
+                {t('implementationGuide.cta.description')}
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button 
@@ -540,7 +448,7 @@ export const ImplementationGuidePage: React.FC = () => {
                   icon={<Users size={18} />}
                   onClick={() => navigate('/contact')}
                 >
-                  Schedule Implementation Consultation
+                  {t('implementationGuide.cta.scheduleConsultation')}
                 </Button>
                 <Button 
                   variant="outline" 
@@ -548,7 +456,7 @@ export const ImplementationGuidePage: React.FC = () => {
                   icon={<AlertCircle size={18} />}
                   onClick={() => navigate('/resources')}
                 >
-                  View Additional Resources
+                  {t('implementationGuide.cta.viewResources')}
                 </Button>
               </div>
             </div>
