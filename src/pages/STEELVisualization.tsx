@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
@@ -11,6 +12,7 @@ import { steelDimensions } from '../data/mockData';
 
 export const STEELVisualization: React.FC = () => {
   const { t } = useLanguage();
+  const navigate = useNavigate();
   const [selectedDimension, setSelectedDimension] = useState<string | null>(null);
   
   const handleDimensionClick = (id: string) => {
@@ -245,6 +247,7 @@ export const STEELVisualization: React.FC = () => {
                           size="sm"
                           icon={<ArrowRight size={16} />}
                           iconPosition="right"
+                          onClick={() => navigate('/contact')}
                         >
                           View Detailed Analysis
                         </Button>
@@ -314,6 +317,10 @@ export const STEELVisualization: React.FC = () => {
                   icon={<Download size={20} />}
                   iconPosition="left"
                   className="relative z-10 px-6 py-3 shadow-lg"
+                  onClick={() => {
+                    // In a real implementation, this would trigger a download
+                    alert('Implementation guide download started');
+                  }}
                 >
                   {t('steel.integration.downloadGuide')}
                 </Button>
@@ -342,12 +349,14 @@ export const STEELVisualization: React.FC = () => {
                     variant="secondary" 
                     icon={<ExternalLink size={16} />}
                     iconPosition="right"
+                    onClick={() => navigate('/contact')}
                   >
                     {t('steel.cta.scheduleConsultation')}
                   </Button>
                   <Button 
                     variant="outline" 
                     className="border-white text-white hover:bg-white/10"
+                    onClick={() => navigate('/resources')}
                   >
                     {t('steel.cta.requestCaseStudy')}
                   </Button>

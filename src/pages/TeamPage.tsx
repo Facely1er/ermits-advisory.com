@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
@@ -10,6 +11,7 @@ import {
 
 export const TeamPage: React.FC = () => {
   const { t } = useLanguage();
+  const navigate = useNavigate();
   
   // Team categories with expertise areas
   const teamCategories = [
@@ -229,7 +231,12 @@ export const TeamPage: React.FC = () => {
                               <h3 className="text-xl font-bold dark:text-white">{member.name}</h3>
                               <p className="text-navy dark:text-silver font-medium">{member.title}</p>
                             </div>
-                            <Button variant="ghost" size="sm" icon={<Mail size={16} />}>
+                            <Button 
+                              variant="ghost" 
+                              size="sm" 
+                              icon={<Mail size={16} />}
+                              onClick={() => navigate('/contact')}
+                            >
                               Contact
                             </Button>
                           </div>
@@ -329,6 +336,7 @@ export const TeamPage: React.FC = () => {
                     variant="primary" 
                     icon={<ChevronRight size={16} />}
                     iconPosition="right"
+                    onClick={() => navigate('/contact')}
                   >
                     View Open Positions
                   </Button>
@@ -336,6 +344,7 @@ export const TeamPage: React.FC = () => {
                     variant="outline" 
                     icon={<ExternalLink size={16} />}
                     iconPosition="right"
+                    onClick={() => navigate('/contact')}
                   >
                     Submit Your Resume
                   </Button>

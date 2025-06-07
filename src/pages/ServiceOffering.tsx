@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
@@ -10,6 +11,7 @@ import {
 
 export const ServiceOffering: React.FC = () => {
   const { t, getNestedTranslation } = useLanguage();
+  const navigate = useNavigate();
   
   // Define service information with IDs matching the exact keys in translations.ts
   const services = [
@@ -150,6 +152,7 @@ export const ServiceOffering: React.FC = () => {
                         size="sm"
                         icon={<ArrowRight size={16} />}
                         iconPosition="right"
+                        onClick={() => navigate('/contact')}
                       >
                         {t('common.learnMore')}
                       </Button>
@@ -182,6 +185,7 @@ export const ServiceOffering: React.FC = () => {
                   variant="primary" 
                   icon={<ArrowRight size={16} />}
                   iconPosition="right"
+                  onClick={() => navigate('/steel')}
                 >
                   {t('services.steelFramework.exploreButton')}
                 </Button>
@@ -329,6 +333,7 @@ export const ServiceOffering: React.FC = () => {
               <Button 
                 variant="primary" 
                 size="lg"
+                onClick={() => navigate('/contact')}
               >
                 {t('services.contact.requestConsultation')}
               </Button>

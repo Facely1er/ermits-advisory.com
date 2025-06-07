@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
@@ -10,6 +11,7 @@ import {
 
 export const AboutPage: React.FC = () => {
   const { t } = useLanguage();
+  const navigate = useNavigate();
   
   // Animation variants
   const container = {
@@ -69,6 +71,7 @@ export const AboutPage: React.FC = () => {
               variant="primary" 
               size="lg"
               icon={<Users size={18} />}
+              onClick={() => navigate('/team')}
             >
               {t('about.hero.meetTeam')}
             </Button>
@@ -76,6 +79,7 @@ export const AboutPage: React.FC = () => {
               variant="outline" 
               size="lg"
               icon={<Calendar size={18} />}
+              onClick={() => navigate('/contact')}
             >
               {t('about.hero.bookCall')}
             </Button>
@@ -189,6 +193,7 @@ export const AboutPage: React.FC = () => {
                   size="sm"
                   icon={<ChevronRight size={16} />}
                   iconPosition="right"
+                  onClick={() => navigate('/team')}
                 >
                   {t('about.team.viewExpertise')}
                 </Button>
@@ -211,6 +216,7 @@ export const AboutPage: React.FC = () => {
                   size="sm"
                   icon={<ChevronRight size={16} />}
                   iconPosition="right"
+                  onClick={() => navigate('/team')}
                 >
                   {t('about.team.viewExpertise')}
                 </Button>
@@ -233,6 +239,7 @@ export const AboutPage: React.FC = () => {
                   size="sm"
                   icon={<ChevronRight size={16} />}
                   iconPosition="right"
+                  onClick={() => navigate('/team')}
                 >
                   {t('about.team.viewExpertise')}
                 </Button>
@@ -255,6 +262,7 @@ export const AboutPage: React.FC = () => {
                   size="sm"
                   icon={<ChevronRight size={16} />}
                   iconPosition="right"
+                  onClick={() => navigate('/team')}
                 >
                   {t('about.team.viewExpertise')}
                 </Button>
@@ -267,6 +275,7 @@ export const AboutPage: React.FC = () => {
               variant="primary" 
               icon={<Users size={16} />}
               iconPosition="left"
+              onClick={() => navigate('/team')}
             >
               {t('about.team.viewAll')}
             </Button>
@@ -294,15 +303,12 @@ export const AboutPage: React.FC = () => {
                     </div>
                     <span className="text-gray-600 dark:text-gray-200">{t('about.global.offices.us')}</span>
                   </li>
-                  <li className="flex items-start">
-                    <div className="p-1 rounded-full bg-navy/10 dark:bg-silver/10 mr-3 mt-1">
-                    </div>
-                   </li>
                 </ul>
                 <Button
                   variant="outline"
                   icon={<ArrowRight size={16} />}
                   iconPosition="right"
+                  onClick={() => navigate('/contact')}
                 >
                   {t('about.global.contact')}
                 </Button>
@@ -338,6 +344,7 @@ export const AboutPage: React.FC = () => {
                   variant="secondary" 
                   size="lg"
                   icon={<Calendar size={18} />}
+                  onClick={() => navigate('/contact')}
                 >
                   {t('about.cta.schedule')}
                 </Button>
@@ -347,6 +354,7 @@ export const AboutPage: React.FC = () => {
                   className="border-white text-white hover:bg-white/10"
                   icon={<ArrowRight size={18} />}
                   iconPosition="right"
+                  onClick={() => navigate('/services')}
                 >
                   {t('about.cta.learn')}
                 </Button>
