@@ -321,12 +321,13 @@ export const STEELVisualization: React.FC = () => {
                 </p>
               </div>
               
-              <div className="flex justify-center mb-8">
+              {/* Fixed container with proper height for hexagon visualization */}
+              <div className="flex justify-center">
                 <motion.div 
                   initial="hidden"
                   animate="visible"
                   variants={containerVariants}
-                  className="relative"
+                  className="relative h-96 w-full max-w-lg mx-auto"
                 >
                   {/* Center hexagon */}
                   <motion.div 
@@ -378,7 +379,7 @@ export const STEELVisualization: React.FC = () => {
                     animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="bg-silver/20 dark:bg-navy/30 rounded-lg p-6 relative"
+                    className="bg-silver/20 dark:bg-navy/30 rounded-lg p-6 relative mt-8"
                   >
                     <button 
                       onClick={() => setSelectedDimension(null)}
