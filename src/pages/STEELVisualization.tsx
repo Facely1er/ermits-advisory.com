@@ -321,27 +321,27 @@ export const STEELVisualization: React.FC = () => {
                 </p>
               </div>
               
-              {/* Fixed container with proper height for hexagon visualization */}
+              {/* Fixed container with proper height and width for hexagon visualization */}
               <div className="flex justify-center">
                 <motion.div 
                   initial="hidden"
                   animate="visible"
                   variants={containerVariants}
-                  className="relative h-96 w-full max-w-lg mx-auto"
+                  className="relative h-[500px] w-full max-w-2xl mx-auto"
                 >
                   {/* Center hexagon */}
                   <motion.div 
                     variants={hexagonVariants}
-                    className="w-32 h-28 hexagon bg-navy text-white flex items-center justify-center absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
+                    className="w-28 h-24 hexagon bg-navy text-white flex items-center justify-center absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
                   >
                     <span className="text-lg font-bold">STEEL™</span>
                   </motion.div>
                   
-                  {/* Surrounding hexagons */}
+                  {/* Surrounding hexagons with increased radius and better spacing */}
                   {steelDimensions.map((dimension, index) => {
-                    // Position each hexagon around the center
+                    // Position each hexagon around the center with increased radius
                     const angle = (index * 60) * (Math.PI / 180);
-                    const radius = 120; // Distance from center
+                    const radius = 160; // Increased from 120 to 160 for better spacing
                     const x = radius * Math.cos(angle);
                     const y = radius * Math.sin(angle);
                     
@@ -352,10 +352,10 @@ export const STEELVisualization: React.FC = () => {
                         whileHover="hover"
                         whileTap="tap"
                         onClick={() => handleDimensionClick(dimension.id)}
-                        className="w-24 h-20 hexagon flex flex-col items-center justify-center absolute transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2 dark:focus:ring-offset-dark-bg focus:ring-offset-white dark:focus:ring-silver"
+                        className="w-20 h-16 hexagon flex flex-col items-center justify-center absolute transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2 dark:focus:ring-offset-dark-bg focus:ring-offset-white dark:focus:ring-silver"
                         style={{ 
-                          left: `calc(50% + ${x}px - 3rem)`, 
-                          top: `calc(50% + ${y}px - 2.5rem)`,
+                          left: `calc(50% + ${x}px - 2.5rem)`, 
+                          top: `calc(50% + ${y}px - 2rem)`,
                           backgroundColor: dimension.color,
                           color: '#fff'
                         }}
@@ -363,8 +363,8 @@ export const STEELVisualization: React.FC = () => {
                         type="button"
                       >
                         <div className="flex flex-col items-center justify-center pointer-events-none">
-                          {getDimensionIcon(dimension.id, 16)}
-                          <span className="text-xs font-medium mt-1">{t(`steel.dimensions.${dimension.id}.title`)}</span>
+                          {getDimensionIcon(dimension.id, 14)}
+                          <span className="text-xs font-medium mt-1 text-center leading-tight">{t(`steel.dimensions.${dimension.id}.title`)}</span>
                         </div>
                       </motion.button>
                     );
