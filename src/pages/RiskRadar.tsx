@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
@@ -32,6 +33,7 @@ ChartJS.register(
 export const RiskRadar: React.FC = () => {
   const { t, getNestedTranslation } = useLanguage();
   const { theme } = useTheme();
+  const navigate = useNavigate();
   const [currentScenario, setCurrentScenario] = useState<'current' | 'breach' | 'investment' | 'industry'>('current');
   const [sliderValues, setSliderValues] = useState<Record<string, number>>({
     political: scenarios.current.political,
@@ -67,6 +69,11 @@ export const RiskRadar: React.FC = () => {
     }));
     // When user makes changes, we're in a custom scenario
     setCurrentScenario('current');
+  };
+
+  // Handle generate report button click
+  const handleGenerateReport = () => {
+    navigate('/dashboard');
   };
 
   // Get risk level color based on value
@@ -350,6 +357,7 @@ export const RiskRadar: React.FC = () => {
                   variant="primary"
                   icon={<ArrowRight size={16} />}
                   iconPosition="right"
+                  onClick={handleGenerateReport}
                 >
                   {t('riskRadar.recommendations.generateReport')}
                 </Button>
