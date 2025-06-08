@@ -428,6 +428,60 @@ export const fr = {
       button: "Planifier une Consultation"
     }
   },
+  steelPage: {
+    hero: {
+      title: "STEEL par ERMITS : Intelligence Stratégique des Menaces pour les 18 Prochains Mois",
+      subtitle1: "Dépassez PESTEL—quantifiez les macro-risques en termes NIST et ISO avant qu'ils n'impactent votre résultat net.",
+      subtitle2: "STEEL est le premier service consultatif à fusionner les comportements Sociotechniques, les dépendances Technologiques, la résilience Environnementale, la volatilité Économique et les dynamiques Légales en intelligence stratégique. Voyez les menaces 6-18 mois avant qu'elles ne perturbent les opérations, avec des voies d'implémentation guidées par des experts.",
+      scheduleConsultation: "Planifier une Consultation d'Évaluation",
+      requestDemo: "Demander une Démo de Plateforme",
+      downloadMethodology: "Télécharger la Méthodologie STEEL"
+    },
+    whatMakesDifferent: {
+      title: "Ce qui Rend STEEL Différent",
+      subtitle: "STEEL transcende les cadres traditionnels de gestion des risques, fournissant au leadership exécutif une vision actionnable plutôt qu'une analyse rétrospective.",
+      predictiveIntelligence: {
+        title: "Intelligence Prédictive",
+        description: "Alors que les évaluations traditionnelles fournissent des instantanés ponctuels, STEEL offre un horizon de menaces de 18 mois avec des mises à jour continues, vous permettant d'anticiper les perturbations bien avant qu'elles ne se matérialisent.",
+        link: "Fenêtre prédictive de 18 mois"
+      },
+      enhancedPestel: {
+        title: "PESTEL+ Amélioré",
+        description: "STEEL étend au-delà de l'analyse PESTEL traditionnelle en incorporant les modèles de comportement sociotechniques et les dépendances technologiques émergentes dans un cadre stratégique complet.",
+        link: "Analyse macro-risque complète"
+      },
+      expertPartnership: {
+        title: "Partenariat Expert",
+        description: "STEEL n'est pas seulement une plateforme ; c'est un partenariat avec des conseillers en risques expérimentés qui fournissent des conseils contextualisés et un support d'implémentation adapté à votre environnement commercial spécifique.",
+        link: "Collaboration directe avec les conseillers"
+      },
+      frameworkIntegration: {
+        title: "Intégration de Cadre",
+        description: "STEEL traduit sans effort les insights stratégiques en exigences opérationnelles avec un alignement natif aux cadres NIST CSF, ISO 31000 et COSO ERM.",
+        link: "Voies de conformité intégrées"
+      }
+    },
+    advisoryProcess: {
+      title: "Notre Processus Consultatif",
+      subtitle: "STEEL suit une méthodologie éprouvée pour transformer des données de menace complexes en stratégie exécutive actionnable.",
+      strategicDiscovery: {
+        title: "Découverte Stratégique",
+        description: "Consultation experte pour cartographier votre paysage de menaces unique et contexte commercial."
+      },
+      modeling: {
+        title: "Modélisation 18 Mois",
+        description: "Analyse PESTEL+ complète avec algorithmes d'intelligence prédictive sophistiqués."
+      },
+      synthesis: {
+        title: "Synthèse d'Intelligence",
+        description: "Notre équipe consultative transforme les données en stratégie actionnable alignée sur vos objectifs commerciaux."
+      },
+      briefing: {
+        title: "Briefing Exécutif",
+        description: "Recommandations stratégiques prêtes pour le conseil avec feuilles de route d'implémentation détaillées."
+      }
+    }
+  },
   steel: {
     title: "Cadre d'Évaluation des Risques STEEL™",
     subtitle: "Une méthodologie complète pour comprendre et gérer les risques cyber dans toutes les dimensions de votre organisation",

@@ -428,6 +428,60 @@ export const en = {
       button: "Schedule Consultation"
     }
   },
+  steelPage: {
+    hero: {
+      title: "STEEL by ERMITS: Strategic Threat Intelligence for Next 18 Months",
+      subtitle1: "Go beyond PESTEL—quantify macro-risks in NIST and ISO terms before they impact your bottom line.",
+      subtitle2: "STEEL is the first advisory service to fuse Sociotechnical behaviors, Technological dependencies, Environmental resilience, Economic volatility, and Legal dynamics into strategic intelligence. See threats 6-18 months before they disrupt operations, with expert-guided implementation pathways.",
+      scheduleConsultation: "Schedule Assessment Consultation",
+      requestDemo: "Request Platform Demo",
+      downloadMethodology: "Download STEEL Methodology"
+    },
+    whatMakesDifferent: {
+      title: "What Makes STEEL Different",
+      subtitle: "STEEL transcends traditional risk management frameworks, providing executive leadership with actionable foresight rather than retrospective analysis.",
+      predictiveIntelligence: {
+        title: "Predictive Intelligence",
+        description: "While traditional assessments provide point-in-time snapshots, STEEL delivers an 18-month threat horizon with continuous updates, allowing you to anticipate disruptions well before they materialize.",
+        link: "18-month predictive window"
+      },
+      enhancedPestel: {
+        title: "Enhanced PESTEL+",
+        description: "STEEL extends beyond traditional PESTEL analysis by incorporating sociotechnical behavior patterns and emerging technological dependencies into a comprehensive strategic framework.",
+        link: "Comprehensive macro-risk analysis"
+      },
+      expertPartnership: {
+        title: "Expert Partnership",
+        description: "STEEL isn't just a platform; it's a partnership with seasoned risk advisors who provide contextualized guidance and implementation support tailored to your specific business environment.",
+        link: "Direct advisor collaboration"
+      },
+      frameworkIntegration: {
+        title: "Framework Integration",
+        description: "STEEL seamlessly translates strategic insights into operational requirements with native alignment to NIST CSF, ISO 31000, and COSO ERM frameworks.",
+        link: "Integrated compliance pathways"
+      }
+    },
+    advisoryProcess: {
+      title: "Our Advisory Process",
+      subtitle: "STEEL follows a proven methodology for transforming complex threat data into actionable executive strategy.",
+      strategicDiscovery: {
+        title: "Strategic Discovery",
+        description: "Expert consultation to map your unique threat landscape and business context."
+      },
+      modeling: {
+        title: "18-Month Modeling",
+        description: "Comprehensive PESTEL+ analysis with sophisticated predictive intelligence algorithms."
+      },
+      synthesis: {
+        title: "Intelligence Synthesis",
+        description: "Our advisory team transforms data into actionable strategy aligned to your business objectives."
+      },
+      briefing: {
+        title: "Executive Briefing",
+        description: "Board-ready strategic recommendations with detailed implementation roadmaps."
+      }
+    }
+  },
   steel: {
     title: "STEEL™ Risk Assessment Framework",
     subtitle: "A comprehensive methodology for understanding and managing cyber risk across all dimensions of your organization",

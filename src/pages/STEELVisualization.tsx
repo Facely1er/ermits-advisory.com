@@ -6,7 +6,8 @@ import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { 
   Shield, TrendingUp, Users, Server, Leaf, Scale, 
-  Info, X, ArrowRight, ExternalLink, Download
+  Info, X, ArrowRight, ExternalLink, Download,
+  Lightbulb, BarChart2, FileText, Search, Activity, Presentation
 } from 'lucide-react';
 import { steelDimensions } from '../data/mockData';
 
@@ -46,6 +47,66 @@ export const STEELVisualization: React.FC = () => {
     { id: 'implementation', label: t('steel.integration.step4') },
     { id: 'monitoring', label: t('steel.integration.step5') },
     { id: 'optimization', label: t('steel.integration.step6') }
+  ];
+
+  // What Makes STEEL Different items
+  const whatMakesDifferentItems = [
+    {
+      id: 'predictiveIntelligence',
+      icon: <Lightbulb size={24} className="text-navy dark:text-silver" />,
+      title: t('steelPage.whatMakesDifferent.predictiveIntelligence.title'),
+      description: t('steelPage.whatMakesDifferent.predictiveIntelligence.description'),
+      link: t('steelPage.whatMakesDifferent.predictiveIntelligence.link')
+    },
+    {
+      id: 'enhancedPestel',
+      icon: <BarChart2 size={24} className="text-navy dark:text-silver" />,
+      title: t('steelPage.whatMakesDifferent.enhancedPestel.title'),
+      description: t('steelPage.whatMakesDifferent.enhancedPestel.description'),
+      link: t('steelPage.whatMakesDifferent.enhancedPestel.link')
+    },
+    {
+      id: 'expertPartnership',
+      icon: <Users size={24} className="text-navy dark:text-silver" />,
+      title: t('steelPage.whatMakesDifferent.expertPartnership.title'),
+      description: t('steelPage.whatMakesDifferent.expertPartnership.description'),
+      link: t('steelPage.whatMakesDifferent.expertPartnership.link')
+    },
+    {
+      id: 'frameworkIntegration',
+      icon: <FileText size={24} className="text-navy dark:text-silver" />,
+      title: t('steelPage.whatMakesDifferent.frameworkIntegration.title'),
+      description: t('steelPage.whatMakesDifferent.frameworkIntegration.description'),
+      link: t('steelPage.whatMakesDifferent.frameworkIntegration.link')
+    }
+  ];
+
+  // Advisory Process items
+  const advisoryProcessItems = [
+    {
+      id: 'strategicDiscovery',
+      icon: <Search size={24} className="text-navy dark:text-silver" />,
+      title: t('steelPage.advisoryProcess.strategicDiscovery.title'),
+      description: t('steelPage.advisoryProcess.strategicDiscovery.description')
+    },
+    {
+      id: 'modeling',
+      icon: <Activity size={24} className="text-navy dark:text-silver" />,
+      title: t('steelPage.advisoryProcess.modeling.title'),
+      description: t('steelPage.advisoryProcess.modeling.description')
+    },
+    {
+      id: 'synthesis',
+      icon: <Lightbulb size={24} className="text-navy dark:text-silver" />,
+      title: t('steelPage.advisoryProcess.synthesis.title'),
+      description: t('steelPage.advisoryProcess.synthesis.description')
+    },
+    {
+      id: 'briefing',
+      icon: <Presentation size={24} className="text-navy dark:text-silver" />,
+      title: t('steelPage.advisoryProcess.briefing.title'),
+      description: t('steelPage.advisoryProcess.briefing.description')
+    }
   ];
 
   // Animation variants
@@ -120,25 +181,141 @@ export const STEELVisualization: React.FC = () => {
   return (
     <div className="pt-24 pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
       <div className="container mx-auto px-4">
+        {/* Enhanced Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-12 text-center"
+          className="mb-16"
         >
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">{t('steel.title')}</h1>
-          <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-            {t('steel.subtitle')}
-          </p>
+          <Card variant="solid" padding="lg" className="bg-navy text-white">
+            <div className="text-center max-w-4xl mx-auto">
+              <h1 className="text-3xl md:text-5xl font-bold mb-4">{t('steelPage.hero.title')}</h1>
+              <p className="text-xl md:text-2xl mb-4 text-silver">
+                {t('steelPage.hero.subtitle1')}
+              </p>
+              <p className="text-lg mb-8 text-silver">
+                {t('steelPage.hero.subtitle2')}
+              </p>
+              
+              <div className="flex flex-wrap justify-center gap-4">
+                <Button 
+                  variant="secondary" 
+                  size="lg"
+                  icon={<ArrowRight size={18} />}
+                  iconPosition="right"
+                  onClick={() => navigate('/contact')}
+                >
+                  {t('steelPage.hero.scheduleConsultation')}
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  className="border-white text-white hover:bg-white/10"
+                  onClick={() => navigate('/contact')}
+                >
+                  {t('steelPage.hero.requestDemo')}
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  className="border-white text-white hover:bg-white/10"
+                  icon={<Download size={18} />}
+                  iconPosition="left"
+                  onClick={() => navigate('/steel/implementation-guide')}
+                >
+                  {t('steelPage.hero.downloadMethodology')}
+                </Button>
+              </div>
+            </div>
+          </Card>
         </motion.div>
 
+        {/* What Makes STEEL Different Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="mb-16"
+        >
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">{t('steelPage.whatMakesDifferent.title')}</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
+              {t('steelPage.whatMakesDifferent.subtitle')}
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {whatMakesDifferentItems.map((item, index) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 + (index * 0.1) }}
+              >
+                <Card variant="glass" padding="lg" className="h-full">
+                  <div className="flex items-start">
+                    <div className="p-3 rounded-full bg-silver/20 dark:bg-navy/40 mr-4 flex-shrink-0">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold mb-3 dark:text-white">{item.title}</h3>
+                      <p className="text-gray-600 dark:text-gray-200 mb-4">{item.description}</p>
+                      <button className="text-navy dark:text-silver font-medium hover:underline text-sm flex items-center">
+                        {item.link}
+                        <ArrowRight size={14} className="ml-1" />
+                      </button>
+                    </div>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Our Advisory Process Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="mb-16"
+        >
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">{t('steelPage.advisoryProcess.title')}</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
+              {t('steelPage.advisoryProcess.subtitle')}
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {advisoryProcessItems.map((item, index) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 + (index * 0.1) }}
+              >
+                <Card variant="glass" padding="md" className="h-full text-center">
+                  <div className="p-3 rounded-full bg-silver/20 dark:bg-navy/40 inline-flex mb-4">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-lg font-bold mb-3 dark:text-white">{item.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-200 text-sm">{item.description}</p>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Original STEEL Methodology Section */}
         <div className="mb-16">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.6 }}
           >
             <Card variant="glass" padding="lg">
               <div className="text-center mb-8">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">{t('steel.title')}</h2>
                 <p className="text-lg text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
                   {t('steel.overview')}
                 </p>
@@ -263,7 +440,7 @@ export const STEELVisualization: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
+          transition={{ delay: 0.7 }}
           className="mb-16"
         >
           <Card variant="glass" padding="lg">
@@ -329,7 +506,7 @@ export const STEELVisualization: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
+          transition={{ delay: 0.8 }}
         >
           <Card variant="glass" padding="lg" className="bg-navy text-white">
             <div className="flex items-start">
