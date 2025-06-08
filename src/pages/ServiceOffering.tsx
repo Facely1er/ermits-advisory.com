@@ -6,19 +6,80 @@ import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { 
   Shield, Search, Users, UserCheck, CheckCircle, ArrowRight, 
-  Mail, Phone, MapPin, Presentation
+  Mail, Phone, MapPin, Presentation, Activity, Lightbulb,
+  BarChart2, FileText, Calendar, Download
 } from 'lucide-react';
 
 export const ServiceOffering: React.FC = () => {
   const { t, getNestedTranslation } = useLanguage();
   const navigate = useNavigate();
   
+  // Enhanced Advisory Process based on STEEL methodology
+  const advisoryProcessItems = [
+    {
+      id: 'strategicDiscovery',
+      icon: <Search size={32} className="text-navy dark:text-silver" />,
+      title: t('steelPage.advisoryProcess.strategicDiscovery.title'),
+      description: t('steelPage.advisoryProcess.strategicDiscovery.description')
+    },
+    {
+      id: 'modeling',
+      icon: <Activity size={32} className="text-navy dark:text-silver" />,
+      title: t('steelPage.advisoryProcess.modeling.title'),
+      description: t('steelPage.advisoryProcess.modeling.description')
+    },
+    {
+      id: 'synthesis',
+      icon: <Lightbulb size={32} className="text-navy dark:text-silver" />,
+      title: t('steelPage.advisoryProcess.synthesis.title'),
+      description: t('steelPage.advisoryProcess.synthesis.description')
+    },
+    {
+      id: 'briefing',
+      icon: <Presentation size={32} className="text-navy dark:text-silver" />,
+      title: t('steelPage.advisoryProcess.briefing.title'),
+      description: t('steelPage.advisoryProcess.briefing.description')
+    }
+  ];
+  
   // Define service information with IDs matching the exact keys in translations.ts
   const services = [
     { id: 'boardBriefings', icon: 'presentation' },
-    { id: 'mAndA', icon: 'search' },          // Changed from maDueDiligence to mAndA
+    { id: 'mAndA', icon: 'search' },
     { id: 'crisis', icon: 'shield' },
-    { id: 'vCISO', icon: 'user' }            // Changed from vciso to vCISO
+    { id: 'vCISO', icon: 'user' }
+  ];
+  
+  // What Makes STEEL Different items
+  const whatMakesDifferentItems = [
+    {
+      id: 'predictiveIntelligence',
+      icon: <Lightbulb size={24} className="text-navy dark:text-silver" />,
+      title: t('steelPage.whatMakesDifferent.predictiveIntelligence.title'),
+      description: t('steelPage.whatMakesDifferent.predictiveIntelligence.description'),
+      link: t('steelPage.whatMakesDifferent.predictiveIntelligence.link')
+    },
+    {
+      id: 'enhancedPestel',
+      icon: <BarChart2 size={24} className="text-navy dark:text-silver" />,
+      title: t('steelPage.whatMakesDifferent.enhancedPestel.title'),
+      description: t('steelPage.whatMakesDifferent.enhancedPestel.description'),
+      link: t('steelPage.whatMakesDifferent.enhancedPestel.link')
+    },
+    {
+      id: 'expertPartnership',
+      icon: <Users size={24} className="text-navy dark:text-silver" />,
+      title: t('steelPage.whatMakesDifferent.expertPartnership.title'),
+      description: t('steelPage.whatMakesDifferent.expertPartnership.description'),
+      link: t('steelPage.whatMakesDifferent.expertPartnership.link')
+    },
+    {
+      id: 'frameworkIntegration',
+      icon: <FileText size={24} className="text-navy dark:text-silver" />,
+      title: t('steelPage.whatMakesDifferent.frameworkIntegration.title'),
+      description: t('steelPage.whatMakesDifferent.frameworkIntegration.description'),
+      link: t('steelPage.whatMakesDifferent.frameworkIntegration.link')
+    }
   ];
   
   // Animation variants
@@ -55,15 +116,53 @@ export const ServiceOffering: React.FC = () => {
   return (
     <div className="pt-24 pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
       <div className="container mx-auto px-4">
+        {/* Enhanced Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-12 text-center"
+          className="mb-16"
         >
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">{t('services.title')}</h1>
-          <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-            {t('services.subtitle')}
-          </p>
+          <Card variant="solid" padding="lg" className="bg-navy text-white">
+            <div className="text-center max-w-4xl mx-auto">
+              <h1 className="text-3xl md:text-5xl font-bold mb-4">{t('steelPage.hero.title')}</h1>
+              <p className="text-xl md:text-2xl mb-4 text-silver">
+                {t('steelPage.hero.subtitle1')}
+              </p>
+              <p className="text-lg mb-8 text-silver">
+                {t('steelPage.hero.subtitle2')}
+              </p>
+              
+              <div className="flex flex-wrap justify-center gap-4">
+                <Button 
+                  variant="secondary" 
+                  size="lg"
+                  icon={<Calendar size={18} />}
+                  iconPosition="left"
+                  onClick={() => navigate('/contact')}
+                >
+                  {t('steelPage.hero.scheduleConsultation')}
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  className="border-white text-white hover:bg-white/10"
+                  onClick={() => navigate('/contact')}
+                >
+                  {t('steelPage.hero.requestDemo')}
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  className="border-white text-white hover:bg-white/10"
+                  icon={<Download size={18} />}
+                  iconPosition="left"
+                  onClick={() => navigate('/steel/implementation-guide')}
+                >
+                  {t('steelPage.hero.downloadMethodology')}
+                </Button>
+              </div>
+            </div>
+          </Card>
         </motion.div>
 
         {/* Key metrics */}
@@ -111,16 +210,98 @@ export const ServiceOffering: React.FC = () => {
           </motion.div>
         </motion.div>
 
-        {/* Services */}
+        {/* What Makes STEEL Different Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
           className="mb-16"
         >
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">{t('steelPage.whatMakesDifferent.title')}</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
+              {t('steelPage.whatMakesDifferent.subtitle')}
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {whatMakesDifferentItems.map((item, index) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 + (index * 0.1) }}
+              >
+                <Card variant="glass" padding="lg" className="h-full">
+                  <div className="flex items-start">
+                    <div className="p-3 rounded-full bg-silver/20 dark:bg-navy/40 mr-4 flex-shrink-0">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold mb-3 dark:text-white">{item.title}</h3>
+                      <p className="text-gray-600 dark:text-gray-200 mb-4">{item.description}</p>
+                      <button className="text-navy dark:text-silver font-medium hover:underline text-sm flex items-center">
+                        {item.link}
+                        <ArrowRight size={14} className="ml-1" />
+                      </button>
+                    </div>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Our Advisory Process Section - Main Focus */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="mb-16"
+        >
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">{t('steelPage.advisoryProcess.title')}</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
+              {t('steelPage.advisoryProcess.subtitle')}
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {advisoryProcessItems.map((item, index) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 + (index * 0.1) }}
+              >
+                <Card variant="glass" padding="lg" className="h-full text-center">
+                  <div className="p-4 rounded-full bg-silver/20 dark:bg-navy/40 inline-flex mb-6">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 dark:text-white">{item.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-200">{item.description}</p>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Service Offerings */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="mb-16"
+        >
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">{t('services.title')}</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
+              {t('services.subtitle')}
+            </p>
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service) => {
-              // Get the translated service data using getNestedTranslation
               const serviceData = getNestedTranslation(`services.${service.id}`);
               
               return (
@@ -168,7 +349,7 @@ export const ServiceOffering: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
+          transition={{ delay: 0.5 }}
           className="mb-16"
         >
           <Card variant="glass" padding="lg">
@@ -200,7 +381,7 @@ export const ServiceOffering: React.FC = () => {
                   </div>
                   <div className="aspect-square hexagon bg-[#dd8452] text-white flex items-center justify-center p-4 text-center">
                     <div>
-                      <Search size={24} className="mx-auto mb-2" />
+                      <BarChart2 size={24} className="mx-auto mb-2" />
                       <span className="text-sm font-medium">{t('steel.dimensions.economic.title')}</span>
                     </div>
                   </div>
@@ -239,54 +420,11 @@ export const ServiceOffering: React.FC = () => {
           </Card>
         </motion.div>
 
-        {/* Engagement Process */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="mb-16"
-        >
-          <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-8 text-center dark:text-white">{t('services.process.title')}</h2>
-            
-            <div className="flex flex-wrap justify-center">
-              <div className="w-full md:w-10/12 relative">
-                {/* Connection line */}
-                <div className="absolute top-1/2 left-0 right-0 h-1 bg-navy/20 dark:bg-silver/20 transform -translate-y-1/2 z-0"></div>
-                
-                {/* Steps */}
-                <div className="flex justify-between relative z-10">
-                  {[
-                    t('services.process.step1'),
-                    t('services.process.step2'),
-                    t('services.process.step3'),
-                    t('services.process.step4'),
-                    t('services.process.step5')
-                  ].map((step, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.2 + (index * 0.1) }}
-                      className="flex flex-col items-center"
-                    >
-                      <div className="w-10 h-10 rounded-full bg-navy text-white flex items-center justify-center mb-2">
-                        {index + 1}
-                      </div>
-                      <span className="text-sm font-medium text-center max-w-[100px] dark:text-gray-200">{step}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </Card>
-        </motion.div>
-
         {/* Contact Information */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
+          transition={{ delay: 0.6 }}
         >
           <Card variant="glass" padding="lg">
             <h2 className="text-2xl font-bold mb-6 dark:text-white">{t('services.contact.title')}</h2>
