@@ -116,53 +116,16 @@ export const ServiceOffering: React.FC = () => {
   return (
     <div className="pt-24 pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
       <div className="container mx-auto px-4">
-        {/* Enhanced Hero Section */}
+        {/* Page Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-16"
+          className="mb-16 text-center"
         >
-          <Card variant="solid" padding="lg" className="bg-navy text-white">
-            <div className="text-center max-w-4xl mx-auto">
-              <h1 className="text-3xl md:text-5xl font-bold mb-4">{t('steelPage.hero.title')}</h1>
-              <p className="text-xl md:text-2xl mb-4 text-silver">
-                {t('steelPage.hero.subtitle1')}
-              </p>
-              <p className="text-lg mb-8 text-silver">
-                {t('steelPage.hero.subtitle2')}
-              </p>
-              
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button 
-                  variant="secondary" 
-                  size="lg"
-                  icon={<Calendar size={18} />}
-                  iconPosition="left"
-                  onClick={() => navigate('/contact')}
-                >
-                  {t('steelPage.hero.scheduleConsultation')}
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  className="border-white text-white hover:bg-white/10"
-                  onClick={() => navigate('/contact')}
-                >
-                  {t('steelPage.hero.requestDemo')}
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  className="border-white text-white hover:bg-white/10"
-                  icon={<Download size={18} />}
-                  iconPosition="left"
-                  onClick={() => navigate('/steel/implementation-guide')}
-                >
-                  {t('steelPage.hero.downloadMethodology')}
-                </Button>
-              </div>
-            </div>
-          </Card>
+          <h1 className="text-3xl md:text-5xl font-bold mb-4 dark:text-white">{t('services.title')}</h1>
+          <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
+            {t('services.subtitle')}
+          </p>
         </motion.div>
 
         {/* Key metrics */}
