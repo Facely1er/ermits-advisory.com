@@ -126,7 +126,7 @@ export const resourceService = {
 };
 
 // Dashboard Services
-export const dashboardService = {
+const dashboardService = {
   async getMetrics() {
     const mockMetrics = [
       { id: 'vulnerabilities', name: 'Active Vulnerabilities', value: 37, change: -12, icon: 'shield', category: 'security' },
@@ -161,7 +161,7 @@ export const dashboardService = {
 };
 
 // Analytics Services
-export const analyticsService = {
+const analyticsService = {
   async trackResourceView(resourceId: string) {
     console.log(`Resource view tracked: ${resourceId} (demo mode)`);
     return resourceService.getResourceById(resourceId);
