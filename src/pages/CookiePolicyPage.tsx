@@ -381,4 +381,4 @@ export const CookiePolicyPage: React.FC = () => {
       </div>
     </div>
   );
-};</Action>
+};

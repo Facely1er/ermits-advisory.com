@@ -1306,4 +1306,4 @@ export const fr = {
     needAssistance: "Besoin d'assistance?",
     contactUs: "Contactez-nous"
   }
-};</Action>
+};
