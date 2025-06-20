@@ -529,22 +529,22 @@ export const en = {
       googleAnalytics: {
         title: "Google Analytics",
         description: "Provides website analytics and user behavior insights. Data is anonymized and aggregated.",
-        link: "Google Privacy Policy ↗"
+        link: "Google Privacy Policy"
       },
       microsoftClarity: {
         title: "Microsoft Clarity",
         description: "Heat mapping and session recording for user experience optimization.",
-        link: "Microsoft Privacy Policy ↗"
+        link: "Microsoft Privacy Policy"
       },
       linkedinInsights: {
         title: "LinkedIn Insights",
         description: "Professional network tracking for B2B marketing and conversion measurement.",
-        link: "LinkedIn Privacy Policy ↗"
+        link: "LinkedIn Privacy Policy"
       },
       hubspot: {
         title: "HubSpot",
         description: "Customer relationship management and lead tracking for service delivery.",
-        link: "HubSpot Privacy Policy ↗"
+        link: "HubSpot Privacy Policy"
       }
     },
     browserControls: {
@@ -1306,4 +1306,4 @@ export const en = {
     needAssistance: "Need assistance?",
     contactUs: "Contact us"
   }
-};</Action>
+};

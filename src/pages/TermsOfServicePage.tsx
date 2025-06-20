@@ -279,4 +279,4 @@ export const TermsOfServicePage: React.FC = () => {
       </div>
     </div>
   );
-};</Action>
+};
