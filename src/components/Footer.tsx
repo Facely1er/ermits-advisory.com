@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
-import logoImg from '../assets/LOGO-ERMITS-ADVISORY.png';
+import logoImg from '../assets/ermits-advisory.png';
 import { 
   Mail, Phone, MapPin, Shield, BarChart2, Users, FileText
 } from 'lucide-react';
@@ -17,8 +17,8 @@ export const Footer: React.FC = () => {
           {/* Company Info - Compact */}
           <div className="md:col-span-1">
             <Link to="/" className="flex items-center mb-3">
-              <img src={logoImg} alt="ERMITS Advisory + STEEL" className="h-8" />
-              <span className="ml-2 font-outfit font-semibold text-white">
+              <img src={logoImg} alt="ERMITS Advisory + STEEL" className="h-10" />
+              <span className="ml-3 font-outfit font-semibold text-white">
                 <span className="block text-sm">ERMITS Advisory</span>
                 <span className="text-xs tracking-wider">+ STEEL™</span>
               </span>

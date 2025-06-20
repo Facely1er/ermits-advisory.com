@@ -8,7 +8,7 @@ import {
   Sun, Moon, Menu, X, Globe, ChevronDown, 
   Home, Briefcase, Mail, Users, FileText, Lightbulb
 } from 'lucide-react';
-import logoImg from '../assets/LOGO-ERMITS-ADVISORY.png';
+import logoImg from '../assets/ermits-advisory.png';
 import { cn } from '../utils/cn';
 import type { Language } from '../types';
 
@@ -60,8 +60,8 @@ export const Navigation: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img src={logoImg} alt="ERMITS Advisory + STEEL" className="h-10" />
-            <span className="ml-2 font-outfit font-semibold text-navy dark:text-white">
+            <img src={logoImg} alt="ERMITS Advisory + STEEL" className="h-12" />
+            <span className="ml-3 font-outfit font-semibold text-navy dark:text-white">
               <span className="block text-sm">ERMITS Advisory</span>
               <span className="text-xs tracking-wider">+ STEEL™</span>
             </span>
