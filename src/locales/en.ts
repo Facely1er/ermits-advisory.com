@@ -339,13 +339,245 @@ export const en = {
     title: "Terms of Service",
     subtitle: "These Terms of Service govern your use of ERMITS Advisory's services and website. Please read them carefully before engaging our services.",
     lastUpdated: "Last updated",
-    backToHome: "Back to Home"
+    backToHome: "Back to Home",
+    professionalAgreement: {
+      title: "Professional Services Agreement",
+      description: "ERMITS Advisory provides professional cybersecurity advisory services to enterprises, government agencies, and other organizations. These terms establish the framework for our professional relationship.",
+      included: {
+        title: "What's Included",
+        items: [
+          "Professional advisory services",
+          "Access to our STEEL™ methodology",
+          "Confidential consultation",
+          "Expert guidance and recommendations"
+        ]
+      },
+      obligations: {
+        title: "Your Obligations",
+        items: [
+          "Provide necessary information",
+          "Maintain confidentiality",
+          "Pay fees as agreed",
+          "Use services lawfully"
+        ]
+      }
+    },
+    sections: {
+      acceptance: {
+        title: "Acceptance of Terms",
+        items: [
+          "By accessing or using ERMITS Advisory services, you agree to be bound by these Terms of Service",
+          "These terms apply to all visitors, users, and clients of our services",
+          "If you disagree with any part of these terms, you may not access our services",
+          "We reserve the right to update these terms at any time with notice"
+        ]
+      },
+      services: {
+        title: "Description of Services",
+        items: [
+          "Cybersecurity advisory and consulting services",
+          "Board briefings and executive communications",
+          "Risk assessment using our proprietary STEEL™ methodology",
+          "Crisis management and incident response guidance",
+          "Virtual CISO and strategic security leadership",
+          "Merger and acquisition due diligence services"
+        ]
+      },
+      responsibilities: {
+        title: "User Responsibilities",
+        items: [
+          "Provide accurate and complete information when requested",
+          "Maintain the confidentiality of any access credentials",
+          "Use our services only for lawful business purposes",
+          "Comply with all applicable laws and regulations",
+          "Notify us immediately of any security breaches or unauthorized access"
+        ]
+      },
+      limitations: {
+        title: "Limitations and Disclaimers",
+        items: [
+          "Services are provided \"as is\" without warranties of any kind",
+          "We do not guarantee specific outcomes or results",
+          "Our liability is limited to the amount paid for services",
+          "We are not responsible for third-party actions or breaches",
+          "Force majeure events may affect service delivery"
+        ]
+      }
+    },
+    confidentiality: {
+      title: "Confidentiality and Intellectual Property",
+      clientConfidentiality: {
+        title: "Client Confidentiality",
+        description: "We maintain strict confidentiality of all client information and will not disclose any confidential information without written consent, except as required by law."
+      },
+      workProduct: {
+        title: "Work Product",
+        description: "Deliverables created specifically for clients belong to the client. Our methodologies, tools, and general knowledge remain our intellectual property."
+      },
+      steelMethodology: {
+        title: "STEEL™ Methodology",
+        description: "Our proprietary STEEL™ methodology is protected intellectual property. Use is granted only for the specific engagement scope."
+      },
+      nonDisclosure: {
+        title: "Non-Disclosure",
+        description: "Separate NDAs may be required for specific engagements involving highly sensitive information or advanced threat intelligence."
+      }
+    },
+    payment: {
+      title: "Payment Terms",
+      items: [
+        "Invoices are due within 30 days of issuance",
+        "Late payments may incur interest charges",
+        "Disputed charges must be reported within 60 days",
+        "Travel expenses billed separately when applicable"
+      ]
+    },
+    termination: {
+      title: "Termination",
+      items: [
+        "Either party may terminate with 30 days written notice",
+        "Immediate termination for material breach",
+        "Outstanding fees remain due after termination",
+        "Confidentiality obligations survive termination"
+      ]
+    },
+    contact: {
+      title: "Questions About These Terms",
+      description: "If you have questions about these Terms of Service, please contact our legal team:",
+      email: "legal@ermits.com",
+      phone: "+1 (888) 618-6160"
+    },
+    governingLaw: {
+      title: "Governing Law",
+      description: "These terms are governed by the laws of Maryland, United States. Any disputes will be resolved through arbitration in Gaithersburg, Maryland.",
+      international: "For international clients, specific jurisdictional terms may apply as outlined in individual service agreements."
+    }
   },
   cookies: {
     title: "Cookie Policy",
     subtitle: "This Cookie Policy explains how ERMITS Advisory uses cookies and similar tracking technologies on our website and how you can control them.",
     lastUpdated: "Last updated",
-    backToHome: "Back to Home"
+    backToHome: "Back to Home",
+    overview: {
+      title: "What Are Cookies?",
+      description: "Cookies are small text files that are stored on your device when you visit our website. They help us provide you with a better experience by remembering your preferences and analyzing how you use our site.",
+      types: {
+        session: {
+          title: "Session Cookies",
+          description: "Temporary cookies that expire when you close your browser"
+        },
+        persistent: {
+          title: "Persistent Cookies",
+          description: "Remain on your device until they expire or you delete them"
+        },
+        thirdParty: {
+          title: "Third-Party Cookies",
+          description: "Set by external services we use, like analytics providers"
+        }
+      }
+    },
+    preferences: {
+      title: "Manage Your Cookie Preferences",
+      description: "You can control which types of cookies we use. Note that disabling certain cookies may affect your experience on our website.",
+      required: "Required"
+    },
+    cookieTypes: {
+      necessary: {
+        title: "Strictly Necessary Cookies",
+        description: "These cookies are essential for the website to function properly and cannot be disabled.",
+        examples: [
+          "Session management and authentication",
+          "Security tokens and CSRF protection",
+          "Load balancing and performance optimization",
+          "Basic functionality and navigation"
+        ]
+      },
+      analytics: {
+        title: "Analytics and Performance Cookies",
+        description: "These cookies help us understand how visitors interact with our website by collecting anonymous information.",
+        examples: [
+          "Google Analytics for website usage statistics",
+          "Page view tracking and user journey analysis",
+          "Performance monitoring and error tracking",
+          "A/B testing and optimization metrics"
+        ]
+      },
+      functional: {
+        title: "Functional Cookies",
+        description: "These cookies enable enhanced functionality and personalization features.",
+        examples: [
+          "Language and region preferences",
+          "Theme selection (light/dark mode)",
+          "User interface customizations",
+          "Saved form data and preferences"
+        ]
+      },
+      marketing: {
+        title: "Marketing and Targeting Cookies",
+        description: "These cookies are used to deliver relevant advertisements and track marketing campaign effectiveness.",
+        examples: [
+          "LinkedIn and other social media pixels",
+          "Advertising campaign tracking",
+          "Retargeting and remarketing cookies",
+          "Conversion tracking and attribution"
+        ]
+      }
+    },
+    thirdPartyServices: {
+      title: "Third-Party Services We Use",
+      description: "We use carefully selected third-party services to enhance our website functionality and understand user behavior:",
+      googleAnalytics: {
+        title: "Google Analytics",
+        description: "Provides website analytics and user behavior insights. Data is anonymized and aggregated.",
+        link: "Google Privacy Policy ↗"
+      },
+      microsoftClarity: {
+        title: "Microsoft Clarity",
+        description: "Heat mapping and session recording for user experience optimization.",
+        link: "Microsoft Privacy Policy ↗"
+      },
+      linkedinInsights: {
+        title: "LinkedIn Insights",
+        description: "Professional network tracking for B2B marketing and conversion measurement.",
+        link: "LinkedIn Privacy Policy ↗"
+      },
+      hubspot: {
+        title: "HubSpot",
+        description: "Customer relationship management and lead tracking for service delivery.",
+        link: "HubSpot Privacy Policy ↗"
+      }
+    },
+    browserControls: {
+      title: "Browser Cookie Controls",
+      description: "You can also manage cookies directly through your browser settings. Here's how to control cookies in popular browsers:",
+      chrome: {
+        title: "Chrome",
+        description: "Settings → Privacy and security → Cookies and other site data"
+      },
+      firefox: {
+        title: "Firefox",
+        description: "Options → Privacy & Security → Cookies and Site Data"
+      },
+      safari: {
+        title: "Safari",
+        description: "Preferences → Privacy → Cookies and website data"
+      },
+      edge: {
+        title: "Edge",
+        description: "Settings → Cookies and site permissions → Cookies"
+      },
+      learnMore: "Learn More"
+    },
+    actions: {
+      savePreferences: "Save Preferences",
+      rejectOptional: "Reject All Optional",
+      acceptAll: "Accept All",
+      cookieSettings: "Cookie Settings"
+    },
+    contact: {
+      title: "Questions about our cookie usage?",
+      description: "Contact our privacy team at privacy@ermits.com"
+    }
   },
   team: {
     title: "Our Expert Team",
@@ -1074,4 +1306,4 @@ export const en = {
     needAssistance: "Need assistance?",
     contactUs: "Contact us"
   }
-};
+};</Action>

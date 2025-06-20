@@ -339,13 +339,245 @@ export const fr = {
     title: "Conditions d'Utilisation",
     subtitle: "Ces Conditions d'Utilisation régissent votre utilisation des services et du site web d'ERMITS Advisory. Veuillez les lire attentivement avant d'engager nos services.",
     lastUpdated: "Dernière mise à jour",
-    backToHome: "Retour à l'Accueil"
+    backToHome: "Retour à l'Accueil",
+    professionalAgreement: {
+      title: "Accord de Services Professionnels",
+      description: "ERMITS Advisory fournit des services de conseil professionnel en cybersécurité aux entreprises, agences gouvernementales et autres organisations. Ces conditions établissent le cadre de notre relation professionnelle.",
+      included: {
+        title: "Ce qui est Inclus",
+        items: [
+          "Services de conseil professionnel",
+          "Accès à notre méthodologie STEEL™",
+          "Consultation confidentielle",
+          "Guidance experte et recommandations"
+        ]
+      },
+      obligations: {
+        title: "Vos Obligations",
+        items: [
+          "Fournir les informations nécessaires",
+          "Maintenir la confidentialité",
+          "Payer les frais convenus",
+          "Utiliser les services légalement"
+        ]
+      }
+    },
+    sections: {
+      acceptance: {
+        title: "Acceptation des Conditions",
+        items: [
+          "En accédant ou utilisant les services d'ERMITS Advisory, vous acceptez d'être lié par ces Conditions d'Utilisation",
+          "Ces conditions s'appliquent à tous les visiteurs, utilisateurs et clients de nos services",
+          "Si vous n'êtes pas d'accord avec une partie de ces conditions, vous ne pouvez pas accéder à nos services",
+          "Nous nous réservons le droit de mettre à jour ces conditions à tout moment avec préavis"
+        ]
+      },
+      services: {
+        title: "Description des Services",
+        items: [
+          "Services de conseil et consultation en cybersécurité",
+          "Briefings de conseil et communications exécutives",
+          "Évaluation des risques utilisant notre méthodologie propriétaire STEEL™",
+          "Gestion de crise et guidance de réponse aux incidents",
+          "CISO virtuel et leadership stratégique en sécurité",
+          "Services de due diligence pour fusions et acquisitions"
+        ]
+      },
+      responsibilities: {
+        title: "Responsabilités de l'Utilisateur",
+        items: [
+          "Fournir des informations exactes et complètes lorsque demandées",
+          "Maintenir la confidentialité de tous identifiants d'accès",
+          "Utiliser nos services uniquement à des fins commerciales légales",
+          "Se conformer à toutes les lois et réglementations applicables",
+          "Nous notifier immédiatement de toute violation de sécurité ou accès non autorisé"
+        ]
+      },
+      limitations: {
+        title: "Limitations et Déni de Responsabilité",
+        items: [
+          "Les services sont fournis \"en l'état\" sans garanties d'aucune sorte",
+          "Nous ne garantissons pas de résultats ou d'outcomes spécifiques",
+          "Notre responsabilité est limitée au montant payé pour les services",
+          "Nous ne sommes pas responsables des actions ou violations de tiers",
+          "Les événements de force majeure peuvent affecter la livraison des services"
+        ]
+      }
+    },
+    confidentiality: {
+      title: "Confidentialité et Propriété Intellectuelle",
+      clientConfidentiality: {
+        title: "Confidentialité Client",
+        description: "Nous maintenons une stricte confidentialité de toutes les informations client et ne divulguerons aucune information confidentielle sans consentement écrit, sauf si requis par la loi."
+      },
+      workProduct: {
+        title: "Produit de Travail",
+        description: "Les livrables créés spécifiquement pour les clients appartiennent au client. Nos méthodologies, outils et connaissances générales restent notre propriété intellectuelle."
+      },
+      steelMethodology: {
+        title: "Méthodologie STEEL™",
+        description: "Notre méthodologie propriétaire STEEL™ est une propriété intellectuelle protégée. L'utilisation n'est accordée que pour la portée spécifique de l'engagement."
+      },
+      nonDisclosure: {
+        title: "Non-Divulgation",
+        description: "Des NDAs séparés peuvent être requis pour des engagements spécifiques impliquant des informations hautement sensibles ou de l'intelligence de menace avancée."
+      }
+    },
+    payment: {
+      title: "Conditions de Paiement",
+      items: [
+        "Les factures sont dues dans les 30 jours suivant l'émission",
+        "Les paiements en retard peuvent encourir des charges d'intérêt",
+        "Les charges contestées doivent être signalées dans les 60 jours",
+        "Les frais de voyage facturés séparément le cas échéant"
+      ]
+    },
+    termination: {
+      title: "Résiliation",
+      items: [
+        "L'une ou l'autre partie peut résilier avec un préavis écrit de 30 jours",
+        "Résiliation immédiate pour violation substantielle",
+        "Les frais impayés restent dus après la résiliation",
+        "Les obligations de confidentialité survivent à la résiliation"
+      ]
+    },
+    contact: {
+      title: "Questions sur ces Conditions",
+      description: "Si vous avez des questions sur ces Conditions d'Utilisation, veuillez contacter notre équipe juridique:",
+      email: "legal@ermits.com",
+      phone: "+1 (888) 618-6160"
+    },
+    governingLaw: {
+      title: "Loi Applicable",
+      description: "Ces conditions sont régies par les lois du Maryland, États-Unis. Tout litige sera résolu par arbitrage à Gaithersburg, Maryland.",
+      international: "Pour les clients internationaux, des conditions juridictionnelles spécifiques peuvent s'appliquer comme indiqué dans les accords de service individuels."
+    }
   },
   cookies: {
     title: "Politique des Cookies",
     subtitle: "Cette Politique des Cookies explique comment ERMITS Advisory utilise les cookies et technologies de suivi similaires sur notre site web et comment vous pouvez les contrôler.",
     lastUpdated: "Dernière mise à jour",
-    backToHome: "Retour à l'Accueil"
+    backToHome: "Retour à l'Accueil",
+    overview: {
+      title: "Que sont les Cookies?",
+      description: "Les cookies sont de petits fichiers texte stockés sur votre appareil lorsque vous visitez notre site web. Ils nous aident à vous fournir une meilleure expérience en mémorisant vos préférences et en analysant comment vous utilisez notre site.",
+      types: {
+        session: {
+          title: "Cookies de Session",
+          description: "Cookies temporaires qui expirent lorsque vous fermez votre navigateur"
+        },
+        persistent: {
+          title: "Cookies Persistants",
+          description: "Restent sur votre appareil jusqu'à ce qu'ils expirent ou que vous les supprimiez"
+        },
+        thirdParty: {
+          title: "Cookies Tiers",
+          description: "Définis par des services externes que nous utilisons, comme les fournisseurs d'analytique"
+        }
+      }
+    },
+    preferences: {
+      title: "Gérer Vos Préférences de Cookies",
+      description: "Vous pouvez contrôler quels types de cookies nous utilisons. Notez que désactiver certains cookies peut affecter votre expérience sur notre site web.",
+      required: "Requis"
+    },
+    cookieTypes: {
+      necessary: {
+        title: "Cookies Strictement Nécessaires",
+        description: "Ces cookies sont essentiels pour que le site web fonctionne correctement et ne peuvent pas être désactivés.",
+        examples: [
+          "Gestion de session et authentification",
+          "Jetons de sécurité et protection CSRF",
+          "Équilibrage de charge et optimisation des performances",
+          "Fonctionnalité de base et navigation"
+        ]
+      },
+      analytics: {
+        title: "Cookies d'Analytique et de Performance",
+        description: "Ces cookies nous aident à comprendre comment les visiteurs interagissent avec notre site web en collectant des informations anonymes.",
+        examples: [
+          "Google Analytics pour les statistiques d'utilisation du site",
+          "Suivi des pages vues et analyse du parcours utilisateur",
+          "Surveillance des performances et suivi des erreurs",
+          "Tests A/B et métriques d'optimisation"
+        ]
+      },
+      functional: {
+        title: "Cookies Fonctionnels",
+        description: "Ces cookies permettent des fonctionnalités améliorées et des caractéristiques de personnalisation.",
+        examples: [
+          "Préférences de langue et de région",
+          "Sélection de thème (mode clair/sombre)",
+          "Personnalisations de l'interface utilisateur",
+          "Données de formulaire sauvegardées et préférences"
+        ]
+      },
+      marketing: {
+        title: "Cookies de Marketing et de Ciblage",
+        description: "Ces cookies sont utilisés pour livrer des publicités pertinentes et suivre l'efficacité des campagnes marketing.",
+        examples: [
+          "Pixels LinkedIn et autres réseaux sociaux",
+          "Suivi des campagnes publicitaires",
+          "Cookies de reciblage et de remarketing",
+          "Suivi des conversions et attribution"
+        ]
+      }
+    },
+    thirdPartyServices: {
+      title: "Services Tiers que Nous Utilisons",
+      description: "Nous utilisons des services tiers soigneusement sélectionnés pour améliorer la fonctionnalité de notre site web et comprendre le comportement des utilisateurs:",
+      googleAnalytics: {
+        title: "Google Analytics",
+        description: "Fournit l'analytique du site web et des insights sur le comportement des utilisateurs. Les données sont anonymisées et agrégées.",
+        link: "Politique de Confidentialité Google ↗"
+      },
+      microsoftClarity: {
+        title: "Microsoft Clarity",
+        description: "Cartographie thermique et enregistrement de session pour l'optimisation de l'expérience utilisateur.",
+        link: "Politique de Confidentialité Microsoft ↗"
+      },
+      linkedinInsights: {
+        title: "LinkedIn Insights",
+        description: "Suivi de réseau professionnel pour le marketing B2B et la mesure des conversions.",
+        link: "Politique de Confidentialité LinkedIn ↗"
+      },
+      hubspot: {
+        title: "HubSpot",
+        description: "Gestion de la relation client et suivi des prospects pour la livraison de services.",
+        link: "Politique de Confidentialité HubSpot ↗"
+      }
+    },
+    browserControls: {
+      title: "Contrôles de Cookies du Navigateur",
+      description: "Vous pouvez également gérer les cookies directement via les paramètres de votre navigateur. Voici comment contrôler les cookies dans les navigateurs populaires:",
+      chrome: {
+        title: "Chrome",
+        description: "Paramètres → Confidentialité et sécurité → Cookies et autres données de site"
+      },
+      firefox: {
+        title: "Firefox",
+        description: "Options → Vie privée et sécurité → Cookies et données de site"
+      },
+      safari: {
+        title: "Safari",
+        description: "Préférences → Confidentialité → Cookies et données de site web"
+      },
+      edge: {
+        title: "Edge",
+        description: "Paramètres → Autorisations de cookies et de site → Cookies"
+      },
+      learnMore: "En Savoir Plus"
+    },
+    actions: {
+      savePreferences: "Sauvegarder les Préférences",
+      rejectOptional: "Rejeter Tous les Optionnels",
+      acceptAll: "Accepter Tout",
+      cookieSettings: "Paramètres des Cookies"
+    },
+    contact: {
+      title: "Questions sur notre utilisation des cookies?",
+      description: "Contactez notre équipe de confidentialité à privacy@ermits.com"
+    }
   },
   team: {
     title: "Notre Équipe d'Experts",
@@ -1074,4 +1306,4 @@ export const fr = {
     needAssistance: "Besoin d'assistance?",
     contactUs: "Contactez-nous"
   }
-};
+};</Action>

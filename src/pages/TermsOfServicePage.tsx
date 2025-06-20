@@ -15,51 +15,27 @@ export const TermsOfServicePage: React.FC = () => {
   const sections = [
     {
       id: 'acceptance',
-      title: 'Acceptance of Terms',
+      title: t('terms.sections.acceptance.title'),
       icon: <CheckCircle size={24} className="text-navy dark:text-silver" />,
-      content: [
-        'By accessing or using ERMITS Advisory services, you agree to be bound by these Terms of Service',
-        'These terms apply to all visitors, users, and clients of our services',
-        'If you disagree with any part of these terms, you may not access our services',
-        'We reserve the right to update these terms at any time with notice'
-      ]
+      content: t('terms.sections.acceptance.items')
     },
     {
       id: 'services',
-      title: 'Description of Services',
+      title: t('terms.sections.services.title'),
       icon: <Shield size={24} className="text-navy dark:text-silver" />,
-      content: [
-        'Cybersecurity advisory and consulting services',
-        'Board briefings and executive communications',
-        'Risk assessment using our proprietary STEEL™ methodology',
-        'Crisis management and incident response guidance',
-        'Virtual CISO and strategic security leadership',
-        'Merger and acquisition due diligence services'
-      ]
+      content: t('terms.sections.services.items')
     },
     {
       id: 'responsibilities',
-      title: 'User Responsibilities',
+      title: t('terms.sections.responsibilities.title'),
       icon: <Users size={24} className="text-navy dark:text-silver" />,
-      content: [
-        'Provide accurate and complete information when requested',
-        'Maintain the confidentiality of any access credentials',
-        'Use our services only for lawful business purposes',
-        'Comply with all applicable laws and regulations',
-        'Notify us immediately of any security breaches or unauthorized access'
-      ]
+      content: t('terms.sections.responsibilities.items')
     },
     {
       id: 'limitations',
-      title: 'Limitations and Disclaimers',
+      title: t('terms.sections.limitations.title'),
       icon: <AlertTriangle size={24} className="text-orange-500" />,
-      content: [
-        'Services are provided "as is" without warranties of any kind',
-        'We do not guarantee specific outcomes or results',
-        'Our liability is limited to the amount paid for services',
-        'We are not responsible for third-party actions or breaches',
-        'Force majeure events may affect service delivery'
-      ]
+      content: t('terms.sections.limitations.items')
     }
   ];
 
@@ -75,13 +51,12 @@ export const TermsOfServicePage: React.FC = () => {
             <ArrowLeft size={16} className="mr-2" />
             {t('terms.backToHome')}
           </Link>
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">Terms of Service</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">{t('terms.title')}</h1>
           <p className="text-gray-600 dark:text-gray-200 mb-4">
-            Last updated: {new Date().toLocaleDateString()}
+            {t('terms.lastUpdated')}: {new Date().toLocaleDateString()}
           </p>
           <p className="text-lg text-gray-600 dark:text-gray-100">
-            These Terms of Service govern your use of ERMITS Advisory's services and website. 
-            Please read them carefully before engaging our services.
+            {t('terms.subtitle')}
           </p>
         </motion.div>
 
@@ -98,29 +73,31 @@ export const TermsOfServicePage: React.FC = () => {
                 <Scale size={32} />
               </div>
               <div>
-                <h2 className="text-2xl font-bold mb-3">Professional Services Agreement</h2>
+                <h2 className="text-2xl font-bold mb-3">{t('terms.professionalAgreement.title')}</h2>
                 <p className="text-silver mb-4">
-                  ERMITS Advisory provides professional cybersecurity advisory services to enterprises, 
-                  government agencies, and other organizations. These terms establish the framework for 
-                  our professional relationship.
+                  {t('terms.professionalAgreement.description')}
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-silver">
                   <div>
-                    <h4 className="font-semibold mb-2">What's Included:</h4>
+                    <h4 className="font-semibold mb-2">{t('terms.professionalAgreement.included.title')}:</h4>
                     <ul className="space-y-1 text-sm">
-                      <li>• Professional advisory services</li>
-                      <li>• Access to our STEEL™ methodology</li>
-                      <li>• Confidential consultation</li>
-                      <li>• Expert guidance and recommendations</li>
+                      {Array.isArray(t('terms.professionalAgreement.included.items')) 
+                        ? (t('terms.professionalAgreement.included.items') as string[]).map((item: string, index: number) => (
+                            <li key={index}>• {item}</li>
+                          ))
+                        : null
+                      }
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2">Your Obligations:</h4>
+                    <h4 className="font-semibold mb-2">{t('terms.professionalAgreement.obligations.title')}:</h4>
                     <ul className="space-y-1 text-sm">
-                      <li>• Provide necessary information</li>
-                      <li>• Maintain confidentiality</li>
-                      <li>• Pay fees as agreed</li>
-                      <li>• Use services lawfully</li>
+                      {Array.isArray(t('terms.professionalAgreement.obligations.items')) 
+                        ? (t('terms.professionalAgreement.obligations.items') as string[]).map((item: string, index: number) => (
+                            <li key={index}>• {item}</li>
+                          ))
+                        : null
+                      }
                     </ul>
                   </div>
                 </div>
@@ -146,7 +123,7 @@ export const TermsOfServicePage: React.FC = () => {
                   <div className="flex-1">
                     <h3 className="text-xl font-bold mb-4 dark:text-white">{section.title}</h3>
                     <ul className="space-y-3">
-                      {section.content.map((item, itemIndex) => (
+                      {Array.isArray(section.content) && section.content.map((item: string, itemIndex: number) => (
                         <li key={itemIndex} className="flex items-start">
                           <div className="w-2 h-2 rounded-full bg-navy dark:bg-silver mt-2 mr-3 flex-shrink-0"></div>
                           <span className="text-gray-600 dark:text-gray-200">{item}</span>
@@ -168,32 +145,28 @@ export const TermsOfServicePage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h3 className="text-xl font-bold mb-4 dark:text-white">Confidentiality and Intellectual Property</h3>
+            <h3 className="text-xl font-bold mb-4 dark:text-white">{t('terms.confidentiality.title')}</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold mb-2 dark:text-gray-100">Client Confidentiality</h4>
+                <h4 className="font-semibold mb-2 dark:text-gray-100">{t('terms.confidentiality.clientConfidentiality.title')}</h4>
                 <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
-                  We maintain strict confidentiality of all client information and will not disclose 
-                  any confidential information without written consent, except as required by law.
+                  {t('terms.confidentiality.clientConfidentiality.description')}
                 </p>
                 
-                <h4 className="font-semibold mb-2 dark:text-gray-100">Work Product</h4>
+                <h4 className="font-semibold mb-2 dark:text-gray-100">{t('terms.confidentiality.workProduct.title')}</h4>
                 <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
-                  Deliverables created specifically for clients belong to the client. Our methodologies, 
-                  tools, and general knowledge remain our intellectual property.
+                  {t('terms.confidentiality.workProduct.description')}
                 </p>
               </div>
               <div>
-                <h4 className="font-semibold mb-2 dark:text-gray-100">STEEL™ Methodology</h4>
+                <h4 className="font-semibold mb-2 dark:text-gray-100">{t('terms.confidentiality.steelMethodology.title')}</h4>
                 <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
-                  Our proprietary STEEL™ methodology is protected intellectual property. 
-                  Use is granted only for the specific engagement scope.
+                  {t('terms.confidentiality.steelMethodology.description')}
                 </p>
                 
-                <h4 className="font-semibold mb-2 dark:text-gray-100">Non-Disclosure</h4>
+                <h4 className="font-semibold mb-2 dark:text-gray-100">{t('terms.confidentiality.nonDisclosure.title')}</h4>
                 <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
-                  Separate NDAs may be required for specific engagements involving 
-                  highly sensitive information or advanced threat intelligence.
+                  {t('terms.confidentiality.nonDisclosure.description')}
                 </p>
               </div>
             </div>
@@ -210,46 +183,26 @@ export const TermsOfServicePage: React.FC = () => {
           <Card variant="glass" padding="lg">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-xl font-bold mb-4 dark:text-white">Payment Terms</h3>
+                <h3 className="text-xl font-bold mb-4 dark:text-white">{t('terms.payment.title')}</h3>
                 <ul className="space-y-2 text-gray-600 dark:text-gray-200">
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="text-green-500 mt-0.5 mr-2 flex-shrink-0" />
-                    Invoices are due within 30 days of issuance
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="text-green-500 mt-0.5 mr-2 flex-shrink-0" />
-                    Late payments may incur interest charges
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="text-green-500 mt-0.5 mr-2 flex-shrink-0" />
-                    Disputed charges must be reported within 60 days
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="text-green-500 mt-0.5 mr-2 flex-shrink-0" />
-                    Travel expenses billed separately when applicable
-                  </li>
+                  {Array.isArray(t('terms.payment.items')) && (t('terms.payment.items') as string[]).map((item: string, index: number) => (
+                    <li key={index} className="flex items-start">
+                      <CheckCircle size={16} className="text-green-500 mt-0.5 mr-2 flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
                 </ul>
               </div>
               
               <div>
-                <h3 className="text-xl font-bold mb-4 dark:text-white">Termination</h3>
+                <h3 className="text-xl font-bold mb-4 dark:text-white">{t('terms.termination.title')}</h3>
                 <ul className="space-y-2 text-gray-600 dark:text-gray-200">
-                  <li className="flex items-start">
-                    <AlertTriangle size={16} className="text-orange-500 mt-0.5 mr-2 flex-shrink-0" />
-                    Either party may terminate with 30 days written notice
-                  </li>
-                  <li className="flex items-start">
-                    <AlertTriangle size={16} className="text-orange-500 mt-0.5 mr-2 flex-shrink-0" />
-                    Immediate termination for material breach
-                  </li>
-                  <li className="flex items-start">
-                    <AlertTriangle size={16} className="text-orange-500 mt-0.5 mr-2 flex-shrink-0" />
-                    Outstanding fees remain due after termination
-                  </li>
-                  <li className="flex items-start">
-                    <AlertTriangle size={16} className="text-orange-500 mt-0.5 mr-2 flex-shrink-0" />
-                    Confidentiality obligations survive termination
-                  </li>
+                  {Array.isArray(t('terms.termination.items')) && (t('terms.termination.items') as string[]).map((item: string, index: number) => (
+                    <li key={index} className="flex items-start">
+                      <AlertTriangle size={16} className="text-orange-500 mt-0.5 mr-2 flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -266,31 +219,29 @@ export const TermsOfServicePage: React.FC = () => {
           <Card variant="glass" padding="lg">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-xl font-bold mb-4 dark:text-white">Questions About These Terms</h3>
+                <h3 className="text-xl font-bold mb-4 dark:text-white">{t('terms.contact.title')}</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-4">
-                  If you have questions about these Terms of Service, please contact our legal team:
+                  {t('terms.contact.description')}
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-center">
                     <FileText size={16} className="text-navy dark:text-silver mr-2" />
-                    <span className="text-gray-600 dark:text-gray-200">legal@ermits.com</span>
+                    <span className="text-gray-600 dark:text-gray-200">{t('terms.contact.email')}</span>
                   </div>
                   <div className="flex items-center">
                     <Scale size={16} className="text-navy dark:text-silver mr-2" />
-                    <span className="text-gray-600 dark:text-gray-200">+1 (888) 618-6160</span>
+                    <span className="text-gray-600 dark:text-gray-200">{t('terms.contact.phone')}</span>
                   </div>
                 </div>
               </div>
               
               <div>
-                <h3 className="text-xl font-bold mb-4 dark:text-white">Governing Law</h3>
+                <h3 className="text-xl font-bold mb-4 dark:text-white">{t('terms.governingLaw.title')}</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-4">
-                  These terms are governed by the laws of Maryland, United States. Any disputes will be 
-                  resolved through arbitration in Gaithersburg, Maryland.
+                  {t('terms.governingLaw.description')}
                 </p>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  For international clients, specific jurisdictional terms may apply as outlined 
-                  in individual service agreements.
+                  {t('terms.governingLaw.international')}
                 </p>
               </div>
             </div>
@@ -307,12 +258,12 @@ export const TermsOfServicePage: React.FC = () => {
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/privacy">
               <Button variant="outline" size="sm">
-                Privacy Policy
+                {t('footer.legal.privacy')}
               </Button>
             </Link>
             <Link to="/cookies">
               <Button variant="outline" size="sm">
-                Cookie Policy
+                {t('footer.legal.cookies')}
               </Button>
             </Link>
             <Button 
@@ -328,4 +279,4 @@ export const TermsOfServicePage: React.FC = () => {
       </div>
     </div>
   );
-};
+};</Action>
