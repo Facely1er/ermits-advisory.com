@@ -15,6 +15,7 @@ import { ContactPage } from './pages/ContactPage';
 import { AboutPage } from './pages/AboutPage';
 import { ResourcesPage } from './pages/ResourcesPage';
 import { ResourceDetailPage } from './pages/ResourceDetailPage';
+import { RAPIDPage } from './pages/RAPIDPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { TermsOfServicePage } from './pages/TermsOfServicePage';
@@ -34,6 +35,7 @@ function App() {
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/steel" element={<STEELVisualization />} />
                 <Route path="/steel/implementation-guide" element={<ImplementationGuidePage />} />
+                <Route path="/rapid" element={<RAPIDPage />} />
                 <Route path="/risk-radar" element={<RiskRadar />} />
                 <Route path="/services" element={<ServiceOffering />} />
                 <Route path="/presentation" element={<BoardPresentation />} />

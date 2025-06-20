@@ -6,7 +6,7 @@ import { useTheme } from '../contexts/ThemeContext';
 import { Button } from './shared/Button';
 import { 
   Sun, Moon, Menu, X, Globe, ChevronDown, 
-  Home, Briefcase, Mail, Users, FileText, Lightbulb, Shield
+  Home, Briefcase, Mail, Users, FileText, Lightbulb, Shield, Rocket
 } from 'lucide-react';
 import logoImg from '../assets/ermits-advisory.png';
 import { cn } from '../utils/cn';
@@ -45,6 +45,7 @@ export const Navigation: React.FC = () => {
     { to: '/about', label: t('navigation.about'), icon: <Users size={16} /> },
     { to: '/services', label: t('navigation.services'), icon: <Briefcase size={16} /> },
     { to: '/steel', label: t('navigation.steel'), icon: <Shield size={16} /> },
+    { to: '/rapid', label: 'RAPID™', icon: <Rocket size={16} /> },
     { to: '/resources', label: t('navigation.resources'), icon: <FileText size={16} /> },
   ];
 
