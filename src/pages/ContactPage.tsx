@@ -7,7 +7,7 @@ import {
   Mail, Phone, MapPin, Send, AlertCircle, CheckCircle,
   Briefcase, User, MessageSquare
 } from 'lucide-react';
-import { contactService } from '../services/supabaseService';
+import { contactService } from '../services/localDataService';
 
 type FormState = {
   name: string;

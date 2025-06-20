@@ -9,12 +9,24 @@ import {
   BookOpen, FileCode, Video, Clock, Eye, Calendar,
   ArrowRight, Mail
 } from 'lucide-react';
-import { resourceService, newsletterService } from '../services/supabaseService';
-import type { Resource } from '../lib/supabase';
+import { resourceService, newsletterService } from '../services/localDataService';
 import backgroundImage from '../assets/background.jpg';
 
 type ResourceCategory = 'all' | 'whitepapers' | 'articles' | 'casestudies' | 'webinars';
 type ResourceTag = 'steel' | 'compliance' | 'risk' | 'leadership' | 'technology';
+
+interface Resource {
+  id: string;
+  title: string;
+  description: string;
+  category: 'whitepapers' | 'articles' | 'casestudies' | 'webinars';
+  tags: string[];
+  date: string;
+  readTime?: string;
+  downloadUrl?: string;
+  imageUrl: string;
+  featured?: boolean;
+}
 
 export const ResourcesPage: React.FC = () => {
   const { t, language, getNestedTranslation } = useLanguage();
@@ -42,14 +54,14 @@ export const ResourcesPage: React.FC = () => {
   // Get proper image source for resources
   const getResourceImageSrc = (resource: Resource) => {
     // Map specific resource IDs to imported assets
-    if (resource.id === 'wp-001' || resource.image_url === 'wp-001') {
+    if (resource.id === 'wp-001' || resource.imageUrl === 'wp-001') {
       return backgroundImage;
     }
     // For other resources, use the provided image_url (which should be external URLs)
-    return resource.image_url;
+    return resource.imageUrl;
   };
   
-  // Fetch resources from Supabase
+  // Fetch resources from local service
   useEffect(() => {
     const fetchResources = async () => {
       try {
@@ -110,13 +122,13 @@ export const ResourcesPage: React.FC = () => {
 
   // Handle download - create and click a download link
   const handleDownloadResource = async (resource: Resource) => {
-    if (resource.download_url) {
+    if (resource.downloadUrl) {
       try {
         // Track download in analytics
         await resourceService.incrementDownloads(resource.id);
         
         const link = document.createElement('a');
-        link.href = resource.download_url;
+        link.href = resource.downloadUrl;
         link.download = resource.title.replace(/[^a-z0-9]/gi, '_') + '.pdf';
         link.target = '_blank';
         document.body.appendChild(link);
@@ -307,11 +319,11 @@ export const ResourcesPage: React.FC = () => {
                       <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
                         <Calendar size={14} className="mr-1" />
                         <span>{new Date(featuredResource.date).toLocaleDateString()}</span>
-                        {featuredResource.read_time && (
+                        {featuredResource.readTime && (
                           <>
                             <span className="mx-2">•</span>
                             <Clock size={14} className="mr-1" />
-                            <span>{featuredResource.read_time}</span>
+                            <span>{featuredResource.readTime}</span>
                           </>
                         )}
                       </div>
@@ -325,7 +337,7 @@ export const ResourcesPage: React.FC = () => {
                         >
                           {t('resources.view')}
                         </Button>
-                        {featuredResource.download_url && (
+                        {featuredResource.downloadUrl && (
                           <Button 
                             variant="primary" 
                             size="sm" 
@@ -618,11 +630,11 @@ export const ResourcesPage: React.FC = () => {
                             <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
                               <Calendar size={14} className="mr-1" />
                               <span>{new Date(resource.date).toLocaleDateString()}</span>
-                              {resource.read_time && (
+                              {resource.readTime && (
                                 <>
                                   <span className="mx-2">•</span>
                                   <Clock size={14} className="mr-1" />
-                                  <span>{resource.read_time}</span>
+                                  <span>{resource.readTime}</span>
                                 </>
                               )}
                             </div>
@@ -636,7 +648,7 @@ export const ResourcesPage: React.FC = () => {
                               >
                                 {t('resources.view')}
                               </Button>
-                              {resource.download_url && (
+                              {resource.downloadUrl && (
                                 <Button 
                                   variant="outline" 
                                   size="sm" 
