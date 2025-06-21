@@ -72,7 +72,7 @@ export const PrivacyPolicyPage: React.FC = () => {
   ];
 
   return (
-    <div className="pt-24 pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
+    <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -144,7 +144,7 @@ export const PrivacyPolicyPage: React.FC = () => {
                     {section.icon}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold mb-4 dark:text-white">{section.title}</h3>
+                    <h3 className="text-xl font-bol mb-4 dark:text-white">{section.title}</h3>
                     <ul className="space-y-3">
                       {section.content.map((item, itemIndex) => (
                         <li key={itemIndex} className="flex items-start">

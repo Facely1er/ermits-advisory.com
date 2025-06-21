@@ -114,7 +114,7 @@ export const ServiceOffering: React.FC = () => {
   };
 
   return (
-    <div className="pt-24 pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
+    <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
       <div className="container mx-auto px-4">
         {/* Page Header */}
         <motion.div

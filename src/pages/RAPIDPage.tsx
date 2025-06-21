@@ -191,7 +191,7 @@ export const RAPIDPage: React.FC = () => {
   const selectedPhaseData = rapidPhases.find(phase => phase.id === selectedPhase);
 
   return (
-    <div className="pt-24 bg-gray-50 dark:bg-dark-bg min-h-screen">
+    <div className="bg-gray-50 dark:bg-dark-bg min-h-screen">
       <div className="w-full">
         {/* Hero Section with Golden Theme */}
         <section className="relative bg-gradient-to-r from-golden-dark to-golden text-white py-20 md:py-32 overflow-hidden">

@@ -185,13 +185,13 @@ export const BoardPresentation: React.FC = () => {
   };
 
   return (
-    <div className={`pt-16 ${isFullscreen ? 'fixed inset-0 z-50 bg-black' : 'min-h-screen bg-silver-light dark:bg-dark-bg presentation-container'}`}>
+    <div className={`${isFullscreen ? 'fixed inset-0 z-50 bg-black' : 'min-h-screen bg-silver-light dark:bg-dark-bg presentation-container'}`}>
       <div className={`container mx-auto px-4 ${isFullscreen ? 'h-full flex flex-col' : ''}`}>
         {!isFullscreen && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-8 pt-8"
+            className="mb-8"
           >
             <h1 className="text-3xl font-bold mb-2 dark:text-white">{t('presentation.title')}</h1>
             <p className="text-gray-600 dark:text-gray-200">{t('presentation.subtitle')}</p>
