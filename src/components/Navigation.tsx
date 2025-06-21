@@ -60,9 +60,9 @@ export const Navigation: React.FC = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass-nav dark:bg-black">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+    <nav className="fixed top-0 left-0 right-0 z-50 glass-nav dark:bg-black h-16">
+      <div className="container mx-auto px-4 h-full">
+        <div className="flex items-center justify-between h-full">
           {/* Logo - Made more compact */}
           <Link to="/" className="flex items-center flex-shrink-0">
             <img src={logoImg} alt="ERMITS Advisory" className="h-12" />
@@ -72,15 +72,15 @@ export const Navigation: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation - Added margin-left to push away from logo */}
-          <div className="hidden md:flex items-center ml-8">
+          <div className="hidden md:flex items-center ml-8 h-full">
             {/* Nav Links - Reduced spacing from space-x-6 to space-x-4 */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4 h-full">
               {navLinks.map((link) => (
                 <NavLink 
                   key={link.to}
                   to={link.to}
                   className={({ isActive }) => cn(
-                    'text-sm font-medium hover:text-navy dark:hover:text-white transition-colors nav-link flex items-center whitespace-nowrap',
+                    'text-sm font-medium hover:text-navy dark:hover:text-white transition-colors nav-link flex items-center whitespace-nowrap h-full',
                     isActive 
                       ? 'text-navy-dark dark:text-white font-semibold border-b-2 border-navy dark:border-silver' 
                       : 'text-gray-600 dark:text-white/95'
@@ -94,17 +94,17 @@ export const Navigation: React.FC = () => {
               {/* Resources External Link */}
               <button
                 onClick={handleResourcesClick}
-                className="text-sm font-medium text-gray-600 dark:text-white/95 hover:text-navy dark:hover:text-white transition-colors nav-link flex items-center whitespace-nowrap"
+                className="text-sm font-medium text-gray-600 dark:text-white/95 hover:text-navy dark:hover:text-white transition-colors nav-link flex items-center whitespace-nowrap h-full"
               >
                 <span className="mr-1.5"><ExternalLink size={16} /></span>
                 {t('navigation.resources')}
               </button>
               
               {/* Insights Dropdown */}
-              <div className="relative">
+              <div className="relative h-full flex items-center">
                 <button 
                   onClick={toggleInsightsDropdown}
-                  className="flex items-center text-sm font-medium text-gray-600 dark:text-white/95 hover:text-navy dark:hover:text-white transition-colors nav-link whitespace-nowrap"
+                  className="flex items-center text-sm font-medium text-gray-600 dark:text-white/95 hover:text-navy dark:hover:text-white transition-colors nav-link whitespace-nowrap h-full"
                 >
                   <span className="mr-1.5"><Lightbulb size={16} /></span>
                   {t('navigation.insights')}
@@ -117,7 +117,7 @@ export const Navigation: React.FC = () => {
                       initial={{ opacity: 0, y: -5 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -5 }}
-                      className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-dark-surface ring-1 ring-black ring-opacity-5 focus:outline-none dropdown-menu"
+                      className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-dark-surface ring-1 ring-black ring-opacity-5 focus:outline-none dropdown-menu top-full"
                     >
                       <div className="py-1" role="menu" aria-orientation="vertical">
                         {insightsLinks.map((link) => (
@@ -144,7 +144,7 @@ export const Navigation: React.FC = () => {
             </div>
 
             {/* Controls - Reduced spacing from space-x-4 to space-x-3 */}
-            <div className="flex items-center space-x-3 ml-6">
+            <div className="flex items-center space-x-3 ml-6 h-full">
               {/* Language Selector */}
               <div className="relative">
                 <button 
