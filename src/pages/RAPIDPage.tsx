@@ -22,7 +22,7 @@ export const RAPIDPage: React.FC = () => {
   const navigate = useNavigate();
   const [selectedPhase, setSelectedPhase] = useState<string | null>(null);
 
-  // RAPID Phases positioned in a circle
+  // RAPID Phases positioned in a circle with golden colors
   const rapidPhases: RAPIDPhase[] = [
     {
       id: 'recognize',
@@ -31,7 +31,7 @@ export const RAPIDPage: React.FC = () => {
       detailedDescription: 'Advanced AI algorithms automatically scan and map your entire infrastructure, identifying all components, dependencies, and potential deployment targets with 99.7% accuracy.',
       automationPercentage: 98,
       icon: <Monitor size={20} className="text-white" />,
-      color: '#1e40af',
+      color: '#F5A623',
       position: { x: 0, y: -140 }
     },
     {
@@ -41,7 +41,7 @@ export const RAPIDPage: React.FC = () => {
       detailedDescription: 'Machine learning models analyze security postures, performance metrics, and compliance requirements to create comprehensive risk profiles and deployment strategies.',
       automationPercentage: 95,
       icon: <BarChart3 size={20} className="text-white" />,
-      color: '#7c3aed',
+      color: '#E8931A',
       position: { x: 133, y: -43 }
     },
     {
@@ -51,7 +51,7 @@ export const RAPIDPage: React.FC = () => {
       detailedDescription: 'Intelligent planning engine creates optimized deployment sequences, resource allocation strategies, and rollback procedures tailored to your specific environment.',
       automationPercentage: 92,
       icon: <Cogs size={20} className="text-white" />,
-      color: '#059669',
+      color: '#D68910',
       position: { x: 82, y: 113 }
     },
     {
@@ -61,7 +61,7 @@ export const RAPIDPage: React.FC = () => {
       detailedDescription: 'Zero-downtime orchestration system executes deployments with real-time monitoring, automatic rollback capabilities, and self-healing infrastructure management.',
       automationPercentage: 97,
       icon: <Rocket size={20} className="text-white" />,
-      color: '#dc2626',
+      color: '#F5A623',
       position: { x: -82, y: 113 }
     },
     {
@@ -71,7 +71,7 @@ export const RAPIDPage: React.FC = () => {
       detailedDescription: 'Final deployment phase with continuous monitoring, performance optimization, and automated scaling to ensure peak operational efficiency from day one.',
       automationPercentage: 94,
       icon: <Cloud size={20} className="text-white" />,
-      color: '#ea580c',
+      color: '#E8931A',
       position: { x: -133, y: -43 }
     }
   ];
@@ -193,8 +193,8 @@ export const RAPIDPage: React.FC = () => {
   return (
     <div className="pt-24 pb-16 bg-gray-50 dark:bg-dark-bg min-h-screen">
       <div className="w-full">
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-r from-red-600 to-orange-500 text-white py-20 md:py-32 overflow-hidden">
+        {/* Hero Section with Golden Theme */}
+        <section className="relative bg-gradient-to-r from-golden-dark to-golden text-white py-20 md:py-32 overflow-hidden">
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="container mx-auto px-4 relative z-10">
             <motion.div 
@@ -215,7 +215,7 @@ export const RAPIDPage: React.FC = () => {
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 RAPID™ Deployment Methodology
               </h1>
-              <p className="text-xl md:text-2xl mb-8 text-red-100">
+              <p className="text-xl md:text-2xl mb-8 text-golden-light">
                 From Months to Hours: Revolutionary Automated Deployment
               </p>
               
@@ -226,7 +226,7 @@ export const RAPIDPage: React.FC = () => {
                   icon={<Calendar size={20} />}
                   iconPosition="left"
                   onClick={() => navigate('/contact')}
-                  className="bg-white text-red-600 hover:bg-red-50"
+                  className="bg-white text-golden-dark hover:bg-golden-light"
                 >
                   Schedule Deployment
                 </Button>
@@ -281,7 +281,7 @@ export const RAPIDPage: React.FC = () => {
                   <Card 
                     variant="glass" 
                     padding="lg" 
-                    className="h-full bg-gradient-to-br from-red-500 to-orange-500 text-white hover:shadow-xl transition-all duration-300"
+                    className="h-full bg-gradient-to-br from-golden to-golden-dark text-white hover:shadow-xl transition-all duration-300"
                   >
                     <div className="flex items-start">
                       <div className="p-3 rounded-full bg-white/10 mr-4 flex-shrink-0">
@@ -289,7 +289,7 @@ export const RAPIDPage: React.FC = () => {
                       </div>
                       <div>
                         <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                        <p className="text-red-100">{feature.description}</p>
+                        <p className="text-golden-light">{feature.description}</p>
                       </div>
                     </div>
                   </Card>
@@ -326,7 +326,7 @@ export const RAPIDPage: React.FC = () => {
               {implementationProcess.map((process, index) => (
                 <motion.div key={index} variants={itemVariants}>
                   <Card variant="glass" padding="md" className="h-full text-center">
-                    <div className="p-4 rounded-full bg-gradient-to-r from-red-500 to-orange-500 inline-flex mb-6">
+                    <div className="p-4 rounded-full bg-gradient-to-r from-golden to-golden-dark inline-flex mb-6">
                       {process.icon}
                     </div>
                     <h3 className="text-lg font-bold mb-3 dark:text-white">{process.title}</h3>
@@ -363,7 +363,7 @@ export const RAPIDPage: React.FC = () => {
                   variants={centerPulseVariants}
                   initial="initial"
                   animate="animate"
-                  className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-gradient-to-r from-red-600 to-orange-500 flex items-center justify-center cursor-pointer shadow-lg z-10"
+                  className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-gradient-to-r from-golden-dark to-golden flex items-center justify-center cursor-pointer shadow-lg z-10"
                 >
                   <div className="text-center">
                     <Rocket size={24} className="text-white mx-auto mb-1" />
@@ -381,7 +381,7 @@ export const RAPIDPage: React.FC = () => {
                     whileHover="hover"
                     whileTap="tap"
                     onClick={() => handlePhaseClick(phase.id)}
-                    className="absolute w-20 h-20 rounded-full flex flex-col items-center justify-center text-white font-medium text-xs transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-red-300 shadow-lg"
+                    className="absolute w-20 h-20 rounded-full flex flex-col items-center justify-center text-white font-medium text-xs transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-golden-light shadow-lg"
                     style={{
                       backgroundColor: phase.color,
                       left: `calc(50% + ${phase.position.x}px - 2.5rem)`,
@@ -405,7 +405,7 @@ export const RAPIDPage: React.FC = () => {
                         y1={`calc(50% + ${phase.position.y}px)`}
                         x2={`calc(50% + ${nextPhase.position.x}px)`}
                         y2={`calc(50% + ${nextPhase.position.y}px)`}
-                        stroke="url(#gradient)"
+                        stroke="url(#goldenGradient)"
                         strokeWidth="2"
                         strokeDasharray="5,5"
                         initial={{ pathLength: 0 }}
@@ -415,9 +415,9 @@ export const RAPIDPage: React.FC = () => {
                     );
                   })}
                   <defs>
-                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#dc2626" />
-                      <stop offset="100%" stopColor="#ea580c" />
+                    <linearGradient id="goldenGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#F5A623" />
+                      <stop offset="100%" stopColor="#E8931A" />
                     </linearGradient>
                   </defs>
                 </svg>
@@ -470,7 +470,7 @@ export const RAPIDPage: React.FC = () => {
                           </div>
                           <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
                             <motion.div 
-                              className="h-3 rounded-full bg-gradient-to-r from-red-500 to-orange-500"
+                              className="h-3 rounded-full bg-gradient-to-r from-golden to-golden-dark"
                               initial={{ width: 0 }}
                               animate={{ width: `${selectedPhaseData.automationPercentage}%` }}
                               transition={{ duration: 1, delay: 0.2 }}
@@ -483,7 +483,7 @@ export const RAPIDPage: React.FC = () => {
                           size="sm"
                           icon={<ArrowRight size={16} />}
                           iconPosition="right"
-                          className="bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600"
+                          className="bg-gradient-to-r from-golden-dark to-golden hover:from-golden-darker hover:to-golden-dark"
                         >
                           Learn More
                         </Button>
@@ -516,7 +516,7 @@ export const RAPIDPage: React.FC = () => {
             <div className="max-w-4xl mx-auto">
               <div className="relative">
                 {/* Timeline Line */}
-                <div className="absolute top-8 left-0 right-0 h-1 bg-gradient-to-r from-red-500 to-orange-500 rounded-full"></div>
+                <div className="absolute top-8 left-0 right-0 h-1 bg-gradient-to-r from-golden to-golden-dark rounded-full"></div>
                 
                 {/* Timeline Steps */}
                 <div className="flex justify-between relative z-10">
@@ -529,7 +529,7 @@ export const RAPIDPage: React.FC = () => {
                       transition={{ delay: index * 0.1 }}
                       className="flex flex-col items-center"
                     >
-                      <div className="w-16 h-16 rounded-full bg-gradient-to-r from-red-500 to-orange-500 text-white flex items-center justify-center mb-4 font-bold text-lg shadow-lg">
+                      <div className="w-16 h-16 rounded-full bg-gradient-to-r from-golden to-golden-dark text-white flex items-center justify-center mb-4 font-bold text-lg shadow-lg">
                         {index + 1}
                       </div>
                       <span className="text-sm font-medium text-center dark:text-gray-200 max-w-20">
@@ -546,7 +546,7 @@ export const RAPIDPage: React.FC = () => {
                   size="lg"
                   icon={<Download size={20} />}
                   iconPosition="left"
-                  className="bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600"
+                  className="bg-gradient-to-r from-golden-dark to-golden hover:from-golden-darker hover:to-golden-dark"
                 >
                   Download Implementation Guide
                 </Button>
@@ -556,7 +556,7 @@ export const RAPIDPage: React.FC = () => {
         </section>
 
         {/* Call to Action */}
-        <section className="relative bg-gradient-to-r from-red-600 to-orange-500 text-white py-16 md:py-24">
+        <section className="relative bg-gradient-to-r from-golden-dark to-golden text-white py-16 md:py-24">
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="container mx-auto px-4 relative z-10">
             <motion.div
@@ -572,7 +572,7 @@ export const RAPIDPage: React.FC = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Ready to Transform Your Deployment Process?
               </h2>
-              <p className="text-xl mb-8 text-red-100 max-w-2xl mx-auto">
+              <p className="text-xl mb-8 text-golden-light max-w-2xl mx-auto">
                 Join industry leaders who have revolutionized their deployment capabilities with RAPID™. 
                 Experience the future of automated deployment today.
               </p>
@@ -582,7 +582,7 @@ export const RAPIDPage: React.FC = () => {
                   variant="secondary" 
                   size="lg"
                   onClick={() => navigate('/contact')}
-                  className="bg-white text-red-600 hover:bg-red-50"
+                  className="bg-white text-golden-dark hover:bg-golden-light"
                 >
                   Schedule Deployment
                 </Button>

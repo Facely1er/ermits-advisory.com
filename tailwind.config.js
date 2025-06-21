@@ -13,6 +13,12 @@ export default {
           DEFAULT: '#C9E6FF',
           light: '#E8F4FF'
         },
+        golden: {
+          light: '#FFF4E6',
+          DEFAULT: '#F5A623',
+          dark: '#E8931A',
+          darker: '#D68910'
+        },
         dark: {
           bg: '#0a0a0a',
           surface: '#1f1f1f',
