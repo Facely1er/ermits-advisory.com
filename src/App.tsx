@@ -4,6 +4,8 @@ import { ThemeProvider } from './contexts/ThemeContext';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
+import { ScrollProgressBar } from './components/shared/ProgressBar';
+import { FloatingActionButton } from './components/shared/FloatingActionButton';
 import { LandingPage } from './pages/LandingPage';
 import { Dashboard } from './pages/Dashboard';
 import { STEELVisualization } from './pages/STEELVisualization';
@@ -25,6 +27,7 @@ function App() {
       <LanguageProvider>
         <Router>
           <div className="min-h-screen flex flex-col">
+            <ScrollProgressBar />
             <Navigation />
             
             <main className="flex-grow">
@@ -47,6 +50,7 @@ function App() {
             </main>
             
             <Footer />
+            <FloatingActionButton />
           </div>
         </Router>
       </LanguageProvider>
