@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Shield, TrendingUp, Users, Server, Leaf, Scale, X } from 'lucide-react';
 import { InteractiveCard } from '../shared/InteractiveCard';
@@ -20,8 +20,29 @@ interface InteractiveSTEELVizProps {
 export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
   onDimensionSelect
 }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [containerWidth, setContainerWidth] = useState(0);
   const [selectedDimension, setSelectedDimension] = useState<STEELDimension | null>(null);
   const [hoveredDimension, setHoveredDimension] = useState<string | null>(null);
+
+  // Measure container width and update on window resize
+  useEffect(() => {
+    const updateContainerWidth = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.offsetWidth);
+      }
+    };
+
+    updateContainerWidth();
+    window.addEventListener('resize', updateContainerWidth);
+    return () => window.removeEventListener('resize', updateContainerWidth);
+  }, []);
+
+  // Calculate responsive values based on container width
+  const responsiveRadius = Math.min(containerWidth * 0.25, 160); // Scale down on smaller screens, max 160px
+  const dimensionHexagonSize = Math.max(Math.min(containerWidth * 0.08, 96), 60); // Between 60px and 96px
+  const centerHexagonSize = Math.max(Math.min(containerWidth * 0.12, 128), 80); // Between 80px and 128px
+  const iconSize = Math.max(Math.min(dimensionHexagonSize * 0.25, 20), 14); // Scale icons proportionally
 
   const dimensions: STEELDimension[] = [
     {
@@ -30,7 +51,7 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
       description: 'Regulatory landscape and governance factors',
       value: 65,
       color: '#4c72b0',
-      icon: <Shield size={20} />,
+      icon: <Shield size={iconSize} />,
       details: [
         'Regulatory compliance requirements',
         'Government policy changes',
@@ -44,7 +65,7 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
       description: 'Financial and market conditions',
       value: 78,
       color: '#dd8452',
-      icon: <TrendingUp size={20} />,
+      icon: <TrendingUp size={iconSize} />,
       details: [
         'Market volatility assessment',
         'Economic indicators impact',
@@ -58,7 +79,7 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
       description: 'Societal and cultural influences',
       value: 82,
       color: '#55a868',
-      icon: <Users size={20} />,
+      icon: <Users size={iconSize} />,
       details: [
         'Social media threat landscape',
         'Cultural sensitivity factors',
@@ -72,7 +93,7 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
       description: 'Technical infrastructure and innovation',
       value: 45,
       color: '#c44e52',
-      icon: <Server size={20} />,
+      icon: <Server size={iconSize} />,
       details: [
         'Emerging technology risks',
         'Infrastructure vulnerabilities',
@@ -86,7 +107,7 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
       description: 'Physical and environmental factors',
       value: 72,
       color: '#8172b3',
-      icon: <Leaf size={20} />,
+      icon: <Leaf size={iconSize} />,
       details: [
         'Climate change impact',
         'Natural disaster preparedness',
@@ -100,7 +121,7 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
       description: 'Legal framework and compliance',
       value: 58,
       color: '#937860',
-      icon: <Scale size={20} />,
+      icon: <Scale size={iconSize} />,
       details: [
         'Legal liability assessment',
         'Contractual obligations',
@@ -123,10 +144,20 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
   return (
     <div className="relative">
       {/* Interactive Visualization */}
-      <div className="relative h-[500px] w-full max-w-2xl mx-auto">
+      <div 
+        ref={containerRef}
+        className="relative w-full max-w-2xl mx-auto"
+        style={{ height: `${Math.max(responsiveRadius * 2.5, 400)}px` }}
+      >
         {/* Center STEEL Logo */}
         <motion.div 
-          className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-28 hexagon bg-navy text-white flex items-center justify-center z-10 cursor-pointer"
+          className="absolute hexagon bg-navy text-white flex items-center justify-center z-10 cursor-pointer"
+          style={{
+            left: `calc(50% - ${centerHexagonSize / 2}px)`,
+            top: `calc(50% - ${centerHexagonSize * 0.875 / 2}px)`, // Adjust for hexagon aspect ratio
+            width: `${centerHexagonSize}px`,
+            height: `${centerHexagonSize * 0.875}px`, // Hexagon height ratio
+          }}
           whileHover={{ scale: 1.1 }}
           animate={{ 
             boxShadow: selectedDimension 
@@ -134,24 +165,31 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
               : '0 0 15px rgba(0, 75, 135, 0.3)' 
           }}
         >
-          <span className="text-xl font-bold">STEEL™</span>
+          <span 
+            className="font-bold"
+            style={{ fontSize: `${Math.max(centerHexagonSize * 0.15, 12)}px` }}
+          >
+            STEEL™
+          </span>
         </motion.div>
         
         {/* Dimension Hexagons */}
         {dimensions.map((dimension, index) => {
           const angle = (index * 60) * (Math.PI / 180);
-          const radius = 160;
-          const x = radius * Math.cos(angle);
-          const y = radius * Math.sin(angle);
+          const x = responsiveRadius * Math.cos(angle);
+          const y = responsiveRadius * Math.sin(angle);
           
           return (
             <motion.button
               key={dimension.id}
-              className="absolute w-24 h-20 hexagon flex flex-col items-center justify-center text-white font-medium text-xs transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy"
+              className="absolute hexagon flex flex-col items-center justify-center text-white font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy"
               style={{ 
-                left: `calc(50% + ${x}px - 3rem)`, 
-                top: `calc(50% + ${y}px - 2.5rem)`,
+                left: `calc(50% + ${x}px - ${dimensionHexagonSize / 2}px)`, 
+                top: `calc(50% + ${y}px - ${dimensionHexagonSize * 0.875 / 2}px)`,
+                width: `${dimensionHexagonSize}px`,
+                height: `${dimensionHexagonSize * 0.875}px`,
                 backgroundColor: dimension.color,
+                fontSize: `${Math.max(dimensionHexagonSize * 0.1, 10)}px`
               }}
               onClick={() => handleDimensionClick(dimension)}
               onMouseEnter={() => setHoveredDimension(dimension.id)}
@@ -170,11 +208,17 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
             >
               <div className="flex flex-col items-center justify-center pointer-events-none">
                 {dimension.icon}
-                <span className="text-xs font-medium mt-1 text-center leading-tight">
+                <span className="font-medium mt-1 text-center leading-tight">
                   {dimension.title}
                 </span>
                 {/* Value indicator */}
-                <div className="w-8 h-1 bg-white/30 rounded-full mt-1">
+                <div 
+                  className="bg-white/30 rounded-full mt-1"
+                  style={{ 
+                    width: `${Math.max(dimensionHexagonSize * 0.4, 24)}px`, 
+                    height: `${Math.max(dimensionHexagonSize * 0.08, 3)}px` 
+                  }}
+                >
                   <motion.div
                     className="h-full bg-white rounded-full"
                     initial={{ width: 0 }}
@@ -193,15 +237,14 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
             const nextDimension = dimensions[(index + 1) % dimensions.length];
             const angle1 = (index * 60) * (Math.PI / 180);
             const angle2 = ((index + 1) * 60) * (Math.PI / 180);
-            const radius = 160;
             
             return (
               <motion.line
                 key={`connection-${index}`}
-                x1={`calc(50% + ${radius * Math.cos(angle1)}px)`}
-                y1={`calc(50% + ${radius * Math.sin(angle1)}px)`}
-                x2={`calc(50% + ${radius * Math.cos(angle2)}px)`}
-                y2={`calc(50% + ${radius * Math.sin(angle2)}px)`}
+                x1={`calc(50% + ${responsiveRadius * Math.cos(angle1)}px)`}
+                y1={`calc(50% + ${responsiveRadius * Math.sin(angle1)}px)`}
+                x2={`calc(50% + ${responsiveRadius * Math.cos(angle2)}px)`}
+                y2={`calc(50% + ${responsiveRadius * Math.sin(angle2)}px)`}
                 stroke="url(#steel-gradient)"
                 strokeWidth="2"
                 strokeOpacity="0.3"
