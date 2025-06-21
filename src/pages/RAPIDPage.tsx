@@ -191,7 +191,7 @@ export const RAPIDPage: React.FC = () => {
   const selectedPhaseData = rapidPhases.find(phase => phase.id === selectedPhase);
 
   return (
-    <div className="pt-24 pb-16 bg-gray-50 dark:bg-dark-bg min-h-screen">
+    <div className="pt-24 bg-gray-50 dark:bg-dark-bg min-h-screen">
       <div className="w-full">
         {/* Hero Section with Golden Theme */}
         <section className="relative bg-gradient-to-r from-golden-dark to-golden text-white py-20 md:py-32 overflow-hidden">
@@ -555,9 +555,9 @@ export const RAPIDPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Call to Action */}
-        <section className="relative bg-gradient-to-r from-golden-dark to-golden text-white py-16 md:py-24">
-          <div className="absolute inset-0 bg-black/20"></div>
+        {/* Call to Action - Reduced size */}
+        <section className="relative bg-gradient-to-r from-golden-dark to-golden text-white py-12 md:py-16">
+          <div className="absolute inset-0 bg-black/10"></div>
           <div className="container mx-auto px-4 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -565,14 +565,14 @@ export const RAPIDPage: React.FC = () => {
               viewport={{ once: true }}
               className="max-w-4xl mx-auto text-center"
             >
-              <div className="p-4 rounded-full bg-white/10 inline-flex mb-8">
-                <Info size={48} />
+              <div className="p-3 rounded-full bg-white/10 inline-flex mb-6">
+                <Info size={36} />
               </div>
               
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">
                 {t('rapid.cta.title')}
               </h2>
-              <p className="text-xl mb-8 text-golden-light max-w-2xl mx-auto">
+              <p className="text-lg mb-6 text-golden-light max-w-2xl mx-auto">
                 {t('rapid.cta.description')}
               </p>
               
