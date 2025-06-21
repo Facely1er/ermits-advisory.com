@@ -1,7 +1,7 @@
 export const en = {
   common: {
     tagline: "Global Intelligence. Resilient Strategy. Streamlined for Success.",
-    copyright: "© 2024 ERMITS Advisory + STEEL™. All rights reserved.",
+    copyright: "© 2024 ERMITS Advisory. All rights reserved.",
     demo: "DEMO ENVIRONMENT",
     learnMore: "Learn More",
     viewDashboard: "View Dashboard"

@@ -1,7 +1,7 @@
 export const fr = {
   common: {
     tagline: "Intelligence Globale. Stratégie Résiliente. Rationalisé pour le Succès.",
-    copyright: "© 2024 ERMITS Advisory + STEEL™. Tous droits réservés.",
+    copyright: "© 2024 ERMITS Advisory. Tous droits réservés.",
     demo: "ENVIRONNEMENT DE DÉMONSTRATION",
     learnMore: "En Savoir Plus",
     viewDashboard: "Voir le Tableau de Bord"
@@ -124,7 +124,7 @@ export const fr = {
     },
     leadership: {
       title: "Excellence de Leadership Inégalée",
-      subtitle: "ERMITS Advisory combine les certifications techniques les plus respectées de l'industrie cybersécurité avec une expertise légale spécialisée en droit technologique et de la vie privée—une combinaison unique qui offre protection complète et certitude légale.",
+      subtitle: "ERMITS Advisory combine les certifications techniques les plus respectées de l'industrie cybersécurité avec expertise légale spécialisée en droit technologique et de la vie privée—une combinaison unique qui offre protection complète et certitude légale.",
       technical: {
         title: "Excellence Technique",
         cissp: "Professionnel Certifié en Sécurité des Systèmes d'Information",
