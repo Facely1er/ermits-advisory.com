@@ -6,7 +6,7 @@ import { useTheme } from '../contexts/ThemeContext';
 import { Button } from './shared/Button';
 import { 
   Sun, Moon, Menu, X, Globe, ChevronDown, 
-  Home, Briefcase, Mail, Users, ExternalLink, Lightbulb, Shield, Rocket
+  Home, Briefcase, Mail, Users, ExternalLink, Lightbulb, Shield, Rocket, BookOpen
 } from 'lucide-react';
 import logoImg from '../assets/ermits-advisory.png';
 import { cn } from '../utils/cn';
@@ -32,11 +32,6 @@ export const Navigation: React.FC = () => {
   const handleInsightsItemClick = () => {
     setIsInsightsOpen(false);
     setIsMenuOpen(false);
-  };
-
-  // External resources link handler
-  const handleResourcesClick = () => {
-    window.open('https://resources.ermits-advisory.com', '_blank');
   };
 
   // Language options with flags (removed Spanish)
@@ -91,14 +86,19 @@ export const Navigation: React.FC = () => {
                 </NavLink>
               ))}
               
-              {/* Resources External Link */}
-              <button
-                onClick={handleResourcesClick}
-                className="text-sm font-medium text-gray-600 dark:text-white/95 hover:text-navy dark:hover:text-white transition-colors nav-link flex items-center whitespace-nowrap h-full"
+              {/* Resources Internal Link */}
+              <NavLink
+                to="/resources"
+                className={({ isActive }) => cn(
+                  'text-sm font-medium hover:text-navy dark:hover:text-white transition-colors nav-link flex items-center whitespace-nowrap h-full',
+                  isActive 
+                    ? 'text-navy-dark dark:text-white font-semibold border-b-2 border-navy dark:border-silver' 
+                    : 'text-gray-600 dark:text-white/95'
+                )}
               >
-                <span className="mr-1.5"><ExternalLink size={16} /></span>
+                <span className="mr-1.5"><BookOpen size={16} /></span>
                 {t('navigation.resources')}
-              </button>
+              </NavLink>
               
               {/* Insights Dropdown */}
               <div className="relative h-full flex items-center">
@@ -260,17 +260,20 @@ export const Navigation: React.FC = () => {
                 </NavLink>
               ))}
               
-              {/* Mobile Resources External Link */}
-              <button
-                onClick={() => {
-                  handleResourcesClick();
-                  setIsMenuOpen(false);
-                }}
-                className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10 w-full text-left"
+              {/* Mobile Resources Internal Link */}
+              <NavLink
+                to="/resources"
+                className={({ isActive }) => cn(
+                  'flex items-center px-3 py-2 rounded-md text-base font-medium',
+                  isActive
+                    ? 'bg-navy/10 text-navy dark:bg-silver/20 dark:text-white'
+                    : 'text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10'
+                )}
+                onClick={() => setIsMenuOpen(false)}
               >
-                <span className="mr-2"><ExternalLink size={16} /></span>
+                <span className="mr-2"><BookOpen size={16} /></span>
                 {t('navigation.resources')}
-              </button>
+              </NavLink>
               
               {/* Mobile Insights Section */}
               <div className="border-t border-gray-200 dark:border-gray-700 pt-2 mt-2">
