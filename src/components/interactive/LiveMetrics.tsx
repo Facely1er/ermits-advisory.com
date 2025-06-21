@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { TrendingUp, TrendingDown, Minus, Activity } from 'lucide-react';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 interface Metric {
   id: string;
@@ -14,10 +15,12 @@ interface Metric {
 }
 
 export const LiveMetrics: React.FC = () => {
+  const { t } = useLanguage();
+  
   const [metrics, setMetrics] = useState<Metric[]>([
     {
       id: 'risk-score',
-      label: 'Overall Risk Score',
+      label: t('landing.liveMetrics.overallRiskScore'),
       value: 67,
       previousValue: 72,
       change: -5,
@@ -27,7 +30,7 @@ export const LiveMetrics: React.FC = () => {
     },
     {
       id: 'threats',
-      label: 'Active Threats',
+      label: t('landing.liveMetrics.activeThreats'),
       value: 14,
       previousValue: 11,
       change: 3,
@@ -36,7 +39,7 @@ export const LiveMetrics: React.FC = () => {
     },
     {
       id: 'compliance',
-      label: 'Compliance Score',
+      label: t('landing.liveMetrics.complianceScore'),
       value: 94,
       previousValue: 88,
       change: 6,
@@ -46,7 +49,7 @@ export const LiveMetrics: React.FC = () => {
     },
     {
       id: 'incidents',
-      label: 'Recent Incidents',
+      label: t('landing.liveMetrics.recentIncidents'),
       value: 2,
       previousValue: 2,
       change: 0,
@@ -76,6 +79,18 @@ export const LiveMetrics: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Update labels when language changes
+  useEffect(() => {
+    setMetrics(prev => prev.map(metric => ({
+      ...metric,
+      label: metric.id === 'risk-score' ? t('landing.liveMetrics.overallRiskScore') :
+             metric.id === 'threats' ? t('landing.liveMetrics.activeThreats') :
+             metric.id === 'compliance' ? t('landing.liveMetrics.complianceScore') :
+             metric.id === 'incidents' ? t('landing.liveMetrics.recentIncidents') :
+             metric.label
+    })));
+  }, [t]);
+
   const getTrendIcon = (trend: string) => {
     switch (trend) {
       case 'up':
@@ -103,7 +118,7 @@ export const LiveMetrics: React.FC = () => {
             </h3>
             <div className="flex items-center">
               <Activity size={12} className="text-gray-400 mr-1" />
-              <span className="text-xs text-gray-400">LIVE</span>
+              <span className="text-xs text-gray-400">{t('landing.liveMetrics.live')}</span>
             </div>
           </div>
           
