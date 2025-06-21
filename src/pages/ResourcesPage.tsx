@@ -44,7 +44,7 @@ export const ResourcesPage: React.FC = () => {
           >
             <Link to="/" className="inline-flex items-center text-navy dark:text-silver hover:underline mb-4">
               <ArrowLeft size={16} className="mr-2" />
-              {t('common.backToHome')}
+              Back to Home
             </Link>
             <h1 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
               {t('navigation.resources')}
