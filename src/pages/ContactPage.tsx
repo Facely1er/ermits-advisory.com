@@ -372,7 +372,7 @@ export const ContactPage: React.FC = () => {
                     <h3 className="text-lg font-semibold dark:text-white">{t('contact.info.addressTitle')}</h3>
                     <p className="text-gray-600 dark:text-gray-300">{t('contact.info.addressDescription')}</p>
                     <address className="not-italic text-navy dark:text-silver">
-                      8300 McCullough Lan, Suite 203 <br />
+                      8300 McCullough Lane, Suite 203 <br />
                       Gaithersburg, MD 20877<br />
                       United States
                     </address>
