@@ -15,14 +15,16 @@ export const en = {
     riskRadar: "Risk Radar",
     dashboard: "Dashboard",
     presentation: "Board Presentation",
-    contact: "Contact"
+    contact: "Contact",
+    resources: "Resources"
   },
   footer: {
     services: {
       title: "Services",
       advisory: "Executive Advisory",
       steel: "STEEL™ Framework",
-      dashboard: "Executive Dashboard"
+      dashboard: "Executive Dashboard",
+      resources: "Resources"
     },
     company: {
       title: "Company",

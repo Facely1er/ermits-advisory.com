@@ -34,6 +34,11 @@ export const Navigation: React.FC = () => {
     setIsMenuOpen(false);
   };
 
+  // External resources link handler
+  const handleResourcesClick = () => {
+    window.open('https://resources.ermits-advisory.com', '_blank');
+  };
+
   // Language options with flags (removed Spanish)
   const languages: { code: Language; name: string; flag: string }[] = [
     { code: 'en', name: 'English', flag: '🇺🇸' },
@@ -53,12 +58,6 @@ export const Navigation: React.FC = () => {
     { to: '/dashboard', label: t('navigation.dashboard') },
     { to: '/presentation', label: t('navigation.presentation') },
   ];
-
-  // External resources link
-  const handleResourcesClick = () => {
-    // This will be updated to point to your separate resources project
-    window.open('https://resources.ermits-advisory.com', '_blank');
-  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass-nav dark:bg-black">
@@ -92,6 +91,15 @@ export const Navigation: React.FC = () => {
                   {link.label}
                 </NavLink>
               ))}
+              
+              {/* Resources External Link */}
+              <button
+                onClick={handleResourcesClick}
+                className="text-sm font-medium text-gray-600 dark:text-white/95 hover:text-navy dark:hover:text-white transition-colors nav-link flex items-center"
+              >
+                <span className="mr-1.5"><ExternalLink size={16} /></span>
+                {t('navigation.resources')}
+              </button>
               
               {/* Insights Dropdown */}
               <div className="relative">
@@ -252,6 +260,18 @@ export const Navigation: React.FC = () => {
                   {link.label}
                 </NavLink>
               ))}
+              
+              {/* Mobile Resources External Link */}
+              <button
+                onClick={() => {
+                  handleResourcesClick();
+                  setIsMenuOpen(false);
+                }}
+                className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10 w-full text-left"
+              >
+                <span className="mr-2"><ExternalLink size={16} /></span>
+                {t('navigation.resources')}
+              </button>
               
               {/* Mobile Insights Section */}
               <div className="border-t border-gray-200 dark:border-gray-700 pt-2 mt-2">

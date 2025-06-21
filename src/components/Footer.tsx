@@ -54,6 +54,15 @@ export const Footer: React.FC = () => {
                   {t('footer.services.dashboard')}
                 </Link>
               </li>
+              <li>
+                <button 
+                  onClick={handleResourcesClick}
+                  className="text-silver hover:text-white transition-colors flex items-center text-sm"
+                >
+                  <ExternalLink size={14} className="mr-2" />
+                  {t('footer.services.resources')}
+                </button>
+              </li>
             </ul>
           </div>
           

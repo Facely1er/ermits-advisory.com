@@ -105,7 +105,7 @@ export const NotFoundPage: React.FC = () => {
                   onClick={handleResourcesClick}
                   className="p-3 rounded-md bg-silver/20 dark:bg-navy/20 hover:bg-silver/30 dark:hover:bg-navy/30 transition-colors dark:text-white flex items-center justify-between"
                 >
-                  Resources
+                  {t('navigation.resources')}
                   <ExternalLink size={16} />
                 </button>
               </div>
