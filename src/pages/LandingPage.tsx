@@ -51,31 +51,31 @@ export const LandingPage: React.FC = () => {
     }
   };
 
-  // Enhanced features for interactive display
+  // Enhanced features for interactive display - now using translations
   const enhancedFeatures = [
     {
       icon: <Zap size={24} className="text-yellow-500" />,
-      title: 'Real-time Intelligence',
-      description: 'Live threat monitoring and risk assessment updates',
-      metric: '24/7'
+      title: t('landing.advancedCapabilities.realTimeIntelligence.title'),
+      description: t('landing.advancedCapabilities.realTimeIntelligence.description'),
+      metric: t('landing.advancedCapabilities.realTimeIntelligence.metric')
     },
     {
       icon: <Eye size={24} className="text-blue-500" />,
-      title: 'Predictive Analytics',
-      description: 'AI-powered forecasting for emerging risks',
-      metric: '99.7%'
+      title: t('landing.advancedCapabilities.predictiveAnalytics.title'),
+      description: t('landing.advancedCapabilities.predictiveAnalytics.description'),
+      metric: t('landing.advancedCapabilities.predictiveAnalytics.metric')
     },
     {
       icon: <Target size={24} className="text-green-500" />,
-      title: 'Strategic Focus',
-      description: 'Executive-level insights for informed decisions',
-      metric: '3.4x ROI'
+      title: t('landing.advancedCapabilities.strategicFocus.title'),
+      description: t('landing.advancedCapabilities.strategicFocus.description'),
+      metric: t('landing.advancedCapabilities.strategicFocus.metric')
     },
     {
       icon: <Shield size={24} className="text-purple-500" />,
-      title: 'Comprehensive Coverage',
-      description: 'Complete STEEL methodology implementation',
-      metric: '6 Dimensions'
+      title: t('landing.advancedCapabilities.comprehensiveCoverage.title'),
+      description: t('landing.advancedCapabilities.comprehensiveCoverage.description'),
+      metric: t('landing.advancedCapabilities.comprehensiveCoverage.metric')
     }
   ];
 
@@ -149,7 +149,7 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Live Metrics Section */}
+      {/* Live Metrics Section - Now with translations */}
       <section className="py-16 bg-silver-light dark:bg-dark-surface">
         <div className="container mx-auto px-4">
           <motion.div
@@ -159,10 +159,10 @@ export const LandingPage: React.FC = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold mb-4 dark:text-white">
-              Real-Time Intelligence Dashboard
+              {t('landing.realTimeIntelligence.title')}
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              Live metrics from our advanced threat monitoring systems
+              {t('landing.realTimeIntelligence.subtitle')}
             </p>
           </motion.div>
           
@@ -170,7 +170,7 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Enhanced Features Section */}
+      {/* Enhanced Features Section - Now with translations */}
       <section className="py-16 bg-white dark:bg-dark-bg">
         <div className="container mx-auto px-4">
           <motion.div
@@ -181,10 +181,10 @@ export const LandingPage: React.FC = () => {
             className="text-center mb-12"
           >
             <motion.h2 variants={item} className="text-3xl font-bold mb-4 dark:text-white">
-              Advanced Capabilities
+              {t('landing.advancedCapabilities.title')}
             </motion.h2>
             <motion.p variants={item} className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              Cutting-edge technology meets strategic expertise
+              {t('landing.advancedCapabilities.subtitle')}
             </motion.p>
           </motion.div>
           
