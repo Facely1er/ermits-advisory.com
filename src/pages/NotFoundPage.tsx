@@ -4,10 +4,15 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
-import { Home, ArrowLeft, Search, AlertCircle } from 'lucide-react';
+import { Home, ArrowLeft, Search, AlertCircle, ExternalLink } from 'lucide-react';
 
 export const NotFoundPage: React.FC = () => {
   const { t } = useLanguage();
+  
+  // External resources link handler
+  const handleResourcesClick = () => {
+    window.open('https://resources.ermits.com', '_blank');
+  };
   
   return (
     <div className="pt-24 pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
@@ -96,12 +101,13 @@ export const NotFoundPage: React.FC = () => {
                 >
                   {t('navigation.services')}
                 </Link>
-                <Link 
-                  to="/resources" 
-                  className="p-3 rounded-md bg-silver/20 dark:bg-navy/20 hover:bg-silver/30 dark:hover:bg-navy/30 transition-colors dark:text-white"
+                <button
+                  onClick={handleResourcesClick}
+                  className="p-3 rounded-md bg-silver/20 dark:bg-navy/20 hover:bg-silver/30 dark:hover:bg-navy/30 transition-colors dark:text-white flex items-center justify-between"
                 >
                   {t('navigation.resources')}
-                </Link>
+                  <ExternalLink size={16} />
+                </button>
               </div>
               
               <div className="mt-6 text-center">

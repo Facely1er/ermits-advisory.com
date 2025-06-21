@@ -13,8 +13,6 @@ import { ServiceOffering } from './pages/ServiceOffering';
 import { BoardPresentation } from './pages/BoardPresentation';
 import { ContactPage } from './pages/ContactPage';
 import { AboutPage } from './pages/AboutPage';
-import { ResourcesPage } from './pages/ResourcesPage';
-import { ResourceDetailPage } from './pages/ResourceDetailPage';
 import { RAPIDPage } from './pages/RAPIDPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
@@ -41,8 +39,6 @@ function App() {
                 <Route path="/presentation" element={<BoardPresentation />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/about" element={<AboutPage />} />
-                <Route path="/resources" element={<ResourcesPage />} />
-                <Route path="/resources/:id" element={<ResourceDetailPage />} />
                 <Route path="/privacy" element={<PrivacyPolicyPage />} />
                 <Route path="/terms" element={<TermsOfServicePage />} />
                 <Route path="/cookies" element={<CookiePolicyPage />} />

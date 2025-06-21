@@ -1,5 +1,4 @@
 // Local data service to replace Supabase functionality
-import { resourcesData } from '../data/mockData';
 
 // Contact Form Services
 export const contactService = {
@@ -68,63 +67,6 @@ export const newsletterService = {
   }
 };
 
-// Resource Services
-export const resourceService = {
-  async getResources(filters?: {
-    category?: string;
-    tags?: string[];
-    featured?: boolean;
-    limit?: number;
-  }) {
-    // Use local mock data
-    let filteredResources = [...resourcesData];
-
-    if (filters?.category && filters.category !== 'all') {
-      filteredResources = filteredResources.filter(
-        resource => resource.category === filters.category
-      );
-    }
-
-    if (filters?.tags && filters.tags.length > 0) {
-      filteredResources = filteredResources.filter(
-        resource => resource.tags?.some(tag => filters.tags?.includes(tag))
-      );
-    }
-
-    if (filters?.featured !== undefined) {
-      filteredResources = filteredResources.filter(
-        resource => resource.featured === filters.featured
-      );
-    }
-
-    if (filters?.limit) {
-      filteredResources = filteredResources.slice(0, filters.limit);
-    }
-
-    // Sort by date (newest first)
-    filteredResources.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-
-    return Promise.resolve(filteredResources);
-  },
-
-  async getResourceById(id: string) {
-    const resource = resourcesData.find(r => r.id === id);
-    if (!resource) {
-      throw new Error('Resource not found');
-    }
-    
-    // Simulate incrementing view count
-    console.log(`View tracked for resource: ${id} (demo mode)`);
-    
-    return Promise.resolve(resource);
-  },
-
-  async incrementDownloads(id: string) {
-    console.log(`Download tracked for resource: ${id} (demo mode)`);
-    return Promise.resolve();
-  }
-};
-
 // Dashboard Services
 const dashboardService = {
   async getMetrics() {
@@ -157,18 +99,5 @@ const dashboardService = {
       { id: '5', priority: 'Medium' as const, action: 'Implement enhanced email security controls', impact: 'Reduces successful phishing attempts by 85%', status: 'Not Started' as const }
     ];
     return Promise.resolve(mockActions);
-  }
-};
-
-// Analytics Services
-const analyticsService = {
-  async trackResourceView(resourceId: string) {
-    console.log(`Resource view tracked: ${resourceId} (demo mode)`);
-    return resourceService.getResourceById(resourceId);
-  },
-
-  async trackDownload(resourceId: string) {
-    console.log(`Download tracked: ${resourceId} (demo mode)`);
-    return resourceService.incrementDownloads(resourceId);
   }
 };

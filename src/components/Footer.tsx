@@ -3,11 +3,17 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import logoImg from '../assets/ermits-advisory.png';
 import { 
-  Mail, Phone, MapPin, Shield, BarChart2, Users, FileText
+  Mail, Phone, MapPin, Shield, BarChart2, Users, ExternalLink
 } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
+  
+  // External resources link handler
+  const handleResourcesClick = () => {
+    // This will be updated to point to your separate resources project
+    window.open('https://resources.ermits.com', '_blank');
+  };
   
   return (
     <footer className="bg-navy dark:bg-black text-white">
@@ -49,10 +55,13 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/resources" className="text-silver hover:text-white transition-colors flex items-center text-sm">
-                  <FileText size={14} className="mr-2" />
+                <button 
+                  onClick={handleResourcesClick}
+                  className="text-silver hover:text-white transition-colors flex items-center text-sm"
+                >
+                  <ExternalLink size={14} className="mr-2" />
                   {t('footer.services.resources')}
-                </Link>
+                </button>
               </li>
             </ul>
           </div>

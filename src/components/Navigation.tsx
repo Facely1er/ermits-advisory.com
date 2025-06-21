@@ -6,7 +6,7 @@ import { useTheme } from '../contexts/ThemeContext';
 import { Button } from './shared/Button';
 import { 
   Sun, Moon, Menu, X, Globe, ChevronDown, 
-  Home, Briefcase, Mail, Users, FileText, Lightbulb, Shield, Rocket
+  Home, Briefcase, Mail, Users, ExternalLink, Lightbulb, Shield, Rocket
 } from 'lucide-react';
 import logoImg from '../assets/ermits-advisory.png';
 import { cn } from '../utils/cn';
@@ -46,7 +46,6 @@ export const Navigation: React.FC = () => {
     { to: '/services', label: t('navigation.services'), icon: <Briefcase size={16} /> },
     { to: '/steel', label: t('navigation.steel'), icon: <Shield size={16} /> },
     { to: '/rapid', label: 'RAPID™', icon: <Rocket size={16} /> },
-    { to: '/resources', label: t('navigation.resources'), icon: <FileText size={16} /> },
   ];
 
   const insightsLinks = [
@@ -54,6 +53,12 @@ export const Navigation: React.FC = () => {
     { to: '/dashboard', label: t('navigation.dashboard') },
     { to: '/presentation', label: t('navigation.presentation') },
   ];
+
+  // External resources link
+  const handleResourcesClick = () => {
+    // This will be updated to point to your separate resources project
+    window.open('https://resources.ermits.com', '_blank');
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass-nav dark:bg-black">
@@ -87,6 +92,15 @@ export const Navigation: React.FC = () => {
                   {link.label}
                 </NavLink>
               ))}
+              
+              {/* Resources External Link */}
+              <button
+                onClick={handleResourcesClick}
+                className="text-sm font-medium text-gray-600 dark:text-white/95 hover:text-navy dark:hover:text-white transition-colors nav-link flex items-center"
+              >
+                <span className="mr-1.5"><ExternalLink size={16} /></span>
+                {t('navigation.resources')}
+              </button>
               
               {/* Insights Dropdown */}
               <div className="relative">
@@ -247,6 +261,18 @@ export const Navigation: React.FC = () => {
                   {link.label}
                 </NavLink>
               ))}
+              
+              {/* Mobile Resources External Link */}
+              <button
+                onClick={() => {
+                  handleResourcesClick();
+                  setIsMenuOpen(false);
+                }}
+                className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10 w-full text-left"
+              >
+                <span className="mr-2"><ExternalLink size={16} /></span>
+                {t('navigation.resources')}
+              </button>
               
               {/* Mobile Insights Section */}
               <div className="border-t border-gray-200 dark:border-gray-700 pt-2 mt-2">
