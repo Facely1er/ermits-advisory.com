@@ -63,24 +63,24 @@ export const Navigation: React.FC = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 glass-nav dark:bg-black">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <img src={logoImg} alt="ERMITS Advisory" className="h-16" />
-            <span className="ml-2 font-outfit font-semibold text-navy dark:text-white text-xl">
+          {/* Logo - Made more compact */}
+          <Link to="/" className="flex items-center flex-shrink-0">
+            <img src={logoImg} alt="ERMITS Advisory" className="h-12" />
+            <span className="ml-2 font-outfit font-semibold text-navy dark:text-white text-lg">
               ERMITS Advisory
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
-            {/* Nav Links */}
-            <div className="flex items-center space-x-6">
+          {/* Desktop Navigation - Added margin-left to push away from logo */}
+          <div className="hidden md:flex items-center ml-8">
+            {/* Nav Links - Reduced spacing from space-x-6 to space-x-4 */}
+            <div className="flex items-center space-x-4">
               {navLinks.map((link) => (
                 <NavLink 
                   key={link.to}
                   to={link.to}
                   className={({ isActive }) => cn(
-                    'text-sm font-medium hover:text-navy dark:hover:text-white transition-colors nav-link flex items-center',
+                    'text-sm font-medium hover:text-navy dark:hover:text-white transition-colors nav-link flex items-center whitespace-nowrap',
                     isActive 
                       ? 'text-navy-dark dark:text-white font-semibold border-b-2 border-navy dark:border-silver' 
                       : 'text-gray-600 dark:text-white/95'
@@ -94,7 +94,7 @@ export const Navigation: React.FC = () => {
               {/* Resources External Link */}
               <button
                 onClick={handleResourcesClick}
-                className="text-sm font-medium text-gray-600 dark:text-white/95 hover:text-navy dark:hover:text-white transition-colors nav-link flex items-center"
+                className="text-sm font-medium text-gray-600 dark:text-white/95 hover:text-navy dark:hover:text-white transition-colors nav-link flex items-center whitespace-nowrap"
               >
                 <span className="mr-1.5"><ExternalLink size={16} /></span>
                 {t('navigation.resources')}
@@ -104,7 +104,7 @@ export const Navigation: React.FC = () => {
               <div className="relative">
                 <button 
                   onClick={toggleInsightsDropdown}
-                  className="flex items-center text-sm font-medium text-gray-600 dark:text-white/95 hover:text-navy dark:hover:text-white transition-colors nav-link"
+                  className="flex items-center text-sm font-medium text-gray-600 dark:text-white/95 hover:text-navy dark:hover:text-white transition-colors nav-link whitespace-nowrap"
                 >
                   <span className="mr-1.5"><Lightbulb size={16} /></span>
                   {t('navigation.insights')}
@@ -143,8 +143,8 @@ export const Navigation: React.FC = () => {
               </div>
             </div>
 
-            {/* Controls */}
-            <div className="flex items-center space-x-4">
+            {/* Controls - Reduced spacing from space-x-4 to space-x-3 */}
+            <div className="flex items-center space-x-3 ml-6">
               {/* Language Selector */}
               <div className="relative">
                 <button 
