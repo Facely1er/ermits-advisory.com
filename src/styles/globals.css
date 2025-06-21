@@ -58,7 +58,7 @@
   }
 
   .glass-nav {
-    @apply backdrop-blur-lg bg-white/90 shadow-lg z-50 border-b border-transparent;
+    @apply bg-white shadow-lg z-50 border-b border-transparent;
   }
 
   .container-padding {
