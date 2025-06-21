@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
   // External resources link handler
   const handleResourcesClick = () => {
     // This will be updated to point to your separate resources project
-    window.open('https://resources.ermits.com', '_blank');
+    window.open('https://resources.ermits-advisory.com', '_blank');
   };
   
   return (
@@ -53,15 +53,6 @@ export const Footer: React.FC = () => {
                   <BarChart2 size={14} className="mr-2" />
                   {t('footer.services.dashboard')}
                 </Link>
-              </li>
-              <li>
-                <button 
-                  onClick={handleResourcesClick}
-                  className="text-silver hover:text-white transition-colors flex items-center text-sm"
-                >
-                  <ExternalLink size={14} className="mr-2" />
-                  {t('footer.services.resources')}
-                </button>
               </li>
             </ul>
           </div>

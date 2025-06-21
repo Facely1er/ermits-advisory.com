@@ -11,7 +11,7 @@ export const NotFoundPage: React.FC = () => {
   
   // External resources link handler
   const handleResourcesClick = () => {
-    window.open('https://resources.ermits.com', '_blank');
+    window.open('https://resources.ermits-advisory.com', '_blank');
   };
   
   return (
@@ -105,7 +105,7 @@ export const NotFoundPage: React.FC = () => {
                   onClick={handleResourcesClick}
                   className="p-3 rounded-md bg-silver/20 dark:bg-navy/20 hover:bg-silver/30 dark:hover:bg-navy/30 transition-colors dark:text-white flex items-center justify-between"
                 >
-                  {t('navigation.resources')}
+                  Resources
                   <ExternalLink size={16} />
                 </button>
               </div>

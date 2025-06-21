@@ -57,7 +57,7 @@ export const Navigation: React.FC = () => {
   // External resources link
   const handleResourcesClick = () => {
     // This will be updated to point to your separate resources project
-    window.open('https://resources.ermits.com', '_blank');
+    window.open('https://resources.ermits-advisory.com', '_blank');
   };
 
   return (
@@ -92,15 +92,6 @@ export const Navigation: React.FC = () => {
                   {link.label}
                 </NavLink>
               ))}
-              
-              {/* Resources External Link */}
-              <button
-                onClick={handleResourcesClick}
-                className="text-sm font-medium text-gray-600 dark:text-white/95 hover:text-navy dark:hover:text-white transition-colors nav-link flex items-center"
-              >
-                <span className="mr-1.5"><ExternalLink size={16} /></span>
-                {t('navigation.resources')}
-              </button>
               
               {/* Insights Dropdown */}
               <div className="relative">
@@ -261,18 +252,6 @@ export const Navigation: React.FC = () => {
                   {link.label}
                 </NavLink>
               ))}
-              
-              {/* Mobile Resources External Link */}
-              <button
-                onClick={() => {
-                  handleResourcesClick();
-                  setIsMenuOpen(false);
-                }}
-                className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10 w-full text-left"
-              >
-                <span className="mr-2"><ExternalLink size={16} /></span>
-                {t('navigation.resources')}
-              </button>
               
               {/* Mobile Insights Section */}
               <div className="border-t border-gray-200 dark:border-gray-700 pt-2 mt-2">
