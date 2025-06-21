@@ -80,8 +80,8 @@ export const LandingPage: React.FC = () => {
   ];
 
   return (
-    <div className="pt-16">
-      {/* Enhanced Hero Section */}
+    <div>
+      {/* Enhanced Hero Section - Removed pt-16 to eliminate gap */}
       <section className="relative bg-gradient-to-b from-navy to-navy-dark text-white py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-center bg-cover"></div>
         
