@@ -125,7 +125,7 @@ export const LandingPage: React.FC = () => {
                 <TypewriterText 
                   text={t('landing.hero.subtitle')} 
                   delay={500}
-                  speed={30}
+                  speed={10}
                 />
               )}
             </div>
