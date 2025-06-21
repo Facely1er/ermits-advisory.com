@@ -393,28 +393,6 @@ export const ContactPage: React.FC = () => {
           </motion.div>
         </div>
         
-        {/* Map Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="mb-16"
-        >
-          <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-6 dark:text-white">{t('contact.map.title')}</h2>
-            <div className="rounded-lg overflow-hidden h-[400px] bg-gray-200 dark:bg-gray-700 relative">
-              {/* This would be replaced with an actual map component */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <p className="text-gray-500 dark:text-gray-400 text-center">
-                  {t('contact.map.placeholder')}
-                  <br />
-                  <span className="text-sm">{t('contact.map.apiNote')}</span>
-                </p>
-              </div>
-            </div>
-          </Card>
-        </motion.div>
-        
         {/* FAQ Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -427,22 +405,22 @@ export const ContactPage: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <h3 className="text-lg font-semibold mb-2 dark:text-white">{t('contact.faq.response.title')}</h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">{t('contact.faq.response.content')}</p>
+                <p className="text-gray-600 dark:text-gray-200 mb-4">{t('contact.faq.response.content')}</p>
               </div>
               
               <div>
                 <h3 className="text-lg font-semibold mb-2 dark:text-white">{t('contact.faq.international.title')}</h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">{t('contact.faq.international.content')}</p>
+                <p className="text-gray-600 dark:text-gray-200 mb-4">{t('contact.faq.international.content')}</p>
               </div>
               
               <div>
                 <h3 className="text-lg font-semibold mb-2 dark:text-white">{t('contact.faq.confidentiality.title')}</h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">{t('contact.faq.confidentiality.content')}</p>
+                <p className="text-gray-600 dark:text-gray-200 mb-4">{t('contact.faq.confidentiality.content')}</p>
               </div>
               
               <div>
                 <h3 className="text-lg font-semibold mb-2 dark:text-white">{t('contact.faq.preparation.title')}</h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">{t('contact.faq.preparation.content')}</p>
+                <p className="text-gray-600 dark:text-gray-200 mb-4">{t('contact.faq.preparation.content')}</p>
               </div>
             </div>
           </Card>
