@@ -335,6 +335,114 @@ export const en = {
       }
     }
   },
+  rapid: {
+    hero: {
+      title: "RAPID™ Deployment Methodology",
+      subtitle: "From Months to Hours: Revolutionary Automated Deployment",
+      scheduleDeployment: "Schedule Deployment",
+      requestDemo: "Request Demo",
+      downloadGuide: "Download Guide"
+    },
+    revolutionaryFeatures: {
+      title: "Revolutionary Features",
+      subtitle: "Advanced automation capabilities that transform traditional deployment processes",
+      automatedIntelligence: {
+        title: "Automated Intelligence",
+        description: "AI-powered deployment automation that learns from your infrastructure and optimizes every step of the process."
+      },
+      zeroDowntime: {
+        title: "Zero Downtime",
+        description: "Seamless production deployments with intelligent traffic routing and real-time health monitoring."
+      },
+      selfHealing: {
+        title: "Self Healing",
+        description: "Automatic rollback and recovery systems that detect and resolve issues before they impact users."
+      },
+      ecosystemIntegration: {
+        title: "Ecosystem Integration",
+        description: "Native compatibility with existing platforms, tools, and workflows for seamless adoption."
+      }
+    },
+    implementationProcess: {
+      title: "Implementation Process",
+      subtitle: "Four seamlessly integrated phases that deliver rapid, reliable deployment",
+      environmentMapping: {
+        title: "Environment Mapping",
+        description: "Comprehensive discovery and mapping of your infrastructure components and dependencies."
+      },
+      intelligentPlanning: {
+        title: "Intelligent Planning",
+        description: "AI-driven analysis and optimization of deployment strategies for maximum efficiency."
+      },
+      orchestratedDeployment: {
+        title: "Orchestrated Deployment",
+        description: "Automated execution with real-time monitoring and intelligent decision making."
+      },
+      continuousOptimization: {
+        title: "Continuous Optimization",
+        description: "Ongoing performance monitoring and automated improvements for sustained excellence."
+      }
+    },
+    interactiveFramework: {
+      title: "Interactive RAPID™ Framework",
+      subtitle: "Click on any phase to explore detailed automation capabilities",
+      phases: {
+        recognize: {
+          title: "Recognize",
+          description: "Automated environment scanning",
+          detailedDescription: "Advanced AI algorithms automatically scan and map your entire infrastructure, identifying all components, dependencies, and potential deployment targets with 99.7% accuracy."
+        },
+        analyze: {
+          title: "Analyze",
+          description: "Intelligent risk assessment",
+          detailedDescription: "Machine learning models analyze security postures, performance metrics, and compliance requirements to create comprehensive risk profiles and deployment strategies."
+        },
+        plan: {
+          title: "Plan",
+          description: "Automated deployment strategy",
+          detailedDescription: "Intelligent planning engine creates optimized deployment sequences, resource allocation strategies, and rollback procedures tailored to your specific environment."
+        },
+        implement: {
+          title: "Implement",
+          description: "Orchestrated deployment",
+          detailedDescription: "Zero-downtime orchestration system executes deployments with real-time monitoring, automatic rollback capabilities, and self-healing infrastructure management."
+        },
+        deploy: {
+          title: "Deploy",
+          description: "Seamless production deployment",
+          detailedDescription: "Final deployment phase with continuous monitoring, performance optimization, and automated scaling to ensure peak operational efficiency from day one."
+        }
+      },
+      automationLevel: "Automation Level",
+      learnMore: "Learn More"
+    },
+    deploymentTimeline: {
+      title: "Deployment Timeline",
+      subtitle: "Six integrated phases that transform deployment from months to hours",
+      steps: {
+        assessment: "Assessment",
+        automation: "Automation",
+        orchestration: "Orchestration",
+        validation: "Validation",
+        optimization: "Optimization",
+        monitoring: "Monitoring"
+      },
+      downloadImplementationGuide: "Download Implementation Guide"
+    },
+    cta: {
+      title: "Ready to Transform Your Deployment Process?",
+      description: "Join industry leaders who have revolutionized their deployment capabilities with RAPID™. Experience the future of automated deployment today.",
+      scheduleDeployment: "Schedule Deployment",
+      viewCaseStudies: "View Case Studies"
+    },
+    common: {
+      scheduleDeployment: "Schedule Deployment",
+      requestDemo: "Request Demo",
+      downloadGuide: "Download Guide",
+      learnMore: "Learn More",
+      viewCaseStudies: "View Case Studies"
+    }
+  },
   services: {
     title: "Executive Advisory Services",
     subtitle: "Strategic cybersecurity guidance designed for C-suite and board-level decision making.",

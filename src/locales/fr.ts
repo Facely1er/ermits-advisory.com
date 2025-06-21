@@ -335,6 +335,114 @@ export const fr = {
       }
     }
   },
+  rapid: {
+    hero: {
+      title: "Méthodologie de Déploiement RAPID™",
+      subtitle: "De Mois en Heures : Déploiement Automatisé Révolutionnaire",
+      scheduleDeployment: "Planifier le Déploiement",
+      requestDemo: "Demander une Démo",
+      downloadGuide: "Télécharger le Guide"
+    },
+    revolutionaryFeatures: {
+      title: "Fonctionnalités Révolutionnaires",
+      subtitle: "Capacités d'automatisation avancées qui transforment les processus de déploiement traditionnels",
+      automatedIntelligence: {
+        title: "Intelligence Automatisée",
+        description: "Automatisation de déploiement alimentée par IA qui apprend de votre infrastructure et optimise chaque étape du processus."
+      },
+      zeroDowntime: {
+        title: "Zéro Temps d'Arrêt",
+        description: "Déploiements de production transparents avec routage de trafic intelligent et surveillance de santé en temps réel."
+      },
+      selfHealing: {
+        title: "Auto-Réparation",
+        description: "Systèmes de retour en arrière et de récupération automatiques qui détectent et résolvent les problèmes avant qu'ils n'impactent les utilisateurs."
+      },
+      ecosystemIntegration: {
+        title: "Intégration Écosystème",
+        description: "Compatibilité native avec les plateformes, outils et flux de travail existants pour une adoption transparente."
+      }
+    },
+    implementationProcess: {
+      title: "Processus d'Implémentation",
+      subtitle: "Quatre phases intégrées de manière transparente qui offrent un déploiement rapide et fiable",
+      environmentMapping: {
+        title: "Cartographie Environnement",
+        description: "Découverte et cartographie complètes de vos composants d'infrastructure et dépendances."
+      },
+      intelligentPlanning: {
+        title: "Planification Intelligente",
+        description: "Analyse pilotée par IA et optimisation des stratégies de déploiement pour une efficacité maximale."
+      },
+      orchestratedDeployment: {
+        title: "Déploiement Orchestré",
+        description: "Exécution automatisée avec surveillance en temps réel et prise de décision intelligente."
+      },
+      continuousOptimization: {
+        title: "Optimisation Continue",
+        description: "Surveillance de performance continue et améliorations automatisées pour une excellence soutenue."
+      }
+    },
+    interactiveFramework: {
+      title: "Framework RAPID™ Interactif",
+      subtitle: "Cliquez sur n'importe quelle phase pour explorer les capacités d'automatisation détaillées",
+      phases: {
+        recognize: {
+          title: "Reconnaître",
+          description: "Balayage automatisé de l'environnement",
+          detailedDescription: "Les algorithmes IA avancés balayent et cartographient automatiquement votre infrastructure entière, identifiant tous les composants, dépendances et cibles de déploiement potentielles avec 99,7% de précision."
+        },
+        analyze: {
+          title: "Analyser",
+          description: "Évaluation intelligente des risques",
+          detailedDescription: "Les modèles d'apprentissage automatique analysent les postures de sécurité, métriques de performance et exigences de conformité pour créer des profils de risque complets et stratégies de déploiement."
+        },
+        plan: {
+          title: "Planifier",
+          description: "Stratégie de déploiement automatisée",
+          detailedDescription: "Le moteur de planification intelligent crée des séquences de déploiement optimisées, stratégies d'allocation de ressources et procédures de retour en arrière adaptées à votre environnement spécifique."
+        },
+        implement: {
+          title: "Implémenter",
+          description: "Déploiement orchestré",
+          detailedDescription: "Le système d'orchestration zéro temps d'arrêt exécute les déploiements avec surveillance en temps réel, capacités de retour en arrière automatique et gestion d'infrastructure auto-réparatrice."
+        },
+        deploy: {
+          title: "Déployer",
+          description: "Déploiement de production transparent",
+          detailedDescription: "Phase de déploiement finale avec surveillance continue, optimisation de performance et mise à l'échelle automatisée pour assurer une efficacité opérationnelle maximale dès le premier jour."
+        }
+      },
+      automationLevel: "Niveau d'Automatisation",
+      learnMore: "En Savoir Plus"
+    },
+    deploymentTimeline: {
+      title: "Chronologie de Déploiement",
+      subtitle: "Six phases intégrées qui transforment le déploiement de mois en heures",
+      steps: {
+        assessment: "Évaluation",
+        automation: "Automatisation",
+        orchestration: "Orchestration",
+        validation: "Validation",
+        optimization: "Optimisation",
+        monitoring: "Surveillance"
+      },
+      downloadImplementationGuide: "Télécharger le Guide d'Implémentation"
+    },
+    cta: {
+      title: "Prêt à Transformer Votre Processus de Déploiement ?",
+      description: "Rejoignez les leaders de l'industrie qui ont révolutionné leurs capacités de déploiement avec RAPID™. Découvrez l'avenir du déploiement automatisé aujourd'hui.",
+      scheduleDeployment: "Planifier le Déploiement",
+      viewCaseStudies: "Voir les Études de Cas"
+    },
+    common: {
+      scheduleDeployment: "Planifier le Déploiement",
+      requestDemo: "Demander une Démo",
+      downloadGuide: "Télécharger le Guide",
+      learnMore: "En Savoir Plus",
+      viewCaseStudies: "Voir les Études de Cas"
+    }
+  },
   services: {
     title: "Services de Conseil Exécutif",
     subtitle: "Guidance stratégique cybersécurité conçue pour la prise de décision niveau C-suite et conseil d'administration.",

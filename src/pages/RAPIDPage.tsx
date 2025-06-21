@@ -26,9 +26,9 @@ export const RAPIDPage: React.FC = () => {
   const rapidPhases: RAPIDPhase[] = [
     {
       id: 'recognize',
-      title: 'Recognize',
-      description: 'Automated environment scanning',
-      detailedDescription: 'Advanced AI algorithms automatically scan and map your entire infrastructure, identifying all components, dependencies, and potential deployment targets with 99.7% accuracy.',
+      title: t('rapid.interactiveFramework.phases.recognize.title'),
+      description: t('rapid.interactiveFramework.phases.recognize.description'),
+      detailedDescription: t('rapid.interactiveFramework.phases.recognize.detailedDescription'),
       automationPercentage: 98,
       icon: <Monitor size={20} className="text-white" />,
       color: '#F5A623',
@@ -36,9 +36,9 @@ export const RAPIDPage: React.FC = () => {
     },
     {
       id: 'analyze',
-      title: 'Analyze',
-      description: 'Intelligent risk assessment',
-      detailedDescription: 'Machine learning models analyze security postures, performance metrics, and compliance requirements to create comprehensive risk profiles and deployment strategies.',
+      title: t('rapid.interactiveFramework.phases.analyze.title'),
+      description: t('rapid.interactiveFramework.phases.analyze.description'),
+      detailedDescription: t('rapid.interactiveFramework.phases.analyze.detailedDescription'),
       automationPercentage: 95,
       icon: <BarChart3 size={20} className="text-white" />,
       color: '#E8931A',
@@ -46,9 +46,9 @@ export const RAPIDPage: React.FC = () => {
     },
     {
       id: 'plan',
-      title: 'Plan',
-      description: 'Automated deployment strategy',
-      detailedDescription: 'Intelligent planning engine creates optimized deployment sequences, resource allocation strategies, and rollback procedures tailored to your specific environment.',
+      title: t('rapid.interactiveFramework.phases.plan.title'),
+      description: t('rapid.interactiveFramework.phases.plan.description'),
+      detailedDescription: t('rapid.interactiveFramework.phases.plan.detailedDescription'),
       automationPercentage: 92,
       icon: <Cogs size={20} className="text-white" />,
       color: '#D68910',
@@ -56,9 +56,9 @@ export const RAPIDPage: React.FC = () => {
     },
     {
       id: 'implement',
-      title: 'Implement',
-      description: 'Orchestrated deployment',
-      detailedDescription: 'Zero-downtime orchestration system executes deployments with real-time monitoring, automatic rollback capabilities, and self-healing infrastructure management.',
+      title: t('rapid.interactiveFramework.phases.implement.title'),
+      description: t('rapid.interactiveFramework.phases.implement.description'),
+      detailedDescription: t('rapid.interactiveFramework.phases.implement.detailedDescription'),
       automationPercentage: 97,
       icon: <Rocket size={20} className="text-white" />,
       color: '#F5A623',
@@ -66,9 +66,9 @@ export const RAPIDPage: React.FC = () => {
     },
     {
       id: 'deploy',
-      title: 'Deploy',
-      description: 'Seamless production deployment',
-      detailedDescription: 'Final deployment phase with continuous monitoring, performance optimization, and automated scaling to ensure peak operational efficiency from day one.',
+      title: t('rapid.interactiveFramework.phases.deploy.title'),
+      description: t('rapid.interactiveFramework.phases.deploy.description'),
+      detailedDescription: t('rapid.interactiveFramework.phases.deploy.detailedDescription'),
       automationPercentage: 94,
       icon: <Cloud size={20} className="text-white" />,
       color: '#E8931A',
@@ -80,23 +80,23 @@ export const RAPIDPage: React.FC = () => {
   const revolutionaryFeatures = [
     {
       icon: <Rocket size={32} className="text-white" />,
-      title: 'Automated Intelligence',
-      description: 'AI-powered deployment automation that learns from your infrastructure and optimizes every step of the process.'
+      title: t('rapid.revolutionaryFeatures.automatedIntelligence.title'),
+      description: t('rapid.revolutionaryFeatures.automatedIntelligence.description')
     },
     {
       icon: <Clock size={32} className="text-white" />,
-      title: 'Zero Downtime',
-      description: 'Seamless production deployments with intelligent traffic routing and real-time health monitoring.'
+      title: t('rapid.revolutionaryFeatures.zeroDowntime.title'),
+      description: t('rapid.revolutionaryFeatures.zeroDowntime.description')
     },
     {
       icon: <Settings size={32} className="text-white" />,
-      title: 'Self Healing',
-      description: 'Automatic rollback and recovery systems that detect and resolve issues before they impact users.'
+      title: t('rapid.revolutionaryFeatures.selfHealing.title'),
+      description: t('rapid.revolutionaryFeatures.selfHealing.description')
     },
     {
       icon: <Layers size={32} className="text-white" />,
-      title: 'Ecosystem Integration',
-      description: 'Native compatibility with existing platforms, tools, and workflows for seamless adoption.'
+      title: t('rapid.revolutionaryFeatures.ecosystemIntegration.title'),
+      description: t('rapid.revolutionaryFeatures.ecosystemIntegration.description')
     }
   ];
 
@@ -104,34 +104,34 @@ export const RAPIDPage: React.FC = () => {
   const implementationProcess = [
     {
       icon: <Database size={24} className="text-white" />,
-      title: 'Environment Mapping',
-      description: 'Comprehensive discovery and mapping of your infrastructure components and dependencies.'
+      title: t('rapid.implementationProcess.environmentMapping.title'),
+      description: t('rapid.implementationProcess.environmentMapping.description')
     },
     {
       icon: <BarChart3 size={24} className="text-white" />,
-      title: 'Intelligent Planning',
-      description: 'AI-driven analysis and optimization of deployment strategies for maximum efficiency.'
+      title: t('rapid.implementationProcess.intelligentPlanning.title'),
+      description: t('rapid.implementationProcess.intelligentPlanning.description')
     },
     {
       icon: <Cogs size={24} className="text-white" />,
-      title: 'Orchestrated Deployment',
-      description: 'Automated execution with real-time monitoring and intelligent decision making.'
+      title: t('rapid.implementationProcess.orchestratedDeployment.title'),
+      description: t('rapid.implementationProcess.orchestratedDeployment.description')
     },
     {
       icon: <Monitor size={24} className="text-white" />,
-      title: 'Continuous Optimization',
-      description: 'Ongoing performance monitoring and automated improvements for sustained excellence.'
+      title: t('rapid.implementationProcess.continuousOptimization.title'),
+      description: t('rapid.implementationProcess.continuousOptimization.description')
     }
   ];
 
   // Timeline Steps
   const timelineSteps = [
-    'Assessment',
-    'Automation',
-    'Orchestration',
-    'Validation',
-    'Optimization',
-    'Monitoring'
+    t('rapid.deploymentTimeline.steps.assessment'),
+    t('rapid.deploymentTimeline.steps.automation'),
+    t('rapid.deploymentTimeline.steps.orchestration'),
+    t('rapid.deploymentTimeline.steps.validation'),
+    t('rapid.deploymentTimeline.steps.optimization'),
+    t('rapid.deploymentTimeline.steps.monitoring')
   ];
 
   // Animation variants
@@ -213,10 +213,10 @@ export const RAPIDPage: React.FC = () => {
               </motion.div>
               
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                RAPID™ Deployment Methodology
+                {t('rapid.hero.title')}
               </h1>
               <p className="text-xl md:text-2xl mb-8 text-golden-light">
-                From Months to Hours: Revolutionary Automated Deployment
+                {t('rapid.hero.subtitle')}
               </p>
               
               <div className="flex flex-wrap justify-center gap-4">
@@ -228,7 +228,7 @@ export const RAPIDPage: React.FC = () => {
                   onClick={() => navigate('/contact')}
                   className="bg-white text-golden-dark hover:bg-golden-light"
                 >
-                  Schedule Deployment
+                  {t('rapid.hero.scheduleDeployment')}
                 </Button>
                 <Button 
                   variant="outline" 
@@ -236,7 +236,7 @@ export const RAPIDPage: React.FC = () => {
                   className="border-white text-white hover:bg-white/10"
                   onClick={() => navigate('/contact')}
                 >
-                  Request Demo
+                  {t('rapid.hero.requestDemo')}
                 </Button>
                 <Button 
                   variant="outline" 
@@ -245,7 +245,7 @@ export const RAPIDPage: React.FC = () => {
                   icon={<Download size={20} />}
                   iconPosition="left"
                 >
-                  Download Guide
+                  {t('rapid.hero.downloadGuide')}
                 </Button>
               </div>
             </motion.div>
@@ -262,10 +262,10 @@ export const RAPIDPage: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-navy dark:text-white">
-                Revolutionary Features
+                {t('rapid.revolutionaryFeatures.title')}
               </h2>
               <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-                Advanced automation capabilities that transform traditional deployment processes
+                {t('rapid.revolutionaryFeatures.subtitle')}
               </p>
             </motion.div>
 
@@ -309,10 +309,10 @@ export const RAPIDPage: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-navy dark:text-white">
-                Implementation Process
+                {t('rapid.implementationProcess.title')}
               </h2>
               <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-                Four seamlessly integrated phases that deliver rapid, reliable deployment
+                {t('rapid.implementationProcess.subtitle')}
               </p>
             </motion.div>
 
@@ -348,10 +348,10 @@ export const RAPIDPage: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-navy dark:text-white">
-                Interactive RAPID™ Framework
+                {t('rapid.interactiveFramework.title')}
               </h2>
               <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-                Click on any phase to explore detailed automation capabilities
+                {t('rapid.interactiveFramework.subtitle')}
               </p>
             </motion.div>
 
@@ -463,7 +463,7 @@ export const RAPIDPage: React.FC = () => {
                         
                         <div className="mb-6">
                           <div className="flex items-center justify-between mb-2">
-                            <span className="text-sm font-medium dark:text-gray-200">Automation Level</span>
+                            <span className="text-sm font-medium dark:text-gray-200">{t('rapid.interactiveFramework.automationLevel')}</span>
                             <span className="text-sm font-bold dark:text-white">
                               {selectedPhaseData.automationPercentage}%
                             </span>
@@ -485,7 +485,7 @@ export const RAPIDPage: React.FC = () => {
                           iconPosition="right"
                           className="bg-gradient-to-r from-golden-dark to-golden hover:from-golden-darker hover:to-golden-dark"
                         >
-                          Learn More
+                          {t('rapid.interactiveFramework.learnMore')}
                         </Button>
                       </div>
                     </div>
@@ -506,10 +506,10 @@ export const RAPIDPage: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-navy dark:text-white">
-                Deployment Timeline
+                {t('rapid.deploymentTimeline.title')}
               </h2>
               <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-                Six integrated phases that transform deployment from months to hours
+                {t('rapid.deploymentTimeline.subtitle')}
               </p>
             </motion.div>
 
@@ -548,7 +548,7 @@ export const RAPIDPage: React.FC = () => {
                   iconPosition="left"
                   className="bg-gradient-to-r from-golden-dark to-golden hover:from-golden-darker hover:to-golden-dark"
                 >
-                  Download Implementation Guide
+                  {t('rapid.deploymentTimeline.downloadImplementationGuide')}
                 </Button>
               </div>
             </div>
@@ -570,11 +570,10 @@ export const RAPIDPage: React.FC = () => {
               </div>
               
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ready to Transform Your Deployment Process?
+                {t('rapid.cta.title')}
               </h2>
               <p className="text-xl mb-8 text-golden-light max-w-2xl mx-auto">
-                Join industry leaders who have revolutionized their deployment capabilities with RAPID™. 
-                Experience the future of automated deployment today.
+                {t('rapid.cta.description')}
               </p>
               
               <div className="flex flex-wrap justify-center gap-4">
@@ -584,7 +583,7 @@ export const RAPIDPage: React.FC = () => {
                   onClick={() => navigate('/contact')}
                   className="bg-white text-golden-dark hover:bg-golden-light"
                 >
-                  Schedule Deployment
+                  {t('rapid.cta.scheduleDeployment')}
                 </Button>
                 <Button 
                   variant="outline" 
@@ -592,7 +591,7 @@ export const RAPIDPage: React.FC = () => {
                   className="border-white text-white hover:bg-white/10"
                   onClick={() => navigate('/resources')}
                 >
-                  View Case Studies
+                  {t('rapid.cta.viewCaseStudies')}
                 </Button>
               </div>
             </motion.div>
