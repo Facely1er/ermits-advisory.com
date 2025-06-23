@@ -27,11 +27,11 @@ function App() {
     <ThemeProvider>
       <LanguageProvider>
         <Router>
-          <div className="min-h-screen flex flex-col pt-16">
+          <div className="min-h-screen flex flex-col">
             <ScrollProgressBar />
             <Navigation />
             
-            <main className="flex-grow">
+            <main className="flex-grow pt-16">
               <Routes>
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/dashboard" element={<Dashboard />} />
