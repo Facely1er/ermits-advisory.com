@@ -35,12 +35,12 @@ export const ResourcesPage: React.FC = () => {
   return (
     <div className={`${isFullscreen ? 'fixed inset-0 z-50 bg-white dark:bg-dark-bg' : 'pb-16 bg-silver-light dark:bg-dark-bg min-h-screen'}`}>
       <div className={`${isFullscreen ? 'h-full flex flex-col' : 'container mx-auto px-4'}`}>
-        {/* Header - Hide in fullscreen mode and add top margin for navigation */}
+        {/* Header - Hide in fullscreen mode */}
         {!isFullscreen && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-8 mt-16"
+            className="mb-8"
           >
             <Link to="/" className="inline-flex items-center text-navy dark:text-silver hover:underline mb-4">
               <ArrowLeft size={16} className="mr-2" />
@@ -198,7 +198,7 @@ export const ResourcesPage: React.FC = () => {
             <Card variant="glass" padding="md">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
                 <div>
-                  <h3 className="font-semibold mb-2 dark: text-white">{t('resources.about.title')}</h3>
+                  <h3 className="font-semibold mb-2 dark:text-white">{t('resources.about.title')}</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-200">
                     {t('resources.about.description')}
                   </p>
