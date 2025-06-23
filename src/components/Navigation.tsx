@@ -66,8 +66,8 @@ export const Navigation: React.FC = () => {
             </span>
           </Link>
 
-          {/* Desktop Navigation - Added margin-left to push away from logo */}
-          <div className="hidden md:flex items-center ml-8 h-full">
+          {/* Desktop Navigation - Centered layout with flexible spacing */}
+          <div className="hidden md:flex items-center flex-grow justify-center gap-x-8 h-full">
             {/* Nav Links - Reduced spacing from space-x-6 to space-x-4 */}
             <div className="flex items-center space-x-4 h-full">
               {navLinks.map((link) => (
@@ -143,8 +143,8 @@ export const Navigation: React.FC = () => {
               </div>
             </div>
 
-            {/* Controls - Reduced spacing from space-x-4 to space-x-3 */}
-            <div className="flex items-center space-x-3 ml-6 h-full">
+            {/* Controls - Removed ml-6, gap handled by parent */}
+            <div className="flex items-center space-x-3 h-full">
               {/* Language Selector */}
               <div className="relative">
                 <button 
