@@ -31,7 +31,7 @@ function App() {
             <ScrollProgressBar />
             <Navigation />
             
-            <main className="flex-grow mt-16">
+            <main className="flex-grow pt-16">
               <Routes>
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/dashboard" element={<Dashboard />} />
