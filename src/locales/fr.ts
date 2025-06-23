@@ -1,62 +1,63 @@
 export const fr = {
-  common: {
-    loading: 'Chargement...',
-    error: 'Erreur',
-    success: 'Succès',
-    cancel: 'Annuler',
-    confirm: 'Confirmer',
-    save: 'Enregistrer',
-    delete: 'Supprimer',
-    edit: 'Modifier',
-    view: 'Voir',
-    close: 'Fermer',
-    back: 'Retour',
-    next: 'Suivant',
-    previous: 'Précédent',
-    submit: 'Soumettre',
-    reset: 'Réinitialiser',
-    search: 'Rechercher',
-    filter: 'Filtrer',
-    sort: 'Trier',
-    export: 'Exporter',
-    import: 'Importer',
-    download: 'Télécharger',
-    upload: 'Téléverser',
-    print: 'Imprimer',
-    refresh: 'Actualiser',
-    learnMore: 'En savoir plus',
-    getStarted: 'Commencer',
-    contactUs: 'Nous contacter',
-    readMore: 'Lire la suite',
-    viewAll: 'Voir tout',
-    viewDashboard: 'Voir le tableau de bord',
-    demo: 'Mode Démo - Données d\'exemple',
-    copyright: '© 2024 ERMITS Advisory. Tous droits réservés.',
-    tagline: 'Intelligence Globale. Stratégie Résiliente. Optimisé pour le Succès.'
-  },
-
+  // Navigation
   navigation: {
     home: 'Accueil',
     about: 'À propos',
     services: 'Services',
     steel: 'STEEL™',
-    resources: 'Ressources',
+    contact: 'Contact',
     insights: 'Analyses',
     riskRadar: 'Radar des Risques',
-    dashboard: 'Tableau de bord',
+    dashboard: 'Tableau de Bord',
     presentation: 'Présentation du Conseil',
-    contact: 'Contact'
+    resources: 'Ressources'
   },
 
+  // Common
+  common: {
+    learnMore: 'En savoir plus',
+    getStarted: 'Commencer',
+    viewDashboard: 'Voir le tableau de bord',
+    copyright: '© 2024 ERMITS Advisory. Tous droits réservés.',
+    tagline: 'Intelligence Globale. Stratégie Résiliente. Simplifiée pour le Succès.',
+    demo: 'Environnement de démonstration',
+    backToHome: 'Retour à l\'accueil'
+  },
+
+  // Resources
+  resources: {
+    title: 'Ressources',
+    backToHome: 'Retour à l\'accueil',
+    description: 'Accédez à notre bibliothèque complète de ressources de cybersécurité, livres blancs, études de cas et analyses sectorielles.',
+    fullscreenView: 'Vue plein écran',
+    openInNewTab: 'Ouvrir dans un nouvel onglet',
+    exitFullscreen: 'Quitter le plein écran',
+    loading: {
+      title: 'Chargement des ressources',
+      message: 'Veuillez patienter pendant que nous chargeons les dernières ressources de cybersécurité...'
+    },
+    error: {
+      title: 'Impossible de charger les ressources',
+      message: 'Nous rencontrons des difficultés techniques pour charger la page des ressources. Veuillez essayer d\'y accéder directement ou nous contacter pour obtenir de l\'aide.',
+      retry: 'Réessayer'
+    },
+    about: {
+      title: 'À propos de nos ressources',
+      description: 'Accédez aux livres blancs, études de cas, webinaires et analyses sectorielles pour renforcer votre posture de cybersécurité.'
+    },
+    contactButton: 'Nous contacter'
+  },
+
+  // Landing Page
   landing: {
     hero: {
-      title: 'ERMITS Advisory + STEEL™',
-      subtitle: 'Intelligence Globale. Stratégie Résiliente. Optimisé pour le Succès.',
-      cta: 'Explorer la Méthodologie STEEL™'
+      title: 'Conseil Stratégique en Cybersécurité pour la Direction Exécutive',
+      subtitle: 'Transformer l\'intelligence cyber complexe en insights stratégiques actionnables avec notre méthodologie révolutionnaire STEEL™',
+      cta: 'Explorer le Framework STEEL™'
     },
     realTimeIntelligence: {
       title: 'Tableau de Bord d\'Intelligence en Temps Réel',
-      subtitle: 'Surveillez la posture de cybersécurité de votre organisation avec des métriques en direct et des insights actionnables alimentés par notre méthodologie STEEL™.'
+      subtitle: 'Surveillez la posture de cybersécurité de votre organisation avec des métriques en direct et des analyses prédictives'
     },
     liveMetrics: {
       overallRiskScore: 'Score de Risque Global',
@@ -66,46 +67,39 @@ export const fr = {
       live: 'EN DIRECT'
     },
     advancedCapabilities: {
-      title: 'Intelligence Cybersécuritaire Avancée',
-      subtitle: 'Exploitez la puissance de notre méthodologie propriétaire STEEL™ pour une évaluation complète des risques',
+      title: 'Capacités Avancées',
+      subtitle: 'Fonctionnalités révolutionnaires qui distinguent ERMITS Advisory du conseil traditionnel en cybersécurité',
       realTimeIntelligence: {
-        title: 'Intelligence Temps Réel',
-        description: 'Surveillance et analyse continues de votre paysage de cybersécurité',
+        title: 'Intelligence en Temps Réel',
+        description: 'Surveillance continue des menaces et évaluation des risques alimentée par des analyses avancées',
         metric: '24/7'
       },
       predictiveAnalytics: {
-        title: 'Analytique Prédictive',
-        description: 'Prévisions alimentées par l\'IA pour anticiper et prévenir les incidents de sécurité',
-        metric: '96%'
+        title: 'Analyses Prédictives',
+        description: 'Anticipez les menaces et vulnérabilités futures avant qu\'elles n\'impactent votre organisation',
+        metric: '89%'
       },
       strategicFocus: {
         title: 'Focus Stratégique',
-        description: 'Insights de niveau exécutif qui alignent la sécurité avec les objectifs commerciaux',
+        description: 'Insights de niveau exécutif qui alignent la cybersécurité avec les objectifs business',
         metric: '3.4x'
       },
       comprehensiveCoverage: {
         title: 'Couverture Complète',
-        description: 'Analyse multidimensionnelle de tous les aspects du risque organisationnel',
-        metric: '6D'
+        description: 'Évaluation holistique à travers toutes les dimensions du risque organisationnel',
+        metric: '100%'
       }
-    },
-    metrics: {
-      title: 'Résultats Prouvés',
-      riskReduction: 'Réduction des Risques',
-      timeToInsight: 'Insight Plus Rapide',
-      boardConfidence: 'Confiance du Conseil',
-      roiImprovement: 'Amélioration du ROI'
     },
     steelOverview: {
       title: 'La Méthodologie STEEL™',
-      subtitle: 'Une approche complète de l\'évaluation des risques de cybersécurité qui va au-delà des cadres traditionnels',
+      subtitle: 'Notre framework propriétaire analyse le risque cybersécurité à travers six dimensions critiques',
       political: {
         title: 'Politique',
-        description: 'Paysage réglementaire, exigences de conformité et facteurs géopolitiques qui impactent la posture de cybersécurité.'
+        description: 'Paysage réglementaire, exigences de conformité et facteurs géopolitiques qui impactent la posture cybersécurité.'
       },
       economic: {
         title: 'Économique',
-        description: 'Impact financier, conditions de marché et paysage concurrentiel qui influencent les investissements en sécurité.'
+        description: 'Impact financier, conditions de marché et paysage concurrentiel qui influencent les investissements sécurité.'
       },
       social: {
         title: 'Social',
@@ -113,7 +107,7 @@ export const fr = {
       },
       technology: {
         title: 'Technologie',
-        description: 'Infrastructure, transformation numérique et vulnérabilités techniques.'
+        description: 'Infrastructure, transformation digitale et vulnérabilités techniques.'
       },
       environmental: {
         title: 'Environnemental',
@@ -125,172 +119,424 @@ export const fr = {
       }
     },
     services: {
-      title: 'Services de Conseil Stratégique',
-      subtitle: 'Guidance de cybersécurité de niveau exécutif adaptée aux défis uniques de votre organisation',
+      title: 'Services de Conseil Exécutif',
+      subtitle: 'Conseil spécialisé en cybersécurité conçu pour la prise de décision au niveau C-suite et conseil d\'administration',
       boardBriefings: {
         title: 'Briefings du Conseil',
-        description: 'Briefings de cybersécurité clairs et actionnables conçus pour les décideurs exécutifs.'
+        description: 'Briefings cybersécurité clairs et actionnables adaptés aux membres du conseil et à la direction exécutive.'
       },
       mAndA: {
         title: 'Due Diligence M&A',
-        description: 'Évaluation complète des risques cyber pour les fusions et acquisitions.'
+        description: 'Évaluation complète du risque cyber pour les acquisitions, fusions et partenariats stratégiques.'
       },
       crisis: {
         title: 'Leadership de Crise',
-        description: 'Guidance stratégique pendant les incidents de cybersécurité et les situations de crise.'
+        description: 'Orientation stratégique et support exécutif pendant les incidents et violations de cybersécurité.'
       },
       vCISO: {
         title: 'CISO Virtuel',
-        description: 'Leadership de sécurité de niveau exécutif sans l\'engagement à temps plein.'
+        description: 'Leadership sécurité de niveau exécutif sans l\'engagement et les coûts à temps plein.'
       }
     },
     trust: {
       title: 'Approuvé par les Leaders de l\'Industrie',
-      subtitle: 'Nos certifications et partenariats garantissent les plus hauts standards d\'excellence en cybersécurité',
-      cert1: 'Certifié ISO 27001',
-      cert2: 'Aligné sur le Framework NIST',
-      cert3: 'Conforme SOC 2 Type II',
-      cert4: 'Conforme GDPR'
+      subtitle: 'Certifications professionnelles et expertise sur lesquelles vous pouvez compter',
+      cert1: 'Certifié CISSP',
+      cert2: 'Expert Légal J.D.',
+      cert3: 'Expérience Fortune 500',
+      cert4: 'Intelligence Globale'
+    },
+    metrics: {
+      riskReduction: 'Réduction Moyenne du Risque',
+      timeToInsight: 'Temps d\'Insight Plus Rapide',
+      boardConfidence: 'Augmentation de la Confiance du Conseil',
+      roiImprovement: 'Amélioration du ROI'
     },
     cta: {
-      title: 'Prêt à Transformer Votre Stratégie de Cybersécurité ?',
-      subtitle: 'Rejoignez les leaders de l\'industrie qui font confiance à ERMITS Advisory pour leurs conseils stratégiques en cybersécurité.',
-      button: 'Planifiez Votre Consultation'
+      title: 'Prêt à Transformer Votre Stratégie Cybersécurité ?',
+      subtitle: 'Planifiez une consultation avec nos experts pour découvrir comment STEEL™ peut renforcer la résilience de votre organisation.',
+      button: 'Planifier une Consultation'
     }
   },
 
+  // About Page
+  about: {
+    hero: {
+      title: 'À propos d\'ERMITS Advisory',
+      subtitle: 'Firme de conseil en cybersécurité leader spécialisée dans l\'orientation stratégique de niveau exécutif et la méthodologie révolutionnaire STEEL™.',
+      badge: 'Leaders de l\'Industrie',
+      cta: {
+        schedule: 'Planifier une Consultation',
+        explore: 'Explorer les Services'
+      }
+    },
+    leadership: {
+      title: 'Excellence en Leadership',
+      subtitle: 'Notre équipe combine une expertise technique approfondie avec une expérience de leadership exécutif et une compétence juridique.',
+      technical: {
+        title: 'Expertise Technique',
+        cissp: 'Professionnel Certifié en Sécurité des Systèmes d\'Information',
+        cisa: 'Auditeur Certifié des Systèmes d\'Information',
+        pmp: 'Professionnel en Gestion de Projet',
+        pmiacp: 'Praticien Agile Certifié PMI',
+        itil: 'Bibliothèque d\'Infrastructure des Technologies de l\'Information'
+      },
+      legal: {
+        title: 'Juridique et Conformité',
+        jd: 'Doctorat en Droit - Droit des Entreprises et des Technologies',
+        privacy: {
+          name: 'Spécialiste en Droit de la Vie Privée',
+          description: 'Protection des données et réglementations sur la vie privée'
+        },
+        gdpr: 'Expert en Conformité RGPD et CCPA',
+        ma: {
+          name: 'Cadre Juridique M&A',
+          description: 'Structuration juridique des fusions et acquisitions'
+        }
+      }
+    },
+    stats: {
+      certifications: {
+        label: 'Certifications Professionnelles',
+        description: 'Credentials reconnus par l\'industrie'
+      },
+      assessments: {
+        label: 'Évaluations de Risque Complétées',
+        description: 'À travers diverses industries'
+      },
+      confidence: {
+        label: 'Augmentation de la Confiance du Conseil',
+        description: 'Amélioration moyenne rapportée'
+      },
+      reduction: {
+        label: 'Réduction du Risque Atteinte',
+        description: 'Grâce à l\'implémentation STEEL™'
+      }
+    },
+    story: {
+      title: 'Notre Histoire',
+      paragraph1: 'ERMITS Advisory a été fondé sur le principe que le leadership en cybersécurité devrait être accessible, stratégique et aligné avec les objectifs business. Notre combinaison unique d\'expertise technique, de connaissances juridiques et d\'expérience exécutive nous positionne pour combler le fossé entre les défis complexes de cybersécurité et la prise de décision exécutive.',
+      paragraph2: 'Le développement de notre méthodologie propriétaire STEEL™ représente des années de recherche, d\'application dans le monde réel et de raffinement continu. Contrairement aux frameworks traditionnels de cybersécurité qui se concentrent uniquement sur les contrôles techniques, STEEL™ fournit une vue holistique du risque organisationnel que les dirigeants peuvent comprendre et sur laquelle ils peuvent agir.',
+      paragraph3: 'Aujourd\'hui, nous servons des organisations à travers de multiples industries, des entreprises Fortune 500 aux entreprises en croissance émergente, les aidant à naviguer l\'intersection complexe de la cybersécurité, de la stratégie business et de la conformité réglementaire.',
+      value: {
+        title: 'Notre Proposition de Valeur',
+        point1: 'Services de conseil en cybersécurité axés sur l\'exécutif',
+        point2: 'Méthodologie propriétaire d\'évaluation des risques STEEL™',
+        point3: 'Intégration de l\'expertise juridique et de conformité'
+      },
+      imageCaption: {
+        title: 'Leadership Stratégique',
+        subtitle: 'Faire le pont entre cybersécurité et stratégie business'
+      }
+    },
+    values: {
+      title: 'Nos Valeurs Fondamentales',
+      excellence: {
+        title: 'Excellence',
+        description: 'Nous maintenons les plus hauts standards dans tout ce que nous faisons, de notre méthodologie à notre service client.'
+      },
+      intelligence: {
+        title: 'Intelligence',
+        description: 'Nous tirons parti de l\'intelligence des menaces de pointe et des analyses prédictives pour informer les décisions stratégiques.'
+      },
+      legal: {
+        title: 'Compétence Juridique',
+        description: 'Notre expertise juridique garantit que les stratégies de cybersécurité s\'alignent avec les exigences réglementaires et les objectifs business.'
+      },
+      strategic: {
+        title: 'Focus Stratégique',
+        description: 'Nous nous concentrons sur l\'orientation stratégique de niveau exécutif qui génère des résultats business mesurables.'
+      }
+    },
+    steel: {
+      title: 'La Méthodologie STEEL™',
+      subtitle: 'Notre framework propriétaire qui révolutionne la façon dont les organisations évaluent et gèrent le risque cybersécurité à travers six dimensions critiques.'
+    },
+    global: {
+      title: 'Portée Globale, Expertise Locale',
+      description: 'Bien que notre siège soit à Gaithersburg, Maryland, notre expertise s\'étend globalement. Nous comprenons le paysage réglementaire complexe à travers différentes juridictions et aidons les organisations à naviguer les exigences de conformité internationale.',
+      features: {
+        intelligence: {
+          title: 'Intelligence Globale des Menaces',
+          description: 'Accès aux réseaux d\'intelligence des menaces mondiaux et à la recherche en sécurité'
+        },
+        legal: {
+          title: 'Cadre Juridique International',
+          description: 'Compréhension du RGPD, CCPA et autres réglementations internationales'
+        },
+        strategic: {
+          title: 'Partenariats Stratégiques',
+          description: 'Collaboration avec les principales firmes de cybersécurité et experts juridiques globalement'
+        }
+      },
+      cta: 'En savoir plus sur nos Services Globaux',
+      imageCaption: {
+        title: 'Expertise Globale',
+        subtitle: 'Services de conseil en cybersécurité internationale'
+      }
+    },
+    cta: {
+      title: 'Partenaire avec ERMITS Advisory',
+      description: 'Rejoignez le nombre croissant d\'organisations qui font confiance à ERMITS Advisory pour le leadership stratégique en cybersécurité. Découvrez la différence que notre combinaison unique d\'expertise technique, de connaissances juridiques et de focus exécutif peut faire.',
+      schedule: 'Planifier une Consultation',
+      explore: 'Explorer les Services'
+    }
+  },
+
+  // Services
+  services: {
+    title: 'Services de Conseil Exécutif',
+    subtitle: 'Conseil spécialisé en cybersécurité conçu pour la prise de décision au niveau C-suite et conseil d\'administration',
+    keyFeatures: 'Caractéristiques Clés',
+    boardBriefings: {
+      title: 'Briefings du Conseil',
+      description: 'Briefings cybersécurité clairs et actionnables adaptés aux membres du conseil et à la direction exécutive.',
+      features: [
+        'Langage non-technique pour une compréhension claire',
+        'Focus stratégique sur l\'impact business',
+        'Recommandations actionnables',
+        'Comparaisons de benchmarks',
+        'Analyse des tendances et prévisions'
+      ]
+    },
+    mAndA: {
+      title: 'Due Diligence M&A',
+      description: 'Évaluation complète du risque cyber pour les acquisitions, fusions et partenariats stratégiques.',
+      features: [
+        'Évaluation de sécurité pré-acquisition',
+        'Évaluation des risques techniques et non-techniques',
+        'Analyse des risques d\'intégration',
+        'Stratégie de sécurité post-fusion',
+        'Recommandations de protection de la valeur'
+      ]
+    },
+    crisis: {
+      title: 'Leadership de Crise',
+      description: 'Orientation stratégique et support exécutif pendant les incidents et violations de cybersécurité.',
+      features: [
+        'Communication de crise exécutive',
+        'Support de décision stratégique',
+        'Gestion des parties prenantes',
+        'Orientation réglementaire et juridique',
+        'Gestion de la réputation'
+      ]
+    },
+    vCISO: {
+      title: 'CISO Virtuel',
+      description: 'Leadership sécurité de niveau exécutif sans l\'engagement et les coûts à temps plein.',
+      features: [
+        'Planification stratégique de la sécurité',
+        'Communication avec le conseil et les dirigeants',
+        'Développement de programmes de sécurité',
+        'Sélection de fournisseurs et technologies',
+        'Supervision de la conformité'
+      ]
+    },
+    steelFramework: {
+      title: 'Le Framework STEEL™',
+      description1: 'Notre méthodologie propriétaire STEEL™ fournit une approche complète à l\'évaluation des risques cybersécurité qui va au-delà des frameworks techniques traditionnels.',
+      description2: 'En analysant le risque à travers les dimensions Politique, Économique, Sociale, Technologique, Environnementale et Légale, nous fournissons aux dirigeants une vue holistique de la posture cybersécurité de leur organisation.',
+      exploreButton: 'Explorer STEEL™'
+    },
+    contact: {
+      title: 'Prêt à Commencer ?',
+      email: 'advisory@ermits.com',
+      phone: '+1 (888) 618-6160',
+      headquarters: 'Gaithersburg, MD',
+      requestConsultation: 'Demander une Consultation'
+    }
+  },
+
+  // STEEL Framework
   steel: {
     title: 'Méthodologie STEEL™',
-    overview: 'Notre cadre propriétaire Stratégique Technologie, Économique, Environnemental et Légal fournit une évaluation complète des risques de cybersécurité au-delà des approches traditionnelles.',
+    overview: 'Le framework Strategic Technology, Economic, Environmental, and Legal (STEEL™) fournit une approche complète à l\'évaluation des risques cybersécurité qui va au-delà des frameworks techniques traditionnels.',
     dimensions: {
       political: {
         title: 'Politique',
-        description: 'Paysage réglementaire, exigences de conformité et facteurs géopolitiques qui impactent la posture de cybersécurité.'
+        description: 'Paysage réglementaire, exigences de conformité et facteurs géopolitiques'
       },
       economic: {
         title: 'Économique',
-        description: 'Impact financier, conditions de marché et paysage concurrentiel qui influencent les investissements en sécurité.'
+        description: 'Impact financier, conditions de marché et paysage concurrentiel'
       },
       social: {
         title: 'Social',
-        description: 'Gestion de la réputation, perception publique et facteurs de responsabilité sociale.'
+        description: 'Gestion de la réputation, perception publique et responsabilité sociale'
       },
       technology: {
         title: 'Technologie',
-        description: 'Infrastructure, transformation numérique et vulnérabilités techniques.'
+        description: 'Infrastructure, transformation digitale et vulnérabilités techniques'
       },
       environmental: {
         title: 'Environnemental',
-        description: 'Sécurité physique, risques naturels et facteurs environnementaux.'
+        description: 'Sécurité physique, risques naturels et facteurs environnementaux'
       },
       legal: {
         title: 'Légal',
-        description: 'Obligations contractuelles, responsabilité et exigences légales.'
+        description: 'Obligations contractuelles, responsabilité et exigences légales'
       }
     },
     integration: {
-      title: 'Feuille de Route de Mise en Œuvre',
-      description: 'Notre approche éprouvée en six phases garantit une intégration transparente de la méthodologie STEEL™ dans votre organisation.',
+      title: 'Timeline d\'Intégration',
+      description: 'Notre approche éprouvée en six phases assure une implémentation réussie de STEEL™ dans votre organisation.',
       step1: 'Évaluation',
       step2: 'Analyse',
       step3: 'Stratégie',
-      step4: 'Mise en Œuvre',
+      step4: 'Implémentation',
       step5: 'Surveillance',
       step6: 'Optimisation',
-      downloadGuide: 'Télécharger le Guide de Mise en Œuvre'
+      downloadGuide: 'Télécharger le Guide d\'Implémentation'
     },
     cta: {
-      title: 'Prêt à implémenter STEEL™ ?',
-      description: 'Transformez votre approche de cybersécurité avec notre méthodologie complète.',
+      title: 'Prêt à Implémenter STEEL™ ?',
+      description: 'Contactez nos experts pour apprendre comment la méthodologie STEEL™ peut transformer la stratégie cybersécurité de votre organisation.',
       scheduleConsultation: 'Planifier une Consultation',
-      requestCaseStudy: 'Voir les Études de Cas'
+      requestCaseStudy: 'Demander une Étude de Cas'
     }
   },
 
+  // STEEL Page specific content
+  steelPage: {
+    hero: {
+      title: 'La Méthodologie STEEL™',
+      subtitle1: 'Framework Stratégique Technologique, Économique, Environnemental et Légal',
+      subtitle2: 'Une approche révolutionnaire à l\'évaluation des risques cybersécurité qui fournit aux dirigeants une intelligence complète et actionnable à travers six dimensions critiques.',
+      scheduleConsultation: 'Planifier une Consultation',
+      requestDemo: 'Demander une Démo',
+      downloadMethodology: 'Télécharger la Méthodologie'
+    },
+    whatMakesDifferent: {
+      title: 'Ce qui Rend STEEL™ Différent',
+      subtitle: 'Contrairement aux frameworks traditionnels de cybersécurité, STEEL™ fournit une vue holistique que les dirigeants peuvent comprendre et sur laquelle ils peuvent agir.',
+      predictiveIntelligence: {
+        title: 'Intelligence Prédictive',
+        description: 'Des algorithmes d\'analyse avancée et d\'apprentissage automatique identifient les menaces et vulnérabilités émergentes avant qu\'elles n\'impactent votre organisation.',
+        link: 'En savoir plus sur notre plateforme d\'intelligence'
+      },
+      enhancedPestel: {
+        title: 'Framework PESTEL Amélioré',
+        description: 'S\'appuyant sur le modèle d\'analyse business PESTEL éprouvé, STEEL™ aborde spécifiquement les préoccupations de cybersécurité à travers toutes les dimensions organisationnelles.',
+        link: 'Comparer STEEL™ vs frameworks traditionnels'
+      },
+      expertPartnership: {
+        title: 'Partenariat Expert',
+        description: 'Notre équipe combine une expertise approfondie en cybersécurité avec des connaissances juridiques et une expérience exécutive pour fournir une orientation complète.',
+        link: 'Rencontrer notre équipe de conseil'
+      },
+      frameworkIntegration: {
+        title: 'Intégration de Framework',
+        description: 'STEEL™ s\'intègre parfaitement avec les frameworks de gestion des risques existants, les programmes de conformité et les processus business.',
+        link: 'Voir les options d\'intégration'
+      }
+    },
+    advisoryProcess: {
+      title: 'Notre Processus de Conseil',
+      subtitle: 'Une approche systématique pour transformer l\'intelligence cybersécurité complexe en insights stratégiques actionnables.',
+      strategicDiscovery: {
+        title: 'Découverte Stratégique',
+        description: 'Évaluation complète de la posture cybersécurité actuelle de votre organisation, des objectifs business et de la tolérance au risque.'
+      },
+      modeling: {
+        title: 'Modélisation STEEL™',
+        description: 'Application de notre framework propriétaire pour analyser le risque à travers les six dimensions avec intelligence prédictive.'
+      },
+      synthesis: {
+        title: 'Synthèse d\'Intelligence',
+        description: 'Intégration des résultats en recommandations claires et actionnables alignées avec la stratégie business et les exigences réglementaires.'
+      },
+      briefing: {
+        title: 'Briefing Exécutif',
+        description: 'Présentation des insights et recommandations à la direction exécutive et aux membres du conseil en termes stratégiques accessibles.'
+      }
+    }
+  },
+
+  // RAPID Page
   rapid: {
     hero: {
-      title: 'Méthodologie de Déploiement RAPID™',
-      subtitle: 'De Mois à Heures : Déploiement Automatisé Révolutionnaire',
+      title: 'Framework de Déploiement RAPID™',
+      subtitle: 'Plateforme Automatisée Révolutionnaire pour Déploiement Intelligent',
       scheduleDeployment: 'Planifier le Déploiement',
       requestDemo: 'Demander une Démo',
       downloadGuide: 'Télécharger le Guide'
     },
     revolutionaryFeatures: {
       title: 'Fonctionnalités Révolutionnaires',
-      subtitle: 'Capacités d\'automatisation avancées qui transforment les processus de déploiement traditionnels',
+      subtitle: 'RAPID™ transforme la façon dont les organisations déploient et gèrent les solutions de cybersécurité avec une vitesse et une intelligence sans précédent.',
       automatedIntelligence: {
         title: 'Intelligence Automatisée',
-        description: 'Automatisation de déploiement alimentée par l\'IA qui apprend de votre infrastructure et optimise chaque étape du processus.'
+        description: 'Orchestration de déploiement alimentée par IA qui s\'adapte à votre environnement en temps réel'
       },
       zeroDowntime: {
         title: 'Zéro Temps d\'Arrêt',
-        description: 'Déploiements de production transparents avec routage de trafic intelligent et surveillance en temps réel.'
+        description: 'Implémentation transparente sans perturber les opérations business critiques'
       },
       selfHealing: {
-        title: 'Auto-Guérison',
-        description: 'Systèmes de restauration et de récupération automatiques qui détectent et résolvent les problèmes avant qu\'ils n\'impactent les utilisateurs.'
+        title: 'Systèmes Auto-réparateurs',
+        description: 'Détection et résolution automatique des problèmes et conflits de déploiement'
       },
       ecosystemIntegration: {
-        title: 'Intégration d\'Écosystème',
-        description: 'Compatibilité native avec les plateformes, outils et flux de travail existants pour une adoption transparente.'
+        title: 'Intégration Écosystème',
+        description: 'Compatibilité native avec 500+ outils de sécurité et applications business'
       }
     },
     implementationProcess: {
-      title: 'Processus de Mise en Œuvre',
-      subtitle: 'Quatre phases intégrées de manière transparente qui offrent un déploiement rapide et fiable',
+      title: 'Processus d\'Implémentation',
+      subtitle: 'RAPID™ suit une méthodologie éprouvée qui assure un déploiement réussi dans tout environnement.',
       environmentMapping: {
         title: 'Cartographie d\'Environnement',
-        description: 'Découverte et cartographie complètes de vos composants d\'infrastructure et dépendances.'
+        description: 'Découverte et analyse complètes de votre infrastructure existante'
       },
       intelligentPlanning: {
         title: 'Planification Intelligente',
-        description: 'Analyse et optimisation pilotées par l\'IA des stratégies de déploiement pour une efficacité maximale.'
+        description: 'Stratégie de déploiement pilotée par IA optimisée pour votre environnement spécifique'
       },
       orchestratedDeployment: {
         title: 'Déploiement Orchestré',
-        description: 'Exécution automatisée avec surveillance en temps réel et prise de décision intelligente.'
+        description: 'Déploiement automatisé avec surveillance en temps réel et réponses adaptatives'
       },
       continuousOptimization: {
         title: 'Optimisation Continue',
-        description: 'Surveillance continue des performances et améliorations automatisées pour une excellence soutenue.'
+        description: 'Réglage de performance continu et amélioration de la posture de sécurité'
       }
     },
     interactiveFramework: {
       title: 'Framework RAPID™ Interactif',
-      subtitle: 'Cliquez sur n\'importe quelle phase pour explorer les capacités d\'automatisation détaillées',
+      subtitle: 'Explorez chaque phase de notre méthodologie de déploiement révolutionnaire',
       automationLevel: 'Niveau d\'Automatisation',
-      learnMore: 'En Savoir Plus',
+      learnMore: 'En savoir plus',
       phases: {
         recognize: {
           title: 'Reconnaître',
-          description: 'Scan automatisé d\'environnement',
-          detailedDescription: 'Des algorithmes d\'IA avancés scannent et cartographient automatiquement toute votre infrastructure, identifiant tous les composants, dépendances et cibles de déploiement potentielles avec une précision de 99,7%.'
+          description: 'Découverte et évaluation intelligente de l\'environnement',
+          detailedDescription: 'Des outils avancés de scan et d\'analyse découvrent et cataloguent automatiquement votre écosystème technologique entier, identifiant les actifs, dépendances et défis potentiels de déploiement.'
         },
         analyze: {
           title: 'Analyser',
-          description: 'Évaluation intelligente des risques',
-          detailedDescription: 'Les modèles d\'apprentissage automatique analysent les postures de sécurité, les métriques de performance et les exigences de conformité pour créer des profils de risque complets et des stratégies de déploiement.'
+          description: 'Analyse de risque et compatibilité alimentée par IA',
+          detailedDescription: 'Les algorithmes d\'apprentissage automatique analysent votre environnement pour identifier les stratégies de déploiement optimales, les conflits potentiels et les opportunités d\'intégration.'
         },
         plan: {
           title: 'Planifier',
-          description: 'Stratégie de déploiement automatisée',
-          detailedDescription: 'Le moteur de planification intelligent crée des séquences de déploiement optimisées, des stratégies d\'allocation de ressources et des procédures de restauration adaptées à votre environnement spécifique.'
+          description: 'Génération automatisée de stratégie de déploiement',
+          detailedDescription: 'Les moteurs de planification intelligente créent des feuilles de route de déploiement détaillées avec plans de contingence, procédures de rollback et recommandations d\'optimisation.'
         },
         implement: {
           title: 'Implémenter',
-          description: 'Déploiement orchestré',
-          detailedDescription: 'Système d\'orchestration à temps d\'arrêt zéro qui exécute les déploiements avec surveillance en temps réel, capacités de restauration automatique et gestion d\'infrastructure auto-réparatrice.'
+          description: 'Exécution de déploiement orchestré',
+          detailedDescription: 'L\'orchestration de déploiement automatisée avec surveillance en temps réel, réponses adaptatives et gestion intelligente des erreurs assure une implémentation réussie.'
         },
         deploy: {
           title: 'Déployer',
-          description: 'Déploiement de production transparent',
-          detailedDescription: 'Phase de déploiement final avec surveillance continue, optimisation des performances et mise à l\'échelle automatisée pour assurer une efficacité opérationnelle maximale dès le premier jour.'
+          description: 'Surveillance et optimisation continues',
+          detailedDescription: 'Les moteurs de surveillance et d\'optimisation post-déploiement ajustent continuellement les performances et la posture de sécurité pour une efficacité maximale.'
         }
       }
     },
     deploymentTimeline: {
-      title: 'Chronologie de Déploiement',
-      subtitle: 'Six phases intégrées qui transforment le déploiement de mois en heures',
+      title: 'Timeline de Déploiement',
+      subtitle: 'De l\'évaluation initiale au déploiement complet en temps record',
       steps: {
         assessment: 'Évaluation',
         automation: 'Automatisation',
@@ -299,262 +545,20 @@ export const fr = {
         optimization: 'Optimisation',
         monitoring: 'Surveillance'
       },
-      downloadImplementationGuide: 'Télécharger le Guide de Mise en Œuvre'
+      downloadImplementationGuide: 'Télécharger le Guide d\'Implémentation'
     },
     cta: {
-      title: 'Prêt à Transformer Votre Processus de Déploiement ?',
-      description: 'Rejoignez les leaders de l\'industrie qui ont révolutionné leurs capacités de déploiement avec RAPID™. Découvrez l\'avenir du déploiement automatisé aujourd\'hui.',
+      title: 'Découvrez l\'Avenir du Déploiement Cybersécurité',
+      description: 'Rejoignez les organisations qui ont révolutionné leur posture de sécurité avec la technologie de déploiement RAPID™.',
       scheduleDeployment: 'Planifier le Déploiement',
       viewCaseStudies: 'Voir les Études de Cas'
     }
   },
 
-  steelPage: {
-    hero: {
-      title: 'Framework de Cybersécurité STEEL™',
-      subtitle1: 'Analyse Stratégique Technologie, Économique, Environnementale et Légale',
-      subtitle2: 'La prochaine évolution de l\'évaluation des risques de cybersécurité, conçue pour les décideurs exécutifs qui ont besoin d\'intelligence complète et actionnable.',
-      scheduleConsultation: 'Planifier une Consultation',
-      requestDemo: 'Demander une Démo',
-      downloadMethodology: 'Télécharger la Méthodologie'
-    },
-    whatMakesDifferent: {
-      title: 'Ce qui Rend STEEL™ Différent',
-      subtitle: 'Contrairement aux frameworks de cybersécurité traditionnels, STEEL™ fournit une vue holistique qui englobe toutes les dimensions du risque organisationnel.',
-      predictiveIntelligence: {
-        title: 'Intelligence Prédictive',
-        description: 'Analytiques avancées qui prévoient les menaces et vulnérabilités potentielles avant qu\'elles ne deviennent des problèmes critiques.',
-        link: 'Explorer les Capacités Prédictives'
-      },
-      enhancedPestel: {
-        title: 'Analyse PESTEL Améliorée',
-        description: 'S\'appuyant sur des méthodes d\'analyse stratégique éprouvées, adaptées spécifiquement pour l\'évaluation des risques de cybersécurité.',
-        link: 'En Savoir Plus sur Notre Approche'
-      },
-      expertPartnership: {
-        title: 'Partenariat Expert',
-        description: 'Accès direct à des exécutifs expérimentés en cybersécurité qui comprennent à la fois la technologie et la stratégie commerciale.',
-        link: 'Rencontrez Notre Équipe'
-      },
-      frameworkIntegration: {
-        title: 'Intégration de Framework',
-        description: 'S\'intègre parfaitement avec les frameworks de sécurité existants tout en fournissant une perspective stratégique améliorée.',
-        link: 'Voir le Guide d\'Intégration'
-      }
-    },
-    advisoryProcess: {
-      title: 'Notre Processus de Conseil Stratégique',
-      subtitle: 'Une méthodologie éprouvée qui fournit des insights actionnables pour la prise de décision exécutive.',
-      strategicDiscovery: {
-        title: 'Découverte Stratégique',
-        description: 'Analyse approfondie du paysage de risque unique de votre organisation et des objectifs stratégiques.'
-      },
-      modeling: {
-        title: 'Modélisation STEEL™',
-        description: 'Évaluation complète à travers les six dimensions du framework STEEL™.'
-      },
-      synthesis: {
-        title: 'Synthèse d\'Intelligence',
-        description: 'Analyse experte qui transforme des données complexes en recommandations claires et actionnables.'
-      },
-      briefing: {
-        title: 'Briefing Exécutif',
-        description: 'Présentation stratégique conçue spécifiquement pour la prise de décision au niveau du conseil.'
-      }
-    }
-  },
-
-  about: {
-    title: 'À propos d\'ERMITS Advisory',
-    subtitle: 'Cabinet de conseil en cybersécurité leader spécialisé dans l\'orientation stratégique de niveau exécutif et la méthodologie propriétaire STEEL™.',
-    hero: {
-      badge: 'Excellence en Cybersécurité depuis 2020',
-      title: 'Leadership Stratégique en Cybersécurité',
-      subtitle: 'Nous collaborons avec les dirigeants et les conseils pour transformer la cybersécurité d\'un défi technique en avantage stratégique, combinant une expertise approfondie en sécurité avec un sens des affaires.',
-      cta: {
-        schedule: 'Planifier une Consultation',
-        explore: 'Explorer les Services'
-      }
-    },
-    leadership: {
-      title: 'Leadership et Expertise',
-      subtitle: 'Notre leadership combine des décennies d\'expérience en cybersécurité avec une formation juridique avancée et une expertise en stratégie commerciale.',
-      technical: {
-        title: 'Excellence Technique',
-        cissp: 'Professionnel Certifié en Sécurité des Systèmes d\'Information',
-        cisa: 'Auditeur Certifié des Systèmes d\'Information',
-        pmp: 'Professionnel en Gestion de Projet',
-        pmiacp: 'Praticien Agile Certifié PMI',
-        itil: 'Fondation de la Bibliothèque d\'Infrastructure IT'
-      },
-      legal: {
-        title: 'Expertise Légale et Réglementaire',
-        jd: 'Docteur en Droit avec focus sur le Droit Technologique',
-        privacy: {
-          name: 'Spécialisation en Droit de la Vie Privée',
-          description: 'Formation avancée en protection des données et réglementations de confidentialité'
-        },
-        gdpr: 'Spécialiste de Conformité GDPR/CCPA',
-        ma: {
-          name: 'Expert en Due Diligence M&A',
-          description: 'Spécialisé dans l\'évaluation des risques cyber pour les transactions'
-        }
-      }
-    },
-    story: {
-      title: 'Notre Histoire',
-      paragraph1: 'ERMITS Advisory a été fondé sur le principe que la stratégie de cybersécurité devrait être aussi sophistiquée que les menaces auxquelles les organisations font face. Notre parcours a commencé par une observation simple : la plupart des frameworks de cybersécurité se concentrent sur les contrôles techniques mais échouent à aborder le contexte stratégique plus large.',
-      paragraph2: 'Cette insight a mené au développement de notre méthodologie propriétaire STEEL™, qui fournit une approche complète de l\'évaluation des risques de cybersécurité qui considère les facteurs Politiques, Économiques, Sociaux, Technologiques, Environnementaux et Légaux.',
-      paragraph3: 'Aujourd\'hui, nous servons comme conseillers de confiance aux dirigeants et conseils à travers plusieurs industries, les aidant à naviguer les défis complexes de cybersécurité avec confiance et clarté stratégique.',
-      value: {
-        title: 'Notre Impact',
-        point1: 'Réduction de l\'exposition moyenne aux risques de 67% dans les organisations clientes',
-        point2: 'Amélioration de la confiance du conseil dans les décisions de cybersécurité de 92%',
-        point3: 'Réalisation d\'une amélioration du ROI de 3,4x grâce aux investissements de sécurité stratégiques'
-      },
-      imageCaption: {
-        title: 'Excellence Stratégique',
-        subtitle: 'Combinant expertise technique et sens des affaires'
-      }
-    },
-    stats: {
-      certifications: {
-        label: 'Certifications Professionnelles',
-        description: 'Références leaders de l\'industrie'
-      },
-      assessments: {
-        label: 'Évaluations Stratégiques',
-        description: 'Évaluations de niveau exécutif complétées'
-      },
-      confidence: {
-        label: 'Confiance du Conseil',
-        description: 'Amélioration de la prise de décision exécutive'
-      },
-      reduction: {
-        label: 'Réduction des Risques',
-        description: 'Amélioration moyenne chez les clients'
-      }
-    },
-    values: {
-      title: 'Nos Valeurs',
-      excellence: {
-        title: 'Excellence Stratégique',
-        description: 'Nous fournissons des insights qui transforment la cybersécurité de centre de coût en avantage stratégique.'
-      },
-      intelligence: {
-        title: 'Guidé par l\'Intelligence',
-        description: 'Nos décisions sont basées sur une analyse complète et des méthodologies éprouvées.'
-      },
-      legal: {
-        title: 'Rigueur Légale',
-        description: 'Nous apportons une expertise légale pour assurer la conformité et réduire l\'exposition à la responsabilité.'
-      },
-      strategic: {
-        title: 'Focus Exécutif',
-        description: 'Nos conseils sont conçus spécifiquement pour la prise de décision au niveau du conseil et de la direction.'
-      }
-    },
-    steel: {
-      title: 'L\'Avantage STEEL™',
-      subtitle: 'Notre méthodologie propriétaire fournit une évaluation complète des risques à travers six dimensions critiques.'
-    },
-    global: {
-      title: 'Service de Niveau Exécutif',
-      description: 'Nous fournissons des services de conseil stratégique en cybersécurité aux organisations du monde entier, avec une expertise en conformité réglementaire, gestion des risques et communication exécutive.',
-      features: {
-        intelligence: {
-          title: 'Intelligence Stratégique',
-          description: 'Analyse complète du paysage des menaces et recommandations stratégiques'
-        },
-        legal: {
-          title: 'Expertise Légale',
-          description: 'Compréhension avancée des exigences réglementaires et obligations de conformité'
-        },
-        strategic: {
-          title: 'Communication Exécutive',
-          description: 'Présentations prêtes pour le conseil et support de décision stratégique'
-        }
-      },
-      cta: 'Planifier une Consultation Stratégique',
-      imageCaption: {
-        title: 'Expertise Globale',
-        subtitle: 'Servir des clients dans le monde entier avec des conseils stratégiques en cybersécurité'
-      }
-    },
-    cta: {
-      title: 'Prêt à Élever Votre Stratégie de Cybersécurité ?',
-      description: 'Partenaire avec ERMITS Advisory pour transformer votre approche de cybersécurité de réactive à stratégique. Notre méthodologie STEEL™ et expertise exécutive fournissent la fondation pour une prise de décision confiante.',
-      schedule: 'Planifier une Consultation Stratégique',
-      explore: 'Explorer la Méthodologie STEEL™'
-    }
-  },
-
-  services: {
-    title: 'Services de Conseil Stratégique',
-    subtitle: 'Guidance de cybersécurité de niveau exécutif conçue pour transformer la sécurité d\'un centre de coût en avantage stratégique.',
-    keyFeatures: 'Caractéristiques Clés',
-    boardBriefings: {
-      title: 'Briefings Exécutifs du Conseil',
-      description: 'Présentations stratégiques de cybersécurité conçues pour la prise de décision au niveau du conseil, avec des évaluations de risques claires et des recommandations actionnables.',
-      features: [
-        'Communication de risque de niveau exécutif',
-        'Support de décision stratégique',
-        'Guidance de conformité réglementaire',
-        'Priorisation des investissements',
-        'Planification de communication de crise'
-      ]
-    },
-    mAndA: {
-      title: 'Due Diligence Cyber M&A',
-      description: 'Évaluation complète de cybersécurité pour les fusions et acquisitions, protégeant la valeur des transactions et identifiant les risques d\'intégration.',
-      features: [
-        'Évaluation de sécurité pré-transaction',
-        'Évaluation de conformité réglementaire',
-        'Analyse des risques d\'intégration',
-        'Stratégies de protection de la valeur',
-        'Feuille de route de sécurité post-fusion'
-      ]
-    },
-    crisis: {
-      title: 'Leadership et Gestion de Crise',
-      description: 'Guidance stratégique pendant les incidents de cybersécurité, assurant une réponse efficace et une communication avec les parties prenantes.',
-      features: [
-        'Communication de crise exécutive',
-        'Planification de réponse stratégique',
-        'Gestion des parties prenantes',
-        'Coordination réglementaire',
-        'Protection de la réputation'
-      ]
-    },
-    vCISO: {
-      title: 'Services de CISO Virtuel',
-      description: 'Leadership de sécurité de niveau exécutif adapté aux besoins de votre organisation sans l\'engagement à temps plein.',
-      features: [
-        'Planification de sécurité stratégique',
-        'Rapport au conseil et aux dirigeants',
-        'Évaluation de fournisseurs et technologies',
-        'Supervision de la conformité',
-        'Développement et mentorat d\'équipe'
-      ]
-    },
-    steelFramework: {
-      title: 'L\'Avantage du Framework STEEL™',
-      description1: 'Notre méthodologie propriétaire STEEL™ fournit une évaluation complète des risques de cybersécurité qui va au-delà des frameworks techniques traditionnels.',
-      description2: 'En analysant les facteurs Politiques, Économiques, Sociaux, Technologiques, Environnementaux et Légaux, nous fournissons des insights stratégiques qui alignent les investissements de cybersécurité avec les objectifs commerciaux.',
-      exploreButton: 'Explorer la Méthodologie STEEL™'
-    },
-    contact: {
-      title: 'Commencer Aujourd\'hui',
-      email: 'advisory@ermits.com',
-      phone: '+1 (888) 618-6160',
-      headquarters: 'Gaithersburg, MD',
-      requestConsultation: 'Demander une Consultation Stratégique'
-    }
-  },
-
+  // Dashboard
   dashboard: {
     title: 'Tableau de Bord Cybersécurité',
-    subtitle: 'Visibilité en temps réel sur la posture de sécurité de votre organisation avec des insights stratégiques.',
+    subtitle: 'Insights en temps réel sur la posture de sécurité de votre organisation alimentée par la méthodologie STEEL™',
     riskScore: {
       title: 'Score de Risque Global',
       low: 'Faible',
@@ -571,14 +575,14 @@ export const fr = {
     },
     radar: {
       title: 'Évaluation des Risques STEEL™',
-      description: 'Analyse complète des risques à travers toutes les dimensions stratégiques'
+      description: 'Analyse multidimensionnelle des risques à travers toutes les dimensions du framework STEEL™'
     },
     threats: {
       title: 'Intelligence des Menaces',
-      type: 'Type de Menace',
+      type: 'Type',
       source: 'Source',
       impact: 'Impact',
-      timeline: 'Chronologie'
+      timeline: 'Timeline'
     },
     actions: {
       title: 'Actions Stratégiques',
@@ -593,18 +597,18 @@ export const fr = {
         {
           priority: 'Élevé',
           action: 'Mettre à jour le plan de réponse aux incidents pour les scénarios de ransomware',
-          impact: 'Réduit les temps d\'arrêt potentiels de 72%',
-          status: 'Terminé'
+          impact: 'Réduit le temps d\'arrêt potentiel de 72%',
+          status: 'Complété'
         },
         {
           priority: 'Moyen',
-          action: 'Conduire un exercice de simulation exécutif',
+          action: 'Conduire un exercice de simulation exécutive',
           impact: 'Améliore la prise de décision exécutive pendant les incidents',
           status: 'Non Démarré'
         },
         {
           priority: 'Élevé',
-          action: 'Réviser et mettre à jour les exigences de sécurité des tiers',
+          action: 'Réviser et mettre à jour les exigences de sécurité tierces',
           impact: 'Réduit l\'exposition aux risques de la chaîne d\'approvisionnement',
           status: 'En Cours'
         },
@@ -618,9 +622,10 @@ export const fr = {
     }
   },
 
+  // Risk Radar
   riskRadar: {
     title: 'Radar des Risques STEEL™',
-    subtitle: 'Évaluation interactive des risques et modélisation de scénarios avec des recommandations stratégiques.',
+    subtitle: 'Évaluation interactive des risques et modélisation de scénarios alimentée par notre méthodologie propriétaire STEEL™',
     dimensions: 'Dimensions des Risques',
     visualization: 'Visualisation des Risques',
     scenarios: {
@@ -639,7 +644,7 @@ export const fr = {
       items: [
         {
           priority: 'Critique',
-          action: 'Implémenter une protection de données améliorée pour les informations clients sensibles',
+          action: 'Implémenter une protection de données renforcée pour les informations clients sensibles',
           impact: 'Réduit le risque de violation de données de 78%',
           effort: 'Moyen'
         },
@@ -664,67 +669,19 @@ export const fr = {
         {
           priority: 'Critique',
           action: 'Améliorer la segmentation réseau pour isoler les systèmes critiques',
-          impact: 'Limite le mouvement latéral pendant une compromission',
+          impact: 'Limite le mouvement latéral pendant la compromission',
           effort: 'Élevé'
         }
       ]
     }
   },
 
-  presentation: {
-    title: 'Présentation du Conseil',
-    subtitle: 'Briefing stratégique de cybersécurité conçu pour les décideurs exécutifs.',
-    navigation: {
-      previous: 'Précédent',
-      next: 'Suivant',
-      fullscreen: 'Plein Écran'
-    },
-    download: 'Télécharger la Présentation',
-    keyboardShortcuts: 'Utilisez les flèches ou la barre d\'espace pour naviguer, F pour plein écran',
-    slides: {
-      slide1: {
-        title: 'Briefing Exécutif Cybersécurité',
-        subtitle: 'Analyse stratégique et recommandations',
-        content: 'Vue d\'ensemble complète de la posture de cybersécurité de l\'organisation avec des insights de niveau exécutif et des recommandations stratégiques pour la considération du conseil.'
-      },
-      slide2: {
-        title: 'Paysage de Risque Actuel',
-        subtitle: 'Évaluation de l\'environnement de menace',
-        content: 'Analyse du paysage actuel des cybermenaces et son impact potentiel sur les objectifs organisationnels, incluant les menaces émergentes et les risques spécifiques à l\'industrie.'
-      },
-      slide3: {
-        title: 'Évaluation des Risques STEEL™',
-        subtitle: 'Évaluation complète des risques',
-        content: 'Évaluation détaillée du risque organisationnel à travers les six dimensions STEEL™ : facteurs Politiques, Économiques, Sociaux, Technologiques, Environnementaux et Légaux.'
-      },
-      slide4: {
-        title: 'Vulnérabilités Stratégiques',
-        subtitle: 'Domaines critiques nécessitant attention',
-        content: 'Identification des vulnérabilités stratégiques qui posent un risque significatif aux objectifs commerciaux, avec des recommandations priorisées pour la remédiation.'
-      },
-      slide5: {
-        title: 'Actions Recommandées',
-        subtitle: 'Initiatives stratégiques priorisées',
-        content: 'Recommandations stratégiques priorisées par impact commercial et faisabilité de mise en œuvre, avec des chronologies claires et des exigences de ressources.'
-      },
-      slide6: {
-        title: 'Considérations d\'Investissement',
-        subtitle: 'Stratégie d\'allocation des ressources',
-        content: 'Analyse des options d\'investissement en cybersécurité avec des calculs projetés de retour sur investissement et de réduction des risques pour soutenir la prise de décision stratégique.'
-      },
-      slide7: {
-        title: 'Feuille de Route de Mise en Œuvre',
-        subtitle: 'Plan d\'exécution stratégique',
-        content: 'Feuille de route de mise en œuvre complète avec des jalons clés, des métriques de succès et une structure de gouvernance pour une exécution efficace du programme.'
-      }
-    }
-  },
-
+  // Contact
   contact: {
     title: 'Contacter ERMITS Advisory',
-    subtitle: 'Prêt à transformer votre stratégie de cybersécurité ? Discutons de comment notre méthodologie STEEL™ peut renforcer la posture de sécurité de votre organisation.',
+    subtitle: 'Prêt à transformer votre stratégie cybersécurité ? Nos experts sont là pour vous aider.',
     form: {
-      title: 'Demander une Consultation Stratégique',
+      title: 'Prendre Contact',
       nameLabel: 'Nom Complet',
       namePlaceholder: 'Entrez votre nom complet',
       emailLabel: 'Adresse Email',
@@ -734,117 +691,178 @@ export const fr = {
       phoneLabel: 'Numéro de Téléphone (Optionnel)',
       phonePlaceholder: 'Entrez votre numéro de téléphone',
       messageLabel: 'Message',
-      messagePlaceholder: 'Parlez-nous de vos défis de cybersécurité et comment nous pouvons aider...',
-      requiredFields: 'Champs obligatoires',
+      messagePlaceholder: 'Parlez-nous de vos défis en cybersécurité et comment nous pouvons vous aider...',
       submitButton: 'Envoyer le Message',
-      successTitle: 'Message Envoyé avec Succès',
-      successMessage: 'Merci de nous avoir contactés. Notre équipe répondra dans les 24 heures pour discuter de vos besoins en cybersécurité.',
-      errorTitle: 'Erreur d\'Envoi du Message',
-      errorMessage: 'Nous nous excusons pour le désagrément. Veuillez réessayer ou nous contacter directement.',
+      requiredFields: 'Champs requis',
+      successTitle: 'Message Envoyé avec Succès !',
+      successMessage: 'Merci de nous avoir contactés. Nous répondrons dans les 24 heures.',
+      errorTitle: 'Erreur lors de l\'Envoi du Message',
+      errorMessage: 'Il y a eu un problème lors de l\'envoi de votre message. Veuillez réessayer ou nous contacter directement.',
       errors: {
         nameRequired: 'Le nom est requis',
         emailRequired: 'L\'email est requis',
         emailInvalid: 'Veuillez entrer une adresse email valide',
         companyRequired: 'L\'entreprise est requise',
-        phoneInvalid: 'Veuillez entrer un numéro de téléphone valide',
         messageRequired: 'Le message est requis',
-        messageTooShort: 'Le message doit contenir au moins 10 caractères'
+        messageTooShort: 'Le message doit contenir au moins 10 caractères',
+        phoneInvalid: 'Veuillez entrer un numéro de téléphone valide'
       }
     },
     info: {
       title: 'Informations de Contact',
       emailTitle: 'Email',
-      emailDescription: 'Pour les consultations stratégiques et demandes générales',
+      emailDescription: 'Envoyez-nous un message à tout moment',
       phoneTitle: 'Téléphone',
-      phoneDescription: 'Parlez directement avec notre équipe de conseil',
+      phoneDescription: 'Appelez-nous pendant les heures d\'ouverture',
       addressTitle: 'Adresse',
-      addressDescription: 'Notre siège social',
+      addressDescription: 'Visitez notre siège social',
       hoursTitle: 'Heures d\'Ouverture',
       weekdays: 'Lun - Ven',
       weekends: 'Week-ends',
-      closed: 'Sur Rendez-vous'
+      closed: 'Fermé'
     },
     faq: {
       title: 'Questions Fréquemment Posées',
       response: {
-        title: 'À quelle vitesse pouvons-nous espérer une réponse ?',
-        content: 'Notre équipe répond à toutes les demandes dans les 24 heures. Pour les questions urgentes, veuillez appeler notre ligne directe.'
+        title: 'Quelle est la rapidité de votre réponse ?',
+        content: 'Nous répondons typiquement à toutes les demandes dans les 24 heures pendant les jours ouvrables.'
       },
       international: {
         title: 'Travaillez-vous avec des clients internationaux ?',
-        content: 'Oui, nous servons des clients dans le monde entier et avons de l\'expérience avec les exigences réglementaires internationales et les frameworks de conformité.'
+        content: 'Oui, nous servons des clients globalement et comprenons les exigences de conformité internationale.'
       },
       confidentiality: {
-        title: 'Comment assurez-vous la confidentialité ?',
-        content: 'Toutes les communications clients sont protégées par des accords de confidentialité stricts et notre programme complet de sécurité de l\'information.'
+        title: 'Comment gérez-vous les informations confidentielles ?',
+        content: 'Toutes les informations clients sont protégées sous des accords de confidentialité stricts et des standards professionnels.'
       },
       preparation: {
-        title: 'Comment devons-nous nous préparer pour notre consultation ?',
-        content: 'Aucune préparation spéciale n\'est nécessaire. Nous discuterons de vos défis spécifiques et objectifs lors de notre conversation initiale.'
+        title: 'Comment dois-je me préparer pour notre consultation ?',
+        content: 'Venez préparé à discuter de vos défis actuels en cybersécurité, objectifs business et préoccupations spécifiques.'
       }
     }
   },
 
-  implementationGuide: {
-    title: 'Guide de Mise en Œuvre STEEL™',
-    subtitle: 'Guide complet pour implémenter la méthodologie STEEL™ dans votre organisation.',
-    backToSteel: 'Retour à STEEL™',
-    completePackage: {
-      title: 'Package de Mise en Œuvre Complet',
-      description: 'Tout ce dont vous avez besoin pour implémenter avec succès la méthodologie STEEL™ dans votre organisation, des modèles d\'évaluation aux présentations exécutives.',
-      features: {
-        pages: '150+ Pages de Contenu',
-        templates: '25+ Modèles Prêts à Utiliser',
-        industry: 'Exemples Spécifiques à l\'Industrie',
-        presentations: 'Modèles de Présentation Exécutive'
+  // Board Presentation
+  presentation: {
+    title: 'Présentation du Conseil',
+    subtitle: 'Briefing stratégique en cybersécurité conçu pour la direction exécutive et les membres du conseil',
+    download: 'Télécharger la Présentation',
+    keyboardShortcuts: 'Utilisez les flèches ou espace pour naviguer, F pour plein écran, ESC pour quitter',
+    navigation: {
+      previous: 'Précédent',
+      next: 'Suivant',
+      fullscreen: 'Plein écran'
+    },
+    slides: {
+      slide1: {
+        title: 'Briefing Exécutif Cybersécurité',
+        subtitle: 'Analyse stratégique et recommandations',
+        content: 'Vue d\'ensemble complète de la posture cybersécurité de l\'organisation avec insights de niveau exécutif et recommandations actionnables.'
       },
-      downloadButton: 'Télécharger le Guide Complet',
-      downloadStarted: 'Téléchargement Commencé',
-      fileInfo: 'PDF • 15.2 MB • Mis à jour mensuellement'
+      slide2: {
+        title: 'Paysage de Risque Actuel',
+        subtitle: 'Vue d\'ensemble de l\'environnement des menaces',
+        content: 'Analyse du paysage actuel des cybermenaces et de son impact potentiel sur les opérations organisationnelles, la réputation et la performance financière.'
+      },
+      slide3: {
+        title: 'Évaluation des Risques STEEL™',
+        subtitle: 'Vue holistique du risque organisationnel',
+        content: 'Évaluation détaillée du risque à travers les six dimensions STEEL™ avec benchmarks comparatifs de l\'industrie et analyse des tendances.'
+      },
+      slide4: {
+        title: 'Vulnérabilités Stratégiques',
+        subtitle: 'Domaines clés nécessitant attention',
+        content: 'Identification des vulnérabilités critiques qui posent un risque significatif aux objectifs stratégiques et à la continuité business.'
+      },
+      slide5: {
+        title: 'Actions Recommandées',
+        subtitle: 'Initiatives priorisées pour la réduction des risques',
+        content: 'Recommandations priorisées pour adresser les risques identifiés avec les résultats attendus et les exigences de ressources.'
+      },
+      slide6: {
+        title: 'Considérations d\'Investissement',
+        subtitle: 'Allocation de ressources pour un impact maximum',
+        content: 'Analyse des options d\'investissement avec calculs de retour sur investissement sécurité attendu et considérations budgétaires.'
+      },
+      slide7: {
+        title: 'Prochaines Étapes et Timeline',
+        subtitle: 'Feuille de route d\'implémentation',
+        content: 'Feuille de route d\'implémentation proposée avec jalons clés, exigences de ressources et métriques de succès.'
+      }
+    }
+  },
+
+  // Implementation Guide
+  implementationGuide: {
+    title: 'Guide d\'Implémentation STEEL™',
+    subtitle: 'Guide complet pour implémenter la méthodologie STEEL™ dans votre organisation',
+    backToSteel: 'Retour à STEEL™',
+    benefits: {
+      riskReduction: '67%',
+      riskReductionDesc: 'Réduction moyenne du risque',
+      roi: '340%',
+      roiDesc: 'Retour sur investissement',
+      faster: '83%',
+      fasterDesc: 'Implémentation plus rapide',
+      confidence: '92%',
+      confidenceDesc: 'Augmentation confiance du conseil'
+    },
+    completePackage: {
+      title: 'Package d\'Implémentation Complet',
+      description: 'Tout ce dont vous avez besoin pour implémenter avec succès STEEL™ dans votre organisation, incluant méthodologies détaillées, templates et études de cas.',
+      downloadButton: 'Télécharger Guide Complet',
+      downloadStarted: 'Téléchargement Démarré !',
+      fileInfo: 'PDF • 127 pages • Mis à jour aujourd\'hui',
+      features: {
+        pages: '127+ pages de contenu',
+        templates: '15+ templates prêts à utiliser',
+        industry: '8 exemples spécifiques à l\'industrie',
+        presentations: '5 templates de présentation exécutive'
+      }
     },
     guideContents: {
       title: 'Contenu du Guide',
       executiveSummary: {
         title: 'Résumé Exécutif',
         items: [
-          'Vue d\'ensemble de la méthodologie STEEL™',
-          'Business case pour la mise en œuvre',
-          'Résultats attendus et ROI',
-          'Chronologie de mise en œuvre'
+          'Vue d\'ensemble méthodologie STEEL™',
+          'Business case et analyse ROI',
+          'Timeline d\'implémentation',
+          'Métriques de succès et KPIs'
         ]
       },
       frameworkFoundation: {
         title: 'Fondation du Framework',
         items: [
-          'Modèle d\'analyse à six dimensions',
-          'Méthodologies d\'évaluation des risques',
-          'Intégration avec les frameworks existants',
-          'Directives de personnalisation'
+          'Six dimensions expliquées en détail',
+          'Méthodologie de scoring des risques',
+          'Intégration avec frameworks existants',
+          'Mapping de conformité'
         ]
       },
       implementationRoadmap: {
-        title: 'Feuille de Route de Mise en Œuvre',
+        title: 'Feuille de Route d\'Implémentation',
         items: [
-          'Plan de mise en œuvre phase par phase',
+          'Plan d\'implémentation phase par phase',
           'Exigences de ressources',
-          'Métriques de succès et KPI',
+          'Timeline et jalons',
           'Stratégies de gestion du changement'
         ]
       },
       toolsTemplates: {
-        title: 'Outils et Modèles',
+        title: 'Outils et Templates',
         items: [
-          'Modèles d\'évaluation',
-          'Matrices de notation des risques',
-          'Modèles de présentation exécutive',
-          'Tableaux de bord de suivi des progrès'
+          'Templates d\'évaluation des risques',
+          'Templates de présentation conseil',
+          'Templates de politiques et procédures',
+          'Outils de surveillance et reporting'
         ]
       },
       industryApplications: {
-        title: 'Applications Industrielles',
+        title: 'Applications Industrie',
         items: [
-          'Mise en œuvre en santé',
-          'Adaptation aux services financiers',
+          'Implémentation services financiers',
+          'Directives secteur santé',
           'Considérations manufacturières',
           'Gouvernement et secteur public'
         ]
@@ -852,153 +870,157 @@ export const fr = {
       successStories: {
         title: 'Histoires de Succès',
         items: [
-          'Analyse d\'étude de cas',
+          'Études de cas Fortune 500',
+          'Implémentations marché moyen',
           'Leçons apprises',
-          'Meilleures pratiques',
-          'Pièges communs à éviter'
+          'Meilleures pratiques'
         ]
       }
     },
     implementationPhases: {
-      title: 'Phases de Mise en Œuvre',
+      title: 'Phases d\'Implémentation',
       keyDeliverables: 'Livrables Clés',
       keyActivities: 'Activités Clés',
       phase1: {
-        title: 'Phase 1 : Fondation',
-        duration: '4-6 semaines',
-        description: 'Établir la base et préparer l\'organisation',
+        title: 'Évaluation et Découverte',
+        duration: '2-4 semaines',
+        description: 'Évaluation complète de l\'état actuel',
         deliverables: [
-          'Évaluation de l\'état actuel',
+          'Rapport d\'évaluation état actuel',
+          'Documentation baseline des risques',
           'Analyse des parties prenantes',
-          'Charte de mise en œuvre',
-          'Formation de l\'équipe projet'
+          'Rapport d\'analyse des écarts'
         ],
         keyActivities: [
-          'Alignement du leadership',
-          'Allocation des ressources',
-          'Évaluation des besoins de formation',
-          'Développement du plan de communication'
+          'Découverte et cartographie environnement',
+          'Entretiens parties prenantes',
+          'Évaluation risques actuels',
+          'Établissement métriques baseline'
         ]
       },
       phase2: {
-        title: 'Phase 2 : Évaluation',
-        duration: '6-8 semaines',
-        description: 'Analyse complète STEEL™',
+        title: 'Planification et Design',
+        duration: '3-6 semaines',
+        description: 'Planification stratégique et design framework',
         deliverables: [
-          'Évaluation des risques à six dimensions',
-          'Rapport d\'analyse des écarts',
-          'Registre des risques',
-          'Matrice de priorisation'
+          'Feuille de route implémentation',
+          'Customisation framework',
+          'Plan allocation ressources',
+          'Stratégie communication'
         ],
         keyActivities: [
-          'Collecte et analyse des données',
-          'Entretiens avec les parties prenantes',
-          'Ateliers d\'évaluation des risques',
-          'Sessions de validation'
+          'Design framework personnalisé',
+          'Planification implémentation',
+          'Planification ressources',
+          'Développement timeline'
         ]
       },
       phase3: {
-        title: 'Phase 3 : Stratégie',
-        duration: '4-6 semaines',
-        description: 'Planification stratégique et développement de la feuille de route',
+        title: 'Implémentation Pilote',
+        duration: '4-8 semaines',
+        description: 'Déploiement pilote contrôlé',
         deliverables: [
-          'Feuille de route stratégique',
-          'Recommandations d\'investissement',
-          'Plan de mise en œuvre',
-          'Framework de métriques de succès'
+          'Rapport résultats pilote',
+          'Raffinements processus',
+          'Matériaux formation',
+          'Documentation leçons apprises'
         ],
         keyActivities: [
-          'Ateliers de développement de stratégie',
-          'Création du business case',
-          'Planification des ressources',
-          'Préparation de présentation exécutive'
+          'Exécution programme pilote',
+          'Livraison formation',
+          'Test processus',
+          'Collection feedback'
         ]
       },
       phase4: {
-        title: 'Phase 4 : Mise en Œuvre',
-        duration: '12-16 semaines',
-        description: 'Exécuter les initiatives stratégiques',
+        title: 'Déploiement Complet',
+        duration: '8-12 semaines',
+        description: 'Implémentation à l\'échelle organisation',
         deliverables: [
-          'Contrôles mis en œuvre',
+          'Rapport completion déploiement',
+          'Dashboard surveillance',
           'Politiques et procédures mises à jour',
-          'Programmes de formation',
-          'Systèmes de surveillance'
+          'Certificats completion formation'
         ],
         keyActivities: [
-          'Mise en œuvre des contrôles',
-          'Intégration des processus',
-          'Formation du personnel',
-          'Déploiement des systèmes'
+          'Déploiement pleine échelle',
+          'Formation à l\'échelle organisation',
+          'Implémentation processus',
+          'Assurance qualité'
         ]
       },
       phase5: {
-        title: 'Phase 5 : Optimisation',
-        duration: 'Continue',
-        description: 'Amélioration continue et surveillance',
+        title: 'Surveillance et Optimisation',
+        duration: 'Continu',
+        description: 'Amélioration et optimisation continues',
         deliverables: [
-          'Tableaux de bord de performance',
-          'Rapports d\'évaluation réguliers',
-          'Recommandations d\'optimisation',
-          'Briefings exécutifs'
+          'Rapports performance',
+          'Recommandations optimisation',
+          'Évaluations risques mises à jour',
+          'Plan amélioration continue'
         ],
         keyActivities: [
-          'Surveillance des performances',
+          'Surveillance performance',
           'Évaluations régulières',
-          'Amélioration continue',
-          'Rapports exécutifs'
+          'Optimisation processus',
+          'Amélioration continue'
         ]
       }
     },
-    benefits: {
-      riskReduction: '67%',
-      riskReductionDesc: 'Réduction moyenne des risques',
-      roi: '3.4x',
-      roiDesc: 'Retour sur investissement',
-      faster: '83%',
-      fasterDesc: 'Temps d\'insight plus rapide',
-      confidence: '92%',
-      confidenceDesc: 'Amélioration de la confiance du conseil'
-    },
     successStoriesPreview: {
-      title: 'Aperçu des Histoires de Succès',
+      title: 'Aperçu Histoires de Succès',
       fortune500: {
-        category: 'Services Financiers Fortune 500',
-        title: 'Transformation Numérique Complète',
-        description: 'Banque mondiale implémente la méthodologie STEEL™ pour soutenir une initiative majeure de transformation numérique.',
-        metrics: '67% de réduction des risques, 2,3 M$ d\'économies'
+        category: 'Fortune 500 Services Financiers',
+        title: 'Banque Globale Réduit Risque de 73%',
+        description: 'Comment une banque multinationale a transformé sa posture cybersécurité en utilisant la méthodologie STEEL™.',
+        metrics: '73% réduction risque • 6 mois implémentation • 12M$ économies'
       },
       healthcare: {
-        category: 'Système de Santé',
-        title: 'Excellence en Conformité Réglementaire',
-        description: 'Système multi-hospitalier atteint une conformité HIPAA complète et l\'excellence en cybersécurité.',
-        metrics: '94% de score de conformité, zéro violation'
+        category: 'Système Santé',
+        title: 'Réseau Santé Régional Atteint Conformité',
+        description: 'Transformation complète conformité HIPAA tout en améliorant l\'efficacité opérationnelle.',
+        metrics: '100% conformité • 40% réponse incidents plus rapide • Zéro violation'
       },
       government: {
         category: 'Agence Gouvernementale',
-        title: 'Amélioration de la Sécurité Nationale',
-        description: 'Agence fédérale modernise son programme de cybersécurité en utilisant le framework STEEL™.',
-        metrics: '85% d\'amélioration de la détection des menaces'
+        title: 'Agence Fédérale Modernise Sécurité',
+        description: 'Modernisation système legacy avec implémentation architecture zero-trust.',
+        metrics: '85% amélioration • Conformité FedRAMP • Surveillance 24/7'
       }
     },
     cta: {
-      title: 'Prêt à Commencer ?',
-      description: 'Rejoignez les organisations du monde entier qui ont implémenté avec succès la méthodologie STEEL™ pour renforcer leur posture de cybersécurité.',
-      scheduleConsultation: 'Planifier une Consultation de Mise en Œuvre',
-      viewResources: 'Voir Ressources Supplémentaires'
+      title: 'Prêt à Implémenter STEEL™ ?',
+      description: 'Rejoignez les organisations qui ont transformé avec succès leur posture cybersécurité avec notre méthodologie éprouvée.',
+      scheduleConsultation: 'Planifier Consultation Implémentation',
+      viewResources: 'Voir Ressources Additionnelles'
     }
   },
 
+  // Not Found
+  notFound: {
+    title: 'Page Non Trouvée',
+    message: 'La page que vous cherchez n\'existe pas ou a été déplacée.',
+    returnHome: 'Retour Accueil',
+    goBack: 'Retour',
+    lookingFor: 'Vous cherchez quelque chose de spécifique ?',
+    searchPlaceholder: 'Rechercher notre site...',
+    popularPages: 'Pages populaires',
+    needAssistance: 'Besoin d\'assistance ?',
+    contactUs: 'Nous contacter'
+  },
+
+  // Footer
   footer: {
     services: {
       title: 'Services',
-      advisory: 'Conseil Stratégique',
-      steel: 'Méthodologie STEEL™',
-      dashboard: 'Tableau de Bord des Risques',
+      advisory: 'Services de Conseil',
+      steel: 'Framework STEEL™',
+      dashboard: 'Tableau de Bord Risques',
       resources: 'Ressources'
     },
     company: {
       title: 'Entreprise',
-      about: 'À Propos',
+      about: 'À propos',
       contact: 'Contact'
     },
     legal: {
@@ -1008,18 +1030,19 @@ export const fr = {
     }
   },
 
+  // Privacy Policy
   privacy: {
     title: 'Politique de Confidentialité',
+    subtitle: 'Notre engagement à protéger votre vie privée et vos informations personnelles',
     lastUpdated: 'Dernière mise à jour',
-    subtitle: 'Votre confidentialité nous tient à cœur. Cette politique explique comment nous collectons, utilisons et protégeons vos informations.',
-    backToHome: 'Retour à l\'Accueil',
+    backToHome: 'Retour à l\'accueil',
     commitment: {
       title: 'Notre Engagement de Confidentialité',
-      description: 'ERMITS Advisory s\'engage à protéger votre confidentialité et à assurer la sécurité de vos informations personnelles. Nous maintenons les plus hauts standards de protection des données.',
+      description: 'ERMITS Advisory s\'engage à protéger votre vie privée et à assurer la sécurité de vos informations personnelles. Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons vos données.',
       features: [
-        'Traitement des données conforme GDPR et CCPA',
+        'Gestion des données conforme RGPD et CCPA',
         'Contrôles de sécurité certifiés SOC 2 Type II',
-        'Audits de sécurité réguliers par des tiers',
+        'Audits de sécurité tiers réguliers',
         'Pratiques de traitement des données transparentes'
       ]
     },
@@ -1029,7 +1052,7 @@ export const fr = {
         items: [
           'Informations d\'identification personnelle (nom, adresse email, numéro de téléphone, entreprise)',
           'Informations professionnelles (titre de poste, taille d\'entreprise, industrie)',
-          'Informations techniques (adresse IP, type de navigateur, informations d\'appareil)',
+          'Informations techniques (adresse IP, type de navigateur, informations appareil)',
           'Données d\'utilisation (pages visitées, temps passé, interactions)',
           'Données de cookies et technologies de suivi'
         ]
@@ -1040,28 +1063,28 @@ export const fr = {
           'Fournir et améliorer nos services de conseil',
           'Communiquer avec vous sur nos services et mises à jour',
           'Personnaliser votre expérience sur notre site web',
-          'Mener des recherches et analyses pour améliorer nos offres',
+          'Mener recherche et analyse pour améliorer nos offres',
           'Se conformer aux obligations légales et protéger nos droits'
         ]
       },
       informationSharing: {
         title: 'Partage d\'Informations',
         items: [
-          'Nous ne vendons, n\'échangeons ou ne louons pas vos informations personnelles',
-          'Les informations peuvent être partagées avec des fournisseurs de services de confiance sous stricte confidentialité',
-          'Conformité légale : nous pouvons divulguer des informations lorsque requis par la loi',
-          'Transferts commerciaux : les informations peuvent être transférées dans des scénarios de fusion ou acquisition',
-          'Avec votre consentement explicite pour des fins spécifiques'
+          'Nous ne vendons, échangeons ou louons pas vos informations personnelles',
+          'Les informations peuvent être partagées avec des prestataires de confiance sous stricte confidentialité',
+          'Conformité légale : nous pouvons divulguer des informations quand requis par la loi',
+          'Transferts business : les informations peuvent être transférées dans des scénarios de fusion ou acquisition',
+          'Avec votre consentement explicite pour des objectifs spécifiques'
         ]
       },
       dataSecurity: {
         title: 'Sécurité des Données',
         items: [
-          'Chiffrement standard de l\'industrie pour la transmission et le stockage des données',
-          'Évaluations de sécurité régulières et tests de vulnérabilité',
+          'Chiffrement standard industrie pour transmission et stockage des données',
+          'Évaluations de sécurité et tests de vulnérabilité réguliers',
           'Contrôles d\'accès et mesures d\'authentification',
-          'Formation des employés sur la protection des données et la confidentialité',
-          'Procédures de réponse aux incidents pour les violations potentielles'
+          'Formation employés sur protection des données et vie privée',
+          'Procédures de réponse aux incidents pour violations potentielles'
         ]
       }
     },
@@ -1069,55 +1092,56 @@ export const fr = {
       title: 'Vos Droits',
       access: {
         title: 'Accès et Portabilité',
-        description: 'Demander l\'accès à vos données personnelles et recevoir une copie dans un format portable.'
+        description: 'Vous avez le droit d\'accéder et recevoir une copie de vos données personnelles'
       },
       deletion: {
-        title: 'Suppression',
-        description: 'Demander la suppression de vos informations personnelles, sous réserve d\'exigences légales et commerciales.'
+        title: 'Suppression et Correction',
+        description: 'Vous pouvez demander la suppression ou correction de vos informations personnelles'
       },
       marketing: {
         title: 'Communications Marketing',
-        description: 'Se désabonner des communications marketing à tout moment via les liens de désabonnement ou en nous contactant.'
+        description: 'Vous pouvez vous désinscrire des communications marketing à tout moment'
       },
       cookies: {
         title: 'Gestion des Cookies',
-        description: 'Contrôler les préférences de cookies via les paramètres de votre navigateur ou notre outil de gestion des cookies.'
+        description: 'Vous pouvez contrôler les préférences de cookies via les paramètres de votre navigateur'
       }
     },
     contact: {
-      title: 'Nous Contacter',
+      title: 'Nous Contacter sur la Confidentialité',
       description: 'Si vous avez des questions sur cette politique de confidentialité ou nos pratiques de données, veuillez nous contacter :',
-      email: 'Email : privacy@ermits.com',
-      phone: 'Téléphone : +1 (888) 618-6160',
+      email: 'Responsable Confidentialité',
+      phone: 'Support Téléphonique',
       responseTime: 'Temps de Réponse',
-      responseTimeValue: 'Dans les 30 jours'
+      responseTimeValue: 'Dans les 48 heures'
     }
   },
 
+  // Terms of Service
   terms: {
     title: 'Conditions de Service',
+    subtitle: 'Conditions professionnelles pour les services ERMITS Advisory',
     lastUpdated: 'Dernière mise à jour',
-    subtitle: 'Ces conditions régissent votre utilisation de nos services et établissent le cadre de notre relation professionnelle.',
-    backToHome: 'Retour à l\'Accueil',
+    backToHome: 'Retour à l\'accueil',
     professionalAgreement: {
-      title: 'Accord de Services Professionnels',
-      description: 'Ces conditions établissent le cadre de notre relation de conseil et définissent les responsabilités mutuelles.',
+      title: 'Accord de Service Professionnel',
+      description: 'Ces conditions régissent les services de conseil en cybersécurité professionnels fournis par ERMITS Advisory.',
       included: {
         title: 'Services Inclus',
         items: [
           'Services de conseil stratégique en cybersécurité',
-          'Mise en œuvre de la méthodologie STEEL™',
-          'Briefings et présentations exécutifs',
-          'Évaluation et analyse des risques'
+          'Implémentation méthodologie STEEL™',
+          'Briefings exécutifs et présentations conseil',
+          'Évaluations risques et orientation conformité'
         ]
       },
       obligations: {
-        title: 'Obligations du Client',
+        title: 'Obligations Client',
         items: [
-          'Fournir des informations précises et complètes',
-          'Maintenir la confidentialité des méthodes propriétaires',
-          'Implémenter les recommandations de manière appropriée',
-          'Fournir des commentaires et une communication en temps opportun'
+          'Fournir informations précises et en temps opportun',
+          'Maintenir confidentialité des méthodes propriétaires',
+          'Implémenter recommandations de bonne foi',
+          'Se conformer aux lois et réglementations applicables'
         ]
       }
     },
@@ -1126,224 +1150,213 @@ export const fr = {
         title: 'Acceptation des Conditions',
         items: [
           'En engageant nos services, vous acceptez ces conditions',
-          'Les conditions peuvent être mises à jour avec un préavis raisonnable',
-          'L\'utilisation continue constitue l\'acceptation des changements',
-          'Les accords personnalisés peuvent remplacer ces conditions'
+          'Les conditions sont effectives dès le commencement du service',
+          'L\'utilisation continue constitue une acceptation continue',
+          'Les mises à jour seront communiquées à l\'avance'
         ]
       },
       services: {
-        title: 'Prestation de Services',
+        title: 'Livraison de Service',
         items: [
-          'Services fournis avec soin professionnel et expertise',
-          'Recommandations basées sur les informations fournies',
-          'Aucune garantie de résultats ou d\'issues spécifiques',
-          'Services soumis aux accords de portée et de chronologie'
+          'Services fournis selon l\'énoncé de travail convenu',
+          'Standards professionnels maintenus tout au long de l\'engagement',
+          'Livrables fournis comme spécifié dans l\'accord de service',
+          'Processus d\'assurance qualité et révision appliqués'
         ]
       },
       responsibilities: {
         title: 'Responsabilités Mutuelles',
         items: [
-          'Maintenir des standards professionnels et éthiques',
-          'Protéger les informations confidentielles et propriétaires',
-          'Communiquer rapidement concernant tout problème',
-          'Se conformer aux lois et réglementations applicables'
+          'Le client fournit l\'accès et informations nécessaires',
+          'ERMITS Advisory livre services avec compétence professionnelle',
+          'Les deux parties maintiennent confidentialité des informations sensibles',
+          'Approche collaborative à la résolution de problèmes et implémentation'
         ]
       },
       limitations: {
-        title: 'Limitations et Exclusions',
+        title: 'Limitations et Décharges',
         items: [
-          'Services de conseil fournis pour guidance seulement',
-          'Client responsable des décisions de mise en œuvre',
-          'Aucune garantie de résultats de sécurité spécifiques',
-          'Responsabilité limitée aux frais payés pour les services'
+          'Services de conseil ne garantissent pas des résultats de sécurité spécifiques',
+          'Client responsable de l\'implémentation des recommandations',
+          'Responsabilité limitée à la valeur des services fournis',
+          'Événements de force majeure peuvent affecter la livraison de service'
         ]
       }
     },
     confidentiality: {
       title: 'Confidentialité et Propriété Intellectuelle',
       clientConfidentiality: {
-        title: 'Protection des Informations Client',
-        description: 'Toutes les informations client sont protégées sous des accords de confidentialité stricts et notre programme complet de sécurité de l\'information.'
+        title: 'Confidentialité Client',
+        description: 'Toutes les informations client sont protégées sous des accords de confidentialité stricts et standards professionnels.'
       },
       workProduct: {
         title: 'Produit de Travail',
-        description: 'Les livrables et recommandations deviennent propriété du client à la fin et au paiement, sous réserve de nos droits de propriété intellectuelle retenus.'
+        description: 'Le client reçoit tous les droits sur les livrables personnalisés et recommandations spécifiques à leur organisation.'
       },
       steelMethodology: {
         title: 'Méthodologie STEEL™',
-        description: 'Notre méthodologie propriétaire STEEL™ reste notre propriété intellectuelle, avec des droits d\'usage accordés aux clients pour leurs fins internes.'
+        description: 'Notre framework propriétaire reste la propriété intellectuelle d\'ERMITS Advisory.'
       },
       nonDisclosure: {
         title: 'Non-Divulgation',
-        description: 'Les deux parties acceptent de maintenir la confidentialité des informations sensibles et méthodes propriétaires divulguées pendant l\'engagement.'
+        description: 'Les deux parties acceptent de maintenir la confidentialité des informations sensibles divulguées pendant l\'engagement.'
       }
     },
     payment: {
       title: 'Conditions de Paiement',
       items: [
-        'Frais comme convenu dans l\'énoncé de travail',
-        'Conditions de paiement typiquement net 30 jours',
-        'Le retard de paiement peut entraîner des frais d\'intérêt',
-        'Les frais contestés doivent être soulevés rapidement'
+        'Paiement dû dans les 30 jours de la date de facture',
+        'Paiement en retard peut résulter en suspension de service',
+        'Charges disputées doivent être soulevées dans les 30 jours',
+        'Coûts de voyage et dépenses facturés séparément'
       ]
     },
     termination: {
       title: 'Résiliation',
       items: [
-        'Chaque partie peut résilier avec un avis écrit',
-        'La résiliation n\'affecte pas le travail terminé',
-        'Les factures finales dues dans les délais standard',
-        'Les obligations de confidentialité survivent à la résiliation'
+        'Chaque partie peut résilier avec avis écrit de 30 jours',
+        'Client responsable du paiement des services rendus',
+        'Obligations de confidentialité survivent à la résiliation',
+        'Retour ou destruction des matériaux confidentiels requis'
       ]
     },
     contact: {
-      title: 'Informations de Contact',
-      description: 'Pour des questions sur ces conditions ou nos services, veuillez nous contacter :',
-      email: 'Email : legal@ermits.com',
-      phone: 'Téléphone : +1 (888) 618-6160'
+      title: 'Contact Légal',
+      description: 'Pour questions légales ou préoccupations sur ces conditions :',
+      email: 'legal@ermits.com',
+      phone: '+1 (888) 618-6160'
     },
     governingLaw: {
       title: 'Loi Applicable',
-      description: 'Ces conditions sont régies par les lois du Maryland, États-Unis, sans égard aux principes de conflit de lois.',
-      international: 'Les clients internationaux peuvent être soumis à des conditions supplémentaires basées sur les exigences et réglementations locales.'
+      description: 'Ces conditions sont régies par les lois du Maryland, États-Unis.',
+      international: 'Les clients internationaux peuvent être soumis à des réglementations locales additionnelles et exigences de conformité.'
     }
   },
 
+  // Cookie Policy
   cookies: {
     title: 'Politique des Cookies',
+    subtitle: 'Comment nous utilisons les cookies et technologies similaires sur notre site web',
     lastUpdated: 'Dernière mise à jour',
-    subtitle: 'Cette politique explique comment nous utilisons les cookies et technologies similaires pour améliorer votre expérience de navigation.',
-    backToHome: 'Retour à l\'Accueil',
+    backToHome: 'Retour à l\'accueil',
     overview: {
-      title: 'Comprendre les Cookies',
-      description: 'Les cookies sont de petits fichiers texte qui nous aident à vous fournir une meilleure expérience sur notre site web. Nous utilisons différents types de cookies à diverses fins.',
+      title: 'À propos des Cookies',
+      description: 'Les cookies sont de petits fichiers texte stockés sur votre appareil quand vous visitez notre site web. Ils nous aident à vous fournir une meilleure expérience de navigation et comprendre comment vous utilisez notre site.',
       types: {
         session: {
           title: 'Cookies de Session',
-          description: 'Cookies temporaires qui expirent lorsque vous fermez votre navigateur'
+          description: 'Cookies temporaires qui expirent quand vous fermez votre navigateur'
         },
         persistent: {
           title: 'Cookies Persistants',
-          description: 'Cookies qui restent sur votre appareil pendant une période définie'
+          description: 'Cookies qui restent sur votre appareil pour une période définie'
         },
         thirdParty: {
           title: 'Cookies Tiers',
-          description: 'Cookies définis par des services externes que nous utilisons sur notre site web'
+          description: 'Cookies définis par des services externes que nous utilisons'
         }
       }
     },
     preferences: {
-      title: 'Préférences des Cookies',
-      description: 'Vous pouvez contrôler quels cookies nous utilisons. Les cookies essentiels ne peuvent pas être désactivés car ils sont nécessaires au fonctionnement du site web.',
+      title: 'Préférences de Cookies',
+      description: 'Vous pouvez contrôler quels cookies nous utilisons sur notre site web. Notez que désactiver certains cookies peut affecter la fonctionnalité du site.',
       required: 'Requis'
     },
     cookieTypes: {
       necessary: {
         title: 'Cookies Nécessaires',
-        description: 'Essentiels pour le bon fonctionnement du site web',
+        description: 'Essentiels pour la fonctionnalité et sécurité du site web',
         examples: [
+          'Tokens d\'authentification et sécurité',
           'Gestion de session',
-          'Jetons de sécurité',
           'Équilibrage de charge',
-          'Soumissions de formulaires'
+          'Paramètres de préférences de confidentialité'
         ]
       },
       analytics: {
-        title: 'Cookies Analytiques',
+        title: 'Cookies d\'Analyse',
         description: 'Nous aident à comprendre comment les visiteurs utilisent notre site web',
         examples: [
-          'Google Analytics',
-          'Suivi des pages vues',
-          'Analyse du parcours utilisateur',
-          'Surveillance des performances'
+          'Suivi Google Analytics',
+          'Statistiques de vues de page',
+          'Analyse de parcours utilisateur',
+          'Surveillance de performance'
         ]
       },
       functional: {
         title: 'Cookies Fonctionnels',
-        description: 'Permettent des fonctionnalités améliorées et la personnalisation',
+        description: 'Se souviennent de vos préférences et paramètres',
         examples: [
-          'Préférences de langue',
+          'Préférences linguistiques',
           'Paramètres de thème',
-          'Remplissage automatique de formulaires',
-          'Fonctionnalité de widget de chat'
+          'Données de formulaire',
+          'Paramètres d\'accessibilité'
         ]
       },
       marketing: {
         title: 'Cookies Marketing',
-        description: 'Utilisés pour suivre les visiteurs à travers les sites web à des fins marketing',
+        description: 'Utilisés pour livrer du contenu pertinent et suivre l\'efficacité des campagnes',
         examples: [
-          'LinkedIn Insight Tag',
-          'Suivi des conversions',
-          'Pixels de retargeting',
-          'Attribution de campagne'
+          'Suivi LinkedIn Insights',
+          'Attribution de campagne',
+          'Personnalisation de contenu',
+          'Suivi de conversion'
         ]
       }
     },
     thirdPartyServices: {
       title: 'Services Tiers',
-      description: 'Nous utilisons divers services tiers qui peuvent définir leurs propres cookies :',
+      description: 'Nous utilisons plusieurs services tiers qui peuvent définir leurs propres cookies :',
       googleAnalytics: {
         title: 'Google Analytics',
-        description: 'Service d\'analyse web qui suit et rapporte le trafic du site web',
+        description: 'Fournit analyses de site web et insights comportement utilisateur',
         link: 'Politique de Confidentialité Google'
       },
       microsoftClarity: {
         title: 'Microsoft Clarity',
-        description: 'Analytique de comportement utilisateur et enregistrement de session',
+        description: 'Cartographie thermique et enregistrement de sessions utilisateur',
         link: 'Politique de Confidentialité Microsoft'
       },
       linkedinInsights: {
         title: 'LinkedIn Insights',
-        description: 'Analytique de réseau professionnel et suivi des conversions',
+        description: 'Analyses d\'audience professionnelle et ciblage',
         link: 'Politique de Confidentialité LinkedIn'
       },
       hubspot: {
         title: 'HubSpot',
-        description: 'Gestion de la relation client et automatisation marketing',
+        description: 'Gestion relation client et automatisation marketing',
         link: 'Politique de Confidentialité HubSpot'
       }
     },
     browserControls: {
-      title: 'Contrôles du Navigateur',
+      title: 'Contrôles Navigateur',
       description: 'Vous pouvez contrôler les cookies via les paramètres de votre navigateur :',
+      learnMore: 'En savoir plus',
       chrome: {
-        title: 'Chrome',
-        description: 'Paramètres > Confidentialité et sécurité > Cookies'
+        title: 'Google Chrome',
+        description: 'Paramètres > Confidentialité et Sécurité > Cookies'
       },
       firefox: {
-        title: 'Firefox',
-        description: 'Préférences > Vie privée et sécurité > Cookies'
+        title: 'Mozilla Firefox',
+        description: 'Préférences > Confidentialité et Sécurité'
       },
       safari: {
         title: 'Safari',
-        description: 'Préférences > Confidentialité > Cookies et données de site web'
+        description: 'Préférences > Confidentialité'
       },
       edge: {
-        title: 'Edge',
-        description: 'Paramètres > Confidentialité, recherche et services > Cookies'
-      },
-      learnMore: 'En Savoir Plus'
+        title: 'Microsoft Edge',
+        description: 'Paramètres > Confidentialité, Recherche et Services'
+      }
     },
     actions: {
-      savePreferences: 'Enregistrer les Préférences',
-      acceptAll: 'Accepter Tout',
-      rejectOptional: 'Rejeter Optionnel',
-      cookieSettings: 'Paramètres des Cookies'
+      savePreferences: 'Sauvegarder Préférences',
+      acceptAll: 'Accepter Tous les Cookies',
+      rejectOptional: 'Rejeter Cookies Optionnels',
+      cookieSettings: 'Paramètres Cookies'
     },
     contact: {
-      description: 'Si vous avez des questions sur notre utilisation des cookies, veuillez nous contacter à privacy@ermits.com'
+      description: 'Si vous avez des questions sur notre utilisation des cookies, veuillez nous contacter.'
     }
-  },
-
-  notFound: {
-    title: 'Page Non Trouvée',
-    message: 'La page que vous recherchez n\'existe pas ou a été déplacée.',
-    returnHome: 'Retour à l\'Accueil',
-    goBack: 'Retour',
-    lookingFor: 'Que recherchez-vous ?',
-    searchPlaceholder: 'Rechercher sur notre site...',
-    popularPages: 'Pages populaires',
-    needAssistance: 'Besoin d\'aide ?',
-    contactUs: 'Contactez-nous'
   }
 };

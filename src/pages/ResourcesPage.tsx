@@ -35,22 +35,22 @@ export const ResourcesPage: React.FC = () => {
   return (
     <div className={`${isFullscreen ? 'fixed inset-0 z-50 bg-white dark:bg-dark-bg' : 'pb-16 bg-silver-light dark:bg-dark-bg min-h-screen'}`}>
       <div className={`${isFullscreen ? 'h-full flex flex-col' : 'container mx-auto px-4'}`}>
-        {/* Header - Hide in fullscreen mode */}
+        {/* Header - Hide in fullscreen mode and add top margin for navigation */}
         {!isFullscreen && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-8"
+            className="mb-8 mt-16"
           >
             <Link to="/" className="inline-flex items-center text-navy dark:text-silver hover:underline mb-4">
               <ArrowLeft size={16} className="mr-2" />
-              Back to Home
+              {t('resources.backToHome')}
             </Link>
             <h1 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
               {t('navigation.resources')}
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-100 mb-6">
-              Access our comprehensive library of cybersecurity resources, whitepapers, case studies, and industry insights.
+              {t('resources.description')}
             </p>
             
             {/* Action Buttons */}
@@ -61,7 +61,7 @@ export const ResourcesPage: React.FC = () => {
                 icon={<Maximize size={16} />}
                 onClick={toggleFullscreen}
               >
-                Fullscreen View
+                {t('resources.fullscreenView')}
               </Button>
               <Button
                 variant="outline"
@@ -69,7 +69,7 @@ export const ResourcesPage: React.FC = () => {
                 icon={<ExternalLink size={16} />}
                 onClick={openInNewTab}
               >
-                Open in New Tab
+                {t('resources.openInNewTab')}
               </Button>
             </div>
           </motion.div>
@@ -87,7 +87,7 @@ export const ResourcesPage: React.FC = () => {
                 onClick={openInNewTab}
                 className="text-white hover:bg-white/10"
               >
-                Open in New Tab
+                {t('resources.openInNewTab')}
               </Button>
               <Button
                 variant="ghost"
@@ -96,7 +96,7 @@ export const ResourcesPage: React.FC = () => {
                 onClick={toggleFullscreen}
                 className="text-white hover:bg-white/10"
               >
-                Exit Fullscreen
+                {t('resources.exitFullscreen')}
               </Button>
             </div>
           </div>
@@ -112,9 +112,9 @@ export const ResourcesPage: React.FC = () => {
             <Card variant="glass" padding="lg" className="text-center">
               <div className="flex flex-col items-center">
                 <Loader size={48} className="text-navy dark:text-silver animate-spin mb-4" />
-                <h3 className="text-lg font-semibold mb-2 dark:text-white">Loading Resources</h3>
+                <h3 className="text-lg font-semibold mb-2 dark:text-white">{t('resources.loading.title')}</h3>
                 <p className="text-gray-600 dark:text-gray-200">
-                  Please wait while we load the latest cybersecurity resources...
+                  {t('resources.loading.message')}
                 </p>
               </div>
             </Card>
@@ -131,10 +131,9 @@ export const ResourcesPage: React.FC = () => {
             <Card variant="glass" padding="lg" className="text-center max-w-md">
               <div className="flex flex-col items-center">
                 <AlertCircle size={48} className="text-red-500 mb-4" />
-                <h3 className="text-lg font-semibold mb-2 dark:text-white">Unable to Load Resources</h3>
+                <h3 className="text-lg font-semibold mb-2 dark:text-white">{t('resources.error.title')}</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-4">
-                  We're experiencing technical difficulties loading the resources page. 
-                  Please try accessing it directly or contact us for assistance.
+                  {t('resources.error.message')}
                 </p>
                 <div className="flex gap-2">
                   <Button
@@ -143,7 +142,7 @@ export const ResourcesPage: React.FC = () => {
                     icon={<ExternalLink size={16} />}
                     onClick={openInNewTab}
                   >
-                    Open in New Tab
+                    {t('resources.openInNewTab')}
                   </Button>
                   <Button
                     variant="outline"
@@ -158,7 +157,7 @@ export const ResourcesPage: React.FC = () => {
                       }
                     }}
                   >
-                    Retry
+                    {t('resources.error.retry')}
                   </Button>
                 </div>
               </div>
@@ -199,9 +198,9 @@ export const ResourcesPage: React.FC = () => {
             <Card variant="glass" padding="md">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
                 <div>
-                  <h3 className="font-semibold mb-2 dark:text-white">About Our Resources</h3>
+                  <h3 className="font-semibold mb-2 dark: text-white">{t('resources.about.title')}</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-200">
-                    Access whitepapers, case studies, webinars, and industry insights to strengthen your cybersecurity posture.
+                    {t('resources.about.description')}
                   </p>
                 </div>
                 <div className="flex gap-2 mt-4 md:mt-0">
@@ -211,14 +210,14 @@ export const ResourcesPage: React.FC = () => {
                     icon={<ExternalLink size={16} />}
                     onClick={openInNewTab}
                   >
-                    Open in New Tab
+                    {t('resources.openInNewTab')}
                   </Button>
                   <Button
                     variant="primary"
                     size="sm"
                     onClick={() => window.location.href = '/contact'}
                   >
-                    Contact Us
+                    {t('resources.contactButton')}
                   </Button>
                 </div>
               </div>
