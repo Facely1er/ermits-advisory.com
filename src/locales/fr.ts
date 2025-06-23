@@ -5,7 +5,7 @@ export const fr = {
     learnMore: "En savoir plus",
     viewDashboard: "Voir le tableau de bord",
     tagline: "Intelligence Globale. Stratégie Résiliente. Optimisé pour le Succès.",
-    copyright: "© 2024 ERMITS Advisory + STEEL™. Tous droits réservés."
+    copyright: "© 2024 ERMITS. Tous droits réservés."
   },
 
   // Navigation
