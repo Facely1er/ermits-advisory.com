@@ -55,13 +55,13 @@ export const Navigation: React.FC = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-black/95 backdrop-blur-md border-b border-gray-200/50 dark:border-gray-800/50 shadow-sm h-20">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-black/95 backdrop-blur-md border-b border-gray-200/50 dark:border-gray-800/50 shadow-sm h-16">
       <div className="container mx-auto px-4 h-full">
         <div className="flex items-center justify-between h-full">
           {/* Logo - Made more compact */}
           <Link to="/" className="flex items-center flex-shrink-0">
-            <img src={logoImg} alt="ERMITS Advisory" className="h-12" />
-            <span className="ml-2 font-outfit font-semibold text-navy dark:text-white text-lg">
+            <img src={logoImg} alt="ERMITS Advisory" className="h-10" />
+            <span className="ml-2 font-outfit font-semibold text-navy dark:text-white text-base">
               ERMITS Advisory
             </span>
           </Link>
