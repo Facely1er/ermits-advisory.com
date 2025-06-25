@@ -19,7 +19,7 @@ export const Card: React.FC<CardProps> = ({
   ...props
 }) => {
   const variants = {
-    default: 'bg-white dark:bg-dark-surface shadow-md',
+    default: 'bg-white dark:bg-dark-card-bg shadow-md',
     glass: 'glass-card',
     solid: 'bg-navy text-white',
     outline: 'bg-transparent border border-navy/20 dark:border-silver/30',

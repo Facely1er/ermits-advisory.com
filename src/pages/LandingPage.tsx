@@ -200,7 +200,7 @@ export const LandingPage: React.FC = () => {
                 <InteractiveCard 
                   hover3D={true}
                   glowEffect={true}
-                  className="bg-white dark:bg-dark-surface p-6 text-center h-full"
+                  className="bg-white dark:bg-dark-card-bg p-6 text-center h-full"
                 >
                   <div className="p-4 rounded-full bg-gray-50 dark:bg-gray-800 inline-flex mb-4">
                     {feature.icon}
@@ -255,7 +255,7 @@ export const LandingPage: React.FC = () => {
               >
                 <InteractiveCard 
                   hover3D={true}
-                  className="relative overflow-hidden steel-card bg-white dark:bg-dark-surface"
+                  className="relative overflow-hidden steel-card bg-white dark:bg-dark-card-bg"
                 >
                   <div className="p-6">
                     <div 
@@ -342,7 +342,7 @@ export const LandingPage: React.FC = () => {
               <InteractiveCard 
                 hover3D={true}
                 glowEffect={true}
-                className="h-full bg-white dark:bg-dark-surface p-6"
+                className="h-full bg-white dark:bg-dark-card-bg p-6"
               >
                 <h3 className="text-xl font-bold mb-3 dark:text-white card-title">
                   {t('landing.services.boardBriefings.title')}
@@ -365,7 +365,7 @@ export const LandingPage: React.FC = () => {
               <InteractiveCard 
                 hover3D={true}
                 glowEffect={true}
-                className="h-full bg-white dark:bg-dark-surface p-6"
+                className="h-full bg-white dark:bg-dark-card-bg p-6"
               >
                 <h3 className="text-xl font-bold mb-3 dark:text-white card-title">
                   {t('landing.services.mAndA.title')}
@@ -388,7 +388,7 @@ export const LandingPage: React.FC = () => {
               <InteractiveCard 
                 hover3D={true}
                 glowEffect={true}
-                className="h-full bg-white dark:bg-dark-surface p-6"
+                className="h-full bg-white dark:bg-dark-card-bg p-6"
               >
                 <h3 className="text-xl font-bold mb-3 dark:text-white card-title">
                   {t('landing.services.crisis.title')}
@@ -411,7 +411,7 @@ export const LandingPage: React.FC = () => {
               <InteractiveCard 
                 hover3D={true}
                 glowEffect={true}
-                className="h-full bg-white dark:bg-dark-surface p-6"
+                className="h-full bg-white dark:bg-dark-card-bg p-6"
               >
                 <h3 className="text-xl font-bold mb-3 dark:text-white card-title">
                   {t('landing.services.vCISO.title')}

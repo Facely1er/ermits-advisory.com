@@ -22,6 +22,7 @@ export default {
         dark: {
           bg: '#0a0a0a',
           surface: '#1f1f1f',
+          'card-bg': '#151515',
           text: '#ffffff'
         }
       },

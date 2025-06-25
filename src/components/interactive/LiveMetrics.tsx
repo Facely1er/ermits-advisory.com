@@ -110,7 +110,7 @@ export const LiveMetrics: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: index * 0.1 }}
-          className="bg-white dark:bg-dark-surface rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow"
+          className="bg-white dark:bg-dark-card-bg rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow"
         >
           <div className="flex items-center justify-between mb-2">
             <h3 className="text-sm font-medium text-gray-600 dark:text-gray-300">

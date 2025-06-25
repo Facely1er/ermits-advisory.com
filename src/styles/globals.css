@@ -131,7 +131,7 @@
   }
 
   .dark .steel-card {
-    @apply bg-dark-surface/90;
+    @apply bg-dark-card-bg;
   }
 
   .dark .steel-dimension-title {
