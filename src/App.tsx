@@ -21,6 +21,8 @@ import { NotFoundPage } from './pages/NotFoundPage';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { TermsOfServicePage } from './pages/TermsOfServicePage';
 import { CookiePolicyPage } from './pages/CookiePolicyPage';
+import { Analytics } from '@vercel/analytics/react';
+
 
 function App() {
   return (
@@ -53,6 +55,7 @@ function App() {
             
             <Footer />
             <FloatingActionButton />
+            <Analytics />
           </div>
         </Router>
       </LanguageProvider>
