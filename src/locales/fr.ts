@@ -313,7 +313,7 @@ export const fr = {
     contact: {
       title: "Prêt à Commencer ?",
       email: "advisory@ermits.com",
-      phone: "+1 (888) 618-6160",
+      phone: "+1 (240) 599-0102",
       headquarters: "Gaithersburg, MD, États-Unis",
       requestConsultation: "Demander une Consultation"
     }
