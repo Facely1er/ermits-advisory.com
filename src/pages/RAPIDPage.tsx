@@ -194,7 +194,7 @@ export const RAPIDPage: React.FC = () => {
     <div className="bg-gray-50 dark:bg-dark-bg min-h-screen">
       <div className="w-full">
         {/* Hero Section with Golden Theme */}
-        <section className="relative bg-gradient-to-r from-golden-dark to-golden text-white py-20 md:py-32 overflow-hidden">
+        <section className="relative bg-gradient-to-r from-golden-dark to-golden text-white py-12 md:py-20 overflow-hidden">
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="container mx-auto px-4 relative z-10">
             <motion.div 
