@@ -359,7 +359,7 @@ export const ContactPage: React.FC = () => {
                     <h3 className="text-lg font-semibold dark:text-white">{t('contact.info.phoneTitle')}</h3>
                     <p className="text-gray-600 dark:text-gray-300">{t('contact.info.phoneDescription')}</p>
                     <a href="tel:+15551234567" className="text-navy dark:text-silver font-medium hover:underline">
-                      +1 (888) 618-6160
+                      +1 (240) 599-0102
                     </a>
                   </div>
                 </div>
