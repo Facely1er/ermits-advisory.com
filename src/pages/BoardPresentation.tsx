@@ -191,7 +191,7 @@ export const BoardPresentation: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-8"
+            className="pt-16 mb-8"
           >
             <h1 className="text-3xl font-bold mb-2 dark:text-white">{t('presentation.title')}</h1>
             <p className="text-gray-600 dark:text-gray-200">{t('presentation.subtitle')}</p>
