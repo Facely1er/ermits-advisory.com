@@ -122,7 +122,7 @@ export const ServiceOffering: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           className="mb-16 text-center"
         >
-          <h1 className="text-3xl md:text-5xl font-bold mb-8 dark:text-white">{t('services.title')}</h1>
+          <h1 className="text-3xl md:text-5xl font-bold mt-8 mb-8 dark:text-white">{t('services.title')}</h1>
           <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
             {t('services.subtitle')}
           </p>
