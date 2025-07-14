@@ -226,7 +226,7 @@ export const PrivacyPolicyPage: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold dark:text-white">{t('privacy.contact.phone')}</h4>
-                  <p className="text-gray-600 dark:text-gray-200">+1 (888) 618-6160</p>
+                  <p className="text-gray-600 dark:text-gray-200">+1 (240) 599-0102</p>
                 </div>
               </div>
               
