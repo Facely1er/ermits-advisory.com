@@ -1,0 +1,2 @@
+# Fallback for SPA routing - all routes should serve index.html
+/*    /index.html   200
