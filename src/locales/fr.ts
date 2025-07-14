@@ -1201,7 +1201,7 @@ export const fr = {
       title: "Contact Légal",
       description: "Pour les demandes légales concernant ces conditions :",
       email: "legal@ermits.com",
-      phone: "+1 (888) 618-6160"
+      phone: "++1 (240) 599-0102"
     },
     governingLaw: {
       title: "Loi Applicable",
