@@ -144,13 +144,13 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
   return (
     <div className="relative">
       {/* Interactive Visualization */}
-      <div 
+      <div
         ref={containerRef}
         className="relative w-full max-w-2xl mx-auto"
         style={{ height: `${Math.max(responsiveRadius * 2.5, 400)}px` }}
       >
         {/* Center STEEL Logo */}
-        <motion.div 
+        <motion.div
           className="absolute hexagon bg-navy text-white flex items-center justify-center z-10 cursor-pointer"
           style={{
             left: `calc(50% - ${centerHexagonSize / 2}px)`,
@@ -159,32 +159,32 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
             height: `${centerHexagonSize * 0.875}px`, // Hexagon height ratio
           }}
           whileHover={{ scale: 1.1 }}
-          animate={{ 
-            boxShadow: selectedDimension 
-              ? '0 0 30px rgba(0, 75, 135, 0.5)' 
-              : '0 0 15px rgba(0, 75, 135, 0.3)' 
+          animate={{
+            boxShadow: selectedDimension
+              ? '0 0 30px rgba(0, 75, 135, 0.5)'
+              : '0 0 15px rgba(0, 75, 135, 0.3)'
           }}
         >
-          <span 
+          <span
             className="font-bold"
             style={{ fontSize: `${Math.max(centerHexagonSize * 0.15, 12)}px` }}
           >
             STEEL™
           </span>
         </motion.div>
-        
+
         {/* Dimension Hexagons */}
         {dimensions.map((dimension, index) => {
           const angle = (index * 60) * (Math.PI / 180);
           const x = responsiveRadius * Math.cos(angle);
           const y = responsiveRadius * Math.sin(angle);
-          
+
           return (
             <motion.button
               key={dimension.id}
               className="absolute hexagon flex flex-col items-center justify-center text-white font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy"
-              style={{ 
-                left: `calc(50% + ${x}px - ${dimensionHexagonSize / 2}px)`, 
+              style={{
+                left: `calc(50% + ${x}px - ${dimensionHexagonSize / 2}px)`,
                 top: `calc(50% + ${y}px - ${dimensionHexagonSize * 0.875 / 2}px)`,
                 width: `${dimensionHexagonSize}px`,
                 height: `${dimensionHexagonSize * 0.875}px`,
@@ -197,7 +197,7 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
               whileHover={{ scale: 1.15 }}
               whileTap={{ scale: 0.95 }}
               animate={{
-                boxShadow: hoveredDimension === dimension.id 
+                boxShadow: hoveredDimension === dimension.id
                   ? `0 0 25px ${dimension.color}80`
                   : selectedDimension?.id === dimension.id
                     ? `0 0 20px ${dimension.color}60`
@@ -212,11 +212,11 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
                   {dimension.title}
                 </span>
                 {/* Value indicator */}
-                <div 
+                <div
                   className="bg-white/30 rounded-full mt-1"
-                  style={{ 
-                    width: `${Math.max(dimensionHexagonSize * 0.4, 24)}px`, 
-                    height: `${Math.max(dimensionHexagonSize * 0.08, 3)}px` 
+                  style={{
+                    width: `${Math.max(dimensionHexagonSize * 0.4, 24)}px`,
+                    height: `${Math.max(dimensionHexagonSize * 0.08, 3)}px`
                   }}
                 >
                   <motion.div
@@ -237,7 +237,7 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
             const nextDimension = dimensions[(index + 1) % dimensions.length];
             const angle1 = (index * 60) * (Math.PI / 180);
             const angle2 = ((index + 1) * 60) * (Math.PI / 180);
-            
+
             return (
               <motion.line
                 key={`connection-${index}`}
@@ -275,16 +275,16 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
           >
             <InteractiveCard className="bg-white dark:bg-dark-surface shadow-xl">
               <div className="p-6 relative">
-                <button 
+                <button
                   onClick={handleClose}
                   className="absolute top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
                   aria-label="Close details"
                 >
                   <X size={16} className="dark:text-white" />
                 </button>
-                
+
                 <div className="flex items-start">
-                  <div 
+                  <div
                     className="p-4 rounded-full mr-6 text-white"
                     style={{ backgroundColor: selectedDimension.color }}
                   >
@@ -297,7 +297,7 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
                     <p className="text-lg text-gray-600 dark:text-gray-200 mb-4">
                       {selectedDimension.description}
                     </p>
-                    
+
                     <div className="mb-6">
                       <div className="flex items-center justify-between mb-2">
                         <span className="text-sm font-medium dark:text-gray-200">Risk Score</span>
@@ -306,8 +306,8 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
                         </span>
                       </div>
                       <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
-                        <motion.div 
-                          className="h-3 rounded-full" 
+                        <motion.div
+                          className="h-3 rounded-full"
                           style={{ backgroundColor: selectedDimension.color }}
                           initial={{ width: 0 }}
                           animate={{ width: `${selectedDimension.value}%` }}
@@ -315,7 +315,7 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
                         />
                       </div>
                     </div>
-                    
+
                     <h4 className="text-lg font-semibold mb-3 dark:text-white">Key Considerations:</h4>
                     <ul className="space-y-2">
                       {selectedDimension.details.map((detail, index) => (
@@ -326,7 +326,7 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
                           transition={{ delay: 0.3 + (index * 0.1) }}
                           className="flex items-start"
                         >
-                          <div 
+                          <div
                             className="w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0"
                             style={{ backgroundColor: selectedDimension.color }}
                           />

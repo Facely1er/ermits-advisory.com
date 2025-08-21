@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
-import { 
-  Cookie, Settings, Eye, BarChart3, Shield, 
+import {
+  Cookie, Settings, Eye, BarChart3, Shield,
   ArrowLeft, ExternalLink, CheckCircle, X
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -65,7 +65,7 @@ export const CookiePolicyPage: React.FC = () => {
   const saveCookiePreferences = () => {
     // In a real implementation, this would save to localStorage and update cookie consent
     localStorage.setItem('cookiePreferences', JSON.stringify(cookiePreferences));
-    
+
     // Show confirmation
     alert('Cookie preferences saved successfully!');
   };
@@ -139,7 +139,7 @@ export const CookiePolicyPage: React.FC = () => {
             <p className="text-gray-600 dark:text-gray-200 mb-6">
               {t('cookies.preferences.description')}
             </p>
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
               {cookieTypes.map((type) => (
                 <div key={type.id} className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
@@ -172,7 +172,7 @@ export const CookiePolicyPage: React.FC = () => {
                       )}
                     </div>
                   </div>
-                  
+
                   <div>
                     <h5 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Examples:</h5>
                     <ul className="space-y-1">
@@ -187,18 +187,18 @@ export const CookiePolicyPage: React.FC = () => {
                 </div>
               ))}
             </div>
-            
+
             <div className="flex flex-wrap gap-4">
-              <Button 
-                variant="primary" 
+              <Button
+                variant="primary"
                 onClick={saveCookiePreferences}
                 icon={<CheckCircle size={16} />}
                 iconPosition="left"
               >
                 {t('cookies.actions.savePreferences')}
               </Button>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 onClick={() => setCookiePreferences({
                   necessary: true,
                   analytics: false,
@@ -210,8 +210,8 @@ export const CookiePolicyPage: React.FC = () => {
               >
                 {t('cookies.actions.rejectOptional')}
               </Button>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 onClick={() => setCookiePreferences({
                   necessary: true,
                   analytics: true,
@@ -239,7 +239,7 @@ export const CookiePolicyPage: React.FC = () => {
             <p className="text-gray-600 dark:text-gray-200 mb-6">
               {t('cookies.thirdPartyServices.description')}
             </p>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-4">
                 <div className="border-l-4 border-blue-500 pl-4">
@@ -251,7 +251,7 @@ export const CookiePolicyPage: React.FC = () => {
                     {t('cookies.thirdPartyServices.googleAnalytics.link')}
                   </a>
                 </div>
-                
+
                 <div className="border-l-4 border-purple-500 pl-4">
                   <h4 className="font-semibold dark:text-white">{t('cookies.thirdPartyServices.microsoftClarity.title')}</h4>
                   <p className="text-sm text-gray-600 dark:text-gray-200">
@@ -262,7 +262,7 @@ export const CookiePolicyPage: React.FC = () => {
                   </a>
                 </div>
               </div>
-              
+
               <div className="space-y-4">
                 <div className="border-l-4 border-orange-500 pl-4">
                   <h4 className="font-semibold dark:text-white">{t('cookies.thirdPartyServices.linkedinInsights.title')}</h4>
@@ -273,7 +273,7 @@ export const CookiePolicyPage: React.FC = () => {
                     {t('cookies.thirdPartyServices.linkedinInsights.link')}
                   </a>
                 </div>
-                
+
                 <div className="border-l-4 border-green-500 pl-4">
                   <h4 className="font-semibold dark:text-white">{t('cookies.thirdPartyServices.hubspot.title')}</h4>
                   <p className="text-sm text-gray-600 dark:text-gray-200">
@@ -300,7 +300,7 @@ export const CookiePolicyPage: React.FC = () => {
             <p className="text-gray-600 dark:text-gray-200 mb-6">
               {t('cookies.browserControls.description')}
             </p>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               <div className="text-center p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
                 <h4 className="font-semibold mb-2 dark:text-white">{t('cookies.browserControls.chrome.title')}</h4>
@@ -311,7 +311,7 @@ export const CookiePolicyPage: React.FC = () => {
                   {t('cookies.browserControls.learnMore')}
                 </Button>
               </div>
-              
+
               <div className="text-center p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
                 <h4 className="font-semibold mb-2 dark:text-white">{t('cookies.browserControls.firefox.title')}</h4>
                 <p className="text-sm text-gray-600 dark:text-gray-200 mb-3">
@@ -321,7 +321,7 @@ export const CookiePolicyPage: React.FC = () => {
                   {t('cookies.browserControls.learnMore')}
                 </Button>
               </div>
-              
+
               <div className="text-center p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
                 <h4 className="font-semibold mb-2 dark:text-white">{t('cookies.browserControls.safari.title')}</h4>
                 <p className="text-sm text-gray-600 dark:text-gray-200 mb-3">
@@ -331,7 +331,7 @@ export const CookiePolicyPage: React.FC = () => {
                   {t('cookies.browserControls.learnMore')}
                 </Button>
               </div>
-              
+
               <div className="text-center p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
                 <h4 className="font-semibold mb-2 dark:text-white">{t('cookies.browserControls.edge.title')}</h4>
                 <p className="text-sm text-gray-600 dark:text-gray-200 mb-3">
@@ -367,8 +367,8 @@ export const CookiePolicyPage: React.FC = () => {
                   {t('footer.legal.terms')}
                 </Button>
               </Link>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="sm"
                 icon={<ExternalLink size={16} />}
                 iconPosition="right"

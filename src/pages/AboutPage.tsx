@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
-import { 
+import {
   Award, Users, Target, Clock, ChevronRight, Globe,
   Calendar, BookOpen, Briefcase, ArrowRight, Shield,
   GraduationCap, Scale, UserCheck, Brain, CheckCircle,
@@ -15,7 +15,7 @@ import teamImage from '../assets/image.png';
 export const AboutPage: React.FC = () => {
   const { t } = useLanguage();
   const navigate = useNavigate();
-  
+
   // Animation variants
   const container = {
     hidden: { opacity: 0 },
@@ -26,7 +26,7 @@ export const AboutPage: React.FC = () => {
       }
     }
   };
-  
+
   const item = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0 }
@@ -139,16 +139,16 @@ export const AboutPage: React.FC = () => {
             {t('about.hero.subtitle')}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button 
-              variant="primary" 
+            <Button
+              variant="primary"
               size="lg"
               icon={<Calendar size={18} />}
               onClick={() => navigate('/contact')}
             >
               {t('about.hero.cta.schedule')}
             </Button>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               size="lg"
               icon={<ArrowRight size={18} />}
               iconPosition="right"
@@ -172,7 +172,7 @@ export const AboutPage: React.FC = () => {
               {t('about.leadership.subtitle')}
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
             {leadershipCredentials.map((category, index) => (
               <motion.div key={index} variants={item}>
@@ -199,8 +199,8 @@ export const AboutPage: React.FC = () => {
           {/* Professional Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {professionalStats.map((stat, index) => (
-              <motion.div 
-                key={index} 
+              <motion.div
+                key={index}
                 variants={item}
                 className="text-center"
               >
@@ -237,7 +237,7 @@ export const AboutPage: React.FC = () => {
                 <p className="text-gray-600 dark:text-gray-200 mb-6">
                   {t('about.story.paragraph3')}
                 </p>
-                
+
                 {/* Enhanced metrics */}
                 <div className="bg-navy/5 dark:bg-silver/5 rounded-lg p-4">
                   <h4 className="font-semibold text-navy dark:text-white mb-3">{t('about.story.value.title')}</h4>
@@ -259,9 +259,9 @@ export const AboutPage: React.FC = () => {
               </div>
               <div className="md:w-1/2">
                 <div className="rounded-lg overflow-hidden h-80 relative">
-                  <img 
-                    src={teamImage} 
-                    alt="ERMITS Advisory leadership team" 
+                  <img
+                    src={teamImage}
+                    alt="ERMITS Advisory leadership team"
                     className="object-cover w-full h-full"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent flex items-end">
@@ -314,7 +314,7 @@ export const AboutPage: React.FC = () => {
                 {t('about.steel.subtitle')}
               </p>
             </div>
-            
+
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
               {steelDimensions.map((dimension, index) => (
                 <div key={index} className="flex flex-col items-center">
@@ -342,7 +342,7 @@ export const AboutPage: React.FC = () => {
                 <p className="text-gray-600 dark:text-gray-200 mb-6">
                   {t('about.global.description')}
                 </p>
-                
+
                 <div className="space-y-4 mb-6">
                   <div className="flex items-start">
                     <div className="p-2 rounded-full bg-navy/10 dark:bg-silver/10 mr-3 mt-1">
@@ -353,7 +353,7 @@ export const AboutPage: React.FC = () => {
                       <p className="text-sm text-gray-600 dark:text-gray-300">{t('about.global.features.intelligence.description')}</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start">
                     <div className="p-2 rounded-full bg-navy/10 dark:bg-silver/10 mr-3 mt-1">
                       <Scale size={16} className="text-navy dark:text-silver" />
@@ -363,7 +363,7 @@ export const AboutPage: React.FC = () => {
                       <p className="text-sm text-gray-600 dark:text-gray-300">{t('about.global.features.legal.description')}</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start">
                     <div className="p-2 rounded-full bg-navy/10 dark:bg-silver/10 mr-3 mt-1">
                       <Target size={16} className="text-navy dark:text-silver" />
@@ -374,7 +374,7 @@ export const AboutPage: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 <Button
                   variant="outline"
                   icon={<ArrowRight size={16} />}
@@ -386,9 +386,9 @@ export const AboutPage: React.FC = () => {
               </div>
               <div className="md:w-1/2">
                 <div className="rounded-lg overflow-hidden h-80 relative">
-                  <img 
+                  <img
                     src="https://images.pexels.com/photos/335393/pexels-photo-335393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                    alt="Executive cybersecurity advisory" 
+                    alt="Executive cybersecurity advisory"
                     className="object-cover w-full h-full"
                   />
                   <div className="absolute inset-0 bg-navy/40 flex items-center justify-center">
@@ -417,16 +417,16 @@ export const AboutPage: React.FC = () => {
                 {t('about.cta.description')}
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button 
-                  variant="secondary" 
+                <Button
+                  variant="secondary"
                   size="lg"
                   icon={<Calendar size={18} />}
                   onClick={() => navigate('/contact')}
                 >
                   {t('about.cta.schedule')}
                 </Button>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="lg"
                   className="border-white text-white hover:bg-white/10"
                   icon={<Shield size={18} />}

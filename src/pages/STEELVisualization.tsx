@@ -6,8 +6,8 @@ import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { InteractiveCard } from '../components/shared/InteractiveCard';
 import { InteractiveSTEELViz } from '../components/interactive/InteractiveSTEELViz';
-import { 
-  Shield, TrendingUp, Users, Server, Leaf, Scale, 
+import {
+  Shield, TrendingUp, Users, Server, Leaf, Scale,
   Info, X, ArrowRight, ExternalLink, Download,
   Lightbulb, BarChart2, FileText, Search, Activity, Presentation
 } from 'lucide-react';
@@ -17,7 +17,7 @@ export const STEELVisualization: React.FC = () => {
   const { t } = useLanguage();
   const navigate = useNavigate();
   const [selectedDimension, setSelectedDimension] = useState<string | null>(null);
-  
+
   const handleDimensionClick = (id: string) => {
     setSelectedDimension(id === selectedDimension ? null : id);
   };
@@ -129,10 +129,10 @@ export const STEELVisualization: React.FC = () => {
               <p className="text-lg mb-8 text-silver">
                 {t('steelPage.hero.subtitle2')}
               </p>
-              
+
               <div className="flex flex-wrap justify-center gap-4">
-                <Button 
-                  variant="secondary" 
+                <Button
+                  variant="secondary"
                   size="lg"
                   icon={<ArrowRight size={18} />}
                   iconPosition="right"
@@ -141,16 +141,16 @@ export const STEELVisualization: React.FC = () => {
                 >
                   {t('steelPage.hero.scheduleConsultation')}
                 </Button>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="lg"
                   className="border-white text-white hover:bg-white/10 transform hover:scale-105 transition-transform"
                   onClick={() => navigate('/contact')}
                 >
                   {t('steelPage.hero.requestDemo')}
                 </Button>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="lg"
                   className="border-white text-white hover:bg-white/10 transform hover:scale-105 transition-transform"
                   icon={<Download size={18} />}
@@ -177,7 +177,7 @@ export const STEELVisualization: React.FC = () => {
               {t('steelPage.whatMakesDifferent.subtitle')}
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {whatMakesDifferentItems.map((item, index) => (
               <motion.div
@@ -186,7 +186,7 @@ export const STEELVisualization: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 + (index * 0.1) }}
               >
-                <InteractiveCard 
+                <InteractiveCard
                   hover3D={true}
                   glowEffect={true}
                   className="h-full bg-white dark:bg-dark-surface p-6"
@@ -223,7 +223,7 @@ export const STEELVisualization: React.FC = () => {
               {t('steelPage.advisoryProcess.subtitle')}
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {advisoryProcessItems.map((item, index) => (
               <motion.div
@@ -232,7 +232,7 @@ export const STEELVisualization: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 + (index * 0.1) }}
               >
-                <InteractiveCard 
+                <InteractiveCard
                   hover3D={true}
                   className="h-full text-center bg-white dark:bg-dark-surface p-6"
                 >
@@ -249,12 +249,12 @@ export const STEELVisualization: React.FC = () => {
 
         {/* Enhanced STEEL Methodology Section */}
         <div className="mb-16">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
           >
-            <InteractiveCard 
+            <InteractiveCard
               glowEffect={true}
               className="bg-white dark:bg-dark-surface p-8"
             >
@@ -264,7 +264,7 @@ export const STEELVisualization: React.FC = () => {
                   {t('steel.overview')}
                 </p>
               </div>
-              
+
               {/* Interactive STEEL Visualization */}
               <InteractiveSTEELViz />
             </InteractiveCard>
@@ -278,7 +278,7 @@ export const STEELVisualization: React.FC = () => {
           transition={{ delay: 0.7 }}
           className="mb-16"
         >
-          <InteractiveCard 
+          <InteractiveCard
             glowEffect={true}
             className="bg-white dark:bg-dark-surface p-8"
           >
@@ -286,12 +286,12 @@ export const STEELVisualization: React.FC = () => {
             <p className="text-gray-600 dark:text-gray-100 mb-8">
               {t('steel.integration.description')}
             </p>
-            
+
             <div className="flex flex-wrap justify-center">
               <div className="w-full md:w-10/12 relative">
                 {/* Connection line */}
                 <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-navy via-silver to-navy transform -translate-y-1/2 z-0"></div>
-                
+
                 {/* Steps */}
                 <div className="flex justify-between relative z-10">
                   {integrationSteps.map((step, index) => (
@@ -304,11 +304,11 @@ export const STEELVisualization: React.FC = () => {
                       whileHover={{ scale: 1.1 }}
                       className="flex flex-col items-center cursor-pointer"
                     >
-                      <motion.div 
+                      <motion.div
                         className="w-12 h-12 rounded-full bg-navy text-white flex items-center justify-center mb-2 shadow-lg"
-                        whileHover={{ 
+                        whileHover={{
                           boxShadow: '0 10px 25px rgba(0, 75, 135, 0.4)',
-                          y: -2 
+                          y: -2
                         }}
                       >
                         <span className="font-bold">{index + 1}</span>
@@ -321,14 +321,14 @@ export const STEELVisualization: React.FC = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="flex justify-center mt-12">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button 
-                  variant="primary" 
+                <Button
+                  variant="primary"
                   size="lg"
                   icon={<Download size={20} />}
                   iconPosition="left"
@@ -348,7 +348,7 @@ export const STEELVisualization: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
         >
-          <InteractiveCard 
+          <InteractiveCard
             glowEffect={true}
             className="bg-navy text-white p-8"
           >
@@ -362,8 +362,8 @@ export const STEELVisualization: React.FC = () => {
                   {t('steel.cta.description')}
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <Button 
-                    variant="secondary" 
+                  <Button
+                    variant="secondary"
                     icon={<ExternalLink size={16} />}
                     iconPosition="right"
                     onClick={() => navigate('/contact')}
@@ -371,8 +371,8 @@ export const STEELVisualization: React.FC = () => {
                   >
                     {t('steel.cta.scheduleConsultation')}
                   </Button>
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     className="border-white text-white hover:bg-white/10 transform hover:scale-105 transition-transform"
                     onClick={() => navigate('/resources')}
                   >

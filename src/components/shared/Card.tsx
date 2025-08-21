@@ -24,7 +24,7 @@ export const Card: React.FC<CardProps> = ({
     solid: 'bg-navy text-white',
     outline: 'bg-transparent border border-navy/20 dark:border-silver/30',
   };
-  
+
   const paddings = {
     none: '',
     sm: 'p-3',
@@ -42,7 +42,7 @@ export const Card: React.FC<CardProps> = ({
   );
 
   return (
-    <motion.div 
+    <motion.div
       className={cardClasses}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

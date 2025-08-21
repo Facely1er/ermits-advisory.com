@@ -19,24 +19,24 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   const [language, setLanguage] = useState<Language>(() => {
     // Check if a language preference is stored in localStorage
     const savedLanguage = localStorage.getItem('language') as Language | null;
-    
+
     if (savedLanguage && ['en', 'fr'].includes(savedLanguage)) {
       return savedLanguage;
     }
-    
+
     // Check browser language
     const browserLanguage = navigator.language.split('-')[0];
     if (browserLanguage && ['en', 'fr'].includes(browserLanguage)) {
       return browserLanguage as Language;
     }
-    
+
     return 'en';
   });
 
   useEffect(() => {
     // Save language preference to localStorage
     localStorage.setItem('language', language);
-    
+
     // Update html lang attribute
     document.documentElement.lang = language;
   }, [language]);
@@ -45,7 +45,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   const t = (key: string): string => {
     const keys = key.split('.');
     let value = translations[language];
-    
+
     for (const k of keys) {
       if (value && value[k]) {
         value = value[k];
@@ -62,7 +62,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
         return typeof fallback === 'string' ? fallback : key;
       }
     }
-    
+
     return typeof value === 'string' ? value : key;
   };
 
@@ -70,7 +70,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   const getNestedTranslation = (path: string): any => {
     const keys = path.split('.');
     let value = translations[language];
-    
+
     for (const k of keys) {
       if (value && value[k]) {
         value = value[k];
@@ -87,7 +87,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
         return fallback;
       }
     }
-    
+
     return value;
   };
 
@@ -100,10 +100,10 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
 
 export const useLanguage = (): LanguageContextType => {
   const context = useContext(LanguageContext);
-  
+
   if (!context) {
     throw new Error('useLanguage must be used within a LanguageProvider');
   }
-  
+
   return context;
 };

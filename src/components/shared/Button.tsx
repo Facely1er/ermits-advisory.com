@@ -24,14 +24,14 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const baseStyles = 'inline-flex items-center justify-center rounded-btn font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2 dark:focus:ring-offset-dark-bg disabled:opacity-50 disabled:pointer-events-none';
-  
+
   const variants = {
     primary: 'bg-navy text-white hover:bg-navy-dark dark:bg-navy dark:hover:bg-navy-dark',
     secondary: 'bg-silver hover:bg-silver-light text-navy dark:bg-silver/90 dark:text-navy-dark dark:hover:bg-silver',
     ghost: 'bg-transparent hover:bg-silver/20 text-navy dark:text-white dark:hover:bg-navy/20',
     outline: 'bg-transparent border border-navy text-navy hover:bg-navy/10 dark:border-silver/70 dark:text-silver dark:hover:bg-silver/10',
   };
-  
+
   const sizes = {
     sm: 'text-sm px-3 py-1.5',
     md: 'text-base px-4 py-2',
@@ -60,13 +60,13 @@ export const Button: React.FC<ButtonProps> = ({
           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
         </svg>
       )}
-      
+
       {!isLoading && icon && iconPosition === 'left' && (
         <span className="mr-2">{icon}</span>
       )}
-      
+
       {children}
-      
+
       {!isLoading && icon && iconPosition === 'right' && (
         <span className="ml-2">{icon}</span>
       )}

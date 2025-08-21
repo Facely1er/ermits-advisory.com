@@ -2,14 +2,14 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import logoImg from '../assets/ermits-advisory.png';
-import { 
+import {
   Mail, Phone, MapPin, Shield, BarChart2, Users, BookOpen
 } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
   const navigate = useNavigate();
-  
+
   return (
     <footer className="bg-navy dark:bg-black text-white">
       <div className="container mx-auto px-4 py-8">
@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
             </Link>
             <p className="text-silver text-sm leading-relaxed">{t('common.tagline')}</p>
           </div>
-          
+
           {/* Services */}
           <div>
             <h3 className="text-base font-semibold mb-3">{t('footer.services.title')}</h3>
@@ -57,7 +57,7 @@ export const Footer: React.FC = () => {
               </li>
             </ul>
           </div>
-          
+
           {/* Company */}
           <div>
             <h3 className="text-base font-semibold mb-3">{t('footer.company.title')}</h3>
@@ -76,7 +76,7 @@ export const Footer: React.FC = () => {
               </li>
             </ul>
           </div>
-          
+
           {/* Contact Info - Compact */}
           <div>
             <h3 className="text-base font-semibold mb-3">Contact</h3>
@@ -98,7 +98,7 @@ export const Footer: React.FC = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Bottom Footer - More Compact */}
         <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center">
           <p className="text-xs text-silver mb-3 sm:mb-0">

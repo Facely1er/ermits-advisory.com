@@ -12,12 +12,12 @@ export const en = {
   navigation: {
     home: "Home",
     about: "About",
-    services: "Services", 
+    services: "Services",
     steel: "STEEL™",
     insights: "Insights",
     resources: "Resources",
     riskRadar: "Risk Radar",
-    dashboard: "Dashboard", 
+    dashboard: "Dashboard",
     presentation: "Presentation",
     contact: "Contact"
   },
@@ -27,7 +27,7 @@ export const en = {
     backToHome: "Back to Home",
     description: "Access our comprehensive library of cybersecurity resources, whitepapers, case studies, and industry insights.",
     fullscreenView: "Fullscreen View",
-    openInNewTab: "Open in New Tab", 
+    openInNewTab: "Open in New Tab",
     exitFullscreen: "Exit Fullscreen",
     loading: {
       title: "Loading Resources",
@@ -59,7 +59,7 @@ export const en = {
     liveMetrics: {
       overallRiskScore: "Overall Risk Score",
       activeThreats: "Active Threats",
-      complianceScore: "Compliance Score", 
+      complianceScore: "Compliance Score",
       recentIncidents: "Recent Incidents",
       live: "LIVE"
     },
@@ -72,7 +72,7 @@ export const en = {
         metric: "24/7"
       },
       predictiveAnalytics: {
-        title: "Predictive Analytics", 
+        title: "Predictive Analytics",
         description: "AI-powered forecasting that anticipates risks before they materialize",
         metric: "83%"
       },
@@ -95,7 +95,7 @@ export const en = {
         description: "Regulatory compliance, government policies, and geopolitical factors"
       },
       economic: {
-        title: "Economic", 
+        title: "Economic",
         description: "Market conditions, financial impact, and economic indicators"
       },
       social: {
@@ -123,7 +123,7 @@ export const en = {
         description: "Clear, actionable cybersecurity briefings designed for board-level decision making"
       },
       mAndA: {
-        title: "M&A Due Diligence", 
+        title: "M&A Due Diligence",
         description: "Comprehensive cyber risk assessment for mergers and acquisitions"
       },
       crisis: {
@@ -139,7 +139,7 @@ export const en = {
       title: "Trusted by Industry Leaders",
       subtitle: "Professional certifications and industry recognition",
       cert1: "CISSP Certified",
-      cert2: "J.D. Legal Expert", 
+      cert2: "J.D. Legal Expert",
       cert3: "PMP Certified",
       cert4: "SOC 2 Compliant"
     },
@@ -151,7 +151,7 @@ export const en = {
     metrics: {
       riskReduction: "Average Risk Reduction",
       timeToInsight: "Faster Time to Insight",
-      boardConfidence: "Improved Board Confidence", 
+      boardConfidence: "Improved Board Confidence",
       roiImprovement: "ROI Improvement"
     }
   },
@@ -184,7 +184,7 @@ export const en = {
       title: "STEEL™ Integration Process",
       description: "Our proven methodology for implementing STEEL™ within your organization",
       step1: "Assessment",
-      step2: "Analysis", 
+      step2: "Analysis",
       step3: "Strategy",
       step4: "Implementation",
       step5: "Monitoring",
@@ -203,7 +203,7 @@ export const en = {
   steelPage: {
     hero: {
       title: "STEEL™ Strategic Risk Assessment",
-      subtitle1: "Beyond Traditional PESTEL Analysis", 
+      subtitle1: "Beyond Traditional PESTEL Analysis",
       subtitle2: "Introducing the world's first cybersecurity-focused strategic environment assessment framework",
       scheduleConsultation: "Schedule Consultation",
       requestDemo: "Request Demo",
@@ -223,7 +223,7 @@ export const en = {
         link: "Compare with traditional PESTEL"
       },
       expertPartnership: {
-        title: "Expert Partnership Model", 
+        title: "Expert Partnership Model",
         description: "Legal and cybersecurity experts working together on every assessment",
         link: "Meet our expert team"
       },
@@ -245,7 +245,7 @@ export const en = {
         description: "Applying the STEEL™ framework to identify and assess strategic risks"
       },
       synthesis: {
-        title: "Strategic Synthesis", 
+        title: "Strategic Synthesis",
         description: "Integrating findings into actionable strategic recommendations"
       },
       briefing: {
@@ -265,7 +265,7 @@ export const en = {
       description: "Clear, actionable cybersecurity briefings for board members",
       features: [
         "Non-technical language for clear understanding",
-        "Strategic focus on business impact", 
+        "Strategic focus on business impact",
         "Actionable recommendations",
         "Benchmark comparisons",
         "Trend analysis and forecasting"
@@ -288,7 +288,7 @@ export const en = {
       features: [
         "Executive crisis communication",
         "Strategic decision support",
-        "Stakeholder management", 
+        "Stakeholder management",
         "Regulatory and legal guidance",
         "Reputation management"
       ]
@@ -321,12 +321,12 @@ export const en = {
 
   // Dashboard
   dashboard: {
-    title: "Executive Dashboard", 
+    title: "Executive Dashboard",
     subtitle: "Real-time cybersecurity intelligence and strategic insights",
     riskScore: {
       title: "Overall Risk Score",
       low: "Low",
-      medium: "Medium", 
+      medium: "Medium",
       high: "High",
       critical: "Critical"
     },
@@ -344,7 +344,7 @@ export const en = {
     threats: {
       title: "Threat Intelligence",
       type: "Type",
-      source: "Source", 
+      source: "Source",
       impact: "Impact",
       timeline: "Timeline"
     },
@@ -354,7 +354,7 @@ export const en = {
       items: [
         {
           priority: "Critical",
-          action: "Implement multi-factor authentication across all systems", 
+          action: "Implement multi-factor authentication across all systems",
           impact: "Reduces account compromise risk by 99%",
           status: "In Progress"
         },
@@ -365,7 +365,7 @@ export const en = {
           status: "Completed"
         },
         {
-          priority: "Medium", 
+          priority: "Medium",
           action: "Conduct executive tabletop exercise",
           impact: "Improves executive decision-making during incidents",
           status: "Not Started"
@@ -396,7 +396,7 @@ export const en = {
       title: "Scenarios",
       current: "Current",
       breach: "Breach",
-      investment: "Investment", 
+      investment: "Investment",
       industry: "Industry"
     },
     recommendations: {
@@ -413,7 +413,7 @@ export const en = {
           effort: "Medium"
         },
         {
-          priority: "High", 
+          priority: "High",
           action: "Establish third-party risk management program",
           impact: "Improves visibility into supply chain risks",
           effort: "High"
@@ -427,7 +427,7 @@ export const en = {
         {
           priority: "High",
           action: "Implement compliance monitoring automation",
-          impact: "Reduces manual effort and improves accuracy", 
+          impact: "Reduces manual effort and improves accuracy",
           effort: "Medium"
         },
         {
@@ -445,7 +445,7 @@ export const en = {
     hero: {
       title: "RAPID™ Deployment Framework",
       subtitle: "Revolutionizing cybersecurity implementation with 96% automation",
-      scheduleDeployment: "Schedule Deployment", 
+      scheduleDeployment: "Schedule Deployment",
       requestDemo: "Request Demo",
       downloadGuide: "Download Guide"
     },
@@ -461,7 +461,7 @@ export const en = {
         description: "Seamless integration without disrupting business operations"
       },
       selfHealing: {
-        title: "Self-Healing Architecture", 
+        title: "Self-Healing Architecture",
         description: "Automatic detection and remediation of security configuration drift"
       },
       ecosystemIntegration: {
@@ -485,7 +485,7 @@ export const en = {
         description: "Coordinated implementation across all systems and platforms"
       },
       continuousOptimization: {
-        title: "Continuous Optimization", 
+        title: "Continuous Optimization",
         description: "Ongoing refinement and enhancement of security posture"
       }
     },
@@ -506,7 +506,7 @@ export const en = {
           detailedDescription: "Multi-dimensional analysis engine evaluates existing security controls, identifies gaps, and prioritizes improvement opportunities."
         },
         plan: {
-          title: "Plan", 
+          title: "Plan",
           description: "Strategic roadmap generation for security enhancement",
           detailedDescription: "AI-powered planning system creates optimized deployment strategies that minimize risk while maximizing operational efficiency."
         },
@@ -523,7 +523,7 @@ export const en = {
       }
     },
     deploymentTimeline: {
-      title: "Deployment Timeline", 
+      title: "Deployment Timeline",
       subtitle: "From assessment to full deployment in record time",
       steps: {
         assessment: "Assessment",
@@ -564,7 +564,7 @@ export const en = {
     benefits: {
       riskReduction: "67%",
       riskReductionDesc: "Average risk reduction",
-      roi: "3.4x", 
+      roi: "3.4x",
       roiDesc: "Return on investment",
       faster: "83%",
       fasterDesc: "Faster implementation",
@@ -574,7 +574,7 @@ export const en = {
     guideContents: {
       title: "Guide Contents",
       executiveSummary: {
-        title: "Executive Summary", 
+        title: "Executive Summary",
         items: [
           "STEEL™ methodology overview",
           "Business case for implementation",
@@ -594,7 +594,7 @@ export const en = {
       implementationRoadmap: {
         title: "Implementation Roadmap",
         items: [
-          "Phase-by-phase deployment plan", 
+          "Phase-by-phase deployment plan",
           "Resource requirements",
           "Milestone definitions",
           "Success metrics"
@@ -622,7 +622,7 @@ export const en = {
         title: "Success Stories",
         items: [
           "Fortune 500 transformation",
-          "Mid-market implementations", 
+          "Mid-market implementations",
           "ROI calculations",
           "Lessons learned"
         ]
@@ -645,7 +645,7 @@ export const en = {
         keyActivities: [
           "Executive alignment sessions",
           "Risk landscape mapping",
-          "Resource allocation planning", 
+          "Resource allocation planning",
           "Tool configuration"
         ]
       },
@@ -668,7 +668,7 @@ export const en = {
       },
       phase3: {
         title: "Intelligence Integration",
-        duration: "Weeks 7-10", 
+        duration: "Weeks 7-10",
         description: "Integrate threat intelligence and data sources",
         deliverables: [
           "Intelligence feeds setup",
@@ -690,7 +690,7 @@ export const en = {
         deliverables: [
           "Optimized workflows",
           "Training materials",
-          "User documentation", 
+          "User documentation",
           "Support procedures"
         ],
         keyActivities: [
@@ -721,7 +721,7 @@ export const en = {
     successStoriesPreview: {
       title: "Success Stories Preview",
       fortune500: {
-        category: "Fortune 500", 
+        category: "Fortune 500",
         title: "Global Financial Institution",
         description: "Reduced strategic risk exposure by 67% while improving board cybersecurity confidence by 92%.",
         metrics: "67% risk reduction • 92% board confidence • 3.4x ROI"
@@ -740,7 +740,7 @@ export const en = {
       }
     },
     cta: {
-      title: "Ready to Begin Your STEEL™ Journey?", 
+      title: "Ready to Begin Your STEEL™ Journey?",
       description: "Join organizations worldwide who have transformed their cybersecurity approach with STEEL™",
       scheduleConsultation: "Schedule Implementation Consultation",
       viewResources: "View Additional Resources"
@@ -766,7 +766,7 @@ export const en = {
       },
       slide2: {
         title: "Current Threat Landscape",
-        subtitle: "Understanding Today's Risk Environment", 
+        subtitle: "Understanding Today's Risk Environment",
         content: "The cybersecurity landscape continues to evolve rapidly, with sophisticated threats targeting organizations across all sectors. Understanding this environment is crucial for strategic decision-making."
       },
       slide3: {
@@ -781,7 +781,7 @@ export const en = {
       },
       slide5: {
         title: "Recommended Strategic Actions",
-        subtitle: "Prioritized Risk Mitigation Initiatives", 
+        subtitle: "Prioritized Risk Mitigation Initiatives",
         content: "Our recommendations are prioritized based on risk impact, implementation effort, and strategic value to ensure maximum return on security investment."
       },
       slide6: {
@@ -815,7 +815,7 @@ export const en = {
         title: "Technical Certifications",
         cissp: "Certified Information Systems Security Professional - Advanced cybersecurity expertise",
         cisa: "Certified Information Systems Auditor - Risk assessment and compliance",
-        pmp: "Project Management Professional - Strategic implementation leadership", 
+        pmp: "Project Management Professional - Strategic implementation leadership",
         pmiacp: "PMI Agile Certified Practitioner - Modern delivery methodologies",
         itil: "ITIL Foundation - Service management excellence"
       },
@@ -839,7 +839,7 @@ export const en = {
         description: "Industry-leading credentials"
       },
       assessments: {
-        label: "Risk Assessments Completed", 
+        label: "Risk Assessments Completed",
         description: "Strategic evaluations delivered"
       },
       confidence: {
@@ -859,7 +859,7 @@ export const en = {
       value: {
         title: "Value We Deliver:",
         point1: "Technical expertise backed by legal knowledge",
-        point2: "Strategic insights that connect security to business objectives", 
+        point2: "Strategic insights that connect security to business objectives",
         point3: "Global perspective with local implementation capability"
       },
       imageCaption: {
@@ -882,7 +882,7 @@ export const en = {
         description: "Ensuring compliance and risk mitigation through legal expertise"
       },
       strategic: {
-        title: "Strategic Focus", 
+        title: "Strategic Focus",
         description: "Connecting cybersecurity initiatives to business objectives and outcomes"
       }
     },
@@ -909,7 +909,7 @@ export const en = {
       },
       cta: "Explore Global Services",
       imageCaption: {
-        title: "Worldwide Advisory Excellence", 
+        title: "Worldwide Advisory Excellence",
         subtitle: "Strategic cybersecurity guidance across global markets"
       }
     },
@@ -929,7 +929,7 @@ export const en = {
       title: "Get Started Today",
       nameLabel: "Full Name",
       namePlaceholder: "Enter your full name",
-      emailLabel: "Email Address", 
+      emailLabel: "Email Address",
       emailPlaceholder: "Enter your email address",
       companyLabel: "Company/Organization",
       companyPlaceholder: "Enter your company name",
@@ -957,7 +957,7 @@ export const en = {
       title: "Contact Information",
       emailTitle: "Email Us",
       emailDescription: "For general inquiries and consultations",
-      phoneTitle: "Call Us", 
+      phoneTitle: "Call Us",
       phoneDescription: "Speak directly with our advisory team",
       addressTitle: "Visit Us",
       addressDescription: "Our headquarters location",
@@ -977,7 +977,7 @@ export const en = {
         content: "Yes, we provide advisory services globally and have experience with international cybersecurity regulations and frameworks."
       },
       confidentiality: {
-        title: "How do you handle confidential information?", 
+        title: "How do you handle confidential information?",
         content: "All client communications are protected by strict confidentiality agreements. We maintain the highest standards of information security."
       },
       preparation: {
@@ -1003,7 +1003,7 @@ export const en = {
     },
     legal: {
       privacy: "Privacy Policy",
-      terms: "Terms of Service", 
+      terms: "Terms of Service",
       cookies: "Cookie Policy"
     }
   },
@@ -1036,7 +1036,7 @@ export const en = {
         ]
       },
       informationUse: {
-        title: "How We Use Your Information", 
+        title: "How We Use Your Information",
         items: [
           "Provide and improve our advisory services",
           "Communicate with you about our services and updates",
@@ -1060,7 +1060,7 @@ export const en = {
         items: [
           "Industry-standard encryption for data transmission and storage",
           "Regular security assessments and vulnerability testing",
-          "Access controls and authentication measures", 
+          "Access controls and authentication measures",
           "Employee training on data protection and privacy",
           "Incident response procedures for potential breaches"
         ]
@@ -1089,7 +1089,7 @@ export const en = {
       title: "Contact Us About Privacy",
       description: "If you have questions about this privacy policy or how we handle your data, please contact us:",
       email: "Privacy Officer",
-      phone: "Data Protection Inquiries", 
+      phone: "Data Protection Inquiries",
       responseTime: "Response Time",
       responseTimeValue: "48 hours or less"
     }
@@ -1117,7 +1117,7 @@ export const en = {
         items: [
           "Professional confidentiality and discretion",
           "Timely communication and response",
-          "Accurate information sharing", 
+          "Accurate information sharing",
           "Compliance with applicable laws and regulations"
         ]
       }
@@ -1151,7 +1151,7 @@ export const en = {
         ]
       },
       limitations: {
-        title: "Limitations & Disclaimers", 
+        title: "Limitations & Disclaimers",
         items: [
           "Advisory services do not guarantee specific outcomes",
           "Cybersecurity risks cannot be completely eliminated",
@@ -1183,7 +1183,7 @@ export const en = {
       title: "Payment Terms",
       items: [
         "Professional fees due according to agreed schedule",
-        "Late payment charges may apply to overdue amounts", 
+        "Late payment charges may apply to overdue amounts",
         "Expenses reimbursed at cost with appropriate documentation",
         "Payment disputes resolved through good faith discussion"
       ]
@@ -1213,7 +1213,7 @@ export const en = {
   cookies: {
     title: "Cookie Policy",
     lastUpdated: "Last updated",
-    backToHome: "Back to Home", 
+    backToHome: "Back to Home",
     subtitle: "How we use cookies and similar technologies to enhance your experience",
     commitment: {
       title: "Our Cookie Commitment",
@@ -1238,7 +1238,7 @@ export const en = {
           description: "Cookies that remain on your device for a specified period"
         },
         thirdParty: {
-          title: "Third-Party Cookies", 
+          title: "Third-Party Cookies",
           description: "Cookies set by external services we use to enhance functionality"
         }
       }
@@ -1270,7 +1270,7 @@ export const en = {
         examples: [
           "Language and region preferences",
           "User interface customizations",
-          "Form data and user preferences", 
+          "Form data and user preferences",
           "Accessibility and usability settings"
         ]
       },
@@ -1300,7 +1300,7 @@ export const en = {
       },
       microsoftClarity: {
         title: "Microsoft Clarity",
-        description: "User session recording and heatmap analysis", 
+        description: "User session recording and heatmap analysis",
         link: "Microsoft's Privacy Statement"
       },
       linkedinInsights: {
@@ -1330,7 +1330,7 @@ export const en = {
         description: "Preferences > Privacy > Manage Website Data"
       },
       edge: {
-        title: "Microsoft Edge", 
+        title: "Microsoft Edge",
         description: "Settings > Cookies and site permissions"
       },
       learnMore: "Learn More"

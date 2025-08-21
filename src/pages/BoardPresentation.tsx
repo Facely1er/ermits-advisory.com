@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from '../components/shared/Button';
-import { 
-  ChevronLeft, ChevronRight, Maximize, Minimize, 
-  Download, ArrowRight, ArrowLeft, Shield, 
+import {
+  ChevronLeft, ChevronRight, Maximize, Minimize,
+  Download, ArrowRight, ArrowLeft, Shield,
   TrendingUp, Target, FileText, Clock, DollarSign
 } from 'lucide-react';
 
@@ -107,10 +107,10 @@ export const BoardPresentation: React.FC = () => {
   // Animation variants for slide content
   const titleVariants = {
     hidden: { opacity: 0, y: -20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { 
+      transition: {
         duration: 0.6,
         ease: "easeOut"
       }
@@ -119,10 +119,10 @@ export const BoardPresentation: React.FC = () => {
 
   const subtitleVariants = {
     hidden: { opacity: 0, y: -10 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { 
+      transition: {
         duration: 0.6,
         delay: 0.2,
         ease: "easeOut"
@@ -132,9 +132,9 @@ export const BoardPresentation: React.FC = () => {
 
   const contentVariants = {
     hidden: { opacity: 0 },
-    visible: { 
+    visible: {
       opacity: 1,
-      transition: { 
+      transition: {
         duration: 0.8,
         delay: 0.4,
         ease: "easeOut"
@@ -144,11 +144,11 @@ export const BoardPresentation: React.FC = () => {
 
   const iconVariants = {
     hidden: { opacity: 0, scale: 0.8, rotate: -10 },
-    visible: { 
-      opacity: 0.8, 
-      scale: 1, 
+    visible: {
+      opacity: 0.8,
+      scale: 1,
       rotate: 0,
-      transition: { 
+      transition: {
         duration: 0.8,
         delay: 0.1,
         ease: "easeOut",
@@ -161,10 +161,10 @@ export const BoardPresentation: React.FC = () => {
   // Decorative elements animation variants
   const decorativeElementVariants = {
     hidden: { opacity: 0, scale: 0.8 },
-    visible: { 
-      opacity: 0.3, 
+    visible: {
+      opacity: 0.3,
       scale: 1,
-      transition: { 
+      transition: {
         duration: 1,
         delay: 0.6,
         ease: "easeOut"
@@ -175,11 +175,11 @@ export const BoardPresentation: React.FC = () => {
   // Progress bar animation variants
   const progressBarVariants = {
     hidden: { width: "0%" },
-    visible: (custom: number) => ({ 
+    visible: (custom: number) => ({
       width: `${(custom + 1) / totalSlides * 100}%`,
-      transition: { 
+      transition: {
         duration: 0.6,
-        ease: "easeOut" 
+        ease: "easeOut"
       }
     })
   };
@@ -211,18 +211,18 @@ export const BoardPresentation: React.FC = () => {
             >
               {/* Dark overlay for better text readability */}
               <div className="absolute inset-0 bg-black opacity-70"></div>
-              
+
               {/* Animated decorative elements based on slide content */}
               <div className="absolute inset-0 overflow-hidden">
                 {currentSlide === 0 && (
                   <>
-                    <motion.div 
+                    <motion.div
                       variants={decorativeElementVariants}
                       initial="hidden"
                       animate="visible"
                       className="absolute top-10 right-10 w-32 h-32 rounded-full bg-white/5 blur-lg"
                     ></motion.div>
-                    <motion.div 
+                    <motion.div
                       variants={decorativeElementVariants}
                       initial="hidden"
                       animate="visible"
@@ -230,16 +230,16 @@ export const BoardPresentation: React.FC = () => {
                     ></motion.div>
                   </>
                 )}
-                
+
                 {currentSlide === 1 && (
                   <>
-                    <motion.div 
+                    <motion.div
                       variants={decorativeElementVariants}
                       initial="hidden"
                       animate="visible"
                       className="absolute top-1/4 right-1/4 w-40 h-40 rounded-full bg-red-500/10 blur-xl"
                     ></motion.div>
-                    <motion.div 
+                    <motion.div
                       variants={decorativeElementVariants}
                       initial="hidden"
                       animate="visible"
@@ -248,7 +248,7 @@ export const BoardPresentation: React.FC = () => {
                     ></motion.div>
                   </>
                 )}
-                
+
                 {currentSlide === 2 && (
                   <>
                     <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 100 100">
@@ -273,10 +273,10 @@ export const BoardPresentation: React.FC = () => {
                     </svg>
                   </>
                 )}
-                
+
                 {currentSlide === 3 && (
                   <>
-                    <motion.div 
+                    <motion.div
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 0.2 }}
                       transition={{ duration: 1 }}
@@ -284,7 +284,7 @@ export const BoardPresentation: React.FC = () => {
                     >
                       <div className="grid grid-cols-10 grid-rows-10 h-full w-full">
                         {Array.from({ length: 100 }).map((_, i) => (
-                          <motion.div 
+                          <motion.div
                             key={i}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: Math.random() * 0.5 }}
@@ -296,16 +296,16 @@ export const BoardPresentation: React.FC = () => {
                     </motion.div>
                   </>
                 )}
-                
+
                 {currentSlide === 4 && (
                   <>
-                    <motion.div 
+                    <motion.div
                       initial={{ width: 0 }}
                       animate={{ width: '100%' }}
                       transition={{ duration: 2 }}
                       className="absolute top-1/3 left-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"
                     ></motion.div>
-                    <motion.div 
+                    <motion.div
                       initial={{ width: 0 }}
                       animate={{ width: '80%' }}
                       transition={{ duration: 1.5, delay: 0.3 }}
@@ -313,16 +313,16 @@ export const BoardPresentation: React.FC = () => {
                     ></motion.div>
                   </>
                 )}
-                
+
                 {currentSlide === 5 && (
                   <>
-                    <motion.div 
+                    <motion.div
                       initial={{ scale: 0, opacity: 0 }}
                       animate={{ scale: 1, opacity: 0.1 }}
                       transition={{ duration: 1 }}
                       className="absolute top-1/4 right-1/4 w-40 h-40 rounded-full bg-green-500/20 blur-xl"
                     ></motion.div>
-                    <motion.div 
+                    <motion.div
                       initial={{ opacity: 0, y: 50 }}
                       animate={{ opacity: 0.1, y: 0 }}
                       transition={{ duration: 1.5, delay: 0.2 }}
@@ -330,7 +330,7 @@ export const BoardPresentation: React.FC = () => {
                     ></motion.div>
                   </>
                 )}
-                
+
                 {currentSlide === 6 && (
                   <>
                     <svg className="absolute inset-0 w-full h-full opacity-5" viewBox="0 0 100 100">
@@ -358,11 +358,11 @@ export const BoardPresentation: React.FC = () => {
                   </>
                 )}
               </div>
-              
+
               <div className="relative h-full flex flex-col text-white p-8 md:p-12">
                 <div className="flex-grow flex flex-col justify-center max-w-3xl mx-auto text-center">
                   {/* Slide icon */}
-                  <motion.div 
+                  <motion.div
                     className="mx-auto mb-6"
                     variants={iconVariants}
                     initial="hidden"
@@ -370,8 +370,8 @@ export const BoardPresentation: React.FC = () => {
                   >
                     {getSlideIcon(currentSlide)}
                   </motion.div>
-                  
-                  <motion.h2 
+
+                  <motion.h2
                     className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
                     variants={titleVariants}
                     initial="hidden"
@@ -379,8 +379,8 @@ export const BoardPresentation: React.FC = () => {
                   >
                     {t(`presentation.slides.slide${currentSlide + 1}.title`)}
                   </motion.h2>
-                  
-                  <motion.h3 
+
+                  <motion.h3
                     className="text-xl md:text-2xl text-silver mb-8"
                     variants={subtitleVariants}
                     initial="hidden"
@@ -388,8 +388,8 @@ export const BoardPresentation: React.FC = () => {
                   >
                     {t(`presentation.slides.slide${currentSlide + 1}.subtitle`)}
                   </motion.h3>
-                  
-                  <motion.div 
+
+                  <motion.div
                     className="text-left"
                     variants={contentVariants}
                     initial="hidden"
@@ -398,7 +398,7 @@ export const BoardPresentation: React.FC = () => {
                     <p className="text-lg mb-6">
                       {t(`presentation.slides.slide${currentSlide + 1}.content`)}
                     </p>
-                    
+
                     {/* Demo content for slides */}
                     {currentSlide === 2 && (
                       <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-6">
@@ -408,7 +408,7 @@ export const BoardPresentation: React.FC = () => {
                             <div className="mb-2">
                               <span className="text-sm text-silver">{t('steel.dimensions.political.title')}</span>
                               <div className="w-full bg-white/20 rounded-full h-2">
-                                <motion.div 
+                                <motion.div
                                   className="bg-silver h-2 rounded-full"
                                   initial={{ width: 0 }}
                                   animate={{ width: '65%' }}
@@ -419,7 +419,7 @@ export const BoardPresentation: React.FC = () => {
                             <div className="mb-2">
                               <span className="text-sm text-silver">{t('steel.dimensions.economic.title')}</span>
                               <div className="w-full bg-white/20 rounded-full h-2">
-                                <motion.div 
+                                <motion.div
                                   className="bg-silver h-2 rounded-full"
                                   initial={{ width: 0 }}
                                   animate={{ width: '78%' }}
@@ -430,7 +430,7 @@ export const BoardPresentation: React.FC = () => {
                             <div className="mb-2">
                               <span className="text-sm text-silver">{t('steel.dimensions.social.title')}</span>
                               <div className="w-full bg-white/20 rounded-full h-2">
-                                <motion.div 
+                                <motion.div
                                   className="bg-silver h-2 rounded-full"
                                   initial={{ width: 0 }}
                                   animate={{ width: '82%' }}
@@ -443,7 +443,7 @@ export const BoardPresentation: React.FC = () => {
                             <div className="mb-2">
                               <span className="text-sm text-silver">{t('steel.dimensions.technology.title')}</span>
                               <div className="w-full bg-white/20 rounded-full h-2">
-                                <motion.div 
+                                <motion.div
                                   className="bg-silver h-2 rounded-full"
                                   initial={{ width: 0 }}
                                   animate={{ width: '45%' }}
@@ -454,7 +454,7 @@ export const BoardPresentation: React.FC = () => {
                             <div className="mb-2">
                               <span className="text-sm text-silver">{t('steel.dimensions.environmental.title')}</span>
                               <div className="w-full bg-white/20 rounded-full h-2">
-                                <motion.div 
+                                <motion.div
                                   className="bg-silver h-2 rounded-full"
                                   initial={{ width: 0 }}
                                   animate={{ width: '72%' }}
@@ -465,7 +465,7 @@ export const BoardPresentation: React.FC = () => {
                             <div className="mb-2">
                               <span className="text-sm text-silver">{t('steel.dimensions.legal.title')}</span>
                               <div className="w-full bg-white/20 rounded-full h-2">
-                                <motion.div 
+                                <motion.div
                                   className="bg-silver h-2 rounded-full"
                                   initial={{ width: 0 }}
                                   animate={{ width: '58%' }}
@@ -477,10 +477,10 @@ export const BoardPresentation: React.FC = () => {
                         </div>
                       </div>
                     )}
-                    
+
                     {currentSlide === 4 && (
                       <div className="space-y-4 mb-6">
-                        <motion.div 
+                        <motion.div
                           className="flex items-center"
                           initial={{ x: -50, opacity: 0 }}
                           animate={{ x: 0, opacity: 1 }}
@@ -489,7 +489,7 @@ export const BoardPresentation: React.FC = () => {
                           <div className="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center mr-3">1</div>
                           <span className="font-medium">{t('dashboard.actions.items.0.action')}</span>
                         </motion.div>
-                        <motion.div 
+                        <motion.div
                           className="flex items-center"
                           initial={{ x: -50, opacity: 0 }}
                           animate={{ x: 0, opacity: 1 }}
@@ -498,7 +498,7 @@ export const BoardPresentation: React.FC = () => {
                           <div className="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center mr-3">2</div>
                           <span className="font-medium">{t('dashboard.actions.items.1.action')}</span>
                         </motion.div>
-                        <motion.div 
+                        <motion.div
                           className="flex items-center"
                           initial={{ x: -50, opacity: 0 }}
                           animate={{ x: 0, opacity: 1 }}
@@ -509,12 +509,12 @@ export const BoardPresentation: React.FC = () => {
                         </motion.div>
                       </div>
                     )}
-                    
+
                     {currentSlide === 5 && (
                       <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-6">
                         <h4 className="text-xl font-semibold mb-4">Investment Analysis</h4>
                         <div className="grid grid-cols-2 gap-6">
-                          <motion.div 
+                          <motion.div
                             className="bg-white/10 p-4 rounded-lg"
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
@@ -524,7 +524,7 @@ export const BoardPresentation: React.FC = () => {
                             <p className="text-2xl font-bold">$1.2M</p>
                             <p className="text-sm text-silver">Annual budget</p>
                           </motion.div>
-                          <motion.div 
+                          <motion.div
                             className="bg-white/10 p-4 rounded-lg"
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
@@ -534,7 +534,7 @@ export const BoardPresentation: React.FC = () => {
                             <p className="text-2xl font-bold">$1.8M</p>
                             <p className="text-sm text-silver">+50% increase</p>
                           </motion.div>
-                          <motion.div 
+                          <motion.div
                             className="bg-white/10 p-4 rounded-lg"
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
@@ -544,7 +544,7 @@ export const BoardPresentation: React.FC = () => {
                             <p className="text-2xl font-bold">342%</p>
                             <p className="text-sm text-silver">3-year projection</p>
                           </motion.div>
-                          <motion.div 
+                          <motion.div
                             className="bg-white/10 p-4 rounded-lg"
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
@@ -557,15 +557,15 @@ export const BoardPresentation: React.FC = () => {
                         </div>
                       </div>
                     )}
-                    
+
                     {currentSlide === 6 && (
                       <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-6">
                         <h4 className="text-xl font-semibold mb-4">Implementation Timeline</h4>
                         <div className="relative pt-4">
                           {/* Timeline line */}
                           <div className="absolute left-4 top-6 bottom-2 w-0.5 bg-silver/30"></div>
-                          
-                          <motion.div 
+
+                          <motion.div
                             className="relative pl-10 mb-6"
                             initial={{ x: -20, opacity: 0 }}
                             animate={{ x: 0, opacity: 1 }}
@@ -577,8 +577,8 @@ export const BoardPresentation: React.FC = () => {
                             <h5 className="text-lg font-medium">Phase 1: Immediate Actions</h5>
                             <p className="text-sm text-silver">30 days | High impact, low effort initiatives</p>
                           </motion.div>
-                          
-                          <motion.div 
+
+                          <motion.div
                             className="relative pl-10 mb-6"
                             initial={{ x: -20, opacity: 0 }}
                             animate={{ x: 0, opacity: 1 }}
@@ -590,8 +590,8 @@ export const BoardPresentation: React.FC = () => {
                             <h5 className="text-lg font-medium">Phase 2: Security Framework</h5>
                             <p className="text-sm text-silver">90 days | Foundational improvements</p>
                           </motion.div>
-                          
-                          <motion.div 
+
+                          <motion.div
                             className="relative pl-10"
                             initial={{ x: -20, opacity: 0 }}
                             animate={{ x: 0, opacity: 1 }}
@@ -608,15 +608,15 @@ export const BoardPresentation: React.FC = () => {
                     )}
                   </motion.div>
                 </div>
-                
+
                 <div className="flex justify-between items-center mt-8">
                   <span className="text-sm text-silver">ERMITS Advisory + STEEL™</span>
                   <span className="text-sm text-silver">{currentSlide + 1} / {totalSlides}</span>
                 </div>
               </div>
-              
+
               {/* Progress bar at the bottom of the slide */}
-              <motion.div 
+              <motion.div
                 className="absolute bottom-0 left-0 h-1 bg-silver"
                 variants={progressBarVariants}
                 initial="hidden"
@@ -637,7 +637,7 @@ export const BoardPresentation: React.FC = () => {
               <ChevronLeft size={24} />
             </Button>
           </div>
-          
+
           <div className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4">
             <Button
               variant="secondary"
@@ -661,7 +661,7 @@ export const BoardPresentation: React.FC = () => {
             >
               {t('presentation.navigation.previous')}
             </Button>
-            
+
             <Button
               variant="outline"
               size="sm"
@@ -670,7 +670,7 @@ export const BoardPresentation: React.FC = () => {
             >
               {t('presentation.navigation.fullscreen')}
             </Button>
-            
+
             <Button
               variant="outline"
               size="sm"
@@ -678,7 +678,7 @@ export const BoardPresentation: React.FC = () => {
             >
               {t('presentation.download')}
             </Button>
-            
+
             <Button
               variant="outline"
               size="sm"

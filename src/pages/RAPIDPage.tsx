@@ -152,19 +152,19 @@ export const RAPIDPage: React.FC = () => {
 
   const phaseVariants = {
     hidden: { scale: 0.8, opacity: 0 },
-    visible: { 
-      scale: 1, 
+    visible: {
+      scale: 1,
       opacity: 1,
-      transition: { 
-        type: "spring", 
+      transition: {
+        type: "spring",
         stiffness: 300,
         damping: 20
-      } 
+      }
     },
-    hover: { 
+    hover: {
       scale: 1.1,
-      transition: { 
-        type: "spring", 
+      transition: {
+        type: "spring",
         stiffness: 400,
         damping: 10
       }
@@ -197,7 +197,7 @@ export const RAPIDPage: React.FC = () => {
         <section className="relative bg-gradient-to-r from-golden-dark to-golden text-white py-12 md:py-20 overflow-hidden">
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="container mx-auto px-4 relative z-10">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -211,17 +211,17 @@ export const RAPIDPage: React.FC = () => {
               >
                 <Rocket size={64} className="mx-auto mb-4 text-white/90" />
               </motion.div>
-              
+
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 {t('rapid.hero.title')}
               </h1>
               <p className="text-xl md:text-2xl mb-8 text-golden-light">
                 {t('rapid.hero.subtitle')}
               </p>
-              
+
               <div className="flex flex-wrap justify-center gap-4">
-                <Button 
-                  variant="secondary" 
+                <Button
+                  variant="secondary"
                   size="lg"
                   icon={<Calendar size={20} />}
                   iconPosition="left"
@@ -230,16 +230,16 @@ export const RAPIDPage: React.FC = () => {
                 >
                   {t('rapid.hero.scheduleDeployment')}
                 </Button>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="lg"
                   className="border-white text-white hover:bg-white/10"
                   onClick={() => navigate('/contact')}
                 >
                   {t('rapid.hero.requestDemo')}
                 </Button>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="lg"
                   className="border-white text-white hover:bg-white/10"
                   icon={<Download size={20} />}
@@ -278,9 +278,9 @@ export const RAPIDPage: React.FC = () => {
             >
               {revolutionaryFeatures.map((feature, index) => (
                 <motion.div key={index} variants={itemVariants}>
-                  <Card 
-                    variant="glass" 
-                    padding="lg" 
+                  <Card
+                    variant="glass"
+                    padding="lg"
                     className="h-full bg-gradient-to-br from-golden to-golden-dark text-white hover:shadow-xl transition-all duration-300"
                   >
                     <div className="flex items-start">
@@ -435,16 +435,16 @@ export const RAPIDPage: React.FC = () => {
                   className="max-w-4xl mx-auto"
                 >
                   <Card variant="glass" padding="lg" className="relative">
-                    <button 
+                    <button
                       onClick={() => setSelectedPhase(null)}
                       className="absolute top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
                       aria-label="Close details"
                     >
                       <X size={16} className="dark:text-white" />
                     </button>
-                    
+
                     <div className="flex items-start">
-                      <div 
+                      <div
                         className="p-4 rounded-full mr-6 flex-shrink-0"
                         style={{ backgroundColor: selectedPhaseData.color }}
                       >
@@ -460,7 +460,7 @@ export const RAPIDPage: React.FC = () => {
                         <p className="text-gray-600 dark:text-gray-200 mb-6">
                           {selectedPhaseData.detailedDescription}
                         </p>
-                        
+
                         <div className="mb-6">
                           <div className="flex items-center justify-between mb-2">
                             <span className="text-sm font-medium dark:text-gray-200">{t('rapid.interactiveFramework.automationLevel')}</span>
@@ -469,7 +469,7 @@ export const RAPIDPage: React.FC = () => {
                             </span>
                           </div>
                           <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
-                            <motion.div 
+                            <motion.div
                               className="h-3 rounded-full bg-gradient-to-r from-golden to-golden-dark"
                               initial={{ width: 0 }}
                               animate={{ width: `${selectedPhaseData.automationPercentage}%` }}
@@ -477,9 +477,9 @@ export const RAPIDPage: React.FC = () => {
                             />
                           </div>
                         </div>
-                        
-                        <Button 
-                          variant="primary" 
+
+                        <Button
+                          variant="primary"
                           size="sm"
                           icon={<ArrowRight size={16} />}
                           iconPosition="right"
@@ -517,7 +517,7 @@ export const RAPIDPage: React.FC = () => {
               <div className="relative">
                 {/* Timeline Line */}
                 <div className="absolute top-8 left-0 right-0 h-1 bg-gradient-to-r from-golden to-golden-dark rounded-full"></div>
-                
+
                 {/* Timeline Steps */}
                 <div className="flex justify-between relative z-10">
                   {timelineSteps.map((step, index) => (
@@ -539,9 +539,9 @@ export const RAPIDPage: React.FC = () => {
                   ))}
                 </div>
               </div>
-              
+
               <div className="text-center mt-12">
-                <Button 
+                <Button
                   variant="primary"
                   size="lg"
                   icon={<Download size={20} />}
@@ -568,25 +568,25 @@ export const RAPIDPage: React.FC = () => {
               <div className="p-3 rounded-full bg-white/10 inline-flex mb-6">
                 <Info size={36} />
               </div>
-              
+
               <h2 className="text-2xl md:text-3xl font-bold mb-4">
                 {t('rapid.cta.title')}
               </h2>
               <p className="text-lg mb-6 text-golden-light max-w-2xl mx-auto">
                 {t('rapid.cta.description')}
               </p>
-              
+
               <div className="flex flex-wrap justify-center gap-4">
-                <Button 
-                  variant="secondary" 
+                <Button
+                  variant="secondary"
                   size="lg"
                   onClick={() => navigate('/contact')}
                   className="bg-white text-golden-dark hover:bg-golden-light"
                 >
                   {t('rapid.cta.scheduleDeployment')}
                 </Button>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="lg"
                   className="border-white text-white hover:bg-white/10"
                   onClick={() => navigate('/resources')}

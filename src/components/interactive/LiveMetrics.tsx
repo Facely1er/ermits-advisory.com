@@ -16,7 +16,7 @@ interface Metric {
 
 export const LiveMetrics: React.FC = () => {
   const { t } = useLanguage();
-  
+
   const [metrics, setMetrics] = useState<Metric[]>([
     {
       id: 'risk-score',
@@ -65,7 +65,7 @@ export const LiveMetrics: React.FC = () => {
         const variance = Math.random() * 0.1 - 0.05; // ±5% variation
         const newValue = Math.max(0, Math.min(100, metric.value + variance));
         const change = newValue - metric.value;
-        
+
         return {
           ...metric,
           previousValue: metric.value,
@@ -121,7 +121,7 @@ export const LiveMetrics: React.FC = () => {
               <span className="text-xs text-gray-400">{t('landing.liveMetrics.live')}</span>
             </div>
           </div>
-          
+
           <div className="flex items-end justify-between">
             <div>
               <motion.div
@@ -133,15 +133,15 @@ export const LiveMetrics: React.FC = () => {
               >
                 {metric.value}{metric.unit}
               </motion.div>
-              
+
               <div className="flex items-center mt-1">
                 {getTrendIcon(metric.trend)}
-                <span 
+                <span
                   className={`text-xs ml-1 ${
-                    metric.trend === 'up' 
-                      ? 'text-green-500' 
-                      : metric.trend === 'down' 
-                        ? 'text-red-500' 
+                    metric.trend === 'up'
+                      ? 'text-green-500'
+                      : metric.trend === 'down'
+                        ? 'text-red-500'
                         : 'text-gray-500'
                   }`}
                 >
@@ -149,7 +149,7 @@ export const LiveMetrics: React.FC = () => {
                 </span>
               </div>
             </div>
-            
+
             {/* Mini chart */}
             <div className="w-16 h-8">
               <svg viewBox="0 0 60 30" className="w-full h-full">

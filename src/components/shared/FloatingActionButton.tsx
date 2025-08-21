@@ -73,15 +73,15 @@ export const FloatingActionButton: React.FC = () => {
               <motion.button
                 key={index}
                 initial={{ opacity: 0, x: 50, scale: 0 }}
-                animate={{ 
-                  opacity: 1, 
-                  x: 0, 
+                animate={{
+                  opacity: 1,
+                  x: 0,
                   scale: 1,
                   transition: { delay: index * 0.1 }
                 }}
-                exit={{ 
-                  opacity: 0, 
-                  x: 50, 
+                exit={{
+                  opacity: 0,
+                  x: 50,
                   scale: 0,
                   transition: { delay: (actionItems.length - index - 1) * 0.1 }
                 }}
@@ -90,7 +90,7 @@ export const FloatingActionButton: React.FC = () => {
                 aria-label={item.label}
               >
                 {item.icon}
-                
+
                 {/* Tooltip */}
                 <div className="absolute right-14 bg-gray-800 text-white text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
                   {item.label}

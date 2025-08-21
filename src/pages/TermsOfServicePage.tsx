@@ -3,15 +3,15 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
-import { 
-  FileText, Scale, AlertTriangle, CheckCircle, 
+import {
+  FileText, Scale, AlertTriangle, CheckCircle,
   ArrowLeft, ExternalLink, Shield, Users
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const TermsOfServicePage: React.FC = () => {
   const { t } = useLanguage();
-  
+
   const sections = [
     {
       id: 'acceptance',
@@ -81,7 +81,7 @@ export const TermsOfServicePage: React.FC = () => {
                   <div>
                     <h4 className="font-semibold mb-2">{t('terms.professionalAgreement.included.title')}:</h4>
                     <ul className="space-y-1 text-sm">
-                      {Array.isArray(t('terms.professionalAgreement.included.items')) 
+                      {Array.isArray(t('terms.professionalAgreement.included.items'))
                         ? (t('terms.professionalAgreement.included.items') as string[]).map((item: string, index: number) => (
                             <li key={index}>• {item}</li>
                           ))
@@ -92,7 +92,7 @@ export const TermsOfServicePage: React.FC = () => {
                   <div>
                     <h4 className="font-semibold mb-2">{t('terms.professionalAgreement.obligations.title')}:</h4>
                     <ul className="space-y-1 text-sm">
-                      {Array.isArray(t('terms.professionalAgreement.obligations.items')) 
+                      {Array.isArray(t('terms.professionalAgreement.obligations.items'))
                         ? (t('terms.professionalAgreement.obligations.items') as string[]).map((item: string, index: number) => (
                             <li key={index}>• {item}</li>
                           ))
@@ -152,7 +152,7 @@ export const TermsOfServicePage: React.FC = () => {
                 <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
                   {t('terms.confidentiality.clientConfidentiality.description')}
                 </p>
-                
+
                 <h4 className="font-semibold mb-2 dark:text-gray-100">{t('terms.confidentiality.workProduct.title')}</h4>
                 <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
                   {t('terms.confidentiality.workProduct.description')}
@@ -163,7 +163,7 @@ export const TermsOfServicePage: React.FC = () => {
                 <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
                   {t('terms.confidentiality.steelMethodology.description')}
                 </p>
-                
+
                 <h4 className="font-semibold mb-2 dark:text-gray-100">{t('terms.confidentiality.nonDisclosure.title')}</h4>
                 <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
                   {t('terms.confidentiality.nonDisclosure.description')}
@@ -193,7 +193,7 @@ export const TermsOfServicePage: React.FC = () => {
                   ))}
                 </ul>
               </div>
-              
+
               <div>
                 <h3 className="text-xl font-bold mb-4 dark:text-white">{t('terms.termination.title')}</h3>
                 <ul className="space-y-2 text-gray-600 dark:text-gray-200">
@@ -234,7 +234,7 @@ export const TermsOfServicePage: React.FC = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div>
                 <h3 className="text-xl font-bold mb-4 dark:text-white">{t('terms.governingLaw.title')}</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-4">
@@ -266,8 +266,8 @@ export const TermsOfServicePage: React.FC = () => {
                 {t('footer.legal.cookies')}
               </Button>
             </Link>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               size="sm"
               icon={<ExternalLink size={16} />}
               iconPosition="right"

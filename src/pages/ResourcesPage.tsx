@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
-import { 
-  ExternalLink, Loader, AlertCircle, ArrowLeft, Maximize, Minimize 
+import {
+  ExternalLink, Loader, AlertCircle, ArrowLeft, Maximize, Minimize
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -52,7 +52,7 @@ export const ResourcesPage: React.FC = () => {
             <p className="text-lg text-gray-600 dark:text-gray-100 mb-6">
               {t('resources.description')}
             </p>
-            
+
             {/* Action Buttons */}
             <div className="flex flex-wrap gap-4 mb-6">
               <Button

@@ -16,7 +16,7 @@ export const LandingPage: React.FC = () => {
   const { theme } = useTheme();
   const navigate = useNavigate();
   const [showTypewriter, setShowTypewriter] = useState(false);
-  
+
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -26,7 +26,7 @@ export const LandingPage: React.FC = () => {
       }
     }
   };
-  
+
   const item = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0 }
@@ -84,19 +84,19 @@ export const LandingPage: React.FC = () => {
       {/* Enhanced Hero Section - Remove top padding to eliminate gap */}
       <section className="relative bg-gradient-to-b from-navy to-navy-dark text-white pb-24 md:pb-32 overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-center bg-cover"></div>
-        
+
         {/* Animated background elements */}
         <div className="absolute inset-0">
           {[...Array(20)].map((_, i) => (
             <motion.div
               key={i}
               className="absolute w-2 h-2 bg-silver/20 rounded-full"
-              initial={{ 
-                x: Math.random() * window.innerWidth, 
+              initial={{
+                x: Math.random() * window.innerWidth,
                 y: Math.random() * window.innerHeight,
-                opacity: 0 
+                opacity: 0
               }}
-              animate={{ 
+              animate={{
                 y: [null, -100],
                 opacity: [0, 0.6, 0]
               }}
@@ -108,9 +108,9 @@ export const LandingPage: React.FC = () => {
             />
           ))}
         </div>
-        
+
         <div className="container mx-auto px-4 relative z-10 pt-24 md:pt-32">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -122,8 +122,8 @@ export const LandingPage: React.FC = () => {
             </h1>
             <div className="text-xl md:text-2xl mb-8 text-silver min-h-[2em]">
               {showTypewriter && (
-                <TypewriterText 
-                  text={t('landing.hero.subtitle')} 
+                <TypewriterText
+                  text={t('landing.hero.subtitle')}
                   delay={500}
                   speed={10}
                 />
@@ -134,8 +134,8 @@ export const LandingPage: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2.5, duration: 0.6 }}
             >
-              <Button 
-                variant="secondary" 
+              <Button
+                variant="secondary"
                 size="lg"
                 icon={<ArrowRight size={20} />}
                 iconPosition="right"
@@ -165,7 +165,7 @@ export const LandingPage: React.FC = () => {
               {t('landing.realTimeIntelligence.subtitle')}
             </p>
           </motion.div>
-          
+
           <LiveMetrics />
         </div>
       </section>
@@ -187,8 +187,8 @@ export const LandingPage: React.FC = () => {
               {t('landing.advancedCapabilities.subtitle')}
             </motion.p>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             variants={container}
             initial="hidden"
             whileInView="show"
@@ -197,7 +197,7 @@ export const LandingPage: React.FC = () => {
           >
             {enhancedFeatures.map((feature, index) => (
               <motion.div key={index} variants={item}>
-                <InteractiveCard 
+                <InteractiveCard
                   hover3D={true}
                   glowEffect={true}
                   className="bg-white dark:bg-dark-card-bg p-6 text-center h-full"
@@ -238,8 +238,8 @@ export const LandingPage: React.FC = () => {
               {t('landing.steelOverview.subtitle')}
             </motion.p>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             variants={container}
             initial="hidden"
             whileInView="show"
@@ -247,19 +247,19 @@ export const LandingPage: React.FC = () => {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {steelDimensions.map((dimension, index) => (
-              <motion.div 
+              <motion.div
                 key={dimension.id}
                 variants={item}
                 whileHover={{ scale: 1.03 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <InteractiveCard 
+                <InteractiveCard
                   hover3D={true}
                   className="relative overflow-hidden steel-card bg-white dark:bg-dark-card-bg"
                 >
                   <div className="p-6">
-                    <div 
-                      className="absolute top-0 right-0 w-24 h-24 hexagon" 
+                    <div
+                      className="absolute top-0 right-0 w-24 h-24 hexagon"
                       style={{ backgroundColor: dimension.color, opacity: 0.1 }}
                     ></div>
                     <div className="flex items-start relative z-10">
@@ -273,7 +273,7 @@ export const LandingPage: React.FC = () => {
                         <p className="text-gray-600 dark:text-gray-100 steel-dimension-desc mb-4">
                           {t(`landing.steelOverview.${dimension.id}.description`)}
                         </p>
-                        
+
                         {/* Risk Score Indicator */}
                         <div className="flex items-center justify-between mb-2">
                           <span className="text-sm font-medium text-gray-500 dark:text-gray-400">Risk Level</span>
@@ -282,8 +282,8 @@ export const LandingPage: React.FC = () => {
                           </span>
                         </div>
                         <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                          <motion.div 
-                            className="h-2 rounded-full" 
+                          <motion.div
+                            className="h-2 rounded-full"
                             style={{ backgroundColor: dimension.color }}
                             initial={{ width: 0 }}
                             whileInView={{ width: `${dimension.value}%` }}
@@ -298,10 +298,10 @@ export const LandingPage: React.FC = () => {
               </motion.div>
             ))}
           </motion.div>
-          
+
           <div className="text-center mt-12">
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               onClick={() => navigate('/steel')}
               icon={<ArrowRight size={16} />}
               iconPosition="right"
@@ -330,8 +330,8 @@ export const LandingPage: React.FC = () => {
               {t('landing.services.subtitle')}
             </motion.p>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             variants={container}
             initial="hidden"
             whileInView="show"
@@ -339,7 +339,7 @@ export const LandingPage: React.FC = () => {
             className="grid grid-cols-1 md:grid-cols-2 gap-8"
           >
             <motion.div variants={item}>
-              <InteractiveCard 
+              <InteractiveCard
                 hover3D={true}
                 glowEffect={true}
                 className="h-full bg-white dark:bg-dark-card-bg p-6"
@@ -350,8 +350,8 @@ export const LandingPage: React.FC = () => {
                 <p className="text-gray-600 dark:text-gray-200 mb-4 card-text">
                   {t('landing.services.boardBriefings.description')}
                 </p>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="sm"
                   onClick={() => navigate('/services')}
                   className="transform hover:scale-105 transition-transform"
@@ -360,9 +360,9 @@ export const LandingPage: React.FC = () => {
                 </Button>
               </InteractiveCard>
             </motion.div>
-            
+
             <motion.div variants={item}>
-              <InteractiveCard 
+              <InteractiveCard
                 hover3D={true}
                 glowEffect={true}
                 className="h-full bg-white dark:bg-dark-card-bg p-6"
@@ -373,8 +373,8 @@ export const LandingPage: React.FC = () => {
                 <p className="text-gray-600 dark:text-gray-200 mb-4 card-text">
                   {t('landing.services.mAndA.description')}
                 </p>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="sm"
                   onClick={() => navigate('/services')}
                   className="transform hover:scale-105 transition-transform"
@@ -383,9 +383,9 @@ export const LandingPage: React.FC = () => {
                 </Button>
               </InteractiveCard>
             </motion.div>
-            
+
             <motion.div variants={item}>
-              <InteractiveCard 
+              <InteractiveCard
                 hover3D={true}
                 glowEffect={true}
                 className="h-full bg-white dark:bg-dark-card-bg p-6"
@@ -396,8 +396,8 @@ export const LandingPage: React.FC = () => {
                 <p className="text-gray-600 dark:text-gray-200 mb-4 card-text">
                   {t('landing.services.crisis.description')}
                 </p>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="sm"
                   onClick={() => navigate('/services')}
                   className="transform hover:scale-105 transition-transform"
@@ -406,9 +406,9 @@ export const LandingPage: React.FC = () => {
                 </Button>
               </InteractiveCard>
             </motion.div>
-            
+
             <motion.div variants={item}>
-              <InteractiveCard 
+              <InteractiveCard
                 hover3D={true}
                 glowEffect={true}
                 className="h-full bg-white dark:bg-dark-card-bg p-6"
@@ -419,8 +419,8 @@ export const LandingPage: React.FC = () => {
                 <p className="text-gray-600 dark:text-gray-200 mb-4 card-text">
                   {t('landing.services.vCISO.description')}
                 </p>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="sm"
                   onClick={() => navigate('/services')}
                   className="transform hover:scale-105 transition-transform"
@@ -450,8 +450,8 @@ export const LandingPage: React.FC = () => {
               {t('landing.trust.subtitle')}
             </motion.p>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             variants={container}
             initial="hidden"
             whileInView="show"
@@ -466,7 +466,7 @@ export const LandingPage: React.FC = () => {
                 {t('landing.trust.cert1')}
               </p>
             </motion.div>
-            
+
             <motion.div variants={item} className="flex flex-col items-center">
               <InteractiveCard className="w-16 h-16 bg-navy rounded-full flex items-center justify-center mb-4">
                 <CheckCircle size={32} className="text-white" />
@@ -475,7 +475,7 @@ export const LandingPage: React.FC = () => {
                 {t('landing.trust.cert2')}
               </p>
             </motion.div>
-            
+
             <motion.div variants={item} className="flex flex-col items-center">
               <InteractiveCard className="w-16 h-16 bg-navy rounded-full flex items-center justify-center mb-4">
                 <CheckCircle size={32} className="text-white" />
@@ -484,7 +484,7 @@ export const LandingPage: React.FC = () => {
                 {t('landing.trust.cert3')}
               </p>
             </motion.div>
-            
+
             <motion.div variants={item} className="flex flex-col items-center">
               <InteractiveCard className="w-16 h-16 bg-navy rounded-full flex items-center justify-center mb-4">
                 <CheckCircle size={32} className="text-white" />
@@ -512,8 +512,8 @@ export const LandingPage: React.FC = () => {
             <p className="text-xl mb-6 text-silver">
               {t('landing.cta.subtitle')}
             </p>
-            <Button 
-              variant="secondary" 
+            <Button
+              variant="secondary"
               size="lg"
               onClick={() => navigate('/contact')}
               className="transform hover:scale-105 transition-transform"

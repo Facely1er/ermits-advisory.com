@@ -29,7 +29,7 @@ const formatDate = (date: Date, locale = 'en-US', options?: Intl.DateTimeFormatO
     month: 'short',
     day: 'numeric',
   };
-  
+
   return new Intl.DateTimeFormat(locale, options || defaultOptions).format(date);
 };
 
@@ -37,7 +37,7 @@ const formatDate = (date: Date, locale = 'en-US', options?: Intl.DateTimeFormatO
 const formatRelativeTime = (date: Date, locale = 'en-US'): string => {
   const now = new Date();
   const diffInSeconds = Math.floor((now.getTime() - date.getTime()) / 1000);
-  
+
   // Define time units in seconds
   const minute = 60;
   const hour = minute * 60;
@@ -45,11 +45,11 @@ const formatRelativeTime = (date: Date, locale = 'en-US'): string => {
   const week = day * 7;
   const month = day * 30;
   const year = day * 365;
-  
+
   // Use Intl.RelativeTimeFormat if available
   if (typeof Intl.RelativeTimeFormat !== 'undefined') {
     const rtf = new Intl.RelativeTimeFormat(locale, { numeric: 'auto' });
-    
+
     if (diffInSeconds < minute) {
       return rtf.format(-Math.floor(diffInSeconds), 'second');
     } else if (diffInSeconds < hour) {

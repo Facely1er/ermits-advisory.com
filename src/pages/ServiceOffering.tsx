@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
-import { 
-  Shield, Search, Users, UserCheck, CheckCircle, ArrowRight, 
+import {
+  Shield, Search, Users, UserCheck, CheckCircle, ArrowRight,
   Mail, Phone, MapPin, Presentation, Activity, Lightbulb,
   BarChart2, FileText, Calendar, Download
 } from 'lucide-react';
@@ -13,7 +13,7 @@ import {
 export const ServiceOffering: React.FC = () => {
   const { t, getNestedTranslation } = useLanguage();
   const navigate = useNavigate();
-  
+
   // Enhanced Advisory Process based on STEEL methodology
   const advisoryProcessItems = [
     {
@@ -41,7 +41,7 @@ export const ServiceOffering: React.FC = () => {
       description: t('steelPage.advisoryProcess.briefing.description')
     }
   ];
-  
+
   // Define service information with IDs matching the exact keys in translations.ts
   const services = [
     { id: 'boardBriefings', icon: 'presentation' },
@@ -49,7 +49,7 @@ export const ServiceOffering: React.FC = () => {
     { id: 'crisis', icon: 'shield' },
     { id: 'vCISO', icon: 'user' }
   ];
-  
+
   // What Makes STEEL Different items
   const whatMakesDifferentItems = [
     {
@@ -81,7 +81,7 @@ export const ServiceOffering: React.FC = () => {
       link: t('steelPage.whatMakesDifferent.frameworkIntegration.link')
     }
   ];
-  
+
   // Animation variants
   const container = {
     hidden: { opacity: 0 },
@@ -92,7 +92,7 @@ export const ServiceOffering: React.FC = () => {
       }
     }
   };
-  
+
   const item = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0 }
@@ -144,7 +144,7 @@ export const ServiceOffering: React.FC = () => {
               </p>
             </Card>
           </motion.div>
-          
+
           <motion.div variants={item}>
             <Card variant="glass" className="text-center h-full">
               <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">83%</h3>
@@ -153,7 +153,7 @@ export const ServiceOffering: React.FC = () => {
               </p>
             </Card>
           </motion.div>
-          
+
           <motion.div variants={item}>
             <Card variant="glass" className="text-center h-full">
               <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">92%</h3>
@@ -162,7 +162,7 @@ export const ServiceOffering: React.FC = () => {
               </p>
             </Card>
           </motion.div>
-          
+
           <motion.div variants={item}>
             <Card variant="glass" className="text-center h-full">
               <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">3.4x</h3>
@@ -186,7 +186,7 @@ export const ServiceOffering: React.FC = () => {
               {t('steelPage.whatMakesDifferent.subtitle')}
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {whatMakesDifferentItems.map((item, index) => (
               <motion.div
@@ -228,7 +228,7 @@ export const ServiceOffering: React.FC = () => {
               {t('steelPage.advisoryProcess.subtitle')}
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {advisoryProcessItems.map((item, index) => (
               <motion.div
@@ -262,11 +262,11 @@ export const ServiceOffering: React.FC = () => {
               {t('services.subtitle')}
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service) => {
               const serviceData = getNestedTranslation(`services.${service.id}`);
-              
+
               return (
                 <Card key={service.id} variant="glass" padding="lg" className="h-full">
                   <div className="flex items-start">
@@ -280,7 +280,7 @@ export const ServiceOffering: React.FC = () => {
                       <p className="text-gray-600 dark:text-gray-200 mb-4 card-text">
                         {serviceData.description}
                       </p>
-                      
+
                       <h4 className="text-lg font-semibold mb-2 dark:text-gray-100">{t('services.keyFeatures')}</h4>
                       <ul className="space-y-2 mb-6">
                         {Array.isArray(serviceData.features) && serviceData.features.map((feature: string, index: number) => (
@@ -290,9 +290,9 @@ export const ServiceOffering: React.FC = () => {
                           </li>
                         ))}
                       </ul>
-                      
-                      <Button 
-                        variant="outline" 
+
+                      <Button
+                        variant="outline"
                         size="sm"
                         icon={<ArrowRight size={16} />}
                         iconPosition="right"
@@ -325,8 +325,8 @@ export const ServiceOffering: React.FC = () => {
                 <p className="text-gray-600 dark:text-gray-100 mb-6">
                   {t('services.steelFramework.description2')}
                 </p>
-                <Button 
-                  variant="primary" 
+                <Button
+                  variant="primary"
                   icon={<ArrowRight size={16} />}
                   iconPosition="right"
                   onClick={() => navigate('/steel')}
@@ -391,7 +391,7 @@ export const ServiceOffering: React.FC = () => {
         >
           <Card variant="glass" padding="lg">
             <h2 className="text-2xl font-bold mb-6 dark:text-white">{t('services.contact.title')}</h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="flex items-start">
                 <div className="p-3 rounded-full bg-silver/20 dark:bg-navy/40 mr-4">
@@ -404,7 +404,7 @@ export const ServiceOffering: React.FC = () => {
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex items-start">
                 <div className="p-3 rounded-full bg-silver/20 dark:bg-navy/40 mr-4">
                   <Phone size={24} className="text-navy dark:text-silver" />
@@ -416,7 +416,7 @@ export const ServiceOffering: React.FC = () => {
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex items-start">
                 <div className="p-3 rounded-full bg-silver/20 dark:bg-navy/40 mr-4">
                   <MapPin size={24} className="text-navy dark:text-silver" />
@@ -429,10 +429,10 @@ export const ServiceOffering: React.FC = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="mt-8 text-center">
-              <Button 
-                variant="primary" 
+              <Button
+                variant="primary"
                 size="lg"
                 onClick={() => navigate('/contact')}
               >

@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
-import { 
-  Download, ArrowLeft, CheckCircle, Clock, Users, 
+import {
+  Download, ArrowLeft, CheckCircle, Clock, Users,
   FileText, Shield, TrendingUp, Target, AlertCircle,
   ChevronRight, Play, BookOpen, Clipboard, Star
 } from 'lucide-react';
@@ -18,7 +18,7 @@ export const ImplementationGuidePage: React.FC = () => {
 
   const handleDownload = () => {
     setDownloadStarted(true);
-    
+
     // Create a download link with actual file URL
     const link = document.createElement('a');
     link.href = 'https://www.africau.edu/images/default/sample.pdf';
@@ -27,7 +27,7 @@ export const ImplementationGuidePage: React.FC = () => {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    
+
     // Reset after animation
     setTimeout(() => {
       setDownloadStarted(false);
@@ -137,7 +137,7 @@ export const ImplementationGuidePage: React.FC = () => {
       }
     }
   };
-  
+
   const item = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0 }
@@ -152,7 +152,7 @@ export const ImplementationGuidePage: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           className="mb-8"
         >
-          <button 
+          <button
             onClick={() => navigate('/steel')}
             className="inline-flex items-center text-navy dark:text-silver hover:underline mb-4 transition-colors"
           >
@@ -230,8 +230,8 @@ export const ImplementationGuidePage: React.FC = () => {
                   animate={downloadStarted ? { scale: [1, 1.1, 1] } : {}}
                   transition={{ duration: 0.5 }}
                 >
-                  <Button 
-                    variant="secondary" 
+                  <Button
+                    variant="secondary"
                     size="lg"
                     icon={downloadStarted ? <CheckCircle size={20} /> : <Download size={20} />}
                     iconPosition="left"
@@ -295,7 +295,7 @@ export const ImplementationGuidePage: React.FC = () => {
           <div className="space-y-4">
             {implementationPhases.map((phase, index) => (
               <Card key={index} variant="glass" padding="none" className="overflow-hidden">
-                <div 
+                <div
                   className="p-6 cursor-pointer hover:bg-silver/10 dark:hover:bg-navy/10 transition-colors"
                   onClick={() => setSelectedPhase(selectedPhase === index ? null : index)}
                 >
@@ -311,15 +311,15 @@ export const ImplementationGuidePage: React.FC = () => {
                         </p>
                       </div>
                     </div>
-                    <ChevronRight 
-                      size={20} 
+                    <ChevronRight
+                      size={20}
                       className={`text-gray-400 transition-transform ${
                         selectedPhase === index ? 'rotate-90' : ''
-                      }`} 
+                      }`}
                     />
                   </div>
                 </div>
-                
+
                 <AnimatePresence>
                   {selectedPhase === index && (
                     <motion.div
@@ -443,16 +443,16 @@ export const ImplementationGuidePage: React.FC = () => {
                 {t('implementationGuide.cta.description')}
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button 
-                  variant="primary" 
+                <Button
+                  variant="primary"
                   size="lg"
                   icon={<Users size={18} />}
                   onClick={() => navigate('/contact')}
                 >
                   {t('implementationGuide.cta.scheduleConsultation')}
                 </Button>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="lg"
                   icon={<AlertCircle size={18} />}
                   onClick={() => navigate('/resources')}

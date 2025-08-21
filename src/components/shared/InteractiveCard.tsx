@@ -24,7 +24,7 @@ export const InteractiveCard: React.FC<InteractiveCardProps> = ({
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!hover3D) return;
-    
+
     const rect = e.currentTarget.getBoundingClientRect();
     const x = (e.clientX - rect.left - rect.width / 2) / 10;
     const y = (e.clientY - rect.top - rect.height / 2) / 10;
@@ -68,11 +68,11 @@ export const InteractiveCard: React.FC<InteractiveCardProps> = ({
           transition={{ duration: 0.3 }}
         />
       )}
-      
+
       <div className="relative z-10">
         {children}
       </div>
-      
+
       {hover3D && (
         <motion.div
           className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent pointer-events-none"

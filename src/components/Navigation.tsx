@@ -4,8 +4,8 @@ import { NavLink, Link, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useTheme } from '../contexts/ThemeContext';
 import { Button } from './shared/Button';
-import { 
-  Sun, Moon, Menu, X, Globe, ChevronDown, 
+import {
+  Sun, Moon, Menu, X, Globe, ChevronDown,
   Home, Briefcase, Mail, Users, ExternalLink, Lightbulb, Shield, Rocket, BookOpen
 } from 'lucide-react';
 import logoImg from '../assets/ermits-advisory.png';
@@ -23,7 +23,7 @@ export const Navigation: React.FC = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleLanguageDropdown = () => setIsLanguageOpen(!isLanguageOpen);
   const toggleInsightsDropdown = () => setIsInsightsOpen(!isInsightsOpen);
-  
+
   const handleContactClick = () => {
     navigate('/contact');
     setIsMenuOpen(false);
@@ -71,13 +71,13 @@ export const Navigation: React.FC = () => {
             {/* Nav Links - Reduced spacing from space-x-6 to space-x-4 */}
             <div className="flex items-center space-x-4 h-full">
               {navLinks.map((link) => (
-                <NavLink 
+                <NavLink
                   key={link.to}
                   to={link.to}
                   className={({ isActive }) => cn(
                     'text-sm font-medium hover:text-navy dark:hover:text-white transition-colors nav-link flex items-center whitespace-nowrap h-full',
-                    isActive 
-                      ? 'text-navy-dark dark:text-white font-semibold border-b-2 border-navy dark:border-silver' 
+                    isActive
+                      ? 'text-navy-dark dark:text-white font-semibold border-b-2 border-navy dark:border-silver'
                       : 'text-gray-600 dark:text-white/95'
                   )}
                 >
@@ -85,24 +85,24 @@ export const Navigation: React.FC = () => {
                   {link.label}
                 </NavLink>
               ))}
-              
+
               {/* Resources Internal Link */}
               <NavLink
                 to="/resources"
                 className={({ isActive }) => cn(
                   'text-sm font-medium hover:text-navy dark:hover:text-white transition-colors nav-link flex items-center whitespace-nowrap h-full',
-                  isActive 
-                    ? 'text-navy-dark dark:text-white font-semibold border-b-2 border-navy dark:border-silver' 
+                  isActive
+                    ? 'text-navy-dark dark:text-white font-semibold border-b-2 border-navy dark:border-silver'
                     : 'text-gray-600 dark:text-white/95'
                 )}
               >
                 <span className="mr-1.5"><BookOpen size={16} /></span>
                 {t('navigation.resources')}
               </NavLink>
-              
+
               {/* Insights Dropdown */}
               <div className="relative h-full flex items-center">
-                <button 
+                <button
                   onClick={toggleInsightsDropdown}
                   className="flex items-center text-sm font-medium text-gray-600 dark:text-white/95 hover:text-navy dark:hover:text-white transition-colors nav-link whitespace-nowrap h-full"
                 >
@@ -147,7 +147,7 @@ export const Navigation: React.FC = () => {
             <div className="flex items-center space-x-3 h-full">
               {/* Language Selector */}
               <div className="relative">
-                <button 
+                <button
                   onClick={toggleLanguageDropdown}
                   className="flex items-center text-sm font-medium text-gray-600 dark:text-white/95 hover:text-navy dark:hover:text-white"
                 >
@@ -191,7 +191,7 @@ export const Navigation: React.FC = () => {
               </div>
 
               {/* Theme Toggle */}
-              <button 
+              <button
                 onClick={toggleTheme}
                 className="p-2 rounded-full bg-silver/20 hover:bg-silver/30 dark:bg-navy/40 dark:hover:bg-navy/50 transition-colors"
                 aria-label="Toggle theme"
@@ -204,9 +204,9 @@ export const Navigation: React.FC = () => {
               </button>
 
               {/* Contact CTA */}
-              <Button 
-                size="sm" 
-                variant="primary" 
+              <Button
+                size="sm"
+                variant="primary"
                 icon={<Mail size={16} />}
                 onClick={handleContactClick}
               >
@@ -259,7 +259,7 @@ export const Navigation: React.FC = () => {
                   {link.label}
                 </NavLink>
               ))}
-              
+
               {/* Mobile Resources Internal Link */}
               <NavLink
                 to="/resources"
@@ -274,7 +274,7 @@ export const Navigation: React.FC = () => {
                 <span className="mr-2"><BookOpen size={16} /></span>
                 {t('navigation.resources')}
               </NavLink>
-              
+
               {/* Mobile Insights Section */}
               <div className="border-t border-gray-200 dark:border-gray-700 pt-2 mt-2">
                 <div className="flex items-center px-3 py-2 text-sm font-medium text-gray-500 dark:text-gray-400">
@@ -320,7 +320,7 @@ export const Navigation: React.FC = () => {
                   </div>
                 </div>
                 <div className="flex items-center">
-                  <button 
+                  <button
                     onClick={toggleTheme}
                     className="p-2 rounded-full bg-silver/20 hover:bg-silver/30 dark:bg-navy/40 dark:hover:bg-navy/50 transition-colors"
                     aria-label="Toggle theme"
@@ -331,10 +331,10 @@ export const Navigation: React.FC = () => {
                       <Moon size={16} className="text-navy" />
                     )}
                   </button>
-                  <Button 
-                    size="sm" 
-                    variant="primary" 
-                    className="ml-4" 
+                  <Button
+                    size="sm"
+                    variant="primary"
+                    className="ml-4"
                     icon={<Mail size={16} />}
                     onClick={handleContactClick}
                   >

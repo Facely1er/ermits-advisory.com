@@ -3,21 +3,21 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
-import { 
-  Shield, Mail, Phone, Clock, Eye, Database, 
+import {
+  Shield, Mail, Phone, Clock, Eye, Database,
   UserCheck, ArrowLeft, ExternalLink
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const PrivacyPolicyPage: React.FC = () => {
   const { t } = useLanguage();
-  
+
   const sections = [
     {
       id: 'information-collection',
       title: t('privacy.sections.informationCollection.title'),
       icon: <Database size={24} className="text-navy dark:text-silver" />,
-      content: Array.isArray(t('privacy.sections.informationCollection.items')) 
+      content: Array.isArray(t('privacy.sections.informationCollection.items'))
         ? t('privacy.sections.informationCollection.items') as string[]
         : [
           'Personal identification information (name, email address, phone number, company)',
@@ -110,7 +110,7 @@ export const PrivacyPolicyPage: React.FC = () => {
                   {t('privacy.commitment.description')}
                 </p>
                 <ul className="space-y-2 text-silver">
-                  {Array.isArray(t('privacy.commitment.features')) 
+                  {Array.isArray(t('privacy.commitment.features'))
                     ? (t('privacy.commitment.features') as string[]).map((feature: string, index: number) => (
                         <li key={index}>• {feature}</li>
                       ))
@@ -175,7 +175,7 @@ export const PrivacyPolicyPage: React.FC = () => {
                 <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
                   {t('privacy.rights.access.description')}
                 </p>
-                
+
                 <h4 className="font-semibold mb-2 dark:text-gray-100">{t('privacy.rights.deletion.title')}</h4>
                 <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
                   {t('privacy.rights.deletion.description')}
@@ -186,7 +186,7 @@ export const PrivacyPolicyPage: React.FC = () => {
                 <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
                   {t('privacy.rights.marketing.description')}
                 </p>
-                
+
                 <h4 className="font-semibold mb-2 dark:text-gray-100">{t('privacy.rights.cookies.title')}</h4>
                 <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
                   {t('privacy.rights.cookies.description')}
@@ -208,7 +208,7 @@ export const PrivacyPolicyPage: React.FC = () => {
             <p className="text-gray-600 dark:text-gray-200 mb-6">
               {t('privacy.contact.description')}
             </p>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="flex items-start">
                 <div className="p-2 rounded-full bg-silver/20 dark:bg-navy/40 mr-3">
@@ -219,7 +219,7 @@ export const PrivacyPolicyPage: React.FC = () => {
                   <p className="text-gray-600 dark:text-gray-200">privacy@ermits.com</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start">
                 <div className="p-2 rounded-full bg-silver/20 dark:bg-navy/40 mr-3">
                   <Phone size={20} className="text-navy dark:text-silver" />
@@ -229,7 +229,7 @@ export const PrivacyPolicyPage: React.FC = () => {
                   <p className="text-gray-600 dark:text-gray-200">+1 (240) 599-0102</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start">
                 <div className="p-2 rounded-full bg-silver/20 dark:bg-navy/40 mr-3">
                   <Clock size={20} className="text-navy dark:text-silver" />
@@ -261,8 +261,8 @@ export const PrivacyPolicyPage: React.FC = () => {
                 Cookie Policy
               </Button>
             </Link>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               size="sm"
               icon={<ExternalLink size={16} />}
               iconPosition="right"

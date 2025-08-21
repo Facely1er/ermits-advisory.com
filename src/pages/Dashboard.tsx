@@ -3,32 +3,32 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
-import { 
-  Shield, AlertTriangle, Zap, CheckCircle, 
+import {
+  Shield, AlertTriangle, Zap, CheckCircle,
   ChevronRight, TrendingUp, TrendingDown, Minus,
   BarChart3, PieChart, Activity
 } from 'lucide-react';
 import { formatPercentage } from '../utils/formatters';
 import { riskDimensions, metrics, threats } from '../data/mockData';
-import { 
-  Chart as ChartJS, 
-  RadialLinearScale, 
-  PointElement, 
-  LineElement, 
-  Filler, 
-  Tooltip, 
-  Legend 
+import {
+  Chart as ChartJS,
+  RadialLinearScale,
+  PointElement,
+  LineElement,
+  Filler,
+  Tooltip,
+  Legend
 } from 'chart.js';
 import { Radar } from 'react-chartjs-2';
 import { useTheme } from '../contexts/ThemeContext';
 
 // Register ChartJS components
 ChartJS.register(
-  RadialLinearScale, 
-  PointElement, 
-  LineElement, 
-  Filler, 
-  Tooltip, 
+  RadialLinearScale,
+  PointElement,
+  LineElement,
+  Filler,
+  Tooltip,
   Legend
 );
 
@@ -110,13 +110,13 @@ export const Dashboard: React.FC = () => {
   // Status color and styles based on status
   const getStatusStyles = (status: string) => {
     // Handle different languages
-    const statusKey = 
-      status === 'Not Started' || status === 'No Iniciado' || status === 'Non Démarré' 
-        ? 'notStarted' 
-        : status === 'In Progress' || status === 'En Progreso' || status === 'En Cours' 
-          ? 'inProgress' 
+    const statusKey =
+      status === 'Not Started' || status === 'No Iniciado' || status === 'Non Démarré'
+        ? 'notStarted'
+        : status === 'In Progress' || status === 'En Progreso' || status === 'En Cours'
+          ? 'inProgress'
           : 'completed';
-    
+
     switch (statusKey) {
       case 'completed':
         return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100';
@@ -162,7 +162,7 @@ export const Dashboard: React.FC = () => {
       },
     ],
   };
-  
+
   const radarOptions = {
     scales: {
       r: {
@@ -231,7 +231,7 @@ export const Dashboard: React.FC = () => {
       },
     },
   };
-  
+
   const item = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0 },
@@ -247,18 +247,18 @@ export const Dashboard: React.FC = () => {
         >
           <h1 className="text-3xl font-bold mb-2 dark:text-white">{t('dashboard.title')}</h1>
           <p className="text-gray-600 dark:text-gray-200">{t('dashboard.subtitle')}</p>
-          
+
           <div className="flex space-x-4 mt-4">
-            <Button 
-              variant={selectedView === 'overview' ? 'primary' : 'outline'} 
+            <Button
+              variant={selectedView === 'overview' ? 'primary' : 'outline'}
               size="sm"
               onClick={() => setSelectedView('overview')}
               icon={<Activity size={16} />}
             >
               Overview
             </Button>
-            <Button 
-              variant={selectedView === 'details' ? 'primary' : 'outline'} 
+            <Button
+              variant={selectedView === 'details' ? 'primary' : 'outline'}
               size="sm"
               onClick={() => setSelectedView('details')}
               icon={<PieChart size={16} />}
@@ -270,7 +270,7 @@ export const Dashboard: React.FC = () => {
 
         <div className="grid grid-cols-12 gap-6">
           {/* Sidebar with Risk Score */}
-          <motion.div 
+          <motion.div
             className="col-span-12 lg:col-span-3"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -314,8 +314,8 @@ export const Dashboard: React.FC = () => {
                 {riskDimensions.map((dimension) => (
                   <div key={dimension.id} className="flex items-center justify-between">
                     <div className="flex items-center">
-                      <div 
-                        className="w-3 h-3 rounded-full mr-2" 
+                      <div
+                        className="w-3 h-3 rounded-full mr-2"
                         style={{ backgroundColor: dimension.color }}
                       ></div>
                       <span className="text-sm dark:text-gray-200">{t(`steel.dimensions.${dimension.id}.title`)}</span>
@@ -380,8 +380,8 @@ export const Dashboard: React.FC = () => {
                     <h2 className="text-xl font-semibold dark:text-white">{t('dashboard.radar.title')}</h2>
                     <p className="text-sm text-gray-600 dark:text-gray-200">{t('dashboard.radar.description')}</p>
                   </div>
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     size="sm"
                     onClick={() => {}}
                     icon={<ChevronRight size={16} />}
@@ -473,8 +473,8 @@ export const Dashboard: React.FC = () => {
                           <p className="font-medium dark:text-white">{action.action}</p>
                           <p className="text-sm text-gray-600 dark:text-gray-200 mt-1">{action.impact}</p>
                         </div>
-                        <Button 
-                          variant="ghost" 
+                        <Button
+                          variant="ghost"
                           size="sm"
                           icon={<ChevronRight size={16} />}
                           iconPosition="right"
