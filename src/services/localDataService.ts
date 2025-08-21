@@ -68,7 +68,7 @@ export const newsletterService = {
 };
 
 // Dashboard Services
-const dashboardService = {
+export const dashboardService = {
   async getMetrics() {
     const mockMetrics = [
       { id: 'vulnerabilities', name: 'Active Vulnerabilities', value: 37, change: -12, icon: 'shield', category: 'security' },

@@ -7,7 +7,7 @@ import { Button } from '../components/shared/Button';
 import { 
   Shield, Search, Users, UserCheck, CheckCircle, ArrowRight, 
   Mail, Phone, MapPin, Presentation, Activity, Lightbulb,
-  BarChart2, FileText, Calendar, Download
+  BarChart2, FileText
 } from 'lucide-react';
 
 export const ServiceOffering: React.FC = () => {

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
@@ -7,39 +7,39 @@ import { Button } from '../components/shared/Button';
 import { InteractiveCard } from '../components/shared/InteractiveCard';
 import { InteractiveSTEELViz } from '../components/interactive/InteractiveSTEELViz';
 import { 
-  Shield, TrendingUp, Users, Server, Leaf, Scale, 
-  Info, X, ArrowRight, ExternalLink, Download,
+  Users, 
+  Info, ArrowRight, ExternalLink, Download,
   Lightbulb, BarChart2, FileText, Search, Activity, Presentation
 } from 'lucide-react';
-import { steelDimensions } from '../data/mockData';
+// import { steelDimensions } from '../data/mockData';
 
 export const STEELVisualization: React.FC = () => {
   const { t } = useLanguage();
   const navigate = useNavigate();
-  const [selectedDimension, setSelectedDimension] = useState<string | null>(null);
+  // const [selectedDimension, setSelectedDimension] = useState<string | null>(null);
   
-  const handleDimensionClick = (id: string) => {
-    setSelectedDimension(id === selectedDimension ? null : id);
-  };
+  // const handleDimensionClick = (id: string) => {
+  //   setSelectedDimension(id === selectedDimension ? null : id);
+  // };
 
-  const getDimensionIcon = (id: string, size = 24) => {
-    switch (id) {
-      case 'political':
-        return <Shield size={size} />;
-      case 'economic':
-        return <TrendingUp size={size} />;
-      case 'social':
-        return <Users size={size} />;
-      case 'technology':
-        return <Server size={size} />;
-      case 'environmental':
-        return <Leaf size={size} />;
-      case 'legal':
-        return <Scale size={size} />;
-      default:
-        return null;
-    }
-  };
+  // const getDimensionIcon = (id: string, size = 24) => {
+  //   switch (id) {
+  //     case 'political':
+  //       return <Shield size={size} />;
+  //     case 'economic':
+  //       return <TrendingUp size={size} />;
+  //     case 'social':
+  //       return <Users size={size} />;
+  //     case 'technology':
+  //       return <Server size={size} />;
+  //     case 'environmental':
+  //       return <Leaf size={size} />;
+  //     case 'legal':
+  //       return <Scale size={size} />;
+  //     default:
+  //       return null;
+  //   }
+  // };
 
   // Integration steps for animation
   const integrationSteps = [

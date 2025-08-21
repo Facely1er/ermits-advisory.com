@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from '../components/shared/Button';
@@ -52,7 +52,7 @@ export const BoardPresentation: React.FC = () => {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [currentSlide, isFullscreen]);
+  }, [currentSlide, isFullscreen, toggleFullscreen, exitFullscreen]);
 
   const goToPrevSlide = () => {
     setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
@@ -62,7 +62,14 @@ export const BoardPresentation: React.FC = () => {
     setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
   };
 
-  const toggleFullscreen = () => {
+  const exitFullscreen = useCallback(() => {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+      setIsFullscreen(false);
+    }
+  }, []);
+
+  const toggleFullscreen = useCallback(() => {
     if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen().catch(err => {
         console.error(`Error attempting to enable fullscreen: ${err.message}`);
@@ -71,14 +78,7 @@ export const BoardPresentation: React.FC = () => {
     } else {
       exitFullscreen();
     }
-  };
-
-  const exitFullscreen = () => {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-      setIsFullscreen(false);
-    }
-  };
+  }, [exitFullscreen]);
 
   // Function to generate slide background style
   const getSlideBackground = (index: number) => {

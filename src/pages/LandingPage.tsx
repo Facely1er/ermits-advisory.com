@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useTheme } from '../contexts/ThemeContext';
-import { Card } from '../components/shared/Card';
+// import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { InteractiveCard } from '../components/shared/InteractiveCard';
 import { TypewriterText } from '../components/shared/TypewriterText';

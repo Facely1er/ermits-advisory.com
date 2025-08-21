@@ -6,7 +6,7 @@ import { useTheme } from '../contexts/ThemeContext';
 import { Button } from './shared/Button';
 import { 
   Sun, Moon, Menu, X, Globe, ChevronDown, 
-  Home, Briefcase, Mail, Users, ExternalLink, Lightbulb, Shield, Rocket, BookOpen
+  Home, Briefcase, Mail, Users, Lightbulb, Shield, Rocket, BookOpen
 } from 'lucide-react';
 import logoImg from '../assets/ermits-advisory.png';
 import { cn } from '../utils/cn';

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
-import { Rocket, Clock, Settings, Layers, Database, BarChart3, Cog as Cogs, Monitor, Cloud, X, ArrowRight, Calendar, Download, CheckCircle, Info } from 'lucide-react';
+import { Rocket, Clock, Settings, Layers, Database, BarChart3, Cog as Cogs, Monitor, Cloud, X, ArrowRight, Calendar, Download, Info } from 'lucide-react';
 
 interface RAPIDPhase {
   id: string;
@@ -372,7 +372,7 @@ export const RAPIDPage: React.FC = () => {
                 </motion.div>
 
                 {/* Phase Circles */}
-                {rapidPhases.map((phase, index) => (
+                {rapidPhases.map((phase) => (
                   <motion.button
                     key={phase.id}
                     variants={phaseVariants}

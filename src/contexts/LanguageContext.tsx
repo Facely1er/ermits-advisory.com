@@ -6,7 +6,7 @@ interface LanguageContextType {
   language: Language;
   setLanguage: (language: Language) => void;
   t: (key: string) => string;
-  getNestedTranslation: (path: string) => any;
+  getNestedTranslation: (path: string) => Record<string, unknown> | string;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -67,7 +67,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   };
 
   // Function to get a nested translation object
-  const getNestedTranslation = (path: string): any => {
+  const getNestedTranslation = (path: string): Record<string, unknown> | string => {
     const keys = path.split('.');
     let value = translations[language];
     

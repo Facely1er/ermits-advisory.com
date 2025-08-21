@@ -234,7 +234,6 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
         {/* Connecting Lines */}
         <svg className="absolute inset-0 w-full h-full pointer-events-none">
           {dimensions.map((dimension, index) => {
-            const nextDimension = dimensions[(index + 1) % dimensions.length];
             const angle1 = (index * 60) * (Math.PI / 180);
             const angle2 = ((index + 1) * 60) * (Math.PI / 180);
             

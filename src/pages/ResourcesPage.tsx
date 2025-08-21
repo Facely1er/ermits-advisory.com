@@ -152,8 +152,10 @@ export const ResourcesPage: React.FC = () => {
                       setHasError(false);
                       // Force iframe reload
                       const iframe = document.getElementById('resources-iframe') as HTMLIFrameElement;
-                      if (iframe) {
-                        iframe.src = iframe.src;
+                      if (iframe && iframe.src) {
+                        const originalSrc = iframe.src;
+                        iframe.src = '';
+                        iframe.src = originalSrc;
                       }
                     }}
                   >

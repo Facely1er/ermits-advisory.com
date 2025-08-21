@@ -6,17 +6,17 @@ export interface RiskDimension {
   color: string;
 }
 
-interface STEELScore {
-  overall: number;
-  dimensions: {
-    political: number;
-    economic: number;
-    social: number;
-    technology: number;
-    environmental: number;
-    legal: number;
-  };
-}
+// interface STEELScore {
+//   overall: number;
+//   dimensions: {
+//     political: number;
+//     economic: number;
+//     social: number;
+//     technology: number;
+//     environmental: number;
+//     legal: number;
+//   };
+// }
 
 export interface Threat {
   id: string;

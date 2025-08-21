@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
@@ -8,7 +8,7 @@ import { Home, ArrowLeft, Search, AlertCircle, BookOpen } from 'lucide-react';
 
 export const NotFoundPage: React.FC = () => {
   const { t } = useLanguage();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   
   return (
     <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">

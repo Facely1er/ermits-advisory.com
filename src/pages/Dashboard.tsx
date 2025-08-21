@@ -8,7 +8,7 @@ import {
   ChevronRight, TrendingUp, TrendingDown, Minus,
   BarChart3, PieChart, Activity
 } from 'lucide-react';
-import { formatPercentage } from '../utils/formatters';
+// import { formatPercentage } from '../utils/formatters';
 import { riskDimensions, metrics, threats } from '../data/mockData';
 import { 
   Chart as ChartJS, 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import logoImg from '../assets/ermits-advisory.png';
 import { 
@@ -8,7 +8,6 @@ import {
 
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
-  const navigate = useNavigate();
   
   return (
     <footer className="bg-navy dark:bg-black text-white">

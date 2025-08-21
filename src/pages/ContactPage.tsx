@@ -131,20 +131,21 @@ export const ContactPage: React.FC = () => {
   };
   
   // Animation variants
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-  
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 }
-  };
+    // Animation variants
+  // const container = {
+  //   hidden: { opacity: 0 },
+  //   show: {
+  //     opacity: 1,
+  //     transition: {
+  //       staggerChildren: 0.1
+  //     }
+  //   }
+  // };
+
+  // const item = {
+  //   hidden: { opacity: 0, y: 20 },
+  //   show: { opacity: 1, y: 0 }
+  // };
 
   return (
     <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">

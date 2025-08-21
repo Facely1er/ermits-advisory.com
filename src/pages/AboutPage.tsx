@@ -5,10 +5,9 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { 
-  Award, Users, Target, Clock, ChevronRight, Globe,
-  Calendar, BookOpen, Briefcase, ArrowRight, Shield,
-  GraduationCap, Scale, UserCheck, Brain, CheckCircle,
-  Zap, Eye, Heart
+  Award, Target, Globe,
+  Calendar, Briefcase, ArrowRight, Shield,
+  GraduationCap, Scale, UserCheck, Brain, CheckCircle
 } from 'lucide-react';
 import teamImage from '../assets/image.png';
 
