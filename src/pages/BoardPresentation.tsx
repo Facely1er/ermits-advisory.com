@@ -36,31 +36,13 @@ export const BoardPresentation: React.FC = () => {
     slide7, // Next steps - roadmap/planning
   ];
 
-  // Handle keyboard navigation
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowRight' || e.key === ' ') {
-        goToNextSlide();
-      } else if (e.key === 'ArrowLeft') {
-        goToPrevSlide();
-      } else if (e.key === 'f') {
-        toggleFullscreen();
-      } else if (e.key === 'Escape' && isFullscreen) {
-        exitFullscreen();
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [currentSlide, isFullscreen, toggleFullscreen, exitFullscreen]);
-
-  const goToPrevSlide = () => {
+  const goToPrevSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
-  };
+  }, [totalSlides]);
 
-  const goToNextSlide = () => {
+  const goToNextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
-  };
+  }, [totalSlides]);
 
   const exitFullscreen = useCallback(() => {
     if (document.exitFullscreen) {
@@ -79,6 +61,24 @@ export const BoardPresentation: React.FC = () => {
       exitFullscreen();
     }
   }, [exitFullscreen]);
+
+  // Handle keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        goToNextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        goToPrevSlide();
+      } else if (e.key === 'f') {
+        toggleFullscreen();
+      } else if (e.key === 'Escape' && isFullscreen) {
+        exitFullscreen();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [goToNextSlide, goToPrevSlide, toggleFullscreen, exitFullscreen, isFullscreen]);
 
   // Function to generate slide background style
   const getSlideBackground = (index: number) => {
