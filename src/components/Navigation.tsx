@@ -43,7 +43,7 @@ export const Navigation: React.FC = () => {
     { to: '/risk-radar', label: t('navigation.riskRadar') },
     { to: '/dashboard', label: t('navigation.dashboard') },
     { to: '/presentation', label: t('navigation.presentation') },
-    { to: '/steel/index.html', label: 'STEEL Assessment', external: true },
+    { to: '/steel', label: 'STEEL Assessment' },
   ];
 
   return (
@@ -99,32 +99,20 @@ export const Navigation: React.FC = () => {
                     >
                       <div className="py-1" role="menu" aria-orientation="vertical">
                         {insightsLinks.map((link) => (
-                          link.external ? (
-                            <a
-                              key={link.to}
-                              href={link.to}
-                              className="block px-4 py-2 text-sm dropdown-item text-gray-700 dark:text-white/95 hover:bg-silver/10 dark:hover:bg-navy/20"
-                              role="menuitem"
-                              onClick={handleInsightsItemClick}
-                            >
-                              {link.label}
-                            </a>
-                          ) : (
-                            <NavLink
-                              key={link.to}
-                              to={link.to}
-                              className={({ isActive }) => cn(
-                                'block px-4 py-2 text-sm dropdown-item',
-                                isActive
-                                  ? 'bg-silver/20 text-navy dark:bg-navy/30 dark:text-white'
-                                  : 'text-gray-700 dark:text-white/95 hover:bg-silver/10 dark:hover:bg-navy/20'
-                              )}
-                              role="menuitem"
-                              onClick={handleInsightsItemClick}
-                            >
-                              {link.label}
-                            </NavLink>
-                          )
+                          <NavLink
+                            key={link.to}
+                            to={link.to}
+                            className={({ isActive }) => cn(
+                              'block px-4 py-2 text-sm dropdown-item',
+                              isActive
+                                ? 'bg-silver/20 text-navy dark:bg-navy/30 dark:text-white'
+                                : 'text-gray-700 dark:text-white/95 hover:bg-silver/10 dark:hover:bg-navy/20'
+                            )}
+                            role="menuitem"
+                            onClick={handleInsightsItemClick}
+                          >
+                            {link.label}
+                          </NavLink>
                         ))}
                       </div>
                     </motion.div>
@@ -212,30 +200,19 @@ export const Navigation: React.FC = () => {
                   {t('navigation.insights')}
                 </div>
                 {insightsLinks.map((link) => (
-                  link.external ? (
-                    <a
-                      key={link.to}
-                      href={link.to}
-                      className="flex items-center px-6 py-2 rounded-md text-sm font-medium text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {link.label}
-                    </a>
-                  ) : (
-                    <NavLink
-                      key={link.to}
-                      to={link.to}
-                      className={({ isActive }) => cn(
-                        'flex items-center px-6 py-2 rounded-md text-sm font-medium',
-                        isActive
-                          ? 'bg-navy/10 text-navy dark:bg-silver/20 dark:text-white'
-                          : 'text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10'
-                      )}
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {link.label}
-                    </NavLink>
-                  )
+                  <NavLink
+                    key={link.to}
+                    to={link.to}
+                    className={({ isActive }) => cn(
+                      'flex items-center px-6 py-2 rounded-md text-sm font-medium',
+                      isActive
+                        ? 'bg-navy/10 text-navy dark:bg-silver/20 dark:text-white'
+                        : 'text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10'
+                    )}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.label}
+                  </NavLink>
                 ))}
               </div>
             </div>

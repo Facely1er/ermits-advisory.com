@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useTheme } from '../contexts/ThemeContext';
 import { Button } from '../components/shared/Button';
 import { InteractiveCard } from '../components/shared/InteractiveCard';
 import { TypewriterText } from '../components/shared/TypewriterText';
-import { Shield, TrendingUp, Users, Server, Leaf, Scale, ArrowRight, CheckCircle, Zap, Eye, Target } from 'lucide-react';
+import { Shield, TrendingUp, Users, Server, Leaf, Scale, ArrowRight, CheckCircle, Zap, Eye, Target, ChevronLeft, ChevronRight } from 'lucide-react';
 import { steelDimensions } from '../data/mockData';
 import { LiveMetrics } from '../components/interactive/LiveMetrics';
 
@@ -15,6 +15,7 @@ export const LandingPage: React.FC = () => {
   const { theme } = useTheme();
   const navigate = useNavigate();
   const [showTypewriter, setShowTypewriter] = useState(false);
+  const [currentFeatureIndex, setCurrentFeatureIndex] = useState(0);
   
   const container = {
     hidden: { opacity: 0 },
@@ -78,10 +79,27 @@ export const LandingPage: React.FC = () => {
     }
   ];
 
+  // Carousel auto-advance
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentFeatureIndex((prev) => (prev + 1) % enhancedFeatures.length);
+    }, 4000); // Change slide every 4 seconds
+
+    return () => clearInterval(interval);
+  }, [enhancedFeatures.length]);
+
+  const nextFeature = () => {
+    setCurrentFeatureIndex((prev) => (prev + 1) % enhancedFeatures.length);
+  };
+
+  const prevFeature = () => {
+    setCurrentFeatureIndex((prev) => (prev - 1 + enhancedFeatures.length) % enhancedFeatures.length);
+  };
+
   return (
     <div className="min-h-screen">
-      {/* Enhanced Hero Section - Fixed spacing for navigation */}
-      <section className="relative bg-gradient-to-br from-navy via-navy-dark to-navy text-white pt-16 pb-12 md:pt-20 md:pb-16 overflow-hidden">
+      {/* Enhanced Hero Section - Reduced size */}
+      <section className="relative bg-gradient-to-br from-navy via-navy-dark to-navy text-white pt-12 pb-8 md:pt-16 md:pb-12 overflow-hidden">
         {/* Enhanced background with gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-navy-dark/90 to-navy/95"></div>
         <div className="absolute inset-0 opacity-20 bg-[url('https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-center bg-cover bg-no-repeat"></div>
@@ -137,12 +155,12 @@ export const LandingPage: React.FC = () => {
                 Enterprise Risk Management
               </span>
             </motion.div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
               <span className="bg-gradient-to-r from-white via-silver to-white bg-clip-text text-transparent">
                 {t('landing.hero.title')}
               </span>
             </h1>
-            <div className="text-lg sm:text-xl md:text-2xl mb-10 text-silver/90 min-h-[2em] max-w-3xl mx-auto leading-relaxed">
+            <div className="text-base sm:text-lg md:text-xl mb-8 text-silver/90 min-h-[2em] max-w-3xl mx-auto leading-relaxed">
               {showTypewriter && (
                 <TypewriterText 
                   text={t('landing.hero.subtitle')} 
@@ -221,36 +239,93 @@ export const LandingPage: React.FC = () => {
             </motion.p>
           </motion.div>
           
-          <motion.div 
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.1 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
-            {enhancedFeatures.map((feature, index) => (
-              <motion.div key={index} variants={item}>
-                <InteractiveCard 
-                  hover3D={true}
-                  glowEffect={true}
-                  className="bg-white dark:bg-dark-card-bg p-6 text-center h-full"
+          {/* Carousel Container */}
+          <div className="relative max-w-5xl mx-auto">
+            {/* Carousel Navigation Buttons */}
+            <button
+              onClick={prevFeature}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-dark-card-bg p-2 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 border border-gray-200 dark:border-gray-700"
+              aria-label="Previous feature"
+            >
+              <ChevronLeft size={24} className="text-navy dark:text-white" />
+            </button>
+            <button
+              onClick={nextFeature}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-dark-card-bg p-2 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 border border-gray-200 dark:border-gray-700"
+              aria-label="Next feature"
+            >
+              <ChevronRight size={24} className="text-navy dark:text-white" />
+            </button>
+
+            {/* Carousel Content */}
+            <div className="overflow-hidden px-12">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentFeatureIndex}
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -100 }}
+                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
                 >
-                  <div className="p-4 rounded-full bg-gray-50 dark:bg-gray-800 inline-flex mb-4">
-                    {feature.icon}
-                  </div>
-                  <div className="text-3xl font-bold text-navy dark:text-white mb-2">
-                    {feature.metric}
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 dark:text-white">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-200 text-sm">
-                    {feature.description}
-                  </p>
-                </InteractiveCard>
-              </motion.div>
-            ))}
-          </motion.div>
+                  {enhancedFeatures.map((feature, index) => {
+                    const position = (index - currentFeatureIndex + enhancedFeatures.length) % enhancedFeatures.length;
+                    const isActive = index === currentFeatureIndex;
+                    
+                    return (
+                      <motion.div 
+                        key={`${currentFeatureIndex}-${index}`}
+                        initial={{ opacity: 0.5, scale: 0.9 }}
+                        animate={{ 
+                          opacity: isActive ? 1 : 0.6,
+                          scale: isActive ? 1 : 0.95
+                        }}
+                        transition={{ duration: 0.4 }}
+                        className={isActive ? 'z-10' : ''}
+                      >
+                        <InteractiveCard 
+                          hover3D={true}
+                          glowEffect={isActive}
+                          className={`bg-white dark:bg-dark-card-bg p-6 text-center h-full transition-all ${
+                            isActive ? 'ring-2 ring-navy dark:ring-white shadow-xl' : ''
+                          }`}
+                        >
+                          <div className="p-4 rounded-full bg-gray-50 dark:bg-gray-800 inline-flex mb-4">
+                            {feature.icon}
+                          </div>
+                          <div className="text-3xl font-bold text-navy dark:text-white mb-2">
+                            {feature.metric}
+                          </div>
+                          <h3 className="text-lg font-semibold mb-2 dark:text-white">
+                            {feature.title}
+                          </h3>
+                          <p className="text-gray-600 dark:text-gray-200 text-sm">
+                            {feature.description}
+                          </p>
+                        </InteractiveCard>
+                      </motion.div>
+                    );
+                  })}
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Carousel Indicators */}
+            <div className="flex justify-center mt-6 gap-2">
+              {enhancedFeatures.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentFeatureIndex(index)}
+                  className={`h-2 rounded-full transition-all ${
+                    index === currentFeatureIndex
+                      ? 'w-8 bg-navy dark:bg-white'
+                      : 'w-2 bg-gray-300 dark:bg-gray-600'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

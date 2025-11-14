@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from '../components/shared/Button';
@@ -25,8 +25,8 @@ export const BoardPresentation: React.FC = () => {
   // Get the total number of slides from translations
   const totalSlides = 7; // There are 7 slides in total as per the translations
 
-  // Background images for each slide
-  const slideBackgrounds = [
+  // Background images for each slide - memoized to prevent re-renders
+  const slideBackgrounds = useMemo(() => [
     slide1, // Executive briefing - modern office/meeting room
     slide2, // Risk landscape - cyber security concept
     slide3, // STEEL assessment - data visualization
@@ -34,7 +34,7 @@ export const BoardPresentation: React.FC = () => {
     slide5, // Recommended actions - team planning
     slide6, // Investment considerations - finance concept
     slide7, // Next steps - roadmap/planning
-  ];
+  ], []);
 
   const goToPrevSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
@@ -61,6 +61,16 @@ export const BoardPresentation: React.FC = () => {
       exitFullscreen();
     }
   }, [exitFullscreen]);
+
+  const handleDownload = useCallback(() => {
+    // Create a download link for the current slide
+    const link = document.createElement('a');
+    link.href = slideBackgrounds[currentSlide];
+    link.download = `STEEL-Presentation-Slide-${currentSlide + 1}.jpg`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }, [currentSlide, slideBackgrounds]);
 
   // Handle keyboard navigation
   useEffect(() => {
@@ -675,6 +685,7 @@ export const BoardPresentation: React.FC = () => {
               variant="outline"
               size="sm"
               icon={<Download size={16} />}
+              onClick={handleDownload}
             >
               {t('presentation.download')}
             </Button>

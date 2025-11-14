@@ -74,7 +74,7 @@ export const LiveMetrics: React.FC = () => {
           trend: change > 0.1 ? 'up' : change < -0.1 ? 'down' : 'stable'
         };
       }));
-    }, 3000); // Update every 3 seconds
+    }, 5000); // Update every 5 seconds (slower for better readability)
 
     return () => clearInterval(interval);
   }, []);
