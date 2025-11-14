@@ -12,12 +12,12 @@ export const en = {
   navigation: {
     home: "Home",
     about: "About",
-    services: "Services", 
+    services: "Services",
     steel: "STEEL™",
     ecosystem: "Ecosystem",
     insights: "Insights",
     riskRadar: "Risk Radar",
-    dashboard: "Dashboard", 
+    dashboard: "Dashboard",
     presentation: "Presentation",
     contact: "Contact"
   },
