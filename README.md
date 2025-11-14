@@ -2,13 +2,12 @@
 
 **Global Intelligence. Resilient Strategy. Streamlined for Success.**
 
-A comprehensive risk management platform built with React, TypeScript, and modern web technologies. ERMITS Advisory provides sophisticated risk assessment tools using the STEEL framework and RAPID methodology.
+A comprehensive risk management platform built with React, TypeScript, and modern web technologies. ERMITS Advisory provides sophisticated risk assessment tools using the STEEL framework.
 
 ## 🚀 Features
 
 ### Core Functionality
 - **STEEL Framework**: Comprehensive risk assessment across Social, Technological, Economic, Environmental, and Legal dimensions
-- **RAPID Methodology**: Rapid Assessment and Prioritization for Intelligent Decision-making
 - **Risk Radar**: Real-time threat monitoring and visualization
 - **Interactive Dashboard**: Executive-level insights and metrics
 - **Board Presentations**: Professional cybersecurity briefings

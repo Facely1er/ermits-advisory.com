@@ -6,7 +6,7 @@ import { useTheme } from '../contexts/ThemeContext';
 import { Button } from './shared/Button';
 import { 
   Sun, Moon, Menu, X, Globe, ChevronDown, 
-  Home, Briefcase, Mail, Users, Lightbulb, Shield, Rocket, BookOpen
+  Home, Briefcase, Mail, Users, Lightbulb, Shield, Layers
 } from 'lucide-react';
 import logoImg from '../assets/ermits-advisory.png';
 import { cn } from '../utils/cn';
@@ -45,7 +45,7 @@ export const Navigation: React.FC = () => {
     { to: '/about', label: t('navigation.about'), icon: <Users size={16} /> },
     { to: '/services', label: t('navigation.services'), icon: <Briefcase size={16} /> },
     { to: '/steel', label: t('navigation.steel'), icon: <Shield size={16} /> },
-    { to: '/rapid', label: 'RAPID™', icon: <Rocket size={16} /> },
+    { to: '/ecosystem', label: t('navigation.ecosystem'), icon: <Layers size={16} /> },
   ];
 
   const insightsLinks = [
@@ -85,20 +85,6 @@ export const Navigation: React.FC = () => {
                   {link.label}
                 </NavLink>
               ))}
-              
-              {/* Resources Internal Link */}
-              <NavLink
-                to="/resources"
-                className={({ isActive }) => cn(
-                  'text-sm font-medium hover:text-navy dark:hover:text-white transition-colors nav-link flex items-center whitespace-nowrap h-full',
-                  isActive 
-                    ? 'text-navy-dark dark:text-white font-semibold border-b-2 border-navy dark:border-silver' 
-                    : 'text-gray-600 dark:text-white/95'
-                )}
-              >
-                <span className="mr-1.5"><BookOpen size={16} /></span>
-                {t('navigation.resources')}
-              </NavLink>
               
               {/* Insights Dropdown */}
               <div className="relative h-full flex items-center">
@@ -259,21 +245,6 @@ export const Navigation: React.FC = () => {
                   {link.label}
                 </NavLink>
               ))}
-              
-              {/* Mobile Resources Internal Link */}
-              <NavLink
-                to="/resources"
-                className={({ isActive }) => cn(
-                  'flex items-center px-3 py-2 rounded-md text-base font-medium',
-                  isActive
-                    ? 'bg-navy/10 text-navy dark:bg-silver/20 dark:text-white'
-                    : 'text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10'
-                )}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <span className="mr-2"><BookOpen size={16} /></span>
-                {t('navigation.resources')}
-              </NavLink>
               
               {/* Mobile Insights Section */}
               <div className="border-t border-gray-200 dark:border-gray-700 pt-2 mt-2">

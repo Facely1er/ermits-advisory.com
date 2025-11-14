@@ -138,7 +138,7 @@ export const ServiceOffering: React.FC = () => {
         >
           <motion.div variants={item}>
             <Card variant="glass" className="text-center h-full">
-              <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">67%</h3>
+              <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">Significant</h3>
               <p className="text-gray-600 dark:text-gray-200">
                 {t('landing.metrics.riskReduction')}
               </p>
@@ -147,7 +147,7 @@ export const ServiceOffering: React.FC = () => {
           
           <motion.div variants={item}>
             <Card variant="glass" className="text-center h-full">
-              <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">83%</h3>
+              <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">Faster</h3>
               <p className="text-gray-600 dark:text-gray-200">
                 {t('landing.metrics.timeToInsight')}
               </p>
@@ -156,7 +156,7 @@ export const ServiceOffering: React.FC = () => {
           
           <motion.div variants={item}>
             <Card variant="glass" className="text-center h-full">
-              <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">92%</h3>
+              <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">Improved</h3>
               <p className="text-gray-600 dark:text-gray-200">
                 {t('landing.metrics.boardConfidence')}
               </p>
@@ -165,7 +165,7 @@ export const ServiceOffering: React.FC = () => {
           
           <motion.div variants={item}>
             <Card variant="glass" className="text-center h-full">
-              <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">3.4x</h3>
+              <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">Positive</h3>
               <p className="text-gray-600 dark:text-gray-200">
                 {t('landing.metrics.roiImprovement')}
               </p>

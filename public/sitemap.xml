@@ -35,13 +35,6 @@
   </url>
 
   <url>
-    <loc>https://ermits-advisory.com/rapid</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
     <loc>https://ermits-advisory.com/risk-radar</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>daily</changefreq>
@@ -71,17 +64,17 @@
   </url>
 
   <url>
-    <loc>https://ermits-advisory.com/contact</loc>
+    <loc>https://ermits-advisory.com/ecosystem</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://ermits-advisory.com/resources</loc>
+    <loc>https://ermits-advisory.com/contact</loc>
     <lastmod>2024-12-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- Legal Pages -->

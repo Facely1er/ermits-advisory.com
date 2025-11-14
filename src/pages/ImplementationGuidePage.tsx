@@ -455,9 +455,9 @@ export const ImplementationGuidePage: React.FC = () => {
                   variant="outline" 
                   size="lg"
                   icon={<AlertCircle size={18} />}
-                  onClick={() => navigate('/resources')}
+                  onClick={() => navigate('/contact')}
                 >
-                  {t('implementationGuide.cta.viewResources')}
+                  {t('implementationGuide.cta.scheduleConsultation')}
                 </Button>
               </div>
             </div>

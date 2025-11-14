@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import logoImg from '../assets/ermits-advisory.png';
 import { 
-  Mail, Phone, MapPin, Shield, BarChart2, Users, BookOpen
+  Mail, Shield, BarChart2, Users
 } from 'lucide-react';
 
 export const Footer: React.FC = () => {
@@ -48,12 +48,6 @@ export const Footer: React.FC = () => {
                   {t('footer.services.dashboard')}
                 </Link>
               </li>
-              <li>
-                <Link to="/resources" className="text-silver hover:text-white transition-colors flex items-center text-sm">
-                  <BookOpen size={14} className="mr-2" />
-                  {t('footer.services.resources')}
-                </Link>
-              </li>
             </ul>
           </div>
           
@@ -85,14 +79,6 @@ export const Footer: React.FC = () => {
                 <a href="mailto:advisory@ermits.com" className="hover:text-white transition-colors">
                   advisory@ermits.com
                 </a>
-              </div>
-              <div className="flex items-center text-silver text-sm">
-                <Phone size={14} className="mr-2 flex-shrink-0" />
-                <span>+1 (240) 599- 0102</span>
-              </div>
-              <div className="flex items-center text-silver text-sm">
-                <MapPin size={14} className="mr-2 flex-shrink-0" />
-                <span>Gaithersburg, MD</span>
               </div>
             </div>
           </div>

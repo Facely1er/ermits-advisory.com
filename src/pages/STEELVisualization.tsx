@@ -374,7 +374,7 @@ export const STEELVisualization: React.FC = () => {
                   <Button 
                     variant="outline" 
                     className="border-white text-white hover:bg-white/10 transform hover:scale-105 transition-transform"
-                    onClick={() => navigate('/resources')}
+                    onClick={() => navigate('/contact')}
                   >
                     {t('steel.cta.requestCaseStudy')}
                   </Button>

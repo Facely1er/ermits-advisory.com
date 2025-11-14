@@ -19,8 +19,7 @@ const ServiceOffering = React.lazy(() => import('./pages/ServiceOffering').then(
 const BoardPresentation = React.lazy(() => import('./pages/BoardPresentation').then(m => ({ default: m.BoardPresentation })));
 const ContactPage = React.lazy(() => import('./pages/ContactPage').then(m => ({ default: m.ContactPage })));
 const AboutPage = React.lazy(() => import('./pages/AboutPage').then(m => ({ default: m.AboutPage })));
-const RAPIDPage = React.lazy(() => import('./pages/RAPIDPage').then(m => ({ default: m.RAPIDPage })));
-const ResourcesPage = React.lazy(() => import('./pages/ResourcesPage').then(m => ({ default: m.ResourcesPage })));
+const EcosystemPage = React.lazy(() => import('./pages/EcosystemPage').then(m => ({ default: m.EcosystemPage })));
 const NotFoundPage = React.lazy(() => import('./pages/NotFoundPage').then(m => ({ default: m.NotFoundPage })));
 const PrivacyPolicyPage = React.lazy(() => import('./pages/PrivacyPolicyPage').then(m => ({ default: m.PrivacyPolicyPage })));
 const TermsOfServicePage = React.lazy(() => import('./pages/TermsOfServicePage').then(m => ({ default: m.TermsOfServicePage })));
@@ -53,13 +52,12 @@ function App() {
                   <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/steel" element={<STEELVisualization />} />
                   <Route path="/steel/implementation-guide" element={<ImplementationGuidePage />} />
-                  <Route path="/rapid" element={<RAPIDPage />} />
                   <Route path="/risk-radar" element={<RiskRadar />} />
                   <Route path="/services" element={<ServiceOffering />} />
                   <Route path="/presentation" element={<BoardPresentation />} />
                   <Route path="/contact" element={<ContactPage />} />
                   <Route path="/about" element={<AboutPage />} />
-                  <Route path="/resources" element={<ResourcesPage />} />
+                  <Route path="/ecosystem" element={<EcosystemPage />} />
                   <Route path="/privacy" element={<PrivacyPolicyPage />} />
                   <Route path="/terms" element={<TermsOfServicePage />} />
                   <Route path="/cookies" element={<CookiePolicyPage />} />

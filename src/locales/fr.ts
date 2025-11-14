@@ -14,42 +14,19 @@ export const fr = {
     about: "À propos",
     services: "Services",
     steel: "STEEL™",
+    ecosystem: "Écosystème",
     insights: "Analyses",
-    resources: "Ressources",
     riskRadar: "Radar des Risques",
     dashboard: "Tableau de bord",
     presentation: "Présentation",
     contact: "Contact"
   },
 
-  // Page des ressources
-  resources: {
-    backToHome: "Retour à l'accueil",
-    description: "Accédez à notre bibliothèque complète de ressources en cybersécurité, livres blancs, études de cas et analyses sectorielles.",
-    fullscreenView: "Vue plein écran",
-    openInNewTab: "Ouvrir dans un nouvel onglet",
-    exitFullscreen: "Quitter le plein écran",
-    loading: {
-      title: "Chargement des ressources",
-      message: "Veuillez patienter pendant que nous chargeons les dernières ressources en cybersécurité..."
-    },
-    error: {
-      title: "Impossible de charger les ressources",
-      message: "Nous rencontrons des difficultés techniques pour charger la page des ressources. Veuillez essayer d'y accéder directement ou nous contacter pour obtenir de l'aide.",
-      retry: "Réessayer"
-    },
-    about: {
-      title: "À propos de nos ressources",
-      description: "Accédez aux livres blancs, études de cas, webinaires et analyses sectorielles pour renforcer votre posture de cybersécurité."
-    },
-    contactButton: "Nous contacter"
-  },
-
   // Page d'accueil
   landing: {
     hero: {
       title: "Cadre d'Évaluation des Risques STEEL™",
-      subtitle: "Plateforme révolutionnaire d'intelligence cybersécuritaire qui transforme la façon dont les organisations comprennent et gèrent les risques stratégiques",
+      subtitle: "Une plateforme d'intelligence cybersécuritaire complète qui aide les organisations à comprendre et gérer les risques stratégiques",
       cta: "Explorer STEEL™"
     },
     realTimeIntelligence: {
@@ -73,13 +50,13 @@ export const fr = {
       },
       predictiveAnalytics: {
         title: "Analyses Prédictives",
-        description: "Prévisions alimentées par l'IA qui anticipent les risques avant qu'ils ne se matérialisent",
-        metric: "83%"
+        description: "Analyses qui aident à anticiper les risques avant qu'ils ne se matérialisent",
+        metric: "Plus Rapide"
       },
       strategicFocus: {
         title: "Focus Stratégique",
         description: "Insights au niveau exécutif qui connectent la cybersécurité aux objectifs commerciaux",
-        metric: "92%"
+        metric: "Amélioré"
       },
       comprehensiveCoverage: {
         title: "Couverture Complète",
@@ -182,7 +159,7 @@ export const fr = {
     },
     integration: {
       title: "Processus d'Intégration STEEL™",
-      description: "Notre méthodologie éprouvée pour implémenter STEEL™ dans votre organisation",
+      description: "Notre méthodologie pour implémenter STEEL™ dans votre organisation",
       step1: "Évaluation",
       step2: "Analyse",
       step3: "Stratégie",
@@ -204,7 +181,7 @@ export const fr = {
     hero: {
       title: "Évaluation Stratégique des Risques STEEL™",
       subtitle1: "Au-delà de l'Analyse PESTEL Traditionnelle",
-      subtitle2: "Présentation du premier cadre d'évaluation de l'environnement stratégique axé sur la cybersécurité au monde",
+      subtitle2: "Un cadre d'évaluation de l'environnement stratégique axé sur la cybersécurité",
       scheduleConsultation: "Planifier une Consultation",
       requestDemo: "Demander une Démo",
       downloadMethodology: "Télécharger la Méthodologie"
@@ -307,7 +284,7 @@ export const fr = {
     steelFramework: {
       title: "Le Cadre STEEL™",
       description1: "Notre méthodologie propriétaire STEEL™ transforme l'évaluation traditionnelle des risques en intégrant l'intelligence cybersécuritaire dans l'analyse environnementale stratégique.",
-      description2: "Cette approche offre une visibilité sans précédent sur la façon dont les facteurs externes impactent la posture de cybersécurité de votre organisation.",
+      description2: "Cette approche offre une visibilité complète sur la façon dont les facteurs externes impactent la posture de cybersécurité de votre organisation.",
       exploreButton: "Explorer STEEL™"
     },
     contact: {
@@ -440,109 +417,6 @@ export const fr = {
     }
   },
 
-  // Page RAPID
-  rapid: {
-    hero: {
-      title: "Cadre de Déploiement RAPID™",
-      subtitle: "Révolutionner l'implémentation de la cybersécurité avec 96% d'automatisation",
-      scheduleDeployment: "Planifier le Déploiement",
-      requestDemo: "Demander une Démo",
-      downloadGuide: "Télécharger le Guide"
-    },
-    revolutionaryFeatures: {
-      title: "Fonctionnalités Révolutionnaires",
-      subtitle: "Capacités de nouvelle génération qui redéfinissent le déploiement cybersécuritaire",
-      automatedIntelligence: {
-        title: "Intelligence Automatisée",
-        description: "Analyse et implémentation pilotées par l'IA avec intervention humaine minimale"
-      },
-      zeroDowntime: {
-        title: "Déploiement Sans Temps d'Arrêt",
-        description: "Intégration transparente sans perturber les opérations commerciales"
-      },
-      selfHealing: {
-        title: "Architecture Auto-Réparatrice",
-        description: "Détection et remédiation automatiques de la dérive de configuration sécuritaire"
-      },
-      ecosystemIntegration: {
-        title: "Intégration d'Écosystème",
-        description: "Compatibilité universelle avec l'infrastructure sécuritaire existante"
-      }
-    },
-    implementationProcess: {
-      title: "Processus d'Implémentation",
-      subtitle: "Méthodologie de déploiement rationalisée avec résultats prouvés",
-      environmentMapping: {
-        title: "Cartographie d'Environnement",
-        description: "Découverte et analyse automatisées de votre paysage sécuritaire actuel"
-      },
-      intelligentPlanning: {
-        title: "Planification Intelligente",
-        description: "Développement de stratégie alimenté par l'IA pour l'amélioration sécuritaire optimale"
-      },
-      orchestratedDeployment: {
-        title: "Déploiement Orchestré",
-        description: "Implémentation coordonnée sur tous les systèmes et plateformes"
-      },
-      continuousOptimization: {
-        title: "Optimisation Continue",
-        description: "Raffinement et amélioration continus de la posture sécuritaire"
-      }
-    },
-    interactiveFramework: {
-      title: "Cadre RAPID™ Interactif",
-      subtitle: "Explorez chaque phase du processus révolutionnaire de déploiement",
-      automationLevel: "Niveau d'Automatisation",
-      learnMore: "En Savoir Plus",
-      phases: {
-        recognize: {
-          title: "Reconnaître",
-          description: "Découverte et classification automatisées des actifs sécuritaires",
-          detailedDescription: "Les algorithmes de reconnaissance avancés identifient et cataloguent tous les actifs, configurations et dépendances pertinents pour la sécurité dans votre environnement."
-        },
-        analyze: {
-          title: "Analyser",
-          description: "Évaluation intelligente de la posture sécuritaire actuelle",
-          detailedDescription: "Le moteur d'analyse multidimensionnel évalue les contrôles sécuritaires existants, identifie les lacunes et priorise les opportunités d'amélioration."
-        },
-        plan: {
-          title: "Planifier",
-          description: "Génération de feuille de route stratégique pour l'amélioration sécuritaire",
-          detailedDescription: "Le système de planification alimenté par l'IA crée des stratégies de déploiement optimisées qui minimisent les risques tout en maximisant l'efficacité opérationnelle."
-        },
-        implement: {
-          title: "Implémenter",
-          description: "Déploiement automatisé des améliorations sécuritaires",
-          detailedDescription: "Le moteur d'implémentation orchestrée déploie les améliorations sécuritaires dans votre infrastructure avec une intervention humaine minimale."
-        },
-        deploy: {
-          title: "Déployer",
-          description: "Intégration transparente avec les systèmes existants",
-          detailedDescription: "L'orchestration de déploiement avancée assure une intégration fluide avec les systèmes existants tout en maintenant la continuité opérationnelle."
-        }
-      }
-    },
-    deploymentTimeline: {
-      title: "Timeline de Déploiement",
-      subtitle: "De l'évaluation au déploiement complet en temps record",
-      steps: {
-        assessment: "Évaluation",
-        automation: "Automatisation",
-        orchestration: "Orchestration",
-        validation: "Validation",
-        optimization: "Optimisation",
-        monitoring: "Surveillance"
-      },
-      downloadImplementationGuide: "Télécharger le Guide d'Implémentation"
-    },
-    cta: {
-      title: "Prêt à Révolutionner Votre Déploiement Sécuritaire ?",
-      description: "Découvrez l'avenir de l'implémentation cybersécuritaire avec RAPID™",
-      scheduleDeployment: "Planifier le Déploiement",
-      viewCaseStudies: "Voir les Études de Cas"
-    }
-  },
-
   // Guide d'implémentation
   implementationGuide: {
     title: "Guide d'Implémentation STEEL™",
@@ -562,13 +436,13 @@ export const fr = {
       fileInfo: "PDF • 12,5 MB • Dernière mise à jour aujourd'hui"
     },
     benefits: {
-      riskReduction: "67%",
-      riskReductionDesc: "Réduction moyenne des risques",
-      roi: "3,4x",
+      riskReduction: "Significatif",
+      riskReductionDesc: "Réduction des risques",
+      roi: "Positif",
       roiDesc: "Retour sur investissement",
-      faster: "83%",
-      fasterDesc: "Implémentation plus rapide",
-      confidence: "92%",
+      faster: "Plus Rapide",
+      fasterDesc: "Vitesse d'implémentation",
+      confidence: "Amélioré",
       confidenceDesc: "Confiance exécutive"
     },
     guideContents: {
@@ -723,8 +597,8 @@ export const fr = {
       fortune500: {
         category: "Fortune 500",
         title: "Institution Financière Mondiale",
-        description: "Réduction de l'exposition aux risques stratégiques de 67% tout en améliorant la confiance du conseil en cybersécurité de 92%.",
-        metrics: "67% réduction risque • 92% confiance conseil • 3,4x ROI"
+        description: "Réduction significative de l'exposition aux risques stratégiques tout en améliorant la confiance du conseil en cybersécurité.",
+        metrics: "Réduction des risques • Confiance du conseil améliorée • ROI positif"
       },
       healthcare: {
         category: "Santé",
@@ -743,7 +617,7 @@ export const fr = {
       title: "Prêt à Commencer Votre Parcours STEEL™ ?",
       description: "Rejoignez les organisations du monde entier qui ont transformé leur approche cybersécuritaire avec STEEL™",
       scheduleConsultation: "Planifier une Consultation d'Implémentation",
-      viewResources: "Voir les Ressources Supplémentaires"
+      viewResources: "Planifier une Consultation"
     }
   },
 
@@ -772,7 +646,7 @@ export const fr = {
       slide3: {
         title: "Résultats d'Évaluation des Risques STEEL™",
         subtitle: "Analyse de Risque Multidimensionnelle",
-        content: "Notre cadre STEEL™ fournit une visibilité complète des risques à travers six dimensions critiques, offrant un insight sans précédent sur le profil de risque stratégique de votre organisation."
+        content: "Notre cadre STEEL™ fournit une visibilité complète des risques à travers six dimensions critiques, offrant un aperçu détaillé sur le profil de risque stratégique de votre organisation."
       },
       slide4: {
         title: "Vulnérabilités Stratégiques",
@@ -836,7 +710,7 @@ export const fr = {
     stats: {
       certifications: {
         label: "Certifications Professionnelles",
-        description: "Références leaders de l'industrie"
+        description: "Références professionnelles"
       },
       assessments: {
         label: "Évaluations de Risques Complétées",
@@ -855,7 +729,7 @@ export const fr = {
       title: "Notre Histoire",
       paragraph1: "ERMITS Advisory a été fondé sur le principe que la stratégie cybersécuritaire nécessite à la fois une profondeur technique et une sophistication juridique. Le conseil traditionnel en cybersécurité manque souvent de la perspective juridique nécessaire pour une gestion complète des risques.",
       paragraph2: "Notre combinaison unique de certifications avancées en cybersécurité et d'expertise juridique nous positionne pour aborder l'intersection complexe de la technologie, du droit et de la stratégie commerciale.",
-      paragraph3: "Le cadre STEEL™ représente notre engagement envers l'innovation, étendant l'analyse PESTEL traditionnelle avec des facteurs spécifiques à la cybersécurité pour fournir une visibilité stratégique sans précédent.",
+      paragraph3: "Le cadre STEEL™ représente notre engagement envers l'innovation, étendant l'analyse PESTEL traditionnelle avec des facteurs spécifiques à la cybersécurité pour fournir une visibilité stratégique complète.",
       value: {
         title: "Valeur Que Nous Apportons :",
         point1: "Expertise technique soutenue par des connaissances juridiques",
@@ -904,7 +778,7 @@ export const fr = {
         },
         strategic: {
           title: "Implémentation Stratégique",
-          description: "Méthodologies éprouvées adaptées aux contextes commerciaux et culturels locaux"
+          description: "Méthodologies adaptées aux contextes commerciaux et culturels locaux"
         }
       },
       cta: "Explorer les Services Mondiaux",
@@ -993,8 +867,7 @@ export const fr = {
       title: "Services",
       advisory: "Conseil Stratégique",
       steel: "Cadre STEEL™",
-      dashboard: "Tableau de Bord Exécutif",
-      resources: "Bibliothèque de Ressources"
+      dashboard: "Tableau de Bord Exécutif"
     },
     company: {
       title: "Entreprise",
@@ -1343,6 +1216,85 @@ export const fr = {
     },
     contact: {
       description: "Si vous avez des questions sur notre utilisation des cookies, veuillez contacter notre équipe de confidentialité."
+    }
+  },
+
+  // Page Écosystème
+  ecosystem: {
+    hero: {
+      title: "Écosystème ERMITS",
+      subtitle: "Une Suite Intégrée de Solutions Cybersécuritaires",
+      description: "L'Écosystème ERMITS rassemble l'évaluation complète des risques, la surveillance en temps réel, les insights exécutifs et les services de conseil stratégique dans une plateforme unifiée.",
+      cta: "Explorer l'Écosystème"
+    },
+    components: {
+      title: "Composants de l'Écosystème",
+      subtitle: "Cinq solutions intégrées qui travaillent ensemble pour fournir une intelligence cybersécuritaire complète",
+      steel: {
+        title: "Cadre STEEL™",
+        description: "Strategic Threat & Enterprise Evaluation Landscape - Évaluation complète des risques utilisant les facteurs PESTEL plus les risques technologiques/malware, de confidentialité et de chaîne d'approvisionnement"
+      },
+      riskRadar: {
+        title: "Radar des Risques",
+        description: "Surveillance des menaces en temps réel et visualisation des risques dans toutes les dimensions critiques"
+      },
+      dashboard: {
+        title: "Tableau de Bord Exécutif",
+        description: "Insights et métriques de niveau exécutif pour la prise de décision stratégique"
+      },
+      presentations: {
+        title: "Présentations du Conseil",
+        description: "Briefings cybersécuritaires professionnels conçus pour la communication au niveau du conseil"
+      },
+      advisory: {
+        title: "Services de Conseil",
+        description: "Conseil cybersécuritaire stratégique incluant les briefings du conseil, la diligence raisonnable M&A, le leadership de crise et les services CISO virtuel"
+      }
+    },
+    benefits: {
+      title: "Avantages de l'Écosystème",
+      subtitle: "Pourquoi une approche intégrée offre des résultats supérieurs",
+      integrated: {
+        title: "Approche Intégrée",
+        description: "Tous les composants travaillent ensemble de manière transparente, partageant les données et les insights"
+      },
+      comprehensive: {
+        title: "Couverture Complète",
+        description: "Intelligence cybersécuritaire de bout en bout, de l'évaluation à la communication exécutive"
+      },
+      efficient: {
+        title: "Opérations Efficaces",
+        description: "Flux de travail rationalisés réduisant la redondance et améliorant la vitesse de prise de décision"
+      },
+      proven: {
+        title: "Méthodologie Éprouvée",
+        description: "Construit sur des cadres établis et des meilleures pratiques"
+      }
+    },
+    integration: {
+      title: "Comment les Composants Travaillent Ensemble",
+      description: "Les composants de l'Écosystème ERMITS s'intègrent pour fournir une solution complète d'intelligence cybersécuritaire",
+      workflow: {
+        title: "Flux de Travail Intégré",
+        step1: "Le Cadre STEEL™ évalue les risques stratégiques dans toutes les dimensions",
+        step2: "Le Radar des Risques surveille les menaces en temps réel et met à jour les scores de risque",
+        step3: "Le Tableau de Bord Exécutif fournit des insights et métriques consolidés",
+        step4: "Les Présentations du Conseil communiquent les résultats à la direction",
+        step5: "Les Services de Conseil fournissent des conseils stratégiques continus"
+      },
+      value: {
+        title: "Valeur Livrée",
+        item1: "Vue unifiée de la posture cybersécuritaire organisationnelle",
+        item2: "Méthodologie cohérente dans toutes les évaluations",
+        item3: "Rapports et communication rationalisés",
+        item4: "Alignement stratégique entre les objectifs techniques et commerciaux"
+      }
+    },
+    cta: {
+      title: "Prêt à Découvrir l'Écosystème ERMITS ?",
+      description: "Découvrez comment nos solutions intégrées peuvent transformer votre approche cybersécuritaire",
+      scheduleConsultation: "Planifier une Consultation",
+      exploreSteel: "Explorer STEEL™"
     }
   },
 

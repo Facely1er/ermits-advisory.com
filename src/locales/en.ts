@@ -14,42 +14,19 @@ export const en = {
     about: "About",
     services: "Services", 
     steel: "STEEL™",
+    ecosystem: "Ecosystem",
     insights: "Insights",
-    resources: "Resources",
     riskRadar: "Risk Radar",
     dashboard: "Dashboard", 
     presentation: "Presentation",
     contact: "Contact"
   },
 
-  // Resources page translations
-  resources: {
-    backToHome: "Back to Home",
-    description: "Access our comprehensive library of cybersecurity resources, whitepapers, case studies, and industry insights.",
-    fullscreenView: "Fullscreen View",
-    openInNewTab: "Open in New Tab", 
-    exitFullscreen: "Exit Fullscreen",
-    loading: {
-      title: "Loading Resources",
-      message: "Please wait while we load the latest cybersecurity resources..."
-    },
-    error: {
-      title: "Unable to Load Resources",
-      message: "We're experiencing technical difficulties loading the resources page. Please try accessing it directly or contact us for assistance.",
-      retry: "Retry"
-    },
-    about: {
-      title: "About Our Resources",
-      description: "Access whitepapers, case studies, webinars, and industry insights to strengthen your cybersecurity posture."
-    },
-    contactButton: "Contact Us"
-  },
-
   // Landing page
   landing: {
     hero: {
       title: "STEEL™ Risk Assessment Framework",
-      subtitle: "Revolutionary cybersecurity intelligence platform that transforms how organizations understand and manage strategic risk",
+      subtitle: "A comprehensive cybersecurity intelligence platform that helps organizations understand and manage strategic risk",
       cta: "Explore STEEL™"
     },
     realTimeIntelligence: {
@@ -63,9 +40,9 @@ export const en = {
       recentIncidents: "Recent Incidents",
       live: "LIVE"
     },
-    advancedCapabilities: {
+      advancedCapabilities: {
       title: "Advanced Capabilities",
-      subtitle: "Cutting-edge features that set STEEL™ apart from traditional risk assessment methods",
+      subtitle: "Features that set STEEL™ apart from traditional risk assessment methods",
       realTimeIntelligence: {
         title: "Real-Time Intelligence",
         description: "Continuous monitoring and analysis of threat landscapes with automated updates",
@@ -73,13 +50,13 @@ export const en = {
       },
       predictiveAnalytics: {
         title: "Predictive Analytics", 
-        description: "AI-powered forecasting that anticipates risks before they materialize",
-        metric: "83%"
+        description: "Analytics that help anticipate risks before they materialize",
+        metric: "Faster"
       },
       strategicFocus: {
         title: "Strategic Focus",
         description: "Executive-level insights that connect cybersecurity to business objectives",
-        metric: "92%"
+        metric: "Improved"
       },
       comprehensiveCoverage: {
         title: "Comprehensive Coverage",
@@ -159,7 +136,7 @@ export const en = {
   // Steel page
   steel: {
     title: "STEEL™ Risk Assessment Framework",
-    overview: "A revolutionary approach to cybersecurity risk assessment that goes beyond traditional methods",
+    overview: "An innovative approach to cybersecurity risk assessment that extends traditional PESTEL analysis with cybersecurity-specific factors",
     dimensions: {
       political: {
         title: "Political"
@@ -182,7 +159,7 @@ export const en = {
     },
     integration: {
       title: "STEEL™ Integration Process",
-      description: "Our proven methodology for implementing STEEL™ within your organization",
+      description: "Our methodology for implementing STEEL™ within your organization",
       step1: "Assessment",
       step2: "Analysis", 
       step3: "Strategy",
@@ -204,7 +181,7 @@ export const en = {
     hero: {
       title: "STEEL™ Strategic Risk Assessment",
       subtitle1: "Beyond Traditional PESTEL Analysis", 
-      subtitle2: "Introducing the world's first cybersecurity-focused strategic environment assessment framework",
+      subtitle2: "A cybersecurity-focused strategic environment assessment framework",
       scheduleConsultation: "Schedule Consultation",
       requestDemo: "Request Demo",
       downloadMethodology: "Download Methodology"
@@ -307,7 +284,7 @@ export const en = {
     steelFramework: {
       title: "The STEEL™ Framework",
       description1: "Our proprietary STEEL™ methodology transforms traditional risk assessment by integrating cybersecurity intelligence into strategic environmental analysis.",
-      description2: "This approach provides unprecedented visibility into how external factors impact your organization's cybersecurity posture.",
+      description2: "This approach provides comprehensive visibility into how external factors impact your organization's cybersecurity posture.",
       exploreButton: "Explore STEEL™"
     },
     contact: {
@@ -440,109 +417,6 @@ export const en = {
     }
   },
 
-  // RAPID page
-  rapid: {
-    hero: {
-      title: "RAPID™ Deployment Framework",
-      subtitle: "Revolutionizing cybersecurity implementation with 96% automation",
-      scheduleDeployment: "Schedule Deployment", 
-      requestDemo: "Request Demo",
-      downloadGuide: "Download Guide"
-    },
-    revolutionaryFeatures: {
-      title: "Revolutionary Features",
-      subtitle: "Next-generation capabilities that redefine cybersecurity deployment",
-      automatedIntelligence: {
-        title: "Automated Intelligence",
-        description: "AI-driven analysis and implementation with minimal human intervention"
-      },
-      zeroDowntime: {
-        title: "Zero-Downtime Deployment",
-        description: "Seamless integration without disrupting business operations"
-      },
-      selfHealing: {
-        title: "Self-Healing Architecture", 
-        description: "Automatic detection and remediation of security configuration drift"
-      },
-      ecosystemIntegration: {
-        title: "Ecosystem Integration",
-        description: "Universal compatibility with existing security infrastructure"
-      }
-    },
-    implementationProcess: {
-      title: "Implementation Process",
-      subtitle: "Streamlined deployment methodology with proven results",
-      environmentMapping: {
-        title: "Environment Mapping",
-        description: "Automated discovery and analysis of your current security landscape"
-      },
-      intelligentPlanning: {
-        title: "Intelligent Planning",
-        description: "AI-powered strategy development for optimal security enhancement"
-      },
-      orchestratedDeployment: {
-        title: "Orchestrated Deployment",
-        description: "Coordinated implementation across all systems and platforms"
-      },
-      continuousOptimization: {
-        title: "Continuous Optimization", 
-        description: "Ongoing refinement and enhancement of security posture"
-      }
-    },
-    interactiveFramework: {
-      title: "Interactive RAPID™ Framework",
-      subtitle: "Explore each phase of the revolutionary deployment process",
-      automationLevel: "Automation Level",
-      learnMore: "Learn More",
-      phases: {
-        recognize: {
-          title: "Recognize",
-          description: "Automated discovery and classification of security assets",
-          detailedDescription: "Advanced reconnaissance algorithms identify and catalog all security-relevant assets, configurations, and dependencies within your environment."
-        },
-        analyze: {
-          title: "Analyze",
-          description: "Intelligent assessment of current security posture",
-          detailedDescription: "Multi-dimensional analysis engine evaluates existing security controls, identifies gaps, and prioritizes improvement opportunities."
-        },
-        plan: {
-          title: "Plan", 
-          description: "Strategic roadmap generation for security enhancement",
-          detailedDescription: "AI-powered planning system creates optimized deployment strategies that minimize risk while maximizing operational efficiency."
-        },
-        implement: {
-          title: "Implement",
-          description: "Automated deployment of security improvements",
-          detailedDescription: "Orchestrated implementation engine deploys security enhancements across your infrastructure with minimal human intervention."
-        },
-        deploy: {
-          title: "Deploy",
-          description: "Seamless integration with existing systems",
-          detailedDescription: "Advanced deployment orchestration ensures smooth integration with existing systems while maintaining operational continuity."
-        }
-      }
-    },
-    deploymentTimeline: {
-      title: "Deployment Timeline", 
-      subtitle: "From assessment to full deployment in record time",
-      steps: {
-        assessment: "Assessment",
-        automation: "Automation",
-        orchestration: "Orchestration",
-        validation: "Validation",
-        optimization: "Optimization",
-        monitoring: "Monitoring"
-      },
-      downloadImplementationGuide: "Download Implementation Guide"
-    },
-    cta: {
-      title: "Ready to Revolutionize Your Security Deployment?",
-      description: "Experience the future of cybersecurity implementation with RAPID™",
-      scheduleDeployment: "Schedule Deployment",
-      viewCaseStudies: "View Case Studies"
-    }
-  },
-
   // Implementation Guide
   implementationGuide: {
     title: "STEEL™ Implementation Guide",
@@ -562,13 +436,13 @@ export const en = {
       fileInfo: "PDF • 12.5 MB • Last updated today"
     },
     benefits: {
-      riskReduction: "67%",
-      riskReductionDesc: "Average risk reduction",
-      roi: "3.4x", 
+      riskReduction: "Significant",
+      riskReductionDesc: "Risk reduction",
+      roi: "Positive", 
       roiDesc: "Return on investment",
-      faster: "83%",
-      fasterDesc: "Faster implementation",
-      confidence: "92%",
+      faster: "Faster",
+      fasterDesc: "Implementation speed",
+      confidence: "Improved",
       confidenceDesc: "Executive confidence"
     },
     guideContents: {
@@ -723,8 +597,8 @@ export const en = {
       fortune500: {
         category: "Fortune 500", 
         title: "Global Financial Institution",
-        description: "Reduced strategic risk exposure by 67% while improving board cybersecurity confidence by 92%.",
-        metrics: "67% risk reduction • 92% board confidence • 3.4x ROI"
+        description: "Achieved significant strategic risk reduction while improving board cybersecurity confidence.",
+        metrics: "Risk reduction • Improved board confidence • Positive ROI"
       },
       healthcare: {
         category: "Healthcare",
@@ -743,7 +617,7 @@ export const en = {
       title: "Ready to Begin Your STEEL™ Journey?", 
       description: "Join organizations worldwide who have transformed their cybersecurity approach with STEEL™",
       scheduleConsultation: "Schedule Implementation Consultation",
-      viewResources: "View Additional Resources"
+      viewResources: "Schedule Consultation"
     }
   },
 
@@ -772,7 +646,7 @@ export const en = {
       slide3: {
         title: "STEEL™ Risk Assessment Results",
         subtitle: "Multi-Dimensional Risk Analysis",
-        content: "Our STEEL™ framework provides comprehensive risk visibility across six critical dimensions, offering unprecedented insight into your organization's strategic risk profile."
+        content: "Our STEEL™ framework provides comprehensive risk visibility across six critical dimensions, offering detailed insight into your organization's strategic risk profile."
       },
       slide4: {
         title: "Strategic Vulnerabilities",
@@ -836,7 +710,7 @@ export const en = {
     stats: {
       certifications: {
         label: "Professional Certifications",
-        description: "Industry-leading credentials"
+        description: "Professional credentials"
       },
       assessments: {
         label: "Risk Assessments Completed", 
@@ -855,7 +729,7 @@ export const en = {
       title: "Our Story",
       paragraph1: "ERMITS Advisory was founded on the principle that cybersecurity strategy requires both technical depth and legal sophistication. Traditional cybersecurity consulting often lacks the legal perspective necessary for comprehensive risk management.",
       paragraph2: "Our unique combination of advanced cybersecurity certifications and legal expertise positions us to address the complex intersection of technology, law, and business strategy.",
-      paragraph3: "The STEEL™ framework represents our commitment to innovation, extending traditional PESTEL analysis with cybersecurity-specific factors to provide unprecedented strategic visibility.",
+      paragraph3: "The STEEL™ framework represents our commitment to innovation, extending traditional PESTEL analysis with cybersecurity-specific factors to provide comprehensive strategic visibility.",
       value: {
         title: "Value We Deliver:",
         point1: "Technical expertise backed by legal knowledge",
@@ -904,7 +778,7 @@ export const en = {
         },
         strategic: {
           title: "Strategic Implementation",
-          description: "Proven methodologies adapted to local business and cultural contexts"
+          description: "Methodologies adapted to local business and cultural contexts"
         }
       },
       cta: "Explore Global Services",

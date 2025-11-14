@@ -96,13 +96,13 @@ export const AboutPage: React.FC = () => {
     },
     {
       icon: <Briefcase size={24} className="text-navy dark:text-silver" />,
-      value: "92%",
+      value: "Improved",
       label: t('about.stats.confidence.label'),
       description: t('about.stats.confidence.description')
     },
     {
       icon: <CheckCircle size={24} className="text-navy dark:text-silver" />,
-      value: "67%",
+      value: "Significant",
       label: t('about.stats.reduction.label'),
       description: t('about.stats.reduction.description')
     }

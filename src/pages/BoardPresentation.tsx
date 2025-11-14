@@ -551,7 +551,7 @@ export const BoardPresentation: React.FC = () => {
                             transition={{ duration: 0.5, delay: 0.9 }}
                           >
                             <h5 className="text-lg font-medium mb-2">Risk Reduction</h5>
-                            <p className="text-2xl font-bold">67%</p>
+                            <p className="text-2xl font-bold">Significant</p>
                             <p className="text-sm text-silver">Expected improvement</p>
                           </motion.div>
                         </div>
