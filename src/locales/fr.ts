@@ -19,6 +19,7 @@ export const fr = {
     riskRadar: "Radar des Risques",
     dashboard: "Tableau de bord",
     presentation: "Présentation",
+    steelAssessment: "Évaluation STEEL",
     contact: "Contact"
   },
 
