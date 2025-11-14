@@ -81,6 +81,8 @@ export const AboutPage: React.FC = () => {
   ];
 
   // Professional achievements
+  // Note: These values represent professional credentials and experience.
+  // Update with actual numbers when available.
   const professionalStats = [
     {
       icon: <Award size={24} className="text-navy dark:text-silver" />,
@@ -90,19 +92,19 @@ export const AboutPage: React.FC = () => {
     },
     {
       icon: <Globe size={24} className="text-navy dark:text-silver" />,
-      value: "100+",
+      value: "Multiple",
       label: t('about.stats.assessments.label'),
       description: t('about.stats.assessments.description')
     },
     {
       icon: <Briefcase size={24} className="text-navy dark:text-silver" />,
-      value: "Improved",
+      value: "Enhanced",
       label: t('about.stats.confidence.label'),
       description: t('about.stats.confidence.description')
     },
     {
       icon: <CheckCircle size={24} className="text-navy dark:text-silver" />,
-      value: "Significant",
+      value: "Measurable",
       label: t('about.stats.reduction.label'),
       description: t('about.stats.reduction.description')
     }

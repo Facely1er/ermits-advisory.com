@@ -17,6 +17,16 @@ interface InteractiveSTEELVizProps {
   onDimensionSelect?: (dimension: STEELDimension | null) => void;
 }
 
+/**
+ * InteractiveSTEELViz Component
+ * 
+ * NOTE: This component displays example STEEL dimension values for demonstration.
+ * In production, all risk values would be calculated from actual STEEL framework assessments.
+ * 
+ * Data Sources (when connected to real assessments):
+ * - Dimension values: Calculated from STEEL framework assessment questionnaires
+ * - Risk scores: Based on organizational responses to STEEL assessment questions
+ */
 export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
   onDimensionSelect
 }) => {
@@ -44,6 +54,8 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
   const centerHexagonSize = Math.max(Math.min(containerWidth * 0.12, 128), 80); // Between 80px and 128px
   const iconSize = Math.max(Math.min(dimensionHexagonSize * 0.25, 20), 14); // Scale icons proportionally
 
+  // EXAMPLE DATA - Demo STEEL dimension values
+  // In production, these would be calculated from actual assessment responses
   const dimensions: STEELDimension[] = [
     {
       id: 'political',

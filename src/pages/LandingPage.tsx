@@ -131,10 +131,7 @@ export const LandingPage: React.FC = () => {
         </div>
         
         {/* Decorative grid pattern */}
-        <div className="absolute inset-0 opacity-5" style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
-          backgroundSize: '50px 50px'
-        }}></div>
+        <div className="absolute inset-0 hero-grid-pattern"></div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
@@ -212,8 +209,11 @@ export const LandingPage: React.FC = () => {
             <h2 className="text-3xl font-bold mb-4 dark:text-white">
               {t('landing.realTimeIntelligence.title')}
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto mb-2">
               {t('landing.realTimeIntelligence.subtitle')}
+            </p>
+            <p className="text-sm text-gray-500 dark:text-gray-400 italic">
+              (Demo data shown - In production, metrics come from real-time security monitoring systems)
             </p>
           </motion.div>
           
@@ -269,7 +269,6 @@ export const LandingPage: React.FC = () => {
                   className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
                 >
                   {enhancedFeatures.map((feature, index) => {
-                    const position = (index - currentFeatureIndex + enhancedFeatures.length) % enhancedFeatures.length;
                     const isActive = index === currentFeatureIndex;
                     
                     return (
@@ -369,6 +368,7 @@ export const LandingPage: React.FC = () => {
                     <div 
                       className="absolute top-0 right-0 w-24 h-24 hexagon" 
                       style={{ backgroundColor: dimension.color, opacity: 0.1 }}
+                      aria-hidden="true"
                     ></div>
                     <div className="flex items-start relative z-10">
                       <div className="mr-4">
@@ -385,7 +385,10 @@ export const LandingPage: React.FC = () => {
                         {/* Risk Score Indicator */}
                         <div className="flex items-center justify-between mb-2">
                           <span className="text-sm font-medium text-gray-500 dark:text-gray-400">Risk Level</span>
-                          <span className="text-sm font-bold" style={{ color: dimension.color }}>
+                          <span 
+                            className="text-sm font-bold"
+                            style={{ color: dimension.color }}
+                          >
                             {dimension.value}%
                           </span>
                         </div>

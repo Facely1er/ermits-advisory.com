@@ -14,9 +14,23 @@ interface Metric {
   unit?: string;
 }
 
+/**
+ * LiveMetrics Component - DEMO MODE
+ * 
+ * NOTE: This component displays simulated/demo metrics for demonstration purposes.
+ * In production, metrics would be fetched from actual security monitoring systems
+ * and threat intelligence feeds.
+ * 
+ * Data Sources (when connected to real systems):
+ * - Risk scores: Calculated from STEEL framework assessments
+ * - Threat counts: Real-time threat intelligence feeds (CISA, commercial providers)
+ * - Compliance scores: Compliance monitoring systems
+ * - Incident counts: Security incident management systems
+ */
 export const LiveMetrics: React.FC = () => {
   const { t } = useLanguage();
   
+  // DEMO DATA - Example metrics for demonstration
   const [metrics, setMetrics] = useState<Metric[]>([
     {
       id: 'risk-score',
@@ -58,7 +72,8 @@ export const LiveMetrics: React.FC = () => {
     }
   ]);
 
-  // Simulate real-time updates
+  // Simulate real-time updates (DEMO MODE)
+  // In production, this would connect to real-time data streams
   useEffect(() => {
     const interval = setInterval(() => {
       setMetrics(prev => prev.map(metric => {
@@ -119,6 +134,7 @@ export const LiveMetrics: React.FC = () => {
             <div className="flex items-center">
               <Activity size={12} className="text-gray-400 mr-1" />
               <span className="text-xs text-gray-400">{t('landing.liveMetrics.live')}</span>
+              <span className="text-xs text-gray-400 ml-1">(Demo)</span>
             </div>
           </div>
           

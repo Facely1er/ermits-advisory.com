@@ -30,6 +30,17 @@ ChartJS.register(
   Legend
 );
 
+/**
+ * RiskRadar Component
+ * 
+ * NOTE: This component uses example scenario data for demonstration purposes.
+ * In production, risk values would be calculated from actual STEEL framework assessments
+ * and real organizational data.
+ * 
+ * Data Sources (when connected to real systems):
+ * - Risk scenarios: Calculated from STEEL framework assessments
+ * - Recommendations: Generated from risk analysis results
+ */
 export const RiskRadar: React.FC = () => {
   const { t, getNestedTranslation } = useLanguage();
   const { theme } = useTheme();
@@ -285,16 +296,13 @@ export const RiskRadar: React.FC = () => {
                     <input
                       id={`slider-${dimension.id}`}
                       type="range"
-                      min="0"
-                      max="100"
+                      min={0}
+                      max={100}
                       value={sliderValues[dimension.id]}
                       onChange={(e) => handleSliderChange(dimension.id, parseInt(e.target.value))}
                       className="w-full accent-navy dark:accent-silver"
                       title={t(`steel.dimensions.${dimension.id}.title`)}
                       aria-label={t(`steel.dimensions.${dimension.id}.title`)}
-                      aria-valuemin={0}
-                      aria-valuemax={100}
-                      aria-valuenow={sliderValues[dimension.id]}
                     />
                   </div>
                 ))}

@@ -228,3 +228,27 @@
 .risk-dimension-indicator {
   background-color: var(--dimension-color, #4c72b0);
 }
+
+/* Hero section decorative grid pattern */
+.hero-grid-pattern {
+  background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), 
+                    linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.05;
+}
+
+/* Dimension color text */
+.dimension-color-text {
+  color: var(--dimension-color, #4c72b0);
+}
+
+/* Hexagon background with dimension color */
+.hexagon-dimension-bg {
+  background-color: var(--dimension-color, #4c72b0);
+  opacity: 0.1;
+}
+
+/* Dimension color via data attribute */
+[data-dimension-color] {
+  --dimension-color: attr(data-dimension-color);
+}

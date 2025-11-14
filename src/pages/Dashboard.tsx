@@ -32,6 +32,19 @@ ChartJS.register(
   Legend
 );
 
+/**
+ * Dashboard Component
+ * 
+ * NOTE: This dashboard displays example/demo data for demonstration purposes.
+ * In production, all metrics, risk dimensions, threats, and strategic actions
+ * would be fetched from actual security monitoring systems and client assessments.
+ * 
+ * Data Sources (when connected to real systems):
+ * - Risk dimensions: Calculated from STEEL framework assessments
+ * - Metrics: Security monitoring systems (SIEM, vulnerability scanners, etc.)
+ * - Threats: Real-time threat intelligence feeds
+ * - Strategic actions: Generated from risk assessment results
+ */
 export const Dashboard: React.FC = () => {
   const { t, getNestedTranslation } = useLanguage();
   const { theme } = useTheme();
@@ -282,7 +295,15 @@ export const Dashboard: React.FC = () => {
       </section>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex space-x-4 mb-8 -mt-8">
+        {/* Demo Data Notice */}
+        <div className="mb-4 -mt-8 p-3 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg">
+          <p className="text-sm text-yellow-800 dark:text-yellow-200">
+            <strong>Demo Mode:</strong> This dashboard displays example data for demonstration purposes. 
+            In production, all metrics and data would come from actual security monitoring systems.
+          </p>
+        </div>
+        
+        <div className="flex space-x-4 mb-8">
           <Button 
             variant={selectedView === 'overview' ? 'primary' : 'outline'} 
             size="sm"

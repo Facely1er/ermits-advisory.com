@@ -13,6 +13,17 @@ import {
 } from 'lucide-react';
 // import { steelDimensions } from '../data/mockData';
 
+/**
+ * STEEL Visualization Component
+ * 
+ * NOTE: This component displays example STEEL framework visualizations for demonstration.
+ * In production, all risk values and assessments would come from actual client assessments
+ * conducted using the STEEL framework methodology.
+ * 
+ * Data Sources (when connected to real assessments):
+ * - Risk dimensions: Calculated from STEEL framework assessment questionnaires
+ * - Visualizations: Generated from actual organizational risk data
+ */
 export const STEELVisualization: React.FC = () => {
   const { t } = useLanguage();
   const navigate = useNavigate();
