@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STEEL™ Assessment Platform | ERMITS Advisory</title>
     <meta name="description" content="Strategic Threat Environment Evaluation Landscape - Executive cybersecurity assessment">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"
+            integrity="sha384-OLC6/1yTVzBU7Rq/W0LE7mUh1kc+A/o2jlV3G+3FpYAL/RYmBnl/lBqz/R05W2zn"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+            integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -269,9 +274,35 @@
                 <p style="font-size: 1.1em; line-height: 1.8; margin-bottom: 25px;">
                     The STEEL™ (Strategic Threat Environment Evaluation Landscape) Assessment integrates PESTEL analysis with cybersecurity threat landscape assessment to provide board-ready strategic intelligence.
                 </p>
+
+                <div style="background: #f8fafc; padding: 20px; border-radius: 10px; margin-bottom: 25px; border-left: 5px solid var(--navy);">
+                    <h3 style="color: var(--navy); margin-bottom: 15px; font-size: 1.2em;">🎯 Framework Alignment</h3>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">
+                        STEEL™ integrates with leading Enterprise Risk Management (ERM) and Information Technology Security frameworks:
+                    </p>
+                    <ul style="line-height: 1.8; padding-left: 20px; margin-bottom: 0;">
+                        <li><strong>ISO 31000:2018</strong> - Risk Management Guidelines</li>
+                        <li><strong>COSO ERM Framework</strong> - Enterprise Risk Management integration</li>
+                        <li><strong>NIST Cybersecurity Framework (CSF) 2.0</strong> - Comprehensive security assessment</li>
+                        <li><strong>NIST Risk Management Framework (RMF)</strong> - Risk-based approach</li>
+                        <li><strong>ISO/IEC 27001:2022</strong> - Information security management alignment</li>
+                    </ul>
+                </div>
+
+                <div style="background: #fef3c7; padding: 20px; border-radius: 10px; margin-bottom: 25px; border-left: 5px solid var(--gold);">
+                    <h3 style="color: var(--navy); margin-bottom: 15px; font-size: 1.2em;">💡 How to Complete This Assessment</h3>
+                    <ul style="line-height: 1.8; padding-left: 20px; margin-bottom: 0;">
+                        <li><strong>Time Required:</strong> 30 minutes for thoughtful responses</li>
+                        <li><strong>Who Should Complete:</strong> CISO, CIO, CRO, or security leadership</li>
+                        <li><strong>Preparation:</strong> Have recent audit reports and security metrics available</li>
+                        <li><strong>Scoring:</strong> Be honest—this identifies improvement opportunities</li>
+                        <li><strong>Privacy:</strong> All data stays on your device, nothing is transmitted</li>
+                    </ul>
+                </div>
+
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 30px 0;">
                     <div style="text-align: center; padding: 20px; background: #f8fafc; border-radius: 10px;">
-                        <div style="font-size: 2em; color: var(--navy); font-weight: 700;">42</div>
+                        <div style="font-size: 2em; color: var(--navy); font-weight: 700;">46</div>
                         <div style="color: #64748b;">Questions</div>
                     </div>
                     <div style="text-align: center; padding: 20px; background: #f8fafc; border-radius: 10px;">
@@ -789,6 +820,68 @@
                         </div>
                     </div>
 
+                    <!-- ADDITIONAL STRATEGIC QUESTIONS -->
+                    <div class="pestel-category">
+                        <div class="category-header">
+                            <span class="category-badge badge-political">POLITICAL</span>
+                            <h3>Enterprise Risk Management</h3>
+                        </div>
+
+                        <div class="question-item">
+                            <div class="question-text">43. How clearly has your organization defined and communicated its cybersecurity risk appetite?</div>
+                            <div class="question-options">
+                                <label class="option-label"><input type="radio" name="q43" value="1" onchange="updateProgress()"><span>Undefined - No documented risk appetite</span></label>
+                                <label class="option-label"><input type="radio" name="q43" value="3" onchange="updateProgress()"><span>Informal - Verbal understanding only</span></label>
+                                <label class="option-label"><input type="radio" name="q43" value="7" onchange="updateProgress()"><span>Documented - Written risk appetite statement</span></label>
+                                <label class="option-label"><input type="radio" name="q43" value="10" onchange="updateProgress()"><span>Operationalized - Risk appetite drives decision-making and resource allocation</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pestel-category">
+                        <div class="category-header">
+                            <span class="category-badge badge-technological">TECHNOLOGICAL</span>
+                            <h3>Modern Security Architecture</h3>
+                        </div>
+
+                        <div class="question-item">
+                            <div class="question-text">44. What is your organization's Zero Trust Architecture maturity?</div>
+                            <div class="question-options">
+                                <label class="option-label"><input type="radio" name="q44" value="1" onchange="updateProgress()"><span>No Zero Trust - Traditional perimeter security</span></label>
+                                <label class="option-label"><input type="radio" name="q44" value="3" onchange="updateProgress()"><span>Piloting - Testing Zero Trust for specific use cases</span></label>
+                                <label class="option-label"><input type="radio" name="q44" value="7" onchange="updateProgress()"><span>Implementing - Rolling out Zero Trust principles</span></label>
+                                <label class="option-label"><input type="radio" name="q44" value="10" onchange="updateProgress()"><span>Mature - Zero Trust architecture fully implemented and enforced</span></label>
+                            </div>
+                        </div>
+
+                        <div class="question-item">
+                            <div class="question-text">45. How does your organization secure the software supply chain?</div>
+                            <div class="question-options">
+                                <label class="option-label"><input type="radio" name="q45" value="1" onchange="updateProgress()"><span>Unmanaged - No supply chain security controls</span></label>
+                                <label class="option-label"><input type="radio" name="q45" value="3" onchange="updateProgress()"><span>Basic - Vendor attestations only</span></label>
+                                <label class="option-label"><input type="radio" name="q45" value="7" onchange="updateProgress()"><span>Managed - SBOM and vulnerability scanning</span></label>
+                                <label class="option-label"><input type="radio" name="q45" value="10" onchange="updateProgress()"><span>Optimized - Continuous supply chain monitoring and validation</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pestel-category">
+                        <div class="category-header">
+                            <span class="category-badge badge-environmental">ENVIRONMENTAL</span>
+                            <h3>Business Continuity & Resilience</h3>
+                        </div>
+
+                        <div class="question-item">
+                            <div class="question-text">46. What is your cybersecurity incident recovery capability?</div>
+                            <div class="question-options">
+                                <label class="option-label"><input type="radio" name="q46" value="1" onchange="updateProgress()"><span>No BC/DR - No documented recovery plans</span></label>
+                                <label class="option-label"><input type="radio" name="q46" value="3" onchange="updateProgress()"><span>Basic - Annual BC/DR tests</span></label>
+                                <label class="option-label"><input type="radio" name="q46" value="7" onchange="updateProgress()"><span>Managed - Defined RTOs/RPOs, quarterly tests</span></label>
+                                <label class="option-label"><input type="radio" name="q46" value="10" onchange="updateProgress()"><span>Optimized - Automated failover, continuous validation</span></label>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="btn-group">
                         <button type="button" class="btn btn-primary" onclick="calculateResults()">📊 Calculate Results</button>
                         <button type="button" class="btn btn-primary" onclick="saveProgress()">💾 Save Progress</button>
@@ -817,7 +910,7 @@
 
     <script>
         let assessmentData = {};
-        const TOTAL_QUESTIONS = 42;
+        const TOTAL_QUESTIONS = 46;
 
         function showTab(tabName) {
             document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
@@ -847,34 +940,63 @@
                 environmental: 0,
                 legal: 0
             };
+            let factorQuestionCounts = {
+                political: 0,
+                economic: 0,
+                social: 0,
+                technological: 0,
+                environmental: 0,
+                legal: 0
+            };
 
+            // Political: Q1-Q7 + Q43 (8 questions, max 80 points)
             for (let i = 1; i <= 7; i++) {
                 const val = form.querySelector(`input[name="q${i}"]:checked`)?.value;
-                if (val) factorScores.political += parseInt(val);
+                if (val) { factorScores.political += parseInt(val); factorQuestionCounts.political++; }
             }
+            const q43 = form.querySelector('input[name="q43"]:checked')?.value;
+            if (q43) { factorScores.political += parseInt(q43); factorQuestionCounts.political++; }
+
+            // Economic: Q8-Q14 (7 questions, max 70 points)
             for (let i = 8; i <= 14; i++) {
                 const val = form.querySelector(`input[name="q${i}"]:checked`)?.value;
-                if (val) factorScores.economic += parseInt(val);
-            }
-            for (let i = 15; i <= 21; i++) {
-                const val = form.querySelector(`input[name="q${i}"]:checked`)?.value;
-                if (val) factorScores.social += parseInt(val);
-            }
-            for (let i = 22; i <= 28; i++) {
-                const val = form.querySelector(`input[name="q${i}"]:checked`)?.value;
-                if (val) factorScores.technological += parseInt(val);
-            }
-            for (let i = 29; i <= 35; i++) {
-                const val = form.querySelector(`input[name="q${i}"]:checked`)?.value;
-                if (val) factorScores.environmental += parseInt(val);
-            }
-            for (let i = 36; i <= 42; i++) {
-                const val = form.querySelector(`input[name="q${i}"]:checked`)?.value;
-                if (val) factorScores.legal += parseInt(val);
+                if (val) { factorScores.economic += parseInt(val); factorQuestionCounts.economic++; }
             }
 
+            // Social: Q15-Q21 (7 questions, max 70 points)
+            for (let i = 15; i <= 21; i++) {
+                const val = form.querySelector(`input[name="q${i}"]:checked`)?.value;
+                if (val) { factorScores.social += parseInt(val); factorQuestionCounts.social++; }
+            }
+
+            // Technological: Q22-Q28 + Q44-Q45 (9 questions, max 90 points)
+            for (let i = 22; i <= 28; i++) {
+                const val = form.querySelector(`input[name="q${i}"]:checked`)?.value;
+                if (val) { factorScores.technological += parseInt(val); factorQuestionCounts.technological++; }
+            }
+            const q44 = form.querySelector('input[name="q44"]:checked')?.value;
+            const q45 = form.querySelector('input[name="q45"]:checked')?.value;
+            if (q44) { factorScores.technological += parseInt(q44); factorQuestionCounts.technological++; }
+            if (q45) { factorScores.technological += parseInt(q45); factorQuestionCounts.technological++; }
+
+            // Environmental: Q29-Q35 + Q46 (8 questions, max 80 points)
+            for (let i = 29; i <= 35; i++) {
+                const val = form.querySelector(`input[name="q${i}"]:checked`)?.value;
+                if (val) { factorScores.environmental += parseInt(val); factorQuestionCounts.environmental++; }
+            }
+            const q46 = form.querySelector('input[name="q46"]:checked')?.value;
+            if (q46) { factorScores.environmental += parseInt(q46); factorQuestionCounts.environmental++; }
+
+            // Legal: Q36-Q42 (7 questions, max 70 points)
+            for (let i = 36; i <= 42; i++) {
+                const val = form.querySelector(`input[name="q${i}"]:checked`)?.value;
+                if (val) { factorScores.legal += parseInt(val); factorQuestionCounts.legal++; }
+            }
+
+            // Normalize scores to 0-100 scale based on answered questions
             for (let factor in factorScores) {
-                factorScores[factor] = Math.round((factorScores[factor] / 70) * 100);
+                const maxScore = factorQuestionCounts[factor] * 10;
+                factorScores[factor] = maxScore > 0 ? Math.round((factorScores[factor] / maxScore) * 100) : 0;
             }
 
             const weights = {
@@ -943,6 +1065,28 @@
                     </div>
                 </div>
 
+                <div style="background: #f0f9ff; padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 5px solid var(--navy);">
+                    <h3 style="color: var(--navy); margin-bottom: 15px;">📊 Score Interpretation Guide</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                        <div style="padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #16a34a;">
+                            <div style="font-weight: 700; color: #16a34a; margin-bottom: 5px;">80-100: Low Risk</div>
+                            <div style="font-size: 0.9em; color: #666;">Mature security posture with optimized controls</div>
+                        </div>
+                        <div style="padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #eab308;">
+                            <div style="font-weight: 700; color: #eab308; margin-bottom: 5px;">60-79: Moderate Risk</div>
+                            <div style="font-size: 0.9em; color: #666;">Developing program with managed processes</div>
+                        </div>
+                        <div style="padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #f97316;">
+                            <div style="font-weight: 700; color: #f97316; margin-bottom: 5px;">40-59: Elevated Risk</div>
+                            <div style="font-size: 0.9em; color: #666;">Initial controls with significant gaps</div>
+                        </div>
+                        <div style="padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #dc2626;">
+                            <div style="font-weight: 700; color: #dc2626; margin-bottom: 5px;">0-39: High Risk</div>
+                            <div style="font-size: 0.9em; color: #666;">Ad-hoc approach requiring immediate action</div>
+                        </div>
+                    </div>
+                </div>
+
                 <h3 style="color: var(--navy); margin: 30px 0 20px;">Strategic Recommendations</h3>
             `;
 
@@ -959,6 +1103,35 @@
                     `;
                 }
             }
+
+            html += `
+                <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 25px; border-radius: 10px; margin: 30px 0; border-left: 5px solid var(--gold);">
+                    <h3 style="color: var(--navy); margin-bottom: 15px;">🚀 Recommended Next Steps</h3>
+                    <ol style="line-height: 2; padding-left: 20px; margin-bottom: 15px;">
+                        <li><strong>Review with Leadership:</strong> Share results with executive team and board</li>
+                        <li><strong>Prioritize Actions:</strong> Focus on Critical and High priority recommendations first</li>
+                        <li><strong>Schedule Consultation:</strong> Connect with ERMITS Advisory for strategic guidance</li>
+                        <li><strong>Update Risk Register:</strong> Integrate findings into your enterprise risk register</li>
+                        <li><strong>Plan Roadmap:</strong> Develop a 30/60/90 day improvement plan</li>
+                    </ol>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <a href="/contact" style="display: inline-block; padding: 15px 30px; background: var(--navy); color: white; text-decoration: none; border-radius: 10px; font-weight: 600; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                            📅 Schedule Strategic Consultation
+                        </a>
+                    </div>
+                </div>
+
+                <div style="background: #f8fafc; padding: 20px; border-radius: 10px; margin-top: 20px; border-left: 5px solid var(--navy);">
+                    <h4 style="color: var(--navy); margin-bottom: 10px;">📊 Integrating with Your Risk Register</h4>
+                    <p style="line-height: 1.8; margin-bottom: 10px;">Use these STEEL results to update your enterprise risk register:</p>
+                    <ul style="line-height: 1.8; padding-left: 20px;">
+                        <li><strong>Low scores (&lt; 40):</strong> Critical/High priority risks</li>
+                        <li><strong>Medium scores (40-70):</strong> Medium priority risks</li>
+                        <li><strong>High scores (70+):</strong> Residual risks to monitor</li>
+                    </ul>
+                    <p style="margin-top: 10px; line-height: 1.8;"><strong>Risk Treatment Options:</strong> Accept, Mitigate, Transfer, Avoid</p>
+                </div>
+            `;
 
             document.getElementById('resultsContent').innerHTML = html;
         }
