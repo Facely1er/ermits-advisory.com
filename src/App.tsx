@@ -13,6 +13,9 @@ import { ErrorBoundary } from './components/shared/ErrorBoundary';
 const LandingPage = React.lazy(() => import('./pages/LandingPage').then(m => ({ default: m.LandingPage })));
 const Dashboard = React.lazy(() => import('./pages/Dashboard').then(m => ({ default: m.Dashboard })));
 const STEELVisualization = React.lazy(() => import('./pages/STEELVisualization').then(m => ({ default: m.STEELVisualization })));
+const SteelPremium = React.lazy(() => import('./pages/SteelPremium').then(m => ({ default: m.SteelPremium })));
+const VcisoKit = React.lazy(() => import('./pages/VcisoKit').then(m => ({ default: m.VcisoKit })));
+const DashboardTemplate = React.lazy(() => import('./pages/DashboardTemplate').then(m => ({ default: m.DashboardTemplate })));
 const ImplementationGuidePage = React.lazy(() => import('./pages/ImplementationGuidePage').then(m => ({ default: m.ImplementationGuidePage })));
 const RiskRadar = React.lazy(() => import('./pages/RiskRadar').then(m => ({ default: m.RiskRadar })));
 const ServiceOffering = React.lazy(() => import('./pages/ServiceOffering').then(m => ({ default: m.ServiceOffering })));
@@ -51,7 +54,10 @@ function App() {
                   <Route path="/" element={<LandingPage />} />
                   <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/steel" element={<STEELVisualization />} />
+                  <Route path="/steel/premium" element={<SteelPremium />} />
                   <Route path="/steel/implementation-guide" element={<ImplementationGuidePage />} />
+                  <Route path="/vciso-kit" element={<VcisoKit />} />
+                  <Route path="/dashboard-template" element={<DashboardTemplate />} />
                   <Route path="/risk-radar" element={<RiskRadar />} />
                   <Route path="/services" element={<ServiceOffering />} />
                   <Route path="/presentation" element={<BoardPresentation />} />
