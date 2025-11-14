@@ -338,51 +338,28 @@ export const LandingPage: React.FC = () => {
             className="grid grid-cols-1 md:grid-cols-2 gap-8"
           >
             <motion.div variants={item}>
-              <InteractiveCard 
+              <InteractiveCard
                 hover3D={true}
                 glowEffect={true}
                 className="h-full bg-white dark:bg-dark-card-bg p-6"
               >
                 <h3 className="text-xl font-bold mb-3 dark:text-white card-title">
-                  {t('landing.services.boardBriefings.title')}
+                  {t('landing.services.steel.title')}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-4 card-text">
-                  {t('landing.services.boardBriefings.description')}
+                  {t('landing.services.steel.description')}
                 </p>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="sm"
-                  onClick={() => navigate('/services')}
+                  onClick={() => navigate('/steel')}
                   className="transform hover:scale-105 transition-transform"
                 >
                   {t('common.learnMore')}
                 </Button>
               </InteractiveCard>
             </motion.div>
-            
-            <motion.div variants={item}>
-              <InteractiveCard 
-                hover3D={true}
-                glowEffect={true}
-                className="h-full bg-white dark:bg-dark-card-bg p-6"
-              >
-                <h3 className="text-xl font-bold mb-3 dark:text-white card-title">
-                  {t('landing.services.crisis.title')}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-200 mb-4 card-text">
-                  {t('landing.services.crisis.description')}
-                </p>
-                <Button 
-                  variant="outline" 
-                  size="sm"
-                  onClick={() => navigate('/services')}
-                  className="transform hover:scale-105 transition-transform"
-                >
-                  {t('common.learnMore')}
-                </Button>
-              </InteractiveCard>
-            </motion.div>
-            
+
             <motion.div variants={item}>
               <InteractiveCard 
                 hover3D={true}
@@ -395,10 +372,33 @@ export const LandingPage: React.FC = () => {
                 <p className="text-gray-600 dark:text-gray-200 mb-4 card-text">
                   {t('landing.services.vCISO.description')}
                 </p>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="sm"
                   onClick={() => navigate('/services')}
+                  className="transform hover:scale-105 transition-transform"
+                >
+                  {t('common.learnMore')}
+                </Button>
+              </InteractiveCard>
+            </motion.div>
+
+            <motion.div variants={item}>
+              <InteractiveCard
+                hover3D={true}
+                glowEffect={true}
+                className="h-full bg-white dark:bg-dark-card-bg p-6"
+              >
+                <h3 className="text-xl font-bold mb-3 dark:text-white card-title">
+                  {t('landing.services.dashboard.title')}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-4 card-text">
+                  {t('landing.services.dashboard.description')}
+                </p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => navigate('/dashboard')}
                   className="transform hover:scale-105 transition-transform"
                 >
                   {t('common.learnMore')}

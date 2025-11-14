@@ -205,28 +205,15 @@ export const strategicActions: StrategicAction[] = [
 // Services
 export const services: Service[] = [
   {
-    id: 'board-briefings',
-    title: 'Board Briefings',
-    description: 'Clear, actionable cybersecurity briefings for board members',
+    id: 'steel-framework',
+    title: 'STEEL™ Framework',
+    description: 'Comprehensive strategic risk assessment methodology for cybersecurity',
     features: [
-      'Non-technical language for clear understanding',
-      'Strategic focus on business impact',
-      'Actionable recommendations',
-      'Benchmark comparisons',
-      'Trend analysis and forecasting'
-    ],
-    icon: 'presentation'
-  },
-  {
-    id: 'crisis-leadership',
-    title: 'Crisis Leadership',
-    description: 'Strategic guidance during cybersecurity incidents',
-    features: [
-      'Executive crisis communication',
-      'Strategic decision support',
-      'Stakeholder management',
-      'Regulatory and legal guidance',
-      'Reputation management'
+      'Six-dimensional risk analysis (Political, Economic, Social, Technology, Environmental, Legal)',
+      'Interactive risk visualization and modeling',
+      'Scenario-based impact analysis',
+      'Executive-ready briefing materials',
+      'Continuous risk monitoring framework'
     ],
     icon: 'shield'
   },
@@ -235,13 +222,26 @@ export const services: Service[] = [
     title: 'Virtual CISO',
     description: 'Executive-level security leadership without the full-time commitment',
     features: [
-      'Strategic security planning',
+      'Strategic security planning with STEEL™',
       'Board and executive communication',
       'Security program development',
-      'Vendor and technology selection',
-      'Compliance oversight'
+      'STEEL-based risk assessments',
+      'Compliance and governance oversight'
     ],
     icon: 'user'
+  },
+  {
+    id: 'executive-dashboard',
+    title: 'Executive Dashboard Suite',
+    description: 'Real-time risk intelligence and strategic insights platform',
+    features: [
+      'Live STEEL™ risk radar visualization',
+      'Executive KPI tracking and metrics',
+      'Threat intelligence integration',
+      'Strategic action recommendations',
+      'Customizable board-ready reports'
+    ],
+    icon: 'presentation'
   }
 ];
 

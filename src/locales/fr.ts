@@ -93,19 +93,19 @@ export const fr = {
       }
     },
     services: {
-      title: "Services de Conseil Exécutif",
-      subtitle: "Conseil stratégique en cybersécurité adapté au leadership exécutif",
-      boardBriefings: {
-        title: "Briefings du Conseil",
-        description: "Briefings cybersécuritaires clairs et exploitables conçus pour la prise de décision au niveau du conseil"
-      },
-      crisis: {
-        title: "Leadership de Crise",
-        description: "Conseil stratégique et communication lors d'incidents de cybersécurité"
+      title: "Produits de l'Écosystème ERMITS",
+      subtitle: "Intelligence des risques stratégiques et services de conseil alimentés par STEEL",
+      steel: {
+        title: "Cadre STEEL™",
+        description: "Méthodologie complète d'évaluation des risques stratégiques"
       },
       vCISO: {
         title: "CISO Virtuel",
-        description: "Leadership sécuritaire au niveau exécutif sans l'engagement à temps plein"
+        description: "Leadership sécuritaire au niveau exécutif avec intégration STEEL™"
+      },
+      dashboard: {
+        title: "Suite de Tableau de Bord Exécutif",
+        description: "Intelligence des risques en temps réel et insights stratégiques"
       }
     },
     trust: {
@@ -230,40 +230,40 @@ export const fr = {
 
   // Services
   services: {
-    title: "Services de Conseil",
-    subtitle: "Conseil stratégique en cybersécurité pour le leadership exécutif",
+    title: "Produits de l'Écosystème ERMITS",
+    subtitle: "Intelligence des risques stratégiques et services de conseil alimentés par STEEL",
     keyFeatures: "Caractéristiques Clés",
-    boardBriefings: {
-      title: "Briefings du Conseil",
-      description: "Briefings cybersécuritaires clairs et exploitables pour les membres du conseil",
+    steel: {
+      title: "Cadre STEEL™",
+      description: "Méthodologie complète d'évaluation des risques stratégiques en cybersécurité",
       features: [
-        "Langage non technique pour une compréhension claire",
-        "Focus stratégique sur l'impact commercial",
-        "Recommandations exploitables",
-        "Comparaisons de références",
-        "Analyse des tendances et prévisions"
-      ]
-    },
-    crisis: {
-      title: "Leadership de Crise",
-      description: "Conseil stratégique lors d'incidents de cybersécurité",
-      features: [
-        "Communication de crise exécutive",
-        "Support de décision stratégique",
-        "Gestion des parties prenantes",
-        "Conseil réglementaire et juridique",
-        "Gestion de la réputation"
+        "Analyse des risques à six dimensions (Politique, Économique, Social, Technologie, Environnemental, Légal)",
+        "Visualisation et modélisation interactives des risques",
+        "Analyse d'impact basée sur des scénarios",
+        "Matériaux de briefing prêts pour les dirigeants",
+        "Cadre de surveillance continue des risques"
       ]
     },
     vCISO: {
       title: "CISO Virtuel",
       description: "Leadership sécuritaire au niveau exécutif sans l'engagement à temps plein",
       features: [
-        "Planification sécuritaire stratégique",
+        "Planification sécuritaire stratégique avec STEEL™",
         "Communication du conseil et exécutive",
         "Développement de programme sécuritaire",
-        "Sélection de fournisseurs et technologies",
-        "Supervision de la conformité"
+        "Évaluations des risques basées sur STEEL",
+        "Supervision de la conformité et de la gouvernance"
+      ]
+    },
+    dashboard: {
+      title: "Suite de Tableau de Bord Exécutif",
+      description: "Plateforme d'intelligence des risques en temps réel et d'insights stratégiques",
+      features: [
+        "Visualisation en direct du radar des risques STEEL™",
+        "Suivi des KPI exécutifs et métriques",
+        "Intégration de l'intelligence des menaces",
+        "Recommandations d'actions stratégiques",
+        "Rapports personnalisables prêts pour le conseil"
       ]
     },
     steelFramework: {
