@@ -37,7 +37,7 @@ export const FloatingActionButton: React.FC = () => {
     {
       icon: <Phone size={20} />,
       label: 'Call Now',
-      action: () => window.open('tel:+18886186160'),
+      action: () => window.open('tel:+12405990102'),
       color: 'bg-purple-500 hover:bg-purple-600'
     }
   ];
