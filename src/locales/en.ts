@@ -19,7 +19,6 @@ export const en = {
     riskRadar: "Risk Radar",
     dashboard: "Dashboard",
     presentation: "Presentation",
-    steelAssessment: "STEEL Assessment",
     contact: "Contact"
   },
 

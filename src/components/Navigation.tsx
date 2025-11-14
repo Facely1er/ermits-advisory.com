@@ -52,7 +52,7 @@ export const Navigation: React.FC = () => {
     { to: '/risk-radar', label: t('navigation.riskRadar') },
     { to: '/dashboard', label: t('navigation.dashboard') },
     { to: '/presentation', label: t('navigation.presentation') },
-    { to: '/steel/index.html', label: t('navigation.steelAssessment'), external: true },
+    { to: '/steel/index.html', label: 'STEEL Assessment', external: true },
   ];
 
   return (
