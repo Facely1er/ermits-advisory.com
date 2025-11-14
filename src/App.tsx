@@ -46,7 +46,7 @@ function App() {
             <ScrollProgressBar />
             <Navigation />
           
-          <main className="flex-grow pt-16">
+          <main className="flex-grow pt-16" role="main" aria-label="Main content">
             <Suspense fallback={<LoadingSpinner />}>
               <Routes>
                 <Route path="/" element={<LandingPage />} />

@@ -84,57 +84,65 @@ export const EcosystemPage: React.FC = () => {
   ];
 
   return (
-    <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
-      <div className="container mx-auto px-4">
-        {/* Hero Section */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-16"
-        >
-          <Card variant="solid" padding="lg" className="bg-navy text-white">
-            <div className="text-center max-w-4xl mx-auto">
-              {/* Ecosystem Logo Placeholder */}
-              <div className="mb-6 flex justify-center">
-                <div className="w-32 h-32 bg-white/10 rounded-full flex items-center justify-center">
-                  {/* Replace with actual logo image when available */}
-                  {/* <img src={ecosystemLogo} alt="ERMITS Ecosystem" className="w-24 h-24 object-contain" /> */}
-                  <Layers size={64} className="text-white opacity-80" />
-                </div>
+    <div className="min-h-screen bg-silver-light dark:bg-dark-bg">
+      {/* Enhanced Hero Section */}
+      <section className="relative bg-gradient-to-br from-navy via-navy-dark to-navy text-white pt-20 pb-16 md:pt-28 md:pb-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-navy-dark/90 to-navy/95"></div>
+        <div className="absolute inset-0 opacity-10 bg-[url('https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-center bg-cover"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            {/* Ecosystem Logo Placeholder */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="mb-8 flex justify-center"
+            >
+              <div className="w-32 h-32 md:w-40 md:h-40 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 shadow-lg">
+                <Layers size={64} className="text-white opacity-90" />
               </div>
-              
-              <h1 className="text-3xl md:text-5xl font-bold mb-4">
+            </motion.div>
+            
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-white via-silver to-white bg-clip-text text-transparent">
                 {t('ecosystem.hero.title')}
-              </h1>
-              <p className="text-xl md:text-2xl mb-4 text-silver">
-                {t('ecosystem.hero.subtitle')}
-              </p>
-              <p className="text-lg mb-8 text-silver">
-                {t('ecosystem.hero.description')}
-              </p>
-              
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button 
-                  variant="secondary" 
-                  size="lg"
-                  icon={<ArrowRight size={18} />}
-                  iconPosition="right"
-                  onClick={() => navigate('/contact')}
-                  className="transform hover:scale-105 transition-transform"
-                >
-                  {t('ecosystem.hero.cta')}
-                </Button>
-              </div>
+              </span>
+            </h1>
+            <p className="text-xl md:text-2xl mb-4 text-silver/90 leading-relaxed">
+              {t('ecosystem.hero.subtitle')}
+            </p>
+            <p className="text-lg md:text-xl mb-10 text-silver/80 max-w-3xl mx-auto leading-relaxed">
+              {t('ecosystem.hero.description')}
+            </p>
+            
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button 
+                variant="secondary" 
+                size="lg"
+                icon={<ArrowRight size={18} />}
+                iconPosition="right"
+                onClick={() => navigate('/contact')}
+                className="transform hover:scale-105 transition-all shadow-lg hover:shadow-xl"
+              >
+                {t('ecosystem.hero.cta')}
+              </Button>
             </div>
-          </Card>
-        </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Ecosystem Components */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="mb-16"
+          className="mb-16 md:mb-20 -mt-8"
         >
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">

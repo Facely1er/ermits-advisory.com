@@ -79,36 +79,46 @@ export const LandingPage: React.FC = () => {
   ];
 
   return (
-    <div>
-      {/* Enhanced Hero Section - Remove top padding to eliminate gap */}
-      <section className="relative bg-gradient-to-b from-navy to-navy-dark text-white pb-24 md:pb-32 overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[url('https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-center bg-cover"></div>
+    <div className="min-h-screen">
+      {/* Enhanced Hero Section - Fixed spacing for navigation */}
+      <section className="relative bg-gradient-to-br from-navy via-navy-dark to-navy text-white pt-20 pb-20 md:pt-28 md:pb-28 overflow-hidden">
+        {/* Enhanced background with gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-navy-dark/90 to-navy/95"></div>
+        <div className="absolute inset-0 opacity-20 bg-[url('https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-center bg-cover bg-no-repeat"></div>
         
-        {/* Animated background elements */}
+        {/* Animated background elements - enhanced */}
         <div className="absolute inset-0">
-          {[...Array(20)].map((_, i) => (
+          {[...Array(15)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-2 h-2 bg-silver/20 rounded-full"
+              className="absolute w-1.5 h-1.5 bg-silver/30 rounded-full"
               initial={{ 
                 x: Math.random() * window.innerWidth, 
                 y: Math.random() * window.innerHeight,
                 opacity: 0 
               }}
               animate={{ 
-                y: [null, -100],
-                opacity: [0, 0.6, 0]
+                y: [null, -150],
+                opacity: [0, 0.8, 0],
+                scale: [1, 1.5, 0.5]
               }}
               transition={{
-                duration: Math.random() * 3 + 2,
+                duration: Math.random() * 4 + 3,
                 repeat: Infinity,
-                delay: Math.random() * 2
+                delay: Math.random() * 2,
+                ease: "easeOut"
               }}
             />
           ))}
         </div>
         
-        <div className="container mx-auto px-4 relative z-10 pt-24 md:pt-32">
+        {/* Decorative grid pattern */}
+        <div className="absolute inset-0 opacity-5" style={{
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '50px 50px'
+        }}></div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -116,10 +126,23 @@ export const LandingPage: React.FC = () => {
             className="max-w-4xl mx-auto text-center"
             onAnimationComplete={() => setShowTypewriter(true)}
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              {t('landing.hero.title')}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="mb-6"
+            >
+              <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium text-silver mb-6">
+                <Shield size={16} className="mr-2" />
+                Enterprise Risk Management
+              </span>
+            </motion.div>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-white via-silver to-white bg-clip-text text-transparent">
+                {t('landing.hero.title')}
+              </span>
             </h1>
-            <div className="text-xl md:text-2xl mb-8 text-silver min-h-[2em]">
+            <div className="text-lg sm:text-xl md:text-2xl mb-10 text-silver/90 min-h-[2em] max-w-3xl mx-auto leading-relaxed">
               {showTypewriter && (
                 <TypewriterText 
                   text={t('landing.hero.subtitle')} 
@@ -132,6 +155,7 @@ export const LandingPage: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2.5, duration: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
               <Button 
                 variant="secondary" 
@@ -139,9 +163,19 @@ export const LandingPage: React.FC = () => {
                 icon={<ArrowRight size={20} />}
                 iconPosition="right"
                 onClick={() => navigate('/steel')}
-                className="transform hover:scale-105 transition-transform"
+                className="transform hover:scale-105 transition-all shadow-lg hover:shadow-xl"
+                aria-label="Explore STEEL Framework"
               >
                 {t('landing.hero.cta')}
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                onClick={() => navigate('/contact')}
+                className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm transform hover:scale-105 transition-all"
+                aria-label="Get Started - Contact Us"
+              >
+                Get Started
               </Button>
             </motion.div>
           </motion.div>
@@ -149,8 +183,8 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Live Metrics Section - Now with translations */}
-      <section className="py-16 bg-silver-light dark:bg-dark-surface">
-        <div className="container mx-auto px-4">
+      <section className="py-16 md:py-20 bg-silver-light dark:bg-dark-surface">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -170,8 +204,8 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Enhanced Features Section - Now with translations */}
-      <section className="py-16 bg-white dark:bg-dark-bg">
-        <div className="container mx-auto px-4">
+      <section className="py-16 md:py-20 bg-white dark:bg-dark-bg">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             variants={container}
             initial="hidden"
@@ -221,8 +255,8 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Enhanced STEEL Methodology Section */}
-      <section className="py-16 bg-white dark:bg-navy-dark/80 steel-section">
-        <div className="container mx-auto px-4">
+      <section className="py-16 md:py-20 bg-white dark:bg-navy-dark/80 steel-section">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             variants={container}
             initial="hidden"
@@ -313,8 +347,8 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Enhanced Services Section */}
-      <section className="py-16 bg-silver-light dark:bg-dark-surface">
-        <div className="container mx-auto px-4">
+      <section className="py-16 md:py-20 bg-silver-light dark:bg-dark-surface">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             variants={container}
             initial="hidden"
@@ -410,8 +444,8 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Trust Indicators Section */}
-      <section className="py-16 bg-white dark:bg-dark-bg">
-        <div className="container mx-auto px-4">
+      <section className="py-16 md:py-20 bg-white dark:bg-dark-bg">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             variants={container}
             initial="hidden"
@@ -473,9 +507,10 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Enhanced CTA Section - Reduced padding */}
-      <section className={`py-12 ${theme === 'dark' ? 'bg-navy' : 'bg-black'} text-white`}>
-        <div className="container mx-auto px-4">
+      {/* Enhanced CTA Section */}
+      <section className={`py-16 md:py-20 ${theme === 'dark' ? 'bg-gradient-to-r from-navy to-navy-dark' : 'bg-gradient-to-r from-black to-gray-900'} text-white relative overflow-hidden`}>
+        <div className="absolute inset-0 opacity-10 bg-[url('https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-center bg-cover"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

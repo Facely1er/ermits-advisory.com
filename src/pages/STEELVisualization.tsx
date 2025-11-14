@@ -9,7 +9,7 @@ import { InteractiveSTEELViz } from '../components/interactive/InteractiveSTEELV
 import { 
   Users, 
   Info, ArrowRight, ExternalLink, Download,
-  Lightbulb, BarChart2, FileText, Search, Activity, Presentation
+  Lightbulb, BarChart2, FileText, Search, Activity, Presentation, Shield
 } from 'lucide-react';
 // import { steelDimensions } from '../data/mockData';
 
@@ -112,72 +112,90 @@ export const STEELVisualization: React.FC = () => {
   ];
 
   return (
-    <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
-      <div className="container mx-auto px-4">
-        {/* Enhanced Hero Section */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-16"
-        >
-          <Card variant="solid" padding="lg" className="bg-navy text-white">
-            <div className="text-center max-w-4xl mx-auto">
-              <h1 className="text-3xl md:text-5xl font-bold mb-4">{t('steelPage.hero.title')}</h1>
-              <p className="text-xl md:text-2xl mb-4 text-silver">
-                {t('steelPage.hero.subtitle1')}
-              </p>
-              <p className="text-lg mb-8 text-silver">
-                {t('steelPage.hero.subtitle2')}
-              </p>
-              
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button
-                  variant="secondary"
-                  size="lg"
-                  icon={<ArrowRight size={18} />}
-                  iconPosition="right"
-                  onClick={() => window.location.href = '/steel/index.html'}
-                  className="transform hover:scale-105 transition-transform"
-                >
-                  Start Free Assessment
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-white text-white hover:bg-white/10 transform hover:scale-105 transition-transform"
-                  onClick={() => navigate('/contact')}
-                >
-                  {t('steelPage.hero.scheduleConsultation')}
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-white text-white hover:bg-white/10 transform hover:scale-105 transition-transform"
-                  onClick={() => navigate('/contact')}
-                >
-                  {t('steelPage.hero.requestDemo')}
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-white text-white hover:bg-white/10 transform hover:scale-105 transition-transform"
-                  icon={<Download size={18} />}
-                  iconPosition="left"
-                  onClick={() => navigate('/steel/implementation-guide')}
-                >
-                  {t('steelPage.hero.downloadMethodology')}
-                </Button>
-              </div>
+    <div className="min-h-screen bg-silver-light dark:bg-dark-bg">
+      {/* Enhanced Hero Section */}
+      <section className="relative bg-gradient-to-br from-navy via-navy-dark to-navy text-white pt-20 pb-16 md:pt-28 md:pb-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-navy-dark/90 to-navy/95"></div>
+        <div className="absolute inset-0 opacity-10 bg-[url('https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-center bg-cover"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="mb-6"
+            >
+              <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium text-silver">
+                <Shield size={16} className="mr-2" />
+                Strategic Threat & Enterprise Evaluation Landscape
+              </span>
+            </motion.div>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-white via-silver to-white bg-clip-text text-transparent">
+                {t('steelPage.hero.title')}
+              </span>
+            </h1>
+            <p className="text-xl md:text-2xl mb-4 text-silver/90 leading-relaxed">
+              {t('steelPage.hero.subtitle1')}
+            </p>
+            <p className="text-lg md:text-xl mb-10 text-silver/80 max-w-3xl mx-auto leading-relaxed">
+              {t('steelPage.hero.subtitle2')}
+            </p>
+            
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button
+                variant="secondary"
+                size="lg"
+                icon={<ArrowRight size={18} />}
+                iconPosition="right"
+                onClick={() => window.open('/steel/index.html', '_blank')}
+                className="transform hover:scale-105 transition-all shadow-lg hover:shadow-xl"
+              >
+                Start Free Assessment
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm transform hover:scale-105 transition-all"
+                onClick={() => navigate('/contact')}
+              >
+                {t('steelPage.hero.scheduleConsultation')}
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm transform hover:scale-105 transition-all"
+                onClick={() => navigate('/contact')}
+              >
+                {t('steelPage.hero.requestDemo')}
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm transform hover:scale-105 transition-all"
+                icon={<Download size={18} />}
+                iconPosition="left"
+                onClick={() => navigate('/steel/implementation-guide')}
+              >
+                {t('steelPage.hero.downloadMethodology')}
+              </Button>
             </div>
-          </Card>
-        </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* What Makes STEEL Different Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="mb-16"
+          className="mb-16 md:mb-20 -mt-8"
         >
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">{t('steelPage.whatMakesDifferent.title')}</h2>

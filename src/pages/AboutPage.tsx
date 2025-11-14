@@ -119,51 +119,69 @@ export const AboutPage: React.FC = () => {
   ];
 
   return (
-    <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
-      <div className="container mx-auto px-4">
-        {/* Enhanced Hero Section */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-16 text-center"
-        >
-          <div className="mb-6">
-            <span className="inline-flex items-center px-4 py-2 rounded-full bg-navy/10 dark:bg-silver/10 text-navy dark:text-silver text-sm font-medium mb-4">
-              <Award size={16} className="mr-2" />
-              {t('about.hero.badge')}
-            </span>
-          </div>
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 dark:text-white">{t('about.hero.title')}</h1>
-          <p className="text-xl text-gray-600 dark:text-gray-100 max-w-4xl mx-auto mb-8">
-            {t('about.hero.subtitle')}
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button 
-              variant="primary" 
-              size="lg"
-              icon={<Calendar size={18} />}
-              onClick={() => navigate('/contact')}
+    <div className="min-h-screen bg-silver-light dark:bg-dark-bg">
+      {/* Enhanced Hero Section */}
+      <section className="relative bg-gradient-to-br from-navy via-navy-dark to-navy text-white pt-20 pb-16 md:pt-28 md:pb-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-navy-dark/90 to-navy/95"></div>
+        <div className="absolute inset-0 opacity-10 bg-[url('https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-center bg-cover"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="mb-6"
             >
-              {t('about.hero.cta.schedule')}
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              icon={<ArrowRight size={18} />}
-              iconPosition="right"
-              onClick={() => navigate('/services')}
-            >
-              {t('about.hero.cta.explore')}
-            </Button>
-          </div>
-        </motion.div>
+              <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium text-silver">
+                <Award size={16} className="mr-2" />
+                {t('about.hero.badge')}
+              </span>
+            </motion.div>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-white via-silver to-white bg-clip-text text-transparent">
+                {t('about.hero.title')}
+              </span>
+            </h1>
+            <p className="text-lg sm:text-xl md:text-2xl text-silver/90 max-w-3xl mx-auto mb-10 leading-relaxed">
+              {t('about.hero.subtitle')}
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button 
+                variant="secondary" 
+                size="lg"
+                icon={<Calendar size={18} />}
+                onClick={() => navigate('/contact')}
+                className="transform hover:scale-105 transition-all shadow-lg hover:shadow-xl"
+              >
+                {t('about.hero.cta.schedule')}
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                icon={<ArrowRight size={18} />}
+                iconPosition="right"
+                onClick={() => navigate('/services')}
+                className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm transform hover:scale-105 transition-all"
+              >
+                {t('about.hero.cta.explore')}
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Leadership Excellence Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="mb-16"
+          className="mb-16 md:mb-20 -mt-8"
         >
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold mb-4 dark:text-white">{t('about.leadership.title')}</h2>
