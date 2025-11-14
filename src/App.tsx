@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './contexts/ThemeContext';
-import { LanguageProvider } from './contexts/LanguageContext';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { ScrollProgressBar } from './components/shared/ProgressBar';
@@ -42,42 +41,40 @@ function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider>
-        <LanguageProvider>
-          <Router>
-            <div className="min-h-screen flex flex-col">
-              <ScrollProgressBar />
-              <Navigation />
-            
-            <main className="flex-grow pt-16">
-              <Suspense fallback={<LoadingSpinner />}>
-                <Routes>
-                  <Route path="/" element={<LandingPage />} />
-                  <Route path="/dashboard" element={<Dashboard />} />
-                  <Route path="/steel" element={<STEELVisualization />} />
-                  <Route path="/steel/premium" element={<SteelPremium />} />
-                  <Route path="/steel/implementation-guide" element={<ImplementationGuidePage />} />
-                  <Route path="/vciso-kit" element={<VcisoKit />} />
-                  <Route path="/dashboard-template" element={<DashboardTemplate />} />
-                  <Route path="/risk-radar" element={<RiskRadar />} />
-                  <Route path="/services" element={<ServiceOffering />} />
-                  <Route path="/presentation" element={<BoardPresentation />} />
-                  <Route path="/contact" element={<ContactPage />} />
-                  <Route path="/about" element={<AboutPage />} />
-                  <Route path="/ecosystem" element={<EcosystemPage />} />
-                  <Route path="/privacy" element={<PrivacyPolicyPage />} />
-                  <Route path="/terms" element={<TermsOfServicePage />} />
-                  <Route path="/cookies" element={<CookiePolicyPage />} />
-                  <Route path="*" element={<NotFoundPage />} />
-                </Routes>
-              </Suspense>
-            </main>
-            
-            <Footer />
-            <FloatingActionButton />
-            <Analytics />
-          </div>
-        </Router>
-      </LanguageProvider>
+        <Router>
+          <div className="min-h-screen flex flex-col">
+            <ScrollProgressBar />
+            <Navigation />
+          
+          <main className="flex-grow pt-16">
+            <Suspense fallback={<LoadingSpinner />}>
+              <Routes>
+                <Route path="/" element={<LandingPage />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/steel" element={<STEELVisualization />} />
+                <Route path="/steel/premium" element={<SteelPremium />} />
+                <Route path="/steel/implementation-guide" element={<ImplementationGuidePage />} />
+                <Route path="/vciso-kit" element={<VcisoKit />} />
+                <Route path="/dashboard-template" element={<DashboardTemplate />} />
+                <Route path="/risk-radar" element={<RiskRadar />} />
+                <Route path="/services" element={<ServiceOffering />} />
+                <Route path="/presentation" element={<BoardPresentation />} />
+                <Route path="/contact" element={<ContactPage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/ecosystem" element={<EcosystemPage />} />
+                <Route path="/privacy" element={<PrivacyPolicyPage />} />
+                <Route path="/terms" element={<TermsOfServicePage />} />
+                <Route path="/cookies" element={<CookiePolicyPage />} />
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+            </Suspense>
+          </main>
+          
+          <Footer />
+          <FloatingActionButton />
+          <Analytics />
+        </div>
+      </Router>
     </ThemeProvider>
     </ErrorBoundary>
   );
