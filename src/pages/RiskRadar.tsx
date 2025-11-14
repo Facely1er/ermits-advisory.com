@@ -222,7 +222,7 @@ export const RiskRadar: React.FC = () => {
   return (
     <div className="min-h-screen bg-silver-light dark:bg-dark-bg">
       {/* Enhanced Hero Section */}
-      <section className="relative bg-gradient-to-br from-navy via-navy-dark to-navy text-white pt-20 pb-12 md:pt-28 md:pb-16 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-navy via-navy-dark to-navy text-white pt-16 pb-10 md:pt-20 md:pb-14 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-navy-dark/90 to-navy/95"></div>
         <div className="absolute inset-0 opacity-10 bg-[url('https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-center bg-cover"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

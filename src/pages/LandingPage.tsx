@@ -81,7 +81,7 @@ export const LandingPage: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Enhanced Hero Section - Fixed spacing for navigation */}
-      <section className="relative bg-gradient-to-br from-navy via-navy-dark to-navy text-white pt-20 pb-20 md:pt-28 md:pb-28 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-navy via-navy-dark to-navy text-white pt-16 pb-12 md:pt-20 md:pb-16 overflow-hidden">
         {/* Enhanced background with gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-navy-dark/90 to-navy/95"></div>
         <div className="absolute inset-0 opacity-20 bg-[url('https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-center bg-cover bg-no-repeat"></div>
