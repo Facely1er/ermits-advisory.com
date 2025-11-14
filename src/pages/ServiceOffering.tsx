@@ -44,10 +44,9 @@ export const ServiceOffering: React.FC = () => {
   
   // Define service information with IDs matching the exact keys in translations.ts
   const services = [
-    { id: 'boardBriefings', icon: 'presentation' },
-    { id: 'mAndA', icon: 'search' },
-    { id: 'crisis', icon: 'shield' },
-    { id: 'vCISO', icon: 'user' }
+    { id: 'steel', icon: 'shield' },
+    { id: 'vCISO', icon: 'user' },
+    { id: 'dashboard', icon: 'presentation' }
   ];
   
   // What Makes STEEL Different items
@@ -102,8 +101,6 @@ export const ServiceOffering: React.FC = () => {
     switch (icon) {
       case 'presentation':
         return <Presentation size={size} className="text-navy dark:text-silver" />;
-      case 'search':
-        return <Search size={size} className="text-navy dark:text-silver" />;
       case 'shield':
         return <Shield size={size} className="text-navy dark:text-silver" />;
       case 'user':

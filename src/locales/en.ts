@@ -93,23 +93,19 @@ export const en = {
       }
     },
     services: {
-      title: "Executive Advisory Services",
-      subtitle: "Strategic cybersecurity guidance tailored for executive leadership",
-      boardBriefings: {
-        title: "Board Briefings",
-        description: "Clear, actionable cybersecurity briefings designed for board-level decision making"
-      },
-      mAndA: {
-        title: "M&A Due Diligence", 
-        description: "Comprehensive cyber risk assessment for mergers and acquisitions"
-      },
-      crisis: {
-        title: "Crisis Leadership",
-        description: "Strategic guidance and communication during cybersecurity incidents"
+      title: "ERMITS Ecosystem Products",
+      subtitle: "STEEL-powered strategic risk intelligence and advisory services",
+      steel: {
+        title: "STEEL™ Framework",
+        description: "Comprehensive strategic risk assessment methodology"
       },
       vCISO: {
         title: "Virtual CISO",
-        description: "Executive-level security leadership without the full-time commitment"
+        description: "Executive-level security leadership with STEEL™ integration"
+      },
+      dashboard: {
+        title: "Executive Dashboard Suite",
+        description: "Real-time risk intelligence and strategic insights"
       }
     },
     trust: {
@@ -234,51 +230,40 @@ export const en = {
 
   // Services
   services: {
-    title: "Advisory Services",
-    subtitle: "Strategic cybersecurity guidance for executive leadership",
+    title: "ERMITS Ecosystem Products",
+    subtitle: "STEEL-powered strategic risk intelligence and advisory services",
     keyFeatures: "Key Features",
-    boardBriefings: {
-      title: "Board Briefings",
-      description: "Clear, actionable cybersecurity briefings for board members",
+    steel: {
+      title: "STEEL™ Framework",
+      description: "Comprehensive strategic risk assessment methodology for cybersecurity",
       features: [
-        "Non-technical language for clear understanding",
-        "Strategic focus on business impact", 
-        "Actionable recommendations",
-        "Benchmark comparisons",
-        "Trend analysis and forecasting"
-      ]
-    },
-    mAndA: {
-      title: "M&A Due Diligence",
-      description: "Comprehensive cyber risk assessment for acquisitions and mergers",
-      features: [
-        "Pre-acquisition security assessment",
-        "Technical and non-technical risk evaluation",
-        "Integration risk analysis",
-        "Post-merger security strategy",
-        "Value protection recommendations"
-      ]
-    },
-    crisis: {
-      title: "Crisis Leadership",
-      description: "Strategic guidance during cybersecurity incidents",
-      features: [
-        "Executive crisis communication",
-        "Strategic decision support",
-        "Stakeholder management", 
-        "Regulatory and legal guidance",
-        "Reputation management"
+        "Six-dimensional risk analysis (Political, Economic, Social, Technology, Environmental, Legal)",
+        "Interactive risk visualization and modeling",
+        "Scenario-based impact analysis",
+        "Executive-ready briefing materials",
+        "Continuous risk monitoring framework"
       ]
     },
     vCISO: {
       title: "Virtual CISO",
       description: "Executive-level security leadership without the full-time commitment",
       features: [
-        "Strategic security planning",
+        "Strategic security planning with STEEL™",
         "Board and executive communication",
         "Security program development",
-        "Vendor and technology selection",
-        "Compliance oversight"
+        "STEEL-based risk assessments",
+        "Compliance and governance oversight"
+      ]
+    },
+    dashboard: {
+      title: "Executive Dashboard Suite",
+      description: "Real-time risk intelligence and strategic insights platform",
+      features: [
+        "Live STEEL™ risk radar visualization",
+        "Executive KPI tracking and metrics",
+        "Threat intelligence integration",
+        "Strategic action recommendations",
+        "Customizable board-ready reports"
       ]
     },
     steelFramework: {
