@@ -45,7 +45,6 @@ export const ServiceOffering: React.FC = () => {
   // Define service information with IDs matching the exact keys in translations.ts
   const services = [
     { id: 'boardBriefings', icon: 'presentation' },
-    { id: 'mAndA', icon: 'search' },
     { id: 'crisis', icon: 'shield' },
     { id: 'vCISO', icon: 'user' }
   ];

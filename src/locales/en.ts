@@ -99,10 +99,6 @@ export const en = {
         title: "Board Briefings",
         description: "Clear, actionable cybersecurity briefings designed for board-level decision making"
       },
-      mAndA: {
-        title: "M&A Due Diligence", 
-        description: "Comprehensive cyber risk assessment for mergers and acquisitions"
-      },
       crisis: {
         title: "Crisis Leadership",
         description: "Strategic guidance and communication during cybersecurity incidents"
@@ -246,17 +242,6 @@ export const en = {
         "Actionable recommendations",
         "Benchmark comparisons",
         "Trend analysis and forecasting"
-      ]
-    },
-    mAndA: {
-      title: "M&A Due Diligence",
-      description: "Comprehensive cyber risk assessment for acquisitions and mergers",
-      features: [
-        "Pre-acquisition security assessment",
-        "Technical and non-technical risk evaluation",
-        "Integration risk analysis",
-        "Post-merger security strategy",
-        "Value protection recommendations"
       ]
     },
     crisis: {

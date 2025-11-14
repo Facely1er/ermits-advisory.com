@@ -218,19 +218,6 @@ export const services: Service[] = [
     icon: 'presentation'
   },
   {
-    id: 'ma-due-diligence',
-    title: 'M&A Due Diligence',
-    description: 'Comprehensive cyber risk assessment for acquisitions and mergers',
-    features: [
-      'Pre-acquisition security assessment',
-      'Technical and non-technical risk evaluation',
-      'Integration risk analysis',
-      'Post-merger security strategy',
-      'Value protection recommendations'
-    ],
-    icon: 'search'
-  },
-  {
     id: 'crisis-leadership',
     title: 'Crisis Leadership',
     description: 'Strategic guidance during cybersecurity incidents',
@@ -273,13 +260,6 @@ export const recommendations: Recommendation[] = [
     action: 'Establish third-party risk management program',
     impact: 'Improves visibility into supply chain risks',
     effort: 'High'
-  },
-  {
-    id: '3',
-    priority: 'Medium',
-    action: 'Update security awareness training with industry-specific scenarios',
-    impact: 'Reduces successful social engineering attempts by 62%',
-    effort: 'Low'
   },
   {
     id: '4',

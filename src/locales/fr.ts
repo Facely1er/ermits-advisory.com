@@ -99,10 +99,6 @@ export const fr = {
         title: "Briefings du Conseil",
         description: "Briefings cybersécuritaires clairs et exploitables conçus pour la prise de décision au niveau du conseil"
       },
-      mAndA: {
-        title: "Due Diligence F&A",
-        description: "Évaluation complète des risques cyber pour les fusions et acquisitions"
-      },
       crisis: {
         title: "Leadership de Crise",
         description: "Conseil stratégique et communication lors d'incidents de cybersécurité"
@@ -246,17 +242,6 @@ export const fr = {
         "Recommandations exploitables",
         "Comparaisons de références",
         "Analyse des tendances et prévisions"
-      ]
-    },
-    mAndA: {
-      title: "Due Diligence F&A",
-      description: "Évaluation complète des risques cyber pour les acquisitions et fusions",
-      features: [
-        "Évaluation sécuritaire pré-acquisition",
-        "Évaluation des risques techniques et non techniques",
-        "Analyse des risques d'intégration",
-        "Stratégie sécuritaire post-fusion",
-        "Recommandations de protection de la valeur"
       ]
     },
     crisis: {
