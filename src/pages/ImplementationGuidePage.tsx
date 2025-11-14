@@ -144,27 +144,53 @@ export const ImplementationGuidePage: React.FC = () => {
   };
 
   return (
-    <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
-      <div className="container mx-auto px-4">
-        {/* Header */}
+    <div className="min-h-screen bg-silver-light dark:bg-dark-bg">
+      {/* Enhanced Hero Section */}
+      <section className="relative bg-gradient-to-br from-navy via-navy-dark to-navy text-white pt-20 pb-12 md:pt-28 md:pb-16 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-navy-dark/90 to-navy/95"></div>
+        <div className="absolute inset-0 opacity-10 bg-[url('https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-center bg-cover"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="mb-6"
+            >
+              <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium text-silver">
+                <FileText size={16} className="mr-2" />
+                Implementation Guide
+              </span>
+            </motion.div>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-white via-silver to-white bg-clip-text text-transparent">
+                {t('implementationGuide.title')}
+              </span>
+            </h1>
+            <p className="text-lg sm:text-xl md:text-2xl text-silver/90 max-w-3xl mx-auto leading-relaxed">
+              {t('implementationGuide.subtitle')}
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-8"
+          className="mb-8 -mt-8"
         >
           <button 
             onClick={() => navigate('/steel')}
-            className="inline-flex items-center text-navy dark:text-silver hover:underline mb-4 transition-colors"
+            className="inline-flex items-center text-navy dark:text-silver hover:underline mb-6 transition-colors"
           >
             <ArrowLeft size={16} className="mr-2" />
             {t('implementationGuide.backToSteel')}
           </button>
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-            {t('implementationGuide.title')}
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl">
-            {t('implementationGuide.subtitle')}
-          </p>
         </motion.div>
 
         {/* Quick Stats */}

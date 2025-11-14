@@ -1,13 +1,11 @@
 import { translations } from '../locales';
 
 interface LanguageContextType {
-  language: string;
-  setLanguage: (language: string) => void;
   t: (key: string) => string;
   getNestedTranslation: (path: string) => Record<string, unknown> | string;
 }
 
-// Simplified English-only translation hook
+// English-only translation hook
 export const useLanguage = (): LanguageContextType => {
   // Function to get a translation by key (always English)
   const t = (key: string): string => {
@@ -42,8 +40,6 @@ export const useLanguage = (): LanguageContextType => {
   };
 
   return {
-    language: 'en',
-    setLanguage: () => {}, // No-op since we only support English
     t,
     getNestedTranslation
   };

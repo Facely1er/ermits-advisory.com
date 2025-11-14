@@ -67,4 +67,3 @@ export interface SteelDimension {
 }
 
 export type Theme = 'light' | 'dark' | 'system';
-export type Language = 'en' | 'fr';

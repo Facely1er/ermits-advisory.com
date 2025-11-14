@@ -26,10 +26,10 @@ export const Button: React.FC<ButtonProps> = ({
   const baseStyles = 'inline-flex items-center justify-center rounded-btn font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2 dark:focus:ring-offset-dark-bg disabled:opacity-50 disabled:pointer-events-none';
   
   const variants = {
-    primary: 'bg-navy text-white hover:bg-navy-dark dark:bg-navy dark:hover:bg-navy-dark',
-    secondary: 'bg-silver hover:bg-silver-light text-navy dark:bg-silver/90 dark:text-navy-dark dark:hover:bg-silver',
+    primary: 'bg-navy text-white hover:bg-navy-dark dark:bg-navy dark:hover:bg-navy-dark shadow-md hover:shadow-lg',
+    secondary: 'bg-silver hover:bg-silver-light text-navy dark:bg-silver/90 dark:text-navy-dark dark:hover:bg-silver shadow-md hover:shadow-lg',
     ghost: 'bg-transparent hover:bg-silver/20 text-navy dark:text-white dark:hover:bg-navy/20',
-    outline: 'bg-transparent border border-navy text-navy hover:bg-navy/10 dark:border-silver/70 dark:text-silver dark:hover:bg-silver/10',
+    outline: 'bg-transparent border-2 border-navy text-navy hover:bg-navy/10 dark:border-silver/70 dark:text-silver dark:hover:bg-silver/10 hover:border-navy-dark dark:hover:border-silver',
   };
   
   const sizes = {

@@ -285,7 +285,7 @@ export const ServiceOffering: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service) => {
-              const serviceData = getNestedTranslation(`services.${service.id}`);
+              const serviceData = getNestedTranslation(`services.${service.id}`) as Record<string, unknown>;
               
               return (
                 <Card key={service.id} variant="glass" padding="lg" className="h-full">
@@ -295,18 +295,18 @@ export const ServiceOffering: React.FC = () => {
                     </div>
                     <div className="flex-1">
                       <h3 className="text-xl font-bold mb-2 dark:text-white card-title">
-                        {serviceData.title}
+                        {typeof serviceData === 'object' && serviceData !== null && 'title' in serviceData ? String(serviceData.title) : ''}
                       </h3>
                       <p className="text-gray-600 dark:text-gray-200 mb-4 card-text">
-                        {serviceData.description}
+                        {typeof serviceData === 'object' && serviceData !== null && 'description' in serviceData ? String(serviceData.description) : ''}
                       </p>
                       
                       <h4 className="text-lg font-semibold mb-2 dark:text-gray-100">{t('services.keyFeatures')}</h4>
                       <ul className="space-y-2 mb-6">
-                        {Array.isArray(serviceData.features) && serviceData.features.map((feature: string, index: number) => (
+                        {typeof serviceData === 'object' && serviceData !== null && 'features' in serviceData && Array.isArray(serviceData.features) && serviceData.features.map((feature: unknown, index: number) => (
                           <li key={index} className="flex items-start">
                             <CheckCircle size={16} className="text-navy dark:text-silver mt-1 mr-2 flex-shrink-0" />
-                            <span className="text-gray-600 dark:text-gray-200">{feature}</span>
+                            <span className="text-gray-600 dark:text-gray-200">{String(feature)}</span>
                           </li>
                         ))}
                       </ul>

@@ -299,7 +299,7 @@ For technical support or questions:
 - [ ] Multi-tenant organization support
 
 ### Version History
-- **v1.0.0** - Initial release with STEEL and RAPID frameworks
+- **v1.0.0** - Initial release with STEEL framework
 - **v1.1.0** - Performance optimizations and PWA features
 - **v1.2.0** - Enhanced security and accessibility
 

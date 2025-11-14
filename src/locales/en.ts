@@ -601,8 +601,7 @@ export const en = {
     cta: {
       title: "Ready to Begin Your STEEL™ Journey?", 
       description: "Join organizations worldwide who have transformed their cybersecurity approach with STEEL™",
-      scheduleConsultation: "Schedule Implementation Consultation",
-      viewResources: "Schedule Consultation"
+      scheduleConsultation: "Schedule Implementation Consultation"
     }
   },
 
@@ -852,8 +851,7 @@ export const en = {
       title: "Services",
       advisory: "Strategic Advisory",
       steel: "STEEL™ Framework",
-      dashboard: "Executive Dashboard",
-      resources: "Resource Library"
+      dashboard: "Executive Dashboard"
     },
     company: {
       title: "Company",

@@ -38,7 +38,10 @@ export const Dashboard: React.FC = () => {
   const [selectedView, setSelectedView] = useState<'overview' | 'details'>('overview');
 
   // Get translated strategic actions
-  const strategicActions = getNestedTranslation('dashboard.actions.items');
+  const strategicActionsData = getNestedTranslation('dashboard.actions.items');
+  const strategicActions: Array<Record<string, unknown>> = Array.isArray(strategicActionsData) 
+    ? strategicActionsData as Array<Record<string, unknown>>
+    : [];
 
   // Calculate overall risk score (average of all dimensions)
   const overallScore = Math.round(
@@ -237,36 +240,66 @@ export const Dashboard: React.FC = () => {
     show: { opacity: 1, y: 0 },
   };
 
+  // Generate CSS variables for dimension colors
+  const dimensionColorStyles = riskDimensions
+    .map((dim) => `.risk-dimension-indicator[data-dimension-id="${dim.id}"] { --dimension-color: ${dim.color}; }`)
+    .join('\n');
+
   return (
-    <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="pt-16 mb-8"
-        >
-          <h1 className="text-3xl font-bold mb-2 dark:text-white">{t('dashboard.title')}</h1>
-          <p className="text-gray-600 dark:text-gray-200">{t('dashboard.subtitle')}</p>
-          
-          <div className="flex space-x-4 mt-4">
-            <Button 
-              variant={selectedView === 'overview' ? 'primary' : 'outline'} 
-              size="sm"
-              onClick={() => setSelectedView('overview')}
-              icon={<Activity size={16} />}
+    <div className="min-h-screen bg-silver-light dark:bg-dark-bg">
+      <style>{dimensionColorStyles}</style>
+      {/* Enhanced Hero Section */}
+      <section className="relative bg-gradient-to-br from-navy via-navy-dark to-navy text-white pt-20 pb-12 md:pt-28 md:pb-16 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-navy-dark/90 to-navy/95"></div>
+        <div className="absolute inset-0 opacity-10 bg-[url('https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-center bg-cover"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="mb-6"
             >
-              Overview
-            </Button>
-            <Button 
-              variant={selectedView === 'details' ? 'primary' : 'outline'} 
-              size="sm"
-              onClick={() => setSelectedView('details')}
-              icon={<PieChart size={16} />}
-            >
-              Details
-            </Button>
-          </div>
-        </motion.div>
+              <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium text-silver">
+                <BarChart3 size={16} className="mr-2" />
+                Executive Dashboard
+              </span>
+            </motion.div>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-white via-silver to-white bg-clip-text text-transparent">
+                {t('dashboard.title')}
+              </span>
+            </h1>
+            <p className="text-lg sm:text-xl md:text-2xl text-silver/90 max-w-3xl mx-auto leading-relaxed">
+              {t('dashboard.subtitle')}
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex space-x-4 mb-8 -mt-8">
+          <Button 
+            variant={selectedView === 'overview' ? 'primary' : 'outline'} 
+            size="sm"
+            onClick={() => setSelectedView('overview')}
+            icon={<Activity size={16} />}
+          >
+            Overview
+          </Button>
+          <Button 
+            variant={selectedView === 'details' ? 'primary' : 'outline'} 
+            size="sm"
+            onClick={() => setSelectedView('details')}
+            icon={<PieChart size={16} />}
+          >
+            Details
+          </Button>
+        </div>
 
         <div className="grid grid-cols-12 gap-6">
           {/* Sidebar with Risk Score */}
@@ -315,8 +348,8 @@ export const Dashboard: React.FC = () => {
                   <div key={dimension.id} className="flex items-center justify-between">
                     <div className="flex items-center">
                       <div 
-                        className="w-3 h-3 rounded-full mr-2" 
-                        style={{ backgroundColor: dimension.color }}
+                        className="risk-dimension-indicator w-3 h-3 rounded-full mr-2" 
+                        data-dimension-id={dimension.id}
                       ></div>
                       <span className="text-sm dark:text-gray-200">{t(`steel.dimensions.${dimension.id}.title`)}</span>
                     </div>
@@ -458,32 +491,39 @@ export const Dashboard: React.FC = () => {
               <Card variant="glass" padding="md">
                 <h2 className="text-xl font-semibold mb-4 dark:text-white">{t('dashboard.actions.title')}</h2>
                 <div className="space-y-4">
-                  {strategicActions.map((action, index) => (
-                    <div key={index} className="border-b border-gray-100 dark:border-gray-700 last:border-b-0 pb-4 last:pb-0">
-                      <div className="flex items-start justify-between">
-                        <div>
-                          <div className="flex items-center mb-1">
-                            <span className={`text-sm font-medium ${getPriorityColor(action.priority)} mr-2`}>
-                              {action.priority}
-                            </span>
-                            <span className={`text-xs px-2 py-0.5 rounded ${getStatusStyles(action.status)}`}>
-                              {action.status}
-                            </span>
+                  {strategicActions.map((action: Record<string, unknown>, index: number) => {
+                    const priority = typeof action.priority === 'string' ? action.priority : '';
+                    const status = typeof action.status === 'string' ? action.status : '';
+                    const actionText = typeof action.action === 'string' ? action.action : '';
+                    const impact = typeof action.impact === 'string' ? action.impact : '';
+                    
+                    return (
+                      <div key={index} className="border-b border-gray-100 dark:border-gray-700 last:border-b-0 pb-4 last:pb-0">
+                        <div className="flex items-start justify-between">
+                          <div>
+                            <div className="flex items-center mb-1">
+                              <span className={`text-sm font-medium ${getPriorityColor(priority)} mr-2`}>
+                                {priority}
+                              </span>
+                              <span className={`text-xs px-2 py-0.5 rounded ${getStatusStyles(status)}`}>
+                                {status}
+                              </span>
+                            </div>
+                            <p className="font-medium dark:text-white">{actionText}</p>
+                            <p className="text-sm text-gray-600 dark:text-gray-200 mt-1">{impact}</p>
                           </div>
-                          <p className="font-medium dark:text-white">{action.action}</p>
-                          <p className="text-sm text-gray-600 dark:text-gray-200 mt-1">{action.impact}</p>
+                          <Button 
+                            variant="ghost" 
+                            size="sm"
+                            icon={<ChevronRight size={16} />}
+                            iconPosition="right"
+                          >
+                            {t('dashboard.actions.details')}
+                          </Button>
                         </div>
-                        <Button 
-                          variant="ghost" 
-                          size="sm"
-                          icon={<ChevronRight size={16} />}
-                          iconPosition="right"
-                        >
-                          {t('dashboard.actions.details')}
-                        </Button>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </Card>
             </motion.div>

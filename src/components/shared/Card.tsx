@@ -19,10 +19,10 @@ export const Card: React.FC<CardProps> = ({
   ...props
 }) => {
   const variants = {
-    default: 'bg-white dark:bg-dark-card-bg shadow-md',
-    glass: 'glass-card',
-    solid: 'bg-navy text-white',
-    outline: 'bg-transparent border border-navy/20 dark:border-silver/30',
+    default: 'bg-white dark:bg-dark-card-bg shadow-md hover:shadow-lg transition-shadow duration-300',
+    glass: 'glass-card backdrop-blur-sm bg-white/80 dark:bg-dark-card-bg/80 border border-gray-200/50 dark:border-gray-700/50',
+    solid: 'bg-navy text-white shadow-xl',
+    outline: 'bg-transparent border-2 border-navy/20 dark:border-silver/30 hover:border-navy/40 dark:hover:border-silver/50 transition-colors duration-300',
   };
   
   const paddings = {
@@ -33,10 +33,10 @@ export const Card: React.FC<CardProps> = ({
   };
 
   const cardClasses = cn(
-    'rounded transition-all duration-300',
+    'rounded-lg transition-all duration-300',
     variants[variant],
     paddings[padding],
-    hover ? 'hover:shadow-lg' : '',
+    hover ? 'hover:shadow-xl hover:-translate-y-1' : '',
     fullHeight ? 'h-full' : '',
     className
   );
