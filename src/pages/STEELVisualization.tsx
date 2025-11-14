@@ -131,26 +131,34 @@ export const STEELVisualization: React.FC = () => {
               </p>
               
               <div className="flex flex-wrap justify-center gap-4">
-                <Button 
-                  variant="secondary" 
+                <Button
+                  variant="secondary"
                   size="lg"
                   icon={<ArrowRight size={18} />}
                   iconPosition="right"
-                  onClick={() => navigate('/contact')}
+                  onClick={() => window.location.href = '/steel/index.html'}
                   className="transform hover:scale-105 transition-transform"
+                >
+                  Start Free Assessment
+                </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-white text-white hover:bg-white/10 transform hover:scale-105 transition-transform"
+                  onClick={() => navigate('/contact')}
                 >
                   {t('steelPage.hero.scheduleConsultation')}
                 </Button>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="lg"
                   className="border-white text-white hover:bg-white/10 transform hover:scale-105 transition-transform"
                   onClick={() => navigate('/contact')}
                 >
                   {t('steelPage.hero.requestDemo')}
                 </Button>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="lg"
                   className="border-white text-white hover:bg-white/10 transform hover:scale-105 transition-transform"
                   icon={<Download size={18} />}
@@ -267,6 +275,23 @@ export const STEELVisualization: React.FC = () => {
               
               {/* Interactive STEEL Visualization */}
               <InteractiveSTEELViz />
+
+              {/* Call to Action for Assessment */}
+              <div className="mt-8 text-center">
+                <p className="text-lg text-gray-600 dark:text-gray-100 mb-4">
+                  Ready to assess your organization's strategic threat environment?
+                </p>
+                <Button
+                  variant="primary"
+                  size="lg"
+                  icon={<ArrowRight size={18} />}
+                  iconPosition="right"
+                  onClick={() => window.location.href = '/steel/index.html'}
+                  className="transform hover:scale-105 transition-transform"
+                >
+                  Take the Free STEEL Assessment
+                </Button>
+              </div>
             </InteractiveCard>
           </motion.div>
         </div>
@@ -362,17 +387,26 @@ export const STEELVisualization: React.FC = () => {
                   {t('steel.cta.description')}
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <Button 
-                    variant="secondary" 
+                  <Button
+                    variant="secondary"
+                    icon={<ArrowRight size={16} />}
+                    iconPosition="right"
+                    onClick={() => window.location.href = '/steel/index.html'}
+                    className="transform hover:scale-105 transition-transform"
+                  >
+                    Start Free Assessment
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="border-white text-white hover:bg-white/10 transform hover:scale-105 transition-transform"
                     icon={<ExternalLink size={16} />}
                     iconPosition="right"
                     onClick={() => navigate('/contact')}
-                    className="transform hover:scale-105 transition-transform"
                   >
                     {t('steel.cta.scheduleConsultation')}
                   </Button>
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     className="border-white text-white hover:bg-white/10 transform hover:scale-105 transition-transform"
                     onClick={() => navigate('/contact')}
                   >
