@@ -283,6 +283,26 @@
                         <div style="color: #64748b;">Minutes</div>
                     </div>
                 </div>
+                <div class="privacy-notice" style="background: #f0f9ff; padding: 20px; border-radius: 10px; margin-top: 30px; border-left: 5px solid #004B87;">
+                    <h3 style="color: var(--navy); margin-bottom: 15px;">🔒 Privacy & Data Handling</h3>
+                    <p style="line-height: 1.8; margin-bottom: 15px;">
+                        <strong>Your privacy is our priority.</strong> This assessment operates entirely within your browser.
+                        No data is transmitted to our servers or any third parties.
+                    </p>
+                    <ul style="line-height: 1.8; padding-left: 20px;">
+                        <li><strong>Zero Data Collection:</strong> Your responses never leave your device</li>
+                        <li><strong>Local Storage Only:</strong> Progress saved in your browser (optional)</li>
+                        <li><strong>Full Control:</strong> Export, delete, or clear data at any time</li>
+                        <li><strong>No Tracking:</strong> No cookies, analytics, or third-party tracking</li>
+                        <li><strong>Offline Capable:</strong> Works without internet connection after loading</li>
+                    </ul>
+                    <p style="margin-top: 15px; font-size: 0.9em; color: #666;">
+                        <strong>Technical Details:</strong> This assessment uses HTML5 LocalStorage for optional progress
+                        saving and client-side JavaScript for all calculations. No personally identifiable information (PII)
+                        is collected, stored, or processed by ERMITS Advisory.
+                    </p>
+                </div>
+
                 <div class="btn-group">
                     <button class="btn btn-primary" onclick="showTab('assessment')">▶️ Start Assessment</button>
                 </div>
@@ -773,6 +793,7 @@
                         <button type="button" class="btn btn-primary" onclick="calculateResults()">📊 Calculate Results</button>
                         <button type="button" class="btn btn-primary" onclick="saveProgress()">💾 Save Progress</button>
                         <button type="button" class="btn btn-primary" onclick="loadProgress()">📂 Load Progress</button>
+                        <button type="button" class="btn" style="background: #dc2626; color: white;" onclick="clearAllData()">🗑️ Clear All Data</button>
                     </div>
                 </form>
             </div>
@@ -1004,6 +1025,17 @@
             a.href = url;
             a.download = `STEEL_Assessment_${new Date().toISOString().split('T')[0]}.json`;
             a.click();
+        }
+
+        function clearAllData() {
+            if (confirm('This will permanently delete your saved assessment progress from your browser. This action cannot be undone. Continue?')) {
+                localStorage.removeItem('steel_assessment');
+                assessmentData = {};
+                document.getElementById('assessmentForm').reset();
+                updateProgress();
+                alert('All saved data has been permanently deleted from your browser.');
+                showTab('overview');
+            }
         }
     </script>
 </body>
