@@ -1,5 +1,3 @@
-/* stylelint-disable */
-/* postcss-disable */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -251,4 +249,35 @@
 /* Dimension color via data attribute */
 [data-dimension-color] {
   --dimension-color: attr(data-dimension-color);
+}
+
+/* Dynamic dimension hexagon background */
+.dimension-hexagon-bg {
+  background-color: var(--dimension-color, #4c72b0);
+}
+
+/* Dimension color text */
+.dimension-color-text {
+  color: var(--dimension-color, #4c72b0);
+}
+
+/* Dimension progress bar */
+.dimension-progress-bar {
+  background-color: var(--dimension-color, #4c72b0);
+}
+
+/* Dimension icon background */
+.dimension-icon-bg {
+  background-color: var(--dimension-color, #4c72b0);
+}
+
+/* Dimension bullet point */
+.dimension-bullet {
+  background-color: var(--dimension-color, #4c72b0);
+}
+
+/* Hexagon background with opacity */
+.hexagon-dimension-bg-opacity {
+  background-color: var(--dimension-color, #4c72b0);
+  opacity: 0.1;
 }

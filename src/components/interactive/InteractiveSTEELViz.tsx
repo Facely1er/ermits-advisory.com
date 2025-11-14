@@ -153,23 +153,73 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
     onDimensionSelect?.(null);
   };
 
+  // Generate CSS variables for dimension colors and dynamic styles
+  const dimensionColorStyles = dimensions
+    .map((dim) => `
+      .dimension-hexagon-${dim.id} {
+        --dimension-color: ${dim.color};
+        background-color: var(--dimension-color);
+      }
+      .dimension-icon-${dim.id} {
+        --dimension-color: ${dim.color};
+        background-color: var(--dimension-color);
+      }
+      .dimension-progress-${dim.id} {
+        --dimension-color: ${dim.color};
+        background-color: var(--dimension-color);
+      }
+      .dimension-bullet-${dim.id} {
+        --dimension-color: ${dim.color};
+        background-color: var(--dimension-color);
+      }
+    `)
+    .join('\n');
+
+  const containerHeight = Math.max(responsiveRadius * 2.5, 400);
+  const dynamicStyles = `
+    .steel-viz-container {
+      height: ${containerHeight}px;
+    }
+    .steel-center-hexagon {
+      left: calc(50% - ${centerHexagonSize / 2}px);
+      top: calc(50% - ${centerHexagonSize * 0.875 / 2}px);
+      width: ${centerHexagonSize}px;
+      height: ${centerHexagonSize * 0.875}px;
+    }
+    .steel-center-text {
+      font-size: ${Math.max(centerHexagonSize * 0.15, 12)}px;
+    }
+    ${dimensions.map((dim, index) => {
+      const angle = (index * 60) * (Math.PI / 180);
+      const x = responsiveRadius * Math.cos(angle);
+      const y = responsiveRadius * Math.sin(angle);
+      return `
+        .steel-dimension-${dim.id} {
+          left: calc(50% + ${x}px - ${dimensionHexagonSize / 2}px);
+          top: calc(50% + ${y}px - ${dimensionHexagonSize * 0.875 / 2}px);
+          width: ${dimensionHexagonSize}px;
+          height: ${dimensionHexagonSize * 0.875}px;
+          font-size: ${Math.max(dimensionHexagonSize * 0.1, 10)}px;
+        }
+        .steel-value-indicator-${dim.id} {
+          width: ${Math.max(dimensionHexagonSize * 0.4, 24)}px;
+          height: ${Math.max(dimensionHexagonSize * 0.08, 3)}px;
+        }
+      `;
+    }).join('\n')}
+  `;
+
   return (
     <div className="relative">
+      <style>{dimensionColorStyles + dynamicStyles}</style>
       {/* Interactive Visualization */}
       <div 
         ref={containerRef}
-        className="relative w-full max-w-2xl mx-auto"
-        style={{ height: `${Math.max(responsiveRadius * 2.5, 400)}px` }}
+        className="relative w-full max-w-2xl mx-auto steel-viz-container"
       >
         {/* Center STEEL Logo */}
         <motion.div 
-          className="absolute hexagon bg-navy text-white flex items-center justify-center z-10 cursor-pointer"
-          style={{
-            left: `calc(50% - ${centerHexagonSize / 2}px)`,
-            top: `calc(50% - ${centerHexagonSize * 0.875 / 2}px)`, // Adjust for hexagon aspect ratio
-            width: `${centerHexagonSize}px`,
-            height: `${centerHexagonSize * 0.875}px`, // Hexagon height ratio
-          }}
+          className="absolute hexagon bg-navy text-white flex items-center justify-center z-10 cursor-pointer steel-center-hexagon"
           whileHover={{ scale: 1.1 }}
           animate={{ 
             boxShadow: selectedDimension 
@@ -177,75 +227,52 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
               : '0 0 15px rgba(0, 75, 135, 0.3)' 
           }}
         >
-          <span 
-            className="font-bold"
-            style={{ fontSize: `${Math.max(centerHexagonSize * 0.15, 12)}px` }}
-          >
+          <span className="font-bold steel-center-text">
             STEEL™
           </span>
         </motion.div>
         
         {/* Dimension Hexagons */}
-        {dimensions.map((dimension, index) => {
-          const angle = (index * 60) * (Math.PI / 180);
-          const x = responsiveRadius * Math.cos(angle);
-          const y = responsiveRadius * Math.sin(angle);
-          
-          return (
-            <motion.button
-              key={dimension.id}
-              className="absolute hexagon flex flex-col items-center justify-center text-white font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy"
-              style={{ 
-                left: `calc(50% + ${x}px - ${dimensionHexagonSize / 2}px)`, 
-                top: `calc(50% + ${y}px - ${dimensionHexagonSize * 0.875 / 2}px)`,
-                width: `${dimensionHexagonSize}px`,
-                height: `${dimensionHexagonSize * 0.875}px`,
-                backgroundColor: dimension.color,
-                fontSize: `${Math.max(dimensionHexagonSize * 0.1, 10)}px`
-              }}
-              onClick={() => handleDimensionClick(dimension)}
-              onMouseEnter={() => setHoveredDimension(dimension.id)}
-              onMouseLeave={() => setHoveredDimension(null)}
-              whileHover={{ scale: 1.15 }}
-              whileTap={{ scale: 0.95 }}
-              animate={{
-                boxShadow: hoveredDimension === dimension.id 
-                  ? `0 0 25px ${dimension.color}80`
-                  : selectedDimension?.id === dimension.id
-                    ? `0 0 20px ${dimension.color}60`
-                    : '0 5px 15px rgba(0,0,0,0.2)',
-                z: hoveredDimension === dimension.id ? 20 : 10
-              }}
-              type="button"
-            >
-              <div className="flex flex-col items-center justify-center pointer-events-none">
-                {dimension.icon}
-                <span className="font-medium mt-1 text-center leading-tight">
-                  {dimension.title}
-                </span>
-                {/* Value indicator */}
-                <div 
-                  className="bg-white/30 rounded-full mt-1"
-                  style={{ 
-                    width: `${Math.max(dimensionHexagonSize * 0.4, 24)}px`, 
-                    height: `${Math.max(dimensionHexagonSize * 0.08, 3)}px` 
-                  }}
-                >
-                  <motion.div
-                    className="h-full bg-white rounded-full"
-                    initial={{ width: 0 }}
-                    animate={{ width: `${dimension.value}%` }}
-                    transition={{ delay: index * 0.1, duration: 0.8 }}
-                  />
-                </div>
+        {dimensions.map((dimension, index) => (
+          <motion.button
+            key={dimension.id}
+            className={`absolute hexagon flex flex-col items-center justify-center text-white font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy dimension-hexagon-${dimension.id} steel-dimension-${dimension.id}`}
+            onClick={() => handleDimensionClick(dimension)}
+            onMouseEnter={() => setHoveredDimension(dimension.id)}
+            onMouseLeave={() => setHoveredDimension(null)}
+            whileHover={{ scale: 1.15 }}
+            whileTap={{ scale: 0.95 }}
+            animate={{
+              boxShadow: hoveredDimension === dimension.id 
+                ? `0 0 25px ${dimension.color}80`
+                : selectedDimension?.id === dimension.id
+                  ? `0 0 20px ${dimension.color}60`
+                  : '0 5px 15px rgba(0,0,0,0.2)',
+              z: hoveredDimension === dimension.id ? 20 : 10
+            }}
+            type="button"
+          >
+            <div className="flex flex-col items-center justify-center pointer-events-none">
+              {dimension.icon}
+              <span className="font-medium mt-1 text-center leading-tight">
+                {dimension.title}
+              </span>
+              {/* Value indicator */}
+              <div className={`bg-white/30 rounded-full mt-1 steel-value-indicator-${dimension.id}`}>
+                <motion.div
+                  className="h-full bg-white rounded-full"
+                  initial={{ width: 0 }}
+                  animate={{ width: `${dimension.value}%` }}
+                  transition={{ delay: index * 0.1, duration: 0.8 }}
+                />
               </div>
-            </motion.button>
-          );
-        })}
+            </div>
+          </motion.button>
+        ))}
 
         {/* Connecting Lines */}
         <svg className="absolute inset-0 w-full h-full pointer-events-none">
-          {dimensions.map((dimension, index) => {
+          {dimensions.map((_dimension, index) => {
             const angle1 = (index * 60) * (Math.PI / 180);
             const angle2 = ((index + 1) * 60) * (Math.PI / 180);
             
@@ -295,10 +322,7 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
                 </button>
                 
                 <div className="flex items-start">
-                  <div 
-                    className="p-4 rounded-full mr-6 text-white"
-                    style={{ backgroundColor: selectedDimension.color }}
-                  >
+                  <div className={`p-4 rounded-full mr-6 text-white dimension-icon-${selectedDimension.id}`}>
                     {selectedDimension.icon}
                   </div>
                   <div className="flex-1">
@@ -318,8 +342,7 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
                       </div>
                       <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
                         <motion.div 
-                          className="h-3 rounded-full" 
-                          style={{ backgroundColor: selectedDimension.color }}
+                          className={`h-3 rounded-full dimension-progress-${selectedDimension.id}`}
                           initial={{ width: 0 }}
                           animate={{ width: `${selectedDimension.value}%` }}
                           transition={{ duration: 1, delay: 0.2 }}
@@ -330,19 +353,22 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
                     <h4 className="text-lg font-semibold mb-3 dark:text-white">Key Considerations:</h4>
                     <ul className="space-y-2">
                       {selectedDimension.details.map((detail, index) => (
-                        <motion.li
-                          key={index}
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: 0.3 + (index * 0.1) }}
-                          className="flex items-start"
-                        >
-                          <div 
-                            className="w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0"
-                            style={{ backgroundColor: selectedDimension.color }}
+                        <li key={index} className="flex items-start">
+                          <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.3 + (index * 0.1) }}
+                            className={`w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0 dimension-bullet-${selectedDimension.id}`}
                           />
-                          <span className="text-gray-600 dark:text-gray-200">{detail}</span>
-                        </motion.li>
+                          <motion.span
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.3 + (index * 0.1) }}
+                            className="text-gray-600 dark:text-gray-200"
+                          >
+                            {detail}
+                          </motion.span>
+                        </li>
                       ))}
                     </ul>
                   </div>

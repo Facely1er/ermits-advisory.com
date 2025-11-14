@@ -96,7 +96,28 @@ export const LandingPage: React.FC = () => {
     setCurrentFeatureIndex((prev) => (prev - 1 + enhancedFeatures.length) % enhancedFeatures.length);
   };
 
+  // Generate CSS variables for dimension colors
+  const dimensionColorStyles = steelDimensions
+    .map((dim) => `
+      .landing-dimension-bg-${dim.id} {
+        --dimension-color: ${dim.color};
+        background-color: var(--dimension-color);
+        opacity: 0.1;
+      }
+      .landing-dimension-text-${dim.id} {
+        --dimension-color: ${dim.color};
+        color: var(--dimension-color);
+      }
+      .landing-dimension-progress-${dim.id} {
+        --dimension-color: ${dim.color};
+        background-color: var(--dimension-color);
+      }
+    `)
+    .join('\n');
+
   return (
+    <>
+      <style>{dimensionColorStyles}</style>
     <div className="min-h-screen">
       {/* Enhanced Hero Section - Reduced size */}
       <section className="relative bg-gradient-to-br from-navy via-navy-dark to-navy text-white pt-12 pb-8 md:pt-16 md:pb-12 overflow-hidden">
@@ -366,8 +387,7 @@ export const LandingPage: React.FC = () => {
                 >
                   <div className="p-6">
                     <div 
-                      className="absolute top-0 right-0 w-24 h-24 hexagon" 
-                      style={{ backgroundColor: dimension.color, opacity: 0.1 }}
+                      className={`absolute top-0 right-0 w-24 h-24 hexagon landing-dimension-bg-${dimension.id}`}
                       aria-hidden="true"
                     ></div>
                     <div className="flex items-start relative z-10">
@@ -385,17 +405,13 @@ export const LandingPage: React.FC = () => {
                         {/* Risk Score Indicator */}
                         <div className="flex items-center justify-between mb-2">
                           <span className="text-sm font-medium text-gray-500 dark:text-gray-400">Risk Level</span>
-                          <span 
-                            className="text-sm font-bold"
-                            style={{ color: dimension.color }}
-                          >
+                          <span className={`text-sm font-bold landing-dimension-text-${dimension.id}`}>
                             {dimension.value}%
                           </span>
                         </div>
                         <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                           <motion.div 
-                            className="h-2 rounded-full" 
-                            style={{ backgroundColor: dimension.color }}
+                            className={`h-2 rounded-full landing-dimension-progress-${dimension.id}`}
                             initial={{ width: 0 }}
                             whileInView={{ width: `${dimension.value}%` }}
                             viewport={{ once: true }}
@@ -613,5 +629,6 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
