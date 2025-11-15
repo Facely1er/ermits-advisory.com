@@ -140,7 +140,7 @@ export const LandingPage: React.FC = () => {
                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-cyan-400/40 bg-gradient-to-r from-cyan-500/18 via-slate-900/96 to-transparent backdrop-blur-sm text-cyan-200 text-xs uppercase tracking-[0.18em] mb-4"
               >
                 <span className="font-semibold">STEEL™</span>
-                <span>Strategic Threat & Enterprise Evaluation Landscape</span>
+                <span>Strategic Threat & Enterprise Evaluation Layer</span>
               </motion.div>
 
               {/* Carousel Headlines */}
@@ -576,7 +576,7 @@ export const LandingPage: React.FC = () => {
                   Methodology
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-                  STEEL™ – Strategic Threat & Enterprise Evaluation Landscape
+                  STEEL™ – Strategic Threat & Enterprise Evaluation Layer
                 </h2>
                 <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 max-w-2xl">
                   STEEL™ fuses <strong className="text-gray-900 dark:text-white">PESTEL analysis</strong> with cyber threat intelligence,
