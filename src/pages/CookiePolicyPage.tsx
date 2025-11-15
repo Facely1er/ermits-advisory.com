@@ -28,35 +28,35 @@ export const CookiePolicyPage: React.FC = () => {
   const cookieTypes = [
     {
       id: 'necessary',
-      title: t('cookies.cookieTypes.necessary.title'),
-      description: t('cookies.cookieTypes.necessary.description'),
+      title: 'Necessary Cookies',
+      description: 'Essential for the website to function properly. Cannot be disabled.',
       icon: <Shield size={24} className="text-green-500" />,
       required: true,
-      examples: t('cookies.cookieTypes.necessary.examples')
+      examples: ['Session management', 'Security', 'Basic functionality']
     },
     {
       id: 'analytics',
-      title: t('cookies.cookieTypes.analytics.title'),
-      description: t('cookies.cookieTypes.analytics.description'),
+      title: 'Analytics Cookies',
+      description: 'Help us understand how visitors interact with our website.',
       icon: <BarChart3 size={24} className="text-blue-500" />,
       required: false,
-      examples: t('cookies.cookieTypes.analytics.examples')
+      examples: ['Google Analytics', 'Page views tracking', 'User behavior analysis']
     },
     {
       id: 'preferences',
-      title: t('cookies.cookieTypes.functional.title'),
-      description: t('cookies.cookieTypes.functional.description'),
+      title: 'Functional Cookies',
+      description: 'Remember your preferences and settings for a personalized experience.',
       icon: <Settings size={24} className="text-purple-500" />,
       required: false,
-      examples: t('cookies.cookieTypes.functional.examples')
+      examples: ['Language preferences', 'Theme selection', 'Region settings']
     },
     {
       id: 'marketing',
-      title: t('cookies.cookieTypes.marketing.title'),
-      description: t('cookies.cookieTypes.marketing.description'),
+      title: 'Marketing Cookies',
+      description: 'Track your activity to deliver relevant advertisements.',
       icon: <Eye size={24} className="text-orange-500" />,
       required: false,
-      examples: t('cookies.cookieTypes.marketing.examples')
+      examples: ['LinkedIn Insights', 'Campaign tracking', 'Conversion measurement']
     }
   ];
 
@@ -78,14 +78,14 @@ export const CookiePolicyPage: React.FC = () => {
         >
           <Link to="/" className="inline-flex items-center text-navy dark:text-silver hover:underline mb-4">
             <ArrowLeft size={16} className="mr-2" />
-            {t('cookies.backToHome')}
+            Back to Home
           </Link>
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">{t('cookies.title')}</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">Cookie Policy</h1>
           <p className="text-gray-600 dark:text-gray-200 mb-4">
-            {t('cookies.lastUpdated')}: {new Date().toLocaleDateString()}
+            Last Updated: {new Date().toLocaleDateString()}
           </p>
           <p className="text-lg text-gray-600 dark:text-gray-100">
-            {t('cookies.subtitle')}
+            Learn how we use cookies to enhance your experience and protect your privacy
           </p>
         </motion.div>
 
@@ -102,22 +102,22 @@ export const CookiePolicyPage: React.FC = () => {
                 <Cookie size={32} />
               </div>
               <div>
-                <h2 className="text-2xl font-bold mb-3">{t('cookies.overview.title')}</h2>
+                <h2 className="text-2xl font-bold mb-3">What Are Cookies?</h2>
                 <p className="text-silver mb-4">
-                  {t('cookies.overview.description')}
+                  Cookies are small text files stored on your device when you visit our website. They help us provide you with a better experience, remember your preferences, and understand how you use our site.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-silver">
                   <div>
-                    <h4 className="font-semibold mb-2">{t('cookies.overview.types.session.title')}</h4>
-                    <p className="text-sm">{t('cookies.overview.types.session.description')}</p>
+                    <h4 className="font-semibold mb-2">Session Cookies</h4>
+                    <p className="text-sm">Temporary cookies that expire when you close your browser</p>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2">{t('cookies.overview.types.persistent.title')}</h4>
-                    <p className="text-sm">{t('cookies.overview.types.persistent.description')}</p>
+                    <h4 className="font-semibold mb-2">Persistent Cookies</h4>
+                    <p className="text-sm">Remain on your device until they expire or you delete them</p>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2">{t('cookies.overview.types.thirdParty.title')}</h4>
-                    <p className="text-sm">{t('cookies.overview.types.thirdParty.description')}</p>
+                    <h4 className="font-semibold mb-2">Third-Party Cookies</h4>
+                    <p className="text-sm">Set by domains other than the one you're visiting</p>
                   </div>
                 </div>
               </div>
@@ -133,9 +133,9 @@ export const CookiePolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h3 className="text-xl font-bold mb-4 dark:text-white">{t('cookies.preferences.title')}</h3>
+            <h3 className="text-xl font-bold mb-4 dark:text-white">Manage Your Cookie Preferences</h3>
             <p className="text-gray-600 dark:text-gray-200 mb-6">
-              {t('cookies.preferences.description')}
+              Choose which types of cookies you want to allow. You can change these settings at any time.
             </p>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
@@ -155,7 +155,7 @@ export const CookiePolicyPage: React.FC = () => {
                       {type.required ? (
                         <div className="flex items-center">
                           <CheckCircle size={20} className="text-green-500" />
-                          <span className="text-xs text-green-600 dark:text-green-400 ml-1">{t('cookies.preferences.required')}</span>
+                          <span className="text-xs text-green-600 dark:text-green-400 ml-1">Required</span>
                         </div>
                       ) : (
                         <label className="relative inline-flex items-center cursor-pointer">
@@ -187,16 +187,16 @@ export const CookiePolicyPage: React.FC = () => {
             </div>
             
             <div className="flex flex-wrap gap-4">
-              <Button 
-                variant="primary" 
+              <Button
+                variant="primary"
                 onClick={saveCookiePreferences}
                 icon={<CheckCircle size={16} />}
                 iconPosition="left"
               >
-                {t('cookies.actions.savePreferences')}
+                Save Preferences
               </Button>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 onClick={() => setCookiePreferences({
                   necessary: true,
                   analytics: false,
@@ -206,10 +206,10 @@ export const CookiePolicyPage: React.FC = () => {
                 icon={<X size={16} />}
                 iconPosition="left"
               >
-                {t('cookies.actions.rejectOptional')}
+                Reject Optional Cookies
               </Button>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 onClick={() => setCookiePreferences({
                   necessary: true,
                   analytics: true,
@@ -219,7 +219,7 @@ export const CookiePolicyPage: React.FC = () => {
                 icon={<CheckCircle size={16} />}
                 iconPosition="left"
               >
-                {t('cookies.actions.acceptAll')}
+                Accept All Cookies
               </Button>
             </div>
           </Card>
@@ -233,52 +233,52 @@ export const CookiePolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h3 className="text-xl font-bold mb-4 dark:text-white">{t('cookies.thirdPartyServices.title')}</h3>
+            <h3 className="text-xl font-bold mb-4 dark:text-white">Third-Party Services</h3>
             <p className="text-gray-600 dark:text-gray-200 mb-6">
-              {t('cookies.thirdPartyServices.description')}
+              We use the following third-party services that may set cookies on your device:
             </p>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-4">
                 <div className="border-l-4 border-blue-500 pl-4">
-                  <h4 className="font-semibold dark:text-white">{t('cookies.thirdPartyServices.googleAnalytics.title')}</h4>
+                  <h4 className="font-semibold dark:text-white">Google Analytics</h4>
                   <p className="text-sm text-gray-600 dark:text-gray-200">
-                    {t('cookies.thirdPartyServices.googleAnalytics.description')}
+                    Web analytics service to understand site usage and performance
                   </p>
                   <a href="https://policies.google.com/privacy" className="text-navy dark:text-silver text-xs hover:underline">
-                    {t('cookies.thirdPartyServices.googleAnalytics.link')}
+                    Privacy Policy
                   </a>
                 </div>
-                
+
                 <div className="border-l-4 border-purple-500 pl-4">
-                  <h4 className="font-semibold dark:text-white">{t('cookies.thirdPartyServices.microsoftClarity.title')}</h4>
+                  <h4 className="font-semibold dark:text-white">Microsoft Clarity</h4>
                   <p className="text-sm text-gray-600 dark:text-gray-200">
-                    {t('cookies.thirdPartyServices.microsoftClarity.description')}
+                    User behavior analytics for improving user experience
                   </p>
                   <a href="https://privacy.microsoft.com/en-us/privacystatement" className="text-navy dark:text-silver text-xs hover:underline">
-                    {t('cookies.thirdPartyServices.microsoftClarity.link')}
+                    Privacy Statement
                   </a>
                 </div>
               </div>
-              
+
               <div className="space-y-4">
                 <div className="border-l-4 border-orange-500 pl-4">
-                  <h4 className="font-semibold dark:text-white">{t('cookies.thirdPartyServices.linkedinInsights.title')}</h4>
+                  <h4 className="font-semibold dark:text-white">LinkedIn Insights</h4>
                   <p className="text-sm text-gray-600 dark:text-gray-200">
-                    {t('cookies.thirdPartyServices.linkedinInsights.description')}
+                    Campaign performance tracking and analytics
                   </p>
                   <a href="https://www.linkedin.com/legal/privacy-policy" className="text-navy dark:text-silver text-xs hover:underline">
-                    {t('cookies.thirdPartyServices.linkedinInsights.link')}
+                    Privacy Policy
                   </a>
                 </div>
-                
+
                 <div className="border-l-4 border-green-500 pl-4">
-                  <h4 className="font-semibold dark:text-white">{t('cookies.thirdPartyServices.hubspot.title')}</h4>
+                  <h4 className="font-semibold dark:text-white">HubSpot</h4>
                   <p className="text-sm text-gray-600 dark:text-gray-200">
-                    {t('cookies.thirdPartyServices.hubspot.description')}
+                    CRM and marketing automation platform
                   </p>
                   <a href="https://legal.hubspot.com/privacy-policy" className="text-navy dark:text-silver text-xs hover:underline">
-                    {t('cookies.thirdPartyServices.hubspot.link')}
+                    Privacy Policy
                   </a>
                 </div>
               </div>
@@ -294,49 +294,49 @@ export const CookiePolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h3 className="text-xl font-bold mb-4 dark:text-white">{t('cookies.browserControls.title')}</h3>
+            <h3 className="text-xl font-bold mb-4 dark:text-white">Browser Cookie Controls</h3>
             <p className="text-gray-600 dark:text-gray-200 mb-6">
-              {t('cookies.browserControls.description')}
+              Most browsers allow you to control cookies through their settings. Here's how to manage cookies in popular browsers:
             </p>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               <div className="text-center p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
-                <h4 className="font-semibold mb-2 dark:text-white">{t('cookies.browserControls.chrome.title')}</h4>
+                <h4 className="font-semibold mb-2 dark:text-white">Chrome</h4>
                 <p className="text-sm text-gray-600 dark:text-gray-200 mb-3">
-                  {t('cookies.browserControls.chrome.description')}
+                  Settings → Privacy and security → Cookies
                 </p>
                 <Button variant="outline" size="sm" icon={<ExternalLink size={14} />}>
-                  {t('cookies.browserControls.learnMore')}
+                  Learn More
                 </Button>
               </div>
-              
+
               <div className="text-center p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
-                <h4 className="font-semibold mb-2 dark:text-white">{t('cookies.browserControls.firefox.title')}</h4>
+                <h4 className="font-semibold mb-2 dark:text-white">Firefox</h4>
                 <p className="text-sm text-gray-600 dark:text-gray-200 mb-3">
-                  {t('cookies.browserControls.firefox.description')}
+                  Options → Privacy & Security → Cookies
                 </p>
                 <Button variant="outline" size="sm" icon={<ExternalLink size={14} />}>
-                  {t('cookies.browserControls.learnMore')}
+                  Learn More
                 </Button>
               </div>
-              
+
               <div className="text-center p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
-                <h4 className="font-semibold mb-2 dark:text-white">{t('cookies.browserControls.safari.title')}</h4>
+                <h4 className="font-semibold mb-2 dark:text-white">Safari</h4>
                 <p className="text-sm text-gray-600 dark:text-gray-200 mb-3">
-                  {t('cookies.browserControls.safari.description')}
+                  Preferences → Privacy → Manage Website Data
                 </p>
                 <Button variant="outline" size="sm" icon={<ExternalLink size={14} />}>
-                  {t('cookies.browserControls.learnMore')}
+                  Learn More
                 </Button>
               </div>
-              
+
               <div className="text-center p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
-                <h4 className="font-semibold mb-2 dark:text-white">{t('cookies.browserControls.edge.title')}</h4>
+                <h4 className="font-semibold mb-2 dark:text-white">Edge</h4>
                 <p className="text-sm text-gray-600 dark:text-gray-200 mb-3">
-                  {t('cookies.browserControls.edge.description')}
+                  Settings → Privacy → Cookies and site data
                 </p>
                 <Button variant="outline" size="sm" icon={<ExternalLink size={14} />}>
-                  {t('cookies.browserControls.learnMore')}
+                  Learn More
                 </Button>
               </div>
             </div>
@@ -352,26 +352,26 @@ export const CookiePolicyPage: React.FC = () => {
         >
           <Card variant="glass" padding="md">
             <p className="text-gray-600 dark:text-gray-200 mb-4">
-              {t('cookies.contact.description')}
+              If you have any questions about our use of cookies, please contact us or review our related policies:
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/privacy">
                 <Button variant="outline" size="sm">
-                  {t('footer.legal.privacy')}
+                  Privacy Policy
                 </Button>
               </Link>
               <Link to="/terms">
                 <Button variant="outline" size="sm">
-                  {t('footer.legal.terms')}
+                  Terms of Service
                 </Button>
               </Link>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="sm"
                 icon={<ExternalLink size={16} />}
                 iconPosition="right"
               >
-                {t('cookies.actions.cookieSettings')}
+                Cookie Settings
               </Button>
             </div>
           </Card>

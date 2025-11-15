@@ -44,8 +44,27 @@ export const RiskRadar: React.FC = () => {
   const [overallScore, setOverallScore] = useState<number>(0);
   const [activeRecommendation, setActiveRecommendation] = useState<string | null>(null);
 
-  // Get recommendations from translations
-  const recommendations = getNestedTranslation('riskRadar.recommendations.items');
+  // Risk mitigation recommendations
+  const recommendations = [
+    {
+      priority: 'Critical',
+      action: 'Implement multi-factor authentication across all systems',
+      impact: 'Prevent 99% of account takeover attacks',
+      timeline: 'Immediate'
+    },
+    {
+      priority: 'High',
+      action: 'Patch critical infrastructure vulnerabilities',
+      impact: 'Reduce attack surface by 40%',
+      timeline: '1-2 weeks'
+    },
+    {
+      priority: 'Medium',
+      action: 'Update incident response playbooks',
+      impact: 'Improve response time by 50%',
+      timeline: '1 month'
+    }
+  ];
 
   // Update overall score when slider values change
   useEffect(() => {

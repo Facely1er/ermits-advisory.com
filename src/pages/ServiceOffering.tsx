@@ -12,33 +12,31 @@ import {
 export const ServiceOffering: React.FC = () => {
   const navigate = useNavigate();
   
-  // Find hero section start
-  
   // Enhanced Advisory Process based on STEEL methodology
   const advisoryProcessItems = [
     {
       id: 'strategicDiscovery',
       icon: <Search size={32} className="text-navy dark:text-silver" />,
-      title: t('steelPage.advisoryProcess.strategicDiscovery.title'),
-      description: t('steelPage.advisoryProcess.strategicDiscovery.description')
+      title: 'Strategic Discovery',
+      description: 'Deep dive into your threat landscape and risk exposure across all dimensions'
     },
     {
       id: 'modeling',
       icon: <Activity size={32} className="text-navy dark:text-silver" />,
-      title: t('steelPage.advisoryProcess.modeling.title'),
-      description: t('steelPage.advisoryProcess.modeling.description')
+      title: 'Risk Modeling',
+      description: 'Data-driven analysis and quantification of threats, vulnerabilities, and impacts'
     },
     {
       id: 'synthesis',
       icon: <Lightbulb size={32} className="text-navy dark:text-silver" />,
-      title: t('steelPage.advisoryProcess.synthesis.title'),
-      description: t('steelPage.advisoryProcess.synthesis.description')
+      title: 'Strategic Synthesis',
+      description: 'Actionable recommendations tailored to your organizational context and priorities'
     },
     {
       id: 'briefing',
       icon: <Presentation size={32} className="text-navy dark:text-silver" />,
-      title: t('steelPage.advisoryProcess.briefing.title'),
-      description: t('steelPage.advisoryProcess.briefing.description')
+      title: 'Executive Briefing',
+      description: 'Clear communication of findings and strategic roadmap to leadership'
     }
   ];
   
@@ -54,30 +52,30 @@ export const ServiceOffering: React.FC = () => {
     {
       id: 'predictiveIntelligence',
       icon: <Lightbulb size={24} className="text-navy dark:text-silver" />,
-      title: t('steelPage.whatMakesDifferent.predictiveIntelligence.title'),
-      description: t('steelPage.whatMakesDifferent.predictiveIntelligence.description'),
-      link: t('steelPage.whatMakesDifferent.predictiveIntelligence.link')
+      title: 'Predictive Intelligence',
+      description: 'Anticipate emerging threats before they materialize with forward-looking risk analysis',
+      link: 'Explore predictive capabilities'
     },
     {
       id: 'enhancedPestel',
       icon: <BarChart2 size={24} className="text-navy dark:text-silver" />,
-      title: t('steelPage.whatMakesDifferent.enhancedPestel.title'),
-      description: t('steelPage.whatMakesDifferent.enhancedPestel.description'),
-      link: t('steelPage.whatMakesDifferent.enhancedPestel.link')
+      title: 'Enhanced PESTEL Framework',
+      description: 'Strategic environmental analysis specifically adapted for cybersecurity risk assessment',
+      link: 'Learn about PESTEL enhancement'
     },
     {
       id: 'expertPartnership',
       icon: <Users size={24} className="text-navy dark:text-silver" />,
-      title: t('steelPage.whatMakesDifferent.expertPartnership.title'),
-      description: t('steelPage.whatMakesDifferent.expertPartnership.description'),
-      link: t('steelPage.whatMakesDifferent.expertPartnership.link')
+      title: 'Expert Partnership',
+      description: 'Dedicated team of cybersecurity and strategic risk professionals guiding your journey',
+      link: 'Meet our experts'
     },
     {
       id: 'frameworkIntegration',
       icon: <FileText size={24} className="text-navy dark:text-silver" />,
-      title: t('steelPage.whatMakesDifferent.frameworkIntegration.title'),
-      description: t('steelPage.whatMakesDifferent.frameworkIntegration.description'),
-      link: t('steelPage.whatMakesDifferent.frameworkIntegration.link')
+      title: 'Framework Integration',
+      description: 'Seamlessly integrates with NIST, ISO 27001, and other established security frameworks',
+      link: 'View integrations'
     }
   ];
   
@@ -111,54 +109,33 @@ export const ServiceOffering: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-silver-light dark:bg-dark-bg">
-      {/* Enhanced Hero Section */}
-      <section className="relative bg-gradient-to-br from-navy via-navy-dark to-navy text-white pt-16 pb-10 md:pt-20 md:pb-14 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-navy-dark/90 to-navy/95"></div>
-        <div className="absolute inset-0 opacity-10 bg-[url('https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-center bg-cover"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="mb-6"
-            >
-              <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium text-silver">
-                <Shield size={16} className="mr-2" />
-                Professional Advisory Services
-              </span>
-            </motion.div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-white via-silver to-white bg-clip-text text-transparent">
-                {t('services.title')}
-              </span>
-            </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-silver/90 max-w-3xl mx-auto leading-relaxed">
-              {t('services.subtitle')}
-            </p>
-          </motion.div>
-        </div>
-      </section>
+    <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
+      <div className="container mx-auto px-4">
+        {/* Page Header */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="pt-16 mb-16 text-center"
+        >
+          <h1 className="text-3xl md:text-5xl font-bold mb-8 dark:text-white">Our Services</h1>
+          <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
+            Comprehensive cybersecurity risk intelligence and strategic advisory services
+          </p>
+        </motion.div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Key metrics */}
         <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 md:mb-20 -mt-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
         >
           <motion.div variants={item}>
             <Card variant="glass" className="text-center h-full">
               <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">Significant</h3>
               <p className="text-gray-600 dark:text-gray-200">
-                {t('landing.metrics.riskReduction')}
+                Risk Reduction
               </p>
             </Card>
           </motion.div>
@@ -167,7 +144,7 @@ export const ServiceOffering: React.FC = () => {
             <Card variant="glass" className="text-center h-full">
               <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">Faster</h3>
               <p className="text-gray-600 dark:text-gray-200">
-                {t('landing.metrics.timeToInsight')}
+                Time to Insight
               </p>
             </Card>
           </motion.div>
@@ -176,7 +153,7 @@ export const ServiceOffering: React.FC = () => {
             <Card variant="glass" className="text-center h-full">
               <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">Improved</h3>
               <p className="text-gray-600 dark:text-gray-200">
-                {t('landing.metrics.boardConfidence')}
+                Board Confidence
               </p>
             </Card>
           </motion.div>
@@ -185,7 +162,7 @@ export const ServiceOffering: React.FC = () => {
             <Card variant="glass" className="text-center h-full">
               <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">Positive</h3>
               <p className="text-gray-600 dark:text-gray-200">
-                {t('landing.metrics.roiImprovement')}
+                ROI Improvement
               </p>
             </Card>
           </motion.div>
@@ -199,9 +176,9 @@ export const ServiceOffering: React.FC = () => {
           className="mb-16"
         >
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">{t('steelPage.whatMakesDifferent.title')}</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">What Makes STEEL™ Different</h2>
             <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              {t('steelPage.whatMakesDifferent.subtitle')}
+              A unique approach to cybersecurity risk intelligence that goes beyond traditional assessments
             </p>
           </div>
           
@@ -241,9 +218,9 @@ export const ServiceOffering: React.FC = () => {
           className="mb-16"
         >
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">{t('steelPage.advisoryProcess.title')}</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">Our Advisory Process</h2>
             <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              {t('steelPage.advisoryProcess.subtitle')}
+              A structured approach to deliver actionable cybersecurity intelligence
             </p>
           </div>
           
@@ -275,54 +252,96 @@ export const ServiceOffering: React.FC = () => {
           className="mb-16"
         >
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">{t('services.title')}</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">Our Services</h2>
             <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              {t('services.subtitle')}
+              Comprehensive cybersecurity risk intelligence and strategic advisory services
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map((service) => {
-              const serviceData = getNestedTranslation(`services.${service.id}`) as Record<string, unknown>;
-              
-              return (
-                <Card key={service.id} variant="glass" padding="lg" className="h-full">
-                  <div className="flex items-start">
-                    <div className="p-3 rounded-full bg-silver/20 dark:bg-navy/40 mr-4">
-                      {getServiceIcon(service.icon)}
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold mb-2 dark:text-white card-title">
-                        {typeof serviceData === 'object' && serviceData !== null && 'title' in serviceData ? String(serviceData.title) : ''}
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-200 mb-4 card-text">
-                        {typeof serviceData === 'object' && serviceData !== null && 'description' in serviceData ? String(serviceData.description) : ''}
-                      </p>
-                      
-                      <h4 className="text-lg font-semibold mb-2 dark:text-gray-100">{t('services.keyFeatures')}</h4>
-                      <ul className="space-y-2 mb-6">
-                        {typeof serviceData === 'object' && serviceData !== null && 'features' in serviceData && Array.isArray(serviceData.features) && serviceData.features.map((feature: unknown, index: number) => (
-                          <li key={index} className="flex items-start">
-                            <CheckCircle size={16} className="text-navy dark:text-silver mt-1 mr-2 flex-shrink-0" />
-                            <span className="text-gray-600 dark:text-gray-200">{String(feature)}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      
-                      <Button 
-                        variant="outline" 
-                        size="sm"
-                        icon={<ArrowRight size={16} />}
-                        iconPosition="right"
-                        onClick={() => navigate('/contact')}
-                      >
-                        {t('common.learnMore')}
-                      </Button>
-                    </div>
-                  </div>
-                </Card>
-              );
-            })}
+            <Card variant="glass" padding="lg" className="h-full">
+              <div className="flex items-start">
+                <div className="p-3 rounded-full bg-silver/20 dark:bg-navy/40 mr-4">
+                  {getServiceIcon('shield')}
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold mb-2 dark:text-white card-title">
+                    STEEL™ Framework Assessment
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-200 mb-4 card-text">
+                    Comprehensive strategic risk assessment across all six STEEL dimensions
+                  </p>
+
+                  <h4 className="text-lg font-semibold mb-2 dark:text-gray-100">Key Features</h4>
+                  <ul className="space-y-2 mb-6">
+                    <li className="flex items-start">
+                      <CheckCircle size={16} className="text-navy dark:text-silver mt-1 mr-2 flex-shrink-0" />
+                      <span className="text-gray-600 dark:text-gray-200">Multi-dimensional risk analysis</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle size={16} className="text-navy dark:text-silver mt-1 mr-2 flex-shrink-0" />
+                      <span className="text-gray-600 dark:text-gray-200">Real-time threat intelligence</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle size={16} className="text-navy dark:text-silver mt-1 mr-2 flex-shrink-0" />
+                      <span className="text-gray-600 dark:text-gray-200">Executive-ready reporting</span>
+                    </li>
+                  </ul>
+
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    icon={<ArrowRight size={16} />}
+                    iconPosition="right"
+                    onClick={() => navigate('/contact')}
+                  >
+                    Learn More
+                  </Button>
+                </div>
+              </div>
+            </Card>
+
+            <Card variant="glass" padding="lg" className="h-full">
+              <div className="flex items-start">
+                <div className="p-3 rounded-full bg-silver/20 dark:bg-navy/40 mr-4">
+                  {getServiceIcon('user')}
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold mb-2 dark:text-white card-title">
+                    Virtual CISO Services
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-200 mb-4 card-text">
+                    Strategic cybersecurity leadership without the full-time commitment
+                  </p>
+
+                  <h4 className="text-lg font-semibold mb-2 dark:text-gray-100">Key Features</h4>
+                  <ul className="space-y-2 mb-6">
+                    <li className="flex items-start">
+                      <CheckCircle size={16} className="text-navy dark:text-silver mt-1 mr-2 flex-shrink-0" />
+                      <span className="text-gray-600 dark:text-gray-200">Strategic security planning</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle size={16} className="text-navy dark:text-silver mt-1 mr-2 flex-shrink-0" />
+                      <span className="text-gray-600 dark:text-gray-200">Board-level advisory</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle size={16} className="text-navy dark:text-silver mt-1 mr-2 flex-shrink-0" />
+                      <span className="text-gray-600 dark:text-gray-200">Compliance oversight</span>
+                    </li>
+                  </ul>
+
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    icon={<ArrowRight size={16} />}
+                    iconPosition="right"
+                    onClick={() => navigate('/contact')}
+                  >
+                    Learn More
+                  </Button>
+                </div>
+              </div>
+            </Card>
           </div>
         </motion.div>
 
@@ -357,25 +376,25 @@ export const ServiceOffering: React.FC = () => {
                   <div className="aspect-square hexagon bg-[#4c72b0] text-white flex items-center justify-center p-4 text-center">
                     <div>
                       <Shield size={24} className="mx-auto mb-2" />
-                      <span className="text-sm font-medium">{t('steel.dimensions.political.title')}</span>
+                      <span className="text-sm font-medium">Political</span>
                     </div>
                   </div>
                   <div className="aspect-square hexagon bg-[#dd8452] text-white flex items-center justify-center p-4 text-center">
                     <div>
                       <BarChart2 size={24} className="mx-auto mb-2" />
-                      <span className="text-sm font-medium">{t('steel.dimensions.economic.title')}</span>
+                      <span className="text-sm font-medium">Economic</span>
                     </div>
                   </div>
                   <div className="aspect-square hexagon bg-[#55a868] text-white flex items-center justify-center p-4 text-center">
                     <div>
                       <Users size={24} className="mx-auto mb-2" />
-                      <span className="text-sm font-medium">{t('steel.dimensions.social.title')}</span>
+                      <span className="text-sm font-medium">Social</span>
                     </div>
                   </div>
                   <div className="aspect-square hexagon bg-[#c44e52] text-white flex items-center justify-center p-4 text-center">
                     <div>
                       <Shield size={24} className="mx-auto mb-2" />
-                      <span className="text-sm font-medium">{t('steel.dimensions.technology.title')}</span>
+                      <span className="text-sm font-medium">Technology</span>
                     </div>
                   </div>
                   <div className="aspect-square hexagon bg-navy text-white flex items-center justify-center p-4 text-center">
@@ -386,13 +405,13 @@ export const ServiceOffering: React.FC = () => {
                   <div className="aspect-square hexagon bg-[#8172b3] text-white flex items-center justify-center p-4 text-center">
                     <div>
                       <Shield size={24} className="mx-auto mb-2" />
-                      <span className="text-sm font-medium">{t('steel.dimensions.environmental.title')}</span>
+                      <span className="text-sm font-medium">Environmental</span>
                     </div>
                   </div>
                   <div className="col-start-2 aspect-square hexagon bg-[#937860] text-white flex items-center justify-center p-4 text-center">
                     <div>
                       <Shield size={24} className="mx-auto mb-2" />
-                      <span className="text-sm font-medium">{t('steel.dimensions.legal.title')}</span>
+                      <span className="text-sm font-medium">Legal</span>
                     </div>
                   </div>
                 </div>
@@ -408,8 +427,8 @@ export const ServiceOffering: React.FC = () => {
           transition={{ delay: 0.6 }}
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-6 dark:text-white">{t('services.contact.title')}</h2>
-            
+            <h2 className="text-2xl font-bold mb-6 dark:text-white">Get in Touch</h2>
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="flex items-start">
                 <div className="p-3 rounded-full bg-silver/20 dark:bg-navy/40 mr-4">
@@ -418,11 +437,11 @@ export const ServiceOffering: React.FC = () => {
                 <div>
                   <h3 className="text-lg font-semibold mb-1 dark:text-white">Email</h3>
                   <p className="text-gray-600 dark:text-gray-200">
-                    {t('services.contact.email')}
+                    contact@ermits.com
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex items-start">
                 <div className="p-3 rounded-full bg-silver/20 dark:bg-navy/40 mr-4">
                   <Phone size={24} className="text-navy dark:text-silver" />
@@ -430,11 +449,11 @@ export const ServiceOffering: React.FC = () => {
                 <div>
                   <h3 className="text-lg font-semibold mb-1 dark:text-white">Phone</h3>
                   <p className="text-gray-600 dark:text-gray-200">
-                    {t('services.contact.phone')}
+                    +1 (555) 123-4567
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex items-start">
                 <div className="p-3 rounded-full bg-silver/20 dark:bg-navy/40 mr-4">
                   <MapPin size={24} className="text-navy dark:text-silver" />
@@ -442,19 +461,19 @@ export const ServiceOffering: React.FC = () => {
                 <div>
                   <h3 className="text-lg font-semibold mb-1 dark:text-white">Headquarters</h3>
                   <p className="text-gray-600 dark:text-gray-200">
-                    {t('services.contact.headquarters')}
+                    San Francisco, CA
                   </p>
                 </div>
               </div>
             </div>
-            
+
             <div className="mt-8 text-center">
-              <Button 
-                variant="primary" 
+              <Button
+                variant="primary"
                 size="lg"
                 onClick={() => navigate('/contact')}
               >
-                {t('services.contact.requestConsultation')}
+                Request a Consultation
               </Button>
             </div>
           </Card>

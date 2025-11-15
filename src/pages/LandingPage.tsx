@@ -48,31 +48,31 @@ export const LandingPage: React.FC = () => {
     }
   };
 
-  // Enhanced features for interactive display - now using translations
+  // Enhanced features for interactive display
   const enhancedFeatures = [
     {
       icon: <Zap size={24} className="text-yellow-500" />,
-      title: t('landing.advancedCapabilities.realTimeIntelligence.title'),
-      description: t('landing.advancedCapabilities.realTimeIntelligence.description'),
-      metric: t('landing.advancedCapabilities.realTimeIntelligence.metric')
+      title: 'Real-Time Intelligence',
+      description: 'Live threat monitoring and risk assessment updates',
+      metric: '24/7'
     },
     {
       icon: <Eye size={24} className="text-blue-500" />,
-      title: t('landing.advancedCapabilities.predictiveAnalytics.title'),
-      description: t('landing.advancedCapabilities.predictiveAnalytics.description'),
-      metric: t('landing.advancedCapabilities.predictiveAnalytics.metric')
+      title: 'Predictive Analytics',
+      description: 'Forecasting emerging threats before they materialize',
+      metric: '90%+'
     },
     {
       icon: <Target size={24} className="text-green-500" />,
-      title: t('landing.advancedCapabilities.strategicFocus.title'),
-      description: t('landing.advancedCapabilities.strategicFocus.description'),
-      metric: t('landing.advancedCapabilities.strategicFocus.metric')
+      title: 'Strategic Focus',
+      description: 'Aligned with business objectives and risk appetite',
+      metric: '100%'
     },
     {
       icon: <Shield size={24} className="text-purple-500" />,
-      title: t('landing.advancedCapabilities.comprehensiveCoverage.title'),
-      description: t('landing.advancedCapabilities.comprehensiveCoverage.description'),
-      metric: t('landing.advancedCapabilities.comprehensiveCoverage.metric')
+      title: 'Comprehensive Coverage',
+      description: 'All six STEEL dimensions analyzed in depth',
+      metric: '6D'
     }
   ];
 
@@ -178,10 +178,10 @@ export const LandingPage: React.FC = () => {
             className="text-center mb-12"
           >
             <motion.h2 variants={item} className="text-3xl font-bold mb-4 dark:text-white">
-              {t('landing.advancedCapabilities.title')}
+              Advanced Capabilities
             </motion.h2>
             <motion.p variants={item} className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              {t('landing.advancedCapabilities.subtitle')}
+              Cutting-edge technology powering strategic cybersecurity intelligence
             </motion.p>
           </motion.div>
           
@@ -265,10 +265,15 @@ export const LandingPage: React.FC = () => {
                       </div>
                       <div>
                         <h3 className="text-xl font-bold mb-2 dark:text-white steel-dimension-title">
-                          {t(`landing.steelOverview.${dimension.id}.title`)}
+                          {dimension.id.charAt(0).toUpperCase() + dimension.id.slice(1)}
                         </h3>
                         <p className="text-gray-600 dark:text-gray-100 steel-dimension-desc mb-4">
-                          {t(`landing.steelOverview.${dimension.id}.description`)}
+                          {dimension.id === 'political' ? 'Government actions, regulations, and geopolitical dynamics affecting cybersecurity' :
+                           dimension.id === 'economic' ? 'Market forces, financial trends, and economic factors impacting security investments' :
+                           dimension.id === 'social' ? 'Human behavior, organizational culture, and social engineering threats' :
+                           dimension.id === 'technology' ? 'Technological advances, infrastructure, and digital transformation impacts' :
+                           dimension.id === 'environmental' ? 'Physical environment, natural disasters, and infrastructure resilience' :
+                           'Legal frameworks, compliance requirements, and regulatory obligations'}
                         </p>
                         
                         {/* Risk Score Indicator */}
@@ -304,7 +309,7 @@ export const LandingPage: React.FC = () => {
               iconPosition="right"
               className="transform hover:scale-105 transition-transform"
             >
-              {t('common.learnMore')}
+              Learn More
             </Button>
           </div>
         </div>
@@ -321,10 +326,10 @@ export const LandingPage: React.FC = () => {
             className="text-center mb-12"
           >
             <motion.h2 variants={item} className="text-3xl font-bold mb-4 dark:text-white">
-              {'ERMITS Ecosystem Products'}
+              ERMITS Ecosystem Products
             </motion.h2>
             <motion.p variants={item} className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              {'STEEL-powered strategic risk intelligence and advisory services'}
+              STEEL-powered strategic risk intelligence and advisory services
             </motion.p>
           </motion.div>
           
@@ -342,10 +347,10 @@ export const LandingPage: React.FC = () => {
                 className="h-full bg-white dark:bg-dark-card-bg p-6"
               >
                 <h3 className="text-xl font-bold mb-3 dark:text-white card-title">
-                  {'STEEL™ Framework'}
+                  STEEL™ Framework
                 </h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-4 card-text">
-                  {'Comprehensive strategic risk assessment methodology'}
+                  Comprehensive strategic risk assessment methodology
                 </p>
                 <Button
                   variant="outline"
@@ -353,7 +358,7 @@ export const LandingPage: React.FC = () => {
                   onClick={() => navigate('/steel')}
                   className="transform hover:scale-105 transition-transform"
                 >
-                  {t('common.learnMore')}
+                  Learn More
                 </Button>
               </InteractiveCard>
             </motion.div>
@@ -365,10 +370,10 @@ export const LandingPage: React.FC = () => {
                 className="h-full bg-white dark:bg-dark-card-bg p-6"
               >
                 <h3 className="text-xl font-bold mb-3 dark:text-white card-title">
-                  {t('landing.services.vCISO.title')}
+                  Virtual CISO Services
                 </h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-4 card-text">
-                  {t('landing.services.vCISO.description')}
+                  Strategic cybersecurity leadership without the full-time commitment
                 </p>
                 <Button
                   variant="outline"
@@ -376,7 +381,7 @@ export const LandingPage: React.FC = () => {
                   onClick={() => navigate('/services')}
                   className="transform hover:scale-105 transition-transform"
                 >
-                  {t('common.learnMore')}
+                  Learn More
                 </Button>
               </InteractiveCard>
             </motion.div>
@@ -388,10 +393,10 @@ export const LandingPage: React.FC = () => {
                 className="h-full bg-white dark:bg-dark-card-bg p-6"
               >
                 <h3 className="text-xl font-bold mb-3 dark:text-white card-title">
-                  {t('landing.services.dashboard.title')}
+                  Executive Dashboard
                 </h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-4 card-text">
-                  {t('landing.services.dashboard.description')}
+                  Real-time visualization of your organization's risk landscape
                 </p>
                 <Button
                   variant="outline"
@@ -399,7 +404,7 @@ export const LandingPage: React.FC = () => {
                   onClick={() => navigate('/dashboard')}
                   className="transform hover:scale-105 transition-transform"
                 >
-                  {t('common.learnMore')}
+                  Learn More
                 </Button>
               </InteractiveCard>
             </motion.div>
@@ -418,10 +423,10 @@ export const LandingPage: React.FC = () => {
             className="text-center mb-12"
           >
             <motion.h2 variants={item} className="text-3xl font-bold mb-4 dark:text-white">
-              {t('landing.trust.title')}
+              Trusted by Industry Leaders
             </motion.h2>
             <motion.p variants={item} className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              {t('landing.trust.subtitle')}
+              Certified experts delivering world-class cybersecurity intelligence
             </motion.p>
           </motion.div>
           
@@ -437,34 +442,34 @@ export const LandingPage: React.FC = () => {
                 <CheckCircle size={32} className="text-white" />
               </InteractiveCard>
               <p className="text-center font-medium dark:text-gray-100">
-                {t('landing.trust.cert1')}
+                CISSP Certified
               </p>
             </motion.div>
-            
+
             <motion.div variants={item} className="flex flex-col items-center">
               <InteractiveCard className="w-16 h-16 bg-navy rounded-full flex items-center justify-center mb-4">
                 <CheckCircle size={32} className="text-white" />
               </InteractiveCard>
               <p className="text-center font-medium dark:text-gray-100">
-                {t('landing.trust.cert2')}
+                ISO 27001 Expert
               </p>
             </motion.div>
-            
+
             <motion.div variants={item} className="flex flex-col items-center">
               <InteractiveCard className="w-16 h-16 bg-navy rounded-full flex items-center justify-center mb-4">
                 <CheckCircle size={32} className="text-white" />
               </InteractiveCard>
               <p className="text-center font-medium dark:text-gray-100">
-                {t('landing.trust.cert3')}
+                CISM Certified
               </p>
             </motion.div>
-            
+
             <motion.div variants={item} className="flex flex-col items-center">
               <InteractiveCard className="w-16 h-16 bg-navy rounded-full flex items-center justify-center mb-4">
                 <CheckCircle size={32} className="text-white" />
               </InteractiveCard>
               <p className="text-center font-medium dark:text-gray-100">
-                {t('landing.trust.cert4')}
+                NIST Framework
               </p>
             </motion.div>
           </motion.div>
@@ -481,18 +486,18 @@ export const LandingPage: React.FC = () => {
             className="max-w-3xl mx-auto text-center"
           >
             <h2 className="text-3xl font-bold mb-4">
-              {t('landing.cta.title')}
+              Ready to Transform Your Risk Intelligence?
             </h2>
             <p className="text-xl mb-6 text-silver">
-              {t('landing.cta.subtitle')}
+              Discover how STEEL™ can elevate your cybersecurity strategy
             </p>
-            <Button 
-              variant="secondary" 
+            <Button
+              variant="secondary"
               size="lg"
               onClick={() => navigate('/contact')}
               className="transform hover:scale-105 transition-transform"
             >
-              {t('landing.cta.button')}
+              Get Started Today
             </Button>
           </motion.div>
         </div>
