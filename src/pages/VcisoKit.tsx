@@ -4,6 +4,7 @@ import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { ArrowRight, CheckCircle, FileText, Shield, Users, BarChart2, Clock, Lock } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { openProductPage } from '../config/products';
 
 export const VcisoKit: React.FC = () => {
   const kitContents = [
@@ -118,9 +119,7 @@ export const VcisoKit: React.FC = () => {
             <Button
               variant="primary"
               size="lg"
-              onClick={() => {
-                window.open('https://gumroad.com/ermits/vciso-kit', '_blank');
-              }}
+              onClick={() => openProductPage('VCISO_KIT')}
               className="w-full mb-4"
             >
               <Lock size={18} className="mr-2" />
@@ -226,9 +225,7 @@ export const VcisoKit: React.FC = () => {
             <Button
               variant="primary"
               size="lg"
-              onClick={() => {
-                window.open('https://gumroad.com/ermits/vciso-kit', '_blank');
-              }}
+              onClick={() => openProductPage('VCISO_KIT')}
               icon={<ArrowRight size={18} />}
               iconPosition="right"
             >

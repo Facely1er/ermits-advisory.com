@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Lock, ArrowRight, CheckCircle } from 'lucide-react';
 import { Card } from './shared/Card';
 import { Button } from './shared/Button';
+import { openProductPage } from '../config/products';
 
 interface PremiumPaywallProps {
   onUnlock?: () => void;
@@ -62,7 +63,7 @@ export const PremiumPaywall: React.FC<PremiumPaywallProps> = ({ onUnlock, showTe
         <Button
           variant="primary"
           size="lg"
-          onClick={() => window.open('https://gumroad.com/ermits/steel-premium', '_blank')}
+          onClick={() => openProductPage('STEEL_PREMIUM')}
           className="w-full mb-3"
         >
           <Lock size={18} className="mr-2" />

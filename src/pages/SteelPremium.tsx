@@ -5,6 +5,7 @@ import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { ArrowRight, CheckCircle, Lock, FileText, BarChart2, Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { openProductPage } from '../config/products';
 
 export const SteelPremium: React.FC = () => {
   const { t } = useLanguage();
@@ -72,10 +73,7 @@ export const SteelPremium: React.FC = () => {
             <Button
               variant="primary"
               size="lg"
-              onClick={() => {
-                // Redirect to Gumroad
-                window.open('https://gumroad.com/ermits/steel-premium', '_blank');
-              }}
+              onClick={() => openProductPage('STEEL_PREMIUM')}
               className="w-full mb-4"
             >
               <Lock size={18} className="mr-2" />
@@ -219,9 +217,7 @@ export const SteelPremium: React.FC = () => {
             <Button
               variant="primary"
               size="lg"
-              onClick={() => {
-                window.open('https://gumroad.com/ermits/steel-premium', '_blank');
-              }}
+              onClick={() => openProductPage('STEEL_PREMIUM')}
               icon={<ArrowRight size={18} />}
               iconPosition="right"
             >

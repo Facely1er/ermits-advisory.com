@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Lock, Zap } from 'lucide-react';
 import { Card } from './shared/Card';
 import { Button } from './shared/Button';
+import { openProductPage } from '../config/products';
 
 interface SteelPaywallGateProps {
   children: React.ReactNode;
@@ -63,9 +64,7 @@ export const SteelPaywallGate: React.FC<SteelPaywallGateProps> = ({
                 <Button
                   variant="primary"
                   size="md"
-                  onClick={() => {
-                    window.open('https://gumroad.com/ermits/steel-premium', '_blank');
-                  }}
+                  onClick={() => openProductPage('STEEL_PREMIUM')}
                   className="whitespace-nowrap"
                 >
                   <Lock size={16} className="mr-2" />

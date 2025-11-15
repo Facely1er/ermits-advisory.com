@@ -4,6 +4,7 @@ import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { ArrowRight, CheckCircle, Code2, Palette, Settings, Upload, Lock, BarChart3 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { openProductPage } from '../config/products';
 
 export const DashboardTemplate: React.FC = () => {
   const features = [
@@ -106,9 +107,7 @@ export const DashboardTemplate: React.FC = () => {
             <Button
               variant="primary"
               size="lg"
-              onClick={() => {
-                window.open('https://gumroad.com/ermits/dashboard-template', '_blank');
-              }}
+              onClick={() => openProductPage('DASHBOARD_TEMPLATE')}
               className="w-full mb-4"
             >
               <Lock size={18} className="mr-2" />
@@ -306,9 +305,7 @@ export const DashboardTemplate: React.FC = () => {
             <Button
               variant="primary"
               size="lg"
-              onClick={() => {
-                window.open('https://gumroad.com/ermits/dashboard-template', '_blank');
-              }}
+              onClick={() => openProductPage('DASHBOARD_TEMPLATE')}
               icon={<ArrowRight size={18} />}
               iconPosition="right"
             >
