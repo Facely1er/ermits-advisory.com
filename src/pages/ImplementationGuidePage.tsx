@@ -35,93 +35,93 @@ export const ImplementationGuidePage: React.FC = () => {
   const implementationPhases = [
     {
       phase: 1,
-      title: t('implementationGuide.implementationPhases.phase1.title'),
-      duration: t('implementationGuide.implementationPhases.phase1.duration'),
-      description: t('implementationGuide.implementationPhases.phase1.description'),
-      deliverables: t('implementationGuide.implementationPhases.phase1.deliverables'),
-      keyActivities: t('implementationGuide.implementationPhases.phase1.keyActivities')
+      title: 'Assessment & Planning',
+      duration: '2-4 weeks',
+      description: 'Initial discovery and strategic planning',
+      deliverables: ['Current state assessment', 'Risk landscape mapping', 'Implementation roadmap', 'Stakeholder alignment plan'],
+      keyActivities: ['Executive interviews', 'Technical environment review', 'Gap analysis', 'Resource planning']
     },
     {
       phase: 2,
-      title: t('implementationGuide.implementationPhases.phase2.title'),
-      duration: t('implementationGuide.implementationPhases.phase2.duration'),
-      description: t('implementationGuide.implementationPhases.phase2.description'),
-      deliverables: t('implementationGuide.implementationPhases.phase2.deliverables'),
-      keyActivities: t('implementationGuide.implementationPhases.phase2.keyActivities')
+      title: 'Foundation Building',
+      duration: '4-6 weeks',
+      description: 'Establish STEEL framework foundation',
+      deliverables: ['STEEL dimension baselines', 'Metrics framework', 'Reporting templates', 'Tool configuration'],
+      keyActivities: ['Data source integration', 'Baseline measurements', 'Process documentation', 'Team training']
     },
     {
       phase: 3,
-      title: t('implementationGuide.implementationPhases.phase3.title'),
-      duration: t('implementationGuide.implementationPhases.phase3.duration'),
-      description: t('implementationGuide.implementationPhases.phase3.description'),
-      deliverables: t('implementationGuide.implementationPhases.phase3.deliverables'),
-      keyActivities: t('implementationGuide.implementationPhases.phase3.keyActivities')
+      title: 'Full Deployment',
+      duration: '6-8 weeks',
+      description: 'Roll out comprehensive monitoring',
+      deliverables: ['Live dashboard', 'Automated alerts', 'Risk scoring models', 'Integration complete'],
+      keyActivities: ['System deployment', 'Workflow integration', 'User onboarding', 'Pilot program']
     },
     {
       phase: 4,
-      title: t('implementationGuide.implementationPhases.phase4.title'),
-      duration: t('implementationGuide.implementationPhases.phase4.duration'),
-      description: t('implementationGuide.implementationPhases.phase4.description'),
-      deliverables: t('implementationGuide.implementationPhases.phase4.deliverables'),
-      keyActivities: t('implementationGuide.implementationPhases.phase4.keyActivities')
+      title: 'Optimization',
+      duration: '4-6 weeks',
+      description: 'Refine and enhance operations',
+      deliverables: ['Tuned algorithms', 'Enhanced reporting', 'Process improvements', 'Best practices guide'],
+      keyActivities: ['Performance analysis', 'Feedback incorporation', 'Process refinement', 'Advanced training']
     },
     {
       phase: 5,
-      title: t('implementationGuide.implementationPhases.phase5.title'),
-      duration: t('implementationGuide.implementationPhases.phase5.duration'),
-      description: t('implementationGuide.implementationPhases.phase5.description'),
-      deliverables: t('implementationGuide.implementationPhases.phase5.deliverables'),
-      keyActivities: t('implementationGuide.implementationPhases.phase5.keyActivities')
+      title: 'Continuous Improvement',
+      duration: 'Ongoing',
+      description: 'Maintain and evolve the framework',
+      deliverables: ['Quarterly reviews', 'Framework updates', 'Capability expansions', 'Maturity advancement'],
+      keyActivities: ['Regular assessments', 'Trend analysis', 'Capability building', 'Strategic planning']
     }
   ];
 
   const guideContents = [
     {
-      section: t('implementationGuide.guideContents.executiveSummary.title'),
-      items: t('implementationGuide.guideContents.executiveSummary.items')
+      section: 'Executive Summary',
+      items: ['Framework overview', 'Business value proposition', 'Implementation approach', 'Expected outcomes']
     },
     {
-      section: t('implementationGuide.guideContents.frameworkFoundation.title'),
-      items: t('implementationGuide.guideContents.frameworkFoundation.items')
+      section: 'Framework Foundation',
+      items: ['STEEL methodology explained', 'Six dimension breakdown', 'Risk assessment approach', 'Integration with existing frameworks']
     },
     {
-      section: t('implementationGuide.guideContents.implementationRoadmap.title'),
-      items: t('implementationGuide.guideContents.implementationRoadmap.items')
+      section: 'Implementation Roadmap',
+      items: ['Phase-by-phase guide', 'Timeline and milestones', 'Resource requirements', 'Success metrics']
     },
     {
-      section: t('implementationGuide.guideContents.toolsTemplates.title'),
-      items: t('implementationGuide.guideContents.toolsTemplates.items')
+      section: 'Tools & Templates',
+      items: ['Assessment templates', 'Reporting dashboards', 'Workflow diagrams', 'Measurement frameworks']
     },
     {
-      section: t('implementationGuide.guideContents.industryApplications.title'),
-      items: t('implementationGuide.guideContents.industryApplications.items')
+      section: 'Industry Applications',
+      items: ['Financial services', 'Healthcare', 'Manufacturing', 'Government & public sector']
     },
     {
-      section: t('implementationGuide.guideContents.successStories.title'),
-      items: t('implementationGuide.guideContents.successStories.items')
+      section: 'Success Stories',
+      items: ['Case studies', 'Lessons learned', 'Best practices', 'ROI examples']
     }
   ];
 
   const benefits = [
     {
       icon: <Shield size={24} className="text-blue-500" />,
-      title: t('implementationGuide.benefits.riskReduction'),
-      description: t('implementationGuide.benefits.riskReductionDesc')
+      title: '40%',
+      description: 'Average risk reduction'
     },
     {
       icon: <TrendingUp size={24} className="text-green-500" />,
-      title: t('implementationGuide.benefits.roi'),
-      description: t('implementationGuide.benefits.roiDesc')
+      title: '3x',
+      description: 'Return on investment'
     },
     {
       icon: <Clock size={24} className="text-purple-500" />,
-      title: t('implementationGuide.benefits.faster'),
-      description: t('implementationGuide.benefits.fasterDesc')
+      title: '60%',
+      description: 'Faster threat response'
     },
     {
       icon: <Target size={24} className="text-orange-500" />,
-      title: t('implementationGuide.benefits.confidence'),
-      description: t('implementationGuide.benefits.confidenceDesc')
+      title: '95%',
+      description: 'Board confidence increase'
     }
   ];
 
@@ -142,53 +142,27 @@ export const ImplementationGuidePage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-silver-light dark:bg-dark-bg">
-      {/* Enhanced Hero Section */}
-      <section className="relative bg-gradient-to-br from-navy via-navy-dark to-navy text-white pt-16 pb-10 md:pt-20 md:pb-14 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-navy-dark/90 to-navy/95"></div>
-        <div className="absolute inset-0 opacity-10 bg-[url('https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-center bg-cover"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="mb-6"
-            >
-              <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium text-silver">
-                <FileText size={16} className="mr-2" />
-                Implementation Guide
-              </span>
-            </motion.div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-white via-silver to-white bg-clip-text text-transparent">
-                {t('implementationGuide.title')}
-              </span>
-            </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-silver/90 max-w-3xl mx-auto leading-relaxed">
-              {t('implementationGuide.subtitle')}
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
+      <div className="container mx-auto px-4">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-8 -mt-8"
+          className="mb-8"
         >
           <button 
             onClick={() => navigate('/steel')}
-            className="inline-flex items-center text-navy dark:text-silver hover:underline mb-6 transition-colors"
+            className="inline-flex items-center text-navy dark:text-silver hover:underline mb-4 transition-colors"
           >
             <ArrowLeft size={16} className="mr-2" />
-            {'Back to STEEL™'}
+            Back to STEEL™
           </button>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
+            STEEL™ Implementation Guide
+          </h1>
+          <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl">
+            Your comprehensive roadmap to implementing strategic cybersecurity intelligence
+          </p>
         </motion.div>
 
         {/* Quick Stats */}
@@ -226,26 +200,26 @@ export const ImplementationGuidePage: React.FC = () => {
           <Card variant="solid" padding="lg" className="bg-navy text-white">
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="md:w-2/3">
-                <h2 className="text-2xl font-bold mb-3">{t('implementationGuide.completePackage.title')}</h2>
+                <h2 className="text-2xl font-bold mb-3">Complete Implementation Package</h2>
                 <p className="text-silver mb-6">
-                  {t('implementationGuide.completePackage.description')}
+                  Download the comprehensive guide with everything you need to successfully implement STEEL™
                 </p>
                 <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
                   <div className="flex items-center">
                     <CheckCircle size={16} className="text-green-400 mr-2" />
-                    <span>{t('implementationGuide.completePackage.features.pages')}</span>
+                    <span>120+ pages of detailed guidance</span>
                   </div>
                   <div className="flex items-center">
                     <CheckCircle size={16} className="text-green-400 mr-2" />
-                    <span>{t('implementationGuide.completePackage.features.templates')}</span>
+                    <span>25+ ready-to-use templates</span>
                   </div>
                   <div className="flex items-center">
                     <CheckCircle size={16} className="text-green-400 mr-2" />
-                    <span>{t('implementationGuide.completePackage.features.industry')}</span>
+                    <span>Industry-specific examples</span>
                   </div>
                   <div className="flex items-center">
                     <CheckCircle size={16} className="text-green-400 mr-2" />
-                    <span>{t('implementationGuide.completePackage.features.presentations')}</span>
+                    <span>Executive presentations</span>
                   </div>
                 </div>
               </div>
@@ -254,8 +228,8 @@ export const ImplementationGuidePage: React.FC = () => {
                   animate={downloadStarted ? { scale: [1, 1.1, 1] } : {}}
                   transition={{ duration: 0.5 }}
                 >
-                  <Button 
-                    variant="secondary" 
+                  <Button
+                    variant="secondary"
                     size="lg"
                     icon={downloadStarted ? <CheckCircle size={20} /> : <Download size={20} />}
                     iconPosition="left"
@@ -263,11 +237,11 @@ export const ImplementationGuidePage: React.FC = () => {
                     disabled={downloadStarted}
                     className="w-full mb-4"
                   >
-                    {downloadStarted ? t('implementationGuide.completePackage.downloadStarted') : t('implementationGuide.completePackage.downloadButton')}
+                    {downloadStarted ? 'Download Started!' : 'Download Complete Guide'}
                   </Button>
                 </motion.div>
                 <p className="text-xs text-silver">
-                  {t('implementationGuide.completePackage.fileInfo')}
+                  PDF Format • 15 MB • Version 2.0
                 </p>
               </div>
             </div>
@@ -281,7 +255,7 @@ export const ImplementationGuidePage: React.FC = () => {
           transition={{ delay: 0.3 }}
           className="mb-12"
         >
-          <h2 className="text-2xl font-bold mb-6 dark:text-white">{t('implementationGuide.guideContents.title')}</h2>
+          <h2 className="text-2xl font-bold mb-6 dark:text-white">What's Inside the Guide</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {guideContents.map((section, index) => (
               <Card key={index} variant="glass" padding="md">
@@ -315,7 +289,7 @@ export const ImplementationGuidePage: React.FC = () => {
           transition={{ delay: 0.4 }}
           className="mb-12"
         >
-          <h2 className="text-2xl font-bold mb-6 dark:text-white">{t('implementationGuide.implementationPhases.title')}</h2>
+          <h2 className="text-2xl font-bold mb-6 dark:text-white">Implementation Phases</h2>
           <div className="space-y-4">
             {implementationPhases.map((phase, index) => (
               <Card key={index} variant="glass" padding="none" className="overflow-hidden">
@@ -358,7 +332,7 @@ export const ImplementationGuidePage: React.FC = () => {
                           <div>
                             <h4 className="font-semibold mb-3 dark:text-white flex items-center">
                               <FileText size={16} className="mr-2" />
-                              {t('implementationGuide.implementationPhases.keyDeliverables')}
+                              Key Deliverables
                             </h4>
                             <ul className="space-y-2">
                               {Array.isArray(phase.deliverables) && phase.deliverables.map((deliverable: string, dIndex: number) => (
@@ -372,7 +346,7 @@ export const ImplementationGuidePage: React.FC = () => {
                           <div>
                             <h4 className="font-semibold mb-3 dark:text-white flex items-center">
                               <Clipboard size={16} className="mr-2" />
-                              {t('implementationGuide.implementationPhases.keyActivities')}
+                              Key Activities
                             </h4>
                             <ul className="space-y-2">
                               {Array.isArray(phase.keyActivities) && phase.keyActivities.map((activity: string, aIndex: number) => (
@@ -400,53 +374,53 @@ export const ImplementationGuidePage: React.FC = () => {
           transition={{ delay: 0.5 }}
           className="mb-12"
         >
-          <h2 className="text-2xl font-bold mb-6 dark:text-white">{t('implementationGuide.successStoriesPreview.title')}</h2>
+          <h2 className="text-2xl font-bold mb-6 dark:text-white">Success Stories</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Card variant="glass" padding="md">
               <div className="flex items-center mb-3">
                 <Star size={20} className="text-yellow-500 mr-2" />
-                <span className="text-sm font-medium text-gray-600 dark:text-gray-300">{t('implementationGuide.successStoriesPreview.fortune500.category')}</span>
+                <span className="text-sm font-medium text-gray-600 dark:text-gray-300">Financial Services</span>
               </div>
               <h3 className="font-semibold mb-2 dark:text-white">
-                {t('implementationGuide.successStoriesPreview.fortune500.title')}
+                Fortune 500 Bank
               </h3>
               <p className="text-gray-600 dark:text-gray-200 text-sm mb-3">
-                {t('implementationGuide.successStoriesPreview.fortune500.description')}
+                Reduced cyber risk exposure by 45% while improving board reporting clarity
               </p>
               <div className="text-xs text-navy dark:text-silver font-medium">
-                {t('implementationGuide.successStoriesPreview.fortune500.metrics')}
+                Timeline: 6 months • ROI: 3.2x
               </div>
             </Card>
 
             <Card variant="glass" padding="md">
               <div className="flex items-center mb-3">
                 <Star size={20} className="text-yellow-500 mr-2" />
-                <span className="text-sm font-medium text-gray-600 dark:text-gray-300">{t('implementationGuide.successStoriesPreview.healthcare.category')}</span>
+                <span className="text-sm font-medium text-gray-600 dark:text-gray-300">Healthcare</span>
               </div>
               <h3 className="font-semibold mb-2 dark:text-white">
-                {t('implementationGuide.successStoriesPreview.healthcare.title')}
+                Regional Health System
               </h3>
               <p className="text-gray-600 dark:text-gray-200 text-sm mb-3">
-                {t('implementationGuide.successStoriesPreview.healthcare.description')}
+                Achieved HIPAA compliance excellence and reduced incident response time by 60%
               </p>
               <div className="text-xs text-navy dark:text-silver font-medium">
-                {t('implementationGuide.successStoriesPreview.healthcare.metrics')}
+                Timeline: 4 months • ROI: 2.8x
               </div>
             </Card>
 
             <Card variant="glass" padding="md">
               <div className="flex items-center mb-3">
                 <Star size={20} className="text-yellow-500 mr-2" />
-                <span className="text-sm font-medium text-gray-600 dark:text-gray-300">{t('implementationGuide.successStoriesPreview.government.category')}</span>
+                <span className="text-sm font-medium text-gray-600 dark:text-gray-300">Government</span>
               </div>
               <h3 className="font-semibold mb-2 dark:text-white">
-                {t('implementationGuide.successStoriesPreview.government.title')}
+                State Government Agency
               </h3>
               <p className="text-gray-600 dark:text-gray-200 text-sm mb-3">
-                {t('implementationGuide.successStoriesPreview.government.description')}
+                Enhanced threat detection capabilities and streamlined compliance reporting
               </p>
               <div className="text-xs text-navy dark:text-silver font-medium">
-                {t('implementationGuide.successStoriesPreview.government.metrics')}
+                Timeline: 8 months • ROI: 4.1x
               </div>
             </Card>
           </div>
@@ -461,27 +435,27 @@ export const ImplementationGuidePage: React.FC = () => {
           <Card variant="glass" padding="lg">
             <div className="text-center">
               <h2 className="text-2xl font-bold mb-4 dark:text-white">
-                {t('implementationGuide.cta.title')}
+                Ready to Get Started?
               </h2>
               <p className="text-gray-600 dark:text-gray-100 max-w-2xl mx-auto mb-8">
-                {t('implementationGuide.cta.description')}
+                Our team of experts is ready to help you implement STEEL™ and transform your cybersecurity strategy
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button 
-                  variant="primary" 
+                <Button
+                  variant="primary"
                   size="lg"
                   icon={<Users size={18} />}
                   onClick={() => navigate('/contact')}
                 >
-                  {t('implementationGuide.cta.scheduleConsultation')}
+                  Schedule a Consultation
                 </Button>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="lg"
                   icon={<AlertCircle size={18} />}
                   onClick={() => navigate('/contact')}
                 >
-                  {t('implementationGuide.cta.scheduleConsultation')}
+                  Request a Demo
                 </Button>
               </div>
             </div>

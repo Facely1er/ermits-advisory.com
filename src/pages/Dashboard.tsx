@@ -35,8 +35,27 @@ export const Dashboard: React.FC = () => {
   const { theme } = useTheme();
   const [selectedView, setSelectedView] = useState<'overview' | 'details'>('overview');
 
-  // Get translated strategic actions
-  const strategicActions = getNestedTranslation('dashboard.actions.items');
+  // Strategic actions
+  const strategicActions = [
+    {
+      priority: 'Critical',
+      status: 'In Progress',
+      action: 'Patch critical infrastructure vulnerabilities',
+      impact: 'Reduce attack surface by 40%'
+    },
+    {
+      priority: 'High',
+      status: 'Not Started',
+      action: 'Implement multi-factor authentication across all systems',
+      impact: 'Prevent 99% of account takeover attacks'
+    },
+    {
+      priority: 'Medium',
+      status: 'Completed',
+      action: 'Update incident response playbooks',
+      impact: 'Improve response time by 50%'
+    }
+  ];
 
   // Calculate overall risk score (average of all dimensions)
   const overallScore = Math.round(
@@ -145,7 +164,7 @@ export const Dashboard: React.FC = () => {
 
   // Radar chart data and options
   const radarData = {
-    labels: riskDimensions.map(dim => t(`steel.dimensions.${dim.id}.title`)),
+    labels: ['Political', 'Economic', 'Social', 'Technology', 'Environmental', 'Legal'],
     datasets: [
       {
         label: 'STEEL™ Risk Radar',
@@ -346,7 +365,12 @@ export const Dashboard: React.FC = () => {
                           {getMetricIcon(metric.icon)}
                         </div>
                         <div>
-                          <p className="text-sm text-gray-600 dark:text-gray-200">{t(`dashboard.metrics.${metric.id}`)}</p>
+                          <p className="text-sm text-gray-600 dark:text-gray-200">
+                            {metric.id === 'activethreats' ? 'Active Threats' :
+                             metric.id === 'riskScore' ? 'Risk Score' :
+                             metric.id === 'incidents' ? 'Incidents (30d)' :
+                             'Compliance Score'}
+                          </p>
                           <p className="text-2xl font-bold dark:text-white">{metric.value}{metric.id === 'compliance' ? '%' : ''}</p>
                           <div className="flex items-center mt-1">
                             {metric.change > 0 ? (
@@ -378,14 +402,14 @@ export const Dashboard: React.FC = () => {
                     <h2 className="text-xl font-semibold dark:text-white">{'STEEL™ Risk Radar'}</h2>
                     <p className="text-sm text-gray-600 dark:text-gray-200">{'Multi-dimensional risk assessment across all STEEL™ dimensions'}</p>
                   </div>
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     size="sm"
                     onClick={() => {}}
                     icon={<ChevronRight size={16} />}
                     iconPosition="right"
                   >
-                    {t('common.viewDashboard')}
+                    View Details
                   </Button>
                 </div>
                 <div className="h-64 md:h-80">
@@ -408,16 +432,16 @@ export const Dashboard: React.FC = () => {
                       <thead>
                         <tr>
                           <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                            {t('dashboard.threats.type')}
+                            Threat Type
                           </th>
                           <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                            {t('dashboard.threats.source')}
+                            Source
                           </th>
                           <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                            {t('dashboard.threats.impact')}
+                            Impact
                           </th>
                           <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                            {t('dashboard.threats.timeline')}
+                            Timeline
                           </th>
                         </tr>
                       </thead>
@@ -471,13 +495,13 @@ export const Dashboard: React.FC = () => {
                           <p className="font-medium dark:text-white">{action.action}</p>
                           <p className="text-sm text-gray-600 dark:text-gray-200 mt-1">{action.impact}</p>
                         </div>
-                        <Button 
-                          variant="ghost" 
+                        <Button
+                          variant="ghost"
                           size="sm"
                           icon={<ChevronRight size={16} />}
                           iconPosition="right"
                         >
-                          {t('dashboard.actions.details')}
+                          Details
                         </Button>
                       </div>
                     </div>
