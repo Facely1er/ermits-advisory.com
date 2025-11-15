@@ -65,6 +65,11 @@ function App() {
                   <Route path="/contact" element={<ContactPage />} />
                   <Route path="/about" element={<AboutPage />} />
                   <Route path="/ecosystem" element={<EcosystemPage />} />
+                  <Route path="/cybercaution" element={<EcosystemPage />} />
+                  <Route path="/cybercorrect" element={<EcosystemPage />} />
+                  <Route path="/cybersoluce" element={<EcosystemPage />} />
+                  <Route path="/vendorsoluce" element={<EcosystemPage />} />
+                  <Route path="/technosoluce" element={<EcosystemPage />} />
                   <Route path="/pricing" element={<PricingPage />} />
                   <Route path="/privacy" element={<PrivacyPolicyPage />} />
                   <Route path="/terms" element={<TermsOfServicePage />} />

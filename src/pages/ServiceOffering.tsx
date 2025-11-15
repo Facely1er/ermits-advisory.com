@@ -59,7 +59,7 @@ export const ServiceOffering: React.FC = () => {
         'Limited professional setup assistance (2-4 hours)',
         'Premium setup assistance available'
       ],
-      link: '/pricing'
+      link: '/cybercaution'
     },
     {
       id: 'cybercorrect',
@@ -77,7 +77,7 @@ export const ServiceOffering: React.FC = () => {
         'Limited professional setup assistance (2-4 hours)',
         'Premium setup assistance available'
       ],
-      link: '/compliance'
+      link: '/cybercorrect'
     },
     {
       id: 'cybersoluce',
@@ -95,7 +95,7 @@ export const ServiceOffering: React.FC = () => {
         'Limited professional setup assistance (2-4 hours)',
         'Premium setup assistance available'
       ],
-      link: '/pricing'
+      link: '/cybersoluce'
     },
     {
       id: 'vendorsoluce',
@@ -113,7 +113,25 @@ export const ServiceOffering: React.FC = () => {
         'Limited professional setup assistance (2-4 hours)',
         'Premium setup assistance available'
       ],
-      link: '/pricing'
+      link: '/vendorsoluce'
+    },
+    {
+      id: 'technosoluce',
+      icon: 'server',
+      name: 'TechnoSoluce',
+      title: 'Technology Risk Management Platform',
+      description: 'Self-service technology risk and SBOM management platform with component vulnerability tracking.',
+      setupAssistance: '2-4 hours included',
+      premiumSetup: 'Additional hours available',
+      features: [
+        'SBOM risk and component vulnerability management',
+        'Technology stack risk assessment',
+        'Component vulnerability prioritization',
+        'Self-service technology risk workflows',
+        'Limited professional setup assistance (2-4 hours)',
+        'Premium setup assistance available'
+      ],
+      link: '/technosoluce'
     },
     {
       id: 'steel-tool',
