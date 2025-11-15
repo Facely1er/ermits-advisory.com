@@ -5,9 +5,6 @@ import { useTheme } from '../contexts/ThemeContext';
 import { Button } from '../components/shared/Button';
 import { Card } from '../components/shared/Card';
 import { InteractiveCard } from '../components/shared/InteractiveCard';
-import { HeroCarousel } from '../components/shared/HeroCarousel';
-import { StatusPill } from '../components/shared/StatusPill';
-import { MetricCard } from '../components/shared/MetricCard';
 import { EcosystemCard } from '../components/shared/EcosystemCard';
 import { ArrowRight, CheckCircle, Zap, Eye, Target, Calendar, Layers, Rocket, Search, Shield } from 'lucide-react';
 import { LiveMetrics } from '../components/interactive/LiveMetrics';
@@ -69,241 +66,62 @@ export const LandingPage: React.FC = () => {
 
   return (
     <div>
-      {/* Enhanced Hero Section with Carousel - Luxury Design */}
-      <section className="relative bg-gradient-to-b from-navy-dark via-navy-darker to-[#001122] dark:from-[#050505] dark:via-[#0a0a0a] dark:to-[#0f0f0f] text-white pb-24 md:pb-32 overflow-hidden">
-        {/* Floating particles background */}
-        <div className="absolute inset-0 opacity-18 pointer-events-none z-0">
-          <motion.div
-            className="absolute top-[10%] left-[8%] text-[1.1rem] text-[#cbd5f5]"
-            animate={{
-              y: [0, -15, 8, -10, 0],
-              x: [0, 12, -10, 8, 0],
-              rotate: [0, 5, -3, 3, 0],
-              opacity: [0.4, 0.6, 0.8, 0.6, 0.4]
-            }}
-            transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-          >
-            🔒
-          </motion.div>
-          <motion.div
-            className="absolute top-[20%] right-[15%] text-[1.1rem] text-[#cbd5f5]"
-            animate={{
-              y: [0, -15, 8, -10, 0],
-              x: [0, 12, -10, 8, 0],
-              rotate: [0, 5, -3, 3, 0],
-              opacity: [0.4, 0.6, 0.8, 0.6, 0.4]
-            }}
-            transition={{ duration: 24, repeat: Infinity, ease: 'linear' }}
-          >
-            🌐
-          </motion.div>
-          <motion.div
-            className="absolute top-[60%] left-[12%] text-[1.1rem] text-[#cbd5f5]"
-            animate={{
-              y: [0, -15, 8, -10, 0],
-              x: [0, 12, -10, 8, 0],
-              rotate: [0, 5, -3, 3, 0],
-              opacity: [0.4, 0.6, 0.8, 0.6, 0.4]
-            }}
-            transition={{ duration: 22, repeat: Infinity, ease: 'linear' }}
-          >
-            📊
-          </motion.div>
-          <motion.div
-            className="absolute top-[75%] right-[8%] text-[1.1rem] text-[#cbd5f5]"
-            animate={{
-              y: [0, -15, 8, -10, 0],
-              x: [0, 12, -10, 8, 0],
-              rotate: [0, 5, -3, 3, 0],
-              opacity: [0.4, 0.6, 0.8, 0.6, 0.4]
-            }}
-            transition={{ duration: 26, repeat: Infinity, ease: 'linear' }}
-          >
-            🛰️
-          </motion.div>
+      {/* Hero Section - STEEL Risk Assessment Framework */}
+      <section className="relative min-h-[600px] md:min-h-[700px] flex items-center justify-center text-white overflow-hidden">
+        {/* Background Image with Dark Blue Overlay */}
+        <div className="absolute inset-0 z-0">
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-navy-dark/90 to-navy/95" />
         </div>
         
-        <div className="container mx-auto px-4 relative z-10 pt-24 md:pt-32 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] gap-8 lg:gap-12 items-center">
-            {/* Left Column - Headlines and Content */}
-            <motion.div 
+        {/* Content */}
+        <div className="container mx-auto px-4 relative z-10 max-w-5xl">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            {/* Main Heading */}
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="flex flex-col items-center lg:items-start text-center lg:text-left"
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
             >
-              {/* Tagline Badge - Enhanced from HTML */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.2, duration: 0.5 }}
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-cyan-400/40 bg-gradient-to-r from-cyan-500/18 via-slate-900/96 to-transparent backdrop-blur-sm text-cyan-200 text-xs uppercase tracking-[0.18em] mb-4"
-              >
-                <span className="font-semibold">STEEL™</span>
-                <span>Strategic Threat & Enterprise Evaluation Layer</span>
-              </motion.div>
+              STEEL™ Risk Assessment Framework
+            </motion.h1>
 
-              {/* Carousel Headlines */}
-              <div className="mb-6 min-h-[180px] md:min-h-[220px]">
-                <HeroCarousel
-                  slides={[
-                    {
-                      id: '1',
-                      headline: 'Turn open-source signals into ',
-                      highlight: 'board-ready cyber & ESG decisions.'
-                    },
-                    {
-                      id: '2',
-                      headline: 'ERMITS Advisory powered by ',
-                      highlight: 'STEEL™'
-                    }
-                  ]}
-                  autoRotateInterval={6000}
-                />
-              </div>
+            {/* Tagline */}
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="text-lg md:text-xl lg:text-2xl text-white/90 mb-8 max-w-3xl mx-auto"
+            >
+              A comprehensive cybersecurity risk assessment framework
+            </motion.p>
 
-              {/* Subtitle */}
-              <motion.p
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.6 }}
-                className="text-base md:text-lg text-slate-300 mb-6 max-w-2xl w-full mx-auto lg:mx-0 text-center lg:text-left"
+            {/* CTA Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+            >
+              <Button 
+                variant="secondary" 
+                size="lg"
+                icon={<ArrowRight size={20} />}
+                iconPosition="right"
+                onClick={() => navigate('/steel')}
+                className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
               >
-                <strong className="text-white">ERMITS Advisory</strong> runs the{' '}
-                <strong className="text-white">STEEL™ methodology</strong> to map your geopolitical, cyber, privacy,
-                and supply-chain exposure, then connects the findings directly to
-                implementation tools across the <strong className="text-white">ERMITS ecosystem</strong>.
-              </motion.p>
-
-              {/* Pills - Enhanced from HTML */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.6 }}
-                className="flex flex-wrap gap-2 mb-6 justify-center lg:justify-start"
-              >
-                <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full border border-slate-500/40 bg-slate-900/85 text-xs text-slate-400">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-                  PESTEL-driven threat scanning
-                </div>
-                <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full border border-slate-500/40 bg-slate-900/85 text-xs text-slate-400">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-                  Privacy, vendor & ransomware risk
-                </div>
-                <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full border border-slate-500/40 bg-slate-900/85 text-xs text-slate-400">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-                  Direct mapping to ERMITS ecosystem
-                </div>
-              </motion.div>
-
-              {/* CTA Buttons */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8, duration: 0.6 }}
-                className="flex flex-wrap gap-3 justify-center lg:justify-start mb-6"
-              >
-                <Button 
-                  variant="secondary" 
-                  size="lg"
-                  icon={<ArrowRight size={20} />}
-                  iconPosition="right"
-                  onClick={() => navigate('/steel')}
-                  className="bg-gradient-to-r from-yellow-400 to-yellow-300 text-navy-dark font-semibold shadow-[0_18px_45px_rgba(0,0,0,0.6)] hover:brightness-110 hover:-translate-y-0.5 transition-all"
-                >
-                  Explore STEEL™ Methodology
-                </Button>
-                <Button 
-                  variant="ghost" 
-                  size="lg"
-                  onClick={() => navigate('/ecosystem')}
-                  className="border-slate-500/60 text-slate-200 bg-slate-900/85 hover:bg-slate-900/90 hover:border-slate-500/90 transition-all"
-                >
-                  View ERMITS Ecosystem Map
-                </Button>
-              </motion.div>
-
-              {/* Positioning Statement */}
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1, duration: 0.6 }}
-                className="text-sm text-slate-400 max-w-2xl w-full mx-auto lg:mx-0 text-center lg:text-left"
-              >
-                <strong className="text-slate-300">Positioning:</strong> ERMITS Advisory owns STEEL™ as the analytical
-                engine. Execution happens through ERMITS products — so every
-                dashboard finding can be turned into a concrete control, checklist, or playbook.
-              </motion.p>
+                Explore STEEL™ →
+              </Button>
             </motion.div>
-
-            {/* Right Column - Hero Panel Dashboard Preview - Luxury */}
-            <motion.aside
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="relative"
-              aria-label="STEEL dashboard preview"
-            >
-              <Card className="luxury-card bg-gradient-to-br from-blue-500/22 via-slate-900/98 to-slate-900/98 dark:from-blue-500/20 dark:via-slate-900/98 dark:to-slate-900/98 border-slate-500/50 dark:border-slate-500/50 shadow-[0_18px_45px_rgba(0,0,0,0.55)] p-5 backdrop-blur-xl rounded-3xl">
-                {/* Panel Header */}
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <div className="text-xs uppercase tracking-widest text-slate-400 font-semibold mb-1">
-                      STEEL™ Threat Weather Snapshot
-                    </div>
-                    <div className="text-xs text-slate-400">
-                      Sector: Healthcare & Pharma · Region: North America
-                    </div>
-                  </div>
-                  <StatusPill label="Live signal blend" status="live" />
-                </div>
-
-                {/* Metrics Grid */}
-                <div className="grid grid-cols-3 gap-2 mb-4">
-                  <MetricCard
-                    label="Ransomware Pressure"
-                    value="High"
-                    subtitle="↑ Targeted campaigns vs. hospitals"
-                    className="text-amber-300"
-                  />
-                  <MetricCard
-                    label="Vendor Fragility"
-                    value="Medium"
-                    subtitle="220+ critical SaaS dependencies"
-                  />
-                  <MetricCard
-                    label="Privacy Collision"
-                    value="Elevated"
-                    subtitle="HIPAA + GDPR + emerging AI rules"
-                  />
-                </div>
-
-                {/* Chips */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <div className="px-2 py-1 rounded-full border border-dashed border-slate-500/80 text-xs text-slate-300 bg-slate-900/90">
-                    🌍 Geo: West Africa, Eastern Europe, US
-                  </div>
-                  <div className="px-2 py-1 rounded-full border border-dashed border-slate-500/80 text-xs text-slate-300 bg-slate-900/90">
-                    📡 Open data + curated RSS
-                  </div>
-                  <div className="px-2 py-1 rounded-full border border-dashed border-slate-500/80 text-xs text-slate-300 bg-slate-900/90">
-                    🔐 Privacy + ransomware cross-view
-                  </div>
-                </div>
-
-                {/* Footer */}
-                <div className="flex justify-between items-center pt-3 border-t border-slate-600/40 text-xs text-slate-400">
-                  <div className="flex items-center gap-1">
-                    <span className="w-2 h-2 rounded-full bg-orange-500 shadow-[0_0_10px_rgba(251,146,60,0.8)]"></span>
-                    Composite STEEL score: <strong className="text-slate-300">7.8 / 10</strong> (Above risk appetite)
-                  </div>
-                  <div className="text-xs">
-                    Mapped controls: CyberCaution · CyberCorrect · VendorSoluce · TechnoSoluce
-                  </div>
-                </div>
-              </Card>
-            </motion.aside>
-          </div>
+          </motion.div>
         </div>
       </section>
 
