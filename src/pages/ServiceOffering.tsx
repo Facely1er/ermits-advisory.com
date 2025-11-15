@@ -457,7 +457,7 @@ export const ServiceOffering: React.FC = () => {
 
       <div className="container mx-auto px-4">
 
-        {/* Key metrics */}
+        {/* Key benefits */}
         <motion.div
           variants={container}
           initial="hidden"
@@ -467,36 +467,36 @@ export const ServiceOffering: React.FC = () => {
         >
           <motion.div variants={item}>
             <Card variant="glass" className="text-center h-full">
-              <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">60-70%</h3>
+              <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">Cost-Effective</h3>
               <p className="text-gray-600 dark:text-gray-200">
-                Cost Savings vs Full-Time CISO
+                Flexible pricing compared to full-time CISO
               </p>
             </Card>
           </motion.div>
           
           <motion.div variants={item}>
             <Card variant="glass" className="text-center h-full">
-              <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">80-90%</h3>
+              <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">Focused Approach</h3>
               <p className="text-gray-600 dark:text-gray-200">
-                Implementation Rate (vs 30-40% typical)
+                Structured methodology for implementation
               </p>
             </Card>
           </motion.div>
           
           <motion.div variants={item}>
             <Card variant="glass" className="text-center h-full">
-              <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">50%</h3>
+              <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">Streamlined Process</h3>
               <p className="text-gray-600 dark:text-gray-200">
-                Faster Time to Compliance
+                Efficient path to compliance readiness
               </p>
             </Card>
           </motion.div>
           
           <motion.div variants={item}>
             <Card variant="glass" className="text-center h-full">
-              <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">3x</h3>
+              <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">Proven Framework</h3>
               <p className="text-gray-600 dark:text-gray-200">
-                Higher Client Success Rate
+                STEEL methodology for strategic risk assessment
               </p>
             </Card>
           </motion.div>

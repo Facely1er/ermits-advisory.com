@@ -105,23 +105,23 @@ export const ImplementationGuidePage: React.FC = () => {
   const benefits = [
     {
       icon: <Shield size={24} className="text-blue-500" />,
-      title: '40%',
-      description: 'Average risk reduction'
+      title: 'Risk Reduction',
+      description: 'Strategic risk assessment and mitigation'
     },
     {
       icon: <TrendingUp size={24} className="text-green-500" />,
-      title: '3x',
-      description: 'Return on investment'
+      title: 'ROI Focus',
+      description: 'Business-aligned security investments'
     },
     {
       icon: <Clock size={24} className="text-purple-500" />,
-      title: '60%',
-      description: 'Faster threat response'
+      title: 'Rapid Response',
+      description: 'Improved threat detection and response'
     },
     {
       icon: <Target size={24} className="text-orange-500" />,
-      title: '95%',
-      description: 'Board confidence increase'
+      title: 'Executive Alignment',
+      description: 'Board-ready risk intelligence'
     }
   ];
 

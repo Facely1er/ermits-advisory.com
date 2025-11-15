@@ -78,13 +78,13 @@ export const LandingPage: React.FC = () => {
       icon: <Zap size={24} className="text-yellow-500" />,
       title: 'Real-Time Intelligence',
       description: 'Monitor threats and risks as they emerge with live data feeds',
-      metric: '24/7'
+      metric: 'Continuous'
     },
     {
       icon: <Eye size={24} className="text-blue-500" />,
       title: 'Predictive Analytics',
       description: 'AI-powered insights that forecast potential security threats',
-      metric: '95%'
+      metric: 'Advanced'
     },
     {
       icon: <Target size={24} className="text-green-500" />,
@@ -95,8 +95,8 @@ export const LandingPage: React.FC = () => {
     {
       icon: <Shield size={24} className="text-purple-500" />,
       title: 'Comprehensive Coverage',
-      description: 'Complete visibility across all critical risk dimensions',
-      metric: '100%'
+      description: 'Visibility across all critical risk dimensions',
+      metric: 'Multi-D'
     }
   ];
 
@@ -612,10 +612,10 @@ export const LandingPage: React.FC = () => {
             className="text-center mb-12"
           >
             <motion.h2 variants={item} className="text-3xl font-bold mb-4 dark:text-white">
-              Trusted by Industry Leaders
+              Industry-Standard Frameworks
             </motion.h2>
             <motion.p variants={item} className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              Certified and compliant with the highest security standards
+              Our methodology aligns with recognized security and compliance frameworks
             </motion.p>
           </motion.div>
           
@@ -631,7 +631,7 @@ export const LandingPage: React.FC = () => {
                 <CheckCircle size={32} className="text-white" />
               </InteractiveCard>
               <p className="text-center font-medium dark:text-gray-100">
-                ISO 27001 Certified
+                ISO 27001 Aligned
               </p>
             </motion.div>
 
@@ -640,7 +640,7 @@ export const LandingPage: React.FC = () => {
                 <CheckCircle size={32} className="text-white" />
               </InteractiveCard>
               <p className="text-center font-medium dark:text-gray-100">
-                SOC 2 Type II
+                SOC 2 Compatible
               </p>
             </motion.div>
 
@@ -649,7 +649,7 @@ export const LandingPage: React.FC = () => {
                 <CheckCircle size={32} className="text-white" />
               </InteractiveCard>
               <p className="text-center font-medium dark:text-gray-100">
-                GDPR Compliant
+                GDPR Considerations
               </p>
             </motion.div>
 
@@ -658,7 +658,7 @@ export const LandingPage: React.FC = () => {
                 <CheckCircle size={32} className="text-white" />
               </InteractiveCard>
               <p className="text-center font-medium dark:text-gray-100">
-                NIST Framework
+                NIST Framework Based
               </p>
             </motion.div>
           </motion.div>
