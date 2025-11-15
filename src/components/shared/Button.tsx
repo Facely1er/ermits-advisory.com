@@ -2,7 +2,7 @@ import React, { ButtonHTMLAttributes } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '../../utils/cn';
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onAnimationStart' | 'onAnimationEnd' | 'onDrag' | 'onDragEnd' | 'onDragStart'> {
   variant?: 'primary' | 'secondary' | 'ghost' | 'outline';
   size?: 'sm' | 'md' | 'lg';
   icon?: React.ReactNode;
@@ -23,7 +23,7 @@ export const Button: React.FC<ButtonProps> = ({
   disabled,
   ...props
 }) => {
-  const baseStyles = 'inline-flex items-center justify-center rounded-btn font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2 dark:focus:ring-offset-dark-bg disabled:opacity-50 disabled:pointer-events-none';
+  const baseStyles = 'inline-flex items-center justify-center rounded-btn font-medium transition-all duration-200 focus:outline-none disabled:opacity-50 disabled:pointer-events-none';
   
   const variants = {
     primary: 'bg-navy text-white hover:bg-navy-dark dark:bg-navy dark:hover:bg-navy-dark shadow-md hover:shadow-lg',

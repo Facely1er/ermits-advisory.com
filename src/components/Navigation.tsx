@@ -5,13 +5,13 @@ import { useTheme } from '../contexts/ThemeContext';
 import { Button } from './shared/Button';
 import {
   Sun, Moon, Menu, X, ChevronDown,
-  Home, Briefcase, Mail, Users, Lightbulb, Shield, Layers, DollarSign
+  Home, Briefcase, Mail, Users, Lightbulb, Shield, Layers, DollarSign, Focus
 } from 'lucide-react';
 import logoImg from '../assets/ermits-advisory.png';
 import { cn } from '../utils/cn';
 
 export const Navigation: React.FC = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme, focusMode, toggleFocusMode } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isInsightsOpen, setIsInsightsOpen] = useState(false);
   const navigate = useNavigate();
@@ -134,6 +134,24 @@ export const Navigation: React.FC = () => {
 
             {/* Controls - Removed language selector */}
             <div className="flex items-center space-x-3 h-full">
+              {/* Focus Mode Toggle */}
+              <button
+                onClick={toggleFocusMode}
+                className={cn(
+                  "p-2 rounded-full transition-colors",
+                  focusMode
+                    ? "bg-navy/20 hover:bg-navy/30 dark:bg-silver/20 dark:hover:bg-silver/30"
+                    : "bg-silver/20 hover:bg-silver/30 dark:bg-navy/40 dark:hover:bg-navy/50"
+                )}
+                aria-label={focusMode ? "Disable focus mode" : "Enable focus mode"}
+                title={focusMode ? "Focus indicators enabled" : "Focus indicators disabled"}
+              >
+                <Focus 
+                  size={16} 
+                  className={focusMode ? "text-navy dark:text-silver" : "text-gray-500 dark:text-gray-400"} 
+                />
+              </button>
+
               {/* Theme Toggle */}
               <button
                 onClick={toggleTheme}
@@ -241,6 +259,23 @@ export const Navigation: React.FC = () => {
             <div className="pt-4 pb-3 border-t border-gray-200 dark:border-gray-700">
               <div className="flex items-center justify-end px-4">
                 <div className="flex items-center space-x-3">
+                  {/* Focus Mode Toggle */}
+                  <button
+                    onClick={toggleFocusMode}
+                    className={cn(
+                      "p-2 rounded-full transition-colors",
+                      focusMode
+                        ? "bg-navy/20 hover:bg-navy/30 dark:bg-silver/20 dark:hover:bg-silver/30"
+                        : "bg-silver/20 hover:bg-silver/30 dark:bg-navy/40 dark:hover:bg-navy/50"
+                    )}
+                    aria-label={focusMode ? "Disable focus mode" : "Enable focus mode"}
+                    title={focusMode ? "Focus indicators enabled" : "Focus indicators disabled"}
+                  >
+                    <Focus 
+                      size={16} 
+                      className={focusMode ? "text-navy dark:text-silver" : "text-gray-500 dark:text-gray-400"} 
+                    />
+                  </button>
                   <button
                     onClick={toggleTheme}
                     className="p-2 rounded-full bg-silver/20 hover:bg-silver/30 dark:bg-navy/40 dark:hover:bg-navy/50 transition-colors"
