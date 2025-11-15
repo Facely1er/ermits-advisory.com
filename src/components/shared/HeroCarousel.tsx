@@ -59,7 +59,7 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5, ease: 'easeInOut' }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="text-center"
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6">

@@ -5,6 +5,7 @@ import { useTheme } from '../contexts/ThemeContext';
 import { Button } from '../components/shared/Button';
 import { Card } from '../components/shared/Card';
 import { InteractiveCard } from '../components/shared/InteractiveCard';
+import { HeroCarousel } from '../components/shared/HeroCarousel';
 import { EcosystemCard } from '../components/shared/EcosystemCard';
 import { ArrowRight, CheckCircle, Zap, Eye, Target, Calendar, Layers, Rocket, Search, Shield } from 'lucide-react';
 import { LiveMetrics } from '../components/interactive/LiveMetrics';
@@ -84,25 +85,29 @@ export const LandingPage: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            {/* Main Heading */}
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
-            >
-              STEEL™ Risk Assessment Framework
-            </motion.h1>
-
-            {/* Tagline */}
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-lg md:text-xl lg:text-2xl text-white/90 mb-8 max-w-3xl mx-auto"
-            >
-              A comprehensive cybersecurity risk assessment framework
-            </motion.p>
+            {/* Main Heading with Carousel */}
+            <div className="mb-6 min-h-[120px] md:min-h-[140px]">
+              <HeroCarousel
+                slides={[
+                  {
+                    id: '1',
+                    headline: 'Navigate Risks. Unlock Growth. Future-Proof Your Organization with ',
+                    highlight: 'ERMITS Advisory STEEL™ Diagnostic'
+                  },
+                  {
+                    id: '2',
+                    headline: 'Turn open-source signals into ',
+                    highlight: 'board-ready cyber & ESG decisions.'
+                  },
+                  {
+                    id: '3',
+                    headline: 'Strategic Threat & Enterprise Evaluation Layer — ',
+                    highlight: '46 questions, comprehensive insights.'
+                  }
+                ]}
+                autoRotateInterval={3000}
+              />
+            </div>
 
             {/* CTA Button */}
             <motion.div
