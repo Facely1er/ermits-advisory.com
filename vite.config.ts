@@ -4,6 +4,7 @@ import removeConsole from 'vite-plugin-remove-console';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: '/',
   plugins: [
     react(),
     // Only remove console statements in production builds
