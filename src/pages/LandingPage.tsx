@@ -67,26 +67,76 @@ export const LandingPage: React.FC = () => {
 
   return (
     <div>
-      {/* Hero Section - STEEL Risk Assessment Framework */}
-      <section className="relative min-h-[600px] md:min-h-[700px] flex items-center justify-center text-white overflow-hidden">
-        {/* Background Image with Dark Blue Overlay */}
+      {/* Hero Section - Enhanced STEEL Risk Assessment Framework */}
+      <section className="relative min-h-[650px] md:min-h-[750px] flex items-center justify-center text-white overflow-hidden">
+        {/* Background Image with Enhanced Overlay */}
         <div className="absolute inset-0 z-0">
           <div 
             className="absolute inset-0 bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')]"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-navy-dark/90 to-navy/95" />
+          <div className="absolute inset-0 bg-gradient-to-br from-navy/96 via-navy-dark/92 to-navy/96" />
+          {/* Animated gradient overlay for depth */}
+          <motion.div 
+            className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-blue-500/10"
+            animate={{
+              opacity: [0.3, 0.5, 0.3],
+              x: ['-50%', '50%', '-50%'],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: 'easeInOut'
+            }}
+          />
+        </div>
+
+        {/* Floating particles for visual interest */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          {[...Array(6)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-2 h-2 bg-cyan-400/30 rounded-full"
+              style={{
+                left: `${15 + i * 15}%`,
+                top: `${20 + (i % 3) * 30}%`,
+              }}
+              animate={{
+                y: [0, -30, 0],
+                opacity: [0.3, 0.6, 0.3],
+                scale: [1, 1.2, 1],
+              }}
+              transition={{
+                duration: 3 + i * 0.5,
+                repeat: Infinity,
+                delay: i * 0.3,
+                ease: 'easeInOut'
+              }}
+            />
+          ))}
         </div>
         
         {/* Content */}
-        <div className="container mx-auto px-4 relative z-10 max-w-5xl">
+        <div className="container mx-auto px-4 relative z-10 max-w-6xl">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            {/* Main Heading with Carousel */}
-            <div className="mb-6 min-h-[120px] md:min-h-[140px]">
+            {/* Badge/Tagline */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-400/40 bg-gradient-to-r from-cyan-500/20 via-slate-900/80 to-transparent backdrop-blur-sm text-cyan-200 text-sm uppercase tracking-wider mb-6 shadow-lg"
+            >
+              <Shield size={16} className="text-cyan-400" />
+              <span className="font-semibold">STEEL™</span>
+              <span className="text-xs">Strategic Threat & Enterprise Evaluation Layer</span>
+            </motion.div>
+
+            {/* Main Heading with Enhanced Carousel */}
+            <div className="mb-8 min-h-[140px] md:min-h-[180px] flex items-center justify-center">
               <HeroCarousel
                 slides={[
                   {
@@ -96,24 +146,61 @@ export const LandingPage: React.FC = () => {
                   },
                   {
                     id: '2',
-                    headline: 'Turn open-source signals into ',
-                    highlight: 'board-ready cyber & ESG decisions.'
+                    headline: 'Transform open-source intelligence into ',
+                    highlight: 'strategic board-ready decisions.'
                   },
                   {
                     id: '3',
-                    headline: 'Strategic Threat & Enterprise Evaluation Layer — ',
-                    highlight: '46 questions, comprehensive insights.'
+                    headline: '46 strategic questions. ',
+                    highlight: 'Comprehensive insights. Actionable outcomes.'
+                  },
+                  {
+                    id: '4',
+                    headline: 'From threat assessment to ',
+                    highlight: 'implementation in weeks, not months.'
                   }
                 ]}
-                autoRotateInterval={3000}
+                autoRotateInterval={3500}
               />
             </div>
 
-            {/* CTA Button */}
+            {/* Enhanced Subtitle */}
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="text-lg md:text-xl lg:text-2xl text-white/90 mb-10 max-w-4xl mx-auto leading-relaxed font-light"
+            >
+              A comprehensive cybersecurity risk assessment framework that maps geopolitical, cyber, privacy, and supply-chain exposure to actionable implementation tools.
+            </motion.p>
+
+            {/* Key Benefits Pills */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.6 }}
+              className="flex flex-wrap gap-3 justify-center mb-10"
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm text-sm text-white/90">
+                <CheckCircle size={16} className="text-cyan-400" />
+                <span>46 Strategic Indicators</span>
+              </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm text-sm text-white/90">
+                <Zap size={16} className="text-yellow-400" />
+                <span>Real-Time Intelligence</span>
+              </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm text-sm text-white/90">
+                <Target size={16} className="text-green-400" />
+                <span>Actionable Outcomes</span>
+              </div>
+            </motion.div>
+
+            {/* Enhanced CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7, duration: 0.6 }}
+              className="flex flex-wrap gap-4 justify-center"
             >
               <Button 
                 variant="secondary" 
@@ -121,9 +208,17 @@ export const LandingPage: React.FC = () => {
                 icon={<ArrowRight size={20} />}
                 iconPosition="right"
                 onClick={() => navigate('/steel')}
-                className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
+                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold px-10 py-5 rounded-xl shadow-2xl hover:shadow-cyan-500/50 transition-all transform hover:-translate-y-1 hover:scale-105 text-lg"
               >
                 Explore STEEL™ →
+              </Button>
+              <Button 
+                variant="ghost" 
+                size="lg"
+                onClick={() => navigate('/pricing')}
+                className="border-2 border-white/30 text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm font-semibold px-10 py-5 rounded-xl transition-all transform hover:-translate-y-1 text-lg"
+              >
+                View Pricing
               </Button>
             </motion.div>
           </motion.div>
