@@ -166,11 +166,51 @@ export const ComplianceToolkit: React.FC = () => {
           </Card>
         </motion.div>
 
-        {/* CTA Section */}
+        {/* Download Templates Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
+          className="mb-12"
+        >
+          <h2 className="text-2xl font-bold text-center mb-8 dark:text-white">
+            Download Your Templates
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {[
+              { name: 'Gap Analysis Template', file: 'gap-analysis-template.md', desc: 'Multi-framework gap analysis with NIST, ISO 27001, and more' },
+              { name: 'Control Mapping Matrix', file: 'control-mapping-matrix.md', desc: '50+ pre-mapped controls across all major frameworks' },
+              { name: 'Evidence Collection Checklist', file: 'evidence-collection-checklist.md', desc: '200+ evidence items organized by category' },
+              { name: 'Getting Started Guide', file: 'README.md', desc: 'Complete guide to using the compliance toolkit' }
+            ].map((template, index) => (
+              <Card key={index} variant="glass" padding="md" className="hover:shadow-lg transition-shadow">
+                <div className="flex items-start gap-4">
+                  <div className="text-green-600 dark:text-green-400 mt-1">
+                    <FileText size={24} />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-lg mb-1 dark:text-white">{template.name}</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">{template.desc}</p>
+                    <a
+                      href={`/templates/compliance-toolkit/${template.file}`}
+                      download
+                      className="inline-flex items-center gap-2 text-sm font-medium text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300"
+                    >
+                      <Download size={16} />
+                      Download Template
+                    </a>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* CTA Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
           className="text-center"
         >
           <Card variant="glass" padding="lg" className="max-w-2xl mx-auto">

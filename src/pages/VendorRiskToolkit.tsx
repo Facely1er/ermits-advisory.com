@@ -178,11 +178,50 @@ export const VendorRiskToolkit: React.FC = () => {
           </Card>
         </motion.div>
 
-        {/* CTA Section */}
+        {/* Download Templates Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
+          className="mb-12"
+        >
+          <h2 className="text-2xl font-bold text-center mb-8 dark:text-white">
+            Download Your Templates
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {[
+              { name: 'Vendor Security Questionnaire', file: 'vendor-security-questionnaire.md', desc: '150 questions across 15 security domains' },
+              { name: 'Vendor Risk Scoring Framework', file: 'vendor-risk-scoring-framework.md', desc: '3-dimensional risk assessment and tiering model' },
+              { name: 'Getting Started Guide', file: 'README.md', desc: 'Complete vendor risk management program guide' }
+            ].map((template, index) => (
+              <Card key={index} variant="glass" padding="md" className="hover:shadow-lg transition-shadow">
+                <div className="flex items-start gap-4">
+                  <div className="text-orange-600 dark:text-orange-400 mt-1">
+                    <FileText size={24} />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-lg mb-1 dark:text-white">{template.name}</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">{template.desc}</p>
+                    <a
+                      href={`/templates/vendor-risk-toolkit/${template.file}`}
+                      download
+                      className="inline-flex items-center gap-2 text-sm font-medium text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300"
+                    >
+                      <Download size={16} />
+                      Download Template
+                    </a>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* CTA Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
           className="text-center"
         >
           <Card variant="glass" padding="lg" className="max-w-2xl mx-auto">
