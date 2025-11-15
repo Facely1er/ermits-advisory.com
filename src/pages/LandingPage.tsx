@@ -115,14 +115,14 @@ export const LandingPage: React.FC = () => {
           </motion.div>
         </div>
         
-        <div className="container mx-auto px-4 relative z-10 pt-24 md:pt-32">
+        <div className="container mx-auto px-4 relative z-10 pt-24 md:pt-32 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] gap-8 lg:gap-12 items-center">
             {/* Left Column - Headlines and Content */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-center lg:text-left"
+              className="flex flex-col items-center lg:items-start text-center lg:text-left"
             >
               {/* Tagline Badge - Luxury */}
               <motion.div
@@ -159,7 +159,7 @@ export const LandingPage: React.FC = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
-                className="text-base md:text-lg text-slate-300 mb-6 max-w-2xl mx-auto lg:mx-0"
+                className="text-base md:text-lg text-slate-300 mb-6 max-w-2xl w-full mx-auto lg:mx-0 text-center lg:text-left"
               >
                 <strong className="text-white">ERMITS Advisory</strong> runs the{' '}
                 <strong className="text-white">STEEL™ methodology</strong> to map your geopolitical, cyber, privacy,
@@ -220,7 +220,7 @@ export const LandingPage: React.FC = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1, duration: 0.6 }}
-                className="text-sm text-slate-400 max-w-2xl mx-auto lg:mx-0"
+                className="text-sm text-slate-400 max-w-2xl w-full mx-auto lg:mx-0 text-center lg:text-left"
               >
                 <strong className="text-slate-300">Positioning:</strong> ERMITS Advisory owns STEEL™ as the analytical
                 engine. Execution happens through ERMITS products — so every
@@ -301,7 +301,7 @@ export const LandingPage: React.FC = () => {
 
       {/* Live Metrics Section - Now with translations */}
       <section className="py-16 bg-silver-light dark:bg-dark-surface">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -322,7 +322,7 @@ export const LandingPage: React.FC = () => {
 
       {/* Enhanced Features Section - Now with translations */}
       <section className="py-16 bg-white dark:bg-dark-bg">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-7xl">
           <motion.div
             variants={container}
             initial="hidden"
@@ -373,7 +373,7 @@ export const LandingPage: React.FC = () => {
 
       {/* STEEL-to-Platform Pathway Section */}
       <section className="py-16 bg-white dark:bg-dark-bg">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -545,7 +545,7 @@ export const LandingPage: React.FC = () => {
 
       {/* Enhanced STEEL Methodology Section - Luxury */}
       <section id="steel" className="py-20 bg-gradient-to-b from-silver-lighter via-white to-silver-light dark:from-dark-luxury-bg dark:via-dark-luxury-surface dark:to-dark-luxury-bg steel-section">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 items-start">
             {/* Left Column - Methodology Description */}
             <div>
@@ -673,7 +673,7 @@ export const LandingPage: React.FC = () => {
 
       {/* Ecosystem Mapping Section - Luxury */}
       <section id="ecosystem" className="py-20 bg-gradient-to-b from-white via-silver-lighter to-white dark:from-dark-luxury-bg dark:via-dark-luxury-surface dark:to-dark-luxury-bg">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -774,7 +774,7 @@ export const LandingPage: React.FC = () => {
 
       {/* Use Cases Section - Luxury */}
       <section id="use-cases" className="py-20 bg-gradient-to-b from-silver-lighter via-white to-silver-lighter dark:from-dark-luxury-bg dark:via-dark-luxury-surface dark:to-dark-luxury-bg">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -858,7 +858,7 @@ export const LandingPage: React.FC = () => {
 
       {/* Engagement Model / How It Works Section - Luxury */}
       <section id="how-it-works" className="py-20 bg-gradient-to-b from-white via-silver-lighter to-white dark:from-dark-luxury-bg dark:via-dark-luxury-surface dark:to-dark-luxury-bg">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -948,7 +948,7 @@ export const LandingPage: React.FC = () => {
 
       {/* Trust Indicators Section */}
       <section className="py-16 bg-white dark:bg-dark-bg">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-7xl">
           <motion.div
             variants={container}
             initial="hidden"
@@ -1012,7 +1012,7 @@ export const LandingPage: React.FC = () => {
 
       {/* Enhanced CTA Section - Luxury */}
       <section id="contact" className={`py-20 ${theme === 'dark' ? 'bg-gradient-to-br from-dark-luxury-bg via-navy-darker to-dark-luxury-bg' : 'bg-gradient-to-br from-navy-dark via-navy to-navy-darker'} text-white relative overflow-hidden`}>
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
