@@ -1,14 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '../contexts/LanguageContext';
 import logoImg from '../assets/ermits-advisory.png';
-import { 
+import {
   Mail, Shield, BarChart2, Users
 } from 'lucide-react';
 
 export const Footer: React.FC = () => {
-  const { t } = useLanguage();
-  
   return (
     <footer className="bg-navy dark:bg-black text-white">
       <div className="container mx-auto px-4 py-8">
@@ -23,53 +20,53 @@ export const Footer: React.FC = () => {
                 <span className="text-xs tracking-wider">+ STEEL™</span>
               </span>
             </Link>
-            <p className="text-silver text-sm leading-relaxed">{t('common.tagline')}</p>
+            <p className="text-silver text-sm leading-relaxed">Global Intelligence. Resilient Strategy. Streamlined for Success.</p>
           </div>
-          
+
           {/* Services */}
           <div>
-            <h3 className="text-base font-semibold mb-3">{t('footer.services.title')}</h3>
+            <h3 className="text-base font-semibold mb-3">Services</h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/services" className="text-silver hover:text-white transition-colors flex items-center text-sm">
                   <Shield size={14} className="mr-2" />
-                  {t('footer.services.advisory')}
+                  Strategic Advisory
                 </Link>
               </li>
               <li>
                 <Link to="/steel" className="text-silver hover:text-white transition-colors flex items-center text-sm">
                   <BarChart2 size={14} className="mr-2" />
-                  {t('footer.services.steel')}
+                  STEEL™ Framework
                 </Link>
               </li>
               <li>
                 <Link to="/dashboard" className="text-silver hover:text-white transition-colors flex items-center text-sm">
                   <BarChart2 size={14} className="mr-2" />
-                  {t('footer.services.dashboard')}
+                  Executive Dashboard
                 </Link>
               </li>
             </ul>
           </div>
-          
+
           {/* Company */}
           <div>
-            <h3 className="text-base font-semibold mb-3">{t('footer.company.title')}</h3>
+            <h3 className="text-base font-semibold mb-3">Company</h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/about" className="text-silver hover:text-white transition-colors flex items-center text-sm">
                   <Users size={14} className="mr-2" />
-                  {t('footer.company.about')}
+                  About Us
                 </Link>
               </li>
               <li>
                 <Link to="/contact" className="text-silver hover:text-white transition-colors flex items-center text-sm">
                   <Mail size={14} className="mr-2" />
-                  {t('footer.company.contact')}
+                  Contact
                 </Link>
               </li>
             </ul>
           </div>
-          
+
           {/* Contact Info - Compact */}
           <div>
             <h3 className="text-base font-semibold mb-3">Contact</h3>
@@ -83,21 +80,21 @@ export const Footer: React.FC = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Bottom Footer - More Compact */}
         <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center">
           <p className="text-xs text-silver mb-3 sm:mb-0">
-            {t('common.copyright')}
+            © 2024 ERMITS. All rights reserved.
           </p>
           <div className="flex space-x-4 text-xs">
             <Link to="/privacy" className="text-silver hover:text-white transition-colors">
-              {t('footer.legal.privacy')}
+              Privacy Policy
             </Link>
             <Link to="/terms" className="text-silver hover:text-white transition-colors">
-              {t('footer.legal.terms')}
+              Terms of Service
             </Link>
             <Link to="/cookies" className="text-silver hover:text-white transition-colors">
-              {t('footer.legal.cookies')}
+              Cookie Policy
             </Link>
           </div>
         </div>

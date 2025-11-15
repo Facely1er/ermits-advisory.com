@@ -1,10 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
-import { 
+import {
   Award, Target, Globe,
   Calendar, Briefcase, ArrowRight, Shield,
   GraduationCap, Scale, UserCheck, Brain, CheckCircle
@@ -12,7 +11,6 @@ import {
 import teamImage from '../assets/image.png';
 
 export const AboutPage: React.FC = () => {
-  const { t } = useLanguage();
   const navigate = useNavigate();
   
   // Animation variants
@@ -34,24 +32,24 @@ export const AboutPage: React.FC = () => {
   // Leadership credentials
   const leadershipCredentials = [
     {
-      category: t('about.leadership.technical.title'),
+      category: "Technical Certifications",
       icon: <Shield size={24} className="text-navy dark:text-silver" />,
       credentials: [
-        { name: "CISSP", description: t('about.leadership.technical.cissp') },
-        { name: "CISA", description: t('about.leadership.technical.cisa') },
-        { name: "PMP", description: t('about.leadership.technical.pmp') },
-        { name: "PMI-ACP", description: t('about.leadership.technical.pmiacp') },
-        { name: "ITIL", description: t('about.leadership.technical.itil') }
+        { name: "CISSP", description: "Certified Information Systems Security Professional - Advanced cybersecurity expertise" },
+        { name: "CISA", description: "Certified Information Systems Auditor - Risk assessment and compliance" },
+        { name: "PMP", description: "Project Management Professional - Strategic implementation leadership" },
+        { name: "PMI-ACP", description: "PMI Agile Certified Practitioner - Modern delivery methodologies" },
+        { name: "ITIL", description: "ITIL Foundation - Service management excellence" }
       ]
     },
     {
-      category: t('about.leadership.legal.title'),
+      category: "Legal Credentials",
       icon: <Scale size={24} className="text-navy dark:text-silver" />,
       credentials: [
-        { name: "J.D.", description: t('about.leadership.legal.jd') },
-        { name: t('about.leadership.legal.privacy.name'), description: t('about.leadership.legal.privacy.description') },
-        { name: "GDPR/CCPA", description: t('about.leadership.legal.gdpr') },
-        { name: t('about.leadership.legal.ma.name'), description: t('about.leadership.legal.ma.description') }
+        { name: "J.D.", description: "Juris Doctor - Legal expertise in cybersecurity law and compliance" },
+        { name: "Privacy Law Specialist", description: "Expert in GDPR, CCPA, and international privacy regulations" },
+        { name: "GDPR/CCPA", description: "Data protection and privacy compliance expertise" },
+        { name: "M&A Legal Advisory", description: "Specialized legal counsel for technology transactions" }
       ]
     }
   ];
@@ -60,23 +58,23 @@ export const AboutPage: React.FC = () => {
   const companyValues = [
     {
       icon: <UserCheck size={24} className="text-navy dark:text-silver" />,
-      title: t('about.values.excellence.title'),
-      description: t('about.values.excellence.description')
+      title: "Excellence",
+      description: "Delivering exceptional results through technical mastery and strategic insight"
     },
     {
       icon: <Brain size={24} className="text-navy dark:text-silver" />,
-      title: t('about.values.intelligence.title'),
-      description: t('about.values.intelligence.description')
+      title: "Intelligence",
+      description: "Leveraging global threat intelligence to inform strategic decision-making"
     },
     {
       icon: <Scale size={24} className="text-navy dark:text-silver" />,
-      title: t('about.values.legal.title'),
-      description: t('about.values.legal.description')
+      title: "Legal Precision",
+      description: "Ensuring compliance and risk mitigation through legal expertise"
     },
     {
       icon: <Target size={24} className="text-navy dark:text-silver" />,
-      title: t('about.values.strategic.title'),
-      description: t('about.values.strategic.description')
+      title: "Strategic Focus",
+      description: "Connecting cybersecurity initiatives to business objectives and outcomes"
     }
   ];
 
@@ -85,37 +83,37 @@ export const AboutPage: React.FC = () => {
     {
       icon: <Award size={24} className="text-navy dark:text-silver" />,
       value: "5+",
-      label: t('about.stats.certifications.label'),
-      description: t('about.stats.certifications.description')
+      label: "Professional Certifications",
+      description: "Professional credentials"
     },
     {
       icon: <Globe size={24} className="text-navy dark:text-silver" />,
       value: "100+",
-      label: t('about.stats.assessments.label'),
-      description: t('about.stats.assessments.description')
+      label: "Risk Assessments Completed",
+      description: "Strategic evaluations delivered"
     },
     {
       icon: <Briefcase size={24} className="text-navy dark:text-silver" />,
       value: "Improved",
-      label: t('about.stats.confidence.label'),
-      description: t('about.stats.confidence.description')
+      label: "Board Confidence Improvement",
+      description: "Enhanced decision-making capability"
     },
     {
       icon: <CheckCircle size={24} className="text-navy dark:text-silver" />,
       value: "Significant",
-      label: t('about.stats.reduction.label'),
-      description: t('about.stats.reduction.description')
+      label: "Average Risk Reduction",
+      description: "Measurable security improvement"
     }
   ];
 
   // STEEL methodology dimensions
   const steelDimensions = [
-    { letter: "S", word: t('steel.dimensions.social.title'), color: "bg-blue-500" },
-    { letter: "T", word: t('steel.dimensions.technology.title'), color: "bg-green-500" },
-    { letter: "E", word: t('steel.dimensions.economic.title'), color: "bg-yellow-500" },
-    { letter: "E", word: t('steel.dimensions.environmental.title'), color: "bg-purple-500" },
-    { letter: "L", word: t('steel.dimensions.legal.title'), color: "bg-red-500" },
-    { letter: "L", word: t('steel.dimensions.political.title'), color: "bg-indigo-500" }
+    { letter: "S", word: "Social", color: "bg-blue-500" },
+    { letter: "T", word: "Technology", color: "bg-green-500" },
+    { letter: "E", word: "Economic", color: "bg-yellow-500" },
+    { letter: "E", word: "Environmental", color: "bg-purple-500" },
+    { letter: "L", word: "Legal", color: "bg-red-500" },
+    { letter: "L", word: "Political", color: "bg-indigo-500" }
   ];
 
   return (
@@ -130,30 +128,30 @@ export const AboutPage: React.FC = () => {
           <div className="mb-6">
             <span className="inline-flex items-center px-4 py-2 rounded-full bg-navy/10 dark:bg-silver/10 text-navy dark:text-silver text-sm font-medium mb-4">
               <Award size={16} className="mr-2" />
-              {t('about.hero.badge')}
+              Industry Leadership
             </span>
           </div>
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 dark:text-white">{t('about.hero.title')}</h1>
+          <h1 className="text-3xl md:text-5xl font-bold mb-4 dark:text-white">Global Cybersecurity Leadership</h1>
           <p className="text-xl text-gray-600 dark:text-gray-100 max-w-4xl mx-auto mb-8">
-            {t('about.hero.subtitle')}
+            Combining deep technical expertise with legal acumen to deliver unparalleled strategic cybersecurity advisory services worldwide.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button 
-              variant="primary" 
+            <Button
+              variant="primary"
               size="lg"
               icon={<Calendar size={18} />}
               onClick={() => navigate('/contact')}
             >
-              {t('about.hero.cta.schedule')}
+              Schedule Consultation
             </Button>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               size="lg"
               icon={<ArrowRight size={18} />}
               iconPosition="right"
               onClick={() => navigate('/services')}
             >
-              {t('about.hero.cta.explore')}
+              Explore Services
             </Button>
           </div>
         </motion.div>
@@ -166,9 +164,9 @@ export const AboutPage: React.FC = () => {
           className="mb-16"
         >
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4 dark:text-white">{t('about.leadership.title')}</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 dark:text-white">Leadership Excellence</h2>
             <p className="text-lg text-gray-600 dark:text-gray-200 max-w-3xl mx-auto">
-              {t('about.leadership.subtitle')}
+              Our founding leadership brings together decades of cybersecurity expertise, legal knowledge, and strategic advisory experience.
             </p>
           </div>
           
@@ -226,47 +224,47 @@ export const AboutPage: React.FC = () => {
           <Card variant="glass" padding="lg">
             <div className="flex flex-col md:flex-row gap-8 items-center">
               <div className="md:w-1/2">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 dark:text-white">{t('about.story.title')}</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 dark:text-white">Our Story</h2>
                 <p className="text-gray-600 dark:text-gray-200 mb-4">
-                  {t('about.story.paragraph1')}
+                  ERMITS Advisory was founded on the principle that cybersecurity strategy requires both technical depth and legal sophistication. Traditional cybersecurity consulting often lacks the legal perspective necessary for comprehensive risk management.
                 </p>
                 <p className="text-gray-600 dark:text-gray-200 mb-4">
-                  {t('about.story.paragraph2')}
+                  Our unique combination of advanced cybersecurity certifications and legal expertise positions us to address the complex intersection of technology, law, and business strategy.
                 </p>
                 <p className="text-gray-600 dark:text-gray-200 mb-6">
-                  {t('about.story.paragraph3')}
+                  The STEEL™ framework represents our commitment to innovation, extending traditional PESTEL analysis with cybersecurity-specific factors to provide comprehensive strategic visibility.
                 </p>
-                
+
                 {/* Enhanced metrics */}
                 <div className="bg-navy/5 dark:bg-silver/5 rounded-lg p-4">
-                  <h4 className="font-semibold text-navy dark:text-white mb-3">{t('about.story.value.title')}</h4>
+                  <h4 className="font-semibold text-navy dark:text-white mb-3">Value We Deliver:</h4>
                   <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
                     <li className="flex items-center">
                       <CheckCircle size={16} className="text-navy dark:text-silver mr-2" />
-                      {t('about.story.value.point1')}
+                      Technical expertise backed by legal knowledge
                     </li>
                     <li className="flex items-center">
                       <CheckCircle size={16} className="text-navy dark:text-silver mr-2" />
-                      {t('about.story.value.point2')}
+                      Strategic insights that connect security to business objectives
                     </li>
                     <li className="flex items-center">
                       <CheckCircle size={16} className="text-navy dark:text-silver mr-2" />
-                      {t('about.story.value.point3')}
+                      Global perspective with local implementation capability
                     </li>
                   </ul>
                 </div>
               </div>
               <div className="md:w-1/2">
                 <div className="rounded-lg overflow-hidden h-80 relative">
-                  <img 
-                    src={teamImage} 
-                    alt="ERMITS Advisory leadership team" 
+                  <img
+                    src={teamImage}
+                    alt="ERMITS Advisory leadership team"
                     className="object-cover w-full h-full"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent flex items-end">
                     <div className="p-6 text-white">
-                      <h3 className="text-lg font-bold mb-2">{t('about.story.imageCaption.title')}</h3>
-                      <p className="text-sm opacity-90">{t('about.story.imageCaption.subtitle')}</p>
+                      <h3 className="text-lg font-bold mb-2">Strategic Advisory Excellence</h3>
+                      <p className="text-sm opacity-90">Where cybersecurity meets legal expertise</p>
                     </div>
                   </div>
                 </div>
@@ -283,7 +281,7 @@ export const AboutPage: React.FC = () => {
           viewport={{ once: true, amount: 0.2 }}
           className="mb-16"
         >
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center dark:text-white">{t('about.values.title')}</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center dark:text-white">Our Core Values</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {companyValues.map((value, index) => (
               <motion.div key={index} variants={item}>
@@ -308,9 +306,9 @@ export const AboutPage: React.FC = () => {
         >
           <Card variant="solid" padding="lg" className="bg-navy text-white">
             <div className="text-center mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">{t('about.steel.title')}</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">The STEEL™ Innovation</h2>
               <p className="text-silver max-w-3xl mx-auto mb-8">
-                {t('about.steel.subtitle')}
+                Our proprietary methodology revolutionizes strategic risk assessment by integrating cybersecurity intelligence into environmental analysis
               </p>
             </div>
             
@@ -337,64 +335,64 @@ export const AboutPage: React.FC = () => {
           <Card variant="glass" padding="lg">
             <div className="flex flex-col md:flex-row gap-8 items-center">
               <div className="md:w-1/2">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 dark:text-white">{t('about.global.title')}</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 dark:text-white">Global Reach, Local Expertise</h2>
                 <p className="text-gray-600 dark:text-gray-200 mb-6">
-                  {t('about.global.description')}
+                  While headquartered in the United States, our advisory services extend worldwide, providing strategic cybersecurity guidance to organizations across diverse markets and regulatory environments.
                 </p>
-                
+
                 <div className="space-y-4 mb-6">
                   <div className="flex items-start">
                     <div className="p-2 rounded-full bg-navy/10 dark:bg-silver/10 mr-3 mt-1">
                       <Shield size={16} className="text-navy dark:text-silver" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800 dark:text-white">{t('about.global.features.intelligence.title')}</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">{t('about.global.features.intelligence.description')}</p>
+                      <h4 className="font-semibold text-gray-800 dark:text-white">Global Threat Intelligence</h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">Comprehensive threat landscape monitoring across all major regions</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start">
                     <div className="p-2 rounded-full bg-navy/10 dark:bg-silver/10 mr-3 mt-1">
                       <Scale size={16} className="text-navy dark:text-silver" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800 dark:text-white">{t('about.global.features.legal.title')}</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">{t('about.global.features.legal.description')}</p>
+                      <h4 className="font-semibold text-gray-800 dark:text-white">International Legal Framework</h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">Expertise in global cybersecurity regulations and compliance requirements</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start">
                     <div className="p-2 rounded-full bg-navy/10 dark:bg-silver/10 mr-3 mt-1">
                       <Target size={16} className="text-navy dark:text-silver" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800 dark:text-white">{t('about.global.features.strategic.title')}</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">{t('about.global.features.strategic.description')}</p>
+                      <h4 className="font-semibold text-gray-800 dark:text-white">Strategic Implementation</h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">Methodologies adapted to local business and cultural contexts</p>
                     </div>
                   </div>
                 </div>
-                
+
                 <Button
                   variant="outline"
                   icon={<ArrowRight size={16} />}
                   iconPosition="right"
                   onClick={() => navigate('/contact')}
                 >
-                  {t('about.global.cta')}
+                  Explore Global Services
                 </Button>
               </div>
               <div className="md:w-1/2">
                 <div className="rounded-lg overflow-hidden h-80 relative">
-                  <img 
+                  <img
                     src="https://images.pexels.com/photos/335393/pexels-photo-335393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                    alt="Executive cybersecurity advisory" 
+                    alt="Executive cybersecurity advisory"
                     className="object-cover w-full h-full"
                   />
                   <div className="absolute inset-0 bg-navy/40 flex items-center justify-center">
                     <div className="text-center text-white">
                       <GraduationCap size={48} className="mx-auto mb-3 opacity-80" />
-                      <h3 className="text-xl font-bold mb-2">{t('about.global.imageCaption.title')}</h3>
-                      <p className="text-sm opacity-90">{t('about.global.imageCaption.subtitle')}</p>
+                      <h3 className="text-xl font-bold mb-2">Worldwide Advisory Excellence</h3>
+                      <p className="text-sm opacity-90">Strategic cybersecurity guidance across global markets</p>
                     </div>
                   </div>
                 </div>
@@ -411,28 +409,28 @@ export const AboutPage: React.FC = () => {
         >
           <Card variant="solid" padding="lg" className="bg-gradient-to-r from-navy to-navy-dark text-white">
             <div className="text-center">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">{t('about.cta.title')}</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">Partner with Industry Leaders</h2>
               <p className="text-silver max-w-3xl mx-auto mb-8">
-                {t('about.cta.description')}
+                Join organizations worldwide who trust ERMITS Advisory for strategic cybersecurity guidance that connects technical excellence with legal precision.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button 
-                  variant="secondary" 
+                <Button
+                  variant="secondary"
                   size="lg"
                   icon={<Calendar size={18} />}
                   onClick={() => navigate('/contact')}
                 >
-                  {t('about.cta.schedule')}
+                  Schedule Strategic Consultation
                 </Button>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="lg"
                   className="border-white text-white hover:bg-white/10"
                   icon={<Shield size={18} />}
                   iconPosition="right"
                   onClick={() => navigate('/services')}
                 >
-                  {t('about.cta.explore')}
+                  Explore Our Services
                 </Button>
               </div>
             </div>

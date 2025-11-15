@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './contexts/ThemeContext';
-import { LanguageProvider } from './contexts/LanguageContext';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { ScrollProgressBar } from './components/shared/ProgressBar';
@@ -42,11 +41,10 @@ function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider>
-        <LanguageProvider>
-          <Router>
-            <div className="min-h-screen flex flex-col">
-              <ScrollProgressBar />
-              <Navigation />
+        <Router>
+          <div className="min-h-screen flex flex-col">
+            <ScrollProgressBar />
+            <Navigation />
             
             <main className="flex-grow pt-16">
               <Suspense fallback={<LoadingSpinner />}>
@@ -77,8 +75,7 @@ function App() {
             <Analytics />
           </div>
         </Router>
-      </LanguageProvider>
-    </ThemeProvider>
+      </ThemeProvider>
     </ErrorBoundary>
   );
 }

@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { ArrowRight, CheckCircle, Lock, FileText, BarChart2, Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const SteelPremium: React.FC = () => {
-  const { t } = useLanguage();
   const [showPaywall, setShowPaywall] = useState(false);
 
   const premiumFeatures = [

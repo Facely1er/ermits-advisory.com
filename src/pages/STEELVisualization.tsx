@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { InteractiveCard } from '../components/shared/InteractiveCard';
@@ -14,7 +13,6 @@ import {
 // import { steelDimensions } from '../data/mockData';
 
 export const STEELVisualization: React.FC = () => {
-  const { t } = useLanguage();
   const navigate = useNavigate();
   // const [selectedDimension, setSelectedDimension] = useState<string | null>(null);
   
@@ -43,12 +41,12 @@ export const STEELVisualization: React.FC = () => {
 
   // Integration steps for animation
   const integrationSteps = [
-    { id: 'assessment', label: t('steel.integration.step1') },
-    { id: 'analysis', label: t('steel.integration.step2') },
-    { id: 'strategy', label: t('steel.integration.step3') },
-    { id: 'implementation', label: t('steel.integration.step4') },
-    { id: 'monitoring', label: t('steel.integration.step5') },
-    { id: 'optimization', label: t('steel.integration.step6') }
+    { id: 'assessment', label: "Assessment" },
+    { id: 'analysis', label: "Analysis" },
+    { id: 'strategy', label: "Strategy" },
+    { id: 'implementation', label: "Implementation" },
+    { id: 'monitoring', label: "Monitoring" },
+    { id: 'optimization', label: "Optimization" }
   ];
 
   // What Makes STEEL Different items
@@ -56,30 +54,30 @@ export const STEELVisualization: React.FC = () => {
     {
       id: 'predictiveIntelligence',
       icon: <Lightbulb size={24} className="text-navy dark:text-silver" />,
-      title: t('steelPage.whatMakesDifferent.predictiveIntelligence.title'),
-      description: t('steelPage.whatMakesDifferent.predictiveIntelligence.description'),
-      link: t('steelPage.whatMakesDifferent.predictiveIntelligence.link')
+      title: "Predictive Intelligence Integration",
+      description: "Real-time threat intelligence feeds directly into environmental analysis",
+      link: "Learn about our intelligence sources"
     },
     {
       id: 'enhancedPestel',
       icon: <BarChart2 size={24} className="text-navy dark:text-silver" />,
-      title: t('steelPage.whatMakesDifferent.enhancedPestel.title'),
-      description: t('steelPage.whatMakesDifferent.enhancedPestel.description'),
-      link: t('steelPage.whatMakesDifferent.enhancedPestel.link')
+      title: "Enhanced PESTEL Framework",
+      description: "Traditional PESTEL analysis enhanced with cybersecurity-specific factors",
+      link: "Compare with traditional PESTEL"
     },
     {
       id: 'expertPartnership',
       icon: <Users size={24} className="text-navy dark:text-silver" />,
-      title: t('steelPage.whatMakesDifferent.expertPartnership.title'),
-      description: t('steelPage.whatMakesDifferent.expertPartnership.description'),
-      link: t('steelPage.whatMakesDifferent.expertPartnership.link')
+      title: "Expert Partnership Model",
+      description: "Legal and cybersecurity experts working together on every assessment",
+      link: "Meet our expert team"
     },
     {
       id: 'frameworkIntegration',
       icon: <FileText size={24} className="text-navy dark:text-silver" />,
-      title: t('steelPage.whatMakesDifferent.frameworkIntegration.title'),
-      description: t('steelPage.whatMakesDifferent.frameworkIntegration.description'),
-      link: t('steelPage.whatMakesDifferent.frameworkIntegration.link')
+      title: "Framework Integration",
+      description: "Seamless integration with existing risk management frameworks",
+      link: "View integration options"
     }
   ];
 
@@ -88,26 +86,26 @@ export const STEELVisualization: React.FC = () => {
     {
       id: 'strategicDiscovery',
       icon: <Search size={24} className="text-navy dark:text-silver" />,
-      title: t('steelPage.advisoryProcess.strategicDiscovery.title'),
-      description: t('steelPage.advisoryProcess.strategicDiscovery.description')
+      title: "Strategic Discovery",
+      description: "Understanding your business context, objectives, and current risk posture"
     },
     {
       id: 'modeling',
       icon: <Activity size={24} className="text-navy dark:text-silver" />,
-      title: t('steelPage.advisoryProcess.modeling.title'),
-      description: t('steelPage.advisoryProcess.modeling.description')
+      title: "STEEL™ Modeling",
+      description: "Applying the STEEL™ framework to identify and assess strategic risks"
     },
     {
       id: 'synthesis',
       icon: <Lightbulb size={24} className="text-navy dark:text-silver" />,
-      title: t('steelPage.advisoryProcess.synthesis.title'),
-      description: t('steelPage.advisoryProcess.synthesis.description')
+      title: "Strategic Synthesis",
+      description: "Integrating findings into actionable strategic recommendations"
     },
     {
       id: 'briefing',
       icon: <Presentation size={24} className="text-navy dark:text-silver" />,
-      title: t('steelPage.advisoryProcess.briefing.title'),
-      description: t('steelPage.advisoryProcess.briefing.description')
+      title: "Executive Briefing",
+      description: "Presenting insights and recommendations to executive leadership"
     }
   ];
 
@@ -122,12 +120,12 @@ export const STEELVisualization: React.FC = () => {
         >
           <Card variant="solid" padding="lg" className="bg-navy text-white">
             <div className="text-center max-w-4xl mx-auto">
-              <h1 className="text-3xl md:text-5xl font-bold mb-4">{t('steelPage.hero.title')}</h1>
+              <h1 className="text-3xl md:text-5xl font-bold mb-4">STEEL™ Strategic Risk Assessment</h1>
               <p className="text-xl md:text-2xl mb-4 text-silver">
-                {t('steelPage.hero.subtitle1')}
+                Beyond Traditional PESTEL Analysis
               </p>
               <p className="text-lg mb-8 text-silver">
-                {t('steelPage.hero.subtitle2')}
+                A cybersecurity-focused strategic environment assessment framework
               </p>
               
               <div className="flex flex-wrap justify-center gap-4">
@@ -147,7 +145,7 @@ export const STEELVisualization: React.FC = () => {
                   className="border-white text-white hover:bg-white/10 transform hover:scale-105 transition-transform"
                   onClick={() => navigate('/contact')}
                 >
-                  {t('steelPage.hero.scheduleConsultation')}
+                  Schedule Consultation
                 </Button>
                 <Button
                   variant="outline"
@@ -155,7 +153,7 @@ export const STEELVisualization: React.FC = () => {
                   className="border-white text-white hover:bg-white/10 transform hover:scale-105 transition-transform"
                   onClick={() => navigate('/contact')}
                 >
-                  {t('steelPage.hero.requestDemo')}
+                  Request Demo
                 </Button>
                 <Button
                   variant="outline"
@@ -165,7 +163,7 @@ export const STEELVisualization: React.FC = () => {
                   iconPosition="left"
                   onClick={() => navigate('/steel/implementation-guide')}
                 >
-                  {t('steelPage.hero.downloadMethodology')}
+                  Download Methodology
                 </Button>
               </div>
             </div>
@@ -180,9 +178,9 @@ export const STEELVisualization: React.FC = () => {
           className="mb-16"
         >
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">{t('steelPage.whatMakesDifferent.title')}</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">What Makes STEEL™ Different</h2>
             <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              {t('steelPage.whatMakesDifferent.subtitle')}
+              Four key innovations that set STEEL™ apart from traditional risk assessment frameworks
             </p>
           </div>
           
@@ -226,9 +224,9 @@ export const STEELVisualization: React.FC = () => {
           className="mb-16"
         >
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">{t('steelPage.advisoryProcess.title')}</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">Our Advisory Process</h2>
             <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              {t('steelPage.advisoryProcess.subtitle')}
+              A systematic approach to strategic cybersecurity assessment and planning
             </p>
           </div>
           
@@ -267,9 +265,9 @@ export const STEELVisualization: React.FC = () => {
               className="bg-white dark:bg-dark-surface p-8"
             >
               <div className="text-center mb-8">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">{t('steel.title')}</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">STEEL™ Risk Assessment Framework</h2>
                 <p className="text-lg text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-                  {t('steel.overview')}
+                  An innovative approach to cybersecurity risk assessment that extends traditional PESTEL analysis with cybersecurity-specific factors
                 </p>
               </div>
               
@@ -307,9 +305,9 @@ export const STEELVisualization: React.FC = () => {
             glowEffect={true}
             className="bg-white dark:bg-dark-surface p-8"
           >
-            <h2 className="text-2xl font-bold mb-6 dark:text-white">{t('steel.integration.title')}</h2>
+            <h2 className="text-2xl font-bold mb-6 dark:text-white">STEEL™ Integration Process</h2>
             <p className="text-gray-600 dark:text-gray-100 mb-8">
-              {t('steel.integration.description')}
+              Our methodology for implementing STEEL™ within your organization
             </p>
             
             <div className="flex flex-wrap justify-center">
@@ -360,7 +358,7 @@ export const STEELVisualization: React.FC = () => {
                   className="px-6 py-3 shadow-lg transform transition-transform"
                   onClick={() => navigate('/steel/implementation-guide')}
                 >
-                  {t('steel.integration.downloadGuide')}
+                  Download Implementation Guide
                 </Button>
               </motion.div>
             </div>
@@ -382,9 +380,9 @@ export const STEELVisualization: React.FC = () => {
                 <Info size={24} />
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-2">{t('steel.cta.title')}</h3>
+                <h3 className="text-xl font-bold mb-2">Transform Your Risk Assessment Approach</h3>
                 <p className="mb-4">
-                  {t('steel.cta.description')}
+                  Discover how STEEL™ can revolutionize your organization's cybersecurity strategy
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Button
@@ -403,14 +401,14 @@ export const STEELVisualization: React.FC = () => {
                     iconPosition="right"
                     onClick={() => navigate('/contact')}
                   >
-                    {t('steel.cta.scheduleConsultation')}
+                    Schedule Consultation
                   </Button>
                   <Button
                     variant="outline"
                     className="border-white text-white hover:bg-white/10 transform hover:scale-105 transition-transform"
                     onClick={() => navigate('/contact')}
                   >
-                    {t('steel.cta.requestCaseStudy')}
+                    Request Case Study
                   </Button>
                 </div>
               </div>

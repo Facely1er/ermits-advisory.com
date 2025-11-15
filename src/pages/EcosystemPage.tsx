@@ -1,11 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { InteractiveCard } from '../components/shared/InteractiveCard';
-import { 
+import {
   Shield, BarChart2, Eye, Presentation, Users, ArrowRight,
   Zap, Target, Layers, CheckCircle
 } from 'lucide-react';
@@ -14,47 +13,46 @@ import {
 // import ecosystemLogo from '../assets/ermits-ecosystem.png';
 
 export const EcosystemPage: React.FC = () => {
-  const { t } = useLanguage();
   const navigate = useNavigate();
 
   const ecosystemComponents = [
     {
       id: 'steel',
       icon: <Shield size={32} className="text-navy dark:text-silver" />,
-      title: t('ecosystem.components.steel.title'),
-      description: t('ecosystem.components.steel.description'),
+      title: 'STEEL Assessment',
+      description: 'Strategic risk assessment framework for comprehensive threat analysis',
       link: '/steel',
       color: 'from-blue-500 to-blue-600'
     },
     {
       id: 'riskRadar',
       icon: <Eye size={32} className="text-navy dark:text-silver" />,
-      title: t('ecosystem.components.riskRadar.title'),
-      description: t('ecosystem.components.riskRadar.description'),
+      title: 'Risk Radar',
+      description: 'Real-time threat monitoring and intelligence dashboard',
       link: '/risk-radar',
       color: 'from-green-500 to-green-600'
     },
     {
       id: 'dashboard',
       icon: <BarChart2 size={32} className="text-navy dark:text-silver" />,
-      title: t('ecosystem.components.dashboard.title'),
-      description: t('ecosystem.components.dashboard.description'),
+      title: 'Executive Dashboard',
+      description: 'Comprehensive analytics and reporting platform',
       link: '/dashboard',
       color: 'from-purple-500 to-purple-600'
     },
     {
       id: 'presentations',
       icon: <Presentation size={32} className="text-navy dark:text-silver" />,
-      title: t('ecosystem.components.presentations.title'),
-      description: t('ecosystem.components.presentations.description'),
+      title: 'Board Presentations',
+      description: 'Executive-ready security briefings and reports',
       link: '/presentation',
       color: 'from-orange-500 to-orange-600'
     },
     {
       id: 'advisory',
       icon: <Users size={32} className="text-navy dark:text-silver" />,
-      title: t('ecosystem.components.advisory.title'),
-      description: t('ecosystem.components.advisory.description'),
+      title: 'Advisory Services',
+      description: 'Expert guidance and strategic security consulting',
       link: '/services',
       color: 'from-teal-500 to-teal-600'
     }
@@ -63,23 +61,23 @@ export const EcosystemPage: React.FC = () => {
   const ecosystemBenefits = [
     {
       icon: <Layers size={24} className="text-navy dark:text-silver" />,
-      title: t('ecosystem.benefits.integrated.title'),
-      description: t('ecosystem.benefits.integrated.description')
+      title: 'Integrated Platform',
+      description: 'All tools work seamlessly together for maximum efficiency'
     },
     {
       icon: <Target size={24} className="text-navy dark:text-silver" />,
-      title: t('ecosystem.benefits.comprehensive.title'),
-      description: t('ecosystem.benefits.comprehensive.description')
+      title: 'Comprehensive Coverage',
+      description: 'Address all aspects of enterprise risk management'
     },
     {
       icon: <Zap size={24} className="text-navy dark:text-silver" />,
-      title: t('ecosystem.benefits.efficient.title'),
-      description: t('ecosystem.benefits.efficient.description')
+      title: 'Efficient Workflow',
+      description: 'Streamlined processes that save time and resources'
     },
     {
       icon: <CheckCircle size={24} className="text-navy dark:text-silver" />,
-      title: t('ecosystem.benefits.proven.title'),
-      description: t('ecosystem.benefits.proven.description')
+      title: 'Proven Results',
+      description: 'Trusted by leading organizations worldwide'
     }
   ];
 
@@ -104,13 +102,13 @@ export const EcosystemPage: React.FC = () => {
               </div>
               
               <h1 className="text-3xl md:text-5xl font-bold mb-4">
-                {t('ecosystem.hero.title')}
+                ERMITS Ecosystem
               </h1>
               <p className="text-xl md:text-2xl mb-4 text-silver">
-                {t('ecosystem.hero.subtitle')}
+                Comprehensive Risk Management Solutions
               </p>
               <p className="text-lg mb-8 text-silver">
-                {t('ecosystem.hero.description')}
+                An integrated suite of tools and services designed to protect your organization from strategic threats
               </p>
               
               <div className="flex flex-wrap justify-center gap-4">
@@ -122,7 +120,7 @@ export const EcosystemPage: React.FC = () => {
                   onClick={() => navigate('/contact')}
                   className="transform hover:scale-105 transition-transform"
                 >
-                  {t('ecosystem.hero.cta')}
+                  Get Started
                 </Button>
               </div>
             </div>
@@ -138,10 +136,10 @@ export const EcosystemPage: React.FC = () => {
         >
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              {t('ecosystem.components.title')}
+              Ecosystem Components
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              {t('ecosystem.components.subtitle')}
+              Powerful tools working together to strengthen your security posture
             </p>
           </div>
           
@@ -171,7 +169,7 @@ export const EcosystemPage: React.FC = () => {
                         {component.description}
                       </p>
                       <button className="text-navy dark:text-silver font-medium hover:underline text-sm flex items-center transition-colors">
-                        {t('common.learnMore')}
+                        Learn More
                         <ArrowRight size={14} className="ml-1" />
                       </button>
                     </div>
@@ -191,10 +189,10 @@ export const EcosystemPage: React.FC = () => {
         >
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              {t('ecosystem.benefits.title')}
+              Why Choose Our Ecosystem
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              {t('ecosystem.benefits.subtitle')}
+              Experience the power of an integrated risk management platform
             </p>
           </div>
           
@@ -238,10 +236,10 @@ export const EcosystemPage: React.FC = () => {
           >
             <div className="text-center mb-8">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-                {t('ecosystem.integration.title')}
+                How Components Work Together
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-                {t('ecosystem.integration.description')}
+                Our integrated approach ensures maximum effectiveness and efficiency
               </p>
             </div>
             
@@ -249,35 +247,81 @@ export const EcosystemPage: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold dark:text-white mb-4">
-                    {t('ecosystem.integration.workflow.title')}
+                    Implementation Workflow
                   </h3>
                   <div className="space-y-3">
-                    {[1, 2, 3, 4, 5].map((step) => (
-                      <div key={step} className="flex items-start">
-                        <div className="w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center mr-3 flex-shrink-0 font-bold">
-                          {step}
-                        </div>
-                        <p className="text-gray-600 dark:text-gray-200 pt-1">
-                          {t(`ecosystem.integration.workflow.step${step}`)}
-                        </p>
+                    <div className="flex items-start">
+                      <div className="w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center mr-3 flex-shrink-0 font-bold">
+                        1
                       </div>
-                    ))}
+                      <p className="text-gray-600 dark:text-gray-200 pt-1">
+                        Conduct comprehensive STEEL assessment
+                      </p>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center mr-3 flex-shrink-0 font-bold">
+                        2
+                      </div>
+                      <p className="text-gray-600 dark:text-gray-200 pt-1">
+                        Monitor threats with Risk Radar
+                      </p>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center mr-3 flex-shrink-0 font-bold">
+                        3
+                      </div>
+                      <p className="text-gray-600 dark:text-gray-200 pt-1">
+                        Track metrics on Executive Dashboard
+                      </p>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center mr-3 flex-shrink-0 font-bold">
+                        4
+                      </div>
+                      <p className="text-gray-600 dark:text-gray-200 pt-1">
+                        Present findings to leadership
+                      </p>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center mr-3 flex-shrink-0 font-bold">
+                        5
+                      </div>
+                      <p className="text-gray-600 dark:text-gray-200 pt-1">
+                        Receive ongoing advisory support
+                      </p>
+                    </div>
                   </div>
                 </div>
                 
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold dark:text-white mb-4">
-                    {t('ecosystem.integration.value.title')}
+                    Value Delivered
                   </h3>
                   <ul className="space-y-3">
-                    {[1, 2, 3, 4].map((item) => (
-                      <li key={item} className="flex items-start">
-                        <CheckCircle size={20} className="text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                        <p className="text-gray-600 dark:text-gray-200">
-                          {t(`ecosystem.integration.value.item${item}`)}
-                        </p>
-                      </li>
-                    ))}
+                    <li className="flex items-start">
+                      <CheckCircle size={20} className="text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <p className="text-gray-600 dark:text-gray-200">
+                        Unified view of organizational risk
+                      </p>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle size={20} className="text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <p className="text-gray-600 dark:text-gray-200">
+                        Data-driven decision making
+                      </p>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle size={20} className="text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <p className="text-gray-600 dark:text-gray-200">
+                        Improved stakeholder communication
+                      </p>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle size={20} className="text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <p className="text-gray-600 dark:text-gray-200">
+                        Continuous risk monitoring and adaptation
+                      </p>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -297,27 +341,27 @@ export const EcosystemPage: React.FC = () => {
           >
             <div className="text-center">
               <h3 className="text-2xl font-bold mb-4">
-                {t('ecosystem.cta.title')}
+                Ready to Transform Your Risk Management?
               </h3>
               <p className="text-lg mb-6 text-silver max-w-2xl mx-auto">
-                {t('ecosystem.cta.description')}
+                Let us show you how the ERMITS ecosystem can strengthen your security posture
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button 
-                  variant="secondary" 
+                <Button
+                  variant="secondary"
                   icon={<ArrowRight size={16} />}
                   iconPosition="right"
                   onClick={() => navigate('/contact')}
                   className="transform hover:scale-105 transition-transform"
                 >
-                  {t('ecosystem.cta.scheduleConsultation')}
+                  Schedule a Consultation
                 </Button>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   className="border-white text-white hover:bg-white/10 transform hover:scale-105 transition-transform"
                   onClick={() => navigate('/steel')}
                 >
-                  {t('ecosystem.cta.exploreSteel')}
+                  Explore STEEL Framework
                 </Button>
               </div>
             </div>
