@@ -12,6 +12,8 @@ import {
 export const ServiceOffering: React.FC = () => {
   const navigate = useNavigate();
   
+  // Find hero section start
+  
   // Enhanced Advisory Process based on STEEL methodology
   const advisoryProcessItems = [
     {
@@ -109,27 +111,48 @@ export const ServiceOffering: React.FC = () => {
   };
 
   return (
-    <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
-      <div className="container mx-auto px-4">
-        {/* Page Header */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="pt-16 mb-16 text-center"
-        >
-          <h1 className="text-3xl md:text-5xl font-bold mb-8 dark:text-white">{t('services.title')}</h1>
-          <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-            {t('services.subtitle')}
-          </p>
-        </motion.div>
+    <div className="min-h-screen bg-silver-light dark:bg-dark-bg">
+      {/* Enhanced Hero Section */}
+      <section className="relative bg-gradient-to-br from-navy via-navy-dark to-navy text-white pt-16 pb-10 md:pt-20 md:pb-14 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-navy-dark/90 to-navy/95"></div>
+        <div className="absolute inset-0 opacity-10 bg-[url('https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-center bg-cover"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="mb-6"
+            >
+              <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium text-silver">
+                <Shield size={16} className="mr-2" />
+                Professional Advisory Services
+              </span>
+            </motion.div>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-white via-silver to-white bg-clip-text text-transparent">
+                {t('services.title')}
+              </span>
+            </h1>
+            <p className="text-lg sm:text-xl md:text-2xl text-silver/90 max-w-3xl mx-auto leading-relaxed">
+              {t('services.subtitle')}
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Key metrics */}
         <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 md:mb-20 -mt-8"
         >
           <motion.div variants={item}>
             <Card variant="glass" className="text-center h-full">
@@ -260,7 +283,7 @@ export const ServiceOffering: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service) => {
-              const serviceData = getNestedTranslation(`services.${service.id}`);
+              const serviceData = getNestedTranslation(`services.${service.id}`) as Record<string, unknown>;
               
               return (
                 <Card key={service.id} variant="glass" padding="lg" className="h-full">
@@ -270,18 +293,18 @@ export const ServiceOffering: React.FC = () => {
                     </div>
                     <div className="flex-1">
                       <h3 className="text-xl font-bold mb-2 dark:text-white card-title">
-                        {serviceData.title}
+                        {typeof serviceData === 'object' && serviceData !== null && 'title' in serviceData ? String(serviceData.title) : ''}
                       </h3>
                       <p className="text-gray-600 dark:text-gray-200 mb-4 card-text">
-                        {serviceData.description}
+                        {typeof serviceData === 'object' && serviceData !== null && 'description' in serviceData ? String(serviceData.description) : ''}
                       </p>
                       
                       <h4 className="text-lg font-semibold mb-2 dark:text-gray-100">{t('services.keyFeatures')}</h4>
                       <ul className="space-y-2 mb-6">
-                        {Array.isArray(serviceData.features) && serviceData.features.map((feature: string, index: number) => (
+                        {typeof serviceData === 'object' && serviceData !== null && 'features' in serviceData && Array.isArray(serviceData.features) && serviceData.features.map((feature: unknown, index: number) => (
                           <li key={index} className="flex items-start">
                             <CheckCircle size={16} className="text-navy dark:text-silver mt-1 mr-2 flex-shrink-0" />
-                            <span className="text-gray-600 dark:text-gray-200">{feature}</span>
+                            <span className="text-gray-600 dark:text-gray-200">{String(feature)}</span>
                           </li>
                         ))}
                       </ul>

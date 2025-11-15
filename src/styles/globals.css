@@ -221,3 +221,63 @@
   border: 2px solid #e2e8f0;
   box-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
+
+/* Risk dimension indicator */
+.risk-dimension-indicator {
+  background-color: var(--dimension-color, #4c72b0);
+}
+
+/* Hero section decorative grid pattern */
+.hero-grid-pattern {
+  background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), 
+                    linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.05;
+}
+
+/* Dimension color text */
+.dimension-color-text {
+  color: var(--dimension-color, #4c72b0);
+}
+
+/* Hexagon background with dimension color */
+.hexagon-dimension-bg {
+  background-color: var(--dimension-color, #4c72b0);
+  opacity: 0.1;
+}
+
+/* Dimension color via data attribute */
+[data-dimension-color] {
+  --dimension-color: attr(data-dimension-color);
+}
+
+/* Dynamic dimension hexagon background */
+.dimension-hexagon-bg {
+  background-color: var(--dimension-color, #4c72b0);
+}
+
+/* Dimension color text */
+.dimension-color-text {
+  color: var(--dimension-color, #4c72b0);
+}
+
+/* Dimension progress bar */
+.dimension-progress-bar {
+  background-color: var(--dimension-color, #4c72b0);
+}
+
+/* Dimension icon background */
+.dimension-icon-bg {
+  background-color: var(--dimension-color, #4c72b0);
+}
+
+/* Dimension bullet point */
+.dimension-bullet {
+  background-color: var(--dimension-color, #4c72b0);
+}
+
+/* Hexagon background with opacity */
+.hexagon-dimension-bg-opacity {
+  background-color: var(--dimension-color, #4c72b0);
+  opacity: 0.1;
+}

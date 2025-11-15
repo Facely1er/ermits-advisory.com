@@ -15,16 +15,28 @@ interface ThemeProviderProps {
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(() => {
-    // Check if a theme preference is stored in localStorage
-    const savedTheme = localStorage.getItem('theme') as Theme | null;
-    
-    if (savedTheme && ['light', 'dark', 'system'].includes(savedTheme)) {
-      return savedTheme;
+    // Safely check localStorage (may not be available in SSR or private browsing)
+    try {
+      const savedTheme = localStorage.getItem('theme') as Theme | null;
+      
+      if (savedTheme && ['light', 'dark', 'system'].includes(savedTheme)) {
+        return savedTheme;
+      }
+    } catch (error) {
+      // localStorage not available, continue with default detection
+      console.warn('localStorage not available:', error);
     }
     
-    // Check for system preference
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark';
+    // Check for system preference (only in browser)
+    if (typeof window !== 'undefined' && window.matchMedia) {
+      try {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+      } catch (error) {
+        // matchMedia not available
+        console.warn('matchMedia not available:', error);
+      }
     }
     
     return 'light';
@@ -46,8 +58,12 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
         root.classList.add(systemTheme);
       }
       
-      // Save to localStorage
-      localStorage.setItem('theme', newTheme);
+      // Save to localStorage (safely)
+      try {
+        localStorage.setItem('theme', newTheme);
+      } catch (error) {
+        console.warn('Failed to save theme to localStorage:', error);
+      }
     };
     
     updateTheme(theme);

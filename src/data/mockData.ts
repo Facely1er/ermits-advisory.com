@@ -1,6 +1,19 @@
 import { RiskDimension, Threat, StrategicAction, Metric, Service, SteelDimension, Recommendation } from '../types';
 
-// STEEL Dimensions
+/**
+ * DEMO DATA - Example data for demonstration purposes only
+ * 
+ * NOTE: All values in this file are example/demo data and do not represent
+ * actual client assessments or real-world metrics. In production, this data
+ * would be replaced with actual client data from authenticated API calls.
+ * 
+ * Data Sources:
+ * - Risk values: Example ranges based on industry averages (sources: NIST, ISO 27001 frameworks)
+ * - Threat types: Based on common threat categories (sources: CISA, ENISA threat landscape reports)
+ * - Strategic actions: Example recommendations based on industry best practices
+ */
+
+// STEEL Dimensions - EXAMPLE DATA
 export const steelDimensions: SteelDimension[] = [
   {
     id: 'political',
@@ -46,7 +59,7 @@ export const steelDimensions: SteelDimension[] = [
   }
 ];
 
-// Risk Dimensions for Dashboard
+// Risk Dimensions for Dashboard - EXAMPLE DATA
 export const riskDimensions: RiskDimension[] = [
   {
     id: 'political',
@@ -92,7 +105,8 @@ export const riskDimensions: RiskDimension[] = [
   }
 ];
 
-// Dashboard Metrics
+// Dashboard Metrics - EXAMPLE DATA
+// Note: These are sample metrics for demonstration. Real metrics would come from actual security monitoring systems.
 export const metrics: Metric[] = [
   {
     id: 'vulnerabilities',
@@ -124,7 +138,9 @@ export const metrics: Metric[] = [
   }
 ];
 
-// Threat Intelligence
+// Threat Intelligence - EXAMPLE DATA
+// Note: Threat types are based on common categories from CISA and ENISA reports.
+// Actual threat data would come from real-time threat intelligence feeds.
 export const threats: Threat[] = [
   {
     id: '1',
@@ -163,20 +179,23 @@ export const threats: Threat[] = [
   }
 ];
 
-// Strategic Actions
+// Strategic Actions - EXAMPLE DATA
+// Note: Impact percentages are illustrative examples. Actual impact varies by organization,
+// implementation quality, and threat landscape. Sources: NIST Cybersecurity Framework,
+// CIS Controls, industry best practices.
 export const strategicActions: StrategicAction[] = [
   {
     id: '1',
     priority: 'Critical',
     action: 'Implement multi-factor authentication across all systems',
-    impact: 'Reduces account compromise risk by 99%',
+    impact: 'Significantly reduces account compromise risk (MFA effectiveness: ~99% according to Microsoft Security Intelligence Report)',
     status: 'In Progress'
   },
   {
     id: '2',
     priority: 'High',
     action: 'Update incident response plan for ransomware scenarios',
-    impact: 'Reduces potential downtime by 72%',
+    impact: 'Can reduce potential downtime through improved response procedures (varies by organization)',
     status: 'Completed'
   },
   {
@@ -197,7 +216,7 @@ export const strategicActions: StrategicAction[] = [
     id: '5',
     priority: 'Medium',
     action: 'Implement enhanced email security controls',
-    impact: 'Reduces successful phishing attempts by 85%',
+    impact: 'Can reduce successful phishing attempts (effectiveness varies by solution and implementation)',
     status: 'Not Started'
   }
 ];
@@ -245,13 +264,15 @@ export const services: Service[] = [
   }
 ];
 
-// Risk Radar Recommendations
+// Risk Radar Recommendations - EXAMPLE DATA
+// Note: Impact statements are illustrative. Actual results vary based on implementation
+// and organizational context.
 export const recommendations: Recommendation[] = [
   {
     id: '1',
     priority: 'Critical',
     action: 'Implement enhanced data protection for sensitive customer information',
-    impact: 'Reduces data breach risk by 78%',
+    impact: 'Reduces data breach risk (effectiveness depends on implementation scope and controls)',
     effort: 'Medium'
   },
   {

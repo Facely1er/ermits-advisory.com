@@ -1,4 +1,11 @@
-// Local data service to replace Supabase functionality
+/**
+ * Local Data Service - DEMO MODE
+ * 
+ * NOTE: This service simulates API calls for demonstration purposes.
+ * In production, this would connect to actual backend services (Supabase, REST API, etc.)
+ * 
+ * Current Status: Demo mode - data is logged to console and not persisted
+ */
 
 // Contact Form Services
 export const contactService = {
@@ -9,22 +16,26 @@ export const contactService = {
     phone?: string;
     message: string;
   }) {
-    // Simulate API call
+    // DEMO MODE: Simulate API call
+    // In production, this would POST to actual backend API
     return new Promise((resolve) => {
       setTimeout(() => {
-        console.log('Contact submission (demo mode):', data);
+        console.log('Contact submission (DEMO MODE - not persisted):', data);
+        // In production, this would return the actual API response
         resolve({
           id: Math.random().toString(36).substr(2, 9),
           ...data,
           created_at: new Date().toISOString(),
-          status: 'new'
+          status: 'new',
+          _demo: true // Flag to indicate this is demo data
         });
       }, 1000);
     });
   },
 
   async getContacts() {
-    // Return empty array for demo
+    // DEMO MODE: Return empty array
+    // In production, this would fetch from actual database
     return [];
   }
 };
@@ -32,7 +43,8 @@ export const contactService = {
 // Newsletter Services
 export const newsletterService = {
   async subscribe(email: string, source: string = 'website') {
-    // Simulate API call
+    // DEMO MODE: Simulate API call
+    // In production, this would POST to newsletter service API
     return new Promise((resolve) => {
       setTimeout(() => {
         console.log('Newsletter subscription (demo mode):', { email, source });
@@ -70,6 +82,8 @@ export const newsletterService = {
 // Dashboard Services
 export const dashboardService = {
   async getMetrics() {
+    // DEMO DATA - Example metrics for demonstration
+    // In production, these would come from actual security monitoring systems
     const mockMetrics = [
       { id: 'vulnerabilities', name: 'Active Vulnerabilities', value: 37, change: -12, icon: 'shield', category: 'security' },
       { id: 'threats', name: 'Emerging Threats', value: 14, change: 3, icon: 'alert-triangle', category: 'intelligence' },
