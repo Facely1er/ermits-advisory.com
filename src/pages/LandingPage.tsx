@@ -493,10 +493,10 @@ export const LandingPage: React.FC = () => {
             className="text-center mb-12"
           >
             <motion.h2 variants={item} className="text-3xl font-bold mb-4 dark:text-white">
-              {'ERMITS Ecosystem Products'}
+              ERMITS Ecosystem Products
             </motion.h2>
             <motion.p variants={item} className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              {'STEEL-powered strategic risk intelligence and advisory services'}
+              STEEL-powered strategic risk intelligence and advisory services
             </motion.p>
           </motion.div>
           
@@ -514,10 +514,10 @@ export const LandingPage: React.FC = () => {
                 className="h-full bg-white dark:bg-dark-card-bg p-6"
               >
                 <h3 className="text-xl font-bold mb-3 dark:text-white card-title">
-                  {'STEEL™ Framework'}
+                  STEEL™ Framework
                 </h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-4 card-text">
-                  {'Comprehensive strategic risk assessment methodology'}
+                  Comprehensive strategic risk assessment methodology
                 </p>
                 <Button
                   variant="outline"
@@ -612,7 +612,7 @@ export const LandingPage: React.FC = () => {
                 ISO 27001 Certified
               </p>
             </motion.div>
-            
+
             <motion.div variants={item} className="flex flex-col items-center">
               <InteractiveCard className="w-16 h-16 bg-navy rounded-full flex items-center justify-center mb-4">
                 <CheckCircle size={32} className="text-white" />
@@ -621,7 +621,7 @@ export const LandingPage: React.FC = () => {
                 SOC 2 Type II
               </p>
             </motion.div>
-            
+
             <motion.div variants={item} className="flex flex-col items-center">
               <InteractiveCard className="w-16 h-16 bg-navy rounded-full flex items-center justify-center mb-4">
                 <CheckCircle size={32} className="text-white" />
@@ -630,7 +630,7 @@ export const LandingPage: React.FC = () => {
                 GDPR Compliant
               </p>
             </motion.div>
-            
+
             <motion.div variants={item} className="flex flex-col items-center">
               <InteractiveCard className="w-16 h-16 bg-navy rounded-full flex items-center justify-center mb-4">
                 <CheckCircle size={32} className="text-white" />
@@ -658,8 +658,8 @@ export const LandingPage: React.FC = () => {
             <p className="text-xl mb-6 text-silver">
               Get started with a comprehensive STEEL assessment today
             </p>
-            <Button 
-              variant="secondary" 
+            <Button
+              variant="secondary"
               size="lg"
               onClick={() => navigate('/contact')}
               className="transform hover:scale-105 transition-transform"

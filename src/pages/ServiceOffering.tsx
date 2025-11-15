@@ -12,8 +12,6 @@ import {
 export const ServiceOffering: React.FC = () => {
   const navigate = useNavigate();
   
-  // Find hero section start
-  
   // Enhanced Advisory Process based on STEEL methodology
   const advisoryProcessItems = [
     {
@@ -246,14 +244,15 @@ export const ServiceOffering: React.FC = () => {
         </div>
       </section>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4">
+
         {/* Key metrics */}
         <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 md:mb-20 -mt-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
         >
           <motion.div variants={item}>
             <Card variant="glass" className="text-center h-full">
@@ -549,7 +548,7 @@ export const ServiceOffering: React.FC = () => {
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex items-start">
                 <div className="p-3 rounded-full bg-silver/20 dark:bg-navy/40 mr-4">
                   <Phone size={24} className="text-navy dark:text-silver" />
@@ -561,7 +560,7 @@ export const ServiceOffering: React.FC = () => {
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex items-start">
                 <div className="p-3 rounded-full bg-silver/20 dark:bg-navy/40 mr-4">
                   <MapPin size={24} className="text-navy dark:text-silver" />
@@ -574,10 +573,10 @@ export const ServiceOffering: React.FC = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="mt-8 text-center">
-              <Button 
-                variant="primary" 
+              <Button
+                variant="primary"
                 size="lg"
                 onClick={() => navigate('/contact')}
                 icon={<ArrowRight size={20} />}
