@@ -72,9 +72,10 @@ export const LandingPage: React.FC = () => {
         {/* Background Image with Enhanced Overlay */}
         <div className="absolute inset-0 z-0">
           <div 
-            className="absolute inset-0 bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')]"
+            className="absolute inset-0 bg-cover bg-center hero-background-image"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-navy/96 via-navy-dark/92 to-navy/96" />
+          {/* Dark overlay for better text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-br from-navy/97 via-navy-dark/94 to-navy/97" />
           {/* Animated gradient overlay for depth */}
           <motion.div 
             className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-blue-500/10"
