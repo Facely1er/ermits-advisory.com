@@ -6,6 +6,7 @@ import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { InteractiveCard } from '../components/shared/InteractiveCard';
 import { InteractiveSTEELViz } from '../components/interactive/InteractiveSTEELViz';
+import { SteelPaywallGate } from '../components/SteelPaywallGate';
 import { 
   Users, 
   Info, ArrowRight, ExternalLink, Download,
@@ -249,12 +250,12 @@ export const STEELVisualization: React.FC = () => {
 
         {/* Enhanced STEEL Methodology Section */}
         <div className="mb-16">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
           >
-            <InteractiveCard 
+            <InteractiveCard
               glowEffect={true}
               className="bg-white dark:bg-dark-surface p-8"
             >
@@ -264,9 +265,11 @@ export const STEELVisualization: React.FC = () => {
                   {t('steel.overview')}
                 </p>
               </div>
-              
-              {/* Interactive STEEL Visualization */}
-              <InteractiveSTEELViz />
+
+              {/* Interactive STEEL Visualization with Premium Gate */}
+              <SteelPaywallGate allowFreePreview={true}>
+                <InteractiveSTEELViz />
+              </SteelPaywallGate>
             </InteractiveCard>
           </motion.div>
         </div>

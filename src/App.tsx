@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { LanguageProvider } from './contexts/LanguageContext';
+import { PremiumProvider } from './contexts/PremiumContext';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { ScrollProgressBar } from './components/shared/ProgressBar';
@@ -43,7 +44,8 @@ function App() {
     <ErrorBoundary>
       <ThemeProvider>
         <LanguageProvider>
-          <Router>
+          <PremiumProvider>
+            <Router>
             <div className="min-h-screen flex flex-col">
               <ScrollProgressBar />
               <Navigation />
@@ -77,6 +79,7 @@ function App() {
             <Analytics />
           </div>
         </Router>
+            </PremiumProvider>
       </LanguageProvider>
     </ThemeProvider>
     </ErrorBoundary>
