@@ -22,23 +22,23 @@ export const EcosystemCard: React.FC<EcosystemCardProps> = ({
     <Card
       variant="glass"
       className={cn(
-        'h-full p-4 bg-gradient-to-br from-cyan-500/12 via-slate-900/98 to-slate-900/98 border-slate-700/55',
+        'luxury-card luxury-hover h-full p-5 bg-gradient-to-br from-cyan-500/15 via-white/95 to-white/95 dark:from-cyan-500/15 dark:via-dark-luxury-surface/95 dark:to-dark-luxury-surface/95 border-luxury-gold/25 dark:border-luxury-gold/35 backdrop-blur-xl',
         className
       )}
     >
       <div className="flex justify-between items-start mb-2">
-        <div className="font-semibold text-sm uppercase tracking-wider text-white">
+        <div className="font-semibold text-sm uppercase tracking-wider text-gray-900 dark:text-white">
           {name}
         </div>
         <Badge variant="outline" color="blue" className="text-xs">
           {tag}
         </Badge>
       </div>
-      <p className="text-sm text-slate-300 mb-3 leading-relaxed">
+      <p className="text-sm text-gray-700 dark:text-slate-300 mb-3 leading-relaxed">
         {description}
       </p>
-      <div className="text-xs text-slate-400">
-        <strong className="text-slate-300">STEEL feeds:</strong> {steelFeeds}
+      <div className="text-xs text-gray-600 dark:text-slate-400">
+        <strong className="text-gray-900 dark:text-slate-300">STEEL feeds:</strong> {steelFeeds}
       </div>
     </Card>
   );

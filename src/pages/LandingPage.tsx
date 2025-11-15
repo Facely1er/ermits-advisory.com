@@ -61,8 +61,8 @@ export const LandingPage: React.FC = () => {
 
   return (
     <div>
-      {/* Enhanced Hero Section with Carousel */}
-      <section className="relative bg-gradient-to-b from-[#101936] via-[#040814] to-[#020309] text-white pb-24 md:pb-32 overflow-hidden">
+      {/* Enhanced Hero Section with Carousel - Luxury Design */}
+      <section className="relative bg-gradient-to-b from-navy-dark via-navy-darker to-[#001122] dark:from-[#050505] dark:via-[#0a0a0a] dark:to-[#0f0f0f] text-white pb-24 md:pb-32 overflow-hidden">
         {/* Floating particles background */}
         <div className="absolute inset-0 opacity-18 pointer-events-none z-0">
           <motion.div
@@ -124,14 +124,14 @@ export const LandingPage: React.FC = () => {
               transition={{ duration: 0.6 }}
               className="text-center lg:text-left"
             >
-              {/* Tagline Badge */}
+              {/* Tagline Badge - Luxury */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-400/40 bg-gradient-to-r from-cyan-500/18 to-slate-900/96 text-cyan-200 text-xs uppercase tracking-widest mb-4"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-luxury-gold/40 bg-gradient-to-r from-luxury-gold/20 via-luxury-gold/10 to-transparent backdrop-blur-sm text-luxury-gold-light text-xs uppercase tracking-widest mb-6 shadow-luxury-gold"
               >
-                <span>STEEL™</span>
+                <span className="font-semibold">STEEL™</span>
                 <span>Strategic Threat & Enterprise Evaluation Landscape</span>
               </motion.div>
 
@@ -201,7 +201,7 @@ export const LandingPage: React.FC = () => {
                   icon={<ArrowRight size={20} />}
                   iconPosition="right"
                   onClick={() => navigate('/steel')}
-                  className="bg-gradient-to-r from-[#f4b400] to-[#f6e05e] text-navy-dark hover:brightness-110 shadow-lg shadow-black/60"
+                  className="luxury-button text-navy-dark font-bold shadow-luxury-gold-lg hover:shadow-luxury-gold-lg"
                 >
                   Explore STEEL™ Methodology
                 </Button>
@@ -209,7 +209,7 @@ export const LandingPage: React.FC = () => {
                   variant="ghost" 
                   size="lg"
                   onClick={() => navigate('/ecosystem')}
-                  className="border-slate-600/60 text-white hover:bg-slate-900/90"
+                  className="border-luxury-gold/40 text-white hover:bg-luxury-gold/10 hover:border-luxury-gold/60 backdrop-blur-sm transition-all duration-300"
                 >
                   View ERMITS Ecosystem Map
                 </Button>
@@ -228,7 +228,7 @@ export const LandingPage: React.FC = () => {
               </motion.p>
             </motion.div>
 
-            {/* Right Column - Hero Panel Dashboard Preview */}
+            {/* Right Column - Hero Panel Dashboard Preview - Luxury */}
             <motion.aside
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -236,7 +236,7 @@ export const LandingPage: React.FC = () => {
               className="relative"
               aria-label="STEEL dashboard preview"
             >
-              <Card className="bg-gradient-to-br from-blue-500/22 via-slate-900/98 to-slate-900/98 border-slate-600/50 shadow-2xl p-5">
+              <Card className="luxury-card bg-gradient-to-br from-blue-500/25 via-slate-900/98 to-slate-900/98 dark:from-blue-500/20 dark:via-dark-luxury-surface dark:to-dark-luxury-surface border-luxury-gold/20 dark:border-luxury-gold/30 shadow-luxury-lg p-6 backdrop-blur-xl">
                 {/* Panel Header */}
                 <div className="flex justify-between items-start mb-4">
                   <div>
@@ -543,8 +543,8 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Enhanced STEEL Methodology Section */}
-      <section id="steel" className="py-16 bg-white dark:bg-navy-dark/80 steel-section">
+      {/* Enhanced STEEL Methodology Section - Luxury */}
+      <section id="steel" className="py-20 bg-gradient-to-b from-silver-lighter via-white to-silver-light dark:from-dark-luxury-bg dark:via-dark-luxury-surface dark:to-dark-luxury-bg steel-section">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 items-start">
             {/* Left Column - Methodology Description */}
@@ -571,45 +571,45 @@ export const LandingPage: React.FC = () => {
                 </p>
               </motion.div>
 
-              {/* STEEL Letter Breakdown */}
-              <Card className="p-6 bg-slate-900/96 dark:bg-slate-950/96 border-slate-700/38 shadow-xl mb-6">
+              {/* STEEL Letter Breakdown - Luxury */}
+              <Card className="luxury-card p-8 bg-white/95 dark:bg-dark-luxury-surface/95 border-luxury-gold/20 dark:border-luxury-gold/30 shadow-luxury-lg mb-8 backdrop-blur-xl">
                 <div className="text-sm text-slate-400 mb-4">
                   Each STEEL™ scan passes through five lenses:
                 </div>
                 <div className="grid grid-cols-3 gap-3 mb-6">
                   {/* S - Strategic */}
-                  <div className="p-3 rounded-2xl bg-gradient-to-br from-blue-500/16 to-slate-900/98 border border-slate-600/70">
-                    <div className="text-lg font-bold mb-1 text-amber-400">S</div>
+                  <div className="luxury-hover p-4 rounded-luxury bg-gradient-to-br from-blue-500/20 via-white/5 to-transparent dark:from-blue-500/25 dark:via-dark-luxury-surface/50 dark:to-transparent border border-luxury-gold/30 dark:border-luxury-gold/40 shadow-luxury">
+                    <div className="text-xl font-bold mb-1 luxury-text-gradient">S</div>
                     <div className="text-xs font-semibold text-slate-300 mb-1">Strategic</div>
                     <div className="text-xs text-slate-400">Macro-trends, regulation, conflict, critical infrastructure.</div>
                   </div>
                   {/* T - Threat */}
-                  <div className="p-3 rounded-2xl bg-gradient-to-br from-blue-500/16 to-slate-900/98 border border-slate-600/70">
-                    <div className="text-lg font-bold mb-1 text-amber-400">T</div>
+                  <div className="luxury-hover p-4 rounded-luxury bg-gradient-to-br from-blue-500/20 via-white/5 to-transparent dark:from-blue-500/25 dark:via-dark-luxury-surface/50 dark:to-transparent border border-luxury-gold/30 dark:border-luxury-gold/40 shadow-luxury">
+                    <div className="text-xl font-bold mb-1 luxury-text-gradient">T</div>
                     <div className="text-xs font-semibold text-slate-300 mb-1">Threat</div>
                     <div className="text-xs text-slate-400">Ransomware, data breaches, vendor incidents, insider risk.</div>
                   </div>
                   {/* E - Enterprise */}
-                  <div className="p-3 rounded-2xl bg-gradient-to-br from-blue-500/16 to-slate-900/98 border border-slate-600/70">
-                    <div className="text-lg font-bold mb-1 text-amber-400">E</div>
+                  <div className="luxury-hover p-4 rounded-luxury bg-gradient-to-br from-blue-500/20 via-white/5 to-transparent dark:from-blue-500/25 dark:via-dark-luxury-surface/50 dark:to-transparent border border-luxury-gold/30 dark:border-luxury-gold/40 shadow-luxury">
+                    <div className="text-xl font-bold mb-1 luxury-text-gradient">E</div>
                     <div className="text-xs font-semibold text-slate-300 mb-1">Enterprise</div>
                     <div className="text-xs text-slate-400">Your sector, footprint, data flows, and critical vendors.</div>
                   </div>
                   {/* E - Evaluation */}
-                  <div className="p-3 rounded-2xl bg-gradient-to-br from-blue-500/16 to-slate-900/98 border border-slate-600/70">
-                    <div className="text-lg font-bold mb-1 text-amber-400">E</div>
+                  <div className="luxury-hover p-4 rounded-luxury bg-gradient-to-br from-blue-500/20 via-white/5 to-transparent dark:from-blue-500/25 dark:via-dark-luxury-surface/50 dark:to-transparent border border-luxury-gold/30 dark:border-luxury-gold/40 shadow-luxury">
+                    <div className="text-xl font-bold mb-1 luxury-text-gradient">E</div>
                     <div className="text-xs font-semibold text-slate-300 mb-1">Evaluation</div>
                     <div className="text-xs text-slate-400">Scored scenarios, risk appetite, and readiness gaps.</div>
                   </div>
                   {/* L - Landscape */}
-                  <div className="p-3 rounded-2xl bg-gradient-to-br from-blue-500/16 to-slate-900/98 border border-slate-600/70">
-                    <div className="text-lg font-bold mb-1 text-amber-400">L</div>
+                  <div className="luxury-hover p-4 rounded-luxury bg-gradient-to-br from-blue-500/20 via-white/5 to-transparent dark:from-blue-500/25 dark:via-dark-luxury-surface/50 dark:to-transparent border border-luxury-gold/30 dark:border-luxury-gold/40 shadow-luxury">
+                    <div className="text-xl font-bold mb-1 luxury-text-gradient">L</div>
                     <div className="text-xs font-semibold text-slate-300 mb-1">Landscape</div>
                     <div className="text-xs text-slate-400">Visual maps, risk clusters, and ERMITS product mapping.</div>
                   </div>
                   {/* + PESTEL */}
-                  <div className="p-3 rounded-2xl bg-gradient-to-br from-blue-500/16 to-slate-900/98 border border-slate-600/70">
-                    <div className="text-lg font-bold mb-1 text-amber-400">+</div>
+                  <div className="luxury-hover p-4 rounded-luxury bg-gradient-to-br from-blue-500/20 via-white/5 to-transparent dark:from-blue-500/25 dark:via-dark-luxury-surface/50 dark:to-transparent border border-luxury-gold/30 dark:border-luxury-gold/40 shadow-luxury">
+                    <div className="text-xl font-bold mb-1 luxury-text-gradient">+</div>
                     <div className="text-xs font-semibold text-slate-300 mb-1">PESTEL</div>
                     <div className="text-xs text-slate-400">Political · Economic · Social · Technological · Environmental · Legal.</div>
                   </div>
@@ -645,9 +645,9 @@ export const LandingPage: React.FC = () => {
               </Card>
             </div>
 
-            {/* Right Column - Inputs & Outputs */}
+            {/* Right Column - Inputs & Outputs - Luxury */}
             <div>
-              <Card className="p-6 bg-slate-900/96 dark:bg-slate-950/96 border-slate-700/38 shadow-xl">
+              <Card className="luxury-card p-8 bg-white/95 dark:bg-dark-luxury-surface/95 border-luxury-gold/20 dark:border-luxury-gold/30 shadow-luxury-lg backdrop-blur-xl">
                 <div className="text-xs uppercase tracking-widest text-cyan-400 mb-2">
                   Inputs & Outputs
                 </div>
@@ -671,8 +671,8 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Ecosystem Mapping Section */}
-      <section id="ecosystem" className="py-16 bg-silver-light dark:bg-dark-surface">
+      {/* Ecosystem Mapping Section - Luxury */}
+      <section id="ecosystem" className="py-20 bg-gradient-to-b from-white via-silver-lighter to-white dark:from-dark-luxury-bg dark:via-dark-luxury-surface dark:to-dark-luxury-bg">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -692,7 +692,7 @@ export const LandingPage: React.FC = () => {
             </p>
           </motion.div>
 
-          <Card className="p-6 bg-white dark:bg-slate-900/96 border-slate-700/38 shadow-xl mb-8">
+          <Card className="luxury-card p-8 bg-white/95 dark:bg-dark-luxury-surface/95 border-luxury-gold/20 dark:border-luxury-gold/30 shadow-luxury-lg mb-8 backdrop-blur-xl">
             <div className="text-sm font-semibold text-gray-900 dark:text-white mb-4">
               Ecosystem mapping (current scope):
             </div>
@@ -772,8 +772,8 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Use Cases Section */}
-      <section id="use-cases" className="py-16 bg-white dark:bg-dark-bg">
+      {/* Use Cases Section - Luxury */}
+      <section id="use-cases" className="py-20 bg-gradient-to-b from-silver-lighter via-white to-silver-lighter dark:from-dark-luxury-bg dark:via-dark-luxury-surface dark:to-dark-luxury-bg">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -856,8 +856,8 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Engagement Model / How It Works Section */}
-      <section id="how-it-works" className="py-16 bg-silver-light dark:bg-dark-surface">
+      {/* Engagement Model / How It Works Section - Luxury */}
+      <section id="how-it-works" className="py-20 bg-gradient-to-b from-white via-silver-lighter to-white dark:from-dark-luxury-bg dark:via-dark-luxury-surface dark:to-dark-luxury-bg">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -886,7 +886,7 @@ export const LandingPage: React.FC = () => {
             className="grid grid-cols-1 md:grid-cols-3 gap-6"
           >
             <motion.div variants={item}>
-              <Card className="h-full p-6 bg-white dark:bg-slate-900/96 border-slate-700/45">
+              <Card className="luxury-card luxury-hover h-full p-8 bg-white/95 dark:bg-dark-luxury-surface/95 border-luxury-gold/20 dark:border-luxury-gold/30">
                 <div className="text-xs uppercase tracking-widest text-slate-400 mb-2">
                   Step 1
                 </div>
@@ -905,7 +905,7 @@ export const LandingPage: React.FC = () => {
               </Card>
             </motion.div>
             <motion.div variants={item}>
-              <Card className="h-full p-6 bg-white dark:bg-slate-900/96 border-slate-700/45">
+              <Card className="luxury-card luxury-hover h-full p-8 bg-white/95 dark:bg-dark-luxury-surface/95 border-luxury-gold/20 dark:border-luxury-gold/30">
                 <div className="text-xs uppercase tracking-widest text-slate-400 mb-2">
                   Step 2
                 </div>
@@ -924,7 +924,7 @@ export const LandingPage: React.FC = () => {
               </Card>
             </motion.div>
             <motion.div variants={item}>
-              <Card className="h-full p-6 bg-white dark:bg-slate-900/96 border-slate-700/45">
+              <Card className="luxury-card luxury-hover h-full p-8 bg-white/95 dark:bg-dark-luxury-surface/95 border-luxury-gold/20 dark:border-luxury-gold/30">
                 <div className="text-xs uppercase tracking-widest text-slate-400 mb-2">
                   Step 3
                 </div>
@@ -1010,8 +1010,8 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Enhanced CTA Section */}
-      <section id="contact" className={`py-16 ${theme === 'dark' ? 'bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950' : 'bg-gradient-to-br from-navy-dark via-navy to-navy-dark'} text-white`}>
+      {/* Enhanced CTA Section - Luxury */}
+      <section id="contact" className={`py-20 ${theme === 'dark' ? 'bg-gradient-to-br from-dark-luxury-bg via-navy-darker to-dark-luxury-bg' : 'bg-gradient-to-br from-navy-dark via-navy to-navy-darker'} text-white relative overflow-hidden`}>
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -1019,7 +1019,7 @@ export const LandingPage: React.FC = () => {
             viewport={{ once: true, amount: 0.3 }}
             className="max-w-4xl mx-auto"
           >
-            <Card className="p-8 md:p-10 bg-gradient-to-br from-[#f4b400]/22 via-slate-900/98 to-slate-900/98 border-[#fcd34d]/80 shadow-2xl">
+            <Card className="luxury-card p-10 md:p-12 bg-gradient-to-br from-luxury-gold/25 via-white/95 to-white/95 dark:from-luxury-gold/20 dark:via-dark-luxury-surface/95 dark:to-dark-luxury-surface/95 border-luxury-gold/40 dark:border-luxury-gold/50 shadow-luxury-gold-lg backdrop-blur-xl">
               <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-8 items-center">
                 <div>
                   <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">
