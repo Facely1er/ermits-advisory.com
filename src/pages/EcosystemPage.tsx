@@ -11,10 +11,15 @@ import {
   Network, Server, Users
 } from 'lucide-react';
 
-// Import ecosystem logo - user should add this file
-// import ecosystemLogo from '../assets/ermits-ecosystem.png';
+// Import ecosystem logos
+import cyberCautionLogo from '../assets/cybercaution.png';
+import cyberCorrectLogo from '../assets/cybercorrect.png';
+import cyberSoluceLogo from '../assets/cybersoluce.png';
+import vendorSoluceLogo from '../assets/vendorsoluce.png';
+import technoSoluceLogo from '../assets/technosoluce.png';
 import socialCautionLogo from '../assets/socialcaution.png';
 import cyberCertitudeLogo from '../assets/CyberCertitude.png';
+import ermitsAdvisoryLogo from '../assets/ermits-advisory.png';
 
 export const EcosystemPage: React.FC = () => {
   const navigate = useNavigate();
@@ -26,7 +31,8 @@ export const EcosystemPage: React.FC = () => {
       title: 'CyberCaution™',
       description: 'Real-time threat monitoring and intelligence platform for continuous security awareness',
       link: '/cybercaution',
-      color: 'from-red-500 to-red-600'
+      color: 'from-red-500 to-red-600',
+      logo: cyberCautionLogo
     },
     {
       id: 'cyberCorrect',
@@ -34,7 +40,8 @@ export const EcosystemPage: React.FC = () => {
       title: 'CyberCorrect™',
       description: 'Automated compliance management and evidence collection for continuous compliance monitoring',
       link: '/cybercorrect',
-      color: 'from-green-500 to-green-600'
+      color: 'from-green-500 to-green-600',
+      logo: cyberCorrectLogo
     },
     {
       id: 'cyberSoluce',
@@ -42,7 +49,8 @@ export const EcosystemPage: React.FC = () => {
       title: 'CyberSoluce™',
       description: 'Unified governance and workflow management platform for security operations',
       link: '/cybersoluce',
-      color: 'from-purple-500 to-purple-600'
+      color: 'from-purple-500 to-purple-600',
+      logo: cyberSoluceLogo
     },
     {
       id: 'vendorSoluce',
@@ -50,7 +58,8 @@ export const EcosystemPage: React.FC = () => {
       title: 'VendorSoluce™',
       description: 'Comprehensive vendor risk management and supply chain security platform',
       link: '/vendorsoluce',
-      color: 'from-orange-500 to-orange-600'
+      color: 'from-orange-500 to-orange-600',
+      logo: vendorSoluceLogo
     },
     {
       id: 'technoSoluce',
@@ -58,7 +67,8 @@ export const EcosystemPage: React.FC = () => {
       title: 'TechnoSoluce™',
       description: 'Technology operations and IT risk management platform for infrastructure and systems security',
       link: '/technosoluce',
-      color: 'from-blue-500 to-blue-600'
+      color: 'from-blue-500 to-blue-600',
+      logo: technoSoluceLogo
     },
     {
       id: 'cyberCertitude',
@@ -537,8 +547,8 @@ export const EcosystemPage: React.FC = () => {
                     <span className="text-red-600 dark:text-red-400 text-sm">✗</span>
                   </div>
                   <div>
-                    <p className="font-semibold dark:text-white">30-40% implementation rate</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Most recommendations never get implemented</p>
+                    <p className="font-semibold dark:text-white">Lower implementation rates typical</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Many recommendations may not get implemented without platform support</p>
                   </div>
                 </li>
                 <li className="flex items-start">
@@ -583,8 +593,8 @@ export const EcosystemPage: React.FC = () => {
                     <CheckCircle size={16} className="text-green-600 dark:text-green-400" />
                   </div>
                   <div>
-                    <p className="font-semibold dark:text-white">80-90% implementation rate</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Recommendations become automated tools</p>
+                    <p className="font-semibold dark:text-white">Higher implementation rates possible</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Recommendations can be implemented through automated platform tools. Results vary by organization.</p>
                   </div>
                 </li>
                 <li className="flex items-start">
@@ -645,7 +655,7 @@ export const EcosystemPage: React.FC = () => {
                   </li>
                   <li className="flex items-center">
                     <CheckCircle size={20} className="mr-3 text-green-400" />
-                    <span>6-9 months to maturity</span>
+                    <span>Faster path to maturity possible (results vary)</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle size={20} className="mr-3 text-green-400" />
@@ -668,9 +678,9 @@ export const EcosystemPage: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
               Client Success Stories
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Real results from organizations using the ERMITS ecosystem
-            </p>
+                <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                  Examples of results from organizations using the ERMITS ecosystem. Individual results vary.
+                </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -681,14 +691,14 @@ export const EcosystemPage: React.FC = () => {
                 </div>
                 <h3 className="text-lg font-bold dark:text-white mb-2">Mid-Market SaaS</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                  ERMITS Advisory → CyberCorrect™ → SOC 2 in 4 months
+                  Example: ERMITS Advisory → CyberCorrect™ → SOC 2 (timeline varies by organization)
                 </p>
               </div>
               <ul className="space-y-2 text-sm">
-                <li className="flex items-start">
-                  <CheckCircle size={16} className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-600 dark:text-gray-400">60% faster time to certification</span>
-                </li>
+                  <li className="flex items-start">
+                    <CheckCircle size={16} className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-600 dark:text-gray-400">Faster time to certification possible (results vary by organization)</span>
+                  </li>
                 <li className="flex items-start">
                   <CheckCircle size={16} className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-600 dark:text-gray-400">Automated evidence collection</span>
@@ -719,10 +729,10 @@ export const EcosystemPage: React.FC = () => {
                   <CheckCircle size={16} className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-600 dark:text-gray-400">Continuous compliance monitoring</span>
                 </li>
-                <li className="flex items-start">
-                  <CheckCircle size={16} className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-600 dark:text-gray-400">Reduced audit preparation time 70%</span>
-                </li>
+                  <li className="flex items-start">
+                    <CheckCircle size={16} className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-600 dark:text-gray-400">Reduced audit preparation time possible (results vary)</span>
+                  </li>
               </ul>
             </Card>
 
@@ -733,14 +743,14 @@ export const EcosystemPage: React.FC = () => {
                 </div>
                 <h3 className="text-lg font-bold dark:text-white mb-2">Manufacturing</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                  ERMITS Advisory → Full platform ecosystem → 65% risk reduction
+                  Example: ERMITS Advisory → Full platform ecosystem (results vary by organization)
                 </p>
               </div>
               <ul className="space-y-2 text-sm">
-                <li className="flex items-start">
-                  <CheckCircle size={16} className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-600 dark:text-gray-400">Risk score improved +25 points</span>
-                </li>
+                  <li className="flex items-start">
+                    <CheckCircle size={16} className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-600 dark:text-gray-400">Risk score improvements possible (results vary by organization)</span>
+                  </li>
                 <li className="flex items-start">
                   <CheckCircle size={16} className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-600 dark:text-gray-400">Full ecosystem implementation</span>
@@ -856,7 +866,7 @@ export const EcosystemPage: React.FC = () => {
                     <li className="flex items-start">
                       <CheckCircle size={20} className="text-green-500 mr-3 mt-0.5 flex-shrink-0" />
                       <p className="text-gray-600 dark:text-gray-200">
-                        80-90% implementation success rate
+                        Higher implementation success rates possible (results vary by organization)
                       </p>
                     </li>
                   </ul>
@@ -903,6 +913,22 @@ export const EcosystemPage: React.FC = () => {
               </div>
             </div>
           </InteractiveCard>
+        </motion.div>
+
+        {/* FTC Compliance Disclaimer */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.0 }}
+          className="mt-16"
+        >
+          <Card className="p-6 bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800">
+            <div className="text-center">
+              <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed max-w-4xl mx-auto">
+                <strong className="text-gray-800 dark:text-gray-300">Disclaimer:</strong> Results, outcomes, and timelines may vary based on individual organization circumstances, size, complexity, industry, and implementation efforts. Performance claims are based on typical experiences and are not guarantees. Case studies and examples are illustrative and may not reflect all client experiences. Pricing is subject to change and final pricing will be confirmed in written proposals. ERMITS Advisory services are advisory in nature and do not guarantee specific security outcomes or compliance certifications.
+              </p>
+            </div>
+          </Card>
         </motion.div>
       </div>
     </div>

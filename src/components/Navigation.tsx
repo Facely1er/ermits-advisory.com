@@ -4,7 +4,7 @@ import { NavLink, Link, useNavigate } from 'react-router-dom';
 import { useTheme } from '../contexts/ThemeContext';
 import { Button } from './shared/Button';
 import {
-  Sun, Moon, Menu, X, ChevronDown,
+  Sun, Moon, Menu, X,
   Home, Briefcase, Mail, Users, Lightbulb, Shield, Layers, DollarSign, Focus
 } from 'lucide-react';
 import logoImg from '../assets/ermits-advisory.png';
@@ -13,19 +13,12 @@ import { cn } from '../utils/cn';
 export const Navigation: React.FC = () => {
   const { theme, toggleTheme, focusMode, toggleFocusMode } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isInsightsOpen, setIsInsightsOpen] = useState(false);
   const navigate = useNavigate();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const toggleInsightsDropdown = () => setIsInsightsOpen(!isInsightsOpen);
 
   const handleContactClick = () => {
     navigate('/contact');
-    setIsMenuOpen(false);
-  };
-
-  const handleInsightsItemClick = () => {
-    setIsInsightsOpen(false);
     setIsMenuOpen(false);
   };
 
@@ -36,13 +29,7 @@ export const Navigation: React.FC = () => {
     { to: '/pricing', label: 'Pricing', icon: <DollarSign size={16} /> },
     { to: '/steel', label: 'STEEL™', icon: <Shield size={16} /> },
     { to: '/ecosystem', label: 'Ecosystem', icon: <Layers size={16} /> },
-  ];
-
-  const insightsLinks = [
-    { to: '/risk-radar', label: 'Risk Radar' },
-    { to: '/dashboard', label: 'Dashboard' },
-    { to: '/presentation', label: 'Presentation' },
-    { to: '/steel/index.html', label: 'STEEL Assessment', external: true },
+    { to: '/dashboard', label: 'Dashboard', icon: <Lightbulb size={16} /> },
   ];
 
   return (
@@ -76,60 +63,41 @@ export const Navigation: React.FC = () => {
                   {link.label}
                 </NavLink>
               ))}
-
-              {/* Insights Dropdown */}
-              <div className="relative h-full flex items-center">
-                <button
-                  onClick={toggleInsightsDropdown}
-                  className="flex items-center text-sm font-medium text-gray-600 dark:text-white/95 hover:text-navy dark:hover:text-white transition-colors nav-link whitespace-nowrap h-full"
-                >
-                  <span className="mr-1.5"><Lightbulb size={16} /></span>
-                  Insights
-                  <ChevronDown size={14} className="ml-1" />
-                </button>
-
-                <AnimatePresence>
-                  {isInsightsOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: -5 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -5 }}
-                      className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-dark-surface ring-1 ring-black ring-opacity-5 focus:outline-none dropdown-menu top-full"
-                    >
-                      <div className="py-1" role="menu" aria-orientation="vertical">
-                        {insightsLinks.map((link) => (
-                          link.external ? (
-                            <a
-                              key={link.to}
-                              href={link.to}
-                              className="block px-4 py-2 text-sm dropdown-item text-gray-700 dark:text-white/95 hover:bg-silver/10 dark:hover:bg-navy/20"
-                              role="menuitem"
-                              onClick={handleInsightsItemClick}
-                            >
-                              {link.label}
-                            </a>
-                          ) : (
-                            <NavLink
-                              key={link.to}
-                              to={link.to}
-                              className={({ isActive }) => cn(
-                                'block px-4 py-2 text-sm dropdown-item',
-                                isActive
-                                  ? 'bg-silver/20 text-navy dark:bg-navy/30 dark:text-white'
-                                  : 'text-gray-700 dark:text-white/95 hover:bg-silver/10 dark:hover:bg-navy/20'
-                              )}
-                              role="menuitem"
-                              onClick={handleInsightsItemClick}
-                            >
-                              {link.label}
-                            </NavLink>
-                          )
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+              
+              {/* Additional links as direct nav items */}
+              <NavLink
+                to="/risk-radar"
+                className={({ isActive }) => cn(
+                  'text-sm font-medium hover:text-navy dark:hover:text-white transition-colors nav-link flex items-center whitespace-nowrap h-full',
+                  isActive
+                    ? 'text-navy-dark dark:text-white font-semibold border-b-2 border-navy dark:border-silver'
+                    : 'text-gray-600 dark:text-white/95'
+                )}
+              >
+                <span className="mr-1.5"><Lightbulb size={16} /></span>
+                Risk Radar
+              </NavLink>
+              <NavLink
+                to="/presentation"
+                className={({ isActive }) => cn(
+                  'text-sm font-medium hover:text-navy dark:hover:text-white transition-colors nav-link flex items-center whitespace-nowrap h-full',
+                  isActive
+                    ? 'text-navy-dark dark:text-white font-semibold border-b-2 border-navy dark:border-silver'
+                    : 'text-gray-600 dark:text-white/95'
+                )}
+              >
+                <span className="mr-1.5"><Lightbulb size={16} /></span>
+                Presentation
+              </NavLink>
+              <a
+                href="/steel/index.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-gray-600 dark:text-white/95 hover:text-navy dark:hover:text-white transition-colors nav-link flex items-center whitespace-nowrap h-full"
+              >
+                <span className="mr-1.5"><Lightbulb size={16} /></span>
+                STEEL Assessment
+              </a>
             </div>
 
             {/* Controls - Removed language selector */}
@@ -221,40 +189,44 @@ export const Navigation: React.FC = () => {
                   {link.label}
                 </NavLink>
               ))}
-
-              {/* Mobile Insights Section */}
-              <div className="border-t border-gray-200 dark:border-gray-700 pt-2 mt-2">
-                <div className="flex items-center px-3 py-2 text-sm font-medium text-gray-500 dark:text-gray-400">
-                  <Lightbulb size={16} className="mr-2" />
-                  Insights
-                </div>
-                {insightsLinks.map((link) => (
-                  link.external ? (
-                    <a
-                      key={link.to}
-                      href={link.to}
-                      className="flex items-center px-6 py-2 rounded-md text-sm font-medium text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {link.label}
-                    </a>
-                  ) : (
-                    <NavLink
-                      key={link.to}
-                      to={link.to}
-                      className={({ isActive }) => cn(
-                        'flex items-center px-6 py-2 rounded-md text-sm font-medium',
-                        isActive
-                          ? 'bg-navy/10 text-navy dark:bg-silver/20 dark:text-white'
-                          : 'text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10'
-                      )}
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {link.label}
-                    </NavLink>
-                  )
-                ))}
-              </div>
+              
+              {/* Additional mobile links */}
+              <NavLink
+                to="/risk-radar"
+                className={({ isActive }) => cn(
+                  'flex items-center px-3 py-2 rounded-md text-base font-medium',
+                  isActive
+                    ? 'bg-navy/10 text-navy dark:bg-silver/20 dark:text-white'
+                    : 'text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10'
+                )}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <span className="mr-2"><Lightbulb size={16} /></span>
+                Risk Radar
+              </NavLink>
+              <NavLink
+                to="/presentation"
+                className={({ isActive }) => cn(
+                  'flex items-center px-3 py-2 rounded-md text-base font-medium',
+                  isActive
+                    ? 'bg-navy/10 text-navy dark:bg-silver/20 dark:text-white'
+                    : 'text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10'
+                )}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <span className="mr-2"><Lightbulb size={16} /></span>
+                Presentation
+              </NavLink>
+              <a
+                href="/steel/index.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <span className="mr-2"><Lightbulb size={16} /></span>
+                STEEL Assessment
+              </a>
             </div>
             <div className="pt-4 pb-3 border-t border-gray-200 dark:border-gray-700">
               <div className="flex items-center justify-end px-4">

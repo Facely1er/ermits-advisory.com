@@ -525,6 +525,22 @@ export const PricingPage: React.FC = () => {
             </div>
           </Card>
         </motion.section>
+
+        {/* FTC Compliance Disclaimer */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-12"
+        >
+          <Card className="p-6 bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800">
+            <div className="text-center">
+              <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed max-w-4xl mx-auto">
+                <strong className="text-gray-800 dark:text-gray-300">Pricing Disclaimer:</strong> All pricing shown is estimated and subject to change. Final pricing will be confirmed in written proposals based on specific project scope, requirements, and organizational factors. Pricing ranges reflect typical engagements and may vary based on organization size, complexity, industry, geographic location, and specific service requirements. Services are provided on a best-efforts basis and outcomes may vary. No guarantees are made regarding specific results, timelines, or compliance certifications.
+              </p>
+            </div>
+          </Card>
+        </motion.section>
       </div>
     </div>
   );

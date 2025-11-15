@@ -4,64 +4,14 @@ import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { 
   FileText, Scale, AlertTriangle, CheckCircle, 
-  ArrowLeft, ExternalLink, Shield, Users
+  ArrowLeft, Shield, Users, Lock, DollarSign
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const TermsOfServicePage: React.FC = () => {
-  const sections = [
-    {
-      id: 'acceptance',
-      title: 'Acceptance of Terms',
-      icon: <CheckCircle size={24} className="text-navy dark:text-silver" />,
-      content: [
-        'By accessing and using our services, you accept and agree to be bound by these terms',
-        'These terms constitute a legally binding agreement between you and ERMITS Advisory',
-        'If you do not agree to these terms, please do not use our services',
-        'We reserve the right to modify these terms at any time with appropriate notice'
-      ]
-    },
-    {
-      id: 'services',
-      title: 'Services Provided',
-      icon: <Shield size={24} className="text-navy dark:text-silver" />,
-      content: [
-        'Strategic security advisory and consulting services',
-        'STEEL framework risk assessments and analysis',
-        'Virtual CISO (vCISO) services and ongoing security guidance',
-        'Custom security strategy development and implementation support',
-        'Board-level security presentations and executive briefings'
-      ]
-    },
-    {
-      id: 'responsibilities',
-      title: 'Client Responsibilities',
-      icon: <Users size={24} className="text-navy dark:text-silver" />,
-      content: [
-        'Provide accurate and complete information for assessments',
-        'Implement recommended security measures in a timely manner',
-        'Maintain confidentiality of proprietary methodologies and tools',
-        'Comply with all applicable laws and regulations',
-        'Pay fees according to agreed payment terms'
-      ]
-    },
-    {
-      id: 'limitations',
-      title: 'Limitations of Liability',
-      icon: <AlertTriangle size={24} className="text-orange-500" />,
-      content: [
-        'Services are provided on an "as is" basis without warranties',
-        'We are not liable for indirect, incidental, or consequential damages',
-        'Total liability shall not exceed fees paid for services in the preceding 12 months',
-        'Recommendations are advisory in nature and implementation is at client discretion',
-        'We do not guarantee specific security outcomes or prevention of all threats'
-      ]
-    }
-  ];
-
   return (
     <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 max-w-4xl py-8">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -71,89 +21,196 @@ export const TermsOfServicePage: React.FC = () => {
             <ArrowLeft size={16} className="mr-2" />
             Back to Home
           </Link>
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">Terms of Service</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">Master Terms of Service</h1>
+          <p className="text-gray-600 dark:text-gray-200 mb-2">
+            <strong>Effective Date:</strong> October 31, 2025
+          </p>
           <p className="text-gray-600 dark:text-gray-200 mb-4">
-            Last Updated: {new Date().toLocaleDateString()}
+            <strong>Last Updated:</strong> October 31, 2025
           </p>
           <p className="text-lg text-gray-600 dark:text-gray-100">
-            Please read these terms carefully before using our services
+            By accessing or using any ERMITS LLC ("ERMITS," "we," "our," or "us") products, platforms, or services (collectively, the "Services"), you ("User," "you," or "your") agree to be bound by these Master Terms of Service ("Terms"). If you do not agree to these Terms, do not use our Services.
           </p>
         </motion.div>
 
-        {/* Overview */}
+        {/* Scope and Applicability */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
           className="mb-8"
         >
-          <Card variant="glass" padding="lg" className="bg-navy text-white">
-            <div className="flex items-start">
-              <div className="p-3 rounded-full bg-white/10 mr-4">
-                <Scale size={32} />
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">1. Scope and Applicability</h2>
+            <p className="text-gray-600 dark:text-gray-200 mb-4">
+              These Terms govern your use of all ERMITS products, including but not limited to:
+            </p>
+            <div className="space-y-3">
+              <div>
+                <h3 className="font-semibold mb-2 dark:text-white">TechnoSoluce™ Brand Products:</h3>
+                <ul className="list-disc list-inside text-gray-600 dark:text-gray-200 ml-4">
+                  <li>SBOM Analyzer - Software supply chain security and vulnerability analysis</li>
+                </ul>
               </div>
               <div>
-                <h2 className="text-2xl font-bold mb-3">Professional Services Agreement</h2>
-                <p className="text-silver mb-4">
-                  These terms govern your use of ERMITS Advisory professional services and establish the framework for our professional relationship.
+                <h3 className="font-semibold mb-2 dark:text-white">CyberCertitude™ Brand Products:</h3>
+                <ul className="list-disc list-inside text-gray-600 dark:text-gray-200 ml-4">
+                  <li>CMMC 2.0 Level 1 Implementation Suite</li>
+                  <li>CMMC 2.0 Level 2 Compliance Platform</li>
+                  <li>Original Toolkit (localStorage-based compliance management)</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2 dark:text-white">VendorSoluce™, CyberCorrect™, and CyberCaution™ Brand Products</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  Supply chain risk management, privacy compliance, and cybersecurity assessment platforms.
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-silver">
-                  <div>
-                    <h4 className="font-semibold mb-2">What's Included:</h4>
-                    <ul className="space-y-1 text-sm">
-                      <li>• Professional advisory services</li>
-                      <li>• STEEL framework assessments</li>
-                      <li>• Strategic guidance and recommendations</li>
-                      <li>• Confidential analysis and reporting</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">Your Obligations:</h4>
-                    <ul className="space-y-1 text-sm">
-                      <li>• Provide accurate information</li>
-                      <li>• Timely payment of fees</li>
-                      <li>• Maintain confidentiality</li>
-                      <li>• Implement recommendations responsibly</li>
-                    </ul>
-                  </div>
-                </div>
               </div>
             </div>
           </Card>
         </motion.div>
 
-        {/* Main Sections */}
-        <div className="space-y-8 mb-8">
-          {sections.map((section, index) => (
-            <motion.div
-              key={section.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 + (index * 0.1) }}
-            >
-              <Card variant="glass" padding="lg">
-                <div className="flex items-start">
-                  <div className="p-3 rounded-full bg-silver/20 dark:bg-navy/40 mr-4">
-                    {section.icon}
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold mb-4 dark:text-white">{section.title}</h3>
-                    <ul className="space-y-3">
-                      {section.content.map((item, itemIndex) => (
-                        <li key={itemIndex} className="flex items-start">
-                          <div className="w-2 h-2 rounded-full bg-navy dark:bg-silver mt-2 mr-3 flex-shrink-0"></div>
-                          <span className="text-gray-600 dark:text-gray-200">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
+        {/* Eligibility and Account Requirements */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.3 Eligibility and Account Requirements</h2>
+            
+            <div className="space-y-4">
+              <div>
+                <h3 className="font-semibold mb-2 dark:text-white">Age Requirement</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  You must be at least 18 years of age to use the Services. By using the Services, you represent and warrant that you meet this age requirement.
+                </p>
+              </div>
 
-        {/* Confidentiality */}
+              <div>
+                <h3 className="font-semibold mb-2 dark:text-white">Authority</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  If you are using the Services on behalf of an organization, you represent and warrant that you have the authority to bind that organization to these Terms.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold mb-2 dark:text-white">Account Security</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">You are responsible for:</p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>Maintaining the confidentiality of your account credentials</li>
+                  <li>All activities that occur under your account</li>
+                  <li>Notifying ERMITS immediately of any unauthorized access or security breach</li>
+                  <li>Using strong, unique passwords and enabling multi-factor authentication where available</li>
+                </ul>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Privacy-First Architecture */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg" className="bg-navy text-white">
+            <h2 className="text-2xl font-bold mb-4">1.4 Privacy-First Architecture and Data Handling</h2>
+            <p className="text-silver mb-4">
+              ERMITS implements a Privacy-First Architecture across all products, built on the following principles:
+            </p>
+            <div className="space-y-3 text-silver">
+              <div>
+                <h3 className="font-semibold text-white mb-2">Client-Side Processing</h3>
+                <p>All core computational functions (assessments, SBOM analysis, risk scoring, compliance evaluations) are performed locally within your browser or self-managed environment whenever technically feasible.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold text-white mb-2">Data Sovereignty Options</h3>
+                <p>You have multiple deployment and storage options: Local Storage (browser-based, desktop app, on-premises), Cloud Storage (self-managed or ERMITS-managed), or Hybrid deployment.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold text-white mb-2">Zero-Knowledge Principles</h3>
+                <p>When using ERMITS-managed cloud services with encryption enabled, data is encrypted client-side using AES-256-GCM. ERMITS administrators cannot decrypt your data.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold text-white mb-2">Data Minimization</h3>
+                <p>ERMITS collects only the minimum data necessary for service functionality. We never collect raw SBOM files, assessment content, CUI, FCI, or proprietary business data.</p>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* License Grant and Restrictions */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.5 License Grant and Restrictions</h2>
+            
+            <div className="space-y-4">
+              <div>
+                <h3 className="font-semibold mb-2 dark:text-white">License to Use Services</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  Subject to your compliance with these Terms, ERMITS grants you a limited, non-exclusive, non-transferable, revocable license to access and use the Services for your internal business or personal purposes.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold mb-2 dark:text-white">License Restrictions</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">You may not:</p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>Modify, copy, distribute, transmit, display, perform, reproduce, publish, license, create derivative works from, transfer, or sell any information, software, products, or services obtained from the Services</li>
+                  <li>Reverse engineer, decompile, disassemble, or attempt to discover source code or underlying algorithms (except to the extent such restriction is prohibited by applicable law)</li>
+                  <li>Remove, obscure, or alter any proprietary rights notices</li>
+                  <li>Use the Services to develop competing products or services</li>
+                  <li>Access the Services through automated means (bots, scrapers) without prior written authorization</li>
+                  <li>Attempt to circumvent security measures or gain unauthorized access</li>
+                  <li>Use the Services in any way that violates applicable laws or regulations</li>
+                </ul>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* User Data Ownership */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.6 User Data Ownership and Responsibilities</h2>
+            
+            <div className="space-y-4">
+              <div>
+                <h3 className="font-semibold mb-2 dark:text-white">User Data Ownership</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  You retain all ownership rights in your User Data. ERMITS does not claim any ownership or intellectual property rights in your User Data.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold mb-2 dark:text-white">User Data Responsibilities</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">You are solely responsible for:</p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>The accuracy, quality, and legality of your User Data</li>
+                  <li>The means by which you acquired User Data</li>
+                  <li>Compliance with all applicable laws regarding User Data processing</li>
+                  <li>Maintaining appropriate security controls for your User Data</li>
+                  <li>Backup and disaster recovery of locally-stored data</li>
+                </ul>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Warranties and Disclaimers */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -161,35 +218,41 @@ export const TermsOfServicePage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h3 className="text-xl font-bold mb-4 dark:text-white">Confidentiality and Intellectual Property</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.14 Warranties and Disclaimers</h2>
+            
+            <div className="space-y-4">
               <div>
-                <h4 className="font-semibold mb-2 dark:text-gray-100">Client Confidentiality</h4>
-                <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
-                  All client information and assessment results are kept strictly confidential
-                </p>
-                
-                <h4 className="font-semibold mb-2 dark:text-gray-100">Work Product Ownership</h4>
-                <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
-                  Deliverables become client property upon payment, subject to our methodology rights
+                <h3 className="font-semibold mb-2 dark:text-white">Limited Warranty</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  ERMITS warrants that the Services will perform substantially in accordance with published documentation under normal use. This warranty does not apply to Beta Products, free tiers, issues caused by user error, third-party services, or force majeure events.
                 </p>
               </div>
+
               <div>
-                <h4 className="font-semibold mb-2 dark:text-gray-100">STEEL™ Methodology</h4>
-                <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
-                  The STEEL framework and methodology remain proprietary to ERMITS Advisory
+                <h3 className="font-semibold mb-2 dark:text-white">Disclaimer of Warranties</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">
+                  EXCEPT AS EXPRESSLY PROVIDED, THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO:
                 </p>
-                
-                <h4 className="font-semibold mb-2 dark:text-gray-100">Non-Disclosure</h4>
-                <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
-                  Both parties agree to maintain confidentiality of proprietary information
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>No warranty that Services will meet your specific requirements</li>
+                  <li>No guarantee of continuous, error-free operation</li>
+                  <li>No guarantee that Services are completely secure or error-free</li>
+                  <li>No warranty regarding accuracy, completeness, or reliability of outputs</li>
+                  <li>No guarantee that use of Services will result in regulatory compliance or certification</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="font-semibold mb-2 dark:text-white">Compliance Disclaimer</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  ERMITS products are tools to assist with security and compliance efforts but do not guarantee compliance with any regulatory framework, do not constitute legal or professional consulting advice, and are not certification authorities.
                 </p>
               </div>
             </div>
           </Card>
         </motion.div>
 
-        {/* Payment and Termination */}
+        {/* Limitation of Liability */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -197,55 +260,27 @@ export const TermsOfServicePage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.15 Limitation of Liability</h2>
+            
+            <div className="space-y-4">
               <div>
-                <h3 className="text-xl font-bold mb-4 dark:text-white">Payment Terms</h3>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-200">
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="text-green-500 mt-0.5 mr-2 flex-shrink-0" />
-                    Fees are due according to agreed payment schedule
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="text-green-500 mt-0.5 mr-2 flex-shrink-0" />
-                    Late payments may incur interest charges
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="text-green-500 mt-0.5 mr-2 flex-shrink-0" />
-                    Travel and expenses billed separately when applicable
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="text-green-500 mt-0.5 mr-2 flex-shrink-0" />
-                    All fees are non-refundable once services commence
-                  </li>
-                </ul>
+                <h3 className="font-semibold mb-2 dark:text-white">Exclusion of Consequential Damages</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL ERMITS LLC BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, LOSS OF PROFITS, REVENUE, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES.
+                </p>
               </div>
-              
+
               <div>
-                <h3 className="text-xl font-bold mb-4 dark:text-white">Termination</h3>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-200">
-                  <li className="flex items-start">
-                    <AlertTriangle size={16} className="text-orange-500 mt-0.5 mr-2 flex-shrink-0" />
-                    Either party may terminate with 30 days written notice
-                  </li>
-                  <li className="flex items-start">
-                    <AlertTriangle size={16} className="text-orange-500 mt-0.5 mr-2 flex-shrink-0" />
-                    Immediate termination for material breach of terms
-                  </li>
-                  <li className="flex items-start">
-                    <AlertTriangle size={16} className="text-orange-500 mt-0.5 mr-2 flex-shrink-0" />
-                    Client remains liable for fees for services rendered
-                  </li>
-                  <li className="flex items-start">
-                    <AlertTriangle size={16} className="text-orange-500 mt-0.5 mr-2 flex-shrink-0" />
-                    Confidentiality obligations survive termination
-                  </li>
-                </ul>
+                <h3 className="font-semibold mb-2 dark:text-white">Cap on Liability</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  ERMITS' TOTAL AGGREGATE LIABILITY ARISING OUT OF OR RELATED TO THESE TERMS OR USE OF THE SERVICES SHALL NOT EXCEED THE GREATER OF $100 USD OR THE TOTAL AMOUNT PAID BY YOU TO ERMITS IN THE 12 MONTHS PRECEDING THE CLAIM.
+                </p>
               </div>
             </div>
           </Card>
         </motion.div>
 
-        {/* Contact and Governing Law */}
+        {/* Contact Information */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -253,38 +288,29 @@ export const TermsOfServicePage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.22 Contact Information</h2>
+            
+            <div className="space-y-4">
               <div>
-                <h3 className="text-xl font-bold mb-4 dark:text-white">Questions About Terms?</h3>
-                <p className="text-gray-600 dark:text-gray-200 mb-4">
-                  Contact our legal team for clarification or questions about these terms
+                <h3 className="font-semibold mb-2 dark:text-white">For questions, concerns, or notices regarding these Terms:</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  <strong>ERMITS LLC</strong><br />
+                  Email: <a href="mailto:contact@ermits.com" className="text-navy dark:text-silver hover:underline">contact@ermits.com</a><br />
+                  Website: <a href="https://www.ermits.com" className="text-navy dark:text-silver hover:underline" target="_blank" rel="noopener noreferrer">www.ermits.com</a>
                 </p>
-                <div className="space-y-3">
-                  <div className="flex items-center">
-                    <FileText size={16} className="text-navy dark:text-silver mr-2" />
-                    <span className="text-gray-600 dark:text-gray-200">legal@ermits.com</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Scale size={16} className="text-navy dark:text-silver mr-2" />
-                    <span className="text-gray-600 dark:text-gray-200">+1 (240) 599-0102</span>
-                  </div>
-                </div>
               </div>
-              
+
               <div>
-                <h3 className="text-xl font-bold mb-4 dark:text-white">Governing Law</h3>
-                <p className="text-gray-600 dark:text-gray-200 mb-4">
-                  These terms are governed by the laws of Maryland, United States, without regard to conflict of law principles
-                </p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  International clients: Additional terms may apply based on local jurisdiction
+                <h3 className="font-semibold mb-2 dark:text-white">For technical support inquiries:</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  Email: <a href="mailto:contact@ermits.com" className="text-navy dark:text-silver hover:underline">contact@ermits.com</a>
                 </p>
               </div>
             </div>
           </Card>
         </motion.div>
 
-        {/* Footer */}
+        {/* Footer Links */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -302,14 +328,11 @@ export const TermsOfServicePage: React.FC = () => {
                 Cookie Policy
               </Button>
             </Link>
-            <Button 
-              variant="outline" 
-              size="sm"
-              icon={<ExternalLink size={16} />}
-              iconPosition="right"
-            >
-              Master Service Agreement
-            </Button>
+            <Link to="/acceptable-use">
+              <Button variant="outline" size="sm">
+                Acceptable Use Policy
+              </Button>
+            </Link>
           </div>
         </motion.div>
       </div>

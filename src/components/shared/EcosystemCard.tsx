@@ -8,6 +8,7 @@ interface EcosystemCardProps {
   tag: string;
   description: string;
   steelFeeds: string;
+  logo?: string;
   className?: string;
 }
 
@@ -16,6 +17,7 @@ export const EcosystemCard: React.FC<EcosystemCardProps> = ({
   tag,
   description,
   steelFeeds,
+  logo,
   className
 }) => {
   return (
@@ -26,13 +28,26 @@ export const EcosystemCard: React.FC<EcosystemCardProps> = ({
         className
       )}
     >
-      <div className="flex justify-between items-start mb-2">
-        <div className="font-semibold text-sm uppercase tracking-wider text-gray-900 dark:text-white">
-          {name}
+      <div className="flex items-start gap-3 mb-3">
+        {logo && (
+          <div className="flex-shrink-0">
+            <img 
+              src={logo} 
+              alt={`${name} Logo`} 
+              className="w-12 h-12 object-contain"
+            />
+          </div>
+        )}
+        <div className="flex-1 min-w-0">
+          <div className="flex justify-between items-start mb-2">
+            <div className="font-semibold text-sm uppercase tracking-wider text-gray-900 dark:text-white">
+              {name}
+            </div>
+            <Badge variant="outline" color="blue" className="text-xs flex-shrink-0 ml-2">
+              {tag}
+            </Badge>
+          </div>
         </div>
-        <Badge variant="outline" color="blue" className="text-xs">
-          {tag}
-        </Badge>
       </div>
       <p className="text-sm text-gray-700 dark:text-slate-300 mb-3 leading-relaxed">
         {description}

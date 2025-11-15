@@ -11,6 +11,14 @@ import { MetricCard } from '../components/shared/MetricCard';
 import { EcosystemCard } from '../components/shared/EcosystemCard';
 import { ArrowRight, CheckCircle, Zap, Eye, Target, Calendar, Layers, Rocket, Search, Shield } from 'lucide-react';
 import { LiveMetrics } from '../components/interactive/LiveMetrics';
+// Import brand logos
+import cyberCautionLogo from '../assets/cybercaution.png';
+import cyberCorrectLogo from '../assets/cybercorrect.png';
+import cyberSoluceLogo from '../assets/cybersoluce.png';
+import vendorSoluceLogo from '../assets/vendorsoluce.png';
+import technoSoluceLogo from '../assets/technosoluce.png';
+import socialCautionLogo from '../assets/socialcaution.png';
+import ermitsAdvisoryLogo from '../assets/ermits-advisory.png';
 
 export const LandingPage: React.FC = () => {
   const { theme } = useTheme();
@@ -124,12 +132,12 @@ export const LandingPage: React.FC = () => {
               transition={{ duration: 0.6 }}
               className="flex flex-col items-center lg:items-start text-center lg:text-left"
             >
-              {/* Tagline Badge - Luxury */}
+              {/* Tagline Badge - Enhanced from HTML */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-luxury-gold/40 bg-gradient-to-r from-luxury-gold/20 via-luxury-gold/10 to-transparent backdrop-blur-sm text-luxury-gold-light text-xs uppercase tracking-widest mb-6 shadow-luxury-gold"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-cyan-400/40 bg-gradient-to-r from-cyan-500/18 via-slate-900/96 to-transparent backdrop-blur-sm text-cyan-200 text-xs uppercase tracking-[0.18em] mb-4"
               >
                 <span className="font-semibold">STEEL™</span>
                 <span>Strategic Threat & Enterprise Evaluation Landscape</span>
@@ -167,22 +175,22 @@ export const LandingPage: React.FC = () => {
                 implementation tools across the <strong className="text-white">ERMITS ecosystem</strong>.
               </motion.p>
 
-              {/* Pills */}
+              {/* Pills - Enhanced from HTML */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.6 }}
                 className="flex flex-wrap gap-2 mb-6 justify-center lg:justify-start"
               >
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-600/40 bg-slate-900/85 text-xs text-slate-400">
+                <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full border border-slate-500/40 bg-slate-900/85 text-xs text-slate-400">
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
                   PESTEL-driven threat scanning
                 </div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-600/40 bg-slate-900/85 text-xs text-slate-400">
+                <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full border border-slate-500/40 bg-slate-900/85 text-xs text-slate-400">
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
                   Privacy, vendor & ransomware risk
                 </div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-600/40 bg-slate-900/85 text-xs text-slate-400">
+                <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full border border-slate-500/40 bg-slate-900/85 text-xs text-slate-400">
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
                   Direct mapping to ERMITS ecosystem
                 </div>
@@ -201,7 +209,7 @@ export const LandingPage: React.FC = () => {
                   icon={<ArrowRight size={20} />}
                   iconPosition="right"
                   onClick={() => navigate('/steel')}
-                  className="luxury-button text-navy-dark font-bold shadow-luxury-gold-lg hover:shadow-luxury-gold-lg"
+                  className="bg-gradient-to-r from-yellow-400 to-yellow-300 text-navy-dark font-semibold shadow-[0_18px_45px_rgba(0,0,0,0.6)] hover:brightness-110 hover:-translate-y-0.5 transition-all"
                 >
                   Explore STEEL™ Methodology
                 </Button>
@@ -209,7 +217,7 @@ export const LandingPage: React.FC = () => {
                   variant="ghost" 
                   size="lg"
                   onClick={() => navigate('/ecosystem')}
-                  className="border-luxury-gold/40 text-white hover:bg-luxury-gold/10 hover:border-luxury-gold/60 backdrop-blur-sm transition-all duration-300"
+                  className="border-slate-500/60 text-slate-200 bg-slate-900/85 hover:bg-slate-900/90 hover:border-slate-500/90 transition-all"
                 >
                   View ERMITS Ecosystem Map
                 </Button>
@@ -236,7 +244,7 @@ export const LandingPage: React.FC = () => {
               className="relative"
               aria-label="STEEL dashboard preview"
             >
-              <Card className="luxury-card bg-gradient-to-br from-blue-500/25 via-slate-900/98 to-slate-900/98 dark:from-blue-500/20 dark:via-dark-luxury-surface dark:to-dark-luxury-surface border-luxury-gold/20 dark:border-luxury-gold/30 shadow-luxury-lg p-6 backdrop-blur-xl">
+              <Card className="luxury-card bg-gradient-to-br from-blue-500/22 via-slate-900/98 to-slate-900/98 dark:from-blue-500/20 dark:via-slate-900/98 dark:to-slate-900/98 border-slate-500/50 dark:border-slate-500/50 shadow-[0_18px_45px_rgba(0,0,0,0.55)] p-5 backdrop-blur-xl rounded-3xl">
                 {/* Panel Header */}
                 <div className="flex justify-between items-start mb-4">
                   <div>
@@ -308,10 +316,13 @@ export const LandingPage: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold mb-4 dark:text-white">
+            <div className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-2">
+              Intelligence
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
               {'Real-Time Cyber Intelligence'}
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
               {'Monitor threats and risk indicators across all critical dimensions'}
             </p>
           </motion.div>
@@ -330,10 +341,13 @@ export const LandingPage: React.FC = () => {
             viewport={{ once: true, amount: 0.3 }}
             className="text-center mb-12"
           >
-            <motion.h2 variants={item} className="text-3xl font-bold mb-4 dark:text-white">
+            <motion.div variants={item} className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-2">
+              Capabilities
+            </motion.div>
+            <motion.h2 variants={item} className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
               Advanced Capabilities
             </motion.h2>
-            <motion.p variants={item} className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
+            <motion.p variants={item} className="text-lg text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
               Powerful tools and insights to transform your security posture
             </motion.p>
           </motion.div>
@@ -380,11 +394,14 @@ export const LandingPage: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
+            <div className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-2">
+              Implementation
+            </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              From Assessment to Implementation in 90 Days
+              From Assessment to Implementation
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Strategic insights that become operational reality through the ERMITS ecosystem
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Strategic insights that become operational reality through the ERMITS ecosystem. Typical implementation timelines vary by organization size and complexity.
             </p>
           </motion.div>
 
@@ -709,6 +726,7 @@ export const LandingPage: React.FC = () => {
                   tag="Ransomware & Threat Weather"
                   description="Converts STEEL™ ransomware and threat-weather signals into playbooks, tabletop exercises, and continuous monitoring dashboards."
                   steelFeeds="threat clusters, geography, sector exposure, priority controls."
+                  logo={cyberCautionLogo}
                 />
               </motion.div>
               <motion.div variants={item}>
@@ -717,6 +735,7 @@ export const LandingPage: React.FC = () => {
                   tag="Privacy & Data Rights"
                   description="Turns privacy-heavy STEEL™ findings (GDPR, CCPA, DPDP, AI rules) into data mapping, DPIA/PIA workflow, and request automation."
                   steelFeeds="regulation radar, sector rules, cross-border data paths."
+                  logo={cyberCorrectLogo}
                 />
               </motion.div>
               <motion.div variants={item}>
@@ -725,6 +744,7 @@ export const LandingPage: React.FC = () => {
                   tag="Vendor & Supply Chain"
                   description="Uses vendor-centric STEEL™ outputs to rank suppliers, contracts, and critical services by risk level and regulatory impact."
                   steelFeeds="vendor geography, concentration risk, incident history."
+                  logo={vendorSoluceLogo}
                 />
               </motion.div>
               <motion.div variants={item}>
@@ -741,6 +761,7 @@ export const LandingPage: React.FC = () => {
                   tag="NIST CSF & Ransomware Readiness"
                   description="Maps STEEL™ gaps to concrete controls using NIST CSF and ransomware profiles, turning high-level risk into maturity roadmaps."
                   steelFeeds="function-by-function control priorities and sector baselines."
+                  logo={cyberSoluceLogo}
                 />
               </motion.div>
               <motion.div variants={item}>
@@ -749,6 +770,7 @@ export const LandingPage: React.FC = () => {
                   tag="Human Layer & Citizens"
                   description="Converts societal and behavioral patterns from STEEL™ (mis-/dis-information, scams, social engineering trends) into awareness campaigns and tools."
                   steelFeeds="narrative themes, target demographics, risk personas."
+                  logo={socialCautionLogo}
                 />
               </motion.div>
               <motion.div variants={item}>
@@ -757,6 +779,7 @@ export const LandingPage: React.FC = () => {
                   tag="SBOM & Software Risk"
                   description="Uses STEEL™ to prioritize SBOM findings and software supply-chain risks in line with EO 14028, NIST SP 800-161, and similar references."
                   steelFeeds="technology stacks, vulnerability heat, regulatory expectations."
+                  logo={technoSoluceLogo}
                 />
               </motion.div>
               <motion.div variants={item}>
@@ -765,6 +788,7 @@ export const LandingPage: React.FC = () => {
                   tag="Intelligence & Roadmaps"
                   description="Remains the neutral advisory brain: it runs STEEL™, orchestrates the analysis, and guides which ERMITS tools you should deploy first."
                   steelFeeds="one integrated narrative, not six disconnected projects."
+                  logo={ermitsAdvisoryLogo}
                 />
               </motion.div>
             </motion.div>
@@ -1059,6 +1083,17 @@ export const LandingPage: React.FC = () => {
               </div>
             </Card>
           </motion.div>
+        </div>
+      </section>
+
+      {/* FTC Compliance Disclaimer */}
+      <section className="py-8 bg-gray-50 dark:bg-gray-900/50 border-t border-gray-200 dark:border-gray-800">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="text-center">
+            <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed max-w-4xl mx-auto">
+              <strong className="text-gray-800 dark:text-gray-300">Disclaimer:</strong> Results, outcomes, and timelines may vary based on individual organization circumstances, size, complexity, industry, and implementation efforts. Performance claims are based on typical experiences and are not guarantees. Case studies and examples are illustrative and may not reflect all client experiences. Pricing is subject to change and final pricing will be confirmed in written proposals. ERMITS Advisory services are advisory in nature and do not guarantee specific security outcomes or compliance certifications.
+            </p>
+          </div>
         </div>
       </section>
     </div>
