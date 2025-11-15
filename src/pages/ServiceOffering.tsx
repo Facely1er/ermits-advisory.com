@@ -6,7 +6,7 @@ import { Button } from '../components/shared/Button';
 import { 
   Shield, Search, Users, UserCheck, CheckCircle, ArrowRight, 
   Mail, Phone, MapPin, Presentation, Activity, Lightbulb,
-  BarChart2, FileText
+  BarChart2, FileText, DollarSign, Clock
 } from 'lucide-react';
 
 export const ServiceOffering: React.FC = () => {
@@ -19,34 +19,79 @@ export const ServiceOffering: React.FC = () => {
     {
       id: 'strategicDiscovery',
       icon: <Search size={32} className="text-navy dark:text-silver" />,
-      title: t('steelPage.advisoryProcess.strategicDiscovery.title'),
-      description: t('steelPage.advisoryProcess.strategicDiscovery.description')
+      title: 'Strategic Discovery',
+      description: 'Comprehensive assessment of your organization\'s security posture and risk landscape'
     },
     {
       id: 'modeling',
       icon: <Activity size={32} className="text-navy dark:text-silver" />,
-      title: t('steelPage.advisoryProcess.modeling.title'),
-      description: t('steelPage.advisoryProcess.modeling.description')
+      title: 'Risk Modeling',
+      description: 'STEEL framework analysis across all six dimensions to quantify risk exposure'
     },
     {
       id: 'synthesis',
       icon: <Lightbulb size={32} className="text-navy dark:text-silver" />,
-      title: t('steelPage.advisoryProcess.synthesis.title'),
-      description: t('steelPage.advisoryProcess.synthesis.description')
+      title: 'Strategic Synthesis',
+      description: 'Integration of findings into actionable recommendations and platform roadmap'
     },
     {
       id: 'briefing',
       icon: <Presentation size={32} className="text-navy dark:text-silver" />,
-      title: t('steelPage.advisoryProcess.briefing.title'),
-      description: t('steelPage.advisoryProcess.briefing.description')
+      title: 'Executive Briefing',
+      description: 'Board-ready presentations with clear priorities and implementation pathways'
     }
   ];
   
-  // Define service information with IDs matching the exact keys in translations.ts
+  // Service offerings with pricing from documentation
   const services = [
-    { id: 'steel', icon: 'shield' },
-    { id: 'vCISO', icon: 'user' },
-    { id: 'dashboard', icon: 'presentation' }
+    {
+      id: 'steel',
+      icon: 'shield',
+      title: 'STEEL Strategic Assessments',
+      description: 'Comprehensive risk assessment using our proprietary STEEL framework to identify gaps and create clear pathways to ERMITS platform adoption.',
+      price: '$25K - $125K',
+      timeline: '2-8 weeks',
+      features: [
+        'Rapid, Comprehensive, or Industry-Specific assessments',
+        'Composite risk scoring across PESTEL factors',
+        'NIST CSF maturity baseline',
+        'ERMITS platform recommendations',
+        'Executive briefing presentation'
+      ],
+      link: '/pricing'
+    },
+    {
+      id: 'vCISO',
+      icon: 'user',
+      title: 'Strategic vCISO Services',
+      description: 'Fractional CISO leadership leveraging ERMITS platform capabilities. Three tiers from strategic advisory to full executive leadership.',
+      price: '$8K - $70K/month',
+      timeline: 'Ongoing',
+      features: [
+        'Strategic, Operational, or Executive tiers',
+        'Platform-enabled efficiency',
+        'Board presentations and strategic planning',
+        'Team leadership and program management',
+        '60-70% cost savings vs full-time CISO'
+      ],
+      link: '/pricing'
+    },
+    {
+      id: 'compliance',
+      icon: 'file',
+      title: 'Compliance Advisory',
+      description: 'Framework-driven compliance services feeding directly into CyberCorrect automation for continuous compliance monitoring.',
+      price: '$12K - $30K',
+      timeline: '3-5 weeks',
+      features: [
+        'Compliance readiness assessments',
+        'Audit preparation support',
+        'Continuous compliance programs',
+        'CyberCorrect integration',
+        'NIST, ISO, SOC 2, HIPAA, CMMC support'
+      ],
+      link: '/pricing'
+    }
   ];
   
   // What Makes STEEL Different items
@@ -54,30 +99,30 @@ export const ServiceOffering: React.FC = () => {
     {
       id: 'predictiveIntelligence',
       icon: <Lightbulb size={24} className="text-navy dark:text-silver" />,
-      title: t('steelPage.whatMakesDifferent.predictiveIntelligence.title'),
-      description: t('steelPage.whatMakesDifferent.predictiveIntelligence.description'),
-      link: t('steelPage.whatMakesDifferent.predictiveIntelligence.link')
+      title: 'Predictive Intelligence',
+      description: 'STEEL scoring system provides unique quantified risk methodology with measurable before/after metrics',
+      link: 'Learn more about STEEL'
     },
     {
       id: 'enhancedPestel',
       icon: <BarChart2 size={24} className="text-navy dark:text-silver" />,
-      title: t('steelPage.whatMakesDifferent.enhancedPestel.title'),
-      description: t('steelPage.whatMakesDifferent.enhancedPestel.description'),
-      link: t('steelPage.whatMakesDifferent.enhancedPestel.link')
+      title: 'Enhanced PESTEL Framework',
+      description: 'Quantified risk scoring across Political, Economic, Social, Technological, Environmental, and Legal factors',
+      link: 'Explore methodology'
     },
     {
       id: 'expertPartnership',
       icon: <Users size={24} className="text-navy dark:text-silver" />,
-      title: t('steelPage.whatMakesDifferent.expertPartnership.title'),
-      description: t('steelPage.whatMakesDifferent.expertPartnership.description'),
-      link: t('steelPage.whatMakesDifferent.expertPartnership.link')
+      title: 'Expert Partnership',
+      description: 'Advisory insights become operational tools through ERMITS platform integration, not just recommendations',
+      link: 'View ecosystem'
     },
     {
       id: 'frameworkIntegration',
       icon: <FileText size={24} className="text-navy dark:text-silver" />,
-      title: t('steelPage.whatMakesDifferent.frameworkIntegration.title'),
-      description: t('steelPage.whatMakesDifferent.frameworkIntegration.description'),
-      link: t('steelPage.whatMakesDifferent.frameworkIntegration.link')
+      title: 'Framework Integration',
+      description: 'Unified ecosystem approach vs fragmented point solutions, with 80-90% implementation rate vs typical 30-40%',
+      link: 'See integration'
     }
   ];
   
@@ -105,6 +150,8 @@ export const ServiceOffering: React.FC = () => {
         return <Shield size={size} className="text-navy dark:text-silver" />;
       case 'user':
         return <UserCheck size={size} className="text-navy dark:text-silver" />;
+      case 'file':
+        return <FileText size={size} className="text-navy dark:text-silver" />;
       default:
         return null;
     }
@@ -135,11 +182,11 @@ export const ServiceOffering: React.FC = () => {
             </motion.div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
               <span className="bg-gradient-to-r from-white via-silver to-white bg-clip-text text-transparent">
-                {t('services.title')}
+                ERMITS Advisory Services
               </span>
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-silver/90 max-w-3xl mx-auto leading-relaxed">
-              {t('services.subtitle')}
+              Strategic Cybersecurity Intelligence That Implements. Transform risk assessment into risk reduction through STEEL-powered insights and ERMITS ecosystem integration.
             </p>
           </motion.div>
         </div>
@@ -156,36 +203,36 @@ export const ServiceOffering: React.FC = () => {
         >
           <motion.div variants={item}>
             <Card variant="glass" className="text-center h-full">
-              <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">Significant</h3>
+              <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">60-70%</h3>
               <p className="text-gray-600 dark:text-gray-200">
-                {t('landing.metrics.riskReduction')}
+                Cost Savings vs Full-Time CISO
               </p>
             </Card>
           </motion.div>
           
           <motion.div variants={item}>
             <Card variant="glass" className="text-center h-full">
-              <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">Faster</h3>
+              <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">80-90%</h3>
               <p className="text-gray-600 dark:text-gray-200">
-                {t('landing.metrics.timeToInsight')}
+                Implementation Rate (vs 30-40% typical)
               </p>
             </Card>
           </motion.div>
           
           <motion.div variants={item}>
             <Card variant="glass" className="text-center h-full">
-              <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">Improved</h3>
+              <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">50%</h3>
               <p className="text-gray-600 dark:text-gray-200">
-                {t('landing.metrics.boardConfidence')}
+                Faster Time to Compliance
               </p>
             </Card>
           </motion.div>
           
           <motion.div variants={item}>
             <Card variant="glass" className="text-center h-full">
-              <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">Positive</h3>
+              <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">3x</h3>
               <p className="text-gray-600 dark:text-gray-200">
-                {t('landing.metrics.roiImprovement')}
+                Higher Client Success Rate
               </p>
             </Card>
           </motion.div>
@@ -199,9 +246,9 @@ export const ServiceOffering: React.FC = () => {
           className="mb-16"
         >
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">{t('steelPage.whatMakesDifferent.title')}</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">The ERMITS Advisory Advantage</h2>
             <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              {t('steelPage.whatMakesDifferent.subtitle')}
+              What makes our approach different from traditional cybersecurity consulting
             </p>
           </div>
           
@@ -241,9 +288,9 @@ export const ServiceOffering: React.FC = () => {
           className="mb-16"
         >
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">{t('steelPage.advisoryProcess.title')}</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">Our Advisory Process</h2>
             <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              {t('steelPage.advisoryProcess.subtitle')}
+              A proven methodology that transforms assessment into actionable implementation
             </p>
           </div>
           
@@ -275,54 +322,80 @@ export const ServiceOffering: React.FC = () => {
           className="mb-16"
         >
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">{t('services.title')}</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">Core Service Offerings</h2>
             <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              {t('services.subtitle')}
+              Strategic intelligence that implements through the ERMITS ecosystem
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map((service) => {
-              const serviceData = getNestedTranslation(`services.${service.id}`) as Record<string, unknown>;
-              
-              return (
-                <Card key={service.id} variant="glass" padding="lg" className="h-full">
-                  <div className="flex items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service) => (
+              <Card key={service.id} variant="glass" padding="lg" className="h-full hover:shadow-xl transition-shadow">
+                <div className="flex flex-col h-full">
+                  <div className="flex items-start mb-4">
                     <div className="p-3 rounded-full bg-silver/20 dark:bg-navy/40 mr-4">
                       {getServiceIcon(service.icon)}
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold mb-2 dark:text-white card-title">
-                        {typeof serviceData === 'object' && serviceData !== null && 'title' in serviceData ? String(serviceData.title) : ''}
+                      <h3 className="text-xl font-bold mb-2 dark:text-white">
+                        {service.title}
                       </h3>
-                      <p className="text-gray-600 dark:text-gray-200 mb-4 card-text">
-                        {typeof serviceData === 'object' && serviceData !== null && 'description' in serviceData ? String(serviceData.description) : ''}
-                      </p>
-                      
-                      <h4 className="text-lg font-semibold mb-2 dark:text-gray-100">{t('services.keyFeatures')}</h4>
-                      <ul className="space-y-2 mb-6">
-                        {typeof serviceData === 'object' && serviceData !== null && 'features' in serviceData && Array.isArray(serviceData.features) && serviceData.features.map((feature: unknown, index: number) => (
-                          <li key={index} className="flex items-start">
-                            <CheckCircle size={16} className="text-navy dark:text-silver mt-1 mr-2 flex-shrink-0" />
-                            <span className="text-gray-600 dark:text-gray-200">{String(feature)}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      
-                      <Button 
-                        variant="outline" 
-                        size="sm"
-                        icon={<ArrowRight size={16} />}
-                        iconPosition="right"
-                        onClick={() => navigate('/contact')}
-                      >
-                        {t('common.learnMore')}
-                      </Button>
+                      <div className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400 mb-3">
+                        <span className="flex items-center font-semibold text-navy dark:text-white">
+                          <DollarSign size={16} className="mr-1" />
+                          {service.price}
+                        </span>
+                        <span className="flex items-center">
+                          <Clock size={16} className="mr-1" />
+                          {service.timeline}
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </Card>
-              );
-            })}
+                  
+                  <p className="text-gray-600 dark:text-gray-200 mb-4 flex-grow">
+                    {service.description}
+                  </p>
+                  
+                  <div className="mb-4">
+                    <h4 className="text-sm font-semibold mb-2 text-navy dark:text-silver">Key Features:</h4>
+                    <ul className="space-y-2">
+                      {service.features.map((feature, index) => (
+                        <li key={index} className="flex items-start text-sm">
+                          <CheckCircle size={16} className="text-green-500 mt-0.5 mr-2 flex-shrink-0" />
+                          <span className="text-gray-600 dark:text-gray-300">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div className="mt-auto pt-4 border-t border-gray-200 dark:border-gray-700">
+                    <Button 
+                      variant="primary" 
+                      size="sm"
+                      icon={<ArrowRight size={16} />}
+                      iconPosition="right"
+                      onClick={() => navigate(service.link)}
+                      className="w-full"
+                    >
+                      View Pricing
+                    </Button>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <Button 
+              variant="outline" 
+              size="lg"
+              onClick={() => navigate('/pricing')}
+              icon={<DollarSign size={20} />}
+              iconPosition="right"
+            >
+              View Complete Pricing Guide
+            </Button>
           </div>
         </motion.div>
 
@@ -357,25 +430,25 @@ export const ServiceOffering: React.FC = () => {
                   <div className="aspect-square hexagon bg-[#4c72b0] text-white flex items-center justify-center p-4 text-center">
                     <div>
                       <Shield size={24} className="mx-auto mb-2" />
-                      <span className="text-sm font-medium">{t('steel.dimensions.political.title')}</span>
+                      <span className="text-sm font-medium">Political</span>
                     </div>
                   </div>
                   <div className="aspect-square hexagon bg-[#dd8452] text-white flex items-center justify-center p-4 text-center">
                     <div>
                       <BarChart2 size={24} className="mx-auto mb-2" />
-                      <span className="text-sm font-medium">{t('steel.dimensions.economic.title')}</span>
+                      <span className="text-sm font-medium">Economic</span>
                     </div>
                   </div>
                   <div className="aspect-square hexagon bg-[#55a868] text-white flex items-center justify-center p-4 text-center">
                     <div>
                       <Users size={24} className="mx-auto mb-2" />
-                      <span className="text-sm font-medium">{t('steel.dimensions.social.title')}</span>
+                      <span className="text-sm font-medium">Social</span>
                     </div>
                   </div>
                   <div className="aspect-square hexagon bg-[#c44e52] text-white flex items-center justify-center p-4 text-center">
                     <div>
                       <Shield size={24} className="mx-auto mb-2" />
-                      <span className="text-sm font-medium">{t('steel.dimensions.technology.title')}</span>
+                      <span className="text-sm font-medium">Technology</span>
                     </div>
                   </div>
                   <div className="aspect-square hexagon bg-navy text-white flex items-center justify-center p-4 text-center">
@@ -386,13 +459,13 @@ export const ServiceOffering: React.FC = () => {
                   <div className="aspect-square hexagon bg-[#8172b3] text-white flex items-center justify-center p-4 text-center">
                     <div>
                       <Shield size={24} className="mx-auto mb-2" />
-                      <span className="text-sm font-medium">{t('steel.dimensions.environmental.title')}</span>
+                      <span className="text-sm font-medium">Environmental</span>
                     </div>
                   </div>
                   <div className="col-start-2 aspect-square hexagon bg-[#937860] text-white flex items-center justify-center p-4 text-center">
                     <div>
                       <Shield size={24} className="mx-auto mb-2" />
-                      <span className="text-sm font-medium">{t('steel.dimensions.legal.title')}</span>
+                      <span className="text-sm font-medium">Legal</span>
                     </div>
                   </div>
                 </div>
@@ -408,7 +481,7 @@ export const ServiceOffering: React.FC = () => {
           transition={{ delay: 0.6 }}
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-6 dark:text-white">{t('services.contact.title')}</h2>
+            <h2 className="text-2xl font-bold mb-6 dark:text-white">Get In Touch</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="flex items-start">
@@ -418,7 +491,7 @@ export const ServiceOffering: React.FC = () => {
                 <div>
                   <h3 className="text-lg font-semibold mb-1 dark:text-white">Email</h3>
                   <p className="text-gray-600 dark:text-gray-200">
-                    {t('services.contact.email')}
+                    advisory@ermits.com
                   </p>
                 </div>
               </div>
@@ -430,7 +503,7 @@ export const ServiceOffering: React.FC = () => {
                 <div>
                   <h3 className="text-lg font-semibold mb-1 dark:text-white">Phone</h3>
                   <p className="text-gray-600 dark:text-gray-200">
-                    {t('services.contact.phone')}
+                    1-800-ERMITS-1
                   </p>
                 </div>
               </div>
@@ -440,9 +513,9 @@ export const ServiceOffering: React.FC = () => {
                   <MapPin size={24} className="text-navy dark:text-silver" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold mb-1 dark:text-white">Headquarters</h3>
+                  <h3 className="text-lg font-semibold mb-1 dark:text-white">Schedule Consultation</h3>
                   <p className="text-gray-600 dark:text-gray-200">
-                    {t('services.contact.headquarters')}
+                    Book a call to discuss your needs
                   </p>
                 </div>
               </div>
@@ -453,8 +526,10 @@ export const ServiceOffering: React.FC = () => {
                 variant="primary" 
                 size="lg"
                 onClick={() => navigate('/contact')}
+                icon={<ArrowRight size={20} />}
+                iconPosition="right"
               >
-                {t('services.contact.requestConsultation')}
+                Request Consultation
               </Button>
             </div>
           </Card>

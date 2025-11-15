@@ -3,9 +3,10 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../contexts/ThemeContext';
 import { Button } from '../components/shared/Button';
+import { Card } from '../components/shared/Card';
 import { InteractiveCard } from '../components/shared/InteractiveCard';
 import { TypewriterText } from '../components/shared/TypewriterText';
-import { Shield, TrendingUp, Users, Server, Leaf, Scale, ArrowRight, CheckCircle, Zap, Eye, Target } from 'lucide-react';
+import { Shield, TrendingUp, Users, Server, Leaf, Scale, ArrowRight, CheckCircle, Zap, Eye, Target, Calendar, Layers, Rocket, Search } from 'lucide-react';
 import { steelDimensions } from '../data/mockData';
 import { LiveMetrics } from '../components/interactive/LiveMetrics';
 
@@ -48,31 +49,31 @@ export const LandingPage: React.FC = () => {
     }
   };
 
-  // Enhanced features for interactive display - now using translations
+  // Enhanced features for interactive display
   const enhancedFeatures = [
     {
       icon: <Zap size={24} className="text-yellow-500" />,
-      title: t('landing.advancedCapabilities.realTimeIntelligence.title'),
-      description: t('landing.advancedCapabilities.realTimeIntelligence.description'),
-      metric: t('landing.advancedCapabilities.realTimeIntelligence.metric')
+      title: 'Real-Time Intelligence',
+      description: 'Monitor threats and risks as they emerge with live data feeds',
+      metric: '24/7'
     },
     {
       icon: <Eye size={24} className="text-blue-500" />,
-      title: t('landing.advancedCapabilities.predictiveAnalytics.title'),
-      description: t('landing.advancedCapabilities.predictiveAnalytics.description'),
-      metric: t('landing.advancedCapabilities.predictiveAnalytics.metric')
+      title: 'Predictive Analytics',
+      description: 'AI-powered insights that forecast potential security threats',
+      metric: '95%'
     },
     {
       icon: <Target size={24} className="text-green-500" />,
-      title: t('landing.advancedCapabilities.strategicFocus.title'),
-      description: t('landing.advancedCapabilities.strategicFocus.description'),
-      metric: t('landing.advancedCapabilities.strategicFocus.metric')
+      title: 'Strategic Focus',
+      description: 'Prioritize actions based on business impact and risk severity',
+      metric: '6D'
     },
     {
       icon: <Shield size={24} className="text-purple-500" />,
-      title: t('landing.advancedCapabilities.comprehensiveCoverage.title'),
-      description: t('landing.advancedCapabilities.comprehensiveCoverage.description'),
-      metric: t('landing.advancedCapabilities.comprehensiveCoverage.metric')
+      title: 'Comprehensive Coverage',
+      description: 'Complete visibility across all critical risk dimensions',
+      metric: '100%'
     }
   ];
 
@@ -178,10 +179,10 @@ export const LandingPage: React.FC = () => {
             className="text-center mb-12"
           >
             <motion.h2 variants={item} className="text-3xl font-bold mb-4 dark:text-white">
-              {t('landing.advancedCapabilities.title')}
+              Advanced Capabilities
             </motion.h2>
             <motion.p variants={item} className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              {t('landing.advancedCapabilities.subtitle')}
+              Powerful tools and insights to transform your security posture
             </motion.p>
           </motion.div>
           
@@ -218,6 +219,178 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
+      {/* STEEL-to-Platform Pathway Section */}
+      <section className="py-16 bg-white dark:bg-dark-bg">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
+              From Assessment to Implementation in 90 Days
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Strategic insights that become operational reality through the ERMITS ecosystem
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
+          >
+            {/* Week 1-3 */}
+            <motion.div variants={item}>
+              <Card className="h-full p-6 text-center hover:shadow-xl transition-shadow">
+                <div className="mb-4">
+                  <div className="w-16 h-16 bg-navy/10 dark:bg-silver/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Search size={32} className="text-navy dark:text-silver" />
+                  </div>
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <Calendar size={18} className="text-navy dark:text-silver" />
+                    <span className="text-sm font-semibold text-navy dark:text-white">Week 1-3</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-navy dark:text-white mb-3">
+                    STEEL Assessment
+                  </h3>
+                </div>
+                <ul className="text-left space-y-2 text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  <li className="flex items-start">
+                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
+                    <span>Risk scoring and gap identification</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
+                    <span>ERMITS platform recommendations</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
+                    <span>Quick-win prioritization</span>
+                  </li>
+                </ul>
+              </Card>
+            </motion.div>
+
+            {/* Week 4-8 */}
+            <motion.div variants={item}>
+              <Card className="h-full p-6 text-center hover:shadow-xl transition-shadow">
+                <div className="mb-4">
+                  <div className="w-16 h-16 bg-navy/10 dark:bg-silver/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Target size={32} className="text-navy dark:text-silver" />
+                  </div>
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <Calendar size={18} className="text-navy dark:text-silver" />
+                    <span className="text-sm font-semibold text-navy dark:text-white">Week 4-8</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-navy dark:text-white mb-3">
+                    Strategic Planning
+                  </h3>
+                </div>
+                <ul className="text-left space-y-2 text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  <li className="flex items-start">
+                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
+                    <span>Implementation roadmap development</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
+                    <span>Platform configuration design</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
+                    <span>Resource planning and budgeting</span>
+                  </li>
+                </ul>
+              </Card>
+            </motion.div>
+
+            {/* Week 9-12 */}
+            <motion.div variants={item}>
+              <Card className="h-full p-6 text-center hover:shadow-xl transition-shadow">
+                <div className="mb-4">
+                  <div className="w-16 h-16 bg-navy/10 dark:bg-silver/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Rocket size={32} className="text-navy dark:text-silver" />
+                  </div>
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <Calendar size={18} className="text-navy dark:text-silver" />
+                    <span className="text-sm font-semibold text-navy dark:text-white">Week 9-12</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-navy dark:text-white mb-3">
+                    Platform Deployment
+                  </h3>
+                </div>
+                <ul className="text-left space-y-2 text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  <li className="flex items-start">
+                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
+                    <span>Tool implementation and integration</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
+                    <span>Policy and workflow configuration</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
+                    <span>Team training and adoption</span>
+                  </li>
+                </ul>
+              </Card>
+            </motion.div>
+
+            {/* Week 13+ */}
+            <motion.div variants={item}>
+              <Card className="h-full p-6 text-center hover:shadow-xl transition-shadow">
+                <div className="mb-4">
+                  <div className="w-16 h-16 bg-navy/10 dark:bg-silver/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Layers size={32} className="text-navy dark:text-silver" />
+                  </div>
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <Calendar size={18} className="text-navy dark:text-silver" />
+                    <span className="text-sm font-semibold text-navy dark:text-white">Week 13+</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-navy dark:text-white mb-3">
+                    Continuous Advisory
+                  </h3>
+                </div>
+                <ul className="text-left space-y-2 text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  <li className="flex items-start">
+                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
+                    <span>Monthly vCISO strategic guidance</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
+                    <span>Quarterly STEEL reassessments</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
+                    <span>Ongoing optimization support</span>
+                  </li>
+                </ul>
+              </Card>
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <Button
+              variant="primary"
+              size="lg"
+              onClick={() => navigate('/ecosystem')}
+              icon={<ArrowRight size={20} />}
+              iconPosition="right"
+            >
+              Explore ERMITS Ecosystem
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Enhanced STEEL Methodology Section */}
       <section className="py-16 bg-white dark:bg-navy-dark/80 steel-section">
         <div className="container mx-auto px-4">
@@ -249,6 +422,7 @@ export const LandingPage: React.FC = () => {
                 variants={item}
                 whileHover={{ scale: 1.03 }}
                 transition={{ type: "spring", stiffness: 300 }}
+                style={{ '--dimension-color': dimension.color } as React.CSSProperties}
               >
                 <InteractiveCard 
                   hover3D={true}
@@ -256,8 +430,7 @@ export const LandingPage: React.FC = () => {
                 >
                   <div className="p-6">
                     <div 
-                      className="absolute top-0 right-0 w-24 h-24 hexagon" 
-                      style={{ backgroundColor: dimension.color, opacity: 0.1 }}
+                      className="absolute top-0 right-0 w-24 h-24 hexagon hexagon-dimension-bg-opacity"
                     ></div>
                     <div className="flex items-start relative z-10">
                       <div className="mr-4">
@@ -265,23 +438,22 @@ export const LandingPage: React.FC = () => {
                       </div>
                       <div>
                         <h3 className="text-xl font-bold mb-2 dark:text-white steel-dimension-title">
-                          {t(`landing.steelOverview.${dimension.id}.title`)}
+                          {dimension.title}
                         </h3>
                         <p className="text-gray-600 dark:text-gray-100 steel-dimension-desc mb-4">
-                          {t(`landing.steelOverview.${dimension.id}.description`)}
+                          {dimension.description}
                         </p>
                         
                         {/* Risk Score Indicator */}
                         <div className="flex items-center justify-between mb-2">
                           <span className="text-sm font-medium text-gray-500 dark:text-gray-400">Risk Level</span>
-                          <span className="text-sm font-bold" style={{ color: dimension.color }}>
+                          <span className="text-sm font-bold dimension-color-text">
                             {dimension.value}%
                           </span>
                         </div>
                         <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                           <motion.div 
-                            className="h-2 rounded-full" 
-                            style={{ backgroundColor: dimension.color }}
+                            className="h-2 rounded-full dimension-progress-bar" 
                             initial={{ width: 0 }}
                             whileInView={{ width: `${dimension.value}%` }}
                             viewport={{ once: true }}
@@ -304,7 +476,7 @@ export const LandingPage: React.FC = () => {
               iconPosition="right"
               className="transform hover:scale-105 transition-transform"
             >
-              {t('common.learnMore')}
+              Learn More
             </Button>
           </div>
         </div>
@@ -353,7 +525,7 @@ export const LandingPage: React.FC = () => {
                   onClick={() => navigate('/steel')}
                   className="transform hover:scale-105 transition-transform"
                 >
-                  {t('common.learnMore')}
+                  Learn More
                 </Button>
               </InteractiveCard>
             </motion.div>
@@ -365,10 +537,10 @@ export const LandingPage: React.FC = () => {
                 className="h-full bg-white dark:bg-dark-card-bg p-6"
               >
                 <h3 className="text-xl font-bold mb-3 dark:text-white card-title">
-                  {t('landing.services.vCISO.title')}
+                  Virtual CISO Services
                 </h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-4 card-text">
-                  {t('landing.services.vCISO.description')}
+                  Expert security leadership and strategic guidance on demand
                 </p>
                 <Button
                   variant="outline"
@@ -376,7 +548,7 @@ export const LandingPage: React.FC = () => {
                   onClick={() => navigate('/services')}
                   className="transform hover:scale-105 transition-transform"
                 >
-                  {t('common.learnMore')}
+                  Learn More
                 </Button>
               </InteractiveCard>
             </motion.div>
@@ -388,10 +560,10 @@ export const LandingPage: React.FC = () => {
                 className="h-full bg-white dark:bg-dark-card-bg p-6"
               >
                 <h3 className="text-xl font-bold mb-3 dark:text-white card-title">
-                  {t('landing.services.dashboard.title')}
+                  Executive Dashboard
                 </h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-4 card-text">
-                  {t('landing.services.dashboard.description')}
+                  Real-time visibility into your security posture and risk metrics
                 </p>
                 <Button
                   variant="outline"
@@ -399,7 +571,7 @@ export const LandingPage: React.FC = () => {
                   onClick={() => navigate('/dashboard')}
                   className="transform hover:scale-105 transition-transform"
                 >
-                  {t('common.learnMore')}
+                  Learn More
                 </Button>
               </InteractiveCard>
             </motion.div>
@@ -418,10 +590,10 @@ export const LandingPage: React.FC = () => {
             className="text-center mb-12"
           >
             <motion.h2 variants={item} className="text-3xl font-bold mb-4 dark:text-white">
-              {t('landing.trust.title')}
+              Trusted by Industry Leaders
             </motion.h2>
             <motion.p variants={item} className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              {t('landing.trust.subtitle')}
+              Certified and compliant with the highest security standards
             </motion.p>
           </motion.div>
           
@@ -437,7 +609,7 @@ export const LandingPage: React.FC = () => {
                 <CheckCircle size={32} className="text-white" />
               </InteractiveCard>
               <p className="text-center font-medium dark:text-gray-100">
-                {t('landing.trust.cert1')}
+                ISO 27001 Certified
               </p>
             </motion.div>
             
@@ -446,7 +618,7 @@ export const LandingPage: React.FC = () => {
                 <CheckCircle size={32} className="text-white" />
               </InteractiveCard>
               <p className="text-center font-medium dark:text-gray-100">
-                {t('landing.trust.cert2')}
+                SOC 2 Type II
               </p>
             </motion.div>
             
@@ -455,7 +627,7 @@ export const LandingPage: React.FC = () => {
                 <CheckCircle size={32} className="text-white" />
               </InteractiveCard>
               <p className="text-center font-medium dark:text-gray-100">
-                {t('landing.trust.cert3')}
+                GDPR Compliant
               </p>
             </motion.div>
             
@@ -464,7 +636,7 @@ export const LandingPage: React.FC = () => {
                 <CheckCircle size={32} className="text-white" />
               </InteractiveCard>
               <p className="text-center font-medium dark:text-gray-100">
-                {t('landing.trust.cert4')}
+                NIST Framework
               </p>
             </motion.div>
           </motion.div>
@@ -481,10 +653,10 @@ export const LandingPage: React.FC = () => {
             className="max-w-3xl mx-auto text-center"
           >
             <h2 className="text-3xl font-bold mb-4">
-              {t('landing.cta.title')}
+              Ready to Transform Your Security Posture?
             </h2>
             <p className="text-xl mb-6 text-silver">
-              {t('landing.cta.subtitle')}
+              Get started with a comprehensive STEEL assessment today
             </p>
             <Button 
               variant="secondary" 
@@ -492,7 +664,7 @@ export const LandingPage: React.FC = () => {
               onClick={() => navigate('/contact')}
               className="transform hover:scale-105 transition-transform"
             >
-              {t('landing.cta.button')}
+              Contact Us
             </Button>
           </motion.div>
         </div>

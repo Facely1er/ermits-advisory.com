@@ -6,7 +6,8 @@ import { Button } from '../components/shared/Button';
 import { InteractiveCard } from '../components/shared/InteractiveCard';
 import {
   Shield, BarChart2, Eye, Presentation, Users, ArrowRight,
-  Zap, Target, Layers, CheckCircle
+  Zap, Target, Layers, CheckCircle, TrendingUp, AlertCircle,
+  FileCheck, Search, Rocket, ArrowDown, Database, Settings
 } from 'lucide-react';
 
 // Import ecosystem logo - user should add this file
@@ -102,13 +103,13 @@ export const EcosystemPage: React.FC = () => {
               </div>
               
               <h1 className="text-3xl md:text-5xl font-bold mb-4">
-                ERMITS Ecosystem
+                Strategic Insights That Become Operational Reality
               </h1>
               <p className="text-xl md:text-2xl mb-4 text-silver">
-                Comprehensive Risk Management Solutions
+                ERMITS Ecosystem Integration
               </p>
               <p className="text-lg mb-8 text-silver">
-                An integrated suite of tools and services designed to protect your organization from strategic threats
+                Advisory recommendations become automated tools. 80-90% implementation rate vs typical 30-40% with traditional consulting.
               </p>
               
               <div className="flex flex-wrap justify-center gap-4">
@@ -223,11 +224,402 @@ export const EcosystemPage: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* How Components Work Together */}
+        {/* Advisory-to-Platform Pathway */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
+          className="mb-16"
+        >
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
+              Advisory-to-Platform Integration Pathway
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              How strategic insights become operational tools through the ERMITS ecosystem
+            </p>
+          </div>
+
+          <Card className="p-8 mb-8">
+            <div className="max-w-5xl mx-auto">
+              {/* Integration Flow */}
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-navy/10 dark:bg-silver/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Search size={32} className="text-navy dark:text-silver" />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2 dark:text-white">STEEL Assessment</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    Identifies gaps and risks
+                  </p>
+                </div>
+                <div className="flex items-center justify-center">
+                  <ArrowRight size={32} className="text-navy dark:text-silver hidden md:block" />
+                  <ArrowDown size={32} className="text-navy dark:text-silver md:hidden" />
+                </div>
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-navy/10 dark:bg-silver/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Target size={32} className="text-navy dark:text-silver" />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2 dark:text-white">Platform Recommendations</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    Maps findings to ERMITS tools
+                  </p>
+                </div>
+                <div className="flex items-center justify-center">
+                  <ArrowRight size={32} className="text-navy dark:text-silver hidden md:block" />
+                  <ArrowDown size={32} className="text-navy dark:text-silver md:hidden" />
+                </div>
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-navy/10 dark:bg-silver/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Rocket size={32} className="text-navy dark:text-silver" />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2 dark:text-white">Platform Implementation</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    Automated tools deployed
+                  </p>
+                </div>
+                <div className="flex items-center justify-center md:col-start-1 md:col-span-4 mt-4">
+                  <ArrowDown size={32} className="text-navy dark:text-silver" />
+                </div>
+                <div className="text-center md:col-start-2 md:col-span-2">
+                  <div className="w-20 h-20 bg-navy/10 dark:bg-silver/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Layers size={32} className="text-navy dark:text-silver" />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2 dark:text-white">Continuous Advisory</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    Ongoing optimization and maturity growth
+                  </p>
+                </div>
+              </div>
+
+              {/* Platform Integration Examples */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+                <Card className="p-6">
+                  <div className="flex items-center mb-4">
+                    <AlertCircle size={24} className="text-blue-500 mr-3" />
+                    <h3 className="text-xl font-bold dark:text-white">CyberCaution Integration</h3>
+                  </div>
+                  <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                    <p><strong className="text-navy dark:text-white">STEEL identifies:</strong> High threat exposure</p>
+                    <p><strong className="text-navy dark:text-white">Advisory configures:</strong> Real-time monitoring</p>
+                    <p><strong className="text-navy dark:text-white">Platform delivers:</strong> Continuous threat intelligence</p>
+                    <p><strong className="text-navy dark:text-white">vCISO optimizes:</strong> Monthly threat reviews</p>
+                  </div>
+                </Card>
+
+                <Card className="p-6">
+                  <div className="flex items-center mb-4">
+                    <FileCheck size={24} className="text-green-500 mr-3" />
+                    <h3 className="text-xl font-bold dark:text-white">CyberCorrect Integration</h3>
+                  </div>
+                  <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                    <p><strong className="text-navy dark:text-white">Assessment defines:</strong> Compliance gaps</p>
+                    <p><strong className="text-navy dark:text-white">Advisory builds:</strong> Remediation plan</p>
+                    <p><strong className="text-navy dark:text-white">Platform automates:</strong> Evidence collection</p>
+                    <p><strong className="text-navy dark:text-white">Result:</strong> Continuous compliance monitoring</p>
+                  </div>
+                </Card>
+
+                <Card className="p-6">
+                  <div className="flex items-center mb-4">
+                    <Settings size={24} className="text-purple-500 mr-3" />
+                    <h3 className="text-xl font-bold dark:text-white">CyberSoluce Integration</h3>
+                  </div>
+                  <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                    <p><strong className="text-navy dark:text-white">Strategy establishes:</strong> Governance framework</p>
+                    <p><strong className="text-navy dark:text-white">Advisory designs:</strong> Workflows and policies</p>
+                    <p><strong className="text-navy dark:text-white">Platform implements:</strong> Automated processes</p>
+                    <p><strong className="text-navy dark:text-white">Result:</strong> Unified risk management</p>
+                  </div>
+                </Card>
+
+                <Card className="p-6">
+                  <div className="flex items-center mb-4">
+                    <Database size={24} className="text-orange-500 mr-3" />
+                    <h3 className="text-xl font-bold dark:text-white">VendorSoluce Integration</h3>
+                  </div>
+                  <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                    <p><strong className="text-navy dark:text-white">Framework defines:</strong> Vendor risk approach</p>
+                    <p><strong className="text-navy dark:text-white">Advisory guides:</strong> Assessment process</p>
+                    <p><strong className="text-navy dark:text-white">Platform manages:</strong> Vendor portfolio</p>
+                    <p><strong className="text-navy dark:text-white">Result:</strong> Continuous vendor monitoring</p>
+                  </div>
+                </Card>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Platform Multipliers Comparison */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7 }}
+          className="mb-16"
+        >
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
+              Platform Multipliers
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              See the difference between traditional consulting and ERMITS platform-enabled advisory
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Without Platform */}
+            <Card className="p-8">
+              <div className="flex items-center mb-6">
+                <AlertCircle size={32} className="text-red-500 mr-3" />
+                <h3 className="text-2xl font-bold dark:text-white">Traditional Consulting</h3>
+              </div>
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <div className="w-6 h-6 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center mr-3 flex-shrink-0">
+                    <span className="text-red-600 dark:text-red-400 text-sm">✗</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold dark:text-white">Manual data collection</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Spreadsheet tracking and manual updates</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-6 h-6 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center mr-3 flex-shrink-0">
+                    <span className="text-red-600 dark:text-red-400 text-sm">✗</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold dark:text-white">Quarterly assessments</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Point-in-time snapshots, not continuous</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-6 h-6 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center mr-3 flex-shrink-0">
+                    <span className="text-red-600 dark:text-red-400 text-sm">✗</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold dark:text-white">30-40% implementation rate</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Most recommendations never get implemented</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-6 h-6 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center mr-3 flex-shrink-0">
+                    <span className="text-red-600 dark:text-red-400 text-sm">✗</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold dark:text-white">Reactive posture</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Responding to issues after they occur</p>
+                  </div>
+                </li>
+              </ul>
+            </Card>
+
+            {/* With Platform */}
+            <Card className="p-8 border-2 border-green-500/30 bg-green-50/50 dark:bg-green-900/10">
+              <div className="flex items-center mb-6">
+                <CheckCircle size={32} className="text-green-500 mr-3" />
+                <h3 className="text-2xl font-bold dark:text-white">ERMITS Platform-Enabled</h3>
+              </div>
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <div className="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mr-3 flex-shrink-0">
+                    <CheckCircle size={16} className="text-green-600 dark:text-green-400" />
+                  </div>
+                  <div>
+                    <p className="font-semibold dark:text-white">Automated data aggregation</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Real-time dashboards from all sources</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mr-3 flex-shrink-0">
+                    <CheckCircle size={16} className="text-green-600 dark:text-green-400" />
+                  </div>
+                  <div>
+                    <p className="font-semibold dark:text-white">Continuous monitoring</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">24/7 threat intelligence and compliance tracking</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mr-3 flex-shrink-0">
+                    <CheckCircle size={16} className="text-green-600 dark:text-green-400" />
+                  </div>
+                  <div>
+                    <p className="font-semibold dark:text-white">80-90% implementation rate</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Recommendations become automated tools</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mr-3 flex-shrink-0">
+                    <CheckCircle size={16} className="text-green-600 dark:text-green-400" />
+                  </div>
+                  <div>
+                    <p className="font-semibold dark:text-white">Proactive intelligence</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Predictive analytics and early warning</p>
+                  </div>
+                </li>
+              </ul>
+            </Card>
+          </div>
+        </motion.div>
+
+        {/* Success Metrics */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8 }}
+          className="mb-16"
+        >
+          <Card className="p-8 bg-gradient-to-br from-navy to-navy-dark text-white">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Measurable Results
+              </h2>
+              <p className="text-xl text-silver/90 max-w-3xl mx-auto">
+                Advisory + Platform delivers significantly better outcomes than advisory alone
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <div>
+                <h3 className="text-xl font-semibold mb-4 text-silver">Advisory Only</h3>
+                <ul className="space-y-3 text-silver/90">
+                  <li className="flex items-center">
+                    <AlertCircle size={20} className="mr-3" />
+                    <span>30-40% recommendation implementation</span>
+                  </li>
+                  <li className="flex items-center">
+                    <AlertCircle size={20} className="mr-3" />
+                    <span>12-18 months to maturity</span>
+                  </li>
+                  <li className="flex items-center">
+                    <AlertCircle size={20} className="mr-3" />
+                    <span>Manual tracking and reporting</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-4 text-silver">Advisory + Platform</h3>
+                <ul className="space-y-3 text-silver/90">
+                  <li className="flex items-center">
+                    <CheckCircle size={20} className="mr-3 text-green-400" />
+                    <span>80-90% recommendation implementation</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle size={20} className="mr-3 text-green-400" />
+                    <span>6-9 months to maturity</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle size={20} className="mr-3 text-green-400" />
+                    <span>Automated tracking and reporting</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Client Journey Examples */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.9 }}
+          className="mb-16"
+        >
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
+              Client Success Stories
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Real results from organizations using the ERMITS ecosystem
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Card className="p-6">
+              <div className="mb-4">
+                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-4">
+                  <TrendingUp size={24} className="text-blue-600 dark:text-blue-400" />
+                </div>
+                <h3 className="text-lg font-bold dark:text-white mb-2">Mid-Market SaaS</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  STEEL Assessment → CyberCorrect → SOC 2 in 4 months
+                </p>
+              </div>
+              <ul className="space-y-2 text-sm">
+                <li className="flex items-start">
+                  <CheckCircle size={16} className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-600 dark:text-gray-400">60% faster time to certification</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle size={16} className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-600 dark:text-gray-400">Automated evidence collection</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle size={16} className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-600 dark:text-gray-400">First-time audit pass</span>
+                </li>
+              </ul>
+            </Card>
+
+            <Card className="p-6">
+              <div className="mb-4">
+                <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-4">
+                  <Shield size={24} className="text-green-600 dark:text-green-400" />
+                </div>
+                <h3 className="text-lg font-bold dark:text-white mb-2">Healthcare Provider</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  Compliance Assessment → MediSoluce → HIPAA compliance
+                </p>
+              </div>
+              <ul className="space-y-2 text-sm">
+                <li className="flex items-start">
+                  <CheckCircle size={16} className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-600 dark:text-gray-400">Industry-specific controls</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle size={16} className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-600 dark:text-gray-400">Continuous compliance monitoring</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle size={16} className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-600 dark:text-gray-400">Reduced audit preparation time 70%</span>
+                </li>
+              </ul>
+            </Card>
+
+            <Card className="p-6">
+              <div className="mb-4">
+                <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mb-4">
+                  <Target size={24} className="text-purple-600 dark:text-purple-400" />
+                </div>
+                <h3 className="text-lg font-bold dark:text-white mb-2">Manufacturing</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  STEEL + vCISO → Full platform → 65% risk reduction
+                </p>
+              </div>
+              <ul className="space-y-2 text-sm">
+                <li className="flex items-start">
+                  <CheckCircle size={16} className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-600 dark:text-gray-400">STEEL score improved +25 points</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle size={16} className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-600 dark:text-gray-400">Full ecosystem implementation</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle size={16} className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-600 dark:text-gray-400">Board-ready reporting automated</span>
+                </li>
+              </ul>
+            </Card>
+          </div>
+        </motion.div>
+
+        {/* How Components Work Together */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.0 }}
           className="mb-16"
         >
           <InteractiveCard 
@@ -263,7 +655,7 @@ export const EcosystemPage: React.FC = () => {
                         2
                       </div>
                       <p className="text-gray-600 dark:text-gray-200 pt-1">
-                        Monitor threats with Risk Radar
+                        Deploy recommended ERMITS platform tools
                       </p>
                     </div>
                     <div className="flex items-start">
@@ -271,7 +663,7 @@ export const EcosystemPage: React.FC = () => {
                         3
                       </div>
                       <p className="text-gray-600 dark:text-gray-200 pt-1">
-                        Track metrics on Executive Dashboard
+                        Monitor and optimize via platform dashboards
                       </p>
                     </div>
                     <div className="flex items-start">
@@ -287,7 +679,7 @@ export const EcosystemPage: React.FC = () => {
                         5
                       </div>
                       <p className="text-gray-600 dark:text-gray-200 pt-1">
-                        Receive ongoing advisory support
+                        Receive ongoing vCISO advisory support
                       </p>
                     </div>
                   </div>
@@ -320,6 +712,12 @@ export const EcosystemPage: React.FC = () => {
                       <CheckCircle size={20} className="text-green-500 mr-3 mt-0.5 flex-shrink-0" />
                       <p className="text-gray-600 dark:text-gray-200">
                         Continuous risk monitoring and adaptation
+                      </p>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle size={20} className="text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <p className="text-gray-600 dark:text-gray-200">
+                        80-90% implementation success rate
                       </p>
                     </li>
                   </ul>
