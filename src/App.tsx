@@ -21,6 +21,7 @@ const VendorRiskToolkit = React.lazy(() => import('./pages/VendorRiskToolkit').t
 const ComplianceGapAnalysisPremium = React.lazy(() => import('./pages/ComplianceGapAnalysisPremium').then(m => ({ default: m.ComplianceGapAnalysisPremium })));
 const VendorRiskScorerPremium = React.lazy(() => import('./pages/VendorRiskScorerPremium').then(m => ({ default: m.VendorRiskScorerPremium })));
 const ToolkitsPremiumPricing = React.lazy(() => import('./pages/ToolkitsPremiumPricing').then(m => ({ default: m.ToolkitsPremiumPricing })));
+const ToolkitsOverview = React.lazy(() => import('./pages/ToolkitsOverview').then(m => ({ default: m.ToolkitsOverview })));
 const DashboardTemplate = React.lazy(() => import('./pages/DashboardTemplate').then(m => ({ default: m.DashboardTemplate })));
 const ImplementationGuidePage = React.lazy(() => import('./pages/ImplementationGuidePage').then(m => ({ default: m.ImplementationGuidePage })));
 const RiskRadar = React.lazy(() => import('./pages/RiskRadar').then(m => ({ default: m.RiskRadar })));
@@ -64,12 +65,14 @@ function App() {
                   <Route path="/steel/implementation-guide" element={<ImplementationGuidePage />} />
                   <Route path="/vciso-kit" element={<VcisoKit />} />
                   <Route path="/compliance" element={<ComplianceAdvisory />} />
+                  <Route path="/toolkits" element={<ToolkitsOverview />} />
                   <Route path="/compliance-toolkit" element={<ComplianceToolkit />} />
                   <Route path="/incident-response-toolkit" element={<IncidentResponseToolkit />} />
                   <Route path="/vendor-risk-toolkit" element={<VendorRiskToolkit />} />
                   <Route path="/compliance-gap-analysis-premium" element={<ComplianceGapAnalysisPremium />} />
                   <Route path="/vendor-risk-scorer-premium" element={<VendorRiskScorerPremium />} />
                   <Route path="/toolkits-premium" element={<ToolkitsPremiumPricing />} />
+                  <Route path="/toolkits-interactive" element={<ToolkitsPremiumPricing />} />
                   <Route path="/dashboard-template" element={<DashboardTemplate />} />
                   <Route path="/risk-radar" element={<RiskRadar />} />
                   <Route path="/services" element={<ServiceOffering />} />

@@ -85,13 +85,19 @@ export const IncidentResponseToolkit: React.FC = () => {
           className="pt-16 mb-12 text-center"
         >
           <div className="inline-block px-4 py-2 bg-red-100 dark:bg-red-900/30 rounded-full mb-6">
-            <span className="text-red-700 dark:text-red-400 font-semibold">Incident Response Toolkit</span>
+            <span className="text-red-700 dark:text-red-400 font-semibold flex items-center gap-2">
+              <FileText size={18} />
+              Template Package
+            </span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 dark:text-white">
-            Incident Response Toolkit
+            Incident Response Templates
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto mb-8">
-            Comprehensive incident response playbooks, templates, and checklists for security operations teams
+          <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto mb-4">
+            Downloadable incident response playbooks, templates, and checklists for security operations teams
+          </p>
+          <p className="text-md text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mb-8">
+            4 comprehensive template files • Customize for your needs • Works offline • One-time purchase
           </p>
           <div className="flex flex-col items-center gap-4 mb-8">
             <div className="flex items-center gap-4">
@@ -100,20 +106,25 @@ export const IncidentResponseToolkit: React.FC = () => {
             </div>
             <div className="flex gap-3">
               <Button
-                variant="secondary"
-                size="sm"
-                disabled
-                className="opacity-60 cursor-not-allowed"
+                variant="primary"
+                size="md"
+                icon={<Download size={20} />}
+                onClick={() => window.open('https://gumroad.com/ermits/incident-response-toolkit', '_blank')}
               >
-                Interactive Demo (Coming Soon)
+                Download Templates
               </Button>
               <Button
-                variant="primary"
-                size="sm"
-                onClick={() => window.location.href = '/toolkits-premium'}
+                variant="secondary"
+                size="md"
+                onClick={() => window.location.href = '/toolkits'}
               >
-                View Premium Options
+                Compare Options
               </Button>
+            </div>
+            <div className="text-center">
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                Want interactive tools? (Coming soon)
+              </p>
             </div>
           </div>
         </motion.div>

@@ -76,13 +76,19 @@ export const ComplianceToolkit: React.FC = () => {
           className="pt-16 mb-12 text-center"
         >
           <div className="inline-block px-4 py-2 bg-green-100 dark:bg-green-900/30 rounded-full mb-6">
-            <span className="text-green-700 dark:text-green-400 font-semibold">Compliance Toolkit</span>
+            <span className="text-green-700 dark:text-green-400 font-semibold flex items-center gap-2">
+              <FileText size={18} />
+              Template Package
+            </span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 dark:text-white">
-            Compliance Framework Toolkit
+            Compliance Framework Templates
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto mb-8">
-            Complete compliance templates for NIST, ISO 27001, SOC 2, HIPAA, GDPR, CMMC, and PCI-DSS frameworks
+          <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto mb-4">
+            Downloadable compliance templates for NIST, ISO 27001, SOC 2, HIPAA, GDPR, CMMC, and PCI-DSS frameworks
+          </p>
+          <p className="text-md text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mb-8">
+            4 comprehensive template files • Customize for your needs • Works offline • One-time purchase
           </p>
           <div className="flex flex-col items-center gap-4 mb-8">
             <div className="flex items-center gap-4">
@@ -91,19 +97,31 @@ export const ComplianceToolkit: React.FC = () => {
             </div>
             <div className="flex gap-3">
               <Button
-                variant="secondary"
-                size="sm"
-                onClick={() => window.location.href = '/compliance-gap-analysis-premium'}
+                variant="primary"
+                size="md"
+                icon={<Download size={20} />}
+                onClick={() => window.open('https://gumroad.com/ermits/compliance-toolkit', '_blank')}
               >
-                Try Interactive Demo
+                Download Templates
               </Button>
               <Button
-                variant="primary"
-                size="sm"
-                onClick={() => window.location.href = '/toolkits-premium'}
+                variant="secondary"
+                size="md"
+                onClick={() => window.location.href = '/toolkits'}
               >
-                View Premium Options
+                Compare Options
               </Button>
+            </div>
+            <div className="text-center">
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                Want interactive tools with auto-calculations?
+              </p>
+              <button
+                onClick={() => window.location.href = '/compliance-gap-analysis-premium'}
+                className="text-sm font-semibold text-green-600 dark:text-green-400 hover:underline"
+              >
+                Try Interactive Version →
+              </button>
             </div>
           </div>
         </motion.div>
