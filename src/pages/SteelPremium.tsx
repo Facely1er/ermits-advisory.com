@@ -4,9 +4,26 @@ import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { ArrowRight, CheckCircle, Lock, FileText, BarChart2, Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { createCheckoutSession } from '../services/stripe';
 
 export const SteelPremium: React.FC = () => {
   const [showPaywall, setShowPaywall] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handlePurchase = async () => {
+    setLoading(true);
+    try {
+      await createCheckoutSession({
+        productType: 'steel-premium',
+        successUrl: `${window.location.origin}/purchase-success`,
+        cancelUrl: window.location.href,
+      });
+    } catch (error) {
+      console.error('Checkout error:', error);
+      alert('Failed to start checkout. Please try again or contact support.');
+      setLoading(false);
+    }
+  };
 
   const premiumFeatures = [
     {
@@ -67,21 +84,31 @@ export const SteelPremium: React.FC = () => {
               <p className="text-gray-600 dark:text-gray-200">One-time purchase • Unlimited assessments</p>
             </div>
 
-            <Button
-              variant="primary"
-              size="lg"
-              onClick={() => {
-                // Redirect to Gumroad
-                window.open('https://gumroad.com/ermits/steel-premium', '_blank');
-              }}
-              className="w-full mb-4"
-            >
-              <Lock size={18} className="mr-2" />
-              Unlock Premium Features
-            </Button>
+            <div className="space-y-3">
+              <Button
+                variant="primary"
+                size="lg"
+                onClick={handlePurchase}
+                disabled={loading}
+                className="w-full"
+              >
+                <Lock size={18} className="mr-2" />
+                {loading ? 'Processing...' : 'Buy with Stripe'}
+              </Button>
+              
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() => window.open('https://gumroad.com/ermits/steel-premium', '_blank')}
+                className="w-full"
+              >
+                <Lock size={18} className="mr-2" />
+                Buy with Gumroad
+              </Button>
+            </div>
 
-            <p className="text-center text-sm text-gray-500 dark:text-gray-400">
-              Secure payment via Gumroad • Lifetime access
+            <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-4">
+              Secure payment options • Lifetime access
             </p>
           </Card>
         </motion.div>
@@ -214,17 +241,26 @@ export const SteelPremium: React.FC = () => {
           <Card variant="glass" padding="lg" className="bg-gradient-to-r from-navy to-dark">
             <h3 className="text-2xl font-bold text-white mb-4">Ready to Unlock Premium?</h3>
             <p className="text-silver mb-6">Join hundreds of security professionals using STEEL™ Premium</p>
-            <Button
-              variant="primary"
-              size="lg"
-              onClick={() => {
-                window.open('https://gumroad.com/ermits/steel-premium', '_blank');
-              }}
-              icon={<ArrowRight size={18} />}
-              iconPosition="right"
-            >
-              Get Premium Access ($29)
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button
+                variant="primary"
+                size="lg"
+                onClick={handlePurchase}
+                disabled={loading}
+                icon={<ArrowRight size={18} />}
+                iconPosition="right"
+              >
+                {loading ? 'Processing...' : 'Buy with Stripe ($29)'}
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() => window.open('https://gumroad.com/ermits/steel-premium', '_blank')}
+                className="bg-white/10 text-white border-white/30 hover:bg-white/20"
+              >
+                Buy with Gumroad
+              </Button>
+            </div>
           </Card>
         </motion.div>
 

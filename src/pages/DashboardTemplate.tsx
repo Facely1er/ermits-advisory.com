@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { ArrowRight, CheckCircle, Code2, Palette, Settings, Upload, Lock, BarChart3 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { createCheckoutSession } from '../services/stripe';
 
 export const DashboardTemplate: React.FC = () => {
+  const [loading, setLoading] = useState(false);
+
+  const handlePurchase = async () => {
+    setLoading(true);
+    try {
+      await createCheckoutSession({
+        productType: 'dashboard-template',
+        successUrl: `${window.location.origin}/purchase-success`,
+        cancelUrl: window.location.href,
+      });
+    } catch (error) {
+      console.error('Checkout error:', error);
+      alert('Failed to start checkout. Please try again or contact support.');
+      setLoading(false);
+    }
+  };
   const features = [
     {
       icon: <Code2 size={24} className="text-navy dark:text-silver" />,
@@ -103,20 +120,31 @@ export const DashboardTemplate: React.FC = () => {
               <p className="text-gray-600 dark:text-gray-200">One-time purchase • Lifetime license • Free updates</p>
             </div>
 
-            <Button
-              variant="primary"
-              size="lg"
-              onClick={() => {
-                window.open('https://gumroad.com/ermits/dashboard-template', '_blank');
-              }}
-              className="w-full mb-4"
-            >
-              <Lock size={18} className="mr-2" />
-              Get Dashboard Template
-            </Button>
+            <div className="space-y-3">
+              <Button
+                variant="primary"
+                size="lg"
+                onClick={handlePurchase}
+                disabled={loading}
+                className="w-full"
+              >
+                <Lock size={18} className="mr-2" />
+                {loading ? 'Processing...' : 'Buy with Stripe'}
+              </Button>
+              
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() => window.open('https://gumroad.com/ermits/dashboard-template', '_blank')}
+                className="w-full"
+              >
+                <Lock size={18} className="mr-2" />
+                Buy with Gumroad
+              </Button>
+            </div>
 
-            <p className="text-center text-sm text-gray-500 dark:text-gray-400">
-              Secure payment via Gumroad • Instant download
+            <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-4">
+              Secure payment options • Instant download
             </p>
           </Card>
         </motion.div>
@@ -303,17 +331,26 @@ export const DashboardTemplate: React.FC = () => {
           <Card variant="glass" padding="lg" className="bg-gradient-to-r from-gold/20 to-navy/20">
             <h3 className="text-2xl font-bold text-navy dark:text-white mb-4">Ready to Impress Your Board?</h3>
             <p className="text-gray-600 dark:text-gray-200 mb-6">Get the dashboard template and customize in minutes</p>
-            <Button
-              variant="primary"
-              size="lg"
-              onClick={() => {
-                window.open('https://gumroad.com/ermits/dashboard-template', '_blank');
-              }}
-              icon={<ArrowRight size={18} />}
-              iconPosition="right"
-            >
-              Get Dashboard Template - $79
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button
+                variant="primary"
+                size="lg"
+                onClick={handlePurchase}
+                disabled={loading}
+                icon={<ArrowRight size={18} />}
+                iconPosition="right"
+              >
+                {loading ? 'Processing...' : 'Buy with Stripe ($79)'}
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() => window.open('https://gumroad.com/ermits/dashboard-template', '_blank')}
+                className="bg-white/10 text-white border-white/30 hover:bg-white/20"
+              >
+                Buy with Gumroad
+              </Button>
+            </div>
           </Card>
         </motion.div>
 

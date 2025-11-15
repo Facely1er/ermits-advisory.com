@@ -31,6 +31,7 @@ const NotFoundPage = React.lazy(() => import('./pages/NotFoundPage').then(m => (
 const PrivacyPolicyPage = React.lazy(() => import('./pages/PrivacyPolicyPage').then(m => ({ default: m.PrivacyPolicyPage })));
 const TermsOfServicePage = React.lazy(() => import('./pages/TermsOfServicePage').then(m => ({ default: m.TermsOfServicePage })));
 const CookiePolicyPage = React.lazy(() => import('./pages/CookiePolicyPage').then(m => ({ default: m.CookiePolicyPage })));
+const PurchaseSuccess = React.lazy(() => import('./pages/PurchaseSuccess').then(m => ({ default: m.PurchaseSuccess })));
 
 // Loading component for Suspense fallback
 const LoadingSpinner = () => (
@@ -80,6 +81,7 @@ function App() {
                   <Route path="/privacy" element={<PrivacyPolicyPage />} />
                   <Route path="/terms" element={<TermsOfServicePage />} />
                   <Route path="/cookies" element={<CookiePolicyPage />} />
+                  <Route path="/purchase-success" element={<PurchaseSuccess />} />
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>
               </Suspense>

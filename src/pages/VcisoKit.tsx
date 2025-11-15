@@ -9,10 +9,27 @@ import {
   ChevronRight, Calculator, Briefcase
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { createCheckoutSession } from '../services/stripe';
 
 export const VcisoKit: React.FC = () => {
   const [selectedTier, setSelectedTier] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<'overview' | 'calculator' | 'workflow' | 'templates'>('overview');
+  const [loading, setLoading] = useState(false);
+
+  const handlePurchase = async () => {
+    setLoading(true);
+    try {
+      await createCheckoutSession({
+        productType: 'vciso-kit',
+        successUrl: `${window.location.origin}/purchase-success`,
+        cancelUrl: window.location.href,
+      });
+    } catch (error) {
+      console.error('Checkout error:', error);
+      alert('Failed to start checkout. Please try again or contact support.');
+      setLoading(false);
+    }
+  };
   const [roiInputs, setRoiInputs] = useState({
     companySize: '',
     industry: '',
@@ -730,15 +747,28 @@ export const VcisoKit: React.FC = () => {
                 <p className="text-silver mb-6">
                   Access all templates, playbooks, and delivery guides with the complete vCISO toolkit
                 </p>
-                <Button
-                  variant="primary"
-                  size="lg"
-                  onClick={() => window.open('https://gumroad.com/ermits/vciso-kit', '_blank')}
-                  icon={<Download size={18} />}
-                  iconPosition="right"
-                >
-                  Download Complete Toolkit
-                </Button>
+                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                  <Button
+                    variant="primary"
+                    size="lg"
+                    onClick={handlePurchase}
+                    disabled={loading}
+                    icon={<Download size={18} />}
+                    iconPosition="right"
+                  >
+                    {loading ? 'Processing...' : 'Buy with Stripe'}
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    onClick={() => window.open('https://gumroad.com/ermits/vciso-kit', '_blank')}
+                    className="bg-white/10 text-white border-white/30 hover:bg-white/20"
+                    icon={<Download size={18} />}
+                    iconPosition="right"
+                  >
+                    Buy with Gumroad
+                  </Button>
+                </div>
               </Card>
             </motion.div>
           )}
