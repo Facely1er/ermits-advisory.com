@@ -93,9 +93,28 @@ export const IncidentResponseToolkit: React.FC = () => {
           <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto mb-8">
             Comprehensive incident response playbooks, templates, and checklists for security operations teams
           </p>
-          <div className="flex items-center justify-center gap-4 mb-8">
-            <div className="text-4xl font-bold text-navy dark:text-white">$149</div>
-            <div className="text-gray-500 dark:text-gray-400">One-time purchase</div>
+          <div className="flex flex-col items-center gap-4 mb-8">
+            <div className="flex items-center gap-4">
+              <div className="text-4xl font-bold text-navy dark:text-white">$149</div>
+              <div className="text-gray-500 dark:text-gray-400">One-time purchase</div>
+            </div>
+            <div className="flex gap-3">
+              <Button
+                variant="secondary"
+                size="sm"
+                disabled
+                className="opacity-60 cursor-not-allowed"
+              >
+                Interactive Demo (Coming Soon)
+              </Button>
+              <Button
+                variant="primary"
+                size="sm"
+                onClick={() => window.location.href = '/toolkits-premium'}
+              >
+                View Premium Options
+              </Button>
+            </div>
           </div>
         </motion.div>
 

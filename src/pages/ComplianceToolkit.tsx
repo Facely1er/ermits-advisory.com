@@ -84,9 +84,27 @@ export const ComplianceToolkit: React.FC = () => {
           <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto mb-8">
             Complete compliance templates for NIST, ISO 27001, SOC 2, HIPAA, GDPR, CMMC, and PCI-DSS frameworks
           </p>
-          <div className="flex items-center justify-center gap-4 mb-8">
-            <div className="text-4xl font-bold text-navy dark:text-white">$199</div>
-            <div className="text-gray-500 dark:text-gray-400">One-time purchase</div>
+          <div className="flex flex-col items-center gap-4 mb-8">
+            <div className="flex items-center gap-4">
+              <div className="text-4xl font-bold text-navy dark:text-white">$199</div>
+              <div className="text-gray-500 dark:text-gray-400">One-time purchase</div>
+            </div>
+            <div className="flex gap-3">
+              <Button
+                variant="secondary"
+                size="sm"
+                onClick={() => window.location.href = '/compliance-gap-analysis-premium'}
+              >
+                Try Interactive Demo
+              </Button>
+              <Button
+                variant="primary"
+                size="sm"
+                onClick={() => window.location.href = '/toolkits-premium'}
+              >
+                View Premium Options
+              </Button>
+            </div>
           </div>
         </motion.div>
 

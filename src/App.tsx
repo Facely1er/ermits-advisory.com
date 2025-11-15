@@ -18,6 +18,9 @@ const ComplianceAdvisory = React.lazy(() => import('./pages/ComplianceAdvisory')
 const ComplianceToolkit = React.lazy(() => import('./pages/ComplianceToolkit').then(m => ({ default: m.ComplianceToolkit })));
 const IncidentResponseToolkit = React.lazy(() => import('./pages/IncidentResponseToolkit').then(m => ({ default: m.IncidentResponseToolkit })));
 const VendorRiskToolkit = React.lazy(() => import('./pages/VendorRiskToolkit').then(m => ({ default: m.VendorRiskToolkit })));
+const ComplianceGapAnalysisPremium = React.lazy(() => import('./pages/ComplianceGapAnalysisPremium').then(m => ({ default: m.ComplianceGapAnalysisPremium })));
+const VendorRiskScorerPremium = React.lazy(() => import('./pages/VendorRiskScorerPremium').then(m => ({ default: m.VendorRiskScorerPremium })));
+const ToolkitsPremiumPricing = React.lazy(() => import('./pages/ToolkitsPremiumPricing').then(m => ({ default: m.ToolkitsPremiumPricing })));
 const DashboardTemplate = React.lazy(() => import('./pages/DashboardTemplate').then(m => ({ default: m.DashboardTemplate })));
 const ImplementationGuidePage = React.lazy(() => import('./pages/ImplementationGuidePage').then(m => ({ default: m.ImplementationGuidePage })));
 const RiskRadar = React.lazy(() => import('./pages/RiskRadar').then(m => ({ default: m.RiskRadar })));
@@ -64,6 +67,9 @@ function App() {
                   <Route path="/compliance-toolkit" element={<ComplianceToolkit />} />
                   <Route path="/incident-response-toolkit" element={<IncidentResponseToolkit />} />
                   <Route path="/vendor-risk-toolkit" element={<VendorRiskToolkit />} />
+                  <Route path="/compliance-gap-analysis-premium" element={<ComplianceGapAnalysisPremium />} />
+                  <Route path="/vendor-risk-scorer-premium" element={<VendorRiskScorerPremium />} />
+                  <Route path="/toolkits-premium" element={<ToolkitsPremiumPricing />} />
                   <Route path="/dashboard-template" element={<DashboardTemplate />} />
                   <Route path="/risk-radar" element={<RiskRadar />} />
                   <Route path="/services" element={<ServiceOffering />} />
