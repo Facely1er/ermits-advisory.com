@@ -220,18 +220,40 @@ export const ComplianceToolkit: React.FC = () => {
             <p className="text-lg text-gray-600 dark:text-gray-200 mb-8">
               Get instant access to all compliance templates and start preparing for your next audit today
             </p>
-            <Button
-              variant="primary"
-              size="lg"
-              icon={<Download size={20} />}
-              iconPosition="right"
-              onClick={() => window.open('https://gumroad.com/ermits/compliance-toolkit', '_blank')}
-              className="transform hover:scale-105 transition-transform"
-            >
-              Download Compliance Toolkit - $199
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button
+                variant="primary"
+                size="lg"
+                icon={<Download size={20} />}
+                iconPosition="right"
+                onClick={() => window.open('https://ermits.gumroad.com/l/compliance-toolkit', '_blank')}
+                className="transform hover:scale-105 transition-transform"
+              >
+                Purchase on Gumroad - $199
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                icon={<Download size={20} />}
+                iconPosition="right"
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/zips/compliance-framework-toolkit.zip';
+                  link.download = 'compliance-framework-toolkit.zip';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
+                className="transform hover:scale-105 transition-transform"
+              >
+                Download Sample ZIP
+              </Button>
+            </div>
             <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
               Instant digital download • Lifetime access • Free updates
+            </p>
+            <p className="text-xs text-gray-400 dark:text-gray-500 mt-2">
+              Sample ZIP includes preview templates. Full toolkit available on Gumroad.
             </p>
           </Card>
         </motion.div>
