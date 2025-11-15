@@ -139,12 +139,12 @@
     @apply relative overflow-hidden rounded-luxury font-semibold transition-all duration-300;
     background: linear-gradient(135deg, #D4AF37 0%, #F5A623 50%, #D4AF37 100%);
     background-size: 200% 100%;
-    box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.4);
+    box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.4), 0 0 0 1px rgba(212, 175, 55, 0.2);
   }
 
   .luxury-button:hover {
     background-position: 100% 0;
-    box-shadow: 0 15px 40px -10px rgba(212, 175, 55, 0.5);
+    box-shadow: 0 15px 40px -10px rgba(212, 175, 55, 0.5), 0 0 20px rgba(212, 175, 55, 0.3);
     transform: translateY(-2px);
   }
 
@@ -155,12 +155,52 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.5s;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .luxury-button:hover::before {
     left: 100%;
+  }
+
+  .luxury-button::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), transparent, rgba(255, 255, 255, 0.1));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .luxury-button:hover::after {
+    opacity: 1;
+  }
+
+  /* Enhanced Luxury Card Hover */
+  .luxury-card:hover {
+    @apply shadow-luxury-lg;
+    transform: translateY(-4px) scale(1.01);
+    border-color: rgba(212, 175, 55, 0.2);
+  }
+
+  .dark .luxury-card:hover {
+    border-color: rgba(212, 175, 55, 0.3);
+  }
+
+  /* Premium Glass Effect Enhancement */
+  .luxury-glass {
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+  }
+
+  /* Smooth Transitions for All Luxury Elements */
+  .luxury-transition {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 

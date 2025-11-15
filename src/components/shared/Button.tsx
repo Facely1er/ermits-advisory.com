@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { cn } from '../../utils/cn';
 
 interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onAnimationStart' | 'onAnimationEnd' | 'onDrag' | 'onDragEnd' | 'onDragStart'> {
-  variant?: 'primary' | 'secondary' | 'ghost' | 'outline';
+  variant?: 'primary' | 'secondary' | 'ghost' | 'outline' | 'luxury' | 'luxury-outline';
   size?: 'sm' | 'md' | 'lg';
   icon?: React.ReactNode;
   iconPosition?: 'left' | 'right';
@@ -30,6 +30,8 @@ export const Button: React.FC<ButtonProps> = ({
     secondary: 'bg-silver hover:bg-silver-light text-navy dark:bg-silver/90 dark:text-navy-dark dark:hover:bg-silver shadow-md hover:shadow-lg',
     ghost: 'bg-transparent hover:bg-silver/20 text-navy dark:text-white dark:hover:bg-navy/20',
     outline: 'bg-transparent border-2 border-navy text-navy hover:bg-navy/10 dark:border-silver/70 dark:text-silver dark:hover:bg-silver/10 hover:border-navy-dark dark:hover:border-silver',
+    luxury: 'luxury-button text-white font-semibold shadow-luxury-gold hover:shadow-luxury-gold-lg',
+    'luxury-outline': 'bg-transparent border-2 border-luxury-gold text-luxury-gold hover:bg-luxury-gold/10 dark:border-luxury-gold dark:text-luxury-gold dark:hover:bg-luxury-gold/10 shadow-md hover:shadow-luxury-gold transition-all duration-300',
   };
   
   const sizes = {
@@ -48,10 +50,11 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <motion.button
-      whileHover={{ scale: 1.02 }}
+      whileHover={variant === 'luxury' ? { scale: 1.03, y: -2 } : { scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       className={buttonClasses}
       disabled={isLoading || disabled}
+      transition={{ type: "spring", stiffness: 400, damping: 17 }}
       {...props}
     >
       {isLoading && (

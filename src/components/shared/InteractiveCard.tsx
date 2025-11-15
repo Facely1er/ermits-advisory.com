@@ -62,10 +62,10 @@ export const InteractiveCard: React.FC<InteractiveCardProps> = ({
     >
       {glowEffect && isHovered && (
         <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-navy/20 to-silver/20 blur-xl"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isHovered ? 1 : 0 }}
-          transition={{ duration: 0.3 }}
+          className="absolute inset-0 bg-gradient-to-r from-navy/20 via-luxury-gold/10 to-silver/20 blur-xl -z-10"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: isHovered ? 1 : 0, scale: isHovered ? 1.2 : 0.8 }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
         />
       )}
       
@@ -74,12 +74,19 @@ export const InteractiveCard: React.FC<InteractiveCardProps> = ({
       </div>
       
       {hover3D && (
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent pointer-events-none"
-          style={{
-            background: `linear-gradient(135deg, rgba(255,255,255,${isHovered ? 0.1 : 0}) 0%, transparent 50%)`,
-          }}
-        />
+        <>
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-br from-white/10 via-luxury-gold/5 to-transparent pointer-events-none"
+            style={{
+              background: `linear-gradient(135deg, rgba(255,255,255,${isHovered ? 0.15 : 0}) 0%, rgba(212,175,55,${isHovered ? 0.08 : 0}) 50%, transparent 100%)`,
+            }}
+          />
+          <motion.div
+            className="absolute inset-0 border border-luxury-gold/20 pointer-events-none rounded-lg"
+            animate={{ opacity: isHovered ? 1 : 0 }}
+            transition={{ duration: 0.3 }}
+          />
+        </>
       )}
     </motion.div>
   );

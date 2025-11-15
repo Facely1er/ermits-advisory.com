@@ -33,7 +33,7 @@ export const Navigation: React.FC = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-black/95 backdrop-blur-md border-b border-gray-200/50 dark:border-gray-800/50 shadow-sm h-16">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-black/95 backdrop-blur-xl border-b border-gray-200/50 dark:border-gray-800/50 shadow-sm h-16 luxury-transition">
       <div className="container mx-auto px-4 h-full">
         <div className="flex items-center justify-between h-full">
           {/* Logo - Made more compact */}
@@ -53,10 +53,10 @@ export const Navigation: React.FC = () => {
                   key={link.to}
                   to={link.to}
                   className={({ isActive }) => cn(
-                    'text-sm font-medium hover:text-navy dark:hover:text-white transition-colors nav-link flex items-center whitespace-nowrap h-full',
+                    'text-sm font-medium hover:text-navy dark:hover:text-white transition-all duration-300 nav-link flex items-center whitespace-nowrap h-full relative',
                     isActive
                       ? 'text-navy-dark dark:text-white font-semibold border-b-2 border-navy dark:border-silver'
-                      : 'text-gray-600 dark:text-white/95'
+                      : 'text-gray-600 dark:text-white/95 hover:border-b-2 hover:border-navy/30 dark:hover:border-silver/30'
                   )}
                 >
                   <span className="mr-1.5">{link.icon}</span>
