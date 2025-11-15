@@ -1,42 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../contexts/ThemeContext';
 import { Button } from '../components/shared/Button';
 import { Card } from '../components/shared/Card';
 import { InteractiveCard } from '../components/shared/InteractiveCard';
-import { TypewriterText } from '../components/shared/TypewriterText';
-import { Shield, TrendingUp, Users, Server, Leaf, Scale, ArrowRight, CheckCircle, Zap, Eye, Target, Calendar, Layers, Rocket, Search } from 'lucide-react';
-import { steelDimensions } from '../data/mockData';
+import { HeroCarousel } from '../components/shared/HeroCarousel';
+import { StatusPill } from '../components/shared/StatusPill';
+import { MetricCard } from '../components/shared/MetricCard';
+import { EcosystemCard } from '../components/shared/EcosystemCard';
+import { ArrowRight, CheckCircle, Zap, Eye, Target, Calendar, Layers, Rocket, Search, Shield } from 'lucide-react';
 import { LiveMetrics } from '../components/interactive/LiveMetrics';
 
 export const LandingPage: React.FC = () => {
   const { theme } = useTheme();
   const navigate = useNavigate();
-  const [showTypewriter, setShowTypewriter] = useState(false);
-  const [windowSize, setWindowSize] = useState({ width: 1920, height: 1080 });
-
-  // Set window size on mount and handle resize
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
-      
-      const handleResize = () => {
-        setWindowSize({ width: window.innerWidth, height: window.innerHeight });
-      };
-      
-      window.addEventListener('resize', handleResize);
-      return () => window.removeEventListener('resize', handleResize);
-    }
-  }, []);
-
-  // Trigger typewriter after initial animation
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowTypewriter(true);
-    }, 600); // Match animation duration
-    return () => clearTimeout(timer);
-  }, []);
   
   const container = {
     hidden: { opacity: 0 },
@@ -51,25 +29,6 @@ export const LandingPage: React.FC = () => {
   const item = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0 }
-  };
-
-  const renderSteelIcon = (id: string) => {
-    switch (id) {
-      case 'political':
-        return <Shield size={32} className="text-[#4c72b0]" />;
-      case 'economic':
-        return <TrendingUp size={32} className="text-[#dd8452]" />;
-      case 'social':
-        return <Users size={32} className="text-[#55a868]" />;
-      case 'technology':
-        return <Server size={32} className="text-[#c44e52]" />;
-      case 'environmental':
-        return <Leaf size={32} className="text-[#8172b3]" />;
-      case 'legal':
-        return <Scale size={32} className="text-[#937860]" />;
-      default:
-        return null;
-    }
   };
 
   // Enhanced features for interactive display
@@ -102,70 +61,241 @@ export const LandingPage: React.FC = () => {
 
   return (
     <div>
-      {/* Enhanced Hero Section - Remove top padding to eliminate gap */}
-      <section className="relative bg-gradient-to-b from-navy to-navy-dark text-white pb-24 md:pb-32 overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[url('https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-center bg-cover"></div>
-        
-        {/* Animated background elements */}
-        <div className="absolute inset-0">
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-2 h-2 bg-silver/20 rounded-full"
-              initial={{ 
-                x: Math.random() * windowSize.width, 
-                y: Math.random() * windowSize.height,
-                opacity: 0 
-              }}
-              animate={{ 
-                y: [null, -100],
-                opacity: [0, 0.6, 0]
-              }}
-              transition={{
-                duration: Math.random() * 3 + 2,
-                repeat: Infinity,
-                delay: Math.random() * 2
-              }}
-            />
-          ))}
+      {/* Enhanced Hero Section with Carousel */}
+      <section className="relative bg-gradient-to-b from-[#101936] via-[#040814] to-[#020309] text-white pb-24 md:pb-32 overflow-hidden">
+        {/* Floating particles background */}
+        <div className="absolute inset-0 opacity-18 pointer-events-none z-0">
+          <motion.div
+            className="absolute top-[10%] left-[8%] text-[1.1rem] text-[#cbd5f5]"
+            animate={{
+              y: [0, -15, 8, -10, 0],
+              x: [0, 12, -10, 8, 0],
+              rotate: [0, 5, -3, 3, 0],
+              opacity: [0.4, 0.6, 0.8, 0.6, 0.4]
+            }}
+            transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+          >
+            🔒
+          </motion.div>
+          <motion.div
+            className="absolute top-[20%] right-[15%] text-[1.1rem] text-[#cbd5f5]"
+            animate={{
+              y: [0, -15, 8, -10, 0],
+              x: [0, 12, -10, 8, 0],
+              rotate: [0, 5, -3, 3, 0],
+              opacity: [0.4, 0.6, 0.8, 0.6, 0.4]
+            }}
+            transition={{ duration: 24, repeat: Infinity, ease: 'linear' }}
+          >
+            🌐
+          </motion.div>
+          <motion.div
+            className="absolute top-[60%] left-[12%] text-[1.1rem] text-[#cbd5f5]"
+            animate={{
+              y: [0, -15, 8, -10, 0],
+              x: [0, 12, -10, 8, 0],
+              rotate: [0, 5, -3, 3, 0],
+              opacity: [0.4, 0.6, 0.8, 0.6, 0.4]
+            }}
+            transition={{ duration: 22, repeat: Infinity, ease: 'linear' }}
+          >
+            📊
+          </motion.div>
+          <motion.div
+            className="absolute top-[75%] right-[8%] text-[1.1rem] text-[#cbd5f5]"
+            animate={{
+              y: [0, -15, 8, -10, 0],
+              x: [0, 12, -10, 8, 0],
+              rotate: [0, 5, -3, 3, 0],
+              opacity: [0.4, 0.6, 0.8, 0.6, 0.4]
+            }}
+            transition={{ duration: 26, repeat: Infinity, ease: 'linear' }}
+          >
+            🛰️
+          </motion.div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10 pt-24 md:pt-32">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto text-center"
-          >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              {'STEEL™ Risk Assessment Framework'}
-            </h1>
-            <div className="text-xl md:text-2xl mb-8 text-silver min-h-[2em]">
-              {showTypewriter && (
-                <TypewriterText 
-                  text={'A comprehensive cybersecurity intelligence platform that helps organizations understand and manage strategic risk'} 
-                  delay={500}
-                  speed={10}
-                />
-              )}
-            </div>
-            <motion.div
+          <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] gap-8 lg:gap-12 items-center">
+            {/* Left Column - Headlines and Content */}
+            <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 2.5, duration: 0.6 }}
+              transition={{ duration: 0.6 }}
+              className="text-center lg:text-left"
             >
-              <Button 
-                variant="secondary" 
-                size="lg"
-                icon={<ArrowRight size={20} />}
-                iconPosition="right"
-                onClick={() => navigate('/steel')}
-                className="transform hover:scale-105 transition-transform"
+              {/* Tagline Badge */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-400/40 bg-gradient-to-r from-cyan-500/18 to-slate-900/96 text-cyan-200 text-xs uppercase tracking-widest mb-4"
               >
-                {'Explore STEEL™'}
-              </Button>
+                <span>STEEL™</span>
+                <span>Strategic Threat & Enterprise Evaluation Landscape</span>
+              </motion.div>
+
+              {/* Carousel Headlines */}
+              <div className="mb-6 min-h-[180px] md:min-h-[220px]">
+                <HeroCarousel
+                  slides={[
+                    {
+                      id: '1',
+                      headline: 'Turn open-source signals into ',
+                      highlight: 'board-ready cyber & ESG decisions.'
+                    },
+                    {
+                      id: '2',
+                      headline: 'ERMITS Advisory powered by ',
+                      highlight: 'STEEL™'
+                    }
+                  ]}
+                  autoRotateInterval={6000}
+                />
+              </div>
+
+              {/* Subtitle */}
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+                className="text-base md:text-lg text-slate-300 mb-6 max-w-2xl mx-auto lg:mx-0"
+              >
+                <strong className="text-white">ERMITS Advisory</strong> runs the{' '}
+                <strong className="text-white">STEEL™ methodology</strong> to map your geopolitical, cyber, privacy,
+                and supply-chain exposure, then connects the findings directly to
+                implementation tools across the <strong className="text-white">ERMITS ecosystem</strong>.
+              </motion.p>
+
+              {/* Pills */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.6 }}
+                className="flex flex-wrap gap-2 mb-6 justify-center lg:justify-start"
+              >
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-600/40 bg-slate-900/85 text-xs text-slate-400">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                  PESTEL-driven threat scanning
+                </div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-600/40 bg-slate-900/85 text-xs text-slate-400">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                  Privacy, vendor & ransomware risk
+                </div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-600/40 bg-slate-900/85 text-xs text-slate-400">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                  Direct mapping to ERMITS ecosystem
+                </div>
+              </motion.div>
+
+              {/* CTA Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.6 }}
+                className="flex flex-wrap gap-3 justify-center lg:justify-start mb-6"
+              >
+                <Button 
+                  variant="secondary" 
+                  size="lg"
+                  icon={<ArrowRight size={20} />}
+                  iconPosition="right"
+                  onClick={() => navigate('/steel')}
+                  className="bg-gradient-to-r from-[#f4b400] to-[#f6e05e] text-navy-dark hover:brightness-110 shadow-lg shadow-black/60"
+                >
+                  Explore STEEL™ Methodology
+                </Button>
+                <Button 
+                  variant="ghost" 
+                  size="lg"
+                  onClick={() => navigate('/ecosystem')}
+                  className="border-slate-600/60 text-white hover:bg-slate-900/90"
+                >
+                  View ERMITS Ecosystem Map
+                </Button>
+              </motion.div>
+
+              {/* Positioning Statement */}
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1, duration: 0.6 }}
+                className="text-sm text-slate-400 max-w-2xl mx-auto lg:mx-0"
+              >
+                <strong className="text-slate-300">Positioning:</strong> ERMITS Advisory owns STEEL™ as the analytical
+                engine. Execution happens through ERMITS products — so every
+                dashboard finding can be turned into a concrete control, checklist, or playbook.
+              </motion.p>
             </motion.div>
-          </motion.div>
+
+            {/* Right Column - Hero Panel Dashboard Preview */}
+            <motion.aside
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="relative"
+              aria-label="STEEL dashboard preview"
+            >
+              <Card className="bg-gradient-to-br from-blue-500/22 via-slate-900/98 to-slate-900/98 border-slate-600/50 shadow-2xl p-5">
+                {/* Panel Header */}
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <div className="text-xs uppercase tracking-widest text-slate-400 font-semibold mb-1">
+                      STEEL™ Threat Weather Snapshot
+                    </div>
+                    <div className="text-xs text-slate-400">
+                      Sector: Healthcare & Pharma · Region: North America
+                    </div>
+                  </div>
+                  <StatusPill label="Live signal blend" status="live" />
+                </div>
+
+                {/* Metrics Grid */}
+                <div className="grid grid-cols-3 gap-2 mb-4">
+                  <MetricCard
+                    label="Ransomware Pressure"
+                    value="High"
+                    subtitle="↑ Targeted campaigns vs. hospitals"
+                    className="text-amber-300"
+                  />
+                  <MetricCard
+                    label="Vendor Fragility"
+                    value="Medium"
+                    subtitle="220+ critical SaaS dependencies"
+                  />
+                  <MetricCard
+                    label="Privacy Collision"
+                    value="Elevated"
+                    subtitle="HIPAA + GDPR + emerging AI rules"
+                  />
+                </div>
+
+                {/* Chips */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="px-2 py-1 rounded-full border border-dashed border-slate-500/80 text-xs text-slate-300 bg-slate-900/90">
+                    🌍 Geo: West Africa, Eastern Europe, US
+                  </div>
+                  <div className="px-2 py-1 rounded-full border border-dashed border-slate-500/80 text-xs text-slate-300 bg-slate-900/90">
+                    📡 Open data + curated RSS
+                  </div>
+                  <div className="px-2 py-1 rounded-full border border-dashed border-slate-500/80 text-xs text-slate-300 bg-slate-900/90">
+                    🔐 Privacy + ransomware cross-view
+                  </div>
+                </div>
+
+                {/* Footer */}
+                <div className="flex justify-between items-center pt-3 border-t border-slate-600/40 text-xs text-slate-400">
+                  <div className="flex items-center gap-1">
+                    <span className="w-2 h-2 rounded-full bg-orange-500 shadow-[0_0_10px_rgba(251,146,60,0.8)]"></span>
+                    Composite STEEL score: <strong className="text-slate-300">7.8 / 10</strong> (Above risk appetite)
+                  </div>
+                  <div className="text-xs">
+                    Mapped controls: CyberCaution · CyberCorrect · VendorSoluce · TechnoSoluce
+                  </div>
+                </div>
+              </Card>
+            </motion.aside>
+          </div>
         </div>
       </section>
 
@@ -414,188 +544,403 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Enhanced STEEL Methodology Section */}
-      <section className="py-16 bg-white dark:bg-navy-dark/80 steel-section">
+      <section id="steel" className="py-16 bg-white dark:bg-navy-dark/80 steel-section">
         <div className="container mx-auto px-4">
-          <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
-            className="text-center mb-12"
-          >
-            <motion.h2 variants={item} className="text-3xl font-bold mb-4 dark:text-white steel-title">
-              {'The STEEL™ Methodology'}
-            </motion.h2>
-            <motion.p variants={item} className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto steel-subtitle">
-              {'Six interconnected dimensions that provide comprehensive risk visibility'}
-            </motion.p>
-          </motion.div>
-          
-          <motion.div 
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.1 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            {steelDimensions.map((dimension, index) => (
-              <motion.div 
-                key={dimension.id}
-                variants={item}
-                whileHover={{ scale: 1.03 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                style={{ '--dimension-color': dimension.color } as React.CSSProperties}
+          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 items-start">
+            {/* Left Column - Methodology Description */}
+            <div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="mb-8"
               >
-                <InteractiveCard 
-                  hover3D={true}
-                  className="relative overflow-hidden steel-card bg-white dark:bg-dark-card-bg"
-                >
-                  <div className="p-6">
-                    <div 
-                      className="absolute top-0 right-0 w-24 h-24 hexagon hexagon-dimension-bg-opacity"
-                    ></div>
-                    <div className="flex items-start relative z-10">
-                      <div className="mr-4">
-                        {renderSteelIcon(dimension.id)}
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold mb-2 dark:text-white steel-dimension-title">
-                          {dimension.title}
-                        </h3>
-                        <p className="text-gray-600 dark:text-gray-100 steel-dimension-desc mb-4">
-                          {dimension.description}
-                        </p>
-                        
-                        {/* Risk Score Indicator */}
-                        <div className="flex items-center justify-between mb-2">
-                          <span className="text-sm font-medium text-gray-500 dark:text-gray-400">Risk Level</span>
-                          <span className="text-sm font-bold dimension-color-text">
-                            {dimension.value}%
-                          </span>
-                        </div>
-                        <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                          <motion.div 
-                            className="h-2 rounded-full dimension-progress-bar" 
-                            initial={{ width: 0 }}
-                            whileInView={{ width: `${dimension.value}%` }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1, delay: index * 0.2 }}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </InteractiveCard>
+                <div className="text-xs uppercase tracking-widest text-cyan-400 mb-2">
+                  Methodology
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
+                  STEEL™ – Strategic Threat & Enterprise Evaluation Landscape
+                </h2>
+                <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 max-w-2xl">
+                  STEEL™ fuses <strong className="text-gray-900 dark:text-white">PESTEL analysis</strong> with cyber threat intelligence,
+                  privacy regulation tracking, and supply-chain indicators. It turns
+                  noisy open data into a structured risk landscape you can act on.
+                </p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
+                  <strong className="text-gray-900 dark:text-white">Note:</strong> STEEL™ is built upon the PESTEL methodology (Political, Economic, Social, Technological, Environmental, Legal) as its foundational framework, extending it specifically for enterprise risk and cybersecurity intelligence.
+                </p>
               </motion.div>
-            ))}
-          </motion.div>
-          
-          <div className="text-center mt-12">
-            <Button 
-              variant="outline" 
-              onClick={() => navigate('/steel')}
-              icon={<ArrowRight size={16} />}
-              iconPosition="right"
-              className="transform hover:scale-105 transition-transform"
-            >
-              Learn More
-            </Button>
+
+              {/* STEEL Letter Breakdown */}
+              <Card className="p-6 bg-slate-900/96 dark:bg-slate-950/96 border-slate-700/38 shadow-xl mb-6">
+                <div className="text-sm text-slate-400 mb-4">
+                  Each STEEL™ scan passes through five lenses:
+                </div>
+                <div className="grid grid-cols-3 gap-3 mb-6">
+                  {/* S - Strategic */}
+                  <div className="p-3 rounded-2xl bg-gradient-to-br from-blue-500/16 to-slate-900/98 border border-slate-600/70">
+                    <div className="text-lg font-bold mb-1 text-amber-400">S</div>
+                    <div className="text-xs font-semibold text-slate-300 mb-1">Strategic</div>
+                    <div className="text-xs text-slate-400">Macro-trends, regulation, conflict, critical infrastructure.</div>
+                  </div>
+                  {/* T - Threat */}
+                  <div className="p-3 rounded-2xl bg-gradient-to-br from-blue-500/16 to-slate-900/98 border border-slate-600/70">
+                    <div className="text-lg font-bold mb-1 text-amber-400">T</div>
+                    <div className="text-xs font-semibold text-slate-300 mb-1">Threat</div>
+                    <div className="text-xs text-slate-400">Ransomware, data breaches, vendor incidents, insider risk.</div>
+                  </div>
+                  {/* E - Enterprise */}
+                  <div className="p-3 rounded-2xl bg-gradient-to-br from-blue-500/16 to-slate-900/98 border border-slate-600/70">
+                    <div className="text-lg font-bold mb-1 text-amber-400">E</div>
+                    <div className="text-xs font-semibold text-slate-300 mb-1">Enterprise</div>
+                    <div className="text-xs text-slate-400">Your sector, footprint, data flows, and critical vendors.</div>
+                  </div>
+                  {/* E - Evaluation */}
+                  <div className="p-3 rounded-2xl bg-gradient-to-br from-blue-500/16 to-slate-900/98 border border-slate-600/70">
+                    <div className="text-lg font-bold mb-1 text-amber-400">E</div>
+                    <div className="text-xs font-semibold text-slate-300 mb-1">Evaluation</div>
+                    <div className="text-xs text-slate-400">Scored scenarios, risk appetite, and readiness gaps.</div>
+                  </div>
+                  {/* L - Landscape */}
+                  <div className="p-3 rounded-2xl bg-gradient-to-br from-blue-500/16 to-slate-900/98 border border-slate-600/70">
+                    <div className="text-lg font-bold mb-1 text-amber-400">L</div>
+                    <div className="text-xs font-semibold text-slate-300 mb-1">Landscape</div>
+                    <div className="text-xs text-slate-400">Visual maps, risk clusters, and ERMITS product mapping.</div>
+                  </div>
+                  {/* + PESTEL */}
+                  <div className="p-3 rounded-2xl bg-gradient-to-br from-blue-500/16 to-slate-900/98 border border-slate-600/70">
+                    <div className="text-lg font-bold mb-1 text-amber-400">+</div>
+                    <div className="text-xs font-semibold text-slate-300 mb-1">PESTEL</div>
+                    <div className="text-xs text-slate-400">Political · Economic · Social · Technological · Environmental · Legal.</div>
+                  </div>
+                </div>
+
+                {/* Legend */}
+                <div className="flex flex-wrap gap-4 text-xs text-slate-400 mb-6">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-red-500"></span>
+                    <span>Threat Weather & ransomware (→ CyberCaution)</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-cyan-500"></span>
+                    <span>Privacy & AI data risk (→ CyberCorrect, SocialCaution)</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-green-500"></span>
+                    <span>Vendor & SBOM exposure (→ VendorSoluce, VendorTal, TechnoSoluce)</span>
+                  </div>
+                </div>
+
+                {/* Mini Timeline */}
+                <div className="pt-4 border-t border-dashed border-slate-600/60 text-xs text-slate-400">
+                  <div className="mb-2">
+                    <strong className="text-slate-300">Standard engagement (2–4 weeks):</strong>
+                  </div>
+                  <ul className="list-disc list-inside space-y-1 ml-2">
+                    <li><strong className="text-slate-300">Week 1:</strong> Scoping, data sources, PESTEL profiles, baseline STEEL score.</li>
+                    <li><strong className="text-slate-300">Week 2:</strong> Sector-specific dashboards, ransomware & privacy overlays.</li>
+                    <li><strong className="text-slate-300">Week 3–4:</strong> Roadmap tied to ERMITS tools (CyberCaution, CyberCorrect, VendorSoluce, CyberSoluce, SocialCaution, TechnoSoluce).</li>
+                  </ul>
+                </div>
+              </Card>
+            </div>
+
+            {/* Right Column - Inputs & Outputs */}
+            <div>
+              <Card className="p-6 bg-slate-900/96 dark:bg-slate-950/96 border-slate-700/38 shadow-xl">
+                <div className="text-xs uppercase tracking-widest text-cyan-400 mb-2">
+                  Inputs & Outputs
+                </div>
+                <h3 className="text-xl font-bold mb-3 dark:text-white">
+                  From signals to controls
+                </h3>
+                <p className="text-sm text-slate-300 mb-4">
+                  STEEL™ is <strong className="text-white">tool-agnostic on ingestion</strong> (RSS feeds, open data portals,
+                  regulators, research institutes) but <strong className="text-white">opinionated on execution</strong>:
+                  it routes findings into the ERMITS ecosystem for implementation.
+                </p>
+                <ul className="text-sm text-slate-400 space-y-2 list-disc list-inside">
+                  <li>Open data from regulators, CERTs, NGOs, and market data.</li>
+                  <li>Sector-specific alerts (healthcare, education, defense, agriculture, etc.).</li>
+                  <li>Vendor exposure & SBOM signals (for VendorSoluce & TechnoSoluce).</li>
+                  <li>Privacy and AI-governance updates (for CyberCorrect & SocialCaution).</li>
+                </ul>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Enhanced Services Section */}
-      <section className="py-16 bg-silver-light dark:bg-dark-surface">
+      {/* Ecosystem Mapping Section */}
+      <section id="ecosystem" className="py-16 bg-silver-light dark:bg-dark-surface">
         <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <div className="text-xs uppercase tracking-widest text-cyan-400 mb-2">
+              Ecosystem
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
+              How STEEL™ feeds the ERMITS ecosystem
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              ERMITS Advisory acts as the <strong className="text-gray-900 dark:text-white">intelligence layer</strong>. Once STEEL™ identifies
+              exposures, each theme is mapped to a concrete product in the ERMITS family.
+            </p>
+          </motion.div>
+
+          <Card className="p-6 bg-white dark:bg-slate-900/96 border-slate-700/38 shadow-xl mb-8">
+            <div className="text-sm font-semibold text-gray-900 dark:text-white mb-4">
+              Ecosystem mapping (current scope):
+            </div>
+            <motion.div
+              variants={container}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.1 }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+            >
+              <motion.div variants={item}>
+                <EcosystemCard
+                  name="CyberCaution"
+                  tag="Ransomware & Threat Weather"
+                  description="Converts STEEL™ ransomware and threat-weather signals into playbooks, tabletop exercises, and continuous monitoring dashboards."
+                  steelFeeds="threat clusters, geography, sector exposure, priority controls."
+                />
+              </motion.div>
+              <motion.div variants={item}>
+                <EcosystemCard
+                  name="CyberCorrect"
+                  tag="Privacy & Data Rights"
+                  description="Turns privacy-heavy STEEL™ findings (GDPR, CCPA, DPDP, AI rules) into data mapping, DPIA/PIA workflow, and request automation."
+                  steelFeeds="regulation radar, sector rules, cross-border data paths."
+                />
+              </motion.div>
+              <motion.div variants={item}>
+                <EcosystemCard
+                  name="VendorSoluce"
+                  tag="Vendor & Supply Chain"
+                  description="Uses vendor-centric STEEL™ outputs to rank suppliers, contracts, and critical services by risk level and regulatory impact."
+                  steelFeeds="vendor geography, concentration risk, incident history."
+                />
+              </motion.div>
+              <motion.div variants={item}>
+                <EcosystemCard
+                  name="VendorTal"
+                  tag="Vendor Discovery"
+                  description="Leverages STEEL™ to help you find vendors that fit your risk appetite, not just the cheapest or fastest option."
+                  steelFeeds="country-level risk, regulatory friction, ESG constraints."
+                />
+              </motion.div>
+              <motion.div variants={item}>
+                <EcosystemCard
+                  name="CyberSoluce"
+                  tag="NIST CSF & Ransomware Readiness"
+                  description="Maps STEEL™ gaps to concrete controls using NIST CSF and ransomware profiles, turning high-level risk into maturity roadmaps."
+                  steelFeeds="function-by-function control priorities and sector baselines."
+                />
+              </motion.div>
+              <motion.div variants={item}>
+                <EcosystemCard
+                  name="SocialCaution"
+                  tag="Human Layer & Citizens"
+                  description="Converts societal and behavioral patterns from STEEL™ (mis-/dis-information, scams, social engineering trends) into awareness campaigns and tools."
+                  steelFeeds="narrative themes, target demographics, risk personas."
+                />
+              </motion.div>
+              <motion.div variants={item}>
+                <EcosystemCard
+                  name="TechnoSoluce"
+                  tag="SBOM & Software Risk"
+                  description="Uses STEEL™ to prioritize SBOM findings and software supply-chain risks in line with EO 14028, NIST SP 800-161, and similar references."
+                  steelFeeds="technology stacks, vulnerability heat, regulatory expectations."
+                />
+              </motion.div>
+              <motion.div variants={item}>
+                <EcosystemCard
+                  name="ERMITS Advisory"
+                  tag="Intelligence & Roadmaps"
+                  description="Remains the neutral advisory brain: it runs STEEL™, orchestrates the analysis, and guides which ERMITS tools you should deploy first."
+                  steelFeeds="one integrated narrative, not six disconnected projects."
+                />
+              </motion.div>
+            </motion.div>
+          </Card>
+        </div>
+      </section>
+
+      {/* Use Cases Section */}
+      <section id="use-cases" className="py-16 bg-white dark:bg-dark-bg">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <div className="text-xs uppercase tracking-widest text-cyan-400 mb-2">
+              Use cases
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
+              Where STEEL™ delivers outsized value first
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Start where the threat landscape is moving faster than your internal bandwidth.
+              ERMITS Advisory focuses STEEL™ on concrete decision points — not academic models.
+            </p>
+          </motion.div>
+
           <motion.div
             variants={container}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.1 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
+            <motion.div variants={item}>
+              <Card className="h-full p-5 bg-white dark:bg-slate-900/96 border-slate-700/45 hover:shadow-xl transition-shadow">
+                <h3 className="text-base font-semibold mb-2 dark:text-white">
+                  SMBs under ransomware pressure
+                </h3>
+                <div className="text-xs text-slate-400 mb-3">
+                  CyberCaution · CyberSoluce
+                </div>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Identify which ransomware families, regions, and attack chains matter for your sector, then prioritize affordable controls instead of generic checklists.
+                </p>
+              </Card>
+            </motion.div>
+            <motion.div variants={item}>
+              <Card className="h-full p-5 bg-white dark:bg-slate-900/96 border-slate-700/45 hover:shadow-xl transition-shadow">
+                <h3 className="text-base font-semibold mb-2 dark:text-white">
+                  Privacy-heavy service providers
+                </h3>
+                <div className="text-xs text-slate-400 mb-3">
+                  CyberCorrect · SocialCaution
+                </div>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Blend regulatory risk (GDPR, CCPA, LGPD, DPDP, etc.) with behavioral trends and data broker exposure to build a realistic privacy roadmap.
+                </p>
+              </Card>
+            </motion.div>
+            <motion.div variants={item}>
+              <Card className="h-full p-5 bg-white dark:bg-slate-900/96 border-slate-700/45 hover:shadow-xl transition-shadow">
+                <h3 className="text-base font-semibold mb-2 dark:text-white">
+                  Complex vendor & SBOM exposure
+                </h3>
+                <div className="text-xs text-slate-400 mb-3">
+                  VendorSoluce · VendorTal · TechnoSoluce
+                </div>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Combine geopolitics, regulation, and software supply-chain indicators to see where your vendor stack and SBOMs are most fragile.
+                </p>
+              </Card>
+            </motion.div>
+            <motion.div variants={item}>
+              <Card className="h-full p-5 bg-white dark:bg-slate-900/96 border-slate-700/45 hover:shadow-xl transition-shadow">
+                <h3 className="text-base font-semibold mb-2 dark:text-white">
+                  Public sector & education
+                </h3>
+                <div className="text-xs text-slate-400 mb-3">
+                  CyberCaution · SocialCaution
+                </div>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Use STEEL™ to translate national threat bulletins and policy changes into pragmatic steps for municipalities, schools, and agencies.
+                </p>
+              </Card>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Engagement Model / How It Works Section */}
+      <section id="how-it-works" className="py-16 bg-silver-light dark:bg-dark-surface">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <motion.h2 variants={item} className="text-3xl font-bold mb-4 dark:text-white">
-              ERMITS Ecosystem Products
-            </motion.h2>
-            <motion.p variants={item} className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              STEEL-powered strategic risk intelligence and advisory services
-            </motion.p>
+            <div className="text-xs uppercase tracking-widest text-cyan-400 mb-2">
+              Engagement model
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
+              A compact, outcome-driven engagement — not another endless audit
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              ERMITS Advisory is built by practitioners who have lived inside GRC, cyber, and
+              supply-chain teams. The process is designed to be <strong className="text-gray-900 dark:text-white">lean</strong>, <strong className="text-gray-900 dark:text-white">transparent</strong>,
+              and <strong className="text-gray-900 dark:text-white">immediately actionable</strong>.
+            </p>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             variants={container}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.1 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6"
           >
             <motion.div variants={item}>
-              <InteractiveCard
-                hover3D={true}
-                glowEffect={true}
-                className="h-full bg-white dark:bg-dark-card-bg p-6"
-              >
-                <h3 className="text-xl font-bold mb-3 dark:text-white card-title">
-                  STEEL™ Framework
+              <Card className="h-full p-6 bg-white dark:bg-slate-900/96 border-slate-700/45">
+                <div className="text-xs uppercase tracking-widest text-slate-400 mb-2">
+                  Step 1
+                </div>
+                <h3 className="text-lg font-semibold mb-3 dark:text-white">
+                  Scope & signal design
                 </h3>
-                <p className="text-gray-600 dark:text-gray-200 mb-4 card-text">
-                  Comprehensive strategic risk assessment methodology
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  We define your STEEL™ profile (sector, regions, data types, vendors, regulatory
+                  perimeter) and select relevant open data & RSS sources.
                 </p>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => navigate('/steel')}
-                  className="transform hover:scale-105 transition-transform"
-                >
-                  Learn More
-                </Button>
-              </InteractiveCard>
+                <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+                  <li>Threat & regulation inventory.</li>
+                  <li>Vendor & SBOM footprint sketch.</li>
+                  <li>Risk appetite & board expectations.</li>
+                </ul>
+              </Card>
             </motion.div>
-
             <motion.div variants={item}>
-              <InteractiveCard 
-                hover3D={true}
-                glowEffect={true}
-                className="h-full bg-white dark:bg-dark-card-bg p-6"
-              >
-                <h3 className="text-xl font-bold mb-3 dark:text-white card-title">
-                  Virtual CISO Services
+              <Card className="h-full p-6 bg-white dark:bg-slate-900/96 border-slate-700/45">
+                <div className="text-xs uppercase tracking-widest text-slate-400 mb-2">
+                  Step 2
+                </div>
+                <h3 className="text-lg font-semibold mb-3 dark:text-white">
+                  STEEL™ run & workshop
                 </h3>
-                <p className="text-gray-600 dark:text-gray-200 mb-4 card-text">
-                  Expert security leadership and strategic guidance on demand
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  We execute STEEL™, build the landscape dashboards, and run an interactive session
+                  with your stakeholders.
                 </p>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => navigate('/services')}
-                  className="transform hover:scale-105 transition-transform"
-                >
-                  Learn More
-                </Button>
-              </InteractiveCard>
+                <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+                  <li>Visual threat weather & PESTEL overlays.</li>
+                  <li>Scenario-based risk scores.</li>
+                  <li>Pre-mapping to ERMITS tools.</li>
+                </ul>
+              </Card>
             </motion.div>
-
             <motion.div variants={item}>
-              <InteractiveCard
-                hover3D={true}
-                glowEffect={true}
-                className="h-full bg-white dark:bg-dark-card-bg p-6"
-              >
-                <h3 className="text-xl font-bold mb-3 dark:text-white card-title">
-                  Executive Dashboard
+              <Card className="h-full p-6 bg-white dark:bg-slate-900/96 border-slate-700/45">
+                <div className="text-xs uppercase tracking-widest text-slate-400 mb-2">
+                  Step 3
+                </div>
+                <h3 className="text-lg font-semibold mb-3 dark:text-white">
+                  Execution pack with ERMITS mapping
                 </h3>
-                <p className="text-gray-600 dark:text-gray-200 mb-4 card-text">
-                  Real-time visibility into your security posture and risk metrics
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  You receive a concise pack that links each priority finding to the relevant ERMITS
+                  product or playbook.
                 </p>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => navigate('/dashboard')}
-                  className="transform hover:scale-105 transition-transform"
-                >
-                  Learn More
-                </Button>
-              </InteractiveCard>
+                <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+                  <li>Ranked recommendations (90-day view).</li>
+                  <li>Which ERMITS tools to deploy first and why.</li>
+                  <li>Options for ongoing STEEL™ monitoring if you want a live dashboard.</li>
+                </ul>
+              </Card>
             </motion.div>
           </motion.div>
         </div>
@@ -665,29 +1010,54 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Enhanced CTA Section - Reduced padding */}
-      <section className={`py-12 ${theme === 'dark' ? 'bg-navy' : 'bg-black'} text-white`}>
+      {/* Enhanced CTA Section */}
+      <section id="contact" className={`py-16 ${theme === 'dark' ? 'bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950' : 'bg-gradient-to-br from-navy-dark via-navy to-navy-dark'} text-white`}>
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            className="max-w-3xl mx-auto text-center"
+            className="max-w-4xl mx-auto"
           >
-            <h2 className="text-3xl font-bold mb-4">
-              Ready to Transform Your Security Posture?
-            </h2>
-            <p className="text-xl mb-6 text-silver">
-              Get started with a comprehensive STEEL assessment today
-            </p>
-            <Button
-              variant="secondary"
-              size="lg"
-              onClick={() => navigate('/contact')}
-              className="transform hover:scale-105 transition-transform"
-            >
-              Contact Us
-            </Button>
+            <Card className="p-8 md:p-10 bg-gradient-to-br from-[#f4b400]/22 via-slate-900/98 to-slate-900/98 border-[#fcd34d]/80 shadow-2xl">
+              <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-8 items-center">
+                <div>
+                  <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">
+                    Book an initial STEEL™ discovery call
+                  </h2>
+                  <p className="text-base text-navy-dark dark:text-slate-300 mb-4">
+                    Use one <strong className="text-navy-dark dark:text-white">STEEL™ run</strong> to clarify where your next euros or dollars of
+                    cyber and privacy budget should go — and which ERMITS tools can deliver the most impact.
+                  </p>
+                  <div className="space-y-2 text-sm text-navy-dark dark:text-slate-400">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle size={16} className="text-green-500 flex-shrink-0" />
+                      <span>No generic boilerplate risk report</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle size={16} className="text-green-500 flex-shrink-0" />
+                      <span>Open-data driven, tool-integrated</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle size={16} className="text-green-500 flex-shrink-0" />
+                      <span>Designed for small and mid-size organizations</span>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <Button
+                    variant="secondary"
+                    size="lg"
+                    onClick={() => navigate('/contact')}
+                    className="w-full bg-navy-dark text-white hover:bg-navy-dark/90 shadow-lg"
+                    icon={<ArrowRight size={20} />}
+                    iconPosition="right"
+                  >
+                    Request STEEL™ Discovery
+                  </Button>
+                </div>
+              </div>
+            </Card>
           </motion.div>
         </div>
       </section>
