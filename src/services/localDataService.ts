@@ -23,7 +23,7 @@ export const contactService = {
         console.log('Contact submission (DEMO MODE - not persisted):', data);
         // In production, this would return the actual API response
         resolve({
-          id: Math.random().toString(36).substr(2, 9),
+          id: Math.random().toString(36).slice(2, 11),
           ...data,
           created_at: new Date().toISOString(),
           status: 'new',
@@ -49,7 +49,7 @@ export const newsletterService = {
       setTimeout(() => {
         console.log('Newsletter subscription (demo mode):', { email, source });
         resolve({
-          id: Math.random().toString(36).substr(2, 9),
+          id: Math.random().toString(36).slice(2, 11),
           email,
           source,
           status: 'active',

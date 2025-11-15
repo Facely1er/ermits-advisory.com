@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../contexts/ThemeContext';
@@ -14,6 +14,29 @@ export const LandingPage: React.FC = () => {
   const { theme } = useTheme();
   const navigate = useNavigate();
   const [showTypewriter, setShowTypewriter] = useState(false);
+  const [windowSize, setWindowSize] = useState({ width: 1920, height: 1080 });
+
+  // Set window size on mount and handle resize
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+      
+      const handleResize = () => {
+        setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+      };
+      
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, []);
+
+  // Trigger typewriter after initial animation
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowTypewriter(true);
+    }, 600); // Match animation duration
+    return () => clearTimeout(timer);
+  }, []);
   
   const container = {
     hidden: { opacity: 0 },
@@ -90,8 +113,8 @@ export const LandingPage: React.FC = () => {
               key={i}
               className="absolute w-2 h-2 bg-silver/20 rounded-full"
               initial={{ 
-                x: Math.random() * window.innerWidth, 
-                y: Math.random() * window.innerHeight,
+                x: Math.random() * windowSize.width, 
+                y: Math.random() * windowSize.height,
                 opacity: 0 
               }}
               animate={{ 
@@ -113,7 +136,6 @@ export const LandingPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto text-center"
-            onAnimationComplete={() => setShowTypewriter(true)}
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               {'STEEL™ Risk Assessment Framework'}
