@@ -14,6 +14,7 @@ const Dashboard = React.lazy(() => import('./pages/Dashboard').then(m => ({ defa
 const STEELVisualization = React.lazy(() => import('./pages/STEELVisualization').then(m => ({ default: m.STEELVisualization })));
 const SteelPremium = React.lazy(() => import('./pages/SteelPremium').then(m => ({ default: m.SteelPremium })));
 const VcisoKit = React.lazy(() => import('./pages/VcisoKit').then(m => ({ default: m.VcisoKit })));
+const ComplianceAdvisory = React.lazy(() => import('./pages/ComplianceAdvisory').then(m => ({ default: m.ComplianceAdvisory })));
 const DashboardTemplate = React.lazy(() => import('./pages/DashboardTemplate').then(m => ({ default: m.DashboardTemplate })));
 const ImplementationGuidePage = React.lazy(() => import('./pages/ImplementationGuidePage').then(m => ({ default: m.ImplementationGuidePage })));
 const RiskRadar = React.lazy(() => import('./pages/RiskRadar').then(m => ({ default: m.RiskRadar })));
@@ -56,6 +57,7 @@ function App() {
                   <Route path="/steel/premium" element={<SteelPremium />} />
                   <Route path="/steel/implementation-guide" element={<ImplementationGuidePage />} />
                   <Route path="/vciso-kit" element={<VcisoKit />} />
+                  <Route path="/compliance" element={<ComplianceAdvisory />} />
                   <Route path="/dashboard-template" element={<DashboardTemplate />} />
                   <Route path="/risk-radar" element={<RiskRadar />} />
                   <Route path="/services" element={<ServiceOffering />} />

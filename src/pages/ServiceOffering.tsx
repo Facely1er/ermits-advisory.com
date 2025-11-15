@@ -74,21 +74,73 @@ export const ServiceOffering: React.FC = () => {
         'Team leadership and program management',
         '60-70% cost savings vs full-time CISO'
       ],
-      link: '/pricing'
+      link: '/vciso-kit'
     },
     {
       id: 'compliance',
       icon: 'file',
       title: 'Compliance Advisory',
-      description: 'Framework-driven compliance services feeding directly into CyberCorrect automation for continuous compliance monitoring.',
-      price: '$12K - $30K',
-      timeline: '3-5 weeks',
+      description: 'Framework implementation feeding directly into CyberCorrect automation. Comprehensive compliance readiness, audit preparation, and continuous compliance programs.',
+      price: '$3.5K - $30K',
+      timeline: '3-5 weeks or ongoing',
       features: [
-        'Compliance readiness assessments',
-        'Audit preparation support',
-        'Continuous compliance programs',
-        'CyberCorrect integration',
-        'NIST, ISO, SOC 2, HIPAA, CMMC support'
+        'Compliance readiness assessment and gap analysis',
+        'Audit preparation support and evidence validation',
+        'Continuous compliance program with monthly health checks',
+        'NIST, ISO 27001, SOC 2, HIPAA, CMMC, PCI-DSS support',
+        'Seamless CyberCorrect platform integration',
+        'Regulatory change monitoring and control effectiveness reviews'
+      ],
+      link: '/compliance'
+    },
+    {
+      id: 'governance',
+      icon: 'presentation',
+      title: 'Governance & Risk Strategy',
+      description: 'Strategic planning that implements through CyberSoluce platform. Build security program foundations, risk management frameworks, and board governance programs.',
+      price: '$12K - $40K',
+      timeline: '3-8 weeks',
+      features: [
+        'Security program foundation and organizational design',
+        'Risk management program with appetite definition',
+        'Board governance framework and reporting',
+        'Policy framework architecture (25+ policies)',
+        'CyberSoluce platform implementation and configuration',
+        'Executive dashboard design and risk visualization'
+      ],
+      link: '/pricing'
+    },
+    {
+      id: 'vendor-risk',
+      icon: 'users',
+      title: 'Vendor Risk Advisory',
+      description: 'Strategic guidance implementing through VendorSoluce platform. Design vendor risk programs, assess critical vendors, and manage supply chain risks.',
+      price: '$5K - $35K',
+      timeline: '3-5 weeks or per vendor',
+      features: [
+        'Vendor risk program design and framework development',
+        'Critical vendor security assessments and validation',
+        'Supply chain risk strategy and portfolio optimization',
+        'Vendor classification and tiering methodology',
+        'VendorSoluce platform implementation and automation',
+        'Continuous vendor monitoring and risk scoring'
+      ],
+      link: '/pricing'
+    },
+    {
+      id: 'incident-response',
+      icon: 'shield',
+      title: 'Incident Response Advisory',
+      description: 'Crisis leadership leveraging ERMITS platform for coordination. Develop incident response plans, playbooks, and provide crisis management leadership.',
+      price: '$12K - $100K',
+      timeline: '3-6 weeks or crisis response',
+      features: [
+        'Incident response plan development and playbook creation',
+        'Tabletop exercise facilitation and scenario planning',
+        'Crisis leadership and breach response support',
+        'Stakeholder communication and regulatory notification',
+        'Platform-enabled response workflows in CyberSoluce',
+        'Post-incident analysis and recovery planning'
       ],
       link: '/pricing'
     }
@@ -152,6 +204,8 @@ export const ServiceOffering: React.FC = () => {
         return <UserCheck size={size} className="text-navy dark:text-silver" />;
       case 'file':
         return <FileText size={size} className="text-navy dark:text-silver" />;
+      case 'users':
+        return <Users size={size} className="text-navy dark:text-silver" />;
       default:
         return null;
     }
@@ -378,7 +432,7 @@ export const ServiceOffering: React.FC = () => {
                       onClick={() => navigate(service.link)}
                       className="w-full"
                     >
-                      View Pricing
+                      {service.id === 'compliance' ? 'Explore Compliance' : service.id === 'vCISO' ? 'View vCISO Toolkit' : 'View Pricing'}
                     </Button>
                   </div>
                 </div>

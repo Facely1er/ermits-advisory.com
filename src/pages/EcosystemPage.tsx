@@ -5,57 +5,69 @@ import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { InteractiveCard } from '../components/shared/InteractiveCard';
 import {
-  Shield, BarChart2, Eye, Presentation, Users, ArrowRight,
+  Shield, ArrowRight,
   Zap, Target, Layers, CheckCircle, TrendingUp, AlertCircle,
-  FileCheck, Search, Rocket, ArrowDown, Database, Settings
+  FileCheck, Search, Rocket, ArrowDown, Database, Settings,
+  Network, Server, Users
 } from 'lucide-react';
 
 // Import ecosystem logo - user should add this file
 // import ecosystemLogo from '../assets/ermits-ecosystem.png';
+import socialCautionLogo from '../assets/socialcaution.png';
+import cyberCertitudeLogo from '../assets/CyberCertitude.png';
 
 export const EcosystemPage: React.FC = () => {
   const navigate = useNavigate();
 
   const ecosystemComponents = [
     {
-      id: 'steel',
-      icon: <Shield size={32} className="text-navy dark:text-silver" />,
-      title: 'STEEL Assessment',
-      description: 'Strategic risk assessment framework for comprehensive threat analysis',
-      link: '/steel',
-      color: 'from-blue-500 to-blue-600'
+      id: 'cyberCaution',
+      icon: <AlertCircle size={32} className="text-navy dark:text-silver" />,
+      title: 'CyberCaution™',
+      description: 'Real-time threat monitoring and intelligence platform for continuous security awareness',
+      link: '/cybercaution',
+      color: 'from-red-500 to-red-600'
     },
     {
-      id: 'riskRadar',
-      icon: <Eye size={32} className="text-navy dark:text-silver" />,
-      title: 'Risk Radar',
-      description: 'Real-time threat monitoring and intelligence dashboard',
-      link: '/risk-radar',
+      id: 'cyberCorrect',
+      icon: <FileCheck size={32} className="text-navy dark:text-silver" />,
+      title: 'CyberCorrect™',
+      description: 'Automated compliance management and evidence collection for continuous compliance monitoring',
+      link: '/cybercorrect',
       color: 'from-green-500 to-green-600'
     },
     {
-      id: 'dashboard',
-      icon: <BarChart2 size={32} className="text-navy dark:text-silver" />,
-      title: 'Executive Dashboard',
-      description: 'Comprehensive analytics and reporting platform',
-      link: '/dashboard',
+      id: 'cyberSoluce',
+      icon: <Settings size={32} className="text-navy dark:text-silver" />,
+      title: 'CyberSoluce™',
+      description: 'Unified governance and workflow management platform for security operations',
+      link: '/cybersoluce',
       color: 'from-purple-500 to-purple-600'
     },
     {
-      id: 'presentations',
-      icon: <Presentation size={32} className="text-navy dark:text-silver" />,
-      title: 'Board Presentations',
-      description: 'Executive-ready security briefings and reports',
-      link: '/presentation',
+      id: 'vendorSoluce',
+      icon: <Network size={32} className="text-navy dark:text-silver" />,
+      title: 'VendorSoluce™',
+      description: 'Comprehensive vendor risk management and supply chain security platform',
+      link: '/vendorsoluce',
       color: 'from-orange-500 to-orange-600'
     },
     {
-      id: 'advisory',
-      icon: <Users size={32} className="text-navy dark:text-silver" />,
-      title: 'Advisory Services',
-      description: 'Expert guidance and strategic security consulting',
-      link: '/services',
-      color: 'from-teal-500 to-teal-600'
+      id: 'technoSoluce',
+      icon: <Server size={32} className="text-navy dark:text-silver" />,
+      title: 'TechnoSoluce™',
+      description: 'Technology operations and IT risk management platform for infrastructure and systems security',
+      link: '/technosoluce',
+      color: 'from-blue-500 to-blue-600'
+    },
+    {
+      id: 'cyberCertitude',
+      icon: <Shield size={32} className="text-navy dark:text-silver" />,
+      title: 'CyberCertitude™',
+      description: 'Certification and assurance platform for security validation and confidence verification',
+      link: '/cybercertitude',
+      color: 'from-yellow-500 to-orange-600',
+      logo: cyberCertitudeLogo
     }
   ];
 
@@ -103,13 +115,13 @@ export const EcosystemPage: React.FC = () => {
               </div>
               
               <h1 className="text-3xl md:text-5xl font-bold mb-4">
-                Strategic Insights That Become Operational Reality
+                The ERMITS Platform Ecosystem
               </h1>
               <p className="text-xl md:text-2xl mb-4 text-silver">
-                ERMITS Ecosystem Integration
+                Integrated Security Platforms That Transform Strategy Into Operations
               </p>
               <p className="text-lg mb-8 text-silver">
-                Advisory recommendations become automated tools. 80-90% implementation rate vs typical 30-40% with traditional consulting.
+                Six powerful platforms working together: CyberCaution™ for threats, CyberCorrect™ for compliance, CyberSoluce™ for governance, VendorSoluce™ for supply chain security, TechnoSoluce™ for technology operations, and CyberCertitude™ for certification and assurance.
               </p>
               
               <div className="flex flex-wrap justify-center gap-4">
@@ -137,10 +149,10 @@ export const EcosystemPage: React.FC = () => {
         >
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              Ecosystem Components
+              Platform Ecosystem
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              Powerful tools working together to strengthen your security posture
+              Six integrated platforms that automate security operations and transform strategic recommendations into operational reality
             </p>
           </div>
           
@@ -159,9 +171,19 @@ export const EcosystemPage: React.FC = () => {
                   onClick={() => navigate(component.link)}
                 >
                   <div className="flex items-start">
-                    <div className="p-3 rounded-full bg-silver/20 dark:bg-navy/40 mr-4 flex-shrink-0">
-                      {component.icon}
-                    </div>
+                    {component.logo ? (
+                      <div className="mr-4 flex-shrink-0">
+                        <img 
+                          src={component.logo} 
+                          alt={`${component.title} Logo`} 
+                          className="w-16 h-16 object-contain"
+                        />
+                      </div>
+                    ) : (
+                      <div className="p-3 rounded-full bg-silver/20 dark:bg-navy/40 mr-4 flex-shrink-0">
+                        {component.icon}
+                      </div>
+                    )}
                     <div className="flex-1">
                       <h3 className="text-xl font-bold mb-3 dark:text-white">
                         {component.title}
@@ -178,6 +200,97 @@ export const EcosystemPage: React.FC = () => {
                 </InteractiveCard>
               </motion.div>
             ))}
+          </div>
+        </motion.div>
+
+        {/* Human Layer - SocialCaution */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.35 }}
+          className="mb-16"
+        >
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-navy/10 dark:bg-silver/20 mb-4">
+              <Users size={20} className="text-navy dark:text-silver mr-2" />
+              <span className="text-sm font-semibold text-navy dark:text-white">Human Layer</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
+              SocialCaution™
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
+              Human-centric security awareness and social engineering protection platform
+            </p>
+            <p className="text-base text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mt-4">
+              Distinct from the platform ecosystem, SocialCaution™ addresses the human layer of security through awareness, training, and behavioral analytics.
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <InteractiveCard 
+              hover3D={true}
+              glowEffect={true}
+              className="bg-gradient-to-br from-teal-50 to-cyan-50 dark:from-teal-900/20 dark:to-cyan-900/20 border-2 border-teal-200 dark:border-teal-800 p-8 cursor-pointer"
+              onClick={() => navigate('/socialcaution')}
+            >
+              <div className="flex flex-col md:flex-row items-start gap-6">
+                <div className="flex-shrink-0 flex items-center justify-center">
+                  <img 
+                    src={socialCautionLogo} 
+                    alt="SocialCaution Logo" 
+                    className="w-32 h-32 object-contain"
+                  />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold mb-4 dark:text-white">
+                    SocialCaution™
+                  </h3>
+                  <p className="text-gray-700 dark:text-gray-200 mb-4 text-lg">
+                    Comprehensive human layer security platform that protects organizations from social engineering attacks, phishing, and human error through continuous awareness, training, and behavioral monitoring.
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div>
+                      <h4 className="font-semibold text-navy dark:text-white mb-2">Key Capabilities:</h4>
+                      <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                        <li className="flex items-start">
+                          <CheckCircle size={16} className="text-teal-500 mr-2 mt-0.5 flex-shrink-0" />
+                          <span>Phishing simulation and training</span>
+                        </li>
+                        <li className="flex items-start">
+                          <CheckCircle size={16} className="text-teal-500 mr-2 mt-0.5 flex-shrink-0" />
+                          <span>Social engineering awareness programs</span>
+                        </li>
+                        <li className="flex items-start">
+                          <CheckCircle size={16} className="text-teal-500 mr-2 mt-0.5 flex-shrink-0" />
+                          <span>Behavioral analytics and risk scoring</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-navy dark:text-white mb-2">Benefits:</h4>
+                      <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                        <li className="flex items-start">
+                          <CheckCircle size={16} className="text-teal-500 mr-2 mt-0.5 flex-shrink-0" />
+                          <span>Reduce human error incidents</span>
+                        </li>
+                        <li className="flex items-start">
+                          <CheckCircle size={16} className="text-teal-500 mr-2 mt-0.5 flex-shrink-0" />
+                          <span>Build security-aware culture</span>
+                        </li>
+                        <li className="flex items-start">
+                          <CheckCircle size={16} className="text-teal-500 mr-2 mt-0.5 flex-shrink-0" />
+                          <span>Continuous human risk monitoring</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <button className="text-teal-600 dark:text-teal-400 font-medium hover:underline text-base flex items-center transition-colors">
+                    Learn More About SocialCaution™
+                    <ArrowRight size={16} className="ml-2" />
+                  </button>
+                </div>
+              </div>
+            </InteractiveCard>
           </div>
         </motion.div>
 
@@ -233,10 +346,10 @@ export const EcosystemPage: React.FC = () => {
         >
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              Advisory-to-Platform Integration Pathway
+              How ERMITS Advisory Connects to Platform Implementation
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              How strategic insights become operational tools through the ERMITS ecosystem
+              Strategic intelligence from ERMITS Advisory becomes automated operations through the platform ecosystem
             </p>
           </div>
 
@@ -248,9 +361,9 @@ export const EcosystemPage: React.FC = () => {
                   <div className="w-20 h-20 bg-navy/10 dark:bg-silver/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Search size={32} className="text-navy dark:text-silver" />
                   </div>
-                  <h3 className="font-bold text-lg mb-2 dark:text-white">STEEL Assessment</h3>
+                  <h3 className="font-bold text-lg mb-2 dark:text-white">ERMITS Advisory</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Identifies gaps and risks
+                    Strategic assessment and recommendations
                   </p>
                 </div>
                 <div className="flex items-center justify-center">
@@ -261,9 +374,9 @@ export const EcosystemPage: React.FC = () => {
                   <div className="w-20 h-20 bg-navy/10 dark:bg-silver/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Target size={32} className="text-navy dark:text-silver" />
                   </div>
-                  <h3 className="font-bold text-lg mb-2 dark:text-white">Platform Recommendations</h3>
+                  <h3 className="font-bold text-lg mb-2 dark:text-white">Platform Selection</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Maps findings to ERMITS tools
+                    Maps findings to platform solutions
                   </p>
                 </div>
                 <div className="flex items-center justify-center">
@@ -286,37 +399,37 @@ export const EcosystemPage: React.FC = () => {
                   <div className="w-20 h-20 bg-navy/10 dark:bg-silver/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Layers size={32} className="text-navy dark:text-silver" />
                   </div>
-                  <h3 className="font-bold text-lg mb-2 dark:text-white">Continuous Advisory</h3>
+                  <h3 className="font-bold text-lg mb-2 dark:text-white">Ongoing Optimization</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Ongoing optimization and maturity growth
+                    Continuous platform optimization and maturity growth
                   </p>
                 </div>
               </div>
 
               {/* Platform Integration Examples */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
                 <Card className="p-6">
                   <div className="flex items-center mb-4">
-                    <AlertCircle size={24} className="text-blue-500 mr-3" />
-                    <h3 className="text-xl font-bold dark:text-white">CyberCaution Integration</h3>
+                    <AlertCircle size={24} className="text-red-500 mr-3" />
+                    <h3 className="text-xl font-bold dark:text-white">CyberCaution™ Integration</h3>
                   </div>
                   <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                    <p><strong className="text-navy dark:text-white">STEEL identifies:</strong> High threat exposure</p>
+                    <p><strong className="text-navy dark:text-white">Advisory identifies:</strong> High threat exposure</p>
                     <p><strong className="text-navy dark:text-white">Advisory configures:</strong> Real-time monitoring</p>
-                    <p><strong className="text-navy dark:text-white">Platform delivers:</strong> Continuous threat intelligence</p>
-                    <p><strong className="text-navy dark:text-white">vCISO optimizes:</strong> Monthly threat reviews</p>
+                    <p><strong className="text-navy dark:text-white">CyberCaution™ delivers:</strong> Continuous threat intelligence</p>
+                    <p><strong className="text-navy dark:text-white">Result:</strong> 24/7 threat awareness and alerts</p>
                   </div>
                 </Card>
 
                 <Card className="p-6">
                   <div className="flex items-center mb-4">
                     <FileCheck size={24} className="text-green-500 mr-3" />
-                    <h3 className="text-xl font-bold dark:text-white">CyberCorrect Integration</h3>
+                    <h3 className="text-xl font-bold dark:text-white">CyberCorrect™ Integration</h3>
                   </div>
                   <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                    <p><strong className="text-navy dark:text-white">Assessment defines:</strong> Compliance gaps</p>
+                    <p><strong className="text-navy dark:text-white">Advisory defines:</strong> Compliance gaps</p>
                     <p><strong className="text-navy dark:text-white">Advisory builds:</strong> Remediation plan</p>
-                    <p><strong className="text-navy dark:text-white">Platform automates:</strong> Evidence collection</p>
+                    <p><strong className="text-navy dark:text-white">CyberCorrect™ automates:</strong> Evidence collection</p>
                     <p><strong className="text-navy dark:text-white">Result:</strong> Continuous compliance monitoring</p>
                   </div>
                 </Card>
@@ -324,12 +437,12 @@ export const EcosystemPage: React.FC = () => {
                 <Card className="p-6">
                   <div className="flex items-center mb-4">
                     <Settings size={24} className="text-purple-500 mr-3" />
-                    <h3 className="text-xl font-bold dark:text-white">CyberSoluce Integration</h3>
+                    <h3 className="text-xl font-bold dark:text-white">CyberSoluce™ Integration</h3>
                   </div>
                   <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                    <p><strong className="text-navy dark:text-white">Strategy establishes:</strong> Governance framework</p>
+                    <p><strong className="text-navy dark:text-white">Advisory establishes:</strong> Governance framework</p>
                     <p><strong className="text-navy dark:text-white">Advisory designs:</strong> Workflows and policies</p>
-                    <p><strong className="text-navy dark:text-white">Platform implements:</strong> Automated processes</p>
+                    <p><strong className="text-navy dark:text-white">CyberSoluce™ implements:</strong> Automated processes</p>
                     <p><strong className="text-navy dark:text-white">Result:</strong> Unified risk management</p>
                   </div>
                 </Card>
@@ -337,13 +450,39 @@ export const EcosystemPage: React.FC = () => {
                 <Card className="p-6">
                   <div className="flex items-center mb-4">
                     <Database size={24} className="text-orange-500 mr-3" />
-                    <h3 className="text-xl font-bold dark:text-white">VendorSoluce Integration</h3>
+                    <h3 className="text-xl font-bold dark:text-white">VendorSoluce™ Integration</h3>
                   </div>
                   <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                    <p><strong className="text-navy dark:text-white">Framework defines:</strong> Vendor risk approach</p>
+                    <p><strong className="text-navy dark:text-white">Advisory defines:</strong> Vendor risk approach</p>
                     <p><strong className="text-navy dark:text-white">Advisory guides:</strong> Assessment process</p>
-                    <p><strong className="text-navy dark:text-white">Platform manages:</strong> Vendor portfolio</p>
+                    <p><strong className="text-navy dark:text-white">VendorSoluce™ manages:</strong> Vendor portfolio</p>
                     <p><strong className="text-navy dark:text-white">Result:</strong> Continuous vendor monitoring</p>
+                  </div>
+                </Card>
+
+                <Card className="p-6">
+                  <div className="flex items-center mb-4">
+                    <Server size={24} className="text-blue-500 mr-3" />
+                    <h3 className="text-xl font-bold dark:text-white">TechnoSoluce™ Integration</h3>
+                  </div>
+                  <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                    <p><strong className="text-navy dark:text-white">Advisory assesses:</strong> Technology infrastructure risks</p>
+                    <p><strong className="text-navy dark:text-white">Advisory designs:</strong> IT operations framework</p>
+                    <p><strong className="text-navy dark:text-white">TechnoSoluce™ manages:</strong> Infrastructure and systems security</p>
+                    <p><strong className="text-navy dark:text-white">Result:</strong> Continuous technology risk monitoring</p>
+                  </div>
+                </Card>
+
+                <Card className="p-6">
+                  <div className="flex items-center mb-4">
+                    <Shield size={24} className="text-yellow-500 mr-3" />
+                    <h3 className="text-xl font-bold dark:text-white">CyberCertitude™ Integration</h3>
+                  </div>
+                  <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                    <p><strong className="text-navy dark:text-white">Advisory validates:</strong> Security posture and controls</p>
+                    <p><strong className="text-navy dark:text-white">Advisory prepares:</strong> Certification readiness</p>
+                    <p><strong className="text-navy dark:text-white">CyberCertitude™ provides:</strong> Assurance and validation services</p>
+                    <p><strong className="text-navy dark:text-white">Result:</strong> Certified security confidence</p>
                   </div>
                 </Card>
               </div>
@@ -363,7 +502,7 @@ export const EcosystemPage: React.FC = () => {
               Platform Multipliers
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              See the difference between traditional consulting and ERMITS platform-enabled advisory
+              See the difference between traditional point solutions and the integrated ERMITS platform ecosystem
             </p>
           </div>
 
@@ -372,7 +511,7 @@ export const EcosystemPage: React.FC = () => {
             <Card className="p-8">
               <div className="flex items-center mb-6">
                 <AlertCircle size={32} className="text-red-500 mr-3" />
-                <h3 className="text-2xl font-bold dark:text-white">Traditional Consulting</h3>
+                <h3 className="text-2xl font-bold dark:text-white">Traditional Point Solutions</h3>
               </div>
               <ul className="space-y-4">
                 <li className="flex items-start">
@@ -418,7 +557,7 @@ export const EcosystemPage: React.FC = () => {
             <Card className="p-8 border-2 border-green-500/30 bg-green-50/50 dark:bg-green-900/10">
               <div className="flex items-center mb-6">
                 <CheckCircle size={32} className="text-green-500 mr-3" />
-                <h3 className="text-2xl font-bold dark:text-white">ERMITS Platform-Enabled</h3>
+                <h3 className="text-2xl font-bold dark:text-white">ERMITS Platform Ecosystem</h3>
               </div>
               <ul className="space-y-4">
                 <li className="flex items-start">
@@ -475,17 +614,17 @@ export const EcosystemPage: React.FC = () => {
                 Measurable Results
               </h2>
               <p className="text-xl text-silver/90 max-w-3xl mx-auto">
-                Advisory + Platform delivers significantly better outcomes than advisory alone
+                Integrated platform ecosystem delivers significantly better outcomes than disconnected point solutions
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-silver">Advisory Only</h3>
+                <h3 className="text-xl font-semibold mb-4 text-silver">Point Solutions</h3>
                 <ul className="space-y-3 text-silver/90">
                   <li className="flex items-center">
                     <AlertCircle size={20} className="mr-3" />
-                    <span>30-40% recommendation implementation</span>
+                    <span>Disconnected tools and data silos</span>
                   </li>
                   <li className="flex items-center">
                     <AlertCircle size={20} className="mr-3" />
@@ -493,16 +632,16 @@ export const EcosystemPage: React.FC = () => {
                   </li>
                   <li className="flex items-center">
                     <AlertCircle size={20} className="mr-3" />
-                    <span>Manual tracking and reporting</span>
+                    <span>Manual integration and reporting</span>
                   </li>
                 </ul>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-silver">Advisory + Platform</h3>
+                <h3 className="text-xl font-semibold mb-4 text-silver">ERMITS Platform Ecosystem</h3>
                 <ul className="space-y-3 text-silver/90">
                   <li className="flex items-center">
                     <CheckCircle size={20} className="mr-3 text-green-400" />
-                    <span>80-90% recommendation implementation</span>
+                    <span>Integrated platforms with unified data</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle size={20} className="mr-3 text-green-400" />
@@ -510,7 +649,7 @@ export const EcosystemPage: React.FC = () => {
                   </li>
                   <li className="flex items-center">
                     <CheckCircle size={20} className="mr-3 text-green-400" />
-                    <span>Automated tracking and reporting</span>
+                    <span>Automated integration and reporting</span>
                   </li>
                 </ul>
               </div>
@@ -542,7 +681,7 @@ export const EcosystemPage: React.FC = () => {
                 </div>
                 <h3 className="text-lg font-bold dark:text-white mb-2">Mid-Market SaaS</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                  STEEL Assessment → CyberCorrect → SOC 2 in 4 months
+                  ERMITS Advisory → CyberCorrect™ → SOC 2 in 4 months
                 </p>
               </div>
               <ul className="space-y-2 text-sm">
@@ -594,13 +733,13 @@ export const EcosystemPage: React.FC = () => {
                 </div>
                 <h3 className="text-lg font-bold dark:text-white mb-2">Manufacturing</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                  STEEL + vCISO → Full platform → 65% risk reduction
+                  ERMITS Advisory → Full platform ecosystem → 65% risk reduction
                 </p>
               </div>
               <ul className="space-y-2 text-sm">
                 <li className="flex items-start">
                   <CheckCircle size={16} className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-600 dark:text-gray-400">STEEL score improved +25 points</span>
+                  <span className="text-gray-600 dark:text-gray-400">Risk score improved +25 points</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle size={16} className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
@@ -647,7 +786,7 @@ export const EcosystemPage: React.FC = () => {
                         1
                       </div>
                       <p className="text-gray-600 dark:text-gray-200 pt-1">
-                        Conduct comprehensive STEEL assessment
+                        ERMITS Advisory conducts strategic assessment
                       </p>
                     </div>
                     <div className="flex items-start">
@@ -655,7 +794,7 @@ export const EcosystemPage: React.FC = () => {
                         2
                       </div>
                       <p className="text-gray-600 dark:text-gray-200 pt-1">
-                        Deploy recommended ERMITS platform tools
+                        Deploy recommended platform solutions
                       </p>
                     </div>
                     <div className="flex items-start">
@@ -663,7 +802,7 @@ export const EcosystemPage: React.FC = () => {
                         3
                       </div>
                       <p className="text-gray-600 dark:text-gray-200 pt-1">
-                        Monitor and optimize via platform dashboards
+                        Monitor and optimize via integrated dashboards
                       </p>
                     </div>
                     <div className="flex items-start">
@@ -671,7 +810,7 @@ export const EcosystemPage: React.FC = () => {
                         4
                       </div>
                       <p className="text-gray-600 dark:text-gray-200 pt-1">
-                        Present findings to leadership
+                        Unified reporting across all platforms
                       </p>
                     </div>
                     <div className="flex items-start">
@@ -679,7 +818,7 @@ export const EcosystemPage: React.FC = () => {
                         5
                       </div>
                       <p className="text-gray-600 dark:text-gray-200 pt-1">
-                        Receive ongoing vCISO advisory support
+                        Continuous optimization and platform maturity
                       </p>
                     </div>
                   </div>
@@ -739,10 +878,10 @@ export const EcosystemPage: React.FC = () => {
           >
             <div className="text-center">
               <h3 className="text-2xl font-bold mb-4">
-                Ready to Transform Your Risk Management?
+                Ready to Transform Your Security Operations?
               </h3>
               <p className="text-lg mb-6 text-silver max-w-2xl mx-auto">
-                Let us show you how the ERMITS ecosystem can strengthen your security posture
+                Let us show you how the ERMITS platform ecosystem can automate and strengthen your security posture
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button
@@ -757,9 +896,9 @@ export const EcosystemPage: React.FC = () => {
                 <Button
                   variant="outline"
                   className="border-white text-white hover:bg-white/10 transform hover:scale-105 transition-transform"
-                  onClick={() => navigate('/steel')}
+                  onClick={() => navigate('/services')}
                 >
-                  Explore STEEL Framework
+                  Learn About ERMITS Advisory
                 </Button>
               </div>
             </div>
