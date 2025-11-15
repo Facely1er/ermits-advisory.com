@@ -289,6 +289,61 @@ export const ServiceOffering: React.FC = () => {
         'Instant digital download'
       ],
       link: '/vciso-kit'
+    },
+    {
+      id: 'compliance-toolkit',
+      icon: 'file',
+      title: 'Compliance Framework Toolkit',
+      description: 'Complete compliance templates for NIST, ISO 27001, SOC 2, HIPAA, GDPR, CMMC, and PCI-DSS frameworks.',
+      price: '$199',
+      timeline: 'One-time purchase',
+      features: [
+        'Multi-framework gap analysis templates',
+        'Control mapping matrices for all major frameworks',
+        'Evidence collection checklists and guides',
+        'Audit preparation templates and workflows',
+        'Compliance program templates',
+        'CyberCorrect platform integration guides',
+        'Instant digital download'
+      ],
+      link: '/compliance-toolkit'
+    },
+    {
+      id: 'incident-response-toolkit',
+      icon: 'shield',
+      title: 'Incident Response Toolkit',
+      description: 'Comprehensive incident response playbooks, templates, and checklists for security operations teams.',
+      price: '$149',
+      timeline: 'One-time purchase',
+      features: [
+        'Scenario-specific IR playbooks (ransomware, breach, DDoS)',
+        'Communication templates (internal, customer, regulatory)',
+        'Incident tracking and reporting templates',
+        'Tabletop exercise scenarios and guides',
+        'Post-incident analysis templates',
+        'Crisis management checklists',
+        'Instant digital download'
+      ],
+      link: '/incident-response-toolkit'
+    },
+    {
+      id: 'vendor-risk-toolkit',
+      icon: 'users',
+      title: 'Vendor Risk Management Toolkit',
+      description: 'Complete vendor risk assessment templates, questionnaires, and frameworks for third-party risk management.',
+      price: '$179',
+      timeline: 'One-time purchase',
+      features: [
+        'Vendor security assessment questionnaires',
+        'Vendor risk scoring frameworks and matrices',
+        'Third-party risk assessment templates',
+        'Vendor contract security clauses library',
+        'Supply chain risk assessment templates',
+        'Vendor monitoring and review templates',
+        'VendorSoluce platform integration guides',
+        'Instant digital download'
+      ],
+      link: '/vendor-risk-toolkit'
     }
   ];
   
@@ -772,7 +827,11 @@ export const ServiceOffering: React.FC = () => {
                       onClick={() => navigate(toolkit.link)}
                       className="w-full"
                     >
-                      Download Toolkit
+                      {toolkit.id === 'vciso-kit' ? 'View vCISO Toolkit' : 
+                       toolkit.id === 'compliance-toolkit' ? 'View Compliance Toolkit' :
+                       toolkit.id === 'incident-response-toolkit' ? 'View IR Toolkit' :
+                       toolkit.id === 'vendor-risk-toolkit' ? 'View Vendor Risk Toolkit' :
+                       'View Toolkit'}
                     </Button>
                   </div>
                 </div>
