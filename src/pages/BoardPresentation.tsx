@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from '../components/shared/Button';
 import { 
   ChevronLeft, ChevronRight, Maximize, Minimize, 
@@ -18,7 +17,6 @@ import slide6 from '../assets/slides/BP-Slide6.jpg';
 import slide7 from '../assets/slides/BP-Slide7.jpg';
 
 export const BoardPresentation: React.FC = () => {
-  const { t } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
@@ -203,8 +201,8 @@ export const BoardPresentation: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             className="pt-16 mb-8"
           >
-            <h1 className="text-3xl font-bold mb-2 dark:text-white">{t('presentation.title')}</h1>
-            <p className="text-gray-600 dark:text-gray-200">{t('presentation.subtitle')}</p>
+            <h1 className="text-3xl font-bold mb-2 dark:text-white">Executive Security Briefing</h1>
+            <p className="text-gray-600 dark:text-gray-200">Board-level presentation on strategic risk assessment</p>
           </motion.div>
         )}
 
@@ -387,26 +385,44 @@ export const BoardPresentation: React.FC = () => {
                     initial="hidden"
                     animate="visible"
                   >
-                    {t(`presentation.slides.slide${currentSlide + 1}.title`)}
+                    {currentSlide === 0 && "Executive Briefing"}
+                    {currentSlide === 1 && "Current Risk Landscape"}
+                    {currentSlide === 2 && "STEEL™ Assessment Overview"}
+                    {currentSlide === 3 && "Strategic Vulnerabilities"}
+                    {currentSlide === 4 && "Recommended Actions"}
+                    {currentSlide === 5 && "Investment Considerations"}
+                    {currentSlide === 6 && "Next Steps"}
                   </motion.h2>
-                  
-                  <motion.h3 
+
+                  <motion.h3
                     className="text-xl md:text-2xl text-silver mb-8"
                     variants={subtitleVariants}
                     initial="hidden"
                     animate="visible"
                   >
-                    {t(`presentation.slides.slide${currentSlide + 1}.subtitle`)}
+                    {currentSlide === 0 && "Understanding Your Organization's Strategic Risk Position"}
+                    {currentSlide === 1 && "Emerging Threats Across Multiple Dimensions"}
+                    {currentSlide === 2 && "Comprehensive Multi-Dimensional Risk Analysis"}
+                    {currentSlide === 3 && "Critical Areas Requiring Immediate Attention"}
+                    {currentSlide === 4 && "Prioritized Roadmap for Risk Mitigation"}
+                    {currentSlide === 5 && "Strategic Resource Allocation"}
+                    {currentSlide === 6 && "Implementation Timeline & Milestones"}
                   </motion.h3>
-                  
-                  <motion.div 
+
+                  <motion.div
                     className="text-left"
                     variants={contentVariants}
                     initial="hidden"
                     animate="visible"
                   >
                     <p className="text-lg mb-6">
-                      {t(`presentation.slides.slide${currentSlide + 1}.content`)}
+                      {currentSlide === 0 && "Our comprehensive assessment reveals key insights into your organization's security posture."}
+                      {currentSlide === 1 && "The threat landscape continues to evolve across political, economic, social, technology, environmental, and legal dimensions."}
+                      {currentSlide === 2 && "The STEEL framework provides a holistic view of strategic risks across six critical dimensions."}
+                      {currentSlide === 3 && "We've identified several high-priority vulnerabilities that require immediate executive attention."}
+                      {currentSlide === 4 && "Based on our analysis, we recommend the following strategic initiatives."}
+                      {currentSlide === 5 && "Strategic investment in security capabilities will deliver measurable risk reduction and ROI."}
+                      {currentSlide === 6 && "A phased approach ensures effective implementation while managing resources efficiently."}
                     </p>
                     
                     {/* Demo content for slides */}
@@ -416,7 +432,7 @@ export const BoardPresentation: React.FC = () => {
                         <div className="grid grid-cols-2 gap-4">
                           <div>
                             <div className="mb-2">
-                              <span className="text-sm text-silver">{t('steel.dimensions.political.title')}</span>
+                              <span className="text-sm text-silver">Political</span>
                               <div className="w-full bg-white/20 rounded-full h-2">
                                 <motion.div 
                                   className="bg-silver h-2 rounded-full"
@@ -427,7 +443,7 @@ export const BoardPresentation: React.FC = () => {
                               </div>
                             </div>
                             <div className="mb-2">
-                              <span className="text-sm text-silver">{t('steel.dimensions.economic.title')}</span>
+                              <span className="text-sm text-silver">Economic</span>
                               <div className="w-full bg-white/20 rounded-full h-2">
                                 <motion.div 
                                   className="bg-silver h-2 rounded-full"
@@ -438,7 +454,7 @@ export const BoardPresentation: React.FC = () => {
                               </div>
                             </div>
                             <div className="mb-2">
-                              <span className="text-sm text-silver">{t('steel.dimensions.social.title')}</span>
+                              <span className="text-sm text-silver">Social</span>
                               <div className="w-full bg-white/20 rounded-full h-2">
                                 <motion.div 
                                   className="bg-silver h-2 rounded-full"
@@ -451,7 +467,7 @@ export const BoardPresentation: React.FC = () => {
                           </div>
                           <div>
                             <div className="mb-2">
-                              <span className="text-sm text-silver">{t('steel.dimensions.technology.title')}</span>
+                              <span className="text-sm text-silver">Technology</span>
                               <div className="w-full bg-white/20 rounded-full h-2">
                                 <motion.div 
                                   className="bg-silver h-2 rounded-full"
@@ -462,7 +478,7 @@ export const BoardPresentation: React.FC = () => {
                               </div>
                             </div>
                             <div className="mb-2">
-                              <span className="text-sm text-silver">{t('steel.dimensions.environmental.title')}</span>
+                              <span className="text-sm text-silver">Environmental</span>
                               <div className="w-full bg-white/20 rounded-full h-2">
                                 <motion.div 
                                   className="bg-silver h-2 rounded-full"
@@ -473,7 +489,7 @@ export const BoardPresentation: React.FC = () => {
                               </div>
                             </div>
                             <div className="mb-2">
-                              <span className="text-sm text-silver">{t('steel.dimensions.legal.title')}</span>
+                              <span className="text-sm text-silver">Legal</span>
                               <div className="w-full bg-white/20 rounded-full h-2">
                                 <motion.div 
                                   className="bg-silver h-2 rounded-full"
@@ -497,7 +513,7 @@ export const BoardPresentation: React.FC = () => {
                           transition={{ duration: 0.5, delay: 0.3 }}
                         >
                           <div className="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center mr-3">1</div>
-                          <span className="font-medium">{t('dashboard.actions.items.0.action')}</span>
+                          <span className="font-medium">Implement multi-factor authentication</span>
                         </motion.div>
                         <motion.div 
                           className="flex items-center"
@@ -506,7 +522,7 @@ export const BoardPresentation: React.FC = () => {
                           transition={{ duration: 0.5, delay: 0.5 }}
                         >
                           <div className="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center mr-3">2</div>
-                          <span className="font-medium">{t('dashboard.actions.items.1.action')}</span>
+                          <span className="font-medium">Update incident response plan</span>
                         </motion.div>
                         <motion.div 
                           className="flex items-center"
@@ -515,7 +531,7 @@ export const BoardPresentation: React.FC = () => {
                           transition={{ duration: 0.5, delay: 0.7 }}
                         >
                           <div className="w-10 h-10 rounded-full bg-yellow-500 flex items-center justify-center mr-3">3</div>
-                          <span className="font-medium">{t('dashboard.actions.items.4.action')}</span>
+                          <span className="font-medium">Enhance third-party risk management</span>
                         </motion.div>
                       </div>
                     )}
@@ -642,7 +658,7 @@ export const BoardPresentation: React.FC = () => {
               variant="secondary"
               className="rounded-full p-3"
               onClick={goToPrevSlide}
-              aria-label={t('presentation.navigation.previous')}
+              aria-label="Previous slide"
             >
               <ChevronLeft size={24} />
             </Button>
@@ -653,7 +669,7 @@ export const BoardPresentation: React.FC = () => {
               variant="secondary"
               className="rounded-full p-3"
               onClick={goToNextSlide}
-              aria-label={t('presentation.navigation.next')}
+              aria-label="Next slide"
             >
               <ChevronRight size={24} />
             </Button>
@@ -669,7 +685,7 @@ export const BoardPresentation: React.FC = () => {
               icon={<ArrowLeft size={16} />}
               onClick={goToPrevSlide}
             >
-              {t('presentation.navigation.previous')}
+              Previous
             </Button>
             
             <Button
@@ -678,7 +694,7 @@ export const BoardPresentation: React.FC = () => {
               icon={isFullscreen ? <Minimize size={16} /> : <Maximize size={16} />}
               onClick={toggleFullscreen}
             >
-              {t('presentation.navigation.fullscreen')}
+              Fullscreen
             </Button>
             
             <Button
@@ -687,7 +703,7 @@ export const BoardPresentation: React.FC = () => {
               icon={<Download size={16} />}
               onClick={handleDownload}
             >
-              {t('presentation.download')}
+              Download
             </Button>
             
             <Button
@@ -697,15 +713,15 @@ export const BoardPresentation: React.FC = () => {
               iconPosition="right"
               onClick={goToNextSlide}
             >
-              {t('presentation.navigation.next')}
+              Next
             </Button>
           </div>
         </div>
 
         {!isFullscreen && (
           <div className="mt-8 text-sm text-center text-gray-500 dark:text-gray-400">
-            <p>{t('presentation.keyboardShortcuts')}</p>
-            <p className="mt-2">{t('common.demo')} - {new Date().toLocaleDateString()}</p>
+            <p>Use arrow keys or spacebar to navigate, F for fullscreen, ESC to exit</p>
+            <p className="mt-2">Demo Version - {new Date().toLocaleDateString()}</p>
           </div>
         )}
       </div>

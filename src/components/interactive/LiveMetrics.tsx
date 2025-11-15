@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { TrendingUp, TrendingDown, Minus, Activity } from 'lucide-react';
-import { useLanguage } from '../../contexts/LanguageContext';
 
 interface Metric {
   id: string;
@@ -14,27 +13,11 @@ interface Metric {
   unit?: string;
 }
 
-/**
- * LiveMetrics Component - DEMO MODE
- * 
- * NOTE: This component displays simulated/demo metrics for demonstration purposes.
- * In production, metrics would be fetched from actual security monitoring systems
- * and threat intelligence feeds.
- * 
- * Data Sources (when connected to real systems):
- * - Risk scores: Calculated from STEEL framework assessments
- * - Threat counts: Real-time threat intelligence feeds (CISA, commercial providers)
- * - Compliance scores: Compliance monitoring systems
- * - Incident counts: Security incident management systems
- */
 export const LiveMetrics: React.FC = () => {
-  const { t } = useLanguage();
-  
-  // DEMO DATA - Example metrics for demonstration
   const [metrics, setMetrics] = useState<Metric[]>([
     {
       id: 'risk-score',
-      label: t('landing.liveMetrics.overallRiskScore'),
+      label: "Overall Risk Score",
       value: 67,
       previousValue: 72,
       change: -5,
@@ -44,7 +27,7 @@ export const LiveMetrics: React.FC = () => {
     },
     {
       id: 'threats',
-      label: t('landing.liveMetrics.activeThreats'),
+      label: "Active Threats",
       value: 14,
       previousValue: 11,
       change: 3,
@@ -53,7 +36,7 @@ export const LiveMetrics: React.FC = () => {
     },
     {
       id: 'compliance',
-      label: t('landing.liveMetrics.complianceScore'),
+      label: "Compliance Score",
       value: 94,
       previousValue: 88,
       change: 6,
@@ -63,7 +46,7 @@ export const LiveMetrics: React.FC = () => {
     },
     {
       id: 'incidents',
-      label: t('landing.liveMetrics.recentIncidents'),
+      label: "Recent Incidents",
       value: 2,
       previousValue: 2,
       change: 0,
@@ -72,8 +55,7 @@ export const LiveMetrics: React.FC = () => {
     }
   ]);
 
-  // Simulate real-time updates (DEMO MODE)
-  // In production, this would connect to real-time data streams
+  // Simulate real-time updates
   useEffect(() => {
     const interval = setInterval(() => {
       setMetrics(prev => prev.map(metric => {
@@ -89,22 +71,10 @@ export const LiveMetrics: React.FC = () => {
           trend: change > 0.1 ? 'up' : change < -0.1 ? 'down' : 'stable'
         };
       }));
-    }, 5000); // Update every 5 seconds (slower for better readability)
+    }, 3000); // Update every 3 seconds
 
     return () => clearInterval(interval);
   }, []);
-
-  // Update labels when language changes
-  useEffect(() => {
-    setMetrics(prev => prev.map(metric => ({
-      ...metric,
-      label: metric.id === 'risk-score' ? t('landing.liveMetrics.overallRiskScore') :
-             metric.id === 'threats' ? t('landing.liveMetrics.activeThreats') :
-             metric.id === 'compliance' ? t('landing.liveMetrics.complianceScore') :
-             metric.id === 'incidents' ? t('landing.liveMetrics.recentIncidents') :
-             metric.label
-    })));
-  }, [t]);
 
   const getTrendIcon = (trend: string) => {
     switch (trend) {
@@ -133,8 +103,7 @@ export const LiveMetrics: React.FC = () => {
             </h3>
             <div className="flex items-center">
               <Activity size={12} className="text-gray-400 mr-1" />
-              <span className="text-xs text-gray-400">{t('landing.liveMetrics.live')}</span>
-              <span className="text-xs text-gray-400 ml-1">(Demo)</span>
+              <span className="text-xs text-gray-400">LIVE</span>
             </div>
           </div>
           

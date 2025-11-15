@@ -1,21 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { useLanguage } from '../contexts/LanguageContext';
 import { useTheme } from '../contexts/ThemeContext';
 import { Button } from '../components/shared/Button';
 import { InteractiveCard } from '../components/shared/InteractiveCard';
 import { TypewriterText } from '../components/shared/TypewriterText';
-import { Shield, TrendingUp, Users, Server, Leaf, Scale, ArrowRight, CheckCircle, Zap, Eye, Target, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Shield, TrendingUp, Users, Server, Leaf, Scale, ArrowRight, CheckCircle, Zap, Eye, Target } from 'lucide-react';
 import { steelDimensions } from '../data/mockData';
 import { LiveMetrics } from '../components/interactive/LiveMetrics';
 
 export const LandingPage: React.FC = () => {
-  const { t } = useLanguage();
   const { theme } = useTheme();
   const navigate = useNavigate();
   const [showTypewriter, setShowTypewriter] = useState(false);
-  const [currentFeatureIndex, setCurrentFeatureIndex] = useState(0);
   
   const container = {
     hidden: { opacity: 0 },
@@ -79,82 +76,37 @@ export const LandingPage: React.FC = () => {
     }
   ];
 
-  // Carousel auto-advance
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentFeatureIndex((prev) => (prev + 1) % enhancedFeatures.length);
-    }, 4000); // Change slide every 4 seconds
-
-    return () => clearInterval(interval);
-  }, [enhancedFeatures.length]);
-
-  const nextFeature = () => {
-    setCurrentFeatureIndex((prev) => (prev + 1) % enhancedFeatures.length);
-  };
-
-  const prevFeature = () => {
-    setCurrentFeatureIndex((prev) => (prev - 1 + enhancedFeatures.length) % enhancedFeatures.length);
-  };
-
-  // Generate CSS variables for dimension colors
-  const dimensionColorStyles = steelDimensions
-    .map((dim) => `
-      .landing-dimension-bg-${dim.id} {
-        --dimension-color: ${dim.color};
-        background-color: var(--dimension-color);
-        opacity: 0.1;
-      }
-      .landing-dimension-text-${dim.id} {
-        --dimension-color: ${dim.color};
-        color: var(--dimension-color);
-      }
-      .landing-dimension-progress-${dim.id} {
-        --dimension-color: ${dim.color};
-        background-color: var(--dimension-color);
-      }
-    `)
-    .join('\n');
-
   return (
-    <>
-      <style>{dimensionColorStyles}</style>
-    <div className="min-h-screen">
-      {/* Enhanced Hero Section - Reduced size */}
-      <section className="relative bg-gradient-to-br from-navy via-navy-dark to-navy text-white pt-12 pb-8 md:pt-16 md:pb-12 overflow-hidden">
-        {/* Enhanced background with gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-navy-dark/90 to-navy/95"></div>
-        <div className="absolute inset-0 opacity-20 bg-[url('https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-center bg-cover bg-no-repeat"></div>
+    <div>
+      {/* Enhanced Hero Section - Remove top padding to eliminate gap */}
+      <section className="relative bg-gradient-to-b from-navy to-navy-dark text-white pb-24 md:pb-32 overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-[url('https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-center bg-cover"></div>
         
-        {/* Animated background elements - enhanced */}
+        {/* Animated background elements */}
         <div className="absolute inset-0">
-          {[...Array(15)].map((_, i) => (
+          {[...Array(20)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-1.5 h-1.5 bg-silver/30 rounded-full"
+              className="absolute w-2 h-2 bg-silver/20 rounded-full"
               initial={{ 
                 x: Math.random() * window.innerWidth, 
                 y: Math.random() * window.innerHeight,
                 opacity: 0 
               }}
               animate={{ 
-                y: [null, -150],
-                opacity: [0, 0.8, 0],
-                scale: [1, 1.5, 0.5]
+                y: [null, -100],
+                opacity: [0, 0.6, 0]
               }}
               transition={{
-                duration: Math.random() * 4 + 3,
+                duration: Math.random() * 3 + 2,
                 repeat: Infinity,
-                delay: Math.random() * 2,
-                ease: "easeOut"
+                delay: Math.random() * 2
               }}
             />
           ))}
         </div>
         
-        {/* Decorative grid pattern */}
-        <div className="absolute inset-0 hero-grid-pattern"></div>
-        
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="container mx-auto px-4 relative z-10 pt-24 md:pt-32">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -162,26 +114,13 @@ export const LandingPage: React.FC = () => {
             className="max-w-4xl mx-auto text-center"
             onAnimationComplete={() => setShowTypewriter(true)}
           >
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="mb-6"
-            >
-              <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium text-silver mb-6">
-                <Shield size={16} className="mr-2" />
-                Enterprise Risk Management
-              </span>
-            </motion.div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
-              <span className="bg-gradient-to-r from-white via-silver to-white bg-clip-text text-transparent">
-                {t('landing.hero.title')}
-              </span>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              {'STEEL™ Risk Assessment Framework'}
             </h1>
-            <div className="text-base sm:text-lg md:text-xl mb-8 text-silver/90 min-h-[2em] max-w-3xl mx-auto leading-relaxed">
+            <div className="text-xl md:text-2xl mb-8 text-silver min-h-[2em]">
               {showTypewriter && (
                 <TypewriterText 
-                  text={t('landing.hero.subtitle')} 
+                  text={'A comprehensive cybersecurity intelligence platform that helps organizations understand and manage strategic risk'} 
                   delay={500}
                   speed={10}
                 />
@@ -191,7 +130,6 @@ export const LandingPage: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2.5, duration: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
               <Button 
                 variant="secondary" 
@@ -199,19 +137,9 @@ export const LandingPage: React.FC = () => {
                 icon={<ArrowRight size={20} />}
                 iconPosition="right"
                 onClick={() => navigate('/steel')}
-                className="transform hover:scale-105 transition-all shadow-lg hover:shadow-xl"
-                aria-label="Explore STEEL Framework"
+                className="transform hover:scale-105 transition-transform"
               >
-                {t('landing.hero.cta')}
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                onClick={() => navigate('/contact')}
-                className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm transform hover:scale-105 transition-all"
-                aria-label="Get Started - Contact Us"
-              >
-                Get Started
+                {'Explore STEEL™'}
               </Button>
             </motion.div>
           </motion.div>
@@ -219,8 +147,8 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Live Metrics Section - Now with translations */}
-      <section className="py-16 md:py-20 bg-silver-light dark:bg-dark-surface">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-silver-light dark:bg-dark-surface">
+        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -228,13 +156,10 @@ export const LandingPage: React.FC = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold mb-4 dark:text-white">
-              {t('landing.realTimeIntelligence.title')}
+              {'Real-Time Cyber Intelligence'}
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto mb-2">
-              {t('landing.realTimeIntelligence.subtitle')}
-            </p>
-            <p className="text-sm text-gray-500 dark:text-gray-400 italic">
-              (Demo data shown - In production, metrics come from real-time security monitoring systems)
+            <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
+              {'Monitor threats and risk indicators across all critical dimensions'}
             </p>
           </motion.div>
           
@@ -243,8 +168,8 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Enhanced Features Section - Now with translations */}
-      <section className="py-16 md:py-20 bg-white dark:bg-dark-bg">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-white dark:bg-dark-bg">
+        <div className="container mx-auto px-4">
           <motion.div
             variants={container}
             initial="hidden"
@@ -260,98 +185,42 @@ export const LandingPage: React.FC = () => {
             </motion.p>
           </motion.div>
           
-          {/* Carousel Container */}
-          <div className="relative max-w-5xl mx-auto">
-            {/* Carousel Navigation Buttons */}
-            <button
-              onClick={prevFeature}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-dark-card-bg p-2 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 border border-gray-200 dark:border-gray-700"
-              aria-label="Previous feature"
-            >
-              <ChevronLeft size={24} className="text-navy dark:text-white" />
-            </button>
-            <button
-              onClick={nextFeature}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-dark-card-bg p-2 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 border border-gray-200 dark:border-gray-700"
-              aria-label="Next feature"
-            >
-              <ChevronRight size={24} className="text-navy dark:text-white" />
-            </button>
-
-            {/* Carousel Content */}
-            <div className="overflow-hidden px-12">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentFeatureIndex}
-                  initial={{ opacity: 0, x: 100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -100 }}
-                  transition={{ duration: 0.6, ease: "easeInOut" }}
-                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          <motion.div 
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.1 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
+            {enhancedFeatures.map((feature, index) => (
+              <motion.div key={index} variants={item}>
+                <InteractiveCard 
+                  hover3D={true}
+                  glowEffect={true}
+                  className="bg-white dark:bg-dark-card-bg p-6 text-center h-full"
                 >
-                  {enhancedFeatures.map((feature, index) => {
-                    const isActive = index === currentFeatureIndex;
-                    
-                    return (
-                      <motion.div 
-                        key={`${currentFeatureIndex}-${index}`}
-                        initial={{ opacity: 0.5, scale: 0.9 }}
-                        animate={{ 
-                          opacity: isActive ? 1 : 0.6,
-                          scale: isActive ? 1 : 0.95
-                        }}
-                        transition={{ duration: 0.4 }}
-                        className={isActive ? 'z-10' : ''}
-                      >
-                        <InteractiveCard 
-                          hover3D={true}
-                          glowEffect={isActive}
-                          className={`bg-white dark:bg-dark-card-bg p-6 text-center h-full transition-all ${
-                            isActive ? 'ring-2 ring-navy dark:ring-white shadow-xl' : ''
-                          }`}
-                        >
-                          <div className="p-4 rounded-full bg-gray-50 dark:bg-gray-800 inline-flex mb-4">
-                            {feature.icon}
-                          </div>
-                          <div className="text-3xl font-bold text-navy dark:text-white mb-2">
-                            {feature.metric}
-                          </div>
-                          <h3 className="text-lg font-semibold mb-2 dark:text-white">
-                            {feature.title}
-                          </h3>
-                          <p className="text-gray-600 dark:text-gray-200 text-sm">
-                            {feature.description}
-                          </p>
-                        </InteractiveCard>
-                      </motion.div>
-                    );
-                  })}
-                </motion.div>
-              </AnimatePresence>
-            </div>
-
-            {/* Carousel Indicators */}
-            <div className="flex justify-center mt-6 gap-2">
-              {enhancedFeatures.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentFeatureIndex(index)}
-                  className={`h-2 rounded-full transition-all ${
-                    index === currentFeatureIndex
-                      ? 'w-8 bg-navy dark:bg-white'
-                      : 'w-2 bg-gray-300 dark:bg-gray-600'
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
-          </div>
+                  <div className="p-4 rounded-full bg-gray-50 dark:bg-gray-800 inline-flex mb-4">
+                    {feature.icon}
+                  </div>
+                  <div className="text-3xl font-bold text-navy dark:text-white mb-2">
+                    {feature.metric}
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 dark:text-white">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-200 text-sm">
+                    {feature.description}
+                  </p>
+                </InteractiveCard>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
       {/* Enhanced STEEL Methodology Section */}
-      <section className="py-16 md:py-20 bg-white dark:bg-navy-dark/80 steel-section">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-white dark:bg-navy-dark/80 steel-section">
+        <div className="container mx-auto px-4">
           <motion.div
             variants={container}
             initial="hidden"
@@ -360,10 +229,10 @@ export const LandingPage: React.FC = () => {
             className="text-center mb-12"
           >
             <motion.h2 variants={item} className="text-3xl font-bold mb-4 dark:text-white steel-title">
-              {t('landing.steelOverview.title')}
+              {'The STEEL™ Methodology'}
             </motion.h2>
             <motion.p variants={item} className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto steel-subtitle">
-              {t('landing.steelOverview.subtitle')}
+              {'Six interconnected dimensions that provide comprehensive risk visibility'}
             </motion.p>
           </motion.div>
           
@@ -387,8 +256,8 @@ export const LandingPage: React.FC = () => {
                 >
                   <div className="p-6">
                     <div 
-                      className={`absolute top-0 right-0 w-24 h-24 hexagon landing-dimension-bg-${dimension.id}`}
-                      aria-hidden="true"
+                      className="absolute top-0 right-0 w-24 h-24 hexagon" 
+                      style={{ backgroundColor: dimension.color, opacity: 0.1 }}
                     ></div>
                     <div className="flex items-start relative z-10">
                       <div className="mr-4">
@@ -405,13 +274,14 @@ export const LandingPage: React.FC = () => {
                         {/* Risk Score Indicator */}
                         <div className="flex items-center justify-between mb-2">
                           <span className="text-sm font-medium text-gray-500 dark:text-gray-400">Risk Level</span>
-                          <span className={`text-sm font-bold landing-dimension-text-${dimension.id}`}>
+                          <span className="text-sm font-bold" style={{ color: dimension.color }}>
                             {dimension.value}%
                           </span>
                         </div>
                         <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                           <motion.div 
-                            className={`h-2 rounded-full landing-dimension-progress-${dimension.id}`}
+                            className="h-2 rounded-full" 
+                            style={{ backgroundColor: dimension.color }}
                             initial={{ width: 0 }}
                             whileInView={{ width: `${dimension.value}%` }}
                             viewport={{ once: true }}
@@ -441,8 +311,8 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Enhanced Services Section */}
-      <section className="py-16 md:py-20 bg-silver-light dark:bg-dark-surface">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-silver-light dark:bg-dark-surface">
+        <div className="container mx-auto px-4">
           <motion.div
             variants={container}
             initial="hidden"
@@ -451,10 +321,10 @@ export const LandingPage: React.FC = () => {
             className="text-center mb-12"
           >
             <motion.h2 variants={item} className="text-3xl font-bold mb-4 dark:text-white">
-              {t('landing.services.title')}
+              {'ERMITS Ecosystem Products'}
             </motion.h2>
             <motion.p variants={item} className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              {t('landing.services.subtitle')}
+              {'STEEL-powered strategic risk intelligence and advisory services'}
             </motion.p>
           </motion.div>
           
@@ -472,10 +342,10 @@ export const LandingPage: React.FC = () => {
                 className="h-full bg-white dark:bg-dark-card-bg p-6"
               >
                 <h3 className="text-xl font-bold mb-3 dark:text-white card-title">
-                  {t('landing.services.steel.title')}
+                  {'STEEL™ Framework'}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-4 card-text">
-                  {t('landing.services.steel.description')}
+                  {'Comprehensive strategic risk assessment methodology'}
                 </p>
                 <Button
                   variant="outline"
@@ -538,8 +408,8 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Trust Indicators Section */}
-      <section className="py-16 md:py-20 bg-white dark:bg-dark-bg">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-white dark:bg-dark-bg">
+        <div className="container mx-auto px-4">
           <motion.div
             variants={container}
             initial="hidden"
@@ -601,10 +471,9 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Enhanced CTA Section */}
-      <section className={`py-16 md:py-20 ${theme === 'dark' ? 'bg-gradient-to-r from-navy to-navy-dark' : 'bg-gradient-to-r from-black to-gray-900'} text-white relative overflow-hidden`}>
-        <div className="absolute inset-0 opacity-10 bg-[url('https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-center bg-cover"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* Enhanced CTA Section - Reduced padding */}
+      <section className={`py-12 ${theme === 'dark' ? 'bg-navy' : 'bg-black'} text-white`}>
+        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -629,6 +498,5 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
     </div>
-    </>
   );
 };

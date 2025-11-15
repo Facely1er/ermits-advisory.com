@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { 
@@ -11,7 +10,6 @@ import {
 } from 'lucide-react';
 
 export const ServiceOffering: React.FC = () => {
-  const { t, getNestedTranslation } = useLanguage();
   const navigate = useNavigate();
   
   // Find hero section start
@@ -338,12 +336,12 @@ export const ServiceOffering: React.FC = () => {
           <Card variant="glass" padding="lg">
             <div className="flex flex-col md:flex-row gap-8">
               <div className="md:w-1/2">
-                <h2 className="text-2xl font-bold mb-4 dark:text-white">{t('services.steelFramework.title')}</h2>
+                <h2 className="text-2xl font-bold mb-4 dark:text-white">{'The STEEL™ Framework'}</h2>
                 <p className="text-gray-600 dark:text-gray-100 mb-6">
-                  {t('services.steelFramework.description1')}
+                  {'Our proprietary STEEL™ methodology transforms traditional risk assessment by integrating cybersecurity intelligence into strategic environmental analysis.'}
                 </p>
                 <p className="text-gray-600 dark:text-gray-100 mb-6">
-                  {t('services.steelFramework.description2')}
+                  "This approach provides comprehensive visibility into how external factors impact your organization's cybersecurity posture."
                 </p>
                 <Button 
                   variant="primary" 
@@ -351,7 +349,7 @@ export const ServiceOffering: React.FC = () => {
                   iconPosition="right"
                   onClick={() => navigate('/steel')}
                 >
-                  {t('services.steelFramework.exploreButton')}
+                  {'Explore STEEL™'}
                 </Button>
               </div>
               <div className="md:w-1/2 flex justify-center items-center">

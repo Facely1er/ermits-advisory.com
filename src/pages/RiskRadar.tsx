@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { 
@@ -30,19 +29,7 @@ ChartJS.register(
   Legend
 );
 
-/**
- * RiskRadar Component
- * 
- * NOTE: This component uses example scenario data for demonstration purposes.
- * In production, risk values would be calculated from actual STEEL framework assessments
- * and real organizational data.
- * 
- * Data Sources (when connected to real systems):
- * - Risk scenarios: Calculated from STEEL framework assessments
- * - Recommendations: Generated from risk analysis results
- */
 export const RiskRadar: React.FC = () => {
-  const { t, getNestedTranslation } = useLanguage();
   const { theme } = useTheme();
   const navigate = useNavigate();
   const [currentScenario, setCurrentScenario] = useState<'current' | 'breach' | 'investment' | 'industry'>('current');
@@ -58,10 +45,7 @@ export const RiskRadar: React.FC = () => {
   const [activeRecommendation, setActiveRecommendation] = useState<string | null>(null);
 
   // Get recommendations from translations
-  const recommendationsData = getNestedTranslation('riskRadar.recommendations.items');
-  const recommendations: Array<Record<string, unknown>> = Array.isArray(recommendationsData) 
-    ? recommendationsData as Array<Record<string, unknown>>
-    : [];
+  const recommendations = getNestedTranslation('riskRadar.recommendations.items');
 
   // Update overall score when slider values change
   useEffect(() => {
@@ -100,10 +84,10 @@ export const RiskRadar: React.FC = () => {
 
   // Get risk level text based on value
   const getRiskLevelText = (value: number) => {
-    if (value < 40) return t('dashboard.riskScore.low');
-    if (value < 60) return t('dashboard.riskScore.medium');
-    if (value < 80) return t('dashboard.riskScore.high');
-    return t('dashboard.riskScore.critical');
+    if (value < 40) return 'Low';
+    if (value < 60) return 'Medium';
+    if (value < 80) return 'High';
+    return 'Critical';
   };
 
   // Priority color based on priority level
@@ -140,10 +124,10 @@ export const RiskRadar: React.FC = () => {
 
   // Radar chart data and options
   const radarData = {
-    labels: steelDimensions.map(dim => t(`steel.dimensions.${dim.id}.title`)),
+    labels: steelDimensions.map(dim => 'Political'),
     datasets: [
       {
-        label: t('riskRadar.visualization'),
+        label: 'Risk Visualization',
         data: Object.values(sliderValues),
         backgroundColor: theme === 'dark' ? 'rgba(0, 75, 135, 0.3)' : 'rgba(0, 75, 135, 0.2)',
         borderColor: theme === 'dark' ? 'rgba(201, 230, 255, 0.8)' : 'rgba(0, 75, 135, 1)',
@@ -231,42 +215,18 @@ export const RiskRadar: React.FC = () => {
   // };
 
   return (
-    <div className="min-h-screen bg-silver-light dark:bg-dark-bg">
-      {/* Enhanced Hero Section */}
-      <section className="relative bg-gradient-to-br from-navy via-navy-dark to-navy text-white pt-16 pb-10 md:pt-20 md:pb-14 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-navy-dark/90 to-navy/95"></div>
-        <div className="absolute inset-0 opacity-10 bg-[url('https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-center bg-cover"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="mb-6"
-            >
-              <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium text-silver">
-                <AlertTriangle size={16} className="mr-2" />
-                Real-Time Threat Monitoring
-              </span>
-            </motion.div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-white via-silver to-white bg-clip-text text-transparent">
-                {t('riskRadar.title')}
-              </span>
-            </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-silver/90 max-w-3xl mx-auto leading-relaxed">
-              {t('riskRadar.subtitle')}
-            </p>
-          </motion.div>
-        </div>
-      </section>
+    <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="pt-16 mb-8"
+        >
+          <h1 className="text-3xl font-bold mb-2 dark:text-white">{'STEEL™ Risk Radar'}</h1>
+          <p className="text-gray-600 dark:text-gray-200">{'Interactive risk assessment and scenario modeling'}</p>
+        </motion.div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-12 gap-6 -mt-8">
+        <div className="grid grid-cols-12 gap-6">
           {/* Left panel: Sliders */}
           <motion.div 
             className="col-span-12 md:col-span-4"
@@ -275,17 +235,14 @@ export const RiskRadar: React.FC = () => {
             transition={{ delay: 0.2 }}
           >
             <Card variant="glass" padding="md">
-              <h2 className="text-xl font-semibold mb-4 dark:text-white">{t('riskRadar.dimensions')}</h2>
+              <h2 className="text-xl font-semibold mb-4 dark:text-white">{'Risk Dimensions'}</h2>
               
               <div className="space-y-6">
                 {steelDimensions.map((dimension) => (
                   <div key={dimension.id} className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <label 
-                        htmlFor={`slider-${dimension.id}`}
-                        className="text-sm font-medium dark:text-gray-200"
-                      >
-                        {t(`steel.dimensions.${dimension.id}.title`)}
+                      <label className="text-sm font-medium dark:text-gray-200">
+                        {dimension.id.charAt(0).toUpperCase() + dimension.id.slice(1)}
                       </label>
                       <span 
                         className={`text-sm font-bold ${getRiskLevelColor(sliderValues[dimension.id])}`}
@@ -294,22 +251,22 @@ export const RiskRadar: React.FC = () => {
                       </span>
                     </div>
                     <input
-                      id={`slider-${dimension.id}`}
                       type="range"
-                      min={0}
-                      max={100}
+                      min="0"
+                      max="100"
                       value={sliderValues[dimension.id]}
                       onChange={(e) => handleSliderChange(dimension.id, parseInt(e.target.value))}
                       className="w-full accent-navy dark:accent-silver"
-                      title={t(`steel.dimensions.${dimension.id}.title`)}
-                      aria-label={t(`steel.dimensions.${dimension.id}.title`)}
+                      style={{
+                        '--range-color': dimension.color,
+                      } as React.CSSProperties}
                     />
                   </div>
                 ))}
               </div>
               
               <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
-                <h3 className="text-lg font-semibold mb-3 dark:text-white">{t('riskRadar.scenarios.title')}</h3>
+                <h3 className="text-lg font-semibold mb-3 dark:text-white">{'Scenarios'}</h3>
                 <div className="grid grid-cols-2 gap-2">
                   <Button 
                     variant={currentScenario === 'current' ? 'primary' : 'outline'} 
@@ -317,7 +274,7 @@ export const RiskRadar: React.FC = () => {
                     onClick={() => handleScenarioChange('current')}
                     className="w-full"
                   >
-                    {t('riskRadar.scenarios.current')}
+                    {'Current'}
                   </Button>
                   <Button 
                     variant={currentScenario === 'breach' ? 'primary' : 'outline'} 
@@ -325,7 +282,7 @@ export const RiskRadar: React.FC = () => {
                     onClick={() => handleScenarioChange('breach')}
                     className="w-full"
                   >
-                    {t('riskRadar.scenarios.breach')}
+                    {'Breach'}
                   </Button>
                   <Button 
                     variant={currentScenario === 'investment' ? 'primary' : 'outline'} 
@@ -333,7 +290,7 @@ export const RiskRadar: React.FC = () => {
                     onClick={() => handleScenarioChange('investment')}
                     className="w-full"
                   >
-                    {t('riskRadar.scenarios.investment')}
+                    {'Investment'}
                   </Button>
                   <Button 
                     variant={currentScenario === 'industry' ? 'primary' : 'outline'} 
@@ -341,7 +298,7 @@ export const RiskRadar: React.FC = () => {
                     onClick={() => handleScenarioChange('industry')}
                     className="w-full"
                   >
-                    {t('riskRadar.scenarios.industry')}
+                    {'Industry'}
                   </Button>
                 </div>
               </div>
@@ -356,7 +313,7 @@ export const RiskRadar: React.FC = () => {
             transition={{ delay: 0.3 }}
           >
             <Card variant="glass" padding="md" className="h-full flex flex-col">
-              <h2 className="text-xl font-semibold mb-4 dark:text-white">{t('riskRadar.visualization')}</h2>
+              <h2 className="text-xl font-semibold mb-4 dark:text-white">{'Risk Visualization'}</h2>
               
               <div className="flex items-center justify-center mb-4">
                 <div className="relative w-32 h-32">
@@ -400,7 +357,7 @@ export const RiskRadar: React.FC = () => {
                   iconPosition="right"
                   onClick={handleGenerateReport}
                 >
-                  {t('riskRadar.recommendations.generateReport')}
+                  {'Generate Full Report'}
                 </Button>
               </div>
             </Card>
@@ -414,86 +371,79 @@ export const RiskRadar: React.FC = () => {
             transition={{ delay: 0.4 }}
           >
             <Card variant="glass" padding="md">
-              <h2 className="text-xl font-semibold mb-4 dark:text-white">{t('riskRadar.recommendations.title')}</h2>
+              <h2 className="text-xl font-semibold mb-4 dark:text-white">{'Strategic Recommendations'}</h2>
               
               <div className="space-y-4">
-                {recommendations.map((recommendation: Record<string, unknown>, index: number) => {
-                  const priority = typeof recommendation.priority === 'string' ? recommendation.priority : '';
-                  const effort = typeof recommendation.effort === 'string' ? recommendation.effort : '';
-                  const action = typeof recommendation.action === 'string' ? recommendation.action : '';
-                  const impact = typeof recommendation.impact === 'string' ? recommendation.impact : '';
-                  
-                  return (
+                {recommendations.map((recommendation, index) => (
+                  <div 
+                    key={index} 
+                    className="border-b border-gray-100 dark:border-gray-700 last:border-b-0 pb-4 last:pb-0"
+                  >
                     <div 
-                      key={index} 
-                      className="border-b border-gray-100 dark:border-gray-700 last:border-b-0 pb-4 last:pb-0"
+                      className="flex items-start justify-between cursor-pointer"
+                      onClick={() => setActiveRecommendation(
+                        activeRecommendation === String(index) ? null : String(index)
+                      )}
                     >
-                      <div 
-                        className="flex items-start justify-between cursor-pointer"
-                        onClick={() => setActiveRecommendation(
-                          activeRecommendation === String(index) ? null : String(index)
-                        )}
-                      >
-                        <div className="flex-1">
-                          <div className="flex items-center mb-1">
-                            <span className={`text-sm font-medium ${getPriorityColor(priority)} mr-2`}>
-                              {priority}
-                            </span>
-                            <span className={`text-xs px-2 py-0.5 rounded ${getEffortBadgeStyle(effort)}`}>
-                              {effort}
-                            </span>
-                          </div>
-                          <p className="font-medium dark:text-white">{action}</p>
+                      <div className="flex-1">
+                        <div className="flex items-center mb-1">
+                          <span className={`text-sm font-medium ${getPriorityColor(recommendation.priority)} mr-2`}>
+                            {recommendation.priority}
+                          </span>
+                          <span className={`text-xs px-2 py-0.5 rounded ${getEffortBadgeStyle(recommendation.effort)}`}>
+                            {recommendation.effort}
+                          </span>
                         </div>
-                        <ChevronDown 
-                          size={16} 
-                          className={`mt-1 transform transition-transform dark:text-white ${
-                            activeRecommendation === String(index) ? 'rotate-180' : ''
-                          }`} 
-                        />
+                        <p className="font-medium dark:text-white">{recommendation.action}</p>
                       </div>
-                      
-                      <AnimatePresence>
-                        {activeRecommendation === String(index) && (
-                          <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: 'auto' }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.3 }}
-                            className="mt-3 pl-4 border-l-2 border-navy dark:border-silver"
-                          >
-                            <p className="text-sm text-gray-600 dark:text-gray-200 mb-2">
-                              <span className="font-medium">{t('riskRadar.recommendations.impactLabel')}:</span> {impact}
-                            </p>
-                            <div className="flex space-x-2">
-                              {priority.toLowerCase().includes('crit') && (
-                                <div className="flex items-center text-xs text-red-500">
-                                  <AlertTriangle size={12} className="mr-1" />
-                                  <span>{t('riskRadar.recommendations.immediateAction')}</span>
-                                </div>
-                              )}
-                              {(effort.toLowerCase().includes('low') || 
-                                effort.toLowerCase().includes('bajo') || 
-                                effort.toLowerCase().includes('faible')) && (
-                                <div className="flex items-center text-xs text-green-500">
-                                  <CheckCircle size={12} className="mr-1" />
-                                  <span>{t('riskRadar.recommendations.quickWin')}</span>
-                                </div>
-                              )}
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
+                      <ChevronDown 
+                        size={16} 
+                        className={`mt-1 transform transition-transform dark:text-white ${
+                          activeRecommendation === String(index) ? 'rotate-180' : ''
+                        }`} 
+                      />
                     </div>
-                  );
-                })}
+                    
+                    <AnimatePresence>
+                      {activeRecommendation === String(index) && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="mt-3 pl-4 border-l-2 border-navy dark:border-silver"
+                        >
+                          <p className="text-sm text-gray-600 dark:text-gray-200 mb-2">
+                            <span className="font-medium">{'Impact'}:</span> {recommendation.impact}
+                          </p>
+                          <div className="flex space-x-2">
+                            {recommendation.priority.toLowerCase().includes('crit') && (
+                              <div className="flex items-center text-xs text-red-500">
+                                <AlertTriangle size={12} className="mr-1" />
+                                <span>{'Immediate Action Required'}</span>
+                              </div>
+                            )}
+                            {recommendation.effort.toLowerCase().includes('low') || 
+                             recommendation.effort.toLowerCase().includes('bajo') || 
+                             recommendation.effort.toLowerCase().includes('faible') && (
+                              <div className="flex items-center text-xs text-green-500">
+                                <CheckCircle size={12} className="mr-1" />
+                                <span>{'Quick Win'}</span>
+                              </div>
+                            )}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ))}
               </div>
             </Card>
           </motion.div>
         </div>
 
         <div className="mt-6 text-sm text-center text-gray-500 dark:text-gray-400">
-          <p>{t('common.demo')} - {new Date().toLocaleDateString()}</p>
+          <p>{'Demo Mode'} - {new Date().toLocaleDateString()}</p>
         </div>
       </div>
     </div>

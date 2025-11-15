@@ -1,11 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { InteractiveCard } from '../components/shared/InteractiveCard';
-import { 
+import {
   Shield, BarChart2, Eye, Presentation, Users, ArrowRight,
   Zap, Target, Layers, CheckCircle
 } from 'lucide-react';
@@ -14,47 +13,46 @@ import {
 // import ecosystemLogo from '../assets/ermits-ecosystem.png';
 
 export const EcosystemPage: React.FC = () => {
-  const { t } = useLanguage();
   const navigate = useNavigate();
 
   const ecosystemComponents = [
     {
       id: 'steel',
       icon: <Shield size={32} className="text-navy dark:text-silver" />,
-      title: t('ecosystem.components.steel.title'),
-      description: t('ecosystem.components.steel.description'),
+      title: 'STEEL Assessment',
+      description: 'Strategic risk assessment framework for comprehensive threat analysis',
       link: '/steel',
       color: 'from-blue-500 to-blue-600'
     },
     {
       id: 'riskRadar',
       icon: <Eye size={32} className="text-navy dark:text-silver" />,
-      title: t('ecosystem.components.riskRadar.title'),
-      description: t('ecosystem.components.riskRadar.description'),
+      title: 'Risk Radar',
+      description: 'Real-time threat monitoring and intelligence dashboard',
       link: '/risk-radar',
       color: 'from-green-500 to-green-600'
     },
     {
       id: 'dashboard',
       icon: <BarChart2 size={32} className="text-navy dark:text-silver" />,
-      title: t('ecosystem.components.dashboard.title'),
-      description: t('ecosystem.components.dashboard.description'),
+      title: 'Executive Dashboard',
+      description: 'Comprehensive analytics and reporting platform',
       link: '/dashboard',
       color: 'from-purple-500 to-purple-600'
     },
     {
       id: 'presentations',
       icon: <Presentation size={32} className="text-navy dark:text-silver" />,
-      title: t('ecosystem.components.presentations.title'),
-      description: t('ecosystem.components.presentations.description'),
+      title: 'Board Presentations',
+      description: 'Executive-ready security briefings and reports',
       link: '/presentation',
       color: 'from-orange-500 to-orange-600'
     },
     {
       id: 'advisory',
       icon: <Users size={32} className="text-navy dark:text-silver" />,
-      title: t('ecosystem.components.advisory.title'),
-      description: t('ecosystem.components.advisory.description'),
+      title: 'Advisory Services',
+      description: 'Expert guidance and strategic security consulting',
       link: '/services',
       color: 'from-teal-500 to-teal-600'
     }
@@ -63,93 +61,85 @@ export const EcosystemPage: React.FC = () => {
   const ecosystemBenefits = [
     {
       icon: <Layers size={24} className="text-navy dark:text-silver" />,
-      title: t('ecosystem.benefits.integrated.title'),
-      description: t('ecosystem.benefits.integrated.description')
+      title: 'Integrated Platform',
+      description: 'All tools work seamlessly together for maximum efficiency'
     },
     {
       icon: <Target size={24} className="text-navy dark:text-silver" />,
-      title: t('ecosystem.benefits.comprehensive.title'),
-      description: t('ecosystem.benefits.comprehensive.description')
+      title: 'Comprehensive Coverage',
+      description: 'Address all aspects of enterprise risk management'
     },
     {
       icon: <Zap size={24} className="text-navy dark:text-silver" />,
-      title: t('ecosystem.benefits.efficient.title'),
-      description: t('ecosystem.benefits.efficient.description')
+      title: 'Efficient Workflow',
+      description: 'Streamlined processes that save time and resources'
     },
     {
       icon: <CheckCircle size={24} className="text-navy dark:text-silver" />,
-      title: t('ecosystem.benefits.proven.title'),
-      description: t('ecosystem.benefits.proven.description')
+      title: 'Proven Results',
+      description: 'Trusted by leading organizations worldwide'
     }
   ];
 
   return (
-    <div className="min-h-screen bg-silver-light dark:bg-dark-bg">
-      {/* Enhanced Hero Section */}
-      <section className="relative bg-gradient-to-br from-navy via-navy-dark to-navy text-white pt-16 pb-10 md:pt-20 md:pb-14 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-navy-dark/90 to-navy/95"></div>
-        <div className="absolute inset-0 opacity-10 bg-[url('https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-center bg-cover"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            {/* Ecosystem Logo Placeholder */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="mb-8 flex justify-center"
-            >
-              <div className="w-32 h-32 md:w-40 md:h-40 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 shadow-lg">
-                <Layers size={64} className="text-white opacity-90" />
+    <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
+      <div className="container mx-auto px-4">
+        {/* Hero Section */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-16"
+        >
+          <Card variant="solid" padding="lg" className="bg-navy text-white">
+            <div className="text-center max-w-4xl mx-auto">
+              {/* Ecosystem Logo Placeholder */}
+              <div className="mb-6 flex justify-center">
+                <div className="w-32 h-32 bg-white/10 rounded-full flex items-center justify-center">
+                  {/* Replace with actual logo image when available */}
+                  {/* <img src={ecosystemLogo} alt="ERMITS Ecosystem" className="w-24 h-24 object-contain" /> */}
+                  <Layers size={64} className="text-white opacity-80" />
+                </div>
               </div>
-            </motion.div>
-            
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-white via-silver to-white bg-clip-text text-transparent">
-                {t('ecosystem.hero.title')}
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-4 text-silver/90 leading-relaxed">
-              {t('ecosystem.hero.subtitle')}
-            </p>
-            <p className="text-lg md:text-xl mb-10 text-silver/80 max-w-3xl mx-auto leading-relaxed">
-              {t('ecosystem.hero.description')}
-            </p>
-            
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button 
-                variant="secondary" 
-                size="lg"
-                icon={<ArrowRight size={18} />}
-                iconPosition="right"
-                onClick={() => navigate('/contact')}
-                className="transform hover:scale-105 transition-all shadow-lg hover:shadow-xl"
-              >
-                {t('ecosystem.hero.cta')}
-              </Button>
+              
+              <h1 className="text-3xl md:text-5xl font-bold mb-4">
+                ERMITS Ecosystem
+              </h1>
+              <p className="text-xl md:text-2xl mb-4 text-silver">
+                Comprehensive Risk Management Solutions
+              </p>
+              <p className="text-lg mb-8 text-silver">
+                An integrated suite of tools and services designed to protect your organization from strategic threats
+              </p>
+              
+              <div className="flex flex-wrap justify-center gap-4">
+                <Button 
+                  variant="secondary" 
+                  size="lg"
+                  icon={<ArrowRight size={18} />}
+                  iconPosition="right"
+                  onClick={() => navigate('/contact')}
+                  className="transform hover:scale-105 transition-transform"
+                >
+                  Get Started
+                </Button>
+              </div>
             </div>
-          </motion.div>
-        </div>
-      </section>
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          </Card>
+        </motion.div>
 
         {/* Ecosystem Components */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="mb-16 md:mb-20 -mt-8"
+          className="mb-16"
         >
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              {t('ecosystem.components.title')}
+              Ecosystem Components
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              {t('ecosystem.components.subtitle')}
+              Powerful tools working together to strengthen your security posture
             </p>
           </div>
           
@@ -179,7 +169,7 @@ export const EcosystemPage: React.FC = () => {
                         {component.description}
                       </p>
                       <button className="text-navy dark:text-silver font-medium hover:underline text-sm flex items-center transition-colors">
-                        {t('common.learnMore')}
+                        Learn More
                         <ArrowRight size={14} className="ml-1" />
                       </button>
                     </div>
@@ -199,10 +189,10 @@ export const EcosystemPage: React.FC = () => {
         >
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              {t('ecosystem.benefits.title')}
+              Why Choose Our Ecosystem
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              {t('ecosystem.benefits.subtitle')}
+              Experience the power of an integrated risk management platform
             </p>
           </div>
           
@@ -246,10 +236,10 @@ export const EcosystemPage: React.FC = () => {
           >
             <div className="text-center mb-8">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-                {t('ecosystem.integration.title')}
+                How Components Work Together
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-                {t('ecosystem.integration.description')}
+                Our integrated approach ensures maximum effectiveness and efficiency
               </p>
             </div>
             
@@ -257,35 +247,81 @@ export const EcosystemPage: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold dark:text-white mb-4">
-                    {t('ecosystem.integration.workflow.title')}
+                    Implementation Workflow
                   </h3>
                   <div className="space-y-3">
-                    {[1, 2, 3, 4, 5].map((step) => (
-                      <div key={step} className="flex items-start">
-                        <div className="w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center mr-3 flex-shrink-0 font-bold">
-                          {step}
-                        </div>
-                        <p className="text-gray-600 dark:text-gray-200 pt-1">
-                          {t(`ecosystem.integration.workflow.step${step}`)}
-                        </p>
+                    <div className="flex items-start">
+                      <div className="w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center mr-3 flex-shrink-0 font-bold">
+                        1
                       </div>
-                    ))}
+                      <p className="text-gray-600 dark:text-gray-200 pt-1">
+                        Conduct comprehensive STEEL assessment
+                      </p>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center mr-3 flex-shrink-0 font-bold">
+                        2
+                      </div>
+                      <p className="text-gray-600 dark:text-gray-200 pt-1">
+                        Monitor threats with Risk Radar
+                      </p>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center mr-3 flex-shrink-0 font-bold">
+                        3
+                      </div>
+                      <p className="text-gray-600 dark:text-gray-200 pt-1">
+                        Track metrics on Executive Dashboard
+                      </p>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center mr-3 flex-shrink-0 font-bold">
+                        4
+                      </div>
+                      <p className="text-gray-600 dark:text-gray-200 pt-1">
+                        Present findings to leadership
+                      </p>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center mr-3 flex-shrink-0 font-bold">
+                        5
+                      </div>
+                      <p className="text-gray-600 dark:text-gray-200 pt-1">
+                        Receive ongoing advisory support
+                      </p>
+                    </div>
                   </div>
                 </div>
                 
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold dark:text-white mb-4">
-                    {t('ecosystem.integration.value.title')}
+                    Value Delivered
                   </h3>
                   <ul className="space-y-3">
-                    {[1, 2, 3, 4].map((item) => (
-                      <li key={item} className="flex items-start">
-                        <CheckCircle size={20} className="text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                        <p className="text-gray-600 dark:text-gray-200">
-                          {t(`ecosystem.integration.value.item${item}`)}
-                        </p>
-                      </li>
-                    ))}
+                    <li className="flex items-start">
+                      <CheckCircle size={20} className="text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <p className="text-gray-600 dark:text-gray-200">
+                        Unified view of organizational risk
+                      </p>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle size={20} className="text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <p className="text-gray-600 dark:text-gray-200">
+                        Data-driven decision making
+                      </p>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle size={20} className="text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <p className="text-gray-600 dark:text-gray-200">
+                        Improved stakeholder communication
+                      </p>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle size={20} className="text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <p className="text-gray-600 dark:text-gray-200">
+                        Continuous risk monitoring and adaptation
+                      </p>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -305,27 +341,27 @@ export const EcosystemPage: React.FC = () => {
           >
             <div className="text-center">
               <h3 className="text-2xl font-bold mb-4">
-                {t('ecosystem.cta.title')}
+                Ready to Transform Your Risk Management?
               </h3>
               <p className="text-lg mb-6 text-silver max-w-2xl mx-auto">
-                {t('ecosystem.cta.description')}
+                Let us show you how the ERMITS ecosystem can strengthen your security posture
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button 
-                  variant="secondary" 
+                <Button
+                  variant="secondary"
                   icon={<ArrowRight size={16} />}
                   iconPosition="right"
                   onClick={() => navigate('/contact')}
                   className="transform hover:scale-105 transition-transform"
                 >
-                  {t('ecosystem.cta.scheduleConsultation')}
+                  Schedule a Consultation
                 </Button>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   className="border-white text-white hover:bg-white/10 transform hover:scale-105 transition-transform"
                   onClick={() => navigate('/steel')}
                 >
-                  {t('ecosystem.cta.exploreSteel')}
+                  Explore STEEL Framework
                 </Button>
               </div>
             </div>

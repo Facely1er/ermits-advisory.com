@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { 
@@ -10,7 +9,6 @@ import {
 import { Link } from 'react-router-dom';
 
 export const CookiePolicyPage: React.FC = () => {
-  const { t } = useLanguage();
   const [cookiePreferences, setCookiePreferences] = useState({
     necessary: true, // Always true, cannot be disabled
     analytics: true,

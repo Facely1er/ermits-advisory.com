@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { 
@@ -32,29 +31,12 @@ ChartJS.register(
   Legend
 );
 
-/**
- * Dashboard Component
- * 
- * NOTE: This dashboard displays example/demo data for demonstration purposes.
- * In production, all metrics, risk dimensions, threats, and strategic actions
- * would be fetched from actual security monitoring systems and client assessments.
- * 
- * Data Sources (when connected to real systems):
- * - Risk dimensions: Calculated from STEEL framework assessments
- * - Metrics: Security monitoring systems (SIEM, vulnerability scanners, etc.)
- * - Threats: Real-time threat intelligence feeds
- * - Strategic actions: Generated from risk assessment results
- */
 export const Dashboard: React.FC = () => {
-  const { t, getNestedTranslation } = useLanguage();
   const { theme } = useTheme();
   const [selectedView, setSelectedView] = useState<'overview' | 'details'>('overview');
 
   // Get translated strategic actions
-  const strategicActionsData = getNestedTranslation('dashboard.actions.items');
-  const strategicActions: Array<Record<string, unknown>> = Array.isArray(strategicActionsData) 
-    ? strategicActionsData as Array<Record<string, unknown>>
-    : [];
+  const strategicActions = getNestedTranslation('dashboard.actions.items');
 
   // Calculate overall risk score (average of all dimensions)
   const overallScore = Math.round(
@@ -63,10 +45,10 @@ export const Dashboard: React.FC = () => {
 
   // Determine risk level based on score
   const getRiskLevel = (score: number) => {
-    if (score < 40) return { level: t('dashboard.riskScore.low'), color: 'text-green-500' };
-    if (score < 60) return { level: t('dashboard.riskScore.medium'), color: 'text-yellow-500' };
-    if (score < 80) return { level: t('dashboard.riskScore.high'), color: 'text-orange-500' };
-    return { level: t('dashboard.riskScore.critical'), color: 'text-red-500' };
+    if (score < 40) return { level: 'Low', color: 'text-green-500' };
+    if (score < 60) return { level: 'Medium', color: 'text-yellow-500' };
+    if (score < 80) return { level: 'High', color: 'text-orange-500' };
+    return { level: 'Critical', color: 'text-red-500' };
   };
 
   const riskLevel = getRiskLevel(overallScore);
@@ -166,7 +148,7 @@ export const Dashboard: React.FC = () => {
     labels: riskDimensions.map(dim => t(`steel.dimensions.${dim.id}.title`)),
     datasets: [
       {
-        label: t('dashboard.radar.title'),
+        label: 'STEEL™ Risk Radar',
         data: riskDimensions.map(dim => dim.value),
         backgroundColor: theme === 'dark' ? 'rgba(0, 75, 135, 0.3)' : 'rgba(0, 75, 135, 0.2)',
         borderColor: theme === 'dark' ? 'rgba(201, 230, 255, 0.8)' : 'rgba(0, 75, 135, 1)',
@@ -253,74 +235,36 @@ export const Dashboard: React.FC = () => {
     show: { opacity: 1, y: 0 },
   };
 
-  // Generate CSS variables for dimension colors
-  const dimensionColorStyles = riskDimensions
-    .map((dim) => `.risk-dimension-indicator[data-dimension-id="${dim.id}"] { --dimension-color: ${dim.color}; }`)
-    .join('\n');
-
   return (
-    <div className="min-h-screen bg-silver-light dark:bg-dark-bg">
-      <style>{dimensionColorStyles}</style>
-      {/* Enhanced Hero Section */}
-      <section className="relative bg-gradient-to-br from-navy via-navy-dark to-navy text-white pt-16 pb-10 md:pt-20 md:pb-14 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-navy-dark/90 to-navy/95"></div>
-        <div className="absolute inset-0 opacity-10 bg-[url('https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-center bg-cover"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="mb-6"
+    <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="pt-16 mb-8"
+        >
+          <h1 className="text-3xl font-bold mb-2 dark:text-white">{'Executive Dashboard'}</h1>
+          <p className="text-gray-600 dark:text-gray-200">{'Real-time cybersecurity intelligence and strategic insights'}</p>
+          
+          <div className="flex space-x-4 mt-4">
+            <Button 
+              variant={selectedView === 'overview' ? 'primary' : 'outline'} 
+              size="sm"
+              onClick={() => setSelectedView('overview')}
+              icon={<Activity size={16} />}
             >
-              <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium text-silver">
-                <BarChart3 size={16} className="mr-2" />
-                Executive Dashboard
-              </span>
-            </motion.div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-white via-silver to-white bg-clip-text text-transparent">
-                {t('dashboard.title')}
-              </span>
-            </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-silver/90 max-w-3xl mx-auto leading-relaxed">
-              {t('dashboard.subtitle')}
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Demo Data Notice */}
-        <div className="mb-4 -mt-8 p-3 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg">
-          <p className="text-sm text-yellow-800 dark:text-yellow-200">
-            <strong>Demo Mode:</strong> This dashboard displays example data for demonstration purposes. 
-            In production, all metrics and data would come from actual security monitoring systems.
-          </p>
-        </div>
-        
-        <div className="flex space-x-4 mb-8">
-          <Button 
-            variant={selectedView === 'overview' ? 'primary' : 'outline'} 
-            size="sm"
-            onClick={() => setSelectedView('overview')}
-            icon={<Activity size={16} />}
-          >
-            Overview
-          </Button>
-          <Button 
-            variant={selectedView === 'details' ? 'primary' : 'outline'} 
-            size="sm"
-            onClick={() => setSelectedView('details')}
-            icon={<PieChart size={16} />}
-          >
-            Details
-          </Button>
-        </div>
+              Overview
+            </Button>
+            <Button 
+              variant={selectedView === 'details' ? 'primary' : 'outline'} 
+              size="sm"
+              onClick={() => setSelectedView('details')}
+              icon={<PieChart size={16} />}
+            >
+              Details
+            </Button>
+          </div>
+        </motion.div>
 
         <div className="grid grid-cols-12 gap-6">
           {/* Sidebar with Risk Score */}
@@ -331,7 +275,7 @@ export const Dashboard: React.FC = () => {
             transition={{ delay: 0.2 }}
           >
             <Card variant="glass" padding="lg" className="mb-6">
-              <h2 className="text-xl font-semibold mb-4 dark:text-white">{t('dashboard.riskScore.title')}</h2>
+              <h2 className="text-xl font-semibold mb-4 dark:text-white">{'Overall Risk Score'}</h2>
               <div className="flex items-center justify-center mb-4">
                 <div className="relative w-32 h-32">
                   <svg className="w-full h-full" viewBox="0 0 36 36">
@@ -369,10 +313,10 @@ export const Dashboard: React.FC = () => {
                   <div key={dimension.id} className="flex items-center justify-between">
                     <div className="flex items-center">
                       <div 
-                        className="risk-dimension-indicator w-3 h-3 rounded-full mr-2" 
-                        data-dimension-id={dimension.id}
+                        className="w-3 h-3 rounded-full mr-2" 
+                        style={{ backgroundColor: dimension.color }}
                       ></div>
-                      <span className="text-sm dark:text-gray-200">{t(`steel.dimensions.${dimension.id}.title`)}</span>
+                      <span className="text-sm dark:text-gray-200">{dimension.id.charAt(0).toUpperCase() + dimension.id.slice(1)}</span>
                     </div>
                     <div className="flex items-center">
                       <span className="text-sm font-medium mr-1 dark:text-white">{dimension.value}</span>
@@ -392,7 +336,7 @@ export const Dashboard: React.FC = () => {
               initial="hidden"
               animate="show"
             >
-              <h2 className="text-xl font-semibold mb-4 dark:text-white">{t('dashboard.metrics.title')}</h2>
+              <h2 className="text-xl font-semibold mb-4 dark:text-white">{'Key Metrics'}</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {metrics.map((metric) => (
                   <motion.div key={metric.id} variants={item}>
@@ -431,8 +375,8 @@ export const Dashboard: React.FC = () => {
               <Card variant="glass" padding="md">
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h2 className="text-xl font-semibold dark:text-white">{t('dashboard.radar.title')}</h2>
-                    <p className="text-sm text-gray-600 dark:text-gray-200">{t('dashboard.radar.description')}</p>
+                    <h2 className="text-xl font-semibold dark:text-white">{'STEEL™ Risk Radar'}</h2>
+                    <p className="text-sm text-gray-600 dark:text-gray-200">{'Multi-dimensional risk assessment across all STEEL™ dimensions'}</p>
                   </div>
                   <Button 
                     variant="outline" 
@@ -458,7 +402,7 @@ export const Dashboard: React.FC = () => {
                 transition={{ delay: 0.4 }}
               >
                 <Card variant="glass" padding="md">
-                  <h2 className="text-xl font-semibold mb-4 dark:text-white">{t('dashboard.threats.title')}</h2>
+                  <h2 className="text-xl font-semibold mb-4 dark:text-white">{'Threat Intelligence'}</h2>
                   <div className="overflow-x-auto">
                     <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                       <thead>
@@ -510,41 +454,34 @@ export const Dashboard: React.FC = () => {
               transition={{ delay: 0.5 }}
             >
               <Card variant="glass" padding="md">
-                <h2 className="text-xl font-semibold mb-4 dark:text-white">{t('dashboard.actions.title')}</h2>
+                <h2 className="text-xl font-semibold mb-4 dark:text-white">{'Strategic Actions'}</h2>
                 <div className="space-y-4">
-                  {strategicActions.map((action: Record<string, unknown>, index: number) => {
-                    const priority = typeof action.priority === 'string' ? action.priority : '';
-                    const status = typeof action.status === 'string' ? action.status : '';
-                    const actionText = typeof action.action === 'string' ? action.action : '';
-                    const impact = typeof action.impact === 'string' ? action.impact : '';
-                    
-                    return (
-                      <div key={index} className="border-b border-gray-100 dark:border-gray-700 last:border-b-0 pb-4 last:pb-0">
-                        <div className="flex items-start justify-between">
-                          <div>
-                            <div className="flex items-center mb-1">
-                              <span className={`text-sm font-medium ${getPriorityColor(priority)} mr-2`}>
-                                {priority}
-                              </span>
-                              <span className={`text-xs px-2 py-0.5 rounded ${getStatusStyles(status)}`}>
-                                {status}
-                              </span>
-                            </div>
-                            <p className="font-medium dark:text-white">{actionText}</p>
-                            <p className="text-sm text-gray-600 dark:text-gray-200 mt-1">{impact}</p>
+                  {strategicActions.map((action, index) => (
+                    <div key={index} className="border-b border-gray-100 dark:border-gray-700 last:border-b-0 pb-4 last:pb-0">
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <div className="flex items-center mb-1">
+                            <span className={`text-sm font-medium ${getPriorityColor(action.priority)} mr-2`}>
+                              {action.priority}
+                            </span>
+                            <span className={`text-xs px-2 py-0.5 rounded ${getStatusStyles(action.status)}`}>
+                              {action.status}
+                            </span>
                           </div>
-                          <Button 
-                            variant="ghost" 
-                            size="sm"
-                            icon={<ChevronRight size={16} />}
-                            iconPosition="right"
-                          >
-                            {t('dashboard.actions.details')}
-                          </Button>
+                          <p className="font-medium dark:text-white">{action.action}</p>
+                          <p className="text-sm text-gray-600 dark:text-gray-200 mt-1">{action.impact}</p>
                         </div>
+                        <Button 
+                          variant="ghost" 
+                          size="sm"
+                          icon={<ChevronRight size={16} />}
+                          iconPosition="right"
+                        >
+                          {t('dashboard.actions.details')}
+                        </Button>
                       </div>
-                    );
-                  })}
+                    </div>
+                  ))}
                 </div>
               </Card>
             </motion.div>
@@ -552,7 +489,7 @@ export const Dashboard: React.FC = () => {
         </div>
 
         <div className="mt-6 text-sm text-center text-gray-500 dark:text-gray-400">
-          <p>{t('common.demo')} - {new Date().toLocaleDateString()}</p>
+          <p>{'Demo Mode'} - {new Date().toLocaleDateString()}</p>
         </div>
       </div>
     </div>
