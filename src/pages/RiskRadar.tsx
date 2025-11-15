@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { 
@@ -31,7 +30,6 @@ ChartJS.register(
 );
 
 export const RiskRadar: React.FC = () => {
-  const { t, getNestedTranslation } = useLanguage();
   const { theme } = useTheme();
   const navigate = useNavigate();
   const [currentScenario, setCurrentScenario] = useState<'current' | 'breach' | 'investment' | 'industry'>('current');
@@ -86,10 +84,10 @@ export const RiskRadar: React.FC = () => {
 
   // Get risk level text based on value
   const getRiskLevelText = (value: number) => {
-    if (value < 40) return t('dashboard.riskScore.low');
-    if (value < 60) return t('dashboard.riskScore.medium');
-    if (value < 80) return t('dashboard.riskScore.high');
-    return t('dashboard.riskScore.critical');
+    if (value < 40) return 'Low';
+    if (value < 60) return 'Medium';
+    if (value < 80) return 'High';
+    return 'Critical';
   };
 
   // Priority color based on priority level
@@ -126,10 +124,10 @@ export const RiskRadar: React.FC = () => {
 
   // Radar chart data and options
   const radarData = {
-    labels: steelDimensions.map(dim => t(`steel.dimensions.${dim.id}.title`)),
+    labels: steelDimensions.map(dim => 'Political'),
     datasets: [
       {
-        label: t('riskRadar.visualization'),
+        label: 'Risk Visualization',
         data: Object.values(sliderValues),
         backgroundColor: theme === 'dark' ? 'rgba(0, 75, 135, 0.3)' : 'rgba(0, 75, 135, 0.2)',
         borderColor: theme === 'dark' ? 'rgba(201, 230, 255, 0.8)' : 'rgba(0, 75, 135, 1)',
@@ -224,8 +222,8 @@ export const RiskRadar: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           className="pt-16 mb-8"
         >
-          <h1 className="text-3xl font-bold mb-2 dark:text-white">{t('riskRadar.title')}</h1>
-          <p className="text-gray-600 dark:text-gray-200">{t('riskRadar.subtitle')}</p>
+          <h1 className="text-3xl font-bold mb-2 dark:text-white">{'STEEL™ Risk Radar'}</h1>
+          <p className="text-gray-600 dark:text-gray-200">{'Interactive risk assessment and scenario modeling'}</p>
         </motion.div>
 
         <div className="grid grid-cols-12 gap-6">
@@ -237,14 +235,14 @@ export const RiskRadar: React.FC = () => {
             transition={{ delay: 0.2 }}
           >
             <Card variant="glass" padding="md">
-              <h2 className="text-xl font-semibold mb-4 dark:text-white">{t('riskRadar.dimensions')}</h2>
+              <h2 className="text-xl font-semibold mb-4 dark:text-white">{'Risk Dimensions'}</h2>
               
               <div className="space-y-6">
                 {steelDimensions.map((dimension) => (
                   <div key={dimension.id} className="space-y-2">
                     <div className="flex justify-between items-center">
                       <label className="text-sm font-medium dark:text-gray-200">
-                        {t(`steel.dimensions.${dimension.id}.title`)}
+                        {dimension.id.charAt(0).toUpperCase() + dimension.id.slice(1)}
                       </label>
                       <span 
                         className={`text-sm font-bold ${getRiskLevelColor(sliderValues[dimension.id])}`}
@@ -268,7 +266,7 @@ export const RiskRadar: React.FC = () => {
               </div>
               
               <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
-                <h3 className="text-lg font-semibold mb-3 dark:text-white">{t('riskRadar.scenarios.title')}</h3>
+                <h3 className="text-lg font-semibold mb-3 dark:text-white">{'Scenarios'}</h3>
                 <div className="grid grid-cols-2 gap-2">
                   <Button 
                     variant={currentScenario === 'current' ? 'primary' : 'outline'} 
@@ -276,7 +274,7 @@ export const RiskRadar: React.FC = () => {
                     onClick={() => handleScenarioChange('current')}
                     className="w-full"
                   >
-                    {t('riskRadar.scenarios.current')}
+                    {'Current'}
                   </Button>
                   <Button 
                     variant={currentScenario === 'breach' ? 'primary' : 'outline'} 
@@ -284,7 +282,7 @@ export const RiskRadar: React.FC = () => {
                     onClick={() => handleScenarioChange('breach')}
                     className="w-full"
                   >
-                    {t('riskRadar.scenarios.breach')}
+                    {'Breach'}
                   </Button>
                   <Button 
                     variant={currentScenario === 'investment' ? 'primary' : 'outline'} 
@@ -292,7 +290,7 @@ export const RiskRadar: React.FC = () => {
                     onClick={() => handleScenarioChange('investment')}
                     className="w-full"
                   >
-                    {t('riskRadar.scenarios.investment')}
+                    {'Investment'}
                   </Button>
                   <Button 
                     variant={currentScenario === 'industry' ? 'primary' : 'outline'} 
@@ -300,7 +298,7 @@ export const RiskRadar: React.FC = () => {
                     onClick={() => handleScenarioChange('industry')}
                     className="w-full"
                   >
-                    {t('riskRadar.scenarios.industry')}
+                    {'Industry'}
                   </Button>
                 </div>
               </div>
@@ -315,7 +313,7 @@ export const RiskRadar: React.FC = () => {
             transition={{ delay: 0.3 }}
           >
             <Card variant="glass" padding="md" className="h-full flex flex-col">
-              <h2 className="text-xl font-semibold mb-4 dark:text-white">{t('riskRadar.visualization')}</h2>
+              <h2 className="text-xl font-semibold mb-4 dark:text-white">{'Risk Visualization'}</h2>
               
               <div className="flex items-center justify-center mb-4">
                 <div className="relative w-32 h-32">
@@ -359,7 +357,7 @@ export const RiskRadar: React.FC = () => {
                   iconPosition="right"
                   onClick={handleGenerateReport}
                 >
-                  {t('riskRadar.recommendations.generateReport')}
+                  {'Generate Full Report'}
                 </Button>
               </div>
             </Card>
@@ -373,7 +371,7 @@ export const RiskRadar: React.FC = () => {
             transition={{ delay: 0.4 }}
           >
             <Card variant="glass" padding="md">
-              <h2 className="text-xl font-semibold mb-4 dark:text-white">{t('riskRadar.recommendations.title')}</h2>
+              <h2 className="text-xl font-semibold mb-4 dark:text-white">{'Strategic Recommendations'}</h2>
               
               <div className="space-y-4">
                 {recommendations.map((recommendation, index) => (
@@ -416,13 +414,13 @@ export const RiskRadar: React.FC = () => {
                           className="mt-3 pl-4 border-l-2 border-navy dark:border-silver"
                         >
                           <p className="text-sm text-gray-600 dark:text-gray-200 mb-2">
-                            <span className="font-medium">{t('riskRadar.recommendations.impactLabel')}:</span> {recommendation.impact}
+                            <span className="font-medium">{'Impact'}:</span> {recommendation.impact}
                           </p>
                           <div className="flex space-x-2">
                             {recommendation.priority.toLowerCase().includes('crit') && (
                               <div className="flex items-center text-xs text-red-500">
                                 <AlertTriangle size={12} className="mr-1" />
-                                <span>{t('riskRadar.recommendations.immediateAction')}</span>
+                                <span>{'Immediate Action Required'}</span>
                               </div>
                             )}
                             {recommendation.effort.toLowerCase().includes('low') || 
@@ -430,7 +428,7 @@ export const RiskRadar: React.FC = () => {
                              recommendation.effort.toLowerCase().includes('faible') && (
                               <div className="flex items-center text-xs text-green-500">
                                 <CheckCircle size={12} className="mr-1" />
-                                <span>{t('riskRadar.recommendations.quickWin')}</span>
+                                <span>{'Quick Win'}</span>
                               </div>
                             )}
                           </div>
@@ -445,7 +443,7 @@ export const RiskRadar: React.FC = () => {
         </div>
 
         <div className="mt-6 text-sm text-center text-gray-500 dark:text-gray-400">
-          <p>{t('common.demo')} - {new Date().toLocaleDateString()}</p>
+          <p>{'Demo Mode'} - {new Date().toLocaleDateString()}</p>
         </div>
       </div>
     </div>

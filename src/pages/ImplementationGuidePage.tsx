@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { 
@@ -11,7 +10,6 @@ import {
 } from 'lucide-react';
 
 export const ImplementationGuidePage: React.FC = () => {
-  const { t } = useLanguage();
   const navigate = useNavigate();
   const [downloadStarted, setDownloadStarted] = useState(false);
   const [selectedPhase, setSelectedPhase] = useState<number | null>(null);
@@ -157,7 +155,7 @@ export const ImplementationGuidePage: React.FC = () => {
             className="inline-flex items-center text-navy dark:text-silver hover:underline mb-4 transition-colors"
           >
             <ArrowLeft size={16} className="mr-2" />
-            {t('implementationGuide.backToSteel')}
+            {'Back to STEEL™'}
           </button>
           <h1 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
             {t('implementationGuide.title')}

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { useLanguage } from '../contexts/LanguageContext';
 import { useTheme } from '../contexts/ThemeContext';
 import { Button } from '../components/shared/Button';
 import { InteractiveCard } from '../components/shared/InteractiveCard';
@@ -11,7 +10,6 @@ import { steelDimensions } from '../data/mockData';
 import { LiveMetrics } from '../components/interactive/LiveMetrics';
 
 export const LandingPage: React.FC = () => {
-  const { t } = useLanguage();
   const { theme } = useTheme();
   const navigate = useNavigate();
   const [showTypewriter, setShowTypewriter] = useState(false);
@@ -117,12 +115,12 @@ export const LandingPage: React.FC = () => {
             onAnimationComplete={() => setShowTypewriter(true)}
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              {t('landing.hero.title')}
+              {'STEEL™ Risk Assessment Framework'}
             </h1>
             <div className="text-xl md:text-2xl mb-8 text-silver min-h-[2em]">
               {showTypewriter && (
                 <TypewriterText 
-                  text={t('landing.hero.subtitle')} 
+                  text={'A comprehensive cybersecurity intelligence platform that helps organizations understand and manage strategic risk'} 
                   delay={500}
                   speed={10}
                 />
@@ -141,7 +139,7 @@ export const LandingPage: React.FC = () => {
                 onClick={() => navigate('/steel')}
                 className="transform hover:scale-105 transition-transform"
               >
-                {t('landing.hero.cta')}
+                {'Explore STEEL™'}
               </Button>
             </motion.div>
           </motion.div>
@@ -158,10 +156,10 @@ export const LandingPage: React.FC = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold mb-4 dark:text-white">
-              {t('landing.realTimeIntelligence.title')}
+              {'Real-Time Cyber Intelligence'}
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              {t('landing.realTimeIntelligence.subtitle')}
+              {'Monitor threats and risk indicators across all critical dimensions'}
             </p>
           </motion.div>
           
@@ -231,10 +229,10 @@ export const LandingPage: React.FC = () => {
             className="text-center mb-12"
           >
             <motion.h2 variants={item} className="text-3xl font-bold mb-4 dark:text-white steel-title">
-              {t('landing.steelOverview.title')}
+              {'The STEEL™ Methodology'}
             </motion.h2>
             <motion.p variants={item} className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto steel-subtitle">
-              {t('landing.steelOverview.subtitle')}
+              {'Six interconnected dimensions that provide comprehensive risk visibility'}
             </motion.p>
           </motion.div>
           
@@ -323,10 +321,10 @@ export const LandingPage: React.FC = () => {
             className="text-center mb-12"
           >
             <motion.h2 variants={item} className="text-3xl font-bold mb-4 dark:text-white">
-              {t('landing.services.title')}
+              {'ERMITS Ecosystem Products'}
             </motion.h2>
             <motion.p variants={item} className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              {t('landing.services.subtitle')}
+              {'STEEL-powered strategic risk intelligence and advisory services'}
             </motion.p>
           </motion.div>
           
@@ -344,10 +342,10 @@ export const LandingPage: React.FC = () => {
                 className="h-full bg-white dark:bg-dark-card-bg p-6"
               >
                 <h3 className="text-xl font-bold mb-3 dark:text-white card-title">
-                  {t('landing.services.steel.title')}
+                  {'STEEL™ Framework'}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-4 card-text">
-                  {t('landing.services.steel.description')}
+                  {'Comprehensive strategic risk assessment methodology'}
                 </p>
                 <Button
                   variant="outline"

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { 
@@ -33,7 +32,6 @@ ChartJS.register(
 );
 
 export const Dashboard: React.FC = () => {
-  const { t, getNestedTranslation } = useLanguage();
   const { theme } = useTheme();
   const [selectedView, setSelectedView] = useState<'overview' | 'details'>('overview');
 
@@ -47,10 +45,10 @@ export const Dashboard: React.FC = () => {
 
   // Determine risk level based on score
   const getRiskLevel = (score: number) => {
-    if (score < 40) return { level: t('dashboard.riskScore.low'), color: 'text-green-500' };
-    if (score < 60) return { level: t('dashboard.riskScore.medium'), color: 'text-yellow-500' };
-    if (score < 80) return { level: t('dashboard.riskScore.high'), color: 'text-orange-500' };
-    return { level: t('dashboard.riskScore.critical'), color: 'text-red-500' };
+    if (score < 40) return { level: 'Low', color: 'text-green-500' };
+    if (score < 60) return { level: 'Medium', color: 'text-yellow-500' };
+    if (score < 80) return { level: 'High', color: 'text-orange-500' };
+    return { level: 'Critical', color: 'text-red-500' };
   };
 
   const riskLevel = getRiskLevel(overallScore);
@@ -150,7 +148,7 @@ export const Dashboard: React.FC = () => {
     labels: riskDimensions.map(dim => t(`steel.dimensions.${dim.id}.title`)),
     datasets: [
       {
-        label: t('dashboard.radar.title'),
+        label: 'STEEL™ Risk Radar',
         data: riskDimensions.map(dim => dim.value),
         backgroundColor: theme === 'dark' ? 'rgba(0, 75, 135, 0.3)' : 'rgba(0, 75, 135, 0.2)',
         borderColor: theme === 'dark' ? 'rgba(201, 230, 255, 0.8)' : 'rgba(0, 75, 135, 1)',
@@ -245,8 +243,8 @@ export const Dashboard: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           className="pt-16 mb-8"
         >
-          <h1 className="text-3xl font-bold mb-2 dark:text-white">{t('dashboard.title')}</h1>
-          <p className="text-gray-600 dark:text-gray-200">{t('dashboard.subtitle')}</p>
+          <h1 className="text-3xl font-bold mb-2 dark:text-white">{'Executive Dashboard'}</h1>
+          <p className="text-gray-600 dark:text-gray-200">{'Real-time cybersecurity intelligence and strategic insights'}</p>
           
           <div className="flex space-x-4 mt-4">
             <Button 
@@ -277,7 +275,7 @@ export const Dashboard: React.FC = () => {
             transition={{ delay: 0.2 }}
           >
             <Card variant="glass" padding="lg" className="mb-6">
-              <h2 className="text-xl font-semibold mb-4 dark:text-white">{t('dashboard.riskScore.title')}</h2>
+              <h2 className="text-xl font-semibold mb-4 dark:text-white">{'Overall Risk Score'}</h2>
               <div className="flex items-center justify-center mb-4">
                 <div className="relative w-32 h-32">
                   <svg className="w-full h-full" viewBox="0 0 36 36">
@@ -318,7 +316,7 @@ export const Dashboard: React.FC = () => {
                         className="w-3 h-3 rounded-full mr-2" 
                         style={{ backgroundColor: dimension.color }}
                       ></div>
-                      <span className="text-sm dark:text-gray-200">{t(`steel.dimensions.${dimension.id}.title`)}</span>
+                      <span className="text-sm dark:text-gray-200">{dimension.id.charAt(0).toUpperCase() + dimension.id.slice(1)}</span>
                     </div>
                     <div className="flex items-center">
                       <span className="text-sm font-medium mr-1 dark:text-white">{dimension.value}</span>
@@ -338,7 +336,7 @@ export const Dashboard: React.FC = () => {
               initial="hidden"
               animate="show"
             >
-              <h2 className="text-xl font-semibold mb-4 dark:text-white">{t('dashboard.metrics.title')}</h2>
+              <h2 className="text-xl font-semibold mb-4 dark:text-white">{'Key Metrics'}</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {metrics.map((metric) => (
                   <motion.div key={metric.id} variants={item}>
@@ -377,8 +375,8 @@ export const Dashboard: React.FC = () => {
               <Card variant="glass" padding="md">
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h2 className="text-xl font-semibold dark:text-white">{t('dashboard.radar.title')}</h2>
-                    <p className="text-sm text-gray-600 dark:text-gray-200">{t('dashboard.radar.description')}</p>
+                    <h2 className="text-xl font-semibold dark:text-white">{'STEEL™ Risk Radar'}</h2>
+                    <p className="text-sm text-gray-600 dark:text-gray-200">{'Multi-dimensional risk assessment across all STEEL™ dimensions'}</p>
                   </div>
                   <Button 
                     variant="outline" 
@@ -404,7 +402,7 @@ export const Dashboard: React.FC = () => {
                 transition={{ delay: 0.4 }}
               >
                 <Card variant="glass" padding="md">
-                  <h2 className="text-xl font-semibold mb-4 dark:text-white">{t('dashboard.threats.title')}</h2>
+                  <h2 className="text-xl font-semibold mb-4 dark:text-white">{'Threat Intelligence'}</h2>
                   <div className="overflow-x-auto">
                     <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                       <thead>
@@ -456,7 +454,7 @@ export const Dashboard: React.FC = () => {
               transition={{ delay: 0.5 }}
             >
               <Card variant="glass" padding="md">
-                <h2 className="text-xl font-semibold mb-4 dark:text-white">{t('dashboard.actions.title')}</h2>
+                <h2 className="text-xl font-semibold mb-4 dark:text-white">{'Strategic Actions'}</h2>
                 <div className="space-y-4">
                   {strategicActions.map((action, index) => (
                     <div key={index} className="border-b border-gray-100 dark:border-gray-700 last:border-b-0 pb-4 last:pb-0">
@@ -491,7 +489,7 @@ export const Dashboard: React.FC = () => {
         </div>
 
         <div className="mt-6 text-sm text-center text-gray-500 dark:text-gray-400">
-          <p>{t('common.demo')} - {new Date().toLocaleDateString()}</p>
+          <p>{'Demo Mode'} - {new Date().toLocaleDateString()}</p>
         </div>
       </div>
     </div>
