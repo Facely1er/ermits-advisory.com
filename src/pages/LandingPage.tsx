@@ -17,6 +17,7 @@ import vendorSoluceLogo from '../assets/vendorsoluce.png';
 import technoSoluceLogo from '../assets/technosoluce.png';
 import socialCautionLogo from '../assets/socialcaution.png';
 import ermitsAdvisoryLogo from '../assets/ermits-advisory.png';
+import backgroundNodeAnalysis from '../assets/background-node-analysis.png';
 
 export const LandingPage: React.FC = () => {
   const { theme } = useTheme();
@@ -69,11 +70,14 @@ export const LandingPage: React.FC = () => {
     <div>
       {/* Hero Section - Enhanced STEEL Risk Assessment Framework */}
       <section className="relative min-h-[500px] md:min-h-[600px] flex items-center justify-center text-white overflow-hidden">
+        <style>{`
+          .hero-background-image {
+            background-image: url(${backgroundNodeAnalysis});
+          }
+        `}</style>
         {/* Background Image with Enhanced Overlay */}
         <div className="absolute inset-0 z-0">
-          <div 
-            className="absolute inset-0 bg-cover bg-center hero-background-image"
-          />
+          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat hero-background-image" />
           {/* Dark overlay for better text contrast */}
           <div className="absolute inset-0 bg-gradient-to-br from-navy/97 via-navy-dark/94 to-navy/97" />
           {/* Animated gradient overlay for depth */}

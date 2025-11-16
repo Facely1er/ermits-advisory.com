@@ -153,24 +153,24 @@ export const ServiceOffering: React.FC = () => {
     }
   ];
 
-  // PREMIUM ADD-ONS: Professional Advisory Services (On-Demand, Requires Platform)
+  // PRIMARY PRODUCT: Professional Advisory Services
   const premiumAdvisoryServices = [
     {
       id: 'steel-assessment',
       icon: 'shield',
       title: 'STEEL™ Strategic Assessment',
-      description: 'Premium professional assessment with expert analysis and strategic recommendations. Requires active platform subscription.',
+      description: 'Premium professional assessment with expert analysis and strategic recommendations. Optional platform integration available for enhanced delivery.',
       price: '$25K - $125K',
       timeline: '2-8 weeks',
-      requiresPlatform: true,
+      requiresPlatform: false,
       type: 'on-demand-project',
       features: [
-        'Professional STEEL assessment by experts',
+        'Professional STEEL™ assessment by experts',
         'Deep-dive analysis and strategic recommendations',
         'Executive briefing and board presentation',
-        'Platform optimization guidance',
+        'Optional platform integration guidance',
         'Ongoing strategic support',
-        'Requires active platform subscription'
+        'Platform integration available as premium add-on'
       ],
       link: '/pricing'
     },
@@ -178,18 +178,18 @@ export const ServiceOffering: React.FC = () => {
       id: 'vCISO',
       icon: 'user',
       title: 'Strategic vCISO Services',
-      description: 'Premium fractional CISO leadership. Three tiers from strategic advisory to full executive leadership. Requires active platform subscription.',
+      description: 'Premium fractional CISO leadership. Three tiers from strategic advisory to full executive leadership. Optional platform integration enhances efficiency.',
       price: '$8K - $70K/month',
       timeline: 'Ongoing',
-      requiresPlatform: true,
+      requiresPlatform: false,
       type: 'on-demand-retainer',
       features: [
         'Strategic, Operational, or Executive tiers',
-        'Platform-enabled efficiency and orchestration',
+        'Optional platform-enabled efficiency and orchestration',
         'Board presentations and strategic planning',
         'Team leadership and program management',
         '60-70% cost savings vs full-time CISO',
-        'Requires active platform subscription'
+        'Platform integration available as premium add-on'
       ],
       link: '/vciso-kit'
     },
@@ -197,18 +197,18 @@ export const ServiceOffering: React.FC = () => {
       id: 'compliance-advisory',
       icon: 'file',
       title: 'Compliance Advisory',
-      description: 'Premium compliance services with expert guidance. Requires CyberCorrect platform subscription.',
+      description: 'Premium compliance services with expert guidance. Optional CyberCorrect platform integration available for enhanced delivery.',
       price: '$3.5K - $30K',
       timeline: '3-5 weeks or ongoing',
-      requiresPlatform: 'cybercorrect',
+      requiresPlatform: false,
       type: 'on-demand-project',
       features: [
         'Compliance readiness assessment and gap analysis',
         'Audit preparation support and evidence validation',
         'Continuous compliance program with monthly health checks',
         'Expert framework guidance (NIST, ISO 27001, SOC 2, HIPAA, CMMC, PCI-DSS)',
-        'CyberCorrect platform optimization',
-        'Requires CyberCorrect platform subscription'
+        'Optional CyberCorrect platform integration',
+        'Platform integration available as premium add-on'
       ],
       link: '/compliance'
     },
@@ -216,18 +216,18 @@ export const ServiceOffering: React.FC = () => {
       id: 'governance-advisory',
       icon: 'presentation',
       title: 'Governance & Risk Strategy',
-      description: 'Premium governance services with expert program design. Requires CyberSoluce platform subscription.',
+      description: 'Premium governance services with expert program design. Optional CyberSoluce platform integration available for enhanced delivery.',
       price: '$12K - $40K',
       timeline: '3-8 weeks',
-      requiresPlatform: 'cybersoluce',
+      requiresPlatform: false,
       type: 'on-demand-project',
       features: [
         'Security program foundation and organizational design',
         'Risk management program with appetite definition',
         'Board governance framework and reporting',
         'Policy framework architecture (25+ policies)',
-        'CyberSoluce platform optimization',
-        'Requires CyberSoluce platform subscription'
+        'Optional CyberSoluce platform integration',
+        'Platform integration available as premium add-on'
       ],
       link: '/pricing'
     },
@@ -235,18 +235,18 @@ export const ServiceOffering: React.FC = () => {
       id: 'vendor-risk-advisory',
       icon: 'users',
       title: 'Vendor Risk Advisory',
-      description: 'Premium vendor risk services with expert program design. Requires VendorSoluce platform subscription.',
+      description: 'Premium vendor risk services with expert program design. Optional VendorSoluce platform integration available for enhanced delivery.',
       price: '$5K - $35K',
       timeline: '3-5 weeks or per vendor',
-      requiresPlatform: 'vendorsoluce',
+      requiresPlatform: false,
       type: 'on-demand-project',
       features: [
         'Vendor risk program design and framework development',
         'Critical vendor security assessments and validation',
         'Supply chain risk strategy and portfolio optimization',
         'Vendor classification and tiering methodology',
-        'VendorSoluce platform optimization',
-        'Requires VendorSoluce platform subscription'
+        'Optional VendorSoluce platform integration',
+        'Platform integration available as premium add-on'
       ],
       link: '/pricing'
     },
@@ -254,18 +254,18 @@ export const ServiceOffering: React.FC = () => {
       id: 'incident-response',
       icon: 'shield',
       title: 'Incident Response Advisory',
-      description: 'Premium crisis leadership and response planning. Requires active platform subscription.',
+      description: 'Premium crisis leadership and response planning. Optional platform integration available for enhanced response workflows.',
       price: '$12K - $100K',
       timeline: '3-6 weeks or crisis response',
-      requiresPlatform: true,
+      requiresPlatform: false,
       type: 'on-demand-crisis',
       features: [
         'Incident response plan development and playbook creation',
         'Tabletop exercise facilitation and scenario planning',
         'Crisis leadership and breach response support',
         'Stakeholder communication and regulatory notification',
-        'Platform-enabled response workflows',
-        'Requires active platform subscription'
+        'Optional platform-enabled response workflows',
+        'Platform integration available as premium add-on'
       ],
       link: '/pricing'
     }
@@ -367,14 +367,14 @@ export const ServiceOffering: React.FC = () => {
       id: 'expertPartnership',
       icon: <Users size={24} className="text-navy dark:text-silver" />,
       title: 'Expert Partnership',
-      description: 'Advisory insights become operational tools through ERMITS platform integration, not just recommendations',
+      description: 'Advisory insights can be enhanced through optional ERMITS platform integration, transforming recommendations into operational tools',
       link: 'View ecosystem'
     },
     {
       id: 'frameworkIntegration',
       icon: <FileText size={24} className="text-navy dark:text-silver" />,
       title: 'Framework Integration',
-      description: 'Unified ecosystem approach vs fragmented point solutions, with 80-90% implementation rate vs typical 30-40%',
+      description: 'Optional platform integration enables unified ecosystem approach vs fragmented point solutions, supporting higher implementation success rates',
       link: 'See integration'
     }
   ];
@@ -439,17 +439,17 @@ export const ServiceOffering: React.FC = () => {
               className="mb-6"
             >
               <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium text-silver">
-                <Server size={16} className="mr-2" />
-                Self-Service Platform Suite
+                <Shield size={16} className="mr-2" />
+                Professional Advisory Services
               </span>
             </motion.div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
               <span className="bg-gradient-to-r from-white via-silver to-white bg-clip-text text-transparent">
-                ERMITS Platform Services
+                ERMITS Advisory Services
               </span>
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-silver/90 max-w-3xl mx-auto leading-relaxed">
-              Start with our self-service platforms. Add expert guidance when you need it. Transform cybersecurity operations with STEEL-powered intelligence and automated workflows.
+              Expert strategic guidance powered by STEEL™ methodology. Professional advisory services that transform assessment into actionable implementation, with optional platform integration for enhanced delivery.
             </p>
           </motion.div>
         </div>
@@ -510,9 +510,9 @@ export const ServiceOffering: React.FC = () => {
           className="mb-16"
         >
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">The ERMITS Platform Advantage</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">The ERMITS Advisory Advantage</h2>
             <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              Self-service platforms with premium expert guidance when you need it
+              Strategic expertise powered by STEEL™ methodology, with optional platform integration for enhanced delivery
             </p>
           </div>
           
@@ -578,82 +578,7 @@ export const ServiceOffering: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* PRIMARY PRODUCT: Platform Services */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="mb-16"
-        >
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-sm font-semibold mb-4">
-              <Zap size={16} className="mr-2" />
-              PRIMARY PRODUCT
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">ERMITS Platform Suite</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              Self-service cybersecurity platforms with limited professional setup assistance included
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {platformServices.map((platform) => (
-              <Card key={platform.id} variant="glass" padding="lg" className="h-full hover:shadow-xl transition-shadow border-2 border-green-200 dark:border-green-800">
-                <div className="flex flex-col h-full">
-                  <div className="flex items-start mb-4">
-                    <div className="p-3 rounded-full bg-green-100 dark:bg-green-900/30 mr-4">
-                      {getServiceIcon(platform.icon)}
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-xs font-semibold text-green-600 dark:text-green-400 mb-1">PLATFORM</div>
-                      <h3 className="text-xl font-bold mb-1 dark:text-white">
-                        {platform.name}
-                      </h3>
-                      <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
-                        {platform.title}
-                      </p>
-                      <div className="flex items-center gap-2 text-xs bg-blue-50 dark:bg-blue-900/20 px-2 py-1 rounded">
-                        <Clock size={12} className="text-blue-600 dark:text-blue-400" />
-                        <span className="text-blue-700 dark:text-blue-300 font-medium">{platform.setupAssistance}</span>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <p className="text-gray-600 dark:text-gray-200 mb-4 flex-grow text-sm">
-                    {platform.description}
-                  </p>
-                  
-                  <div className="mb-4">
-                    <h4 className="text-sm font-semibold mb-2 text-navy dark:text-silver">Key Features:</h4>
-                    <ul className="space-y-2">
-                      {platform.features.map((feature, index) => (
-                        <li key={index} className="flex items-start text-sm">
-                          <CheckCircle size={16} className="text-green-500 mt-0.5 mr-2 flex-shrink-0" />
-                          <span className="text-gray-600 dark:text-gray-300">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <div className="mt-auto pt-4 border-t border-gray-200 dark:border-gray-700">
-                    <Button 
-                      variant="primary" 
-                      size="sm"
-                      icon={<ArrowRight size={16} />}
-                      iconPosition="right"
-                      onClick={() => navigate(platform.link)}
-                      className="w-full"
-                    >
-                      Get Started
-                    </Button>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* PREMIUM ADD-ONS: Professional Advisory Services */}
+        {/* PRIMARY PRODUCT: Professional Advisory Services */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -663,11 +588,11 @@ export const ServiceOffering: React.FC = () => {
           <div className="text-center mb-12">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 text-sm font-semibold mb-4">
               <Sparkles size={16} className="mr-2" />
-              PREMIUM ADD-ONS
+              PRIMARY PRODUCT
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">Professional Advisory Services</h2>
             <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              On-demand expert guidance and strategic leadership. Available to platform subscribers.
+              Expert strategic guidance and leadership services. Our advisory services are offered independently and can be enhanced with optional platform integration for improved delivery efficiency.
             </p>
           </div>
           
@@ -681,12 +606,7 @@ export const ServiceOffering: React.FC = () => {
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="text-xs font-semibold text-purple-600 dark:text-purple-400">PREMIUM</span>
-                        {service.requiresPlatform && (
-                          <span className="text-xs bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400 px-2 py-0.5 rounded font-medium">
-                            Requires Platform
-                          </span>
-                        )}
+                        <span className="text-xs font-semibold text-purple-600 dark:text-purple-400">PROFESSIONAL</span>
                       </div>
                       <h3 className="text-xl font-bold mb-2 dark:text-white">
                         {service.title}
@@ -701,11 +621,6 @@ export const ServiceOffering: React.FC = () => {
                           {service.timeline}
                         </span>
                       </div>
-                      {service.requiresPlatform && typeof service.requiresPlatform === 'string' && (
-                        <div className="text-xs text-purple-600 dark:text-purple-400 font-medium">
-                          Requires {service.requiresPlatform.charAt(0).toUpperCase() + service.requiresPlatform.slice(1)} subscription
-                        </div>
-                      )}
                     </div>
                   </div>
                   
@@ -766,17 +681,28 @@ export const ServiceOffering: React.FC = () => {
           
           <div className="text-center mt-12">
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Professional advisory services require an active platform subscription
+              Professional advisory services are offered independently. Platform integration is available as an optional premium add-on to enhance service delivery.
             </p>
-            <Button 
-              variant="outline" 
-              size="lg"
-              onClick={() => navigate('/pricing')}
-              icon={<DollarSign size={20} />}
-              iconPosition="right"
-            >
-              View Complete Pricing Guide
-            </Button>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button 
+                variant="outline" 
+                size="lg"
+                onClick={() => navigate('/pricing')}
+                icon={<DollarSign size={20} />}
+                iconPosition="right"
+              >
+                View Complete Pricing Guide
+              </Button>
+              <Button 
+                variant="primary" 
+                size="lg"
+                onClick={() => navigate('/ecosystem')}
+                icon={<Layers size={20} />}
+                iconPosition="right"
+              >
+                Explore Platform Ecosystem
+              </Button>
+            </div>
           </div>
         </motion.div>
 

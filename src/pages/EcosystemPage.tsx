@@ -130,9 +130,14 @@ export const EcosystemPage: React.FC = () => {
               <p className="text-xl md:text-2xl mb-4 text-silver">
                 Integrated Security Platforms That Transform Strategy Into Operations
               </p>
-              <p className="text-lg mb-8 text-silver">
+              <p className="text-lg mb-4 text-silver">
                 Six powerful platforms working together: CyberCaution™ for threats, CyberCorrect™ for compliance, CyberSoluce™ for governance, VendorSoluce™ for supply chain security, TechnoSoluce™ for technology operations, and CyberCertitude™ for certification and assurance.
               </p>
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-4 mb-8 max-w-3xl mx-auto">
+                <p className="text-sm text-silver/90 leading-relaxed">
+                  <strong className="text-white">Note:</strong> These platforms are offered independently and can be used standalone. They also serve as supporting tools for ERMITS Advisory Professional Services, with optional STEEL™ integration available as a premium add-on to enhance advisory delivery and implementation success.
+                </p>
+              </div>
               
               <div className="flex flex-wrap justify-center gap-4">
                 <Button 
@@ -150,7 +155,7 @@ export const EcosystemPage: React.FC = () => {
           </Card>
         </motion.div>
 
-        {/* Ecosystem Components */}
+        {/* Platform Services - Standalone and Advisory Support */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -159,7 +164,100 @@ export const EcosystemPage: React.FC = () => {
         >
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              Platform Ecosystem
+              Platform Services
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto mb-4">
+              Self-service platforms offered independently. These platforms can also serve as supporting tools for ERMITS Advisory Professional Services.
+            </p>
+            <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 max-w-3xl mx-auto">
+              <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                <strong className="text-navy dark:text-white">Platform Integration with Advisory:</strong> When used with ERMITS Advisory services, these platforms enhance delivery efficiency and implementation success. Optional STEEL™ integration is available as a premium add-on to connect strategic assessments with platform operations.
+              </p>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {[
+              {
+                id: 'cybercaution',
+                title: 'CyberCaution™',
+                description: 'Threat Intelligence Platform - Real-time threat monitoring and intelligence for continuous security awareness',
+                icon: <AlertCircle size={32} className="text-red-500" />
+              },
+              {
+                id: 'cybercorrect',
+                title: 'CyberCorrect™',
+                description: 'Compliance Automation Platform - Automated compliance management and evidence collection for continuous compliance monitoring',
+                icon: <FileCheck size={32} className="text-green-500" />
+              },
+              {
+                id: 'cybersoluce',
+                title: 'CyberSoluce™',
+                description: 'Governance & Risk Management Platform - Unified governance and workflow management for security operations',
+                icon: <Settings size={32} className="text-purple-500" />
+              },
+              {
+                id: 'vendorsoluce',
+                title: 'VendorSoluce™',
+                description: 'Vendor Risk Management Platform - Comprehensive vendor risk management and supply chain security',
+                icon: <Network size={32} className="text-orange-500" />
+              },
+              {
+                id: 'technosoluce',
+                title: 'TechnoSoluce™',
+                description: 'Technology Risk Management Platform - Technology operations and IT risk management for infrastructure and systems security',
+                icon: <Server size={32} className="text-blue-500" />
+              },
+              {
+                id: 'steel',
+                title: 'STEEL™ Assessment',
+                description: 'Strategic Risk Assessment Tool - Self-service STEEL™ framework assessment with automated scoring and platform recommendations',
+                icon: <Shield size={32} className="text-navy dark:text-silver" />
+              }
+            ].map((platform, index) => (
+              <motion.div
+                key={platform.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 + (index * 0.1) }}
+              >
+                <Card className="h-full p-6 hover:shadow-lg transition-shadow">
+                  <div className="flex items-start mb-4">
+                    <div className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 mr-4">
+                      {platform.icon}
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-bold mb-2 dark:text-white">
+                        {platform.title}
+                      </h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">
+                        {platform.description}
+                      </p>
+                    </div>
+                  </div>
+                  <button 
+                    onClick={() => navigate(platform.id === 'steel' ? '/steel' : `/${platform.id}`)}
+                    className="text-navy dark:text-silver font-medium hover:underline text-sm flex items-center mt-4"
+                  >
+                    Learn More
+                    <ArrowRight size={14} className="ml-1" />
+                  </button>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Ecosystem Components */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="mb-16"
+        >
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
+              Platform Ecosystem Overview
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
               Six integrated platforms that automate security operations and transform strategic recommendations into operational reality
@@ -358,9 +456,14 @@ export const EcosystemPage: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
               How ERMITS Advisory Connects to Platform Implementation
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Strategic intelligence from ERMITS Advisory becomes automated operations through the platform ecosystem
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-4">
+              Strategic intelligence from ERMITS Advisory can be enhanced through optional platform integration, transforming recommendations into automated operations
             </p>
+            <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4 max-w-3xl mx-auto">
+              <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                <strong className="text-navy dark:text-white">Note:</strong> ERMITS Advisory services are offered independently. Platform integration is an optional premium add-on that enhances service delivery and implementation success. STEEL™ integration connects strategic assessments with platform operations.
+              </p>
+            </div>
           </div>
 
           <Card className="p-8 mb-8">
