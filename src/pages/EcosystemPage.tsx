@@ -32,7 +32,13 @@ export const EcosystemPage: React.FC = () => {
       description: 'Real-time threat monitoring and intelligence platform for continuous security awareness',
       link: '/cybercaution',
       color: 'from-red-500 to-red-600',
-      logo: cyberCautionLogo
+      logo: cyberCautionLogo,
+      integration: {
+        advisoryIdentifies: 'High threat exposure',
+        advisoryConfigures: 'Real-time monitoring',
+        platformDelivers: 'Continuous threat intelligence',
+        result: '24/7 threat awareness and alerts'
+      }
     },
     {
       id: 'cyberCorrect',
@@ -41,7 +47,13 @@ export const EcosystemPage: React.FC = () => {
       description: 'Automated compliance management and evidence collection for continuous compliance monitoring',
       link: '/cybercorrect',
       color: 'from-green-500 to-green-600',
-      logo: cyberCorrectLogo
+      logo: cyberCorrectLogo,
+      integration: {
+        advisoryIdentifies: 'Compliance gaps',
+        advisoryConfigures: 'Remediation plan',
+        platformDelivers: 'Evidence collection',
+        result: 'Continuous compliance monitoring'
+      }
     },
     {
       id: 'cyberSoluce',
@@ -50,7 +62,13 @@ export const EcosystemPage: React.FC = () => {
       description: 'Unified governance and workflow management platform for security operations',
       link: '/cybersoluce',
       color: 'from-purple-500 to-purple-600',
-      logo: cyberSoluceLogo
+      logo: cyberSoluceLogo,
+      integration: {
+        advisoryIdentifies: 'Governance framework',
+        advisoryConfigures: 'Workflows and policies',
+        platformDelivers: 'Automated processes',
+        result: 'Unified risk management'
+      }
     },
     {
       id: 'vendorSoluce',
@@ -59,7 +77,13 @@ export const EcosystemPage: React.FC = () => {
       description: 'Comprehensive vendor risk management and supply chain security platform',
       link: '/vendorsoluce',
       color: 'from-orange-500 to-orange-600',
-      logo: vendorSoluceLogo
+      logo: vendorSoluceLogo,
+      integration: {
+        advisoryIdentifies: 'Vendor risk approach',
+        advisoryConfigures: 'Assessment process',
+        platformDelivers: 'Vendor portfolio',
+        result: 'Continuous vendor monitoring'
+      }
     },
     {
       id: 'technoSoluce',
@@ -68,7 +92,13 @@ export const EcosystemPage: React.FC = () => {
       description: 'Technology operations and IT risk management platform for infrastructure and systems security',
       link: '/technosoluce',
       color: 'from-blue-500 to-blue-600',
-      logo: technoSoluceLogo
+      logo: technoSoluceLogo,
+      integration: {
+        advisoryIdentifies: 'Technology infrastructure risks',
+        advisoryConfigures: 'IT operations framework',
+        platformDelivers: 'Infrastructure and systems security',
+        result: 'Continuous technology risk monitoring'
+      }
     },
     {
       id: 'cyberCertitude',
@@ -77,7 +107,13 @@ export const EcosystemPage: React.FC = () => {
       description: 'Certification and assurance platform for security validation and confidence verification',
       link: '/cybercertitude',
       color: 'from-yellow-500 to-orange-600',
-      logo: cyberCertitudeLogo
+      logo: cyberCertitudeLogo,
+      integration: {
+        advisoryIdentifies: 'Security posture and controls',
+        advisoryConfigures: 'Certification readiness',
+        platformDelivers: 'Assurance and validation services',
+        result: 'Certified security confidence'
+      }
     }
   ];
 
@@ -181,14 +217,15 @@ export const EcosystemPage: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 + (index * 0.1) }}
+                className="group"
               >
                 <InteractiveCard 
                   hover3D={true}
                   glowEffect={true}
-                  className="h-full bg-white dark:bg-dark-surface p-6 cursor-pointer"
+                  className="h-full bg-white dark:bg-dark-surface p-6 cursor-pointer overflow-hidden"
                   onClick={() => navigate(component.link)}
                 >
-                  <div className="flex items-start">
+                  <div className="flex items-start mb-4">
                     {component.logo ? (
                       <div className="mr-4 flex-shrink-0">
                         <img 
@@ -209,12 +246,24 @@ export const EcosystemPage: React.FC = () => {
                       <p className="text-gray-600 dark:text-gray-200 mb-4">
                         {component.description}
                       </p>
-                      <button className="text-navy dark:text-silver font-medium hover:underline text-sm flex items-center transition-colors">
-                        Learn More
-                        <ArrowRight size={14} className="ml-1" />
-                      </button>
                     </div>
                   </div>
+                  
+                  {/* Integration Details - Shown on hover */}
+                  <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p className="text-xs font-semibold text-navy dark:text-silver mb-2 uppercase tracking-wide">Integration with Advisory</p>
+                    <div className="space-y-1.5 text-xs text-gray-600 dark:text-gray-400">
+                      <p><strong className="text-navy dark:text-white">Advisory identifies:</strong> {component.integration.advisoryIdentifies}</p>
+                      <p><strong className="text-navy dark:text-white">Advisory configures:</strong> {component.integration.advisoryConfigures}</p>
+                      <p><strong className="text-navy dark:text-white">{component.title} delivers:</strong> {component.integration.platformDelivers}</p>
+                      <p><strong className="text-navy dark:text-white">Result:</strong> {component.integration.result}</p>
+                    </div>
+                  </div>
+                  
+                  <button className="text-navy dark:text-silver font-medium hover:underline text-sm flex items-center transition-colors mt-4">
+                    Learn More
+                    <ArrowRight size={14} className="ml-1" />
+                  </button>
                 </InteractiveCard>
               </motion.div>
             ))}
@@ -376,138 +425,105 @@ export const EcosystemPage: React.FC = () => {
             </div>
           </div>
 
-          <Card className="p-8 mb-8">
-            <div className="max-w-5xl mx-auto">
-              {/* Integration Flow */}
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-navy/10 dark:bg-silver/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Search size={32} className="text-navy dark:text-silver" />
+          <Card className="p-8 mb-8 bg-gradient-to-br from-white to-gray-50 dark:from-dark-surface dark:to-dark-bg">
+            <div className="max-w-6xl mx-auto">
+              {/* Enhanced Integration Flow */}
+              <div className="relative">
+                {/* Top Row - First 3 Steps */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                  <motion.div 
+                    className="text-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 }}
+                  >
+                    <div className="w-24 h-24 bg-gradient-to-br from-navy to-navy-dark rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg luxury-glass">
+                      <Search size={40} className="text-white" />
+                    </div>
+                    <h3 className="font-bold text-xl mb-2 dark:text-white">ERMITS Advisory</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                      Strategic assessment and recommendations
+                    </p>
+                  </motion.div>
+                  
+                  <div className="hidden md:flex items-center justify-center -mt-8">
+                    <motion.div
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: 1 }}
+                      transition={{ delay: 0.3, duration: 0.5 }}
+                    >
+                      <ArrowRight size={40} className="text-navy dark:text-silver" />
+                    </motion.div>
                   </div>
-                  <h3 className="font-bold text-lg mb-2 dark:text-white">ERMITS Advisory</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Strategic assessment and recommendations
-                  </p>
-                </div>
-                <div className="flex items-center justify-center">
-                  <ArrowRight size={32} className="text-navy dark:text-silver hidden md:block" />
-                  <ArrowDown size={32} className="text-navy dark:text-silver md:hidden" />
-                </div>
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-navy/10 dark:bg-silver/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Target size={32} className="text-navy dark:text-silver" />
+                  
+                  <motion.div 
+                    className="text-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                  >
+                    <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg luxury-glass">
+                      <Target size={40} className="text-white" />
+                    </div>
+                    <h3 className="font-bold text-xl mb-2 dark:text-white">Platform Selection</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                      Maps findings to platform solutions
+                    </p>
+                  </motion.div>
+                  
+                  <div className="md:hidden flex items-center justify-center my-4">
+                    <ArrowDown size={32} className="text-navy dark:text-silver" />
                   </div>
-                  <h3 className="font-bold text-lg mb-2 dark:text-white">Platform Selection</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Maps findings to platform solutions
-                  </p>
+                  
+                  <motion.div 
+                    className="text-center md:col-start-3"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                  >
+                    <div className="w-24 h-24 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg luxury-glass">
+                      <Rocket size={40} className="text-white" />
+                    </div>
+                    <h3 className="font-bold text-xl mb-2 dark:text-white">Platform Implementation</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                      Automated tools deployed
+                    </p>
+                  </motion.div>
                 </div>
-                <div className="flex items-center justify-center">
-                  <ArrowRight size={32} className="text-navy dark:text-silver hidden md:block" />
-                  <ArrowDown size={32} className="text-navy dark:text-silver md:hidden" />
+                
+                {/* Arrow Down */}
+                <div className="flex items-center justify-center mb-6">
+                  <motion.div
+                    initial={{ scaleY: 0 }}
+                    animate={{ scaleY: 1 }}
+                    transition={{ delay: 0.4, duration: 0.5 }}
+                  >
+                    <ArrowDown size={40} className="text-navy dark:text-silver" />
+                  </motion.div>
                 </div>
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-navy/10 dark:bg-silver/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Rocket size={32} className="text-navy dark:text-silver" />
+                
+                {/* Bottom Step - Ongoing Optimization */}
+                <motion.div 
+                  className="text-center max-w-md mx-auto"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 }}
+                >
+                  <div className="w-24 h-24 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg luxury-glass">
+                    <Layers size={40} className="text-white" />
                   </div>
-                  <h3 className="font-bold text-lg mb-2 dark:text-white">Platform Implementation</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Automated tools deployed
-                  </p>
-                </div>
-                <div className="flex items-center justify-center md:col-start-1 md:col-span-4 mt-4">
-                  <ArrowDown size={32} className="text-navy dark:text-silver" />
-                </div>
-                <div className="text-center md:col-start-2 md:col-span-2">
-                  <div className="w-20 h-20 bg-navy/10 dark:bg-silver/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Layers size={32} className="text-navy dark:text-silver" />
-                  </div>
-                  <h3 className="font-bold text-lg mb-2 dark:text-white">Ongoing Optimization</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                  <h3 className="font-bold text-xl mb-2 dark:text-white">Ongoing Optimization</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                     Continuous platform optimization and maturity growth
                   </p>
-                </div>
+                </motion.div>
               </div>
-
-              {/* Platform Integration Examples */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-                <Card className="p-6">
-                  <div className="flex items-center mb-4">
-                    <AlertCircle size={24} className="text-red-500 mr-3" />
-                    <h3 className="text-xl font-bold dark:text-white">CyberCaution™ Integration</h3>
-                  </div>
-                  <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                    <p><strong className="text-navy dark:text-white">Advisory identifies:</strong> High threat exposure</p>
-                    <p><strong className="text-navy dark:text-white">Advisory configures:</strong> Real-time monitoring</p>
-                    <p><strong className="text-navy dark:text-white">CyberCaution™ delivers:</strong> Continuous threat intelligence</p>
-                    <p><strong className="text-navy dark:text-white">Result:</strong> 24/7 threat awareness and alerts</p>
-                  </div>
-                </Card>
-
-                <Card className="p-6">
-                  <div className="flex items-center mb-4">
-                    <FileCheck size={24} className="text-green-500 mr-3" />
-                    <h3 className="text-xl font-bold dark:text-white">CyberCorrect™ Integration</h3>
-                  </div>
-                  <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                    <p><strong className="text-navy dark:text-white">Advisory defines:</strong> Compliance gaps</p>
-                    <p><strong className="text-navy dark:text-white">Advisory builds:</strong> Remediation plan</p>
-                    <p><strong className="text-navy dark:text-white">CyberCorrect™ automates:</strong> Evidence collection</p>
-                    <p><strong className="text-navy dark:text-white">Result:</strong> Continuous compliance monitoring</p>
-                  </div>
-                </Card>
-
-                <Card className="p-6">
-                  <div className="flex items-center mb-4">
-                    <Settings size={24} className="text-purple-500 mr-3" />
-                    <h3 className="text-xl font-bold dark:text-white">CyberSoluce™ Integration</h3>
-                  </div>
-                  <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                    <p><strong className="text-navy dark:text-white">Advisory establishes:</strong> Governance framework</p>
-                    <p><strong className="text-navy dark:text-white">Advisory designs:</strong> Workflows and policies</p>
-                    <p><strong className="text-navy dark:text-white">CyberSoluce™ implements:</strong> Automated processes</p>
-                    <p><strong className="text-navy dark:text-white">Result:</strong> Unified risk management</p>
-                  </div>
-                </Card>
-
-                <Card className="p-6">
-                  <div className="flex items-center mb-4">
-                    <Database size={24} className="text-orange-500 mr-3" />
-                    <h3 className="text-xl font-bold dark:text-white">VendorSoluce™ Integration</h3>
-                  </div>
-                  <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                    <p><strong className="text-navy dark:text-white">Advisory defines:</strong> Vendor risk approach</p>
-                    <p><strong className="text-navy dark:text-white">Advisory guides:</strong> Assessment process</p>
-                    <p><strong className="text-navy dark:text-white">VendorSoluce™ manages:</strong> Vendor portfolio</p>
-                    <p><strong className="text-navy dark:text-white">Result:</strong> Continuous vendor monitoring</p>
-                  </div>
-                </Card>
-
-                <Card className="p-6">
-                  <div className="flex items-center mb-4">
-                    <Server size={24} className="text-blue-500 mr-3" />
-                    <h3 className="text-xl font-bold dark:text-white">TechnoSoluce™ Integration</h3>
-                  </div>
-                  <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                    <p><strong className="text-navy dark:text-white">Advisory assesses:</strong> Technology infrastructure risks</p>
-                    <p><strong className="text-navy dark:text-white">Advisory designs:</strong> IT operations framework</p>
-                    <p><strong className="text-navy dark:text-white">TechnoSoluce™ manages:</strong> Infrastructure and systems security</p>
-                    <p><strong className="text-navy dark:text-white">Result:</strong> Continuous technology risk monitoring</p>
-                  </div>
-                </Card>
-
-                <Card className="p-6">
-                  <div className="flex items-center mb-4">
-                    <Shield size={24} className="text-yellow-500 mr-3" />
-                    <h3 className="text-xl font-bold dark:text-white">CyberCertitude™ Integration</h3>
-                  </div>
-                  <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                    <p><strong className="text-navy dark:text-white">Advisory validates:</strong> Security posture and controls</p>
-                    <p><strong className="text-navy dark:text-white">Advisory prepares:</strong> Certification readiness</p>
-                    <p><strong className="text-navy dark:text-white">CyberCertitude™ provides:</strong> Assurance and validation services</p>
-                    <p><strong className="text-navy dark:text-white">Result:</strong> Certified security confidence</p>
-                  </div>
-                </Card>
+              
+              {/* Info Note */}
+              <div className="mt-8 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
+                <p className="text-sm text-gray-700 dark:text-gray-300 text-center leading-relaxed">
+                  <strong className="text-navy dark:text-white">💡 Tip:</strong> Hover over any platform card above to see detailed integration information with ERMITS Advisory services.
+                </p>
               </div>
             </div>
           </Card>
