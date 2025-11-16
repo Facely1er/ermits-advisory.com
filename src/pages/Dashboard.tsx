@@ -26,7 +26,7 @@ import {
   generateInsights,
   generateRecommendations
 } from '../services/steelAssessmentService';
-import { SteelAssessmentData, SteelFactor } from '../types/steelAssessment';
+import { SteelAssessmentData } from '../types/steelAssessment';
 import { SteelResultsSummary } from '../components/steel/SteelResultsSummary';
 import { SteelDataImport } from '../components/steel/SteelDataImport';
 
@@ -139,6 +139,26 @@ export const Dashboard: React.FC = () => {
   };
 
   const riskLevel = getRiskLevel(overallScore);
+
+  // Get Tailwind color class for dimension
+  const getDimensionColorClass = (dimensionId: string): string => {
+    switch (dimensionId.toLowerCase()) {
+      case 'political':
+        return 'bg-purple-500';
+      case 'economic':
+        return 'bg-emerald-500';
+      case 'social':
+        return 'bg-cyan-500';
+      case 'technological':
+        return 'bg-orange-500';
+      case 'environmental':
+        return 'bg-green-500';
+      case 'legal':
+        return 'bg-red-500';
+      default:
+        return 'bg-gray-500';
+    }
+  };
 
   // Trend icon based on trend direction
   const getTrendIcon = (trend: 'up' | 'down' | 'stable') => {
@@ -463,21 +483,22 @@ export const Dashboard: React.FC = () => {
             <Card variant="glass" padding="md">
               <h3 className="font-semibold mb-3 dark:text-white">Risk Dimensions</h3>
               <div className="space-y-4">
-                {displayRiskDimensions.map((dimension) => (
-                  <div key={dimension.id} className="flex items-center justify-between">
-                    <div className="flex items-center">
-                      <div 
-                        className="w-3 h-3 rounded-full mr-2" 
-                        style={{ backgroundColor: dimension.color }}
-                      ></div>
-                      <span className="text-sm dark:text-gray-200">{dimension.id.charAt(0).toUpperCase() + dimension.id.slice(1)}</span>
-                    </div>
+                {displayRiskDimensions.map((dimension) => {
+                  return (
+                    <div key={dimension.id} className="flex items-center justify-between">
+                      <div className="flex items-center">
+                        <div 
+                          className={`w-3 h-3 rounded-full mr-2 ${getDimensionColorClass(dimension.id)}`}
+                        ></div>
+                        <span className="text-sm dark:text-gray-200">{dimension.id.charAt(0).toUpperCase() + dimension.id.slice(1)}</span>
+                      </div>
                     <div className="flex items-center">
                       <span className="text-sm font-medium mr-1 dark:text-white">{dimension.value}</span>
                       {getTrendIcon(dimension.trend)}
                     </div>
                   </div>
-                ))}
+                  );
+                })}
               </div>
             </Card>
           </motion.div>

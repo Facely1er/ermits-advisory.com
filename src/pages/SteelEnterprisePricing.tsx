@@ -530,7 +530,7 @@ export const SteelEnterprisePricing: React.FC = () => {
                 View Professional Pricing
                 <ArrowRight size={18} className="ml-2" />
               </Button>
-              <Button variant="outline" onClick={() => navigate('/steel/index.html')}>
+              <Button variant="outline" onClick={() => window.open('/steel/index.html', '_blank')}>
                 Try Free Assessment
               </Button>
             </div>

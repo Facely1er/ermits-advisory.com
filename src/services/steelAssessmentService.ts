@@ -278,24 +278,30 @@ export function watchSteelStorage(
   callback: (data: SteelAssessmentData | null) => void
 ): () => void {
   // Listen for custom events
-  const handleStorageEvent = (event: CustomEvent) => {
-    callback(event.detail);
+  const handleStorageEvent = (event: Event) => {
+    const customEvent = event as CustomEvent<SteelAssessmentData | null>;
+    callback(customEvent.detail);
   };
 
   // Listen for storage events from other tabs/windows
   const handleStorageChange = (event: StorageEvent) => {
     if (event.key === STORAGE_KEY) {
-      const data = event.newValue ? JSON.parse(event.newValue) : null;
-      callback(data);
+      try {
+        const data = event.newValue ? JSON.parse(event.newValue) : null;
+        callback(data);
+      } catch (error) {
+        console.error('Error parsing storage event data:', error);
+        callback(null);
+      }
     }
   };
 
-  window.addEventListener(STORAGE_EVENT_KEY as any, handleStorageEvent);
+  window.addEventListener(STORAGE_EVENT_KEY, handleStorageEvent);
   window.addEventListener('storage', handleStorageChange);
 
   // Return cleanup function
   return () => {
-    window.removeEventListener(STORAGE_EVENT_KEY as any, handleStorageEvent);
+    window.removeEventListener(STORAGE_EVENT_KEY, handleStorageEvent);
     window.removeEventListener('storage', handleStorageChange);
   };
 }
