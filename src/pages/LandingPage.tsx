@@ -68,7 +68,7 @@ export const LandingPage: React.FC = () => {
   return (
     <div>
       {/* Hero Section - Enhanced STEEL Risk Assessment Framework */}
-      <section className="relative min-h-[650px] md:min-h-[750px] flex items-center justify-center text-white overflow-hidden">
+      <section className="relative min-h-[500px] md:min-h-[600px] flex items-center justify-center text-white overflow-hidden">
         {/* Background Image with Enhanced Overlay */}
         <div className="absolute inset-0 z-0">
           <div 
