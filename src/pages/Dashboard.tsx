@@ -372,10 +372,10 @@ export const Dashboard: React.FC = () => {
               <div className="text-center py-8">
                 <Shield size={48} className="mx-auto mb-4 text-gray-400 dark:text-gray-500" />
                 <h3 className="text-xl font-semibold dark:text-white mb-2">
-                  No STEEL Assessment Data
+                  No STEEL™ Assessment Data
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
-                  Complete the STEEL assessment to view your personalized risk scores and recommendations in the dashboard.
+                  Complete the STEEL™ assessment to view your personalized risk scores and recommendations in the dashboard.
                 </p>
                 <div className="flex gap-4 justify-center flex-wrap">
                   <Button
@@ -383,7 +383,7 @@ export const Dashboard: React.FC = () => {
                     onClick={() => window.open('/steel/index.html', '_blank')}
                     icon={<LinkIcon size={18} />}
                   >
-                    Take STEEL Assessment
+                    Take STEEL™ Assessment
                   </Button>
                   <Button
                     variant="outline"

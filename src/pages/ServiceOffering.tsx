@@ -25,7 +25,7 @@ export const ServiceOffering: React.FC = () => {
       id: 'modeling',
       icon: <Activity size={32} className="text-navy dark:text-silver" />,
       title: 'Risk Modeling',
-      description: 'STEEL framework analysis across all six dimensions to quantify risk exposure'
+      description: 'STEEL™ framework analysis across all six dimensions to quantify risk exposure'
     },
     {
       id: 'synthesis',
@@ -136,13 +136,13 @@ export const ServiceOffering: React.FC = () => {
     {
       id: 'steel-tool',
       icon: 'shield',
-      name: 'STEEL Assessment Tool',
+      name: 'STEEL™ Assessment Tool',
       title: 'Strategic Risk Assessment Tool',
-      description: 'Self-service STEEL framework assessment tool with automated scoring and platform recommendations.',
+      description: 'Self-service STEEL™ framework assessment tool with automated scoring and platform recommendations.',
       setupAssistance: 'Self-service',
       premiumSetup: 'Professional review available',
       features: [
-        'Automated STEEL scoring across 6 dimensions',
+        'Automated STEEL™ scoring across 6 dimensions',
         'Platform recommendations based on results',
         'Self-service assessment workflow',
         'Executive-ready reports',
@@ -158,7 +158,7 @@ export const ServiceOffering: React.FC = () => {
     {
       id: 'steel-assessment',
       icon: 'shield',
-      title: 'STEEL Strategic Assessment',
+      title: 'STEEL™ Strategic Assessment',
       description: 'Premium professional assessment with expert analysis and strategic recommendations. Requires active platform subscription.',
       price: '$25K - $125K',
       timeline: '2-8 weeks',
@@ -353,8 +353,8 @@ export const ServiceOffering: React.FC = () => {
       id: 'predictiveIntelligence',
       icon: <Lightbulb size={24} className="text-navy dark:text-silver" />,
       title: 'Predictive Intelligence',
-      description: 'STEEL scoring system provides unique quantified risk methodology with measurable before/after metrics',
-      link: 'Learn more about STEEL'
+      description: 'STEEL™ scoring system provides unique quantified risk methodology with measurable before/after metrics',
+      link: 'Learn more about STEEL™'
     },
     {
       id: 'enhancedPestel',
@@ -496,7 +496,7 @@ export const ServiceOffering: React.FC = () => {
             <Card variant="glass" className="text-center h-full">
               <h3 className="text-4xl font-bold text-navy dark:text-white mb-2">Proven Framework</h3>
               <p className="text-gray-600 dark:text-gray-200">
-                STEEL methodology for strategic risk assessment
+                STEEL™ methodology for strategic risk assessment
               </p>
             </Card>
           </motion.div>

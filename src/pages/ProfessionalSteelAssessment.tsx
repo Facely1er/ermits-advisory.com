@@ -37,7 +37,7 @@ export const ProfessionalSteelAssessment: React.FC = () => {
               Professional Assessment Access Required
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-8">
-              The Professional STEEL Assessment includes ERMITS platform integration, advanced
+              The Professional STEEL™ Assessment includes ERMITS platform integration, advanced
               analytics, and enterprise features. Upgrade to access these capabilities.
             </p>
             <div className="flex gap-4 justify-center">

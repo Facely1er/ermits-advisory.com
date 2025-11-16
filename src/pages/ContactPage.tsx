@@ -41,9 +41,9 @@ export const ContactPage: React.FC = () => {
   // Service options for quote requests
   const serviceOptions = [
     { value: '', label: 'Select a service...' },
-    { value: 'rapid-steel', label: 'Rapid STEEL Assessment' },
-    { value: 'comprehensive-steel', label: 'Comprehensive STEEL Assessment' },
-    { value: 'industry-steel', label: 'Industry-Specific STEEL Assessment' },
+    { value: 'rapid-steel', label: 'Rapid STEEL™ Assessment' },
+    { value: 'comprehensive-steel', label: 'Comprehensive STEEL™ Assessment' },
+    { value: 'industry-steel', label: 'Industry-Specific STEEL™ Assessment' },
     { value: 'compliance-readiness', label: 'Compliance Readiness' },
     { value: 'audit-preparation', label: 'Audit Preparation' },
     { value: 'strategic-vciso', label: 'Strategic Advisory vCISO' },

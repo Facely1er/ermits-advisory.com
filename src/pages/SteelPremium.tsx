@@ -287,7 +287,7 @@ export const SteelPremium: React.FC = () => {
           className="text-center"
         >
           <Link to="/steel" className="text-navy dark:text-silver hover:underline inline-flex items-center gap-2">
-            ← Back to STEEL Assessment
+            ← Back to STEEL™ Assessment
           </Link>
         </motion.div>
       </div>

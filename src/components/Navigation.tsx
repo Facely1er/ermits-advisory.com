@@ -5,7 +5,7 @@ import { useTheme } from '../contexts/ThemeContext';
 import { Button } from './shared/Button';
 import {
   Sun, Moon, Menu, X,
-  Home, Briefcase, Mail, Users, Lightbulb, Shield, Layers, DollarSign, Focus, ChevronDown, Radar
+  Home, Briefcase, Mail, Users, Lightbulb, Shield, Layers, DollarSign, Focus, ChevronDown, BarChart
 } from 'lucide-react';
 import logoImg from '../assets/ermits-advisory.png';
 import { cn } from '../utils/cn';
@@ -48,9 +48,9 @@ export const Navigation: React.FC = () => {
     setIsMoreOpen(false);
   }, [location.pathname]);
 
-  // Check if any STEEL/Radar route is active
+  // Check if any STEEL/Dashboard route is active
   const isSteelRadarActive = location.pathname === '/steel' || 
-                             location.pathname === '/risk-radar' ||
+                             location.pathname === '/dashboard' ||
                              location.pathname.startsWith('/steel/');
 
   const navLinks = [
@@ -62,14 +62,12 @@ export const Navigation: React.FC = () => {
   const moreItems = [
     { to: '/about', label: 'About', icon: <Users size={16} /> },
     { to: '/ecosystem', label: 'Ecosystem', icon: <Layers size={16} /> },
-    { to: '/dashboard', label: 'Dashboard', icon: <Lightbulb size={16} /> },
-    { to: '/presentation', label: 'Presentation', icon: <Lightbulb size={16} /> },
   ];
 
   const steelRadarItems = [
     { to: '/steel', label: 'STEEL™ Framework', icon: <Shield size={16} /> },
-    { to: '/risk-radar', label: 'Risk Radar', icon: <Radar size={16} /> },
-    { href: '/steel/index.html', label: 'STEEL Assessment', icon: <Shield size={16} />, external: true },
+    { to: '/dashboard', label: 'Dashboard', icon: <BarChart size={16} /> },
+    { href: '/steel/index.html', label: 'STEEL™ Assessment', icon: <Shield size={16} />, external: true },
   ];
 
   return (
@@ -116,7 +114,7 @@ export const Navigation: React.FC = () => {
                   )}
                 >
                   <span className="mr-1.5"><Shield size={16} /></span>
-                  STEEL & Radar
+                  STEEL™
                   <ChevronDown 
                     size={14} 
                     className={cn(
@@ -317,10 +315,10 @@ export const Navigation: React.FC = () => {
                 </NavLink>
               ))}
               
-              {/* STEEL & Radar Section - Mobile */}
+              {/* STEEL™ Section - Mobile */}
               <div className="pt-2 pb-1">
                 <div className="px-3 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                  STEEL & Radar
+                  STEEL™
                 </div>
                 {steelRadarItems.map((item) => {
                   if (item.external) {

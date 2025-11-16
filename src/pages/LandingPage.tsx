@@ -289,7 +289,7 @@ export const LandingPage: React.FC = () => {
                     <span className="text-sm font-semibold text-navy dark:text-white">Week 1-3</span>
                   </div>
                   <h3 className="text-xl font-bold text-navy dark:text-white mb-3">
-                    STEEL Assessment
+                    STEEL™ Assessment
                   </h3>
                 </div>
                 <ul className="text-left space-y-2 text-sm text-gray-600 dark:text-gray-400 mb-4">
@@ -682,7 +682,7 @@ export const LandingPage: React.FC = () => {
                     <span className="text-sm font-semibold text-navy dark:text-white">Week 1-3</span>
                   </div>
                   <h3 className="text-xl font-bold text-navy dark:text-white mb-3">
-                    STEEL Assessment
+                    STEEL™ Assessment
                   </h3>
                 </div>
                 <ul className="text-left space-y-2 text-sm text-gray-600 dark:text-gray-400 mb-4">

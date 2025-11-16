@@ -457,7 +457,7 @@ export const SteelEnterprisePricing: React.FC = () => {
                   rows={5}
                   value={formData.requirements}
                   onChange={handleChange}
-                  placeholder="Tell us about your organization's needs, specific requirements, and how you plan to use STEEL Professional..."
+                  placeholder="Tell us about your organization's needs, specific requirements, and how you plan to use STEEL™ Professional..."
                   className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-dark-card-bg text-gray-900 dark:text-white focus:ring-2 focus:ring-navy dark:focus:ring-gold focus:border-transparent resize-none"
                 />
               </div>
@@ -522,7 +522,7 @@ export const SteelEnterprisePricing: React.FC = () => {
               Not ready for Enterprise? Start with Professional
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
-              Get started with STEEL Professional for a one-time purchase. Upgrade to Enterprise
+              Get started with STEEL™ Professional for a one-time purchase. Upgrade to Enterprise
               anytime for advanced features.
             </p>
             <div className="flex gap-4 justify-center">
