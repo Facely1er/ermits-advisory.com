@@ -5,9 +5,9 @@ import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { 
   Shield, Search, Users, UserCheck, CheckCircle, ArrowRight, 
-  Mail, Phone, MapPin, Presentation, Activity, Lightbulb,
+  Mail, MapPin, Presentation, Activity, Lightbulb,
   BarChart2, FileText, DollarSign, Clock, Server, Database,
-  Layers, Network, Sparkles, Download, Zap
+  Layers, Network, Sparkles, Download
 } from 'lucide-react';
 
 export const ServiceOffering: React.FC = () => {
@@ -38,118 +38,6 @@ export const ServiceOffering: React.FC = () => {
       icon: <Presentation size={32} className="text-navy dark:text-silver" />,
       title: 'Executive Briefing',
       description: 'Board-ready presentations with clear priorities and implementation pathways'
-    }
-  ];
-  
-  // PRIMARY PRODUCT: Platform Services (Self-Service)
-  const platformServices = [
-    {
-      id: 'cybercaution',
-      icon: 'shield',
-      name: 'CyberCaution',
-      title: 'Threat Intelligence Platform',
-      description: 'Self-service threat intelligence and risk monitoring platform with automated alerts and risk scoring.',
-      setupAssistance: '2-4 hours included',
-      premiumSetup: 'Additional hours available',
-      features: [
-        'Real-time threat intelligence feeds',
-        'Automated risk scoring and alerts',
-        'STEEL dimension monitoring',
-        'Self-service dashboard and reporting',
-        'Limited professional setup assistance (2-4 hours)',
-        'Premium setup assistance available'
-      ],
-      link: '/cybercaution'
-    },
-    {
-      id: 'cybercorrect',
-      icon: 'file',
-      name: 'CyberCorrect',
-      title: 'Compliance Automation Platform',
-      description: 'Self-service compliance management platform with automated evidence collection and framework support.',
-      setupAssistance: '2-4 hours included',
-      premiumSetup: 'Additional hours available',
-      features: [
-        'Multi-framework support (NIST, ISO 27001, SOC 2, HIPAA, CMMC, PCI-DSS)',
-        'Automated evidence collection',
-        'Compliance dashboards and reporting',
-        'Self-service workflow configuration',
-        'Limited professional setup assistance (2-4 hours)',
-        'Premium setup assistance available'
-      ],
-      link: '/cybercorrect'
-    },
-    {
-      id: 'cybersoluce',
-      icon: 'presentation',
-      name: 'CyberSoluce',
-      title: 'Governance & Risk Management Platform',
-      description: 'Self-service governance, risk, and policy management platform with board-ready reporting.',
-      setupAssistance: '2-4 hours included',
-      premiumSetup: 'Additional hours available',
-      features: [
-        'Risk management workflows',
-        'Policy lifecycle management',
-        'Board-ready executive dashboards',
-        'Self-service program configuration',
-        'Limited professional setup assistance (2-4 hours)',
-        'Premium setup assistance available'
-      ],
-      link: '/cybersoluce'
-    },
-    {
-      id: 'vendorsoluce',
-      icon: 'users',
-      name: 'VendorSoluce',
-      title: 'Vendor Risk Management Platform',
-      description: 'Self-service vendor risk assessment and monitoring platform with supply chain visibility.',
-      setupAssistance: '2-4 hours included',
-      premiumSetup: 'Additional hours available',
-      features: [
-        'Vendor risk assessments and scoring',
-        'Supply chain risk monitoring',
-        'Vendor portfolio management',
-        'Self-service workflow automation',
-        'Limited professional setup assistance (2-4 hours)',
-        'Premium setup assistance available'
-      ],
-      link: '/vendorsoluce'
-    },
-    {
-      id: 'technosoluce',
-      icon: 'server',
-      name: 'TechnoSoluce',
-      title: 'Technology Risk Management Platform',
-      description: 'Self-service technology risk and SBOM management platform with component vulnerability tracking.',
-      setupAssistance: '2-4 hours included',
-      premiumSetup: 'Additional hours available',
-      features: [
-        'SBOM risk and component vulnerability management',
-        'Technology stack risk assessment',
-        'Component vulnerability prioritization',
-        'Self-service technology risk workflows',
-        'Limited professional setup assistance (2-4 hours)',
-        'Premium setup assistance available'
-      ],
-      link: '/technosoluce'
-    },
-    {
-      id: 'steel-tool',
-      icon: 'shield',
-      name: 'STEEL™ Assessment Tool',
-      title: 'Strategic Risk Assessment Tool',
-      description: 'Self-service STEEL™ framework assessment tool with automated scoring and platform recommendations.',
-      setupAssistance: 'Self-service',
-      premiumSetup: 'Professional review available',
-      features: [
-        'Automated STEEL™ scoring across 6 dimensions',
-        'Platform recommendations based on results',
-        'Self-service assessment workflow',
-        'Executive-ready reports',
-        'Self-service (no setup required)',
-        'Premium professional review available'
-      ],
-      link: '/steel'
     }
   ];
 

@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { InteractiveCard } from '../components/shared/InteractiveCard';
 import { InteractiveSTEELViz } from '../components/interactive/InteractiveSTEELViz';
 import { 
   Users, 
-  Info, ArrowRight, ExternalLink, Download,
-  Lightbulb, BarChart2, FileText, Search, Activity, Presentation
+  Info, ArrowRight, ExternalLink, Download, Link as LinkIcon,
+  Lightbulb, BarChart2, FileText, Search, Activity, Presentation, Shield
 } from 'lucide-react';
-// import { steelDimensions } from '../data/mockData';
+import backgroundNodeAnalysis from '../assets/background-node-analysis.png';
+import { getSteelAssessmentFromStorage, watchSteelStorage } from '../services/steelAssessmentService';
+import { SteelAssessmentData } from '../types/steelAssessment';
 
 export const STEELVisualization: React.FC = () => {
   const navigate = useNavigate();
+  const [assessmentData, setAssessmentData] = useState<SteelAssessmentData | null>(null);
+  const [showTutorial, setShowTutorial] = useState(false);
   // const [selectedDimension, setSelectedDimension] = useState<string | null>(null);
   
   // const handleDimensionClick = (id: string) => {
@@ -38,6 +41,19 @@ export const STEELVisualization: React.FC = () => {
   //       return null;
   //   }
   // };
+
+  // Load assessment data
+  useEffect(() => {
+    const data = getSteelAssessmentFromStorage();
+    setAssessmentData(data);
+    
+    // Watch for changes
+    const unwatch = watchSteelStorage((newData) => {
+      setAssessmentData(newData);
+    });
+    
+    return unwatch;
+  }, []);
 
   // Integration steps for animation
   const integrationSteps = [
@@ -111,43 +127,84 @@ export const STEELVisualization: React.FC = () => {
 
   return (
     <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
-      <div className="container mx-auto px-4">
-        {/* Enhanced Hero Section */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-16"
-        >
-          <Card variant="solid" padding="lg" className="bg-navy text-white">
-            <div className="text-center max-w-4xl mx-auto">
-              <h1 className="text-3xl md:text-5xl font-bold mb-4">STEEL™ Strategic Risk Assessment</h1>
-              <p className="text-xl md:text-2xl mb-4 text-silver">
-                Beyond Traditional PESTEL Analysis
-              </p>
-              <p className="text-lg mb-8 text-silver">
-                A cybersecurity-focused strategic environment assessment framework
-              </p>
-              
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button
-                  variant="secondary"
-                  size="lg"
-                  icon={<ArrowRight size={18} />}
-                  iconPosition="right"
-                  onClick={() => window.location.href = '/steel/index.html'}
-                  className="transform hover:scale-105 transition-transform"
-                >
-                  Start Free Assessment
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-white text-white hover:bg-white/10 transform hover:scale-105 transition-transform"
-                  onClick={() => navigate('/contact')}
-                >
-                  Schedule Consultation
-                </Button>
-                <Button
+      {/* Hero Section with Background Image */}
+      <section className="relative min-h-[500px] md:min-h-[600px] flex items-center justify-center text-white overflow-hidden mb-16">
+        <style>{`
+          .steel-hero-background {
+            background-image: url(${backgroundNodeAnalysis});
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+          }
+        `}</style>
+        {/* Background Image with Enhanced Overlay */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 steel-hero-background" />
+          {/* Dark overlay for better text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-br from-navy/90 via-navy-dark/85 to-navy/90" />
+          {/* Animated gradient overlay for depth */}
+          <motion.div 
+            className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-blue-500/10"
+            animate={{
+              opacity: [0.3, 0.5, 0.3],
+              x: ['-50%', '50%', '-50%'],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: 'easeInOut'
+            }}
+          />
+        </div>
+
+        {/* Content */}
+        <div className="container mx-auto px-4 relative z-10 max-w-6xl">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            {/* Badge/Tagline */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-400/40 bg-gradient-to-r from-cyan-500/20 via-slate-900/80 to-transparent backdrop-blur-sm text-cyan-200 text-sm uppercase tracking-wider mb-6 shadow-lg"
+            >
+              <Shield size={16} className="text-cyan-400" />
+              <span className="font-semibold">STEEL™</span>
+              <span className="text-xs">Strategic Threat & Enterprise Evaluation Layer</span>
+            </motion.div>
+
+            <h1 className="text-3xl md:text-5xl font-bold mb-4">STEEL™ Strategic Risk Assessment</h1>
+            <p className="text-xl md:text-2xl mb-4 text-silver/90">
+              Beyond Traditional PESTEL Analysis
+            </p>
+            <p className="text-lg mb-8 text-silver/80 max-w-3xl mx-auto">
+              A cybersecurity-focused strategic environment assessment framework that maps geopolitical, cyber, privacy, and supply-chain exposure to actionable implementation tools.
+            </p>
+            
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button
+                variant="secondary"
+                size="lg"
+                icon={<ArrowRight size={18} />}
+                iconPosition="right"
+                onClick={() => window.location.href = '/steel/index.html'}
+                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold px-8 py-4 rounded-xl shadow-2xl hover:shadow-cyan-500/50 transition-all transform hover:-translate-y-1 hover:scale-105"
+              >
+                Start Free Assessment
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-2 border-white/30 text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm font-semibold px-8 py-4 rounded-xl transition-all transform hover:-translate-y-1"
+                onClick={() => navigate('/contact')}
+              >
+                Schedule Consultation
+              </Button>
+              <Button
                   variant="outline"
                   size="lg"
                   className="border-white text-white hover:bg-white/10 transform hover:scale-105 transition-transform"
@@ -166,10 +223,11 @@ export const STEELVisualization: React.FC = () => {
                   Download Methodology
                 </Button>
               </div>
-            </div>
-          </Card>
-        </motion.div>
+            </motion.div>
+          </div>
+        </section>
 
+      <div className="container mx-auto px-4">
         {/* What Makes STEEL Different Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -266,29 +324,101 @@ export const STEELVisualization: React.FC = () => {
             >
               <div className="text-center mb-8">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">STEEL™ Risk Assessment Framework</h2>
-                <p className="text-lg text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
+                <p className="text-lg text-gray-600 dark:text-gray-100 max-w-3xl mx-auto mb-4">
                   An innovative approach to cybersecurity risk assessment that extends traditional PESTEL analysis with cybersecurity-specific factors
                 </p>
+                
+                {/* Role Explanation */}
+                <div className="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 p-4 rounded-lg max-w-4xl mx-auto text-left mb-6">
+                  <div className="flex items-start">
+                    <Info size={24} className="text-blue-500 mr-3 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-200 mb-2">
+                        How This Visualization Works
+                      </h3>
+                      <p className="text-sm text-blue-800 dark:text-blue-300 mb-2">
+                        This interactive visualization displays your STEEL™ assessment results in an intuitive, visual format. 
+                        {assessmentData ? (
+                          <> Your current assessment scores are shown below. Click on any dimension to explore detailed insights and recommendations.</>
+                        ) : (
+                          <> Complete the STEEL™ assessment to see your personalized risk scores visualized here. The tool will automatically update when you finish your assessment.</>
+                        )}
+                      </p>
+                      <p className="text-sm text-blue-800 dark:text-blue-300">
+                        <strong>Role in the Assessment Process:</strong> This visualization serves as a bridge between your assessment responses and actionable insights. 
+                        It helps you understand risk exposure across all six dimensions, prioritize areas for improvement, and track your progress over time.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
               
               {/* Interactive STEEL Visualization */}
-              <InteractiveSTEELViz />
+              <InteractiveSTEELViz 
+                assessmentData={assessmentData}
+                useRealData={true}
+                showTutorial={showTutorial}
+                onTutorialComplete={() => setShowTutorial(false)}
+              />
 
-              {/* Call to Action for Assessment */}
-              <div className="mt-8 text-center">
-                <p className="text-lg text-gray-600 dark:text-gray-100 mb-4">
-                  Ready to assess your organization's strategic threat environment?
-                </p>
-                <Button
-                  variant="primary"
-                  size="lg"
-                  icon={<ArrowRight size={18} />}
-                  iconPosition="right"
-                  onClick={() => window.location.href = '/steel/index.html'}
-                  className="transform hover:scale-105 transition-transform"
-                >
-                  Take the Free STEEL Assessment
-                </Button>
+              {/* Assessment Status and Actions */}
+              <div className="mt-8">
+                {assessmentData ? (
+                  <div className="text-center space-y-4">
+                    <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4">
+                      <p className="text-green-800 dark:text-green-200 font-semibold mb-2">
+                        ✓ Assessment Complete
+                      </p>
+                      <p className="text-sm text-green-700 dark:text-green-300 mb-4">
+                        Your assessment was completed on {new Date(assessmentData.timestamp).toLocaleDateString()}. 
+                        View your full results and recommendations in the dashboard.
+                      </p>
+                      <div className="flex flex-wrap justify-center gap-3">
+                        <Button
+                          variant="primary"
+                          size="md"
+                          icon={<ArrowRight size={16} />}
+                          iconPosition="right"
+                          onClick={() => navigate('/dashboard')}
+                          className="transform hover:scale-105 transition-transform"
+                        >
+                          View Dashboard
+                        </Button>
+                        <Button
+                          variant="outline"
+                          size="md"
+                          icon={<LinkIcon size={16} />}
+                          iconPosition="right"
+                          onClick={() => window.location.href = '/steel/index.html'}
+                        >
+                          Retake Assessment
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="text-center space-y-4">
+                    <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg p-4">
+                      <p className="text-amber-800 dark:text-amber-200 font-semibold mb-2">
+                        No Assessment Data Found
+                      </p>
+                      <p className="text-sm text-amber-700 dark:text-amber-300 mb-4">
+                        Complete the STEEL™ assessment to see your personalized risk scores visualized here. 
+                        The visualization will automatically update with your results.
+                      </p>
+                      <Button
+                        variant="primary"
+                        size="lg"
+                        icon={<ArrowRight size={18} />}
+                        iconPosition="right"
+                        onClick={() => window.location.href = '/steel/index.html'}
+                        className="transform hover:scale-105 transition-transform"
+                      >
+                        Take the Free STEEL Assessment
+                      </Button>
+                    </div>
+                  </div>
+                )}
               </div>
             </InteractiveCard>
           </motion.div>

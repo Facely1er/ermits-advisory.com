@@ -8,7 +8,7 @@ import { InteractiveCard } from '../components/shared/InteractiveCard';
 import { HeroCarousel } from '../components/shared/HeroCarousel';
 import { ArrowRight, CheckCircle, Zap, Eye, Target, Calendar, Layers, Rocket, Search, Shield } from 'lucide-react';
 import { LiveMetrics } from '../components/interactive/LiveMetrics';
-import backgroundNodeAnalysis from '../assets/background-node-analysis.png';
+import heroBackground from '../assets/background.jpg';
 
 export const LandingPage: React.FC = () => {
   const { theme } = useTheme();
@@ -63,8 +63,8 @@ export const LandingPage: React.FC = () => {
       <section className="relative min-h-[500px] md:min-h-[600px] flex items-center justify-center text-white overflow-hidden">
         <style>{`
           .hero-background-image {
-            background-image: url(${backgroundNodeAnalysis});
-            background-size: 100% 100%;
+            background-image: url(${heroBackground});
+            background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
           }
@@ -72,17 +72,17 @@ export const LandingPage: React.FC = () => {
         {/* Background Image with Enhanced Overlay */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 hero-background-image" />
-          {/* Dark overlay for better text contrast */}
-          <div className="absolute inset-0 bg-gradient-to-br from-navy/97 via-navy-dark/94 to-navy/97" />
-          {/* Animated gradient overlay for depth */}
+          {/* Dark overlay for better text contrast - lighter to show padlock/network diagram */}
+          <div className="absolute inset-0 bg-gradient-to-br from-navy/85 via-navy-dark/80 to-navy/85" />
+          {/* Subtle animated glow on padlock/connections */}
           <motion.div 
-            className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-blue-500/10"
+            className="absolute inset-0 bg-gradient-to-r from-cyan-500/15 via-transparent to-blue-500/15"
             animate={{
-              opacity: [0.3, 0.5, 0.3],
-              x: ['-50%', '50%', '-50%'],
+              opacity: [0.2, 0.4, 0.2],
+              scale: [1, 1.05, 1],
             }}
             transition={{
-              duration: 8,
+              duration: 6,
               repeat: Infinity,
               ease: 'easeInOut'
             }}
@@ -224,7 +224,7 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Live Metrics Section - Real-Time Intelligence */}
+      {/* STEEL™ Live Metrics Section */}
       <section className="py-16 bg-silver-light dark:bg-dark-surface">
         <div className="container mx-auto px-4 max-w-7xl">
           <motion.div
@@ -233,14 +233,14 @@ export const LandingPage: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <div className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-2">
-              Intelligence
+            <div className="text-xs uppercase tracking-[0.2em] text-cyan-400 mb-2">
+              STEEL™ Radar
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              {'Real-Time Cyber Intelligence'}
+              Real-Time Risk Intelligence
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              {'Monitor threats and risk indicators across all critical dimensions'}
+              Monitor enterprise risk indicators across PESTEL dimensions with live STEEL™ metrics
             </p>
           </motion.div>
           
