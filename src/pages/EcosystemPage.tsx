@@ -115,12 +115,10 @@ export const EcosystemPage: React.FC = () => {
         >
           <Card variant="solid" padding="lg" className="bg-navy text-white">
             <div className="text-center max-w-4xl mx-auto">
-              {/* Ecosystem Logo Placeholder */}
+              {/* Ecosystem Logo */}
               <div className="mb-6 flex justify-center">
                 <div className="w-32 h-32 bg-white/10 rounded-full flex items-center justify-center">
-                  {/* Replace with actual logo image when available */}
-                  {/* <img src={ecosystemLogo} alt="ERMITS Ecosystem" className="w-24 h-24 object-contain" /> */}
-                  <Layers size={64} className="text-white opacity-80" />
+                  <img src={ermitsAdvisoryLogo} alt="ERMITS Ecosystem" className="w-24 h-24 object-contain" />
                 </div>
               </div>
               
@@ -155,7 +153,7 @@ export const EcosystemPage: React.FC = () => {
           </Card>
         </motion.div>
 
-        {/* Platform Services - Standalone and Advisory Support */}
+        {/* Platform Ecosystem */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -164,104 +162,16 @@ export const EcosystemPage: React.FC = () => {
         >
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              Platform Services
+              Platform Ecosystem
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto mb-4">
-              Self-service platforms offered independently. These platforms can also serve as supporting tools for ERMITS Advisory Professional Services.
+              Six integrated platforms that automate security operations and transform strategic recommendations into operational reality. These platforms are offered independently and can be used standalone, or serve as supporting tools for ERMITS Advisory Professional Services.
             </p>
             <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 max-w-3xl mx-auto">
               <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
                 <strong className="text-navy dark:text-white">Platform Integration with Advisory:</strong> When used with ERMITS Advisory services, these platforms enhance delivery efficiency and implementation success. Optional STEEL™ integration is available as a premium add-on to connect strategic assessments with platform operations.
               </p>
             </div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {[
-              {
-                id: 'cybercaution',
-                title: 'CyberCaution™',
-                description: 'Threat Intelligence Platform - Real-time threat monitoring and intelligence for continuous security awareness',
-                icon: <AlertCircle size={32} className="text-red-500" />
-              },
-              {
-                id: 'cybercorrect',
-                title: 'CyberCorrect™',
-                description: 'Compliance Automation Platform - Automated compliance management and evidence collection for continuous compliance monitoring',
-                icon: <FileCheck size={32} className="text-green-500" />
-              },
-              {
-                id: 'cybersoluce',
-                title: 'CyberSoluce™',
-                description: 'Governance & Risk Management Platform - Unified governance and workflow management for security operations',
-                icon: <Settings size={32} className="text-purple-500" />
-              },
-              {
-                id: 'vendorsoluce',
-                title: 'VendorSoluce™',
-                description: 'Vendor Risk Management Platform - Comprehensive vendor risk management and supply chain security',
-                icon: <Network size={32} className="text-orange-500" />
-              },
-              {
-                id: 'technosoluce',
-                title: 'TechnoSoluce™',
-                description: 'Technology Risk Management Platform - Technology operations and IT risk management for infrastructure and systems security',
-                icon: <Server size={32} className="text-blue-500" />
-              },
-              {
-                id: 'steel',
-                title: 'STEEL™ Assessment',
-                description: 'Strategic Risk Assessment Tool - Self-service STEEL™ framework assessment with automated scoring and platform recommendations',
-                icon: <Shield size={32} className="text-navy dark:text-silver" />
-              }
-            ].map((platform, index) => (
-              <motion.div
-                key={platform.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 + (index * 0.1) }}
-              >
-                <Card className="h-full p-6 hover:shadow-lg transition-shadow">
-                  <div className="flex items-start mb-4">
-                    <div className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 mr-4">
-                      {platform.icon}
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-bold mb-2 dark:text-white">
-                        {platform.title}
-                      </h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">
-                        {platform.description}
-                      </p>
-                    </div>
-                  </div>
-                  <button 
-                    onClick={() => navigate(platform.id === 'steel' ? '/steel' : `/${platform.id}`)}
-                    className="text-navy dark:text-silver font-medium hover:underline text-sm flex items-center mt-4"
-                  >
-                    Learn More
-                    <ArrowRight size={14} className="ml-1" />
-                  </button>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Ecosystem Components */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="mb-16"
-        >
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              Platform Ecosystem Overview
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              Six integrated platforms that automate security operations and transform strategic recommendations into operational reality
-            </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
