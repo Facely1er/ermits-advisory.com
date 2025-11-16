@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STEEL™ Assessment Platform | ERMITS Advisory</title>
-    <meta name="description" content="Strategic Threat Environment Evaluation Landscape - Executive cybersecurity assessment">
+    <meta name="description" content="Strategic Threat & Enterprise Evaluation Layer - Executive cybersecurity assessment">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"
             integrity="sha384-OLC6/1yTVzBU7Rq/W0LE7mUh1kc+A/o2jlV3G+3FpYAL/RYmBnl/lBqz/R05W2zn"
             crossorigin="anonymous"></script>
@@ -79,62 +80,73 @@
             z-index: 1;
         }
 
-        .orbital-logo {
-            width: 100px;
-            height: 100px;
-            position: relative;
+        .logo-container {
+            width: 120px;
+            height: 120px;
             margin: 0 auto 25px;
             z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .orbital-ring {
-            position: absolute;
-            border: 4px solid var(--gold);
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 20px rgba(255, 215, 0, 0.3));
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-fallback {
+            display: none;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #004B87 0%, #003366 100%);
             border-radius: 50%;
-            opacity: 0.8;
+            align-items: center;
+            justify-content: center;
+            color: #FFD700;
+            font-weight: 700;
+            font-size: 1.2em;
+            text-align: center;
+            line-height: 120px;
         }
 
-        .orbital-ring:nth-child(1) { 
-            width: 90px; 
-            height: 90px; 
-            top: 5px; 
-            left: 5px; 
-            animation: rotate 20s linear infinite; 
-        }
-        .orbital-ring:nth-child(2) { 
-            width: 70px; 
-            height: 35px; 
-            top: 32px; 
-            left: 15px; 
-            transform: rotateX(60deg); 
-            animation: rotate 15s linear infinite reverse; 
-        }
-        .orbital-ring:nth-child(3) { 
-            width: 60px; 
-            height: 30px; 
-            top: 35px; 
-            left: 20px; 
-            transform: rotateX(-60deg); 
-            animation: rotate 18s linear infinite; 
-        }
-
-        .orbital-core {
+        .back-to-site {
             position: absolute;
-            width: 24px;
-            height: 24px;
-            background: radial-gradient(circle, var(--gold) 0%, var(--gold-dark) 100%);
-            border-radius: 50%;
-            top: 38px;
-            left: 38px;
-            box-shadow: 0 0 30px var(--gold), 0 0 60px rgba(255,215,0,0.5);
-            animation: glow 3s ease-in-out infinite;
+            top: 20px;
+            left: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.15);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            z-index: 10;
         }
 
-        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        
-        @keyframes glow {
-            0%, 100% { box-shadow: 0 0 30px var(--gold), 0 0 60px rgba(255,215,0,0.5); }
-            50% { box-shadow: 0 0 50px var(--gold), 0 0 100px rgba(255,215,0,0.8); }
+        .back-to-site:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateX(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-site i {
+            width: 18px;
+            height: 18px;
         }
 
         h1 { 
@@ -222,13 +234,26 @@
         .hero-feature-icon {
             width: 50px;
             height: 50px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.15);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5em;
             margin-bottom: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .hero-feature-icon svg {
+            width: 24px;
+            height: 24px;
+            color: white;
+        }
+
+        .hero-feature:hover .hero-feature-icon {
+            background: rgba(255,255,255,0.25);
+            transform: scale(1.1);
         }
         .hero-feature-text {
             font-size: 0.95em;
@@ -731,25 +756,28 @@
             .hero-cta-primary, .hero-cta-secondary { width: 100%; max-width: 300px; padding: 16px 30px; font-size: 1em; }
             .hero-features { gap: 20px; margin-top: 30px; }
             .hero-feature-text { font-size: 0.85em; }
-            .hero-feature-icon { width: 40px; height: 40px; font-size: 1.2em; }
-            .orbital-logo { width: 80px; height: 80px; }
-            .orbital-ring:nth-child(1) { width: 70px; height: 70px; }
-            .orbital-core { width: 20px; height: 20px; top: 30px; left: 30px; }
+            .hero-feature-icon { width: 40px; height: 40px; }
+            .hero-feature-icon svg { width: 20px; height: 20px; }
+            .logo-container { width: 100px; height: 100px; }
+            .back-to-site { top: 15px; left: 15px; padding: 10px 18px; font-size: 0.85em; }
+            .back-to-site i { width: 16px; height: 16px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
+            <a href="/" class="back-to-site">
+                <i data-lucide="arrow-left"></i>
+                <span>Back to Main Site</span>
+            </a>
             <div class="header-content">
-                <div class="orbital-logo">
-                    <div class="orbital-ring"></div>
-                    <div class="orbital-ring"></div>
-                    <div class="orbital-ring"></div>
-                    <div class="orbital-core"></div>
+                <div class="logo-container">
+                    <img src="../ermits-advisory-logo.png" alt="ERMITS Advisory Logo" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                    <div class="logo-fallback">EA</div>
                 </div>
                 <h1>STEEL™ Assessment Platform</h1>
-                <div class="subtitle">Strategic Threat Environment Evaluation Landscape</div>
+                <div class="subtitle">Strategic Threat & Enterprise Evaluation Layer</div>
                 <div class="tagline">"Global Insights, Streamlined for Resilience"</div>
                 <p class="hero-description">
                     Transform your cybersecurity strategy with a comprehensive PESTEL-based assessment that evaluates Political, Economic, Social, Technological, Environmental, and Legal factors. Get board-ready insights in 30 minutes with our free, privacy-first assessment platform. Aligned with ISO 31000, COSO ERM, NIST CSF 2.0, and ISO/IEC 27001 frameworks.
@@ -767,23 +795,33 @@
 
                 <div class="hero-features">
                     <div class="hero-feature">
-                        <div class="hero-feature-icon">✓</div>
+                        <div class="hero-feature-icon">
+                            <i data-lucide="check-circle"></i>
+                        </div>
                         <div class="hero-feature-text">100% Free</div>
                     </div>
                     <div class="hero-feature">
-                        <div class="hero-feature-icon">🔒</div>
+                        <div class="hero-feature-icon">
+                            <i data-lucide="lock"></i>
+                        </div>
                         <div class="hero-feature-text">Privacy-First</div>
                     </div>
                     <div class="hero-feature">
-                        <div class="hero-feature-icon">⏱️</div>
+                        <div class="hero-feature-icon">
+                            <i data-lucide="clock"></i>
+                        </div>
                         <div class="hero-feature-text">30 Minutes</div>
                     </div>
                     <div class="hero-feature">
-                        <div class="hero-feature-icon">📊</div>
+                        <div class="hero-feature-icon">
+                            <i data-lucide="bar-chart-3"></i>
+                        </div>
                         <div class="hero-feature-text">Board-Ready Reports</div>
                     </div>
                     <div class="hero-feature">
-                        <div class="hero-feature-icon">🌐</div>
+                        <div class="hero-feature-icon">
+                            <i data-lucide="globe"></i>
+                        </div>
                         <div class="hero-feature-text">Framework Aligned</div>
                     </div>
                 </div>
@@ -2369,6 +2407,13 @@
                 showTab('overview');
             }
         }
+
+        // Initialize Lucide icons
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
     </script>
 </body>
 </html>
