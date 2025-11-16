@@ -67,3 +67,6 @@ export interface SteelDimension {
 }
 
 export type Theme = 'light' | 'dark' | 'system';
+
+// Export STEEL Assessment types
+export * from './steelAssessment';

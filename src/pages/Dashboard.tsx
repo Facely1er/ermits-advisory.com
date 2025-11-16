@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { 
   Shield, AlertTriangle, Zap, CheckCircle, 
   ChevronRight, TrendingUp, TrendingDown, Minus,
-  BarChart3, PieChart, Activity
+  BarChart3, PieChart, Activity, Link as LinkIcon
 } from 'lucide-react';
 // import { formatPercentage } from '../utils/formatters';
 import { riskDimensions, metrics, threats } from '../data/mockData';
@@ -20,6 +20,15 @@ import {
 } from 'chart.js';
 import { Radar } from 'react-chartjs-2';
 import { useTheme } from '../contexts/ThemeContext';
+import { 
+  getSteelAssessmentFromStorage, 
+  watchSteelStorage,
+  generateInsights,
+  generateRecommendations
+} from '../services/steelAssessmentService';
+import { SteelAssessmentData, SteelFactor } from '../types/steelAssessment';
+import { SteelResultsSummary } from '../components/steel/SteelResultsSummary';
+import { SteelDataImport } from '../components/steel/SteelDataImport';
 
 // Register ChartJS components
 ChartJS.register(
@@ -34,6 +43,8 @@ ChartJS.register(
 export const Dashboard: React.FC = () => {
   const { theme } = useTheme();
   const [selectedView, setSelectedView] = useState<'overview' | 'details'>('overview');
+  const [steelData, setSteelData] = useState<SteelAssessmentData | null>(null);
+  const [showImport, setShowImport] = useState(false);
 
   // Strategic actions
   const strategicActions = [
@@ -57,10 +68,67 @@ export const Dashboard: React.FC = () => {
     }
   ];
 
-  // Calculate overall risk score (average of all dimensions)
-  const overallScore = Math.round(
-    riskDimensions.reduce((sum, dim) => sum + dim.value, 0) / riskDimensions.length
-  );
+  // Load STEEL assessment data on mount and watch for changes
+  useEffect(() => {
+    // Load initial data
+    const data = getSteelAssessmentFromStorage();
+    if (data) {
+      // Generate insights and recommendations if not present
+      if (!data.insights) {
+        data.insights = generateInsights(data.factorScores, data.composite);
+      }
+      if (!data.recommendations) {
+        data.recommendations = generateRecommendations(data.factorScores);
+      }
+      setSteelData(data);
+    }
+
+    // Watch for changes
+    const unwatch = watchSteelStorage((newData) => {
+      if (newData) {
+        if (!newData.insights) {
+          newData.insights = generateInsights(newData.factorScores, newData.composite);
+        }
+        if (!newData.recommendations) {
+          newData.recommendations = generateRecommendations(newData.factorScores);
+        }
+        setSteelData(newData);
+      } else {
+        setSteelData(null);
+      }
+    });
+
+    return unwatch;
+  }, []);
+
+  // Use STEEL data if available, otherwise use mock data
+  const displayRiskDimensions = steelData
+    ? Object.entries(steelData.factorScores).map(([factor, value]) => ({
+        id: factor,
+        name: factor.charAt(0).toUpperCase() + factor.slice(1),
+        value,
+        trend: 'stable' as const,
+        color:
+          factor === 'political'
+            ? '#8b5cf6'
+            : factor === 'economic'
+            ? '#10b981'
+            : factor === 'social'
+            ? '#06b6d4'
+            : factor === 'technological'
+            ? '#f97316'
+            : factor === 'environmental'
+            ? '#22c55e'
+            : '#ef4444',
+      }))
+    : riskDimensions;
+
+  // Calculate overall risk score (use STEEL composite if available, otherwise average)
+  const overallScore = steelData
+    ? steelData.composite
+    : Math.round(
+        riskDimensions.reduce((sum, dim) => sum + dim.value, 0) / riskDimensions.length
+      );
 
   // Determine risk level based on score
   const getRiskLevel = (score: number) => {
@@ -168,11 +236,11 @@ export const Dashboard: React.FC = () => {
     datasets: [
       {
         label: 'STEEL™ Risk Radar',
-        data: riskDimensions.map(dim => dim.value),
+        data: displayRiskDimensions.map(dim => dim.value),
         backgroundColor: theme === 'dark' ? 'rgba(0, 75, 135, 0.3)' : 'rgba(0, 75, 135, 0.2)',
         borderColor: theme === 'dark' ? 'rgba(201, 230, 255, 0.8)' : 'rgba(0, 75, 135, 1)',
         borderWidth: 2,
-        pointBackgroundColor: riskDimensions.map(dim => dim.color),
+        pointBackgroundColor: displayRiskDimensions.map(dim => dim.color),
         pointBorderColor: theme === 'dark' ? '#e2e8f0' : '#fff',
         pointHoverBackgroundColor: '#fff',
         pointHoverBorderColor: theme === 'dark' ? 'rgba(201, 230, 255, 1)' : 'rgba(0, 75, 135, 1)',
@@ -285,6 +353,73 @@ export const Dashboard: React.FC = () => {
           </div>
         </motion.div>
 
+        {/* STEEL Assessment Results Section */}
+        {steelData ? (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-8"
+          >
+            <SteelResultsSummary data={steelData} />
+          </motion.div>
+        ) : (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-8"
+          >
+            <Card variant="glass" padding="lg">
+              <div className="text-center py-8">
+                <Shield size={48} className="mx-auto mb-4 text-gray-400 dark:text-gray-500" />
+                <h3 className="text-xl font-semibold dark:text-white mb-2">
+                  No STEEL Assessment Data
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
+                  Complete the STEEL assessment to view your personalized risk scores and recommendations in the dashboard.
+                </p>
+                <div className="flex gap-4 justify-center flex-wrap">
+                  <Button
+                    variant="primary"
+                    onClick={() => window.open('/steel/index.html', '_blank')}
+                    icon={<LinkIcon size={18} />}
+                  >
+                    Take STEEL Assessment
+                  </Button>
+                  <Button
+                    variant="outline"
+                    onClick={() => setShowImport(!showImport)}
+                  >
+                    {showImport ? 'Hide Import' : 'Import Results'}
+                  </Button>
+                </div>
+                {showImport && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    className="mt-6 max-w-2xl mx-auto"
+                  >
+                    <SteelDataImport
+                      onImportSuccess={() => {
+                        setShowImport(false);
+                        const data = getSteelAssessmentFromStorage();
+                        if (data) {
+                          if (!data.insights) {
+                            data.insights = generateInsights(data.factorScores, data.composite);
+                          }
+                          if (!data.recommendations) {
+                            data.recommendations = generateRecommendations(data.factorScores);
+                          }
+                          setSteelData(data);
+                        }
+                      }}
+                    />
+                  </motion.div>
+                )}
+              </div>
+            </Card>
+          </motion.div>
+        )}
+
         <div className="grid grid-cols-12 gap-6">
           {/* Sidebar with Risk Score */}
           <motion.div 
@@ -328,7 +463,7 @@ export const Dashboard: React.FC = () => {
             <Card variant="glass" padding="md">
               <h3 className="font-semibold mb-3 dark:text-white">Risk Dimensions</h3>
               <div className="space-y-4">
-                {riskDimensions.map((dimension) => (
+                {displayRiskDimensions.map((dimension) => (
                   <div key={dimension.id} className="flex items-center justify-between">
                     <div className="flex items-center">
                       <div 
