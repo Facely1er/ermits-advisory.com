@@ -168,16 +168,26 @@ export const LandingPage: React.FC = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
-              className="text-lg md:text-xl lg:text-2xl text-white/90 mb-10 max-w-4xl mx-auto leading-relaxed font-light"
+              className="text-lg md:text-xl lg:text-2xl text-white/90 mb-6 max-w-4xl mx-auto leading-relaxed font-light"
             >
               A comprehensive cybersecurity risk assessment framework that maps geopolitical, cyber, privacy, and supply-chain exposure to actionable implementation tools.
+            </motion.p>
+
+            {/* Purpose Statement */}
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+              className="text-base md:text-lg lg:text-xl text-white/85 mb-10 max-w-4xl mx-auto leading-relaxed"
+            >
+              ERMITS Advisory empowers organizations to navigate complex risk landscapes with confidence. We provide cutting-edge tools and methodologies that transform security data into actionable intelligence, enabling better decision-making and resilient enterprise security postures.
             </motion.p>
 
             {/* Key Benefits Pills */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
+              transition={{ delay: 0.7, duration: 0.6 }}
               className="flex flex-wrap gap-3 justify-center mb-10"
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm text-sm text-white/90">
@@ -198,7 +208,7 @@ export const LandingPage: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7, duration: 0.6 }}
+              transition={{ delay: 0.8, duration: 0.6 }}
               className="flex flex-wrap gap-4 justify-center"
             >
               <Button 
