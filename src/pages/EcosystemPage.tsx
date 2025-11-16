@@ -7,7 +7,7 @@ import { InteractiveCard } from '../components/shared/InteractiveCard';
 import {
   Shield, ArrowRight,
   Zap, Target, Layers, CheckCircle, TrendingUp, AlertCircle,
-  FileCheck, Search, Rocket, ArrowDown, Database, Settings,
+  FileCheck, Search, Rocket, ArrowDown, Settings,
   Network, Server, Users
 } from 'lucide-react';
 
@@ -430,9 +430,9 @@ export const EcosystemPage: React.FC = () => {
               {/* Enhanced Integration Flow */}
               <div className="relative">
                 {/* Top Row - First 3 Steps */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-8">
                   <motion.div 
-                    className="text-center"
+                    className="text-center flex-1 max-w-xs"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
@@ -446,7 +446,7 @@ export const EcosystemPage: React.FC = () => {
                     </p>
                   </motion.div>
                   
-                  <div className="hidden md:flex items-center justify-center -mt-8">
+                  <div className="hidden md:flex items-center justify-center">
                     <motion.div
                       initial={{ scaleX: 0 }}
                       animate={{ scaleX: 1 }}
@@ -457,7 +457,7 @@ export const EcosystemPage: React.FC = () => {
                   </div>
                   
                   <motion.div 
-                    className="text-center"
+                    className="text-center flex-1 max-w-xs"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
@@ -471,12 +471,18 @@ export const EcosystemPage: React.FC = () => {
                     </p>
                   </motion.div>
                   
-                  <div className="md:hidden flex items-center justify-center my-4">
-                    <ArrowDown size={32} className="text-navy dark:text-silver" />
+                  <div className="hidden md:flex items-center justify-center">
+                    <motion.div
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: 1 }}
+                      transition={{ delay: 0.35, duration: 0.5 }}
+                    >
+                      <ArrowRight size={40} className="text-navy dark:text-silver" />
+                    </motion.div>
                   </div>
                   
                   <motion.div 
-                    className="text-center md:col-start-3"
+                    className="text-center flex-1 max-w-xs"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
@@ -489,10 +495,15 @@ export const EcosystemPage: React.FC = () => {
                       Automated tools deployed
                     </p>
                   </motion.div>
+                  
+                  {/* Mobile arrows */}
+                  <div className="md:hidden flex items-center justify-center my-2 w-full">
+                    <ArrowDown size={32} className="text-navy dark:text-silver" />
+                  </div>
                 </div>
                 
                 {/* Arrow Down */}
-                <div className="flex items-center justify-center mb-6">
+                <div className="hidden md:flex items-center justify-center mb-6">
                   <motion.div
                     initial={{ scaleY: 0 }}
                     animate={{ scaleY: 1 }}
