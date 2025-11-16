@@ -11,6 +11,9 @@ import { ErrorBoundary } from './components/shared/ErrorBoundary';
 // Lazy load all page components for better performance
 const LandingPage = React.lazy(() => import('./pages/LandingPage').then(m => ({ default: m.LandingPage })));
 const Dashboard = React.lazy(() => import('./pages/Dashboard').then(m => ({ default: m.Dashboard })));
+const SteelRecommendationsPage = React.lazy(() => import('./pages/SteelRecommendationsPage').then(m => ({ default: m.SteelRecommendationsPage })));
+const SteelEnterprisePricing = React.lazy(() => import('./pages/SteelEnterprisePricing').then(m => ({ default: m.SteelEnterprisePricing })));
+const ProfessionalSteelAssessment = React.lazy(() => import('./pages/ProfessionalSteelAssessment').then(m => ({ default: m.ProfessionalSteelAssessment })));
 const STEELVisualization = React.lazy(() => import('./pages/STEELVisualization').then(m => ({ default: m.STEELVisualization })));
 const SteelPremium = React.lazy(() => import('./pages/SteelPremium').then(m => ({ default: m.SteelPremium })));
 const VcisoKit = React.lazy(() => import('./pages/VcisoKit').then(m => ({ default: m.VcisoKit })));
@@ -62,8 +65,12 @@ function App() {
                 <Routes>
                   <Route path="/" element={<LandingPage />} />
                   <Route path="/dashboard" element={<Dashboard />} />
+                  <Route path="/dashboard/steel-results" element={<SteelRecommendationsPage />} />
+                  <Route path="/dashboard/recommendations" element={<SteelRecommendationsPage />} />
                   <Route path="/steel" element={<STEELVisualization />} />
                   <Route path="/steel/premium" element={<SteelPremium />} />
+                  <Route path="/steel/enterprise" element={<SteelEnterprisePricing />} />
+                  <Route path="/steel/professional" element={<ProfessionalSteelAssessment />} />
                   <Route path="/steel/implementation-guide" element={<ImplementationGuidePage />} />
                   <Route path="/vciso-kit" element={<VcisoKit />} />
                   <Route path="/compliance" element={<ComplianceAdvisory />} />

@@ -3,10 +3,11 @@ import { motion } from 'framer-motion';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { ArrowRight, CheckCircle, Lock, FileText, BarChart2, Download } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { createCheckoutSession } from '../services/stripe';
 
 export const SteelPremium: React.FC = () => {
+  const navigate = useNavigate();
   const [showPaywall, setShowPaywall] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -105,6 +106,20 @@ export const SteelPremium: React.FC = () => {
                 <Lock size={18} className="mr-2" />
                 Buy with Gumroad
               </Button>
+              
+              <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
+                <p className="text-center text-sm text-gray-600 dark:text-gray-300 mb-3">
+                  Need enterprise features?
+                </p>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => navigate('/steel/enterprise')}
+                  className="w-full"
+                >
+                  View Enterprise Pricing →
+                </Button>
+              </div>
             </div>
 
             <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-4">

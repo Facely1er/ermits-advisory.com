@@ -699,6 +699,16 @@
         .info-box-light-blue { background: #f0f9ff; padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 5px solid var(--navy); }
         .info-box-gray { background: #f8fafc; padding: 20px; border-radius: 10px; margin-top: 20px; border-left: 5px solid var(--navy); }
         .info-box-yellow { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 25px; border-radius: 10px; margin: 30px 0; border-left: 5px solid var(--gold); }
+        .info-box-blue-gradient { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-left: 6px solid var(--navy); margin: 30px 0; padding: 25px; }
+
+        .comparison-title { color: var(--navy); margin-bottom: 20px; }
+        .comparison-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .comparison-card { background: white; padding: 20px; border-radius: 10px; border: 2px solid #e2e8f0; }
+        .comparison-card-gold { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 20px; border-radius: 10px; border: 2px solid var(--gold); }
+        .comparison-card-title { color: var(--navy); margin-bottom: 15px; font-size: 1.2em; }
+        .comparison-list { margin: 0; }
+        .comparison-cta-container { margin-top: 15px; }
+        .btn-link-small { background: var(--navy); color: white; padding: 10px 20px; font-size: 0.95em; }
 
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 30px 0; }
         .stat-box { text-align: center; padding: 20px; background: #f8fafc; border-radius: 10px; }
@@ -726,6 +736,7 @@
         .btn-link { display: inline-block; padding: 15px 30px; background: var(--navy); color: white; text-decoration: none; border-radius: 10px; font-weight: 600; transition: transform 0.3s ease; }
         .btn-link:hover { transform: translateY(-2px); }
         .btn-link-container { text-align: center; margin-top: 20px; }
+        .btn-inline-flex { text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
 
         .score-card-political { border-top-color: var(--political); }
         .score-card-economic { border-top-color: var(--economic); }
@@ -1488,6 +1499,45 @@
                 <div class="btn-group">
                     <button class="btn btn-primary" onclick="exportPDF()">Export PDF Report</button>
                     <button class="btn btn-primary" onclick="exportJSON()">Download Data (JSON)</button>
+                    <a href="/dashboard" class="btn btn-primary btn-inline-flex">
+                        <span>View in Dashboard</span>
+                        <span>→</span>
+                    </a>
+                </div>
+                
+                <!-- Freemium vs Professional Comparison -->
+                <div class="info-box info-box-blue-gradient">
+                    <h3 class="comparison-title">Freemium vs Professional</h3>
+                    <div class="comparison-grid">
+                        <div class="comparison-card">
+                            <h4 class="comparison-card-title">✓ Free Assessment (Current)</h4>
+                            <ul class="standard-list comparison-list">
+                                <li>Complete 46-question assessment</li>
+                                <li>Basic results and scores</li>
+                                <li>PDF/JSON export</li>
+                                <li>Dashboard integration</li>
+                                <li>Recommended action plan</li>
+                                <li>Perfect for demos & onboarding</li>
+                            </ul>
+                        </div>
+                        <div class="comparison-card-gold">
+                            <h4 class="comparison-card-title">⭐ Professional Version</h4>
+                            <ul class="standard-list comparison-list">
+                                <li><strong>Everything in Free, plus:</strong></li>
+                                <li>ERMITS platform integration</li>
+                                <li>Custom pricing based on needs</li>
+                                <li>Advanced analytics & benchmarking</li>
+                                <li>Multi-user collaboration</li>
+                                <li>API access</li>
+                                <li>Priority support & consultation</li>
+                            </ul>
+                            <div class="comparison-cta-container">
+                                <a href="/steel/premium" class="btn-link btn-link-small">
+                                    Learn More →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1616,6 +1666,16 @@
             const composite = Math.round(weightedSum / totalWeight);
 
             assessmentData = { factorScores, composite, timestamp: new Date().toISOString() };
+            
+            // Save calculated results to localStorage for Dashboard integration
+            try {
+                localStorage.setItem('steel_assessment', JSON.stringify(assessmentData));
+                // Trigger custom event for auto-refresh in Dashboard
+                window.dispatchEvent(new CustomEvent('steel_assessment_updated', { detail: assessmentData }));
+            } catch (e) {
+                console.warn('Could not save assessment results to localStorage:', e);
+            }
+            
             displayResults(assessmentData);
             showTab('results');
         }
@@ -2094,10 +2154,49 @@
                     ` : ''}
                 </div>
 
+                <!-- Professional Upgrade CTA -->
+                <div class="info-box" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left: 6px solid var(--gold); margin: 30px 0; padding: 30px;">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                        <span style="font-size: 2em;">✨</span>
+                        <h3 style="color: var(--navy); margin: 0; font-size: 1.5em;">Upgrade to STEEL Professional</h3>
+                    </div>
+                    <p class="body-text" style="margin-bottom: 20px; font-size: 1.1em; color: #78350f;">
+                        <strong>Unlock Enterprise Features:</strong> Get ERMITS platform integration, custom pricing, advanced analytics, multi-user collaboration, API access, and priority support.
+                    </p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 20px;">
+                        <div style="background: white; padding: 15px; border-radius: 8px;">
+                            <strong style="color: var(--navy); display: block; margin-bottom: 5px;">✓ ERMITS Integration</strong>
+                            <span style="font-size: 0.9em; color: #666;">Connect with all ERMITS platforms</span>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px;">
+                            <strong style="color: var(--navy); display: block; margin-bottom: 5px;">✓ Custom Pricing</strong>
+                            <span style="font-size: 0.9em; color: #666;">Tailored to your requirements</span>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px;">
+                            <strong style="color: var(--navy); display: block; margin-bottom: 5px;">✓ Enterprise Features</strong>
+                            <span style="font-size: 0.9em; color: #666;">Multi-user, API, advanced analytics</span>
+                        </div>
+                    </div>
+                    <div class="btn-link-container" style="margin-top: 20px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                        <a href="/steel/premium" class="btn-link" style="background: linear-gradient(135deg, var(--gold) 0%, #ffed4e 100%); color: var(--navy); font-weight: 700; padding: 15px 30px; font-size: 1.1em;">
+                            Learn About Professional Version →
+                        </a>
+                        <a href="/steel/enterprise" class="btn-link" style="background: var(--navy); color: white; padding: 15px 30px;">
+                            Enterprise Pricing
+                        </a>
+                        <a href="/contact" class="btn-link" style="background: var(--navy); color: white; padding: 15px 30px;">
+                            Contact Sales
+                        </a>
+                    </div>
+                </div>
+
                 <div class="info-box" style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-left: 6px solid var(--navy); margin: 30px 0;">
                     <h3>🚀 ERMITS Ecosystem Integration Pathway</h3>
                     <p class="body-text" style="margin-bottom: 15px;">
                         STEEL feeds every ERMITS product with consistent intelligence. Based on your assessment results, your STEEL scores will inform these platform solutions:
+                    </p>
+                    <p class="body-text" style="margin-bottom: 15px; padding: 10px; background: rgba(255, 215, 0, 0.1); border-left: 3px solid var(--gold); border-radius: 4px;">
+                        <strong>💡 Professional Feature:</strong> With STEEL Professional, your assessment automatically syncs with ERMITS platforms for seamless integration and real-time updates.
                     </p>
                     <ul class="standard-list">
                         ${recommendations.some(r => r.factor === 'technological' && r.score < 60) ? `
@@ -2136,14 +2235,25 @@
                     <ol class="steps-list">
                         <li><strong>Review with Leadership:</strong> Share results with executive team and board within 7 days</li>
                         <li><strong>Prioritize Actions:</strong> Focus on Critical priority recommendations first (30-day timeline)</li>
+                        <li><strong>View in Dashboard:</strong> <a href="/dashboard" style="color: var(--navy); text-decoration: underline; font-weight: 600;">Access your interactive dashboard</a> for real-time monitoring and updates</li>
                         <li><strong>Schedule Consultation:</strong> Connect with ERMITS Advisory for strategic guidance and platform recommendations</li>
                         <li><strong>Update Risk Register:</strong> Integrate findings into your enterprise risk register (ISO 31000 alignment)</li>
                         <li><strong>Plan Roadmap:</strong> Develop a 30/60/90 day improvement plan with clear milestones</li>
                         <li><strong>Consider ERMITS Platform:</strong> Evaluate platform solutions to accelerate implementation</li>
+                        <li><strong>Upgrade to Professional:</strong> Unlock ERMITS integration, custom pricing, and enterprise features for advanced capabilities</li>
                     </ol>
-                    <div class="btn-link-container">
-                        <a href="/contact" class="btn-link">
+                    <div class="btn-link-container" style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                        <a href="/dashboard" class="btn-link" style="background: var(--navy); color: white;">
+                            View in Dashboard
+                        </a>
+                        <a href="/contact" class="btn-link" style="background: var(--navy); color: white;">
                             Schedule Strategic Consultation
+                        </a>
+                        <a href="/steel/premium" class="btn-link" style="background: linear-gradient(135deg, var(--gold) 0%, #ffed4e 100%); color: var(--navy); font-weight: 700;">
+                            Upgrade to Professional
+                        </a>
+                        <a href="/steel/enterprise" class="btn-link" style="background: var(--navy); color: white;">
+                            Enterprise Solutions
                         </a>
                     </div>
                 </div>

@@ -30,6 +30,14 @@ export const SteelCompositeScore: React.FC<SteelCompositeScoreProps> = ({
   const color = riskLevelColors[riskLevel];
   const label = riskLevelLabels[riskLevel];
 
+  // Dynamic color classes based on risk level
+  const colorClasses = {
+    LOW: 'text-green-600 dark:text-green-400',
+    MODERATE: 'text-yellow-600 dark:text-yellow-400',
+    ELEVATED: 'text-orange-600 dark:text-orange-400',
+    HIGH: 'text-red-600 dark:text-red-400',
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
@@ -65,18 +73,12 @@ export const SteelCompositeScore: React.FC<SteelCompositeScoreProps> = ({
             />
           </svg>
           <div className="absolute inset-0 flex items-center justify-center">
-            <span
-              className="text-3xl font-bold"
-              style={{ color }}
-            >
+            <span className={`text-3xl font-bold ${colorClasses[riskLevel]}`}>
               {composite}
             </span>
           </div>
         </div>
-        <div
-          className="text-xl font-semibold mb-2"
-          style={{ color }}
-        >
+        <div className={`text-xl font-semibold mb-2 ${colorClasses[riskLevel]}`}>
           {label}
         </div>
         <p className="text-sm text-gray-600 dark:text-gray-400">

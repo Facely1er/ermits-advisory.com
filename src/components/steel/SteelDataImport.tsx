@@ -110,6 +110,8 @@ export const SteelDataImport: React.FC<SteelDataImportProps> = ({
           accept=".json"
           onChange={handleFileInputChange}
           className="hidden"
+          aria-label="Import STEEL assessment JSON file"
+          title="Select a JSON file exported from the STEEL assessment"
         />
       </div>
 
