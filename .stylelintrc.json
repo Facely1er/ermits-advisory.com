@@ -24,7 +24,9 @@
     "**/*.tsx",
     "**/node_modules/**",
     "**/dist/**",
-    "**/globals.css"
+    "**/globals.css",
+    "src/styles/globals.css",
+    "**/src/styles/globals.css"
   ]
 }
 
