@@ -74,7 +74,12 @@
 
   .luxury-card:hover {
     @apply shadow-luxury-lg;
-    transform: translateY(-2px);
+    transform: translateY(-4px) scale(1.01);
+    border-color: rgba(212, 175, 55, 0.2);
+  }
+
+  .dark .luxury-card:hover {
+    border-color: rgba(212, 175, 55, 0.3);
   }
 
   /* Luxury Gold Accent */
@@ -183,17 +188,6 @@
     opacity: 1;
   }
 
-  /* Enhanced Luxury Card Hover */
-  .luxury-card:hover {
-    @apply shadow-luxury-lg;
-    transform: translateY(-4px) scale(1.01);
-    border-color: rgba(212, 175, 55, 0.2);
-  }
-
-  .dark .luxury-card:hover {
-    border-color: rgba(212, 175, 55, 0.3);
-  }
-
   /* Premium Glass Effect Enhancement */
   .luxury-glass {
     -webkit-backdrop-filter: blur(24px) saturate(180%);
@@ -204,9 +198,7 @@
   .luxury-transition {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
-}
 
-@layer components {
   .glass {
     @apply bg-white/80 dark:bg-dark-surface/90 backdrop-blur-md border border-white/20 dark:border-white/10;
   }
@@ -268,7 +260,7 @@
   
   /* Improved navigation elements */
   .dark .dropdown-menu {
-    @apply bg-dark-surface border border-white/10 shadow-xl;
+    @apply bg-dark-surface/95 border border-white/10 shadow-lg;
   }
 
   .dark .dropdown-item {
@@ -335,15 +327,6 @@
 /* Better button contrast in dark mode */
 .dark .btn-outline {
   @apply border-gray-500 text-gray-200 hover:bg-gray-800;
-}
-
-/* Dark mode dropdown menu improvements */
-.dark .dropdown-menu {
-  @apply bg-dark-surface/95 border border-white/10 shadow-lg;
-}
-
-.dark .dropdown-item {
-  @apply text-white/95 hover:bg-navy/20 hover:text-white;
 }
 
 /* Chart improvements for dark mode */
@@ -414,11 +397,6 @@
   background-color: var(--dimension-color, #4c72b0);
 }
 
-/* Dimension color text */
-.dimension-color-text {
-  color: var(--dimension-color, #4c72b0);
-}
-
 /* Dimension progress bar */
 .dimension-progress-bar {
   background-color: var(--dimension-color, #4c72b0);
@@ -434,11 +412,6 @@
   background-color: var(--dimension-color, #4c72b0);
 }
 
-/* Hexagon background with opacity */
-.hexagon-dimension-bg-opacity {
-  background-color: var(--dimension-color, #4c72b0);
-  opacity: 0.1;
-}
 
 /* Focus Mode - Optional Enhanced Focus Indicators */
 /* Only applies when focus-mode-enabled class is on html element */
