@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
@@ -6,12 +6,14 @@ import {
   Mail, Send, AlertCircle, CheckCircle,
   Briefcase, User, MessageSquare
 } from 'lucide-react';
+import { useSearchParams } from 'react-router-dom';
 import { contactService } from '../services/localDataService';
 
 type FormState = {
   name: string;
   email: string;
   company: string;
+  service: string;
   message: string;
 };
 
@@ -20,18 +22,60 @@ type FormErrors = {
 };
 
 export const ContactPage: React.FC = () => {
+  const [searchParams] = useSearchParams();
+  const serviceParam = searchParams.get('service') || '';
+  const typeParam = searchParams.get('type') || 'contact'; // 'contact' or 'quote'
+  
   const [formState, setFormState] = useState<FormState>({
     name: '',
     email: '',
     company: '',
+    service: serviceParam, // Pre-fill from URL
     message: ''
   });
   
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  // Service options for quote requests
+  const serviceOptions = [
+    { value: '', label: 'Select a service...' },
+    { value: 'rapid-steel', label: 'Rapid STEEL Assessment' },
+    { value: 'comprehensive-steel', label: 'Comprehensive STEEL Assessment' },
+    { value: 'industry-steel', label: 'Industry-Specific STEEL Assessment' },
+    { value: 'compliance-readiness', label: 'Compliance Readiness' },
+    { value: 'audit-preparation', label: 'Audit Preparation' },
+    { value: 'strategic-vciso', label: 'Strategic Advisory vCISO' },
+    { value: 'operational-vciso', label: 'Operational vCISO' },
+    { value: 'executive-vciso', label: 'Executive vCISO' },
+    { value: 'security-program', label: 'Security Program Foundation' },
+    { value: 'risk-management', label: 'Risk Management Program' },
+    { value: 'board-governance', label: 'Board Governance Program' },
+    { value: 'vendor-risk', label: 'Vendor Risk Program' },
+    { value: 'incident-response', label: 'Incident Response Planning' },
+    { value: 'other', label: 'Other Service' }
+  ];
+
+  // Update page title based on type
+  useEffect(() => {
+    if (typeParam === 'quote' && serviceParam) {
+      const serviceName = serviceOptions.find(s => s.value === serviceParam)?.label || serviceParam;
+      document.title = `Request Quote - ${serviceName} | ERMITS Advisory`;
+    } else if (typeParam === 'quote') {
+      document.title = 'Request a Quote | ERMITS Advisory';
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [typeParam, serviceParam]);
+
+  // Update service when URL param changes
+  useEffect(() => {
+    if (serviceParam) {
+      setFormState(prev => ({ ...prev, service: serviceParam }));
+    }
+  }, [serviceParam]);
   
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     
     setFormState(prev => ({
@@ -72,6 +116,10 @@ export const ContactPage: React.FC = () => {
       newErrors.message = 'Message must be at least 10 characters';
     }
     
+    // Require service for quote requests
+    if (typeParam === 'quote' && !formState.service.trim()) {
+      newErrors.service = 'Please select a service';
+    }
     
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -87,11 +135,16 @@ export const ContactPage: React.FC = () => {
     setIsSubmitting(true);
     
     try {
+      // Include service information in message for quote requests
+      const messageText = typeParam === 'quote' && formState.service
+        ? `Service: ${serviceOptions.find(s => s.value === formState.service)?.label || formState.service}\n\n${formState.message}`
+        : formState.message;
+      
       await contactService.submitContact({
         name: formState.name,
         email: formState.email,
         company: formState.company,
-        message: formState.message
+        message: messageText
       });
       
       setSubmitStatus('success');
@@ -99,6 +152,7 @@ export const ContactPage: React.FC = () => {
         name: '',
         email: '',
         company: '',
+        service: '',
         message: ''
       });
       
@@ -127,9 +181,13 @@ export const ContactPage: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           className="mb-12 text-center"
         >
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">Contact Us</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
+            {typeParam === 'quote' ? 'Request a Quote' : 'Contact Us'}
+          </h1>
           <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-            Get in touch with our team to discuss your security needs
+            {typeParam === 'quote' 
+              ? 'Get a customized quote for our professional services'
+              : 'Get in touch with our team to discuss your security needs'}
           </p>
         </motion.div>
 
@@ -142,7 +200,9 @@ export const ContactPage: React.FC = () => {
             transition={{ delay: 0.2 }}
           >
             <Card variant="glass" padding="lg">
-              <h2 className="text-2xl font-bold mb-6 dark:text-white">Send Us a Message</h2>
+              <h2 className="text-2xl font-bold mb-6 dark:text-white">
+                {typeParam === 'quote' ? 'Service Quote Request' : 'Send Us a Message'}
+              </h2>
               
               {submitStatus === 'success' && (
                 <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-900 rounded-lg flex items-start">
@@ -235,6 +295,35 @@ export const ContactPage: React.FC = () => {
                     )}
                   </div>
                   
+                  {/* Service Selection Field (for quote requests) */}
+                  {typeParam === 'quote' && (
+                    <div className="md:col-span-2">
+                      <label htmlFor="service" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                        Service of Interest *
+                      </label>
+                      <div className="relative">
+                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                          <Briefcase size={18} className="text-gray-400" />
+                        </div>
+                        <select
+                          id="service"
+                          name="service"
+                          value={formState.service}
+                          onChange={handleChange}
+                          className={`w-full pl-10 pr-3 py-2 border ${errors.service ? 'border-red-500 dark:border-red-500' : 'border-gray-300 dark:border-gray-600'} rounded-md shadow-sm focus:outline-none focus:ring-navy focus:border-navy dark:bg-dark-surface dark:text-white`}
+                        >
+                          {serviceOptions.map(option => (
+                            <option key={option.value} value={option.value}>
+                              {option.label}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                      {errors.service && (
+                        <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.service}</p>
+                      )}
+                    </div>
+                  )}
                 </div>
                 
                 <div className="mb-6">
@@ -252,7 +341,7 @@ export const ContactPage: React.FC = () => {
                       value={formState.message}
                       onChange={handleChange}
                       className={`w-full pl-10 pr-3 py-2 border ${errors.message ? 'border-red-500 dark:border-red-500' : 'border-gray-300 dark:border-gray-600'} rounded-md shadow-sm focus:outline-none focus:ring-navy focus:border-navy dark:bg-dark-surface dark:text-white`}
-                      placeholder="Tell us about your security needs..."
+                      placeholder={typeParam === 'quote' ? 'Tell us about your requirements, timeline, and any specific needs...' : 'Tell us about your security needs...'}
                     ></textarea>
                   </div>
                   {errors.message && (
@@ -272,7 +361,7 @@ export const ContactPage: React.FC = () => {
                     icon={<Send size={16} />}
                     iconPosition="right"
                   >
-                    Send Message
+                    {typeParam === 'quote' ? 'Request Quote' : 'Send Message'}
                   </Button>
                 </div>
               </form>

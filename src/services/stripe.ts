@@ -1,4 +1,5 @@
 import { loadStripe, Stripe } from '@stripe/stripe-js';
+import { getProduct, getStripePriceId } from '../config/products';
 
 // Initialize Stripe
 let stripePromise: Promise<Stripe | null>;
@@ -70,13 +71,14 @@ export const createCheckoutSession = async (options: CheckoutOptions): Promise<v
 
 /**
  * Get product price ID from product type
- * These should match your Stripe product price IDs
+ * Uses actual Stripe Price IDs with fallback to environment variables
  */
 export const getProductPriceId = (productType: ProductType): string => {
+  // Actual Price IDs from Stripe (created products)
   const priceIds: Record<ProductType, string> = {
-    'steel-premium': import.meta.env.VITE_STRIPE_PRICE_STEEL_PREMIUM || '',
-    'vciso-kit': import.meta.env.VITE_STRIPE_PRICE_VCISO_KIT || '',
-    'dashboard-template': import.meta.env.VITE_STRIPE_PRICE_DASHBOARD_TEMPLATE || '',
+    'steel-premium': import.meta.env.VITE_STRIPE_PRICE_STEEL_PREMIUM || 'price_1SU74XAjb9YEbEboc4sLuKtV',
+    'vciso-kit': import.meta.env.VITE_STRIPE_PRICE_VCISO_KIT || 'price_1SU74YAjb9YEbEbohKsi0HZO',
+    'dashboard-template': import.meta.env.VITE_STRIPE_PRICE_DASHBOARD_TEMPLATE || 'price_1SU74YAjb9YEbEboGzeh3o78',
   };
 
   return priceIds[productType];
@@ -84,27 +86,27 @@ export const getProductPriceId = (productType: ProductType): string => {
 
 /**
  * Get product name from product type
+ * Uses product catalog for consistency
  */
 export const getProductName = (productType: ProductType): string => {
-  const names: Record<ProductType, string> = {
+  const product = getProduct(productType);
+  return product?.name || {
     'steel-premium': 'STEEL™ Premium Assessment',
     'vciso-kit': 'vCISO Starter Kit',
     'dashboard-template': 'Executive Dashboard Template',
-  };
-
-  return names[productType];
+  }[productType];
 };
 
 /**
  * Get product price from product type
+ * Uses product catalog for consistency
  */
 export const getProductPrice = (productType: ProductType): number => {
-  const prices: Record<ProductType, number> = {
+  const product = getProduct(productType);
+  return product?.price || {
     'steel-premium': 29,
     'vciso-kit': 299,
     'dashboard-template': 79,
-  };
-
-  return prices[productType];
+  }[productType];
 };
 

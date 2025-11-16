@@ -14,11 +14,12 @@ const stripe = stripeSecretKey
     })
   : null;
 
-// Product price IDs - Update these with your actual Stripe price IDs
+// Product price IDs - From Stripe live products
+// These should match environment variables, with fallback to actual Price IDs
 const PRICE_IDS: Record<string, string> = {
-  'steel-premium': process.env.STRIPE_PRICE_STEEL_PREMIUM || '',
-  'vciso-kit': process.env.STRIPE_PRICE_VCISO_KIT || '',
-  'dashboard-template': process.env.STRIPE_PRICE_DASHBOARD_TEMPLATE || '',
+  'steel-premium': process.env.STRIPE_PRICE_STEEL_PREMIUM || 'price_1SU74XAjb9YEbEboc4sLuKtV',
+  'vciso-kit': process.env.STRIPE_PRICE_VCISO_KIT || 'price_1SU74YAjb9YEbEbohKsi0HZO',
+  'dashboard-template': process.env.STRIPE_PRICE_DASHBOARD_TEMPLATE || 'price_1SU74YAjb9YEbEboGzeh3o78',
 };
 
 export default async function handler(

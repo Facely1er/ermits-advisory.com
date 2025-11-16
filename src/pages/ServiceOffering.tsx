@@ -731,7 +731,29 @@ export const ServiceOffering: React.FC = () => {
                       size="sm"
                       icon={<ArrowRight size={16} />}
                       iconPosition="right"
-                      onClick={() => navigate(service.link)}
+                      onClick={() => {
+                        // Map service IDs to quote form values
+                        const serviceMap: Record<string, string> = {
+                          'steel-assessment': 'comprehensive-steel',
+                          'vCISO': 'strategic-vciso',
+                          'compliance-advisory': 'compliance-readiness',
+                          'governance-advisory': 'security-program',
+                          'vendor-risk-advisory': 'vendor-risk',
+                          'incident-response': 'incident-response',
+                          'incident-response-advisory': 'incident-response'
+                        };
+                        
+                        const serviceValue = serviceMap[service.id] || service.id;
+                        
+                        if (service.id === 'compliance-advisory') {
+                          navigate('/compliance-advisory');
+                        } else if (service.id === 'vCISO') {
+                          navigate('/vciso-kit');
+                        } else {
+                          // Navigate to quote form with service pre-selected
+                          navigate(`/contact?type=quote&service=${serviceValue}`);
+                        }
+                      }}
                       className="w-full"
                     >
                       {service.id === 'compliance-advisory' ? 'Explore Compliance' : service.id === 'vCISO' ? 'View vCISO Services' : 'Request Quote'}
