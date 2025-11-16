@@ -191,7 +191,7 @@ export const STEELVisualization: React.FC = () => {
                 size="lg"
                 icon={<ArrowRight size={18} />}
                 iconPosition="right"
-                onClick={() => window.location.href = '/steel/index.html'}
+                onClick={() => window.open('/steel/index.html', '_blank')}
                 className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold px-8 py-4 rounded-xl shadow-2xl hover:shadow-cyan-500/50 transition-all transform hover:-translate-y-1 hover:scale-105"
               >
                 Start Free Assessment
@@ -389,7 +389,7 @@ export const STEELVisualization: React.FC = () => {
                           size="md"
                           icon={<LinkIcon size={16} />}
                           iconPosition="right"
-                          onClick={() => window.location.href = '/steel/index.html'}
+                          onClick={() => window.open('/steel/index.html', '_blank')}
                         >
                           Retake Assessment
                         </Button>
@@ -411,7 +411,7 @@ export const STEELVisualization: React.FC = () => {
                         size="lg"
                         icon={<ArrowRight size={18} />}
                         iconPosition="right"
-                        onClick={() => window.location.href = '/steel/index.html'}
+                        onClick={() => window.open('/steel/index.html', '_blank')}
                         className="transform hover:scale-105 transition-transform"
                       >
                         Take the Free STEEL Assessment
@@ -519,7 +519,7 @@ export const STEELVisualization: React.FC = () => {
                     variant="secondary"
                     icon={<ArrowRight size={16} />}
                     iconPosition="right"
-                    onClick={() => window.location.href = '/steel/index.html'}
+                    onClick={() => window.open('/steel/index.html', '_blank')}
                     className="transform hover:scale-105 transition-transform"
                   >
                     Start Free Assessment
