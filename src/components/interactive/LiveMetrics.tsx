@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { TrendingUp, TrendingDown, Minus, Activity } from 'lucide-react';
+import { getThreatIntelligence, getComplianceScore, getRecentIncidents } from '../../services/threatIntelligenceService';
 
 interface Metric {
   id: string;
@@ -18,60 +19,109 @@ export const LiveMetrics: React.FC = () => {
     {
       id: 'risk-score',
       label: "Overall Risk Score",
-      value: 67,
-      previousValue: 72,
-      change: -5,
-      trend: 'down',
+      value: 0,
+      previousValue: 0,
+      change: 0,
+      trend: 'stable',
       color: '#059669',
       unit: '%'
     },
     {
       id: 'threats',
       label: "Active Threats",
-      value: 14,
-      previousValue: 11,
-      change: 3,
-      trend: 'up',
+      value: 0,
+      previousValue: 0,
+      change: 0,
+      trend: 'stable',
       color: '#dc2626'
     },
     {
       id: 'compliance',
       label: "Compliance Score",
-      value: 94,
-      previousValue: 88,
-      change: 6,
-      trend: 'up',
+      value: 0,
+      previousValue: 0,
+      change: 0,
+      trend: 'stable',
       color: '#2563eb',
       unit: '%'
     },
     {
       id: 'incidents',
       label: "Recent Incidents",
-      value: 2,
-      previousValue: 2,
+      value: 0,
+      previousValue: 0,
       change: 0,
       trend: 'stable',
       color: '#f59e0b'
     }
   ]);
 
-  // Simulate real-time updates
+  const [loading, setLoading] = useState(true);
+
+  // Fetch real-time threat intelligence data
   useEffect(() => {
-    const interval = setInterval(() => {
-      setMetrics(prev => prev.map(metric => {
-        const variance = Math.random() * 0.1 - 0.05; // ±5% variation
-        const newValue = Math.max(0, Math.min(100, metric.value + variance));
-        const change = newValue - metric.value;
+    const fetchData = async () => {
+      try {
+        setLoading(true);
         
-        return {
-          ...metric,
-          previousValue: metric.value,
-          value: Math.round(newValue * 10) / 10,
-          change: Math.round(change * 10) / 10,
-          trend: change > 0.1 ? 'up' : change < -0.1 ? 'down' : 'stable'
-        };
-      }));
-    }, 3000); // Update every 3 seconds
+        // Fetch real data from threat intelligence services
+        const [threatData, complianceScore, incidents] = await Promise.all([
+          getThreatIntelligence(),
+          getComplianceScore(),
+          getRecentIncidents(),
+        ]);
+
+        setMetrics(prev => {
+          const newMetrics = prev.map(metric => {
+            let newValue = metric.value;
+            let previousValue = metric.value;
+
+            switch (metric.id) {
+              case 'risk-score':
+                newValue = threatData.riskScore;
+                previousValue = metric.value || threatData.riskScore;
+                break;
+              case 'threats':
+                newValue = threatData.activeThreats;
+                previousValue = metric.value || threatData.activeThreats;
+                break;
+              case 'compliance':
+                newValue = complianceScore;
+                previousValue = metric.value || complianceScore;
+                break;
+              case 'incidents':
+                newValue = incidents;
+                previousValue = metric.value || incidents;
+                break;
+            }
+
+            const change = newValue - previousValue;
+            const trend: 'up' | 'down' | 'stable' = 
+              change > 0.1 ? 'up' : change < -0.1 ? 'down' : 'stable';
+
+            return {
+              ...metric,
+              value: newValue,
+              previousValue: previousValue,
+              change: Math.round(change * 10) / 10,
+              trend,
+            };
+          });
+
+          return newMetrics;
+        });
+      } catch (error) {
+        console.error('Error fetching threat intelligence:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    // Initial fetch
+    fetchData();
+
+    // Update every 5 minutes (threat intelligence data doesn't change that frequently)
+    const interval = setInterval(fetchData, 5 * 60 * 1000);
 
     return () => clearInterval(interval);
   }, []);
@@ -88,24 +138,30 @@ export const LiveMetrics: React.FC = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      {metrics.map((metric, index) => (
-        <motion.div
-          key={metric.id}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: index * 0.1 }}
-          className="bg-white dark:bg-dark-card-bg rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow"
-        >
-          <div className="flex items-center justify-between mb-2">
-            <h3 className="text-sm font-medium text-gray-600 dark:text-gray-300">
-              {metric.label}
-            </h3>
-            <div className="flex items-center">
-              <Activity size={12} className="text-gray-400 mr-1" />
-              <span className="text-xs text-gray-400">LIVE</span>
+    <div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {metrics.map((metric, index) => (
+          <motion.div
+            key={metric.id}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: loading ? 0.7 : 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
+            className="bg-white dark:bg-dark-card-bg rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow"
+          >
+            <div className="flex items-center justify-between mb-2">
+              <h3 className="text-sm font-medium text-gray-600 dark:text-gray-300">
+                {metric.label}
+              </h3>
+              <div className="flex items-center">
+                <Activity 
+                  size={12} 
+                  className={`mr-1 ${loading ? 'text-gray-300 animate-pulse' : 'text-gray-400'}`} 
+                />
+                <span className={`text-xs ${loading ? 'text-gray-300' : 'text-gray-400'}`}>
+                  {loading ? 'LOADING' : 'LIVE'}
+                </span>
+              </div>
             </div>
-          </div>
           
           <div className="flex items-end justify-between">
             <div>
@@ -161,6 +217,12 @@ export const LiveMetrics: React.FC = () => {
           </div>
         </motion.div>
       ))}
+      </div>
+      <div className="mt-4 text-center">
+        <p className="text-xs text-gray-500 dark:text-gray-400">
+          Data sourced from CISA Known Exploited Vulnerabilities and NVD. Updates every 5 minutes.
+        </p>
+      </div>
     </div>
   );
 };

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { NavLink, Link, useNavigate } from 'react-router-dom';
+import { NavLink, Link, useNavigate, useLocation } from 'react-router-dom';
 import { useTheme } from '../contexts/ThemeContext';
 import { Button } from './shared/Button';
 import {
   Sun, Moon, Menu, X,
-  Home, Briefcase, Mail, Users, Lightbulb, Shield, Layers, DollarSign, Focus
+  Home, Briefcase, Mail, Users, Lightbulb, Shield, Layers, DollarSign, Focus, ChevronDown, Radar
 } from 'lucide-react';
 import logoImg from '../assets/ermits-advisory.png';
 import { cn } from '../utils/cn';
@@ -13,7 +13,10 @@ import { cn } from '../utils/cn';
 export const Navigation: React.FC = () => {
   const { theme, toggleTheme, focusMode, toggleFocusMode } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSteelRadarOpen, setIsSteelRadarOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -22,14 +25,41 @@ export const Navigation: React.FC = () => {
     setIsMenuOpen(false);
   };
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsSteelRadarOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  // Close dropdown when route changes
+  useEffect(() => {
+    setIsSteelRadarOpen(false);
+  }, [location.pathname]);
+
+  // Check if any STEEL/Radar route is active
+  const isSteelRadarActive = location.pathname === '/steel' || 
+                             location.pathname === '/risk-radar' ||
+                             location.pathname.startsWith('/steel/');
+
   const navLinks = [
     { to: '/', label: 'Home', icon: <Home size={16} /> },
     { to: '/about', label: 'About', icon: <Users size={16} /> },
     { to: '/services', label: 'Services', icon: <Briefcase size={16} /> },
     { to: '/pricing', label: 'Pricing', icon: <DollarSign size={16} /> },
-    { to: '/steel', label: 'STEEL™', icon: <Shield size={16} /> },
     { to: '/ecosystem', label: 'Ecosystem', icon: <Layers size={16} /> },
     { to: '/dashboard', label: 'Dashboard', icon: <Lightbulb size={16} /> },
+  ];
+
+  const steelRadarItems = [
+    { to: '/steel', label: 'STEEL™ Framework', icon: <Shield size={16} /> },
+    { to: '/risk-radar', label: 'Risk Radar', icon: <Radar size={16} /> },
+    { href: '/steel/index.html', label: 'STEEL Assessment', icon: <Shield size={16} />, external: true },
   ];
 
   return (
@@ -64,19 +94,77 @@ export const Navigation: React.FC = () => {
                 </NavLink>
               ))}
               
-              {/* Additional links as direct nav items */}
-              <NavLink
-                to="/risk-radar"
-                className={({ isActive }) => cn(
-                  'text-sm font-medium hover:text-navy dark:hover:text-white transition-colors nav-link flex items-center whitespace-nowrap h-full',
-                  isActive
-                    ? 'text-navy-dark dark:text-white font-semibold border-b-2 border-navy dark:border-silver'
-                    : 'text-gray-600 dark:text-white/95'
-                )}
-              >
-                <span className="mr-1.5"><Lightbulb size={16} /></span>
-                Risk Radar
-              </NavLink>
+              {/* STEEL & Radar Dropdown */}
+              <div className="relative h-full" ref={dropdownRef}>
+                <button
+                  onClick={() => setIsSteelRadarOpen(!isSteelRadarOpen)}
+                  className={cn(
+                    'text-sm font-medium hover:text-navy dark:hover:text-white transition-all duration-300 nav-link flex items-center whitespace-nowrap h-full relative',
+                    isSteelRadarActive
+                      ? 'text-navy-dark dark:text-white font-semibold border-b-2 border-navy dark:border-silver'
+                      : 'text-gray-600 dark:text-white/95 hover:border-b-2 hover:border-navy/30 dark:hover:border-silver/30'
+                  )}
+                >
+                  <span className="mr-1.5"><Shield size={16} /></span>
+                  STEEL & Radar
+                  <ChevronDown 
+                    size={14} 
+                    className={cn(
+                      'ml-1 transition-transform duration-200',
+                      isSteelRadarOpen && 'rotate-180'
+                    )} 
+                  />
+                </button>
+
+                {/* Dropdown Menu */}
+                <AnimatePresence>
+                  {isSteelRadarOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-0 mt-1 w-56 bg-white dark:bg-dark-card-bg rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-2 z-50"
+                    >
+                      {steelRadarItems.map((item) => {
+                        if (item.external) {
+                          return (
+                            <a
+                              key={item.href}
+                              href={item.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-navy/5 dark:hover:bg-silver/10 transition-colors"
+                              onClick={() => setIsSteelRadarOpen(false)}
+                            >
+                              <span className="mr-3">{item.icon}</span>
+                              {item.label}
+                            </a>
+                          );
+                        }
+                        return (
+                          <NavLink
+                            key={item.to}
+                            to={item.to}
+                            className={({ isActive }) => cn(
+                              'flex items-center px-4 py-2 text-sm transition-colors',
+                              isActive
+                                ? 'bg-navy/10 text-navy dark:bg-silver/20 dark:text-white font-medium'
+                                : 'text-gray-700 dark:text-gray-200 hover:bg-navy/5 dark:hover:bg-silver/10'
+                            )}
+                            onClick={() => setIsSteelRadarOpen(false)}
+                          >
+                            <span className="mr-3">{item.icon}</span>
+                            {item.label}
+                          </NavLink>
+                        );
+                      })}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* Presentation Link */}
               <NavLink
                 to="/presentation"
                 className={({ isActive }) => cn(
@@ -89,15 +177,6 @@ export const Navigation: React.FC = () => {
                 <span className="mr-1.5"><Lightbulb size={16} /></span>
                 Presentation
               </NavLink>
-              <a
-                href="/steel/index.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-medium text-gray-600 dark:text-white/95 hover:text-navy dark:hover:text-white transition-colors nav-link flex items-center whitespace-nowrap h-full"
-              >
-                <span className="mr-1.5"><Lightbulb size={16} /></span>
-                STEEL Assessment
-              </a>
             </div>
 
             {/* Controls - Removed language selector */}
@@ -190,20 +269,47 @@ export const Navigation: React.FC = () => {
                 </NavLink>
               ))}
               
-              {/* Additional mobile links */}
-              <NavLink
-                to="/risk-radar"
-                className={({ isActive }) => cn(
-                  'flex items-center px-3 py-2 rounded-md text-base font-medium',
-                  isActive
-                    ? 'bg-navy/10 text-navy dark:bg-silver/20 dark:text-white'
-                    : 'text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10'
-                )}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <span className="mr-2"><Lightbulb size={16} /></span>
-                Risk Radar
-              </NavLink>
+              {/* STEEL & Radar Section - Mobile */}
+              <div className="pt-2 pb-1">
+                <div className="px-3 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                  STEEL & Radar
+                </div>
+                {steelRadarItems.map((item) => {
+                  if (item.external) {
+                    return (
+                      <a
+                        key={item.href}
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center px-6 py-2 rounded-md text-base font-medium text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        <span className="mr-2">{item.icon}</span>
+                        {item.label}
+                      </a>
+                    );
+                  }
+                  return (
+                    <NavLink
+                      key={item.to}
+                      to={item.to}
+                      className={({ isActive }) => cn(
+                        'flex items-center px-6 py-2 rounded-md text-base font-medium',
+                        isActive
+                          ? 'bg-navy/10 text-navy dark:bg-silver/20 dark:text-white'
+                          : 'text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10'
+                      )}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <span className="mr-2">{item.icon}</span>
+                      {item.label}
+                    </NavLink>
+                  );
+                })}
+              </div>
+
+              {/* Presentation Link - Mobile */}
               <NavLink
                 to="/presentation"
                 className={({ isActive }) => cn(
@@ -217,16 +323,6 @@ export const Navigation: React.FC = () => {
                 <span className="mr-2"><Lightbulb size={16} /></span>
                 Presentation
               </NavLink>
-              <a
-                href="/steel/index.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <span className="mr-2"><Lightbulb size={16} /></span>
-                STEEL Assessment
-              </a>
             </div>
             <div className="pt-4 pb-3 border-t border-gray-200 dark:border-gray-700">
               <div className="flex items-center justify-end px-4">
