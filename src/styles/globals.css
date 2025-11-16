@@ -1,5 +1,9 @@
-/* stylelint-disable */
-/* Tailwind CSS directives - these are valid and will be processed by Tailwind */
+/* stylelint-disable at-rule-no-unknown */
+/* 
+ * Tailwind CSS directives - these are valid and will be processed by Tailwind CSS
+ * VS Code warnings for @tailwind and @apply can be ignored - they are configured
+ * in .vscode/settings.json and .vscode/css_custom_data.json
+ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
