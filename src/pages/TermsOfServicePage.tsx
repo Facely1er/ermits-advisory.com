@@ -2,10 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
-import { 
-  FileText, Scale, AlertTriangle, CheckCircle, 
-  ArrowLeft, Shield, Users, Lock, DollarSign
-} from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const TermsOfServicePage: React.FC = () => {
@@ -41,7 +38,7 @@ export const TermsOfServicePage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">1. Scope and Applicability</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.1 Scope and Applicability</h2>
             <p className="text-gray-600 dark:text-gray-200 mb-4">
               These Terms govern your use of all ERMITS products, including but not limited to:
             </p>
@@ -61,11 +58,48 @@ export const TermsOfServicePage: React.FC = () => {
                 </ul>
               </div>
               <div>
-                <h3 className="font-semibold mb-2 dark:text-white">VendorSoluce™, CyberCorrect™, and CyberCaution™ Brand Products</h3>
-                <p className="text-gray-600 dark:text-gray-200">
-                  Supply chain risk management, privacy compliance, and cybersecurity assessment platforms.
-                </p>
+                <h3 className="font-semibold mb-2 dark:text-white">VendorSoluce™ Brand Products:</h3>
+                <ul className="list-disc list-inside text-gray-600 dark:text-gray-200 ml-4">
+                  <li>Supply Chain Risk Management Platform</li>
+                </ul>
               </div>
+              <div>
+                <h3 className="font-semibold mb-2 dark:text-white">CyberCorrect™ Brand Products:</h3>
+                <ul className="list-disc list-inside text-gray-600 dark:text-gray-200 ml-4">
+                  <li>Privacy Portal (Workplace privacy compliance)</li>
+                  <li>Privacy Platform (Multi-regulation privacy compliance automation)</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2 dark:text-white">CyberCaution™ Brand Products:</h3>
+                <ul className="list-disc list-inside text-gray-600 dark:text-gray-200 ml-4">
+                  <li>RansomCheck (Ransomware readiness assessment)</li>
+                  <li>Security Toolkit (Comprehensive cybersecurity assessment platform)</li>
+                  <li>RiskProfessional (CISA-aligned security assessments)</li>
+                </ul>
+              </div>
+            </div>
+            <p className="text-gray-600 dark:text-gray-200 mt-4">
+              Product-specific terms may apply as set forth in Product-Specific Addendums.
+            </p>
+          </Card>
+        </motion.div>
+
+        {/* Definitions */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.12 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.2 Definitions</h2>
+            <div className="space-y-3 text-gray-600 dark:text-gray-200">
+              <p><strong>"Privacy-First Architecture"</strong> means ERMITS' system design philosophy ensuring that user data is processed locally whenever possible, with optional encrypted cloud synchronization, pseudonymized telemetry, and zero-knowledge data handling principles.</p>
+              <p><strong>"User Data"</strong> means any information, content, files, or materials that you upload, submit, generate, or process through the Services.</p>
+              <p><strong>"Controlled Unclassified Information" or "CUI"</strong> means information that requires safeguarding or dissemination controls pursuant to federal law, regulations, or government-wide policies.</p>
+              <p><strong>"Federal Contract Information" or "FCI"</strong> means information not intended for public release that is provided by or generated for the U.S. Government under a contract.</p>
+              <p><strong>"Beta Products"</strong> means Services explicitly marked as "Beta," "Preview," "Early Access," or similar designations indicating pre-release or testing status.</p>
             </div>
           </Card>
         </motion.div>
@@ -210,6 +244,175 @@ export const TermsOfServicePage: React.FC = () => {
           </Card>
         </motion.div>
 
+        {/* Beta Products */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.55 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.9 Beta Products and Services</h2>
+            
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">1.9.1 Beta Designation</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  Products or features explicitly marked as "Beta," "Preview," "Early Access," or similar designations are pre-release versions provided for testing and feedback purposes.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">1.9.2 Beta Terms</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">Beta Products are provided "AS IS" with the following additional limitations:</p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>May contain bugs, errors, or incomplete features</li>
+                  <li>May be modified or discontinued without notice</li>
+                  <li>Are not subject to standard SLA commitments</li>
+                  <li>May have limited or no customer support</li>
+                  <li>Should not be used for production or mission-critical purposes</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">1.9.3 Beta Feedback</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  By using Beta Products, you agree to provide feedback on functionality, usability, and issues. ERMITS may use such feedback without compensation or obligation to you.
+                </p>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Federal Contractor Terms */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.10 Federal Contractor Specific Terms</h2>
+            
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">1.10.1 Applicability</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  This section applies to users who are U.S. federal contractors or subcontractors handling Federal Contract Information (FCI) or Controlled Unclassified Information (CUI).
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">1.10.2 Compliance Representations</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">Users represent and warrant that they:</p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>Understand their obligations under applicable DFARS and FAR clauses</li>
+                  <li>Are solely responsible for compliance with DFARS 252.204-7012, NIST SP 800-171, and CMMC requirements</li>
+                  <li>Will implement appropriate controls for CUI and FCI protection</li>
+                  <li>Acknowledge that ERMITS products are tools to assist with compliance but do not guarantee certification</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">1.10.3 CUI and FCI Handling</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">When using ERMITS Services to process CUI or FCI:</p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>You must use encryption features and self-managed deployment options</li>
+                  <li>You are responsible for properly marking and handling CUI/FCI</li>
+                  <li>ERMITS does not access or process CUI/FCI due to Privacy-First Architecture</li>
+                  <li>You must implement appropriate access controls and audit logging</li>
+                </ul>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Payment Terms */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.65 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.12 Payment Terms</h2>
+            
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">1.12.1 Pricing and Billing</h3>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>Pricing for Services is set forth on the ERMITS website or in your subscription agreement</li>
+                  <li>All fees are in U.S. Dollars unless otherwise specified</li>
+                  <li>Fees are non-refundable except as expressly provided in the Refund & Cancellation Policy</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">1.12.2 Payment Processing</h3>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>Payments are processed through Stripe, Inc., a third-party payment processor</li>
+                  <li>You authorize ERMITS to charge your designated payment method</li>
+                  <li>You must provide accurate, current payment information</li>
+                  <li>You are responsible for all applicable taxes</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">1.12.3 Subscription Terms</h3>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>Subscriptions automatically renew unless cancelled</li>
+                  <li>Renewal pricing may change with 30 days' notice</li>
+                  <li>Downgrades take effect at the next billing cycle</li>
+                  <li>Cancellations must be submitted before renewal date</li>
+                </ul>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Term and Termination */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.13 Term and Termination</h2>
+            
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">1.13.1 Term</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  These Terms remain in effect for as long as you access or use the Services.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">1.13.2 Termination by You</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">You may terminate your account at any time through:</p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>Account settings within the Services</li>
+                  <li>Contacting ERMITS support at contact@ermits.com</li>
+                  <li>Following product-specific cancellation procedures</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">1.13.3 Termination by ERMITS</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">ERMITS may suspend or terminate your access immediately without notice if:</p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>You breach these Terms or any applicable policies</li>
+                  <li>Your account is inactive for 12+ months (free accounts)</li>
+                  <li>Your payment method fails or account is delinquent</li>
+                  <li>Required by law or regulatory authority</li>
+                  <li>Necessary to protect ERMITS or other users</li>
+                </ul>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
         {/* Warranties and Disclaimers */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -256,7 +459,7 @@ export const TermsOfServicePage: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7 }}
+          transition={{ delay: 0.75 }}
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
@@ -277,6 +480,110 @@ export const TermsOfServicePage: React.FC = () => {
                 </p>
               </div>
             </div>
+          </Card>
+        </motion.div>
+
+        {/* Indemnification */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.76 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.16 Indemnification</h2>
+            <p className="text-gray-600 dark:text-gray-200">
+              You agree to indemnify, defend, and hold harmless ERMITS LLC, its affiliates, officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, costs, or expenses (including reasonable attorneys' fees) arising out of or relating to: (a) your use of the Services; (b) your violation of these Terms; (c) your violation of any third-party rights; or (d) your User Data.
+            </p>
+          </Card>
+        </motion.div>
+
+        {/* Force Majeure */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.77 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.17 Force Majeure</h2>
+            <p className="text-gray-600 dark:text-gray-200">
+              ERMITS shall not be liable for any failure or delay in performance under these Terms due to circumstances beyond its reasonable control, including but not limited to acts of God, natural disasters, war, terrorism, labor disputes, government actions, internet or telecommunications failures, or cyberattacks.
+            </p>
+          </Card>
+        </motion.div>
+
+        {/* Governing Law */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.78 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.18 Governing Law</h2>
+            <p className="text-gray-600 dark:text-gray-200">
+              These Terms shall be governed by and construed in accordance with the laws of the State of Delaware, United States, without regard to its conflict of law provisions. The United Nations Convention on Contracts for the International Sale of Goods does not apply to these Terms.
+            </p>
+          </Card>
+        </motion.div>
+
+        {/* Dispute Resolution */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.79 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.19 Dispute Resolution</h2>
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">1.19.1 Informal Resolution</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  Before initiating formal dispute resolution, you agree to contact ERMITS at contact@ermits.com to attempt to resolve the dispute informally. ERMITS will attempt to resolve disputes in good faith within 30 days.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">1.19.2 Binding Arbitration</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  If informal resolution fails, disputes shall be resolved through binding arbitration administered by the American Arbitration Association (AAA) under its Commercial Arbitration Rules. Arbitration shall take place in Delaware, United States. You waive any right to a jury trial or to participate in class action proceedings.
+                </p>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Modifications */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.20 Modifications to Terms</h2>
+            <p className="text-gray-600 dark:text-gray-200 mb-2">
+              ERMITS reserves the right to modify these Terms at any time. Material changes will be communicated via email and in-app notification at least 30 days before they take effect. Continued use of Services after changes constitutes acceptance of modified Terms.
+            </p>
+            <p className="text-gray-600 dark:text-gray-200">
+              If you do not agree to modified Terms, you must stop using the Services and may terminate your account.
+            </p>
+          </Card>
+        </motion.div>
+
+        {/* Severability */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.81 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.21 Severability</h2>
+            <p className="text-gray-600 dark:text-gray-200">
+              If any provision of these Terms is found to be invalid, illegal, or unenforceable, the remaining provisions shall remain in full force and effect. The invalid provision shall be replaced with a valid provision that most closely reflects the intent of the original provision.
+            </p>
           </Card>
         </motion.div>
 

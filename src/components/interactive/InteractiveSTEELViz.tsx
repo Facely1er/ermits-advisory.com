@@ -1,6 +1,9 @@
+// Note: Inline styles are used for dynamic CSS variables (--risk-bg-color, --risk-color)
+// which are necessary for runtime-calculated risk level colors. These styles use CSS
+// custom properties, which is the recommended approach for dynamic styling in React.
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, TrendingUp, Users, Server, Leaf, Scale, X, Info, Play, HelpCircle, AlertTriangle, CheckCircle2 } from 'lucide-react';
+import { Shield, TrendingUp, Users, Server, Leaf, Scale, X, Info, HelpCircle, AlertTriangle, CheckCircle2 } from 'lucide-react';
 import { InteractiveCard } from '../shared/InteractiveCard';
 import { SteelAssessmentData, SteelFactor } from '../../types/steelAssessment';
 import { getSteelAssessmentFromStorage, watchSteelStorage, getRiskLevel as getRiskLevelFromService } from '../../services/steelAssessmentService';
@@ -85,6 +88,17 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
   const [showTooltip, setShowTooltip] = useState<string | null>(null);
   const [overallRisk, setOverallRisk] = useState<number>(0);
   const [assessmentData, setAssessmentData] = useState<SteelAssessmentData | null>(propAssessmentData || null);
+  const [internalShowTutorial, setInternalShowTutorial] = useState(false);
+  
+  // Use prop if provided, otherwise use internal state
+  const isTutorialVisible = showTutorial !== undefined ? showTutorial : internalShowTutorial;
+
+  // Sync internal state with prop when prop changes
+  useEffect(() => {
+    if (showTutorial !== undefined) {
+      setInternalShowTutorial(showTutorial);
+    }
+  }, [showTutorial]);
 
   // Load assessment data from localStorage if useRealData is true
   useEffect(() => {
@@ -193,19 +207,19 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
   const getRiskLevelInfo = (value: number) => {
     try {
       const riskLevel = getRiskLevelFromService(value);
-      const levelMap: Record<string, { label: string; color: string; icon: typeof CheckCircle2 }> = {
-        'LOW': { label: 'Low', color: '#10b981', icon: CheckCircle2 },
-        'MODERATE': { label: 'Moderate', color: '#f59e0b', icon: AlertTriangle },
-        'ELEVATED': { label: 'Elevated', color: '#f97316', icon: AlertTriangle },
-        'HIGH': { label: 'High', color: '#ef4444', icon: AlertTriangle },
+      const levelMap: Record<string, { label: string; color: string; icon: typeof CheckCircle2; className: string }> = {
+        'LOW': { label: 'Low', color: '#10b981', icon: CheckCircle2, className: 'risk-badge-low' },
+        'MODERATE': { label: 'Moderate', color: '#f59e0b', icon: AlertTriangle, className: 'risk-badge-moderate' },
+        'ELEVATED': { label: 'Elevated', color: '#f97316', icon: AlertTriangle, className: 'risk-badge-elevated' },
+        'HIGH': { label: 'High', color: '#ef4444', icon: AlertTriangle, className: 'risk-badge-high' },
       };
       return levelMap[riskLevel] || levelMap['MODERATE'];
     } catch {
       // Fallback if service not available
-      if (value < 40) return { label: 'Low', color: '#10b981', icon: CheckCircle2 };
-      if (value < 60) return { label: 'Moderate', color: '#f59e0b', icon: AlertTriangle };
-      if (value < 80) return { label: 'Elevated', color: '#f97316', icon: AlertTriangle };
-      return { label: 'High', color: '#ef4444', icon: AlertTriangle };
+      if (value < 40) return { label: 'Low', color: '#10b981', icon: CheckCircle2, className: 'risk-badge-low' };
+      if (value < 60) return { label: 'Moderate', color: '#f59e0b', icon: AlertTriangle, className: 'risk-badge-moderate' };
+      if (value < 80) return { label: 'Elevated', color: '#f97316', icon: AlertTriangle, className: 'risk-badge-elevated' };
+      return { label: 'High', color: '#ef4444', icon: AlertTriangle, className: 'risk-badge-high' };
     }
   };
 
@@ -253,6 +267,65 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
       }
     `)
     .join('\n');
+  
+  // CSS classes for risk level badges
+  const riskBadgeStyles = `
+    .risk-badge {
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .risk-badge-low {
+      background-color: #10b98120;
+      color: #10b981;
+    }
+    .risk-badge-moderate {
+      background-color: #f59e0b20;
+      color: #f59e0b;
+    }
+    .risk-badge-elevated {
+      background-color: #f9731620;
+      color: #f97316;
+    }
+    .risk-badge-high {
+      background-color: #ef444420;
+      color: #ef4444;
+    }
+    .risk-badge-tooltip {
+      padding: 0.125rem 0.5rem;
+      border-radius: 0.25rem;
+      font-size: 0.75rem;
+    }
+    .risk-badge-tooltip.risk-badge-low {
+      background-color: #10b98130;
+      color: #10b981;
+    }
+    .risk-badge-tooltip.risk-badge-moderate {
+      background-color: #f59e0b30;
+      color: #f59e0b;
+    }
+    .risk-badge-tooltip.risk-badge-elevated {
+      background-color: #f9731630;
+      color: #f97316;
+    }
+    .risk-badge-tooltip.risk-badge-high {
+      background-color: #ef444430;
+      color: #ef4444;
+    }
+    .risk-badge-detail {
+      padding: 0.25rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+  `;
 
   const containerHeight = Math.max(responsiveRadius * 2.5, 400);
   const dynamicStyles = `
@@ -290,11 +363,11 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
 
   return (
     <div className="relative">
-      <style>{dimensionColorStyles + dynamicStyles}</style>
+      <style>{dimensionColorStyles + riskBadgeStyles + dynamicStyles}</style>
       
       {/* Tutorial Overlay */}
       <AnimatePresence>
-        {showTutorial && tutorialStep < tutorialSteps.length && (
+        {isTutorialVisible && tutorialStep < tutorialSteps.length && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -304,6 +377,7 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
               if (tutorialStep < tutorialSteps.length - 1) {
                 setTutorialStep(tutorialStep + 1);
               } else {
+                setInternalShowTutorial(false);
                 onTutorialComplete?.();
               }
             }}
@@ -319,8 +393,13 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
                   {tutorialSteps[tutorialStep].title}
                 </h3>
                 <button
-                  onClick={() => onTutorialComplete?.()}
+                  onClick={() => {
+                    setInternalShowTutorial(false);
+                    onTutorialComplete?.();
+                  }}
                   className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+                  aria-label="Close tutorial"
+                  title="Close tutorial"
                 >
                   <X size={20} />
                 </button>
@@ -346,6 +425,7 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
                       if (tutorialStep < tutorialSteps.length - 1) {
                         setTutorialStep(tutorialStep + 1);
                       } else {
+                        setInternalShowTutorial(false);
                         onTutorialComplete?.();
                       }
                     }}
@@ -376,11 +456,7 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
                 const RiskIcon = riskLevel.icon;
                 return (
                   <span 
-                    className="px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-1"
-                    style={{ 
-                      backgroundColor: `${riskLevel.color}20`,
-                      color: riskLevel.color 
-                    }}
+                    className={`risk-badge ${riskLevel.className}`}
                   >
                     <RiskIcon size={16} />
                     {riskLevel.label} Risk
@@ -397,8 +473,9 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          onClick={() => setShowTutorial(true)}
+          onClick={() => setInternalShowTutorial(true)}
           className="p-2 rounded-full bg-navy text-white shadow-lg hover:bg-navy-dark transition-colors"
+          aria-label="Show tutorial"
           title="Show tutorial"
         >
           <HelpCircle size={20} />
@@ -490,15 +567,15 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
                     <div className="mt-2 pt-2 border-t border-gray-700">
                       <div className="flex items-center justify-between">
                         <span>Risk: {dimension.value}%</span>
-                        <span 
-                          className="px-2 py-0.5 rounded text-xs"
-                          style={{ 
-                            backgroundColor: `${riskLevel.color}30`,
-                            color: riskLevel.color 
-                          }}
-                        >
-                          {riskLevel.label}
-                        </span>
+                        {(() => {
+                          return (
+                            <span 
+                              className={`risk-badge risk-badge-tooltip ${riskLevel.className}`}
+                            >
+                              {riskLevel.label}
+                            </span>
+                          );
+                        })()}
                       </div>
                     </div>
                     <div className="mt-2 text-gray-400 text-xs italic">Click for details</div>
@@ -584,11 +661,7 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
                             const RiskIcon = riskLevel.icon;
                             return (
                               <span 
-                                className="px-2 py-1 rounded-full text-xs font-semibold flex items-center gap-1"
-                                style={{ 
-                                  backgroundColor: `${riskLevel.color}20`,
-                                  color: riskLevel.color 
-                                }}
+                                className={`risk-badge risk-badge-detail ${riskLevel.className}`}
                               >
                                 <RiskIcon size={14} />
                                 {riskLevel.label}

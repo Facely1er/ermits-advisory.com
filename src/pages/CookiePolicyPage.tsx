@@ -1,29 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { 
-  Cookie, Settings, Eye, BarChart3, Shield, 
-  ArrowLeft, CheckCircle, X, Lock
+  Settings, Eye, BarChart3, Shield, 
+  ArrowLeft
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const CookiePolicyPage: React.FC = () => {
-  const [cookiePreferences, setCookiePreferences] = useState({
-    necessary: true, // Always true, cannot be disabled
-    analytics: true,
-    marketing: false,
-    preferences: true
-  });
-
-  const handlePreferenceChange = (type: string, value: boolean) => {
-    if (type !== 'necessary') { // Necessary cookies cannot be disabled
-      setCookiePreferences(prev => ({
-        ...prev,
-        [type]: value
-      }));
-    }
-  };
 
   return (
     <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
@@ -196,8 +181,22 @@ export const CookiePolicyPage: React.FC = () => {
                   <tr className="border-b border-gray-100 dark:border-gray-800">
                     <td className="py-3 px-4 text-gray-600 dark:text-gray-200">theme</td>
                     <td className="py-3 px-4 text-gray-600 dark:text-gray-200">ERMITS</td>
-                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">UI theme preference</td>
+                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">UI theme preference (light/dark)</td>
                     <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Functional</td>
+                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">1 year</td>
+                  </tr>
+                  <tr className="border-b border-gray-100 dark:border-gray-800">
+                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">language</td>
+                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">ERMITS</td>
+                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Language preference</td>
+                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Functional</td>
+                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">1 year</td>
+                  </tr>
+                  <tr className="border-b border-gray-100 dark:border-gray-800">
+                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">consent</td>
+                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">ERMITS</td>
+                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Cookie consent preferences</td>
+                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Essential</td>
                     <td className="py-3 px-4 text-gray-600 dark:text-gray-200">1 year</td>
                   </tr>
                   <tr className="border-b border-gray-100 dark:border-gray-800">
@@ -220,6 +219,77 @@ export const CookiePolicyPage: React.FC = () => {
             <p className="text-gray-600 dark:text-gray-200 text-sm mt-4 italic">
               <strong>Note:</strong> Cookie names and specifics may change. This table represents typical cookies; actual implementation may vary by product.
             </p>
+          </Card>
+        </motion.div>
+
+        {/* Third-Party Cookies */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.35 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">4. Third-Party Cookies</h2>
+            
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">4.1 Third-Party Service Providers</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3">We use third-party services that may set cookies:</p>
+                
+                <div className="space-y-3">
+                  <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                    <h4 className="font-semibold mb-2 dark:text-white">Supabase (Authentication & Database)</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 text-sm ml-4">
+                      <li>Purpose: User authentication and session management</li>
+                      <li>Privacy: Essential for service functionality</li>
+                      <li>Control: Required for service use; cannot be disabled</li>
+                      <li>More info: <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer" className="text-navy dark:text-silver hover:underline">https://supabase.com/privacy</a></li>
+                    </ul>
+                  </div>
+
+                  <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                    <h4 className="font-semibold mb-2 dark:text-white">Sentry (Error Tracking)</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 text-sm ml-4">
+                      <li>Purpose: Monitor application errors and performance</li>
+                      <li>Privacy: Automatically scrubs PII from error reports</li>
+                      <li>Control: Can be disabled in privacy settings</li>
+                      <li>More info: <a href="https://sentry.io/privacy/" target="_blank" rel="noopener noreferrer" className="text-navy dark:text-silver hover:underline">https://sentry.io/privacy/</a></li>
+                    </ul>
+                  </div>
+
+                  <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                    <h4 className="font-semibold mb-2 dark:text-white">PostHog (Analytics)</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 text-sm ml-4">
+                      <li>Purpose: Anonymous usage analytics with differential privacy</li>
+                      <li>Privacy: Cannot identify individual users</li>
+                      <li>Control: Can be disabled in privacy settings (opt-out)</li>
+                      <li>More info: <a href="https://posthog.com/privacy" target="_blank" rel="noopener noreferrer" className="text-navy dark:text-silver hover:underline">https://posthog.com/privacy</a></li>
+                    </ul>
+                  </div>
+
+                  <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                    <h4 className="font-semibold mb-2 dark:text-white">Stripe (Payment Processing)</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 text-sm ml-4">
+                      <li>Purpose: Payment processing and fraud prevention</li>
+                      <li>Privacy: Handles payment information securely</li>
+                      <li>Control: Required for payment functionality</li>
+                      <li>More info: <a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer" className="text-navy dark:text-silver hover:underline">https://stripe.com/privacy</a></li>
+                    </ul>
+                  </div>
+
+                  <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                    <h4 className="font-semibold mb-2 dark:text-white">Vercel (Hosting & CDN)</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 text-sm ml-4">
+                      <li>Purpose: Content delivery and performance optimization</li>
+                      <li>Privacy: Standard web server logs</li>
+                      <li>Control: Required for service delivery</li>
+                      <li>More info: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-navy dark:text-silver hover:underline">https://vercel.com/legal/privacy-policy</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
           </Card>
         </motion.div>
 
@@ -286,12 +356,114 @@ export const CookiePolicyPage: React.FC = () => {
 
               <div>
                 <h3 className="text-xl font-semibold mb-3 dark:text-white">6.2 Managing Cookie Preferences</h3>
-                <p className="text-gray-600 dark:text-gray-200 mb-3">
-                  <strong>Within ERMITS Services:</strong> Navigate to Account Settings → Privacy → Cookie Preferences
+                <p className="text-gray-600 dark:text-gray-200 mb-2">
+                  <strong>Within ERMITS Services:</strong> Navigate to Account Settings → Privacy → Cookie Preferences. Toggle categories on/off (except essential cookies) and save preferences.
                 </p>
-                <p className="text-gray-600 dark:text-gray-200 mb-3">
-                  <strong>Browser Controls:</strong> Most browsers allow cookie management through settings. Blocking all cookies may prevent service functionality.
+                <p className="text-gray-600 dark:text-gray-200 mb-2">
+                  <strong>Browser Controls:</strong> Most browsers allow cookie management:
                 </p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 mb-3">
+                  <li><strong>Chrome:</strong> Settings → Privacy and Security → Cookies</li>
+                  <li><strong>Firefox:</strong> Settings → Privacy & Security → Cookies and Site Data</li>
+                  <li><strong>Safari:</strong> Preferences → Privacy → Cookies and Website Data</li>
+                  <li><strong>Edge:</strong> Settings → Privacy, Search, and Services → Cookies</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">6.3 Opt-Out Tools</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">
+                  <strong>Analytics Opt-Out:</strong> Disable analytics cookies in Account Settings, use browser Do Not Track (DNT) signal (we honor DNT), or visit <a href="https://posthog.com/opt-out" target="_blank" rel="noopener noreferrer" className="text-navy dark:text-silver hover:underline">PostHog opt-out</a>.
+                </p>
+                <p className="text-gray-600 dark:text-gray-200">
+                  <strong>Error Tracking Opt-Out:</strong> Disable performance cookies in Account Settings. Sentry respects privacy settings.
+                </p>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Do Not Track */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.52 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">7. Do Not Track (DNT)</h2>
+            
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">7.1 DNT Support</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">ERMITS respects browser Do Not Track signals:</p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li><strong>DNT Enabled:</strong> We disable optional analytics and performance cookies</li>
+                  <li><strong>Essential Cookies Only:</strong> Authentication and security cookies remain active</li>
+                  <li><strong>No Tracking:</strong> No behavioral tracking when DNT is enabled</li>
+                </ul>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Cookies and International Privacy Laws */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.54 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">9. Cookies and International Privacy Laws</h2>
+            
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">9.1 GDPR Compliance (EU/UK/Swiss)</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">For users in the European Economic Area, United Kingdom, or Switzerland:</p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li><strong>Consent Required:</strong> We obtain consent before setting non-essential cookies</li>
+                  <li><strong>Granular Control:</strong> You can accept/reject specific cookie categories</li>
+                  <li><strong>Easy Withdrawal:</strong> Withdraw consent anytime in Account Settings</li>
+                  <li><strong>Pre-Checked Boxes Prohibited:</strong> Cookie preferences start with only essential cookies enabled</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">9.2 CCPA Compliance (California)</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">For California residents:</p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li><strong>No Sale of Data:</strong> We do not sell personal information collected via cookies</li>
+                  <li><strong>Opt-Out Rights:</strong> You can disable optional cookies anytime</li>
+                  <li><strong>Disclosure:</strong> This policy discloses all cookies used</li>
+                </ul>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Local Storage and IndexedDB */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.56 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">11. Local Storage and IndexedDB</h2>
+            
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">11.1 Privacy-First Local Storage</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">ERMITS products extensively use browser local storage (localStorage, IndexedDB) for Privacy-First Architecture:</p>
+                <p className="text-gray-600 dark:text-gray-200 mb-2"><strong>Purpose:</strong> Store assessment data locally (never transmitted to servers), enable offline functionality, reduce server data storage, provide faster performance.</p>
+                <p className="text-gray-600 dark:text-gray-200 mb-2"><strong>Privacy Benefits:</strong> Data stays local on your device, no server transmission, user control (you can clear local storage anytime), encryption option for sensitive data.</p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">11.2 Managing Local Storage</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2"><strong>Clear Local Storage:</strong> Within Services: Account Settings → Data → Clear Local Data. Browser Settings: Developer Tools → Application → Storage → Clear. <strong>Warning:</strong> Clearing local storage deletes locally-stored assessments and data.</p>
+                <p className="text-gray-600 dark:text-gray-200"><strong>Backup Local Data:</strong> Export data before clearing: Account Settings → Export Data. Download JSON/CSV backups and store backups securely.</p>
               </div>
             </div>
           </Card>

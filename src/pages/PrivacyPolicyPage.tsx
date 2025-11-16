@@ -185,6 +185,77 @@ export const PrivacyPolicyPage: React.FC = () => {
           </Card>
         </motion.div>
 
+        {/* Information Sharing and Disclosure */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.35 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">4. Information Sharing and Disclosure</h2>
+            
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">4.1 Service Providers (Sub-Processors)</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3">We share limited data with trusted third-party service providers who assist in delivering the Services:</p>
+                
+                <div className="overflow-x-auto my-4">
+                  <table className="w-full text-sm border border-gray-200 dark:border-gray-700">
+                    <thead>
+                      <tr className="bg-gray-100 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+                        <th className="text-left py-3 px-4 font-semibold dark:text-white">Service Provider</th>
+                        <th className="text-left py-3 px-4 font-semibold dark:text-white">Purpose</th>
+                        <th className="text-left py-3 px-4 font-semibold dark:text-white">Data Shared</th>
+                        <th className="text-left py-3 px-4 font-semibold dark:text-white">Location</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-gray-100 dark:border-gray-800">
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200"><strong>Supabase</strong></td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Database and authentication</td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Email, encrypted user data (if cloud sync enabled)</td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">United States</td>
+                      </tr>
+                      <tr className="border-b border-gray-100 dark:border-gray-800">
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200"><strong>Stripe</strong></td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Payment processing</td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Email, billing information</td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">United States</td>
+                      </tr>
+                      <tr className="border-b border-gray-100 dark:border-gray-800">
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200"><strong>Sentry</strong></td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Error monitoring</td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Error logs with PII automatically scrubbed</td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">United States</td>
+                      </tr>
+                      <tr className="border-b border-gray-100 dark:border-gray-800">
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200"><strong>PostHog</strong></td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Analytics</td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Pseudonymized usage metrics with differential privacy</td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">United States / EU</td>
+                      </tr>
+                      <tr>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200"><strong>Vercel</strong></td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Hosting and CDN</td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">IP address, HTTP headers (standard web traffic)</td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Global CDN</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                
+                <p className="text-gray-600 dark:text-gray-200 mt-3"><strong>Sub-Processor Requirements:</strong> All sub-processors are contractually required to use data only for specified purposes, implement appropriate security measures, comply with applicable privacy laws, not use data for their own purposes, and delete data when no longer needed.</p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">4.2 Legal Requirements</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">We may disclose information if required by law or in response to court orders, subpoenas, government investigations, law enforcement requests, or national security threats. When legally permitted, we will notify affected users, challenge overly broad requests, and provide only the minimum information required.</p>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
         {/* Data Security */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -208,11 +279,165 @@ export const PrivacyPolicyPage: React.FC = () => {
               <div>
                 <h3 className="font-semibold mb-2 dark:text-white">Access Controls</h3>
                 <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
-                  <li>Multi-Factor Authentication (MFA) available for all accounts</li>
-                  <li>Role-Based Access Control (RBAC) with granular permissions</li>
-                  <li>Row-Level Security (RLS) ensuring users can only access their own data</li>
-                  <li>Principle of Least Privilege for internal access</li>
-                  <li>Access logging for audit and security monitoring</li>
+                  <li><strong>Multi-Factor Authentication (MFA):</strong> Available for all accounts, required for administrators</li>
+                  <li><strong>Role-Based Access Control (RBAC):</strong> Granular permissions based on user roles</li>
+                  <li><strong>Row-Level Security (RLS):</strong> Database-level isolation ensuring users can only access their own data</li>
+                  <li><strong>Principle of Least Privilege:</strong> Internal access limited to minimum necessary</li>
+                  <li><strong>Access Logging:</strong> All data access logged for audit and security monitoring</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="font-semibold mb-2 dark:text-white">Infrastructure Security</h3>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>Secure Cloud Hosting: Enterprise-grade infrastructure (Supabase, Vercel)</li>
+                  <li>Network Segmentation: Isolated production, staging, and development environments</li>
+                  <li>DDoS Protection: Distributed denial-of-service attack mitigation</li>
+                  <li>Intrusion Detection: 24/7 monitoring for suspicious activity</li>
+                  <li>Regular Security Audits: Penetration testing and vulnerability assessments</li>
+                  <li>Incident Response Plan: Documented procedures for security incidents</li>
+                </ul>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Data Retention */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.45 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">6. Data Retention</h2>
+            
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">6.1 Active Accounts</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3">We retain your data for as long as your account is active or as needed to provide Services:</p>
+                
+                <div className="overflow-x-auto my-4">
+                  <table className="w-full text-sm border border-gray-200 dark:border-gray-700">
+                    <thead>
+                      <tr className="bg-gray-100 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+                        <th className="text-left py-3 px-4 font-semibold dark:text-white">Data Type</th>
+                        <th className="text-left py-3 px-4 font-semibold dark:text-white">Retention Period</th>
+                        <th className="text-left py-3 px-4 font-semibold dark:text-white">Purpose</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-gray-100 dark:border-gray-800">
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200"><strong>Account Information</strong></td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Duration of account + 30 days</td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Service delivery, support</td>
+                      </tr>
+                      <tr className="border-b border-gray-100 dark:border-gray-800">
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200"><strong>User-Generated Content</strong></td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">User-controlled (can delete anytime)</td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Service functionality</td>
+                      </tr>
+                      <tr className="border-b border-gray-100 dark:border-gray-800">
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200"><strong>Encrypted Cloud Data</strong></td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">User-controlled (can delete anytime)</td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Cloud synchronization</td>
+                      </tr>
+                      <tr className="border-b border-gray-100 dark:border-gray-800">
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200"><strong>Support Communications</strong></td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">3 years</td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Customer support, quality improvement</td>
+                      </tr>
+                      <tr>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200"><strong>Pseudonymized Telemetry</strong></td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Indefinite (anonymous, cannot be deleted)</td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Service improvement, analytics</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">6.2 Deleted Accounts</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">When you delete your account or request data deletion:</p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li><strong>Immediate:</strong> Account access disabled, data marked for deletion</li>
+                  <li><strong>Within 30 days:</strong> User Data permanently deleted from production systems</li>
+                  <li><strong>Within 90 days:</strong> Backup copies permanently deleted</li>
+                  <li><strong>Exceptions:</strong> Data retained longer only where legally required</li>
+                </ul>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* International Data Transfers */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.48 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">8. International Data Transfers</h2>
+            
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">8.1 Data Processing Locations</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">ERMITS is based in the United States. If you access Services from outside the U.S., your data may be transferred to, stored, and processed in the United States or other countries where our service providers operate.</p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li><strong>United States:</strong> Primary data processing and storage (Supabase, Vercel, Stripe)</li>
+                  <li><strong>European Union:</strong> Optional data residency for EU customers (Supabase EU region)</li>
+                  <li><strong>Global CDN:</strong> Content delivery network nodes worldwide (Vercel)</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">8.2 Safeguards for International Transfers</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">For data transfers from the EEA, UK, or Switzerland to the United States, ERMITS uses European Commission-approved Standard Contractual Clauses (SCCs) incorporated into agreements with sub-processors. Additional safeguards include encryption in transit and at rest, access controls, regular security assessments, and transparency about government access requests.</p>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Children's Privacy */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.49 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">9. Children's Privacy</h2>
+            
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">9.1 Age Restrictions</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">The Services are not intended for children under 18 years of age. We do not knowingly collect personal information from children under 18. If we learn that we have collected personal information from a child under 18, we will delete the information as quickly as possible.</p>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Federal Contractor Privacy Considerations */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.495 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">10. Federal Contractor Privacy Considerations</h2>
+            
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">10.1 CUI and FCI Handling</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">For users handling Controlled Unclassified Information (CUI) or Federal Contract Information (FCI):</p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>CUI/FCI is processed client-side and never transmitted to ERMITS</li>
+                  <li>Zero-knowledge encryption ensures ERMITS cannot access CUI/FCI</li>
+                  <li>Local storage options eliminate cloud transmission of sensitive data</li>
+                  <li>Users maintain complete control over CUI/FCI data</li>
                 </ul>
               </div>
             </div>
@@ -262,11 +487,39 @@ export const PrivacyPolicyPage: React.FC = () => {
               </div>
 
               <div className="mt-4 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-                <p className="text-gray-700 dark:text-gray-200">
+                <p className="text-gray-700 dark:text-gray-200 mb-2">
                   <strong>How to Exercise Your Rights:</strong> Submit requests via email to{' '}
                   <a href="mailto:contact@ermits.com" className="text-navy dark:text-silver hover:underline">contact@ermits.com</a>{' '}
                   (Subject: "Privacy Rights Request") or through Account Settings → Privacy Rights.
                 </p>
+                <p className="text-gray-700 dark:text-gray-200 text-sm">
+                  <strong>Response Timeline:</strong> Initial response within 10 business days, complete response within 45 days (may extend 45 days with notice for complex requests). First two requests per year are free.
+                </p>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Updates to Privacy Policy */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.55 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">11. Updates to This Privacy Policy</h2>
+            
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">11.1 Policy Updates</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">We may update this Privacy Policy periodically to reflect changes in data practices, legal or regulatory developments, technological improvements, or user feedback.</p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">11.2 Notification of Changes</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2"><strong>Material Changes:</strong> For significant changes affecting your rights, we provide 30 days' advance notice via email and in-app notification, with an option to export data and close account before changes take effect.</p>
+                <p className="text-gray-600 dark:text-gray-200"><strong>Non-Material Changes:</strong> For clarifications, formatting, or minor updates, we update the "Last Updated" date and changes are effective immediately upon posting.</p>
               </div>
             </div>
           </Card>

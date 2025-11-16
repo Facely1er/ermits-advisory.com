@@ -246,6 +246,100 @@ export const AcceptableUsePolicyPage: React.FC = () => {
           </Card>
         </motion.div>
 
+        {/* Resource Limits and Fair Use */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.45 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">5. Resource Limits and Fair Use</h2>
+            
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">5.1 Resource Quotas</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3">Services include resource limits based on your subscription tier:</p>
+                <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-200 ml-4">
+                  <li><strong>API Rate Limits:</strong> Requests per minute/hour/day</li>
+                  <li><strong>Storage Limits:</strong> Total data storage allocation</li>
+                  <li><strong>Concurrent Users:</strong> Maximum simultaneous users</li>
+                  <li><strong>File Upload Limits:</strong> Maximum file size and quantity</li>
+                  <li><strong>Bandwidth Limits:</strong> Data transfer quotas</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">5.2 Fair Use</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3">You agree to use resources reasonably and not to:</p>
+                <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>Significantly exceed your allocated resource quotas</li>
+                  <li>Use automated tools to generate excessive requests</li>
+                  <li>Store unnecessary or redundant data</li>
+                  <li>Hoard resources to the detriment of other users</li>
+                  <li>Circumvent usage tracking or metering</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">5.3 Consequences of Excessive Use</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3">ERMITS may, at its discretion:</p>
+                <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>Throttle or rate-limit excessive usage</li>
+                  <li>Suspend access until usage returns to normal levels</li>
+                  <li>Request upgrade to higher-tier subscription</li>
+                  <li>Charge overage fees for excessive usage (with prior notice)</li>
+                  <li>Terminate accounts engaging in persistent abuse</li>
+                </ul>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Reporting Violations */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.48 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">6. Reporting Violations</h2>
+            
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">6.1 How to Report</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3">If you become aware of violations of this AUP:</p>
+                <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-200 ml-4">
+                  <li><strong>Email:</strong> contact@ermits.com (Subject: "AUP Violation Report")</li>
+                  <li><strong>Include:</strong> Detailed description, evidence, affected accounts/systems</li>
+                  <li><strong>Confidential:</strong> Reports are treated confidentially</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">6.2 Good Faith Reporting</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3">ERMITS will not take adverse action against users who:</p>
+                <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>Report violations in good faith</li>
+                  <li>Discover violations in the course of authorized security research</li>
+                  <li>Report their own accidental violations and take corrective action</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">6.3 False Reports</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3">Making false or malicious reports is prohibited and may result in:</p>
+                <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>Account suspension or termination</li>
+                  <li>Legal action for damages</li>
+                  <li>Reporting to law enforcement if appropriate</li>
+                </ul>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
         {/* Enforcement and Consequences */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -307,9 +401,111 @@ export const AcceptableUsePolicyPage: React.FC = () => {
                       <li>Reporting to authorities if required</li>
                     </ul>
                   </div>
+
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Legal Action:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                      <li>Pursuit of damages for harm caused</li>
+                      <li>Injunctive relief to prevent ongoing violations</li>
+                      <li>Cooperation with law enforcement investigations</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">7.3 Appeals</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3">If you believe an enforcement action was made in error:</p>
+                <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>Contact contact@ermits.com (Subject: "AUP Enforcement Appeal")</li>
+                  <li>Provide detailed explanation and evidence</li>
+                  <li>ERMITS will review and respond within 10 business days</li>
+                  <li>Decision is final and at ERMITS' sole discretion</li>
+                </ul>
+              </div>
             </div>
+          </Card>
+        </motion.div>
+
+        {/* Cooperation with Law Enforcement */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.52 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">8. Cooperation with Law Enforcement</h2>
+            
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">8.1 Legal Requests</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3">ERMITS will cooperate with lawful requests from:</p>
+                <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>Law enforcement agencies</li>
+                  <li>Regulatory authorities</li>
+                  <li>Court orders and subpoenas</li>
+                  <li>National security investigations</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">8.2 User Notification</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3">When legally permitted, ERMITS will:</p>
+                <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>Notify affected users of legal requests</li>
+                  <li>Provide reasonable time to challenge requests</li>
+                  <li>Disclose only information required by law</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">8.3 Emergency Situations</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3">In emergencies involving imminent threat to life or serious bodily harm:</p>
+                <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>ERMITS may disclose information without prior notice</li>
+                  <li>Users will be notified after emergency resolution</li>
+                  <li>Disclosure limited to minimum necessary</li>
+                </ul>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Third-Party Services */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.54 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">9. Third-Party Services and Integrations</h2>
+            <p className="text-gray-600 dark:text-gray-200 mb-3">When using third-party integrations through ERMITS Services:</p>
+            <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-200 ml-4">
+              <li>You are subject to third-party acceptable use policies</li>
+              <li>ERMITS is not responsible for third-party service violations</li>
+              <li>Violations of third-party policies may result in integration termination</li>
+              <li>You must comply with all applicable third-party terms</li>
+            </ul>
+          </Card>
+        </motion.div>
+
+        {/* Updates to Policy */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.56 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">10. Updates to This Policy</h2>
+            <p className="text-gray-600 dark:text-gray-200 mb-3">
+              ERMITS may update this AUP periodically to reflect changes in legal requirements, service features, or enforcement practices. Material changes will be communicated via email and in-app notification at least 30 days before they take effect.
+            </p>
+            <p className="text-gray-600 dark:text-gray-200">
+              Continued use of Services after changes constitutes acceptance of the updated AUP. If you do not agree to updated terms, you must stop using the Services.
+            </p>
           </Card>
         </motion.div>
 
