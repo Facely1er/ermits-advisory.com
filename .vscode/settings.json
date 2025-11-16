@@ -13,13 +13,13 @@
     "*.css": "tailwindcss"
   },
   "css.customData": [
-    "${workspaceFolder}/.vscode/css_custom_data.json",
     ".vscode/css_custom_data.json"
   ],
   "[css]": {
     "css.validate": false,
     "css.lint.unknownAtRules": "ignore",
     "css.lint.unknownProperties": "ignore",
+    "css.lint.unknownVendorSpecificProperties": "ignore",
     "editor.defaultFormatter": null
   },
   "[tailwindcss]": {
@@ -40,9 +40,8 @@
   "css.lint.unknownUnits": "ignore",
   "css.lint.zeroUnits": "ignore",
   "editor.codeActionsOnSave": {
-    "source.fixAll": false
+    "source.fixAll": "never"
   },
-  "css.diagnostics.enabled": false,
   "css.completion.completePropertyWithSemicolon": true,
   "css.hover.documentation": true,
   "files.watcherExclude": {
