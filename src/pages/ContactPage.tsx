@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { 
-  Mail, Phone, MapPin, Send, AlertCircle, CheckCircle,
+  Mail, Send, AlertCircle, CheckCircle,
   Briefcase, User, MessageSquare
 } from 'lucide-react';
 import { contactService } from '../services/localDataService';
@@ -12,7 +12,6 @@ type FormState = {
   name: string;
   email: string;
   company: string;
-  phone: string;
   message: string;
 };
 
@@ -25,7 +24,6 @@ export const ContactPage: React.FC = () => {
     name: '',
     email: '',
     company: '',
-    phone: '',
     message: ''
   });
   
@@ -74,10 +72,6 @@ export const ContactPage: React.FC = () => {
       newErrors.message = 'Message must be at least 10 characters';
     }
     
-    // Phone is optional but validate format if provided
-    if (formState.phone && !/^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/.test(formState.phone)) {
-      newErrors.phone = 'Please enter a valid phone number';
-    }
     
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -97,7 +91,6 @@ export const ContactPage: React.FC = () => {
         name: formState.name,
         email: formState.email,
         company: formState.company,
-        phone: formState.phone || undefined,
         message: formState.message
       });
       
@@ -106,7 +99,6 @@ export const ContactPage: React.FC = () => {
         name: '',
         email: '',
         company: '',
-        phone: '',
         message: ''
       });
       
@@ -243,28 +235,6 @@ export const ContactPage: React.FC = () => {
                     )}
                   </div>
                   
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                      Phone
-                    </label>
-                    <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <Phone size={18} className="text-gray-400" />
-                      </div>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formState.phone}
-                        onChange={handleChange}
-                        className={`w-full pl-10 pr-3 py-2 border ${errors.phone ? 'border-red-500 dark:border-red-500' : 'border-gray-300 dark:border-gray-600'} rounded-md shadow-sm focus:outline-none focus:ring-navy focus:border-navy dark:bg-dark-surface dark:text-white`}
-                        placeholder="+1 (555) 123-4567"
-                      />
-                    </div>
-                    {errors.phone && (
-                      <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.phone}</p>
-                    )}
-                  </div>
                 </div>
                 
                 <div className="mb-6">
@@ -332,43 +302,6 @@ export const ContactPage: React.FC = () => {
                   </div>
                 </div>
                 
-                <div className="flex">
-                  <div className="flex-shrink-0 h-12 w-12 bg-navy dark:bg-navy/80 rounded-full flex items-center justify-center mr-4">
-                    <Phone size={20} className="text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold dark:text-white">Phone</h3>
-                    <p className="text-gray-600 dark:text-gray-300">Mon-Fri from 9am to 6pm EST</p>
-                    <a href="tel:+15551234567" className="text-navy dark:text-silver font-medium hover:underline">
-                      +1 (240) 599-0102
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="flex">
-                  <div className="flex-shrink-0 h-12 w-12 bg-navy dark:bg-navy/80 rounded-full flex items-center justify-center mr-4">
-                    <MapPin size={20} className="text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold dark:text-white">Office</h3>
-                    <p className="text-gray-600 dark:text-gray-300">Visit us at our headquarters</p>
-                    <address className="not-italic text-navy dark:text-silver">
-                      8300 McCullough Lane, Suite 203 <br />
-                      Gaithersburg, MD 20877<br />
-                      United States
-                    </address>
-                  </div>
-                </div>
-                
-                <div className="border-t border-gray-200 dark:border-gray-700 pt-6 mt-6">
-                  <h3 className="text-lg font-semibold mb-3 dark:text-white">Business Hours</h3>
-                  <div className="grid grid-cols-2 gap-2">
-                    <div className="text-gray-600 dark:text-gray-300">Monday - Friday</div>
-                    <div className="text-navy dark:text-silver font-medium">9:00 AM - 6:00 PM EST</div>
-                    <div className="text-gray-600 dark:text-gray-300">Saturday - Sunday</div>
-                    <div className="text-navy dark:text-silver font-medium">Closed</div>
-                  </div>
-                </div>
               </div>
             </Card>
           </motion.div>

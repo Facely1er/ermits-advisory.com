@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, Phone, Calendar, ChevronUp, Mail } from 'lucide-react';
+import { MessageCircle, Calendar, ChevronUp, Mail } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 export const FloatingActionButton: React.FC = () => {
@@ -33,12 +33,6 @@ export const FloatingActionButton: React.FC = () => {
       label: 'Contact Us',
       action: () => navigate('/contact'),
       color: 'bg-green-500 hover:bg-green-600'
-    },
-    {
-      icon: <Phone size={20} />,
-      label: 'Call Now',
-      action: () => window.open('tel:+12405990102'),
-      color: 'bg-purple-500 hover:bg-purple-600'
     }
   ];
 

@@ -939,18 +939,6 @@ export const ServiceOffering: React.FC = () => {
 
               <div className="flex items-start">
                 <div className="p-3 rounded-full bg-silver/20 dark:bg-navy/40 mr-4">
-                  <Phone size={24} className="text-navy dark:text-silver" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-1 dark:text-white">Phone</h3>
-                  <p className="text-gray-600 dark:text-gray-200">
-                    1-800-ERMITS-1
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <div className="p-3 rounded-full bg-silver/20 dark:bg-navy/40 mr-4">
                   <MapPin size={24} className="text-navy dark:text-silver" />
                 </div>
                 <div>
