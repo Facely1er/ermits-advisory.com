@@ -226,7 +226,7 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Live Metrics Section - Now with translations */}
+      {/* Live Metrics Section - Real-Time Intelligence */}
       <section className="py-16 bg-silver-light dark:bg-dark-surface">
         <div className="container mx-auto px-4 max-w-7xl">
           <motion.div
@@ -250,62 +250,8 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Enhanced Features Section - Now with translations */}
-      <section className="py-16 bg-white dark:bg-dark-bg">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
-            className="text-center mb-12"
-          >
-            <motion.div variants={item} className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-2">
-              Capabilities
-            </motion.div>
-            <motion.h2 variants={item} className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              Advanced Capabilities
-            </motion.h2>
-            <motion.p variants={item} className="text-lg text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              Powerful tools and insights to transform your security posture
-            </motion.p>
-          </motion.div>
-          
-          <motion.div 
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.1 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
-            {enhancedFeatures.map((feature, index) => (
-              <motion.div key={index} variants={item}>
-                <InteractiveCard 
-                  hover3D={true}
-                  glowEffect={true}
-                  className="bg-white dark:bg-dark-card-bg p-6 text-center h-full"
-                >
-                  <div className="p-4 rounded-full bg-gray-50 dark:bg-gray-800 inline-flex mb-4">
-                    {feature.icon}
-                  </div>
-                  <div className="text-3xl font-bold text-navy dark:text-white mb-2">
-                    {feature.metric}
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 dark:text-white">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-200 text-sm">
-                    {feature.description}
-                  </p>
-                </InteractiveCard>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* STEEL-to-Platform Pathway Section */}
-      <section className="py-16 bg-white dark:bg-dark-bg">
+      {/* Enhanced STEEL Methodology Section - Luxury */}
+      <section id="steel" className="py-20 bg-gradient-to-b from-silver-lighter via-white to-silver-light dark:from-dark-luxury-bg dark:via-dark-luxury-surface dark:to-dark-luxury-bg steel-section">
         <div className="container mx-auto px-4 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -607,6 +553,271 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
+      {/* Engagement Model / How It Works Section - Luxury */}
+      <section id="how-it-works" className="py-20 bg-gradient-to-b from-white via-silver-lighter to-white dark:from-dark-luxury-bg dark:via-dark-luxury-surface dark:to-dark-luxury-bg">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <div className="text-xs uppercase tracking-widest text-cyan-400 mb-2">
+              Engagement model
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
+              A compact, outcome-driven engagement — not another endless audit
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              ERMITS Advisory is built by practitioners who have lived inside GRC, cyber, and
+              supply-chain teams. The process is designed to be <strong className="text-gray-900 dark:text-white">lean</strong>, <strong className="text-gray-900 dark:text-white">transparent</strong>,
+              and <strong className="text-gray-900 dark:text-white">immediately actionable</strong>.
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.1 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          >
+            <motion.div variants={item}>
+              <Card className="luxury-card luxury-hover h-full p-8 bg-white/95 dark:bg-dark-luxury-surface/95 border-luxury-gold/20 dark:border-luxury-gold/30">
+                <div className="text-xs uppercase tracking-widest text-slate-400 mb-2">
+                  Step 1
+                </div>
+                <h3 className="text-lg font-semibold mb-3 dark:text-white">
+                  Scope & signal design
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  We define your STEEL™ profile (sector, regions, data types, vendors, regulatory
+                  perimeter) and select relevant open data & RSS sources.
+                </p>
+                <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+                  <li>Threat & regulation inventory.</li>
+                  <li>Vendor & SBOM footprint sketch.</li>
+                  <li>Risk appetite & board expectations.</li>
+                </ul>
+              </Card>
+            </motion.div>
+            <motion.div variants={item}>
+              <Card className="luxury-card luxury-hover h-full p-8 bg-white/95 dark:bg-dark-luxury-surface/95 border-luxury-gold/20 dark:border-luxury-gold/30">
+                <div className="text-xs uppercase tracking-widest text-slate-400 mb-2">
+                  Step 2
+                </div>
+                <h3 className="text-lg font-semibold mb-3 dark:text-white">
+                  STEEL™ run & workshop
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  We execute STEEL™, build the landscape dashboards, and run an interactive session
+                  with your stakeholders.
+                </p>
+                <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+                  <li>Visual threat weather & PESTEL overlays.</li>
+                  <li>Scenario-based risk scores.</li>
+                  <li>Pre-mapping to ERMITS tools.</li>
+                </ul>
+              </Card>
+            </motion.div>
+            <motion.div variants={item}>
+              <Card className="luxury-card luxury-hover h-full p-8 bg-white/95 dark:bg-dark-luxury-surface/95 border-luxury-gold/20 dark:border-luxury-gold/30">
+                <div className="text-xs uppercase tracking-widest text-slate-400 mb-2">
+                  Step 3
+                </div>
+                <h3 className="text-lg font-semibold mb-3 dark:text-white">
+                  Execution pack with ERMITS mapping
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  You receive a concise pack that links each priority finding to the relevant ERMITS
+                  product or playbook.
+                </p>
+                <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+                  <li>Ranked recommendations (90-day view).</li>
+                  <li>Which ERMITS tools to deploy first and why.</li>
+                  <li>Options for ongoing STEEL™ monitoring if you want a live dashboard.</li>
+                </ul>
+              </Card>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* STEEL-to-Platform Pathway Section */}
+      <section className="py-16 bg-white dark:bg-dark-bg">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <div className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-2">
+              Implementation
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
+              From Assessment to Implementation
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Strategic insights that become operational reality through the ERMITS ecosystem. Typical implementation timelines vary by organization size and complexity.
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
+          >
+            {/* Week 1-3 */}
+            <motion.div variants={item}>
+              <Card className="h-full p-6 text-center hover:shadow-xl transition-shadow">
+                <div className="mb-4">
+                  <div className="w-16 h-16 bg-navy/10 dark:bg-silver/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Search size={32} className="text-navy dark:text-silver" />
+                  </div>
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <Calendar size={18} className="text-navy dark:text-silver" />
+                    <span className="text-sm font-semibold text-navy dark:text-white">Week 1-3</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-navy dark:text-white mb-3">
+                    STEEL Assessment
+                  </h3>
+                </div>
+                <ul className="text-left space-y-2 text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  <li className="flex items-start">
+                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
+                    <span>Risk scoring and gap identification</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
+                    <span>ERMITS platform recommendations</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
+                    <span>Quick-win prioritization</span>
+                  </li>
+                </ul>
+              </Card>
+            </motion.div>
+
+            {/* Week 4-8 */}
+            <motion.div variants={item}>
+              <Card className="h-full p-6 text-center hover:shadow-xl transition-shadow">
+                <div className="mb-4">
+                  <div className="w-16 h-16 bg-navy/10 dark:bg-silver/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Target size={32} className="text-navy dark:text-silver" />
+                  </div>
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <Calendar size={18} className="text-navy dark:text-silver" />
+                    <span className="text-sm font-semibold text-navy dark:text-white">Week 4-8</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-navy dark:text-white mb-3">
+                    Strategic Planning
+                  </h3>
+                </div>
+                <ul className="text-left space-y-2 text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  <li className="flex items-start">
+                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
+                    <span>Implementation roadmap development</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
+                    <span>Platform configuration design</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
+                    <span>Resource planning and budgeting</span>
+                  </li>
+                </ul>
+              </Card>
+            </motion.div>
+
+            {/* Week 9-12 */}
+            <motion.div variants={item}>
+              <Card className="h-full p-6 text-center hover:shadow-xl transition-shadow">
+                <div className="mb-4">
+                  <div className="w-16 h-16 bg-navy/10 dark:bg-silver/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Rocket size={32} className="text-navy dark:text-silver" />
+                  </div>
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <Calendar size={18} className="text-navy dark:text-silver" />
+                    <span className="text-sm font-semibold text-navy dark:text-white">Week 9-12</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-navy dark:text-white mb-3">
+                    Platform Deployment
+                  </h3>
+                </div>
+                <ul className="text-left space-y-2 text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  <li className="flex items-start">
+                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
+                    <span>Tool implementation and integration</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
+                    <span>Policy and workflow configuration</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
+                    <span>Team training and adoption</span>
+                  </li>
+                </ul>
+              </Card>
+            </motion.div>
+
+            {/* Week 13+ */}
+            <motion.div variants={item}>
+              <Card className="h-full p-6 text-center hover:shadow-xl transition-shadow">
+                <div className="mb-4">
+                  <div className="w-16 h-16 bg-navy/10 dark:bg-silver/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Layers size={32} className="text-navy dark:text-silver" />
+                  </div>
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <Calendar size={18} className="text-navy dark:text-silver" />
+                    <span className="text-sm font-semibold text-navy dark:text-white">Week 13+</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-navy dark:text-white mb-3">
+                    Continuous Advisory
+                  </h3>
+                </div>
+                <ul className="text-left space-y-2 text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  <li className="flex items-start">
+                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
+                    <span>Monthly vCISO strategic guidance</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
+                    <span>Quarterly STEEL reassessments</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
+                    <span>Ongoing optimization support</span>
+                  </li>
+                </ul>
+              </Card>
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <Button
+              variant="primary"
+              size="lg"
+              onClick={() => navigate('/ecosystem')}
+              icon={<ArrowRight size={20} />}
+              iconPosition="right"
+            >
+              Explore ERMITS Ecosystem
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Ecosystem Mapping Section - Luxury */}
       <section id="ecosystem" className="py-20 bg-gradient-to-b from-white via-silver-lighter to-white dark:from-dark-luxury-bg dark:via-dark-luxury-surface dark:to-dark-luxury-bg">
         <div className="container mx-auto px-4 max-w-7xl">
@@ -799,92 +1010,56 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Engagement Model / How It Works Section - Luxury */}
-      <section id="how-it-works" className="py-20 bg-gradient-to-b from-white via-silver-lighter to-white dark:from-dark-luxury-bg dark:via-dark-luxury-surface dark:to-dark-luxury-bg">
+      {/* Enhanced Features Section - Capabilities */}
+      <section className="py-16 bg-white dark:bg-dark-bg">
         <div className="container mx-auto px-4 max-w-7xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <div className="text-xs uppercase tracking-widest text-cyan-400 mb-2">
-              Engagement model
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              A compact, outcome-driven engagement — not another endless audit
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              ERMITS Advisory is built by practitioners who have lived inside GRC, cyber, and
-              supply-chain teams. The process is designed to be <strong className="text-gray-900 dark:text-white">lean</strong>, <strong className="text-gray-900 dark:text-white">transparent</strong>,
-              and <strong className="text-gray-900 dark:text-white">immediately actionable</strong>.
-            </p>
-          </motion.div>
-
           <motion.div
             variants={container}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.1 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            viewport={{ once: true, amount: 0.3 }}
+            className="text-center mb-12"
           >
-            <motion.div variants={item}>
-              <Card className="luxury-card luxury-hover h-full p-8 bg-white/95 dark:bg-dark-luxury-surface/95 border-luxury-gold/20 dark:border-luxury-gold/30">
-                <div className="text-xs uppercase tracking-widest text-slate-400 mb-2">
-                  Step 1
-                </div>
-                <h3 className="text-lg font-semibold mb-3 dark:text-white">
-                  Scope & signal design
-                </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                  We define your STEEL™ profile (sector, regions, data types, vendors, regulatory
-                  perimeter) and select relevant open data & RSS sources.
-                </p>
-                <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
-                  <li>Threat & regulation inventory.</li>
-                  <li>Vendor & SBOM footprint sketch.</li>
-                  <li>Risk appetite & board expectations.</li>
-                </ul>
-              </Card>
+            <motion.div variants={item} className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-2">
+              Capabilities
             </motion.div>
-            <motion.div variants={item}>
-              <Card className="luxury-card luxury-hover h-full p-8 bg-white/95 dark:bg-dark-luxury-surface/95 border-luxury-gold/20 dark:border-luxury-gold/30">
-                <div className="text-xs uppercase tracking-widest text-slate-400 mb-2">
-                  Step 2
-                </div>
-                <h3 className="text-lg font-semibold mb-3 dark:text-white">
-                  STEEL™ run & workshop
-                </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                  We execute STEEL™, build the landscape dashboards, and run an interactive session
-                  with your stakeholders.
-                </p>
-                <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
-                  <li>Visual threat weather & PESTEL overlays.</li>
-                  <li>Scenario-based risk scores.</li>
-                  <li>Pre-mapping to ERMITS tools.</li>
-                </ul>
-              </Card>
-            </motion.div>
-            <motion.div variants={item}>
-              <Card className="luxury-card luxury-hover h-full p-8 bg-white/95 dark:bg-dark-luxury-surface/95 border-luxury-gold/20 dark:border-luxury-gold/30">
-                <div className="text-xs uppercase tracking-widest text-slate-400 mb-2">
-                  Step 3
-                </div>
-                <h3 className="text-lg font-semibold mb-3 dark:text-white">
-                  Execution pack with ERMITS mapping
-                </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                  You receive a concise pack that links each priority finding to the relevant ERMITS
-                  product or playbook.
-                </p>
-                <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
-                  <li>Ranked recommendations (90-day view).</li>
-                  <li>Which ERMITS tools to deploy first and why.</li>
-                  <li>Options for ongoing STEEL™ monitoring if you want a live dashboard.</li>
-                </ul>
-              </Card>
-            </motion.div>
+            <motion.h2 variants={item} className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
+              Advanced Capabilities
+            </motion.h2>
+            <motion.p variants={item} className="text-lg text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
+              Powerful tools and insights to transform your security posture
+            </motion.p>
+          </motion.div>
+          
+          <motion.div 
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.1 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
+            {enhancedFeatures.map((feature, index) => (
+              <motion.div key={index} variants={item}>
+                <InteractiveCard 
+                  hover3D={true}
+                  glowEffect={true}
+                  className="bg-white dark:bg-dark-card-bg p-6 text-center h-full"
+                >
+                  <div className="p-4 rounded-full bg-gray-50 dark:bg-gray-800 inline-flex mb-4">
+                    {feature.icon}
+                  </div>
+                  <div className="text-3xl font-bold text-navy dark:text-white mb-2">
+                    {feature.metric}
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 dark:text-white">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-200 text-sm">
+                    {feature.description}
+                  </p>
+                </InteractiveCard>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
