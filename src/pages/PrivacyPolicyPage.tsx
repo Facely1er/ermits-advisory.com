@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import {
-  Shield, Mail, ArrowLeft, Database, Eye, Lock, Globe, UserCheck
+  Shield, ArrowLeft
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
