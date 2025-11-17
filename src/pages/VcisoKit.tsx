@@ -8,10 +8,11 @@ import {
   Activity, CheckSquare, Download,
   Briefcase
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { createCheckoutSession } from '../services/stripe';
 
 export const VcisoKit: React.FC = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<'overview' | 'workflow' | 'templates'>('overview');
   const [loading, setLoading] = useState(false);
 
@@ -520,9 +521,9 @@ export const VcisoKit: React.FC = () => {
           transition={{ delay: 0.6 }}
           className="text-center mt-12"
         >
-          <Card variant="glass" padding="lg" className="bg-gradient-to-r from-navy to-dark">
+          <Card variant="glass" padding="lg" className="bg-gradient-to-r from-blue-600 to-blue-500 dark:from-navy dark:to-navy-dark">
             <h3 className="text-2xl font-bold text-white mb-4">Ready to Purchase?</h3>
-            <p className="text-silver mb-6">
+            <p className="text-blue-50 dark:text-silver mb-6">
               Get instant access to 37+ professional templates and delivery guides
             </p>
             <div className="flex flex-wrap justify-center gap-4">
@@ -533,15 +534,15 @@ export const VcisoKit: React.FC = () => {
                 disabled={loading}
                 icon={<Download size={18} />}
                 iconPosition="right"
-                className="bg-white text-navy hover:bg-silver"
+                className="bg-white text-navy hover:bg-gray-100 dark:bg-white dark:text-navy dark:hover:bg-silver font-semibold shadow-lg transition-colors"
               >
                 {loading ? 'Processing...' : 'Buy Now - $299'}
               </Button>
               <Button
                 variant="outline"
                 size="lg"
-                onClick={() => window.location.href = '/services'}
-                className="bg-white/10 text-white border-white/30 hover:bg-white/20"
+                onClick={() => navigate('/services')}
+                className="bg-white/20 text-white border-white/40 hover:bg-white/30 dark:bg-white/10 dark:text-white dark:border-white/30 dark:hover:bg-white/20 font-semibold transition-colors"
               >
                 View All Services
               </Button>
@@ -564,3 +565,5 @@ export const VcisoKit: React.FC = () => {
     </div>
   );
 };
+
+export default VcisoKit;

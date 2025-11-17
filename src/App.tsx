@@ -16,7 +16,32 @@ const SteelEnterprisePricing = React.lazy(() => import('./pages/SteelEnterpriseP
 const ProfessionalSteelAssessment = React.lazy(() => import('./pages/ProfessionalSteelAssessment').then(m => ({ default: m.ProfessionalSteelAssessment })));
 const STEELVisualization = React.lazy(() => import('./pages/STEELVisualization').then(m => ({ default: m.STEELVisualization })));
 const SteelPremium = React.lazy(() => import('./pages/SteelPremium').then(m => ({ default: m.SteelPremium })));
-const VcisoKit = React.lazy(() => import('./pages/VcisoKit').then(m => ({ default: m.VcisoKit })));
+const VcisoKit = React.lazy(() => 
+  import('./pages/VcisoKit')
+    .then(m => ({ default: m.VcisoKit }))
+    .catch(error => {
+      console.error('Failed to load VcisoKit:', error);
+      // Return a fallback component
+      return { 
+        default: () => (
+          <div className="min-h-screen flex items-center justify-center bg-silver-light dark:bg-dark-bg">
+            <div className="text-center p-8">
+              <h1 className="text-2xl font-bold mb-4 dark:text-white">Page Load Error</h1>
+              <p className="text-gray-600 dark:text-gray-200 mb-4">
+                Unable to load the vCISO Kit page. Please try refreshing the page.
+              </p>
+              <button 
+                onClick={() => window.location.reload()} 
+                className="px-4 py-2 bg-navy text-white rounded hover:bg-navy-dark"
+              >
+                Refresh Page
+              </button>
+            </div>
+          </div>
+        )
+      };
+    })
+);
 const ComplianceAdvisory = React.lazy(() => import('./pages/ComplianceAdvisory').then(m => ({ default: m.ComplianceAdvisory })));
 const ComplianceToolkit = React.lazy(() => import('./pages/ComplianceToolkit').then(m => ({ default: m.ComplianceToolkit })));
 const IncidentResponseToolkit = React.lazy(() => import('./pages/IncidentResponseToolkit').then(m => ({ default: m.IncidentResponseToolkit })));
