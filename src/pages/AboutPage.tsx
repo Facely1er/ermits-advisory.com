@@ -34,7 +34,7 @@ export const AboutPage: React.FC = () => {
       category: "Legal Credentials",
       icon: <Scale size={24} className="text-navy dark:text-silver" />,
       credentials: [
-        { name: "J.D. & LLM", description: "Legal Background - Focus on federal litigation, public records laws, and regulatory compliance with advanced knowledge of privacy and cybersecurity laws and compliance" }
+        { name: "J.D. & LLM", description: "Legal Background - Focus on federal litigation, public records laws, and regulatory compliance with advanced knowledge of privacy and cybersecurity laws" }
       ]
     }
   ];
@@ -128,7 +128,7 @@ export const AboutPage: React.FC = () => {
           <Card variant="glass" padding="lg">
             <div className="flex flex-col md:flex-row gap-8 items-center">
               <div className="md:w-1/2">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 dark:text-white">Global Reach, Local Expertise</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 dark:text-white">Global Reach, Local Sensibility</h2>
                 <p className="text-gray-600 dark:text-gray-200 mb-6">
                   While headquartered in the United States, our advisory services extend worldwide, providing strategic cybersecurity guidance to organizations across diverse markets and regulatory environments.
                 </p>
@@ -150,7 +150,7 @@ export const AboutPage: React.FC = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-800 dark:text-white">International Legal Framework</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">Expertise in global cybersecurity regulations and compliance requirements</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">Knowledge of global cybersecurity regulations and compliance requirements</p>
                     </div>
                   </div>
 
@@ -189,42 +189,6 @@ export const AboutPage: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </Card>
-        </motion.div>
-
-        {/* Enhanced Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-        >
-          <Card variant="solid" padding="lg" className="bg-gradient-to-r from-navy to-navy-dark text-white">
-            <div className="text-center">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">Partner with Industry Leaders</h2>
-              <p className="text-silver max-w-3xl mx-auto mb-8">
-                Join organizations worldwide who trust ERMITS Advisory for strategic cybersecurity guidance that connects technical excellence with legal precision.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button
-                  variant="secondary"
-                  size="lg"
-                  icon={<Calendar size={18} />}
-                  onClick={() => navigate('/contact')}
-                >
-                  Schedule Strategic Consultation
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-white text-white hover:bg-white/10"
-                  icon={<Shield size={18} />}
-                  iconPosition="right"
-                  onClick={() => navigate('/services')}
-                >
-                  Explore Our Services
-                </Button>
               </div>
             </div>
           </Card>
