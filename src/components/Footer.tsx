@@ -8,9 +8,9 @@ import {
 export const Footer: React.FC = () => {
   return (
     <footer className="bg-slate-800 dark:bg-slate-900 text-white border-t border-slate-700/50 dark:border-slate-800/50">
-      <div className="container mx-auto px-4 py-1">
+      <div className="container mx-auto px-4 py-0">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-2">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-2">
           {/* Company Info - Compact */}
           <div className="md:col-span-1">
             <Link to="/" className="flex items-center mb-3">
@@ -97,40 +97,13 @@ export const Footer: React.FC = () => {
               </li>
             </ul>
           </div>
-
-          {/* Contact Info - Compact */}
-          <div>
-            <h3 className="text-base font-semibold mb-3">Contact</h3>
-            <div className="space-y-2">
-              <div className="flex items-center text-silver text-sm">
-                <Mail size={14} className="mr-2 flex-shrink-0" />
-                <a href="mailto:advisory@ermits.com" className="hover:text-white transition-colors">
-                  advisory@ermits.com
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Bottom Footer - More Compact */}
-        <div className="pt-1 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-xs text-silver mb-3 sm:mb-0">
+        <div className="pt-1 border-t border-white/10">
+          <p className="text-xs text-silver text-center">
             © {new Date().getFullYear()} ERMITS LLC. All rights reserved.
           </p>
-          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs">
-            <Link to="/privacy" className="text-silver hover:text-white transition-all duration-300 hover:underline">
-              Privacy Policy
-            </Link>
-            <Link to="/terms" className="text-silver hover:text-white transition-all duration-300 hover:underline">
-              Terms of Service
-            </Link>
-            <Link to="/cookies" className="text-silver hover:text-white transition-all duration-300 hover:underline">
-              Cookie Policy
-            </Link>
-            <Link to="/acceptable-use" className="text-silver hover:text-white transition-all duration-300 hover:underline">
-              Acceptable Use
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

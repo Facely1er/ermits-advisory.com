@@ -327,19 +327,25 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
     }
   `;
 
-  const containerHeight = Math.max(responsiveRadius * 2.5, 400);
+  const containerHeight = Math.max(responsiveRadius * 2.5, 500);
   const dynamicStyles = `
     .steel-viz-container {
       height: ${containerHeight}px;
+      min-height: 500px;
+      position: relative;
     }
     .steel-center-hexagon {
-      left: calc(50% - ${centerHexagonSize / 2}px);
-      top: calc(50% - ${centerHexagonSize * 0.875 / 2}px);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
       width: ${centerHexagonSize}px;
       height: ${centerHexagonSize * 0.875}px;
     }
     .steel-center-text {
       font-size: ${Math.max(centerHexagonSize * 0.15, 12)}px;
+    }
+    .steel-connecting-lines {
+      overflow: visible;
     }
     ${dimensions.map((dim, index) => {
       const angle = (index * 60) * (Math.PI / 180);
@@ -347,8 +353,9 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
       const y = responsiveRadius * Math.sin(angle);
       return `
         .steel-dimension-${dim.id} {
-          left: calc(50% + ${x}px - ${dimensionHexagonSize / 2}px);
-          top: calc(50% + ${y}px - ${dimensionHexagonSize * 0.875 / 2}px);
+          left: 50%;
+          top: 50%;
+          transform: translate(calc(-50% + ${x}px), calc(-50% + ${y}px));
           width: ${dimensionHexagonSize}px;
           height: ${dimensionHexagonSize * 0.875}px;
           font-size: ${Math.max(dimensionHexagonSize * 0.1, 10)}px;
@@ -441,15 +448,15 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
       </AnimatePresence>
 
       {/* Overall Risk Summary */}
-      <div className="mb-6 text-center">
+      <div className="mb-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="inline-flex items-center gap-3 px-6 py-3 bg-white dark:bg-dark-surface rounded-xl shadow-lg"
+          className="inline-flex items-center gap-4 px-6 py-4 bg-white dark:bg-dark-surface rounded-xl shadow-lg"
         >
           <div className="text-left">
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Overall Risk Score</p>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 flex-wrap">
               <span className="text-3xl font-bold dark:text-white">{overallRisk}%</span>
               {(() => {
                 const riskLevel = getRiskLevelInfo(overallRisk);
@@ -557,9 +564,9 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
                     exit={{ opacity: 0, y: 10, scale: 0.9 }}
                     className="absolute z-30 bg-gray-900 text-white text-xs rounded-lg px-3 py-2 shadow-xl max-w-[200px] pointer-events-none"
                     style={{
-                      left: `calc(50% + ${responsiveRadius * Math.cos((index * 60) * (Math.PI / 180))}px)`,
-                      top: `calc(50% + ${responsiveRadius * Math.sin((index * 60) * (Math.PI / 180))}px + 60px)`,
-                      transform: 'translateX(-50%)'
+                      left: '50%',
+                      top: '50%',
+                      transform: `translate(calc(-50% + ${responsiveRadius * Math.cos((index * 60) * (Math.PI / 180))}px), calc(-50% + ${responsiveRadius * Math.sin((index * 60) * (Math.PI / 180))}px + 80px))`
                     }}
                   >
                     <div className="font-semibold mb-1">{dimension.title}</div>
@@ -587,35 +594,43 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
         })}
 
         {/* Connecting Lines */}
-        <svg className="absolute inset-0 w-full h-full pointer-events-none">
-          {dimensions.map((_dimension, index) => {
-            const angle1 = (index * 60) * (Math.PI / 180);
-            const angle2 = ((index + 1) * 60) * (Math.PI / 180);
-            
-            return (
-              <motion.line
-                key={`connection-${index}`}
-                x1={`calc(50% + ${responsiveRadius * Math.cos(angle1)}px)`}
-                y1={`calc(50% + ${responsiveRadius * Math.sin(angle1)}px)`}
-                x2={`calc(50% + ${responsiveRadius * Math.cos(angle2)}px)`}
-                y2={`calc(50% + ${responsiveRadius * Math.sin(angle2)}px)`}
-                stroke="url(#steel-gradient)"
-                strokeWidth="2"
-                strokeOpacity="0.3"
-                strokeDasharray="5,5"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ duration: 2, delay: index * 0.2 }}
-              />
-            );
-          })}
-          <defs>
-            <linearGradient id="steel-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#004B87" />
-              <stop offset="100%" stopColor="#C9E6FF" />
-            </linearGradient>
-          </defs>
-        </svg>
+        {containerWidth > 0 && (
+          <svg className="absolute inset-0 w-full h-full pointer-events-none steel-connecting-lines">
+            {dimensions.map((_dimension, index) => {
+              const angle1 = (index * 60) * (Math.PI / 180);
+              const angle2 = ((index + 1) * 60) * (Math.PI / 180);
+              const centerX = containerWidth / 2;
+              const centerY = containerHeight / 2;
+              const x1 = centerX + responsiveRadius * Math.cos(angle1);
+              const y1 = centerY + responsiveRadius * Math.sin(angle1);
+              const x2 = centerX + responsiveRadius * Math.cos(angle2);
+              const y2 = centerY + responsiveRadius * Math.sin(angle2);
+              
+              return (
+                <motion.line
+                  key={`connection-${index}`}
+                  x1={x1}
+                  y1={y1}
+                  x2={x2}
+                  y2={y2}
+                  stroke="url(#steel-gradient)"
+                  strokeWidth="2"
+                  strokeOpacity="0.3"
+                  strokeDasharray="5,5"
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{ duration: 2, delay: index * 0.2 }}
+                />
+              );
+            })}
+            <defs>
+              <linearGradient id="steel-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#004B87" />
+                <stop offset="100%" stopColor="#C9E6FF" />
+              </linearGradient>
+            </defs>
+          </svg>
+        )}
       </div>
 
       {/* Detailed Information Panel */}

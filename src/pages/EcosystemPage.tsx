@@ -7,14 +7,13 @@ import { InteractiveCard } from '../components/shared/InteractiveCard';
 import {
   Shield, ArrowRight,
   Zap, Target, Layers, CheckCircle, TrendingUp, AlertCircle,
-  FileCheck, Search, Rocket, ArrowDown, Settings,
+  FileCheck, Search, Rocket, ArrowDown,
   Network, Server, Users
 } from 'lucide-react';
 
 // Import ecosystem logos
 import cyberCautionLogo from '../assets/cybercaution.png';
 import cyberCorrectLogo from '../assets/cybercorrect.png';
-import cyberSoluceLogo from '../assets/cybersoluce.png';
 import vendorSoluceLogo from '../assets/vendorsoluce.png';
 import technoSoluceLogo from '../assets/technosoluce.png';
 import socialCautionLogo from '../assets/socialcaution.png';
@@ -53,21 +52,6 @@ export const EcosystemPage: React.FC = () => {
         advisoryConfigures: 'Remediation plan',
         platformDelivers: 'Evidence collection',
         result: 'Continuous compliance monitoring'
-      }
-    },
-    {
-      id: 'cyberSoluce',
-      icon: <Settings size={32} className="text-navy dark:text-silver" />,
-      title: 'CyberSoluce™',
-      description: 'Unified governance and workflow management platform for security operations',
-      link: '/cybersoluce',
-      color: 'from-purple-500 to-purple-600',
-      logo: cyberSoluceLogo,
-      integration: {
-        advisoryIdentifies: 'Governance framework',
-        advisoryConfigures: 'Workflows and policies',
-        platformDelivers: 'Automated processes',
-        result: 'Unified risk management'
       }
     },
     {
@@ -165,7 +149,7 @@ export const EcosystemPage: React.FC = () => {
                 Integrated Security Platforms That Transform Strategy Into Operations
               </p>
               <p className="text-lg mb-4 text-silver">
-                Six powerful platforms working together: CyberCaution™ for threats, CyberCorrect™ for compliance, CyberSoluce™ for governance, VendorSoluce™ for supply chain security, TechnoSoluce™ for technology operations, and CyberCertitude™ for certification and assurance.
+                Five powerful platforms working together: CyberCaution™ for threats, CyberCorrect™ for compliance, VendorSoluce™ for supply chain security, TechnoSoluce™ for technology operations, and CyberCertitude™ for certification and assurance.
               </p>
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-4 mb-8 max-w-3xl mx-auto">
                 <p className="text-sm text-silver/90 leading-relaxed">
@@ -201,7 +185,7 @@ export const EcosystemPage: React.FC = () => {
               Platform Ecosystem
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto mb-4">
-              Six integrated platforms that automate security operations and transform strategic recommendations into operational reality. These platforms are offered independently and can be used standalone, or serve as supporting tools for ERMITS Advisory Professional Services.
+              Five integrated platforms that automate security operations and transform strategic recommendations into operational reality. These platforms are offered independently and can be used standalone, or serve as supporting tools for ERMITS Advisory Professional Services.
             </p>
             <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 max-w-3xl mx-auto">
               <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
