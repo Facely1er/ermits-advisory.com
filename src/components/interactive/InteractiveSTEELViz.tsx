@@ -370,6 +370,7 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
     .steel-viz-container {
       height: ${containerHeight}px;
       min-height: 600px;
+      min-width: 320px;
       position: relative;
       width: 100%;
       max-width: 100%;
@@ -446,8 +447,16 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
           height: ${isMobile ? '3px' : '4px'};
           margin-top: 4px;
         }
+        .dimension-icon-container-${dim.id} {
+          font-size: var(--icon-size-${dim.id}, ${iconSize}px);
+        }
       `;
     }).join('\n')}
+    .tooltip-positioned {
+      left: 50%;
+      top: 50%;
+      transform: var(--tooltip-transform);
+    }
   `;
 
   return (
@@ -575,7 +584,6 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
       <div 
         ref={containerRef}
         className="relative w-full max-w-4xl mx-auto steel-viz-container"
-        style={{ minWidth: '320px' }}
       >
         {/* Center STEEL Logo */}
         <motion.div 
@@ -625,7 +633,7 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
                 aria-label={`${dimension.title} dimension - ${dimension.value}% risk`}
               >
                 <div className="dimension-content">
-                  <div className="flex-shrink-0" style={{ fontSize: `${iconSize}px` }}>
+                  <div className={`flex-shrink-0 dimension-icon-container-${dimension.id}`}>
                     {React.cloneElement(dimension.icon as React.ReactElement, { size: iconSize })}
                   </div>
                   <span className="dimension-title">
@@ -651,12 +659,10 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
                     initial={{ opacity: 0, y: 10, scale: 0.9 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.9 }}
-                    className="absolute z-30 bg-gray-900 text-white text-xs rounded-lg px-3 py-2 shadow-xl max-w-[220px] pointer-events-none"
+                    className="absolute z-30 bg-gray-900 text-white text-xs rounded-lg px-3 py-2 shadow-xl max-w-[220px] pointer-events-none tooltip-positioned"
                     style={{
-                      left: '50%',
-                      top: '50%',
-                      transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px + ${dimensionHexagonSize * 0.6}px))`
-                    }}
+                      '--tooltip-transform': `translate(calc(-50% + ${x}px), calc(-50% + ${y}px + ${dimensionHexagonSize * 0.6}px))`
+                    } as React.CSSProperties}
                   >
                     <div className="font-semibold mb-1 text-sm">{dimension.title}</div>
                     <div className="text-gray-300 text-xs leading-relaxed">{dimension.description}</div>
@@ -684,7 +690,6 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
             className="steel-connecting-lines" 
             width={effectiveWidth} 
             height={containerHeight}
-            style={{ position: 'absolute', top: 0, left: 0 }}
           >
             {dimensions.map((_dimension, index) => {
               const angle1 = (index * 60 - 90) * (Math.PI / 180);
