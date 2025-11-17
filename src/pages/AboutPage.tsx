@@ -38,15 +38,14 @@ export const AboutPage: React.FC = () => {
         { name: "CISSP", description: "Certified Information Systems Security Professional - Advanced cybersecurity expertise" },
         { name: "CISA", description: "Certified Information Systems Auditor - Risk assessment and compliance" },
         { name: "PMP", description: "Project Management Professional - Strategic implementation leadership" },
-        { name: "PMI-ACP", description: "PMI Agile Certified Practitioner - Modern delivery methodologies" },
-        { name: "ITIL", description: "ITIL Foundation - Service management excellence" }
+        { name: "PMI-ACP", description: "PMI Agile Certified Practitioner - Modern delivery methodologies" }
       ]
     },
     {
       category: "Legal Credentials",
       icon: <Scale size={24} className="text-navy dark:text-silver" />,
       credentials: [
-        { name: "J.D.", description: "Juris Doctor - Legal expertise in cybersecurity law and compliance" },
+        { name: "J.D. & LLM", description: "Legal Background - Focus on federal litigation, public records laws, and regulatory compliance with advanced knowledge of privacy and cybersecurity laws and compliance" },
         { name: "Privacy Law Specialist", description: "Expert in GDPR, CCPA, and international privacy regulations" },
         { name: "GDPR/CCPA", description: "Data protection and privacy compliance expertise" },
         { name: "M&A Legal Advisory", description: "Specialized legal counsel for technology transactions" }
