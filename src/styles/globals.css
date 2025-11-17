@@ -409,6 +409,15 @@
   background-color: var(--dimension-color, #4c72b0);
 }
 
+/* STEEL dimension progress bar fill */
+.steel-progress-fill {
+  width: var(--progress-width, 0%);
+  background-color: var(--progress-color, #4c72b0);
+  height: 0.5rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+
 /* Dimension icon background */
 .dimension-icon-bg {
   background-color: var(--dimension-color, #4c72b0);
