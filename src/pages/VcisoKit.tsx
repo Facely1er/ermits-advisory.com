@@ -4,16 +4,15 @@ import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { 
   ArrowRight, CheckCircle, FileText, Clock, 
-  DollarSign, TrendingUp, Target, Zap, Settings,
+  DollarSign, Target, Zap, Settings,
   Activity, CheckSquare, Download,
-  ChevronRight, Calculator, Briefcase
+  Briefcase
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createCheckoutSession } from '../services/stripe';
 
 export const VcisoKit: React.FC = () => {
-  const [selectedTier, setSelectedTier] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<'overview' | 'calculator' | 'workflow' | 'templates'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'workflow' | 'templates'>('overview');
   const [loading, setLoading] = useState(false);
 
   const handlePurchase = async () => {
@@ -30,123 +29,7 @@ export const VcisoKit: React.FC = () => {
       setLoading(false);
     }
   };
-  const [roiInputs, setRoiInputs] = useState({
-    companySize: '',
-    industry: '',
-    currentSpend: '',
-    needsLevel: 'strategic'
-  });
-  const [roiResult, setRoiResult] = useState<{
-    fullTimeCost: number;
-    vcisoCost: number;
-    savings: number;
-    savingsPercent: string;
-    monthlySavings: string;
-  } | null>(null);
   const [workflowStep, setWorkflowStep] = useState(0);
-
-  // vCISO Tiers
-  const vcisoTiers = [
-    {
-      id: 'strategic',
-      name: 'Strategic Advisory',
-      price: '$8K - $15K',
-      hours: '10-15 hrs/month',
-      description: 'Executive guidance and board support',
-      features: [
-        'Monthly executive strategy sessions',
-        'Quarterly board presentations',
-        'Annual security roadmap',
-        'Budget planning support',
-        'Vendor evaluation guidance',
-        'ERMITS platform strategic oversight'
-      ],
-      idealFor: 'Organizations needing executive guidance',
-      deliverables: [
-        'Monthly executive briefing',
-        'Quarterly board presentation',
-        'Policy reviews and approvals',
-        'Strategic recommendations',
-        'Platform performance review'
-      ]
-    },
-    {
-      id: 'operational',
-      name: 'Operational',
-      price: '$18K - $35K',
-      hours: '25-45 hrs/month',
-      description: 'Program management and team leadership',
-      features: [
-        'All Strategic services',
-        'Weekly team meetings',
-        'Security program management',
-        'Policy development',
-        'Incident response oversight',
-        'Audit preparation support',
-        'ERMITS platform administration'
-      ],
-      idealFor: 'Organizations building security programs',
-      deliverables: [
-        'Weekly status updates',
-        'Monthly operational reports',
-        'Policy documentation',
-        'Incident response playbooks',
-        'Audit readiness packages',
-        'Team performance metrics'
-      ]
-    },
-    {
-      id: 'executive',
-      name: 'Executive',
-      price: '$40K - $70K',
-      hours: '80+ hrs/month',
-      description: 'Near full-time CISO leadership',
-      features: [
-        'All Operational services',
-        'Daily operations oversight',
-        'Direct team leadership',
-        'Executive committee participation',
-        'Real-time crisis management',
-        'Complete ERMITS ecosystem orchestration'
-      ],
-      idealFor: 'Organizations needing full leadership',
-      deliverables: [
-        'Daily operational oversight',
-        'Weekly executive summaries',
-        'Monthly board packages',
-        'Real-time incident reporting',
-        'Technology strategy documents',
-        'Full ecosystem analytics'
-      ]
-    }
-  ];
-
-  // ROI Calculator
-  const calculateROI = () => {
-    const fullTimeCISO = 450000; // Average full-time CISO cost
-    const benefits = 50000; // Benefits and overhead
-    
-    let vcisoCost = 0;
-    if (roiInputs.needsLevel === 'strategic') {
-      vcisoCost = 11500 * 12; // Average of range
-    } else if (roiInputs.needsLevel === 'operational') {
-      vcisoCost = 26500 * 12;
-    } else {
-      vcisoCost = 55000 * 12;
-    }
-
-    const totalFullTime = fullTimeCISO + benefits;
-    const annualSavings = totalFullTime - vcisoCost;
-    const savingsPercent = ((annualSavings / totalFullTime) * 100).toFixed(1);
-
-    setRoiResult({
-      fullTimeCost: totalFullTime,
-      vcisoCost: vcisoCost,
-      savings: annualSavings,
-      savingsPercent: savingsPercent,
-      monthlySavings: (annualSavings / 12).toFixed(0)
-    });
-  };
 
   // Workflow Steps
   const workflowSteps = [
@@ -253,25 +136,30 @@ export const VcisoKit: React.FC = () => {
             <span className="text-navy dark:text-silver font-semibold">Interactive vCISO Toolkit</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 dark:text-white">
-            vCISO Service Toolkit
+            vCISO Starter Kit
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto mb-8">
-            Complete interactive toolkit for delivering professional vCISO services with ERMITS platform integration
+            Self-service toolkit with 37+ professional templates, playbooks, and delivery guides for vCISO practitioners
           </p>
+          
+          {/* Price Badge */}
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="text-4xl font-bold text-navy dark:text-silver">$299</div>
+            <div className="text-gray-600 dark:text-gray-400">One-time purchase</div>
+          </div>
 
           {/* Tab Navigation */}
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             {[
               { id: 'overview', label: 'Overview', icon: Briefcase },
-              { id: 'calculator', label: 'ROI Calculator', icon: Calculator },
-              { id: 'workflow', label: 'Delivery Workflow', icon: Activity },
-              { id: 'templates', label: 'Templates', icon: FileText }
+              { id: 'templates', label: 'Template Library', icon: FileText },
+              { id: 'workflow', label: 'Delivery Guides', icon: Activity }
             ].map((tab) => {
               const Icon = tab.icon;
               return (
                 <button
                   key={tab.id}
-                  onClick={() => setActiveTab(tab.id as 'overview' | 'calculator' | 'workflow' | 'templates')}
+                  onClick={() => setActiveTab(tab.id as 'overview' | 'workflow' | 'templates')}
                   className={`px-6 py-3 rounded-lg font-semibold transition-all flex items-center gap-2 ${
                     activeTab === tab.id
                       ? 'bg-navy text-white'
@@ -298,10 +186,10 @@ export const VcisoKit: React.FC = () => {
               {/* Key Metrics */}
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
                 {[
-                  { value: '60-70%', label: 'Cost Savings vs Full-Time CISO', icon: DollarSign },
-                  { value: '80-90%', label: 'Implementation Rate', icon: TrendingUp },
-                  { value: '3 Tiers', label: 'Service Options', icon: Target },
-                  { value: '24/7', label: 'Platform Support', icon: Zap }
+                  { value: '37+', label: 'Professional Templates', icon: FileText },
+                  { value: '4', label: 'Template Categories', icon: Target },
+                  { value: 'Instant', label: 'Digital Download', icon: Zap },
+                  { value: '$299', label: 'One-Time Purchase', icon: DollarSign }
                 ].map((metric, index) => {
                   const Icon = metric.icon;
                   return (
@@ -327,110 +215,89 @@ export const VcisoKit: React.FC = () => {
                 })}
               </div>
 
-              {/* Service Tiers */}
+              {/* What's Included */}
               <div className="mb-12">
                 <h2 className="text-3xl font-bold text-center mb-8 dark:text-white">
-                  Choose Your vCISO Tier
+                  What's Included in the Toolkit
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {vcisoTiers.map((tier, index) => (
-                    <motion.div
-                      key={tier.id}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                    >
-                      <Card
-                        variant="glass"
-                        padding="lg"
-                        className={`h-full cursor-pointer transition-all ${
-                          selectedTier === tier.id
-                            ? 'ring-2 ring-navy shadow-xl'
-                            : 'hover:shadow-lg'
-                        }`}
-                        onClick={() => setSelectedTier(selectedTier === tier.id ? null : tier.id)}
-                      >
-                        <div className="text-center mb-6">
-                          <h3 className="text-2xl font-bold mb-2 dark:text-white">{tier.name}</h3>
-                          <div className="text-3xl font-bold text-navy dark:text-silver mb-1">
-                            {tier.price}
-                          </div>
-                          <div className="text-sm text-gray-600 dark:text-gray-400">
-                            {tier.hours}
-                          </div>
-                        </div>
-                        <p className="text-gray-600 dark:text-gray-200 mb-4 text-center">
-                          {tier.description}
-                        </p>
-                        <div className="mb-4">
-                          <div className="text-sm font-semibold mb-2 dark:text-white">Key Features:</div>
-                          <ul className="space-y-2">
-                            {tier.features.slice(0, 4).map((feature, idx) => (
-                              <li key={idx} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-300">
-                                <CheckCircle size={16} className="text-green-500 mt-0.5 flex-shrink-0" />
-                                <span>{feature}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                        {selectedTier === tier.id && (
-                          <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: 'auto' }}
-                            className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700"
-                          >
-                            <div className="text-sm font-semibold mb-2 dark:text-white">Deliverables:</div>
-                            <ul className="space-y-1">
-                              {tier.deliverables.map((item, idx) => (
-                                <li key={idx} className="text-xs text-gray-600 dark:text-gray-300 flex items-start gap-2">
-                                  <ChevronRight size={12} className="text-navy mt-0.5 flex-shrink-0" />
-                                  <span>{item}</span>
-                                </li>
-                              ))}
-                            </ul>
-                            <Button
-                              variant="primary"
-                              size="sm"
-                              className="w-full mt-4"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                setActiveTab('calculator');
-                              }}
-                            >
-                              Calculate ROI
-                            </Button>
-                          </motion.div>
-                        )}
-                      </Card>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Why vCISO */}
-              <Card variant="glass" padding="lg" className="mb-12">
-                <h2 className="text-2xl font-bold mb-6 dark:text-white">Why Choose vCISO Services?</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                   {[
                     {
-                      title: 'Immediate Expertise',
-                      description: 'Get CISO-level leadership without 6-month hiring process',
-                      icon: Zap
+                      title: '37+ Professional Templates',
+                      description: 'Ready-to-use templates for all vCISO service delivery needs',
+                      icon: FileText
                     },
                     {
-                      title: 'Cost Efficiency',
-                      description: '60-70% savings vs full-time CISO with same expertise',
-                      icon: DollarSign
+                      title: 'Service Delivery Guides',
+                      description: 'Complete workflows and processes for vCISO engagements',
+                      icon: Activity
                     },
                     {
-                      title: 'Platform Integration',
-                      description: 'Leverage ERMITS ecosystem for maximum efficiency',
+                      title: 'ERMITS Platform Integration',
+                      description: 'Guides for integrating ERMITS platforms into your services',
                       icon: Settings
                     },
                     {
-                      title: 'Flexible Scaling',
-                      description: 'Adjust commitment as your needs evolve',
-                      icon: TrendingUp
+                      title: 'Board Presentation Templates',
+                      description: 'Executive-ready presentation templates for board meetings',
+                      icon: Briefcase
+                    },
+                    {
+                      title: 'Policy Templates & Frameworks',
+                      description: 'Comprehensive policy templates and governance frameworks',
+                      icon: CheckSquare
+                    },
+                    {
+                      title: 'Instant Digital Download',
+                      description: 'Get immediate access after purchase - no waiting',
+                      icon: Download
+                    }
+                  ].map((item, index) => {
+                    const Icon = item.icon;
+                    return (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                      >
+                        <Card variant="glass" padding="lg" className="h-full">
+                          <div className="p-3 rounded-full bg-navy/20 dark:bg-navy/40 inline-flex mb-4">
+                            <Icon size={24} className="text-navy dark:text-silver" />
+                          </div>
+                          <h3 className="text-lg font-bold mb-2 dark:text-white">{item.title}</h3>
+                          <p className="text-sm text-gray-600 dark:text-gray-300">{item.description}</p>
+                        </Card>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Why This Toolkit */}
+              <Card variant="glass" padding="lg" className="mb-12">
+                <h2 className="text-2xl font-bold mb-6 dark:text-white">Why Choose the vCISO Starter Kit?</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {[
+                    {
+                      title: 'Save Time & Effort',
+                      description: 'Skip creating templates from scratch - use proven, professional formats',
+                      icon: Clock
+                    },
+                    {
+                      title: 'Professional Quality',
+                      description: 'Board-ready templates used by experienced vCISO practitioners',
+                      icon: CheckCircle
+                    },
+                    {
+                      title: 'Complete Coverage',
+                      description: 'Everything you need for vCISO service delivery in one package',
+                      icon: Target
+                    },
+                    {
+                      title: 'ERMITS Integration',
+                      description: 'Includes guides for integrating ERMITS platforms into your services',
+                      icon: Settings
                     }
                   ].map((benefit, index) => {
                     const Icon = benefit.icon;
@@ -449,143 +316,6 @@ export const VcisoKit: React.FC = () => {
                     );
                   })}
                 </div>
-              </Card>
-            </motion.div>
-          )}
-
-          {/* ROI Calculator Tab */}
-          {activeTab === 'calculator' && (
-            <motion.div
-              key="calculator"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-            >
-              <Card variant="glass" padding="lg" className="max-w-3xl mx-auto">
-                <div className="text-center mb-8">
-                  <Calculator size={48} className="text-navy dark:text-silver mx-auto mb-4" />
-                  <h2 className="text-3xl font-bold mb-2 dark:text-white">vCISO ROI Calculator</h2>
-                  <p className="text-gray-600 dark:text-gray-200">
-                    Compare the cost of vCISO services vs hiring a full-time CISO
-                  </p>
-                </div>
-
-                <div className="space-y-6 mb-8">
-                  <div>
-                    <label htmlFor="company-size" className="block text-sm font-semibold mb-2 dark:text-white">
-                      Company Size
-                    </label>
-                    <select
-                      id="company-size"
-                      aria-label="Company Size"
-                      value={roiInputs.companySize}
-                      onChange={(e) => setRoiInputs({ ...roiInputs, companySize: e.target.value })}
-                      className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-                    >
-                      <option value="">Select size</option>
-                      <option value="startup">Startup (10-50 employees)</option>
-                      <option value="small">Small (51-200 employees)</option>
-                      <option value="medium">Medium (201-1000 employees)</option>
-                      <option value="large">Large (1000+ employees)</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label htmlFor="industry" className="block text-sm font-semibold mb-2 dark:text-white">
-                      Industry
-                    </label>
-                    <select
-                      id="industry"
-                      aria-label="Industry"
-                      value={roiInputs.industry}
-                      onChange={(e) => setRoiInputs({ ...roiInputs, industry: e.target.value })}
-                      className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-                    >
-                      <option value="">Select industry</option>
-                      <option value="tech">Technology</option>
-                      <option value="healthcare">Healthcare</option>
-                      <option value="finance">Financial Services</option>
-                      <option value="manufacturing">Manufacturing</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label htmlFor="current-spend" className="block text-sm font-semibold mb-2 dark:text-white">
-                      Current Annual Security Spend (Optional)
-                    </label>
-                    <input
-                      id="current-spend"
-                      type="number"
-                      value={roiInputs.currentSpend}
-                      onChange={(e) => setRoiInputs({ ...roiInputs, currentSpend: e.target.value })}
-                      placeholder="Enter amount"
-                      className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="vciso-tier" className="block text-sm font-semibold mb-2 dark:text-white">
-                      Recommended vCISO Tier
-                    </label>
-                    <select
-                      id="vciso-tier"
-                      aria-label="Recommended vCISO Tier"
-                      value={roiInputs.needsLevel}
-                      onChange={(e) => setRoiInputs({ ...roiInputs, needsLevel: e.target.value })}
-                      className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-                    >
-                      <option value="strategic">Strategic Advisory ($8K-$15K/month)</option>
-                      <option value="operational">Operational ($18K-$35K/month)</option>
-                      <option value="executive">Executive ($40K-$70K/month)</option>
-                    </select>
-                  </div>
-                </div>
-
-                <Button
-                  variant="primary"
-                  size="lg"
-                  className="w-full mb-6"
-                  onClick={calculateROI}
-                >
-                  Calculate ROI
-                </Button>
-
-                {roiResult && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="bg-gradient-to-br from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 p-6 rounded-lg border-2 border-green-500"
-                  >
-                    <h3 className="text-xl font-bold mb-4 dark:text-white">Your Savings</h3>
-                    <div className="grid grid-cols-2 gap-4 mb-4">
-                      <div>
-                        <div className="text-sm text-gray-600 dark:text-gray-300">Full-Time CISO Cost</div>
-                        <div className="text-2xl font-bold text-gray-900 dark:text-white">
-                          ${(roiResult.fullTimeCost / 1000).toFixed(0)}K
-                        </div>
-                      </div>
-                      <div>
-                        <div className="text-sm text-gray-600 dark:text-gray-300">vCISO Annual Cost</div>
-                        <div className="text-2xl font-bold text-navy dark:text-silver">
-                          ${(roiResult.vcisoCost / 1000).toFixed(0)}K
-                        </div>
-                      </div>
-                    </div>
-                    <div className="border-t border-gray-300 dark:border-gray-600 pt-4">
-                      <div className="text-sm text-gray-600 dark:text-gray-300 mb-1">Annual Savings</div>
-                      <div className="text-4xl font-bold text-green-600 dark:text-green-400 mb-2">
-                        ${(roiResult.savings / 1000).toFixed(0)}K
-                      </div>
-                      <div className="text-lg font-semibold text-green-600 dark:text-green-400">
-                        {roiResult.savingsPercent}% savings
-                      </div>
-                      <div className="text-sm text-gray-600 dark:text-gray-300 mt-2">
-                        Monthly savings: ${roiResult.monthlySavings}
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
               </Card>
             </motion.div>
           )}
@@ -716,9 +446,13 @@ export const VcisoKit: React.FC = () => {
               <div className="text-center mb-8">
                 <FileText size={48} className="text-navy dark:text-silver mx-auto mb-4" />
                 <h2 className="text-3xl font-bold mb-2 dark:text-white">Template Library</h2>
-                <p className="text-gray-600 dark:text-gray-200">
-                  Professional templates for vCISO service delivery
+                <p className="text-gray-600 dark:text-gray-200 mb-4">
+                  37+ professional templates organized by category for vCISO service delivery
                 </p>
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 rounded-full text-green-700 dark:text-green-400 text-sm font-semibold">
+                  <CheckCircle size={16} />
+                  All templates included in your purchase
+                </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -743,9 +477,10 @@ export const VcisoKit: React.FC = () => {
               </div>
 
               <Card variant="glass" padding="lg" className="bg-gradient-to-r from-navy to-dark text-center">
-                <h3 className="text-2xl font-bold text-white mb-4">Get Full Template Access</h3>
-                <p className="text-silver mb-6">
-                  Access all templates, playbooks, and delivery guides with the complete vCISO toolkit
+                <h3 className="text-2xl font-bold text-white mb-2">Get the Complete vCISO Starter Kit</h3>
+                <p className="text-silver mb-1 text-lg font-semibold">$299 - One-Time Purchase</p>
+                <p className="text-silver/90 mb-6 text-sm">
+                  Instant digital download • 37+ templates • All delivery guides included
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <Button
@@ -755,8 +490,9 @@ export const VcisoKit: React.FC = () => {
                     disabled={loading}
                     icon={<Download size={18} />}
                     iconPosition="right"
+                    className="bg-white text-navy hover:bg-silver"
                   >
-                    {loading ? 'Processing...' : 'Buy with Stripe'}
+                    {loading ? 'Processing...' : 'Purchase Now - $299'}
                   </Button>
                   <Button
                     variant="outline"
@@ -766,9 +502,12 @@ export const VcisoKit: React.FC = () => {
                     icon={<Download size={18} />}
                     iconPosition="right"
                   >
-                    Buy with Gumroad
+                    Buy on Gumroad
                   </Button>
                 </div>
+                <p className="text-silver/70 text-xs mt-4">
+                  Secure checkout • Instant access • Lifetime updates
+                </p>
               </Card>
             </motion.div>
           )}
@@ -782,19 +521,21 @@ export const VcisoKit: React.FC = () => {
           className="text-center mt-12"
         >
           <Card variant="glass" padding="lg" className="bg-gradient-to-r from-navy to-dark">
-            <h3 className="text-2xl font-bold text-white mb-4">Ready to Get Started?</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">Ready to Purchase?</h3>
             <p className="text-silver mb-6">
-              Schedule a consultation to discuss your vCISO needs
+              Get instant access to 37+ professional templates and delivery guides
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button
                 variant="primary"
                 size="lg"
-                onClick={() => window.location.href = '/contact'}
-                icon={<ArrowRight size={18} />}
+                onClick={handlePurchase}
+                disabled={loading}
+                icon={<Download size={18} />}
                 iconPosition="right"
+                className="bg-white text-navy hover:bg-silver"
               >
-                Schedule Consultation
+                {loading ? 'Processing...' : 'Buy Now - $299'}
               </Button>
               <Button
                 variant="outline"
