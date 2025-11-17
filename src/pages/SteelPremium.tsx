@@ -8,7 +8,6 @@ import { createCheckoutSession } from '../services/stripe';
 
 export const SteelPremium: React.FC = () => {
   const navigate = useNavigate();
-  const [showPaywall, setShowPaywall] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const handlePurchase = async () => {
@@ -16,7 +15,7 @@ export const SteelPremium: React.FC = () => {
     try {
       await createCheckoutSession({
         productType: 'steel-premium',
-        successUrl: `${window.location.origin}/purchase-success`,
+        successUrl: `${window.location.origin}/steel/index.html?premium=activated`,
         cancelUrl: window.location.href,
       });
     } catch (error) {
@@ -25,6 +24,29 @@ export const SteelPremium: React.FC = () => {
       setLoading(false);
     }
   };
+  
+  // Activate premium access after successful purchase
+  const activatePremiumAccess = () => {
+    if (typeof window !== 'undefined') {
+      const premiumData = {
+        purchased: true,
+        purchaseDate: new Date().toISOString(),
+        expiresAt: null, // Lifetime access
+        source: 'purchase'
+      };
+      localStorage.setItem('steel_premium_access', JSON.stringify(premiumData));
+    }
+  };
+  
+  // Check if coming from successful purchase
+  React.useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('premium') === 'activated') {
+      activatePremiumAccess();
+      // Redirect to assessment with premium activated
+      window.location.href = '/steel/index.html?premium=activated';
+    }
+  }, []);
 
   const premiumFeatures = [
     {

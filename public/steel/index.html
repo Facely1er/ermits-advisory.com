@@ -611,7 +611,19 @@
             transform: translateY(-1px);
         }
 
+        .btn-premium {
+            background: linear-gradient(135deg, var(--gold) 0%, #ffed4e 100%);
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .hidden {
+            display: none;
+        }
+
         .btn-group { display: flex; gap: 15px; margin-top: 30px; flex-wrap: wrap; }
+        .btn-group-hidden { display: none; }
+        .btn-group-export { gap: 10px; }
 
         .chart-container { 
             position: relative; 
@@ -709,6 +721,7 @@
         .comparison-list { margin: 0; }
         .comparison-cta-container { margin-top: 15px; }
         .btn-link-small { background: var(--navy); color: white; padding: 10px 20px; font-size: 0.95em; }
+        .btn-link-premium { background: linear-gradient(135deg, var(--gold) 0%, #ffed4e 100%); color: var(--navy); font-weight: 700; }
 
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 30px 0; }
         .stat-box { text-align: center; padding: 20px; background: #f8fafc; border-radius: 10px; }
@@ -1496,9 +1509,13 @@
                     <p class="centered-text">Complete the assessment to view your results.</p>
                 </div>
 
-                <div class="btn-group">
-                    <button class="btn btn-primary" onclick="exportPDF()">Export PDF Report</button>
-                    <button class="btn btn-primary" onclick="exportJSON()">Download Data (JSON)</button>
+                <div class="btn-group btn-group-hidden btn-group-export" id="exportButtons">
+                    <button type="button" class="btn btn-primary" onclick="exportPDF()" id="pdfExportBtn">
+                        <i data-lucide="file-text"></i> Export PDF Report
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="exportJSON()">
+                        <i data-lucide="download"></i> Export JSON Data
+                    </button>
                     <a href="/dashboard" class="btn btn-primary btn-inline-flex">
                         <span>View in Dashboard</span>
                         <span>→</span>
@@ -1509,35 +1526,35 @@
                     </a>
                 </div>
                 
-                <!-- Freemium vs Professional Comparison -->
+                <!-- Free vs Premium Comparison -->
                 <div class="info-box info-box-blue-gradient">
-                    <h3 class="comparison-title">Freemium vs Professional</h3>
+                    <h3 class="comparison-title">Free vs Premium</h3>
                     <div class="comparison-grid">
                         <div class="comparison-card">
-                            <h4 class="comparison-card-title">✓ Free Assessment (Current)</h4>
+                            <h4 class="comparison-card-title">✓ Free Assessment</h4>
                             <ul class="standard-list comparison-list">
                                 <li>Complete 46-question assessment</li>
-                                <li>Basic results and scores</li>
-                                <li>PDF/JSON export</li>
+                                <li>Basic results and scores display</li>
+                                <li>JSON data export</li>
                                 <li>Dashboard integration</li>
                                 <li>Recommended action plan</li>
-                                <li>Perfect for demos & onboarding</li>
+                                <li>Basic risk level indicators</li>
                             </ul>
                         </div>
                         <div class="comparison-card-gold">
-                            <h4 class="comparison-card-title">⭐ Professional Version</h4>
+                            <h4 class="comparison-card-title">⭐ Premium ($29)</h4>
                             <ul class="standard-list comparison-list">
                                 <li><strong>Everything in Free, plus:</strong></li>
-                                <li>ERMITS platform integration</li>
-                                <li>Custom pricing based on needs</li>
-                                <li>Advanced analytics & benchmarking</li>
-                                <li>Multi-user collaboration</li>
-                                <li>API access</li>
-                                <li>Priority support & consultation</li>
+                                <li>📄 Detailed PDF reports (20+ pages)</li>
+                                <li>📊 Industry benchmarking</li>
+                                <li>📈 Executive summary templates</li>
+                                <li>💾 Multiple export formats (PNG, PowerPoint)</li>
+                                <li>🎨 High-resolution visualizations</li>
+                                <li>✨ Custom charts and graphs</li>
                             </ul>
                             <div class="comparison-cta-container">
-                                <a href="/steel/premium" class="btn-link btn-link-small">
-                                    Learn More →
+                                <a href="/steel/premium" class="btn-link btn-link-small btn-link-premium">
+                                    Upgrade to Premium →
                                 </a>
                             </div>
                         </div>
@@ -2351,9 +2368,105 @@
                     <p class="body-text-top-margin"><strong>Risk Treatment Options:</strong> Accept, Mitigate, Transfer, Avoid</p>
                     <p class="body-text-top-margin"><strong>Framework Alignment:</strong> Map STEEL scores to NIST CSF 2.0 functions and ISO/IEC 27001:2022 controls for comprehensive risk management.</p>
                 </div>
+                
+                ${!checkPremiumAccess() ? `
+                <!-- Premium Upgrade CTA -->
+                <div class="info-box" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left: 6px solid var(--gold); margin: 30px 0; padding: 30px;">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                        <span style="font-size: 2em;">⭐</span>
+                        <h3 style="color: var(--navy); margin: 0; font-size: 1.5em;">Unlock Premium Features</h3>
+                    </div>
+                    <p class="body-text" style="margin-bottom: 20px; font-size: 1.1em; color: #78350f;">
+                        <strong>Your free assessment is complete!</strong> Upgrade to STEEL™ Premium ($29) to unlock:
+                    </p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px;">
+                        <div style="background: white; padding: 15px; border-radius: 8px;">
+                            <strong style="color: var(--navy); display: block; margin-bottom: 5px;">📄 Detailed PDF Reports</strong>
+                            <span style="font-size: 0.9em; color: #666;">20+ page executive reports</span>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px;">
+                            <strong style="color: var(--navy); display: block; margin-bottom: 5px;">📊 Industry Benchmarking</strong>
+                            <span style="font-size: 0.9em; color: #666;">Compare with peers</span>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px;">
+                            <strong style="color: var(--navy); display: block; margin-bottom: 5px;">📈 Executive Templates</strong>
+                            <span style="font-size: 0.9em; color: #666;">Board-ready presentations</span>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px;">
+                            <strong style="color: var(--navy); display: block; margin-bottom: 5px;">💾 Multiple Formats</strong>
+                            <span style="font-size: 0.9em; color: #666;">PNG, PowerPoint, JSON</span>
+                        </div>
+                    </div>
+                    <div class="btn-link-container" style="margin-top: 20px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                        <a href="/steel/premium" class="btn-link" style="background: linear-gradient(135deg, var(--gold) 0%, #ffed4e 100%); color: var(--navy); font-weight: 700; padding: 15px 30px; font-size: 1.1em;">
+                            Upgrade to Premium ($29) →
+                        </a>
+                        <button onclick="importFreeAssessmentToPremium()" class="btn-link" style="background: var(--navy); color: white; padding: 15px 30px; border: none; cursor: pointer;">
+                            Import Results to Premium
+                        </button>
+                    </div>
+                    <p style="text-align: center; margin-top: 15px; font-size: 0.9em; color: #666;">
+                        💡 <strong>Tip:</strong> Your free assessment results will automatically unlock premium features after purchase!
+                    </p>
+                </div>
+                ` : `
+                <!-- Premium User Badge -->
+                <div class="info-box" style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 6px solid #16a34a; margin: 30px 0; padding: 20px;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span style="font-size: 1.5em;">✅</span>
+                        <div>
+                            <strong style="color: #16a34a; font-size: 1.1em;">Premium Access Active</strong>
+                            <p style="margin: 5px 0 0 0; color: #666; font-size: 0.9em;">You have access to all premium features including detailed PDF reports, industry benchmarking, and executive templates.</p>
+                        </div>
+                    </div>
+                </div>
+                `}
             `;
 
             document.getElementById('resultsContent').innerHTML = html;
+            
+            // Show export buttons
+            const exportButtons = document.getElementById('exportButtons');
+            if (exportButtons) {
+                exportButtons.classList.remove('btn-group-hidden');
+            }
+            
+            // Update export button states based on premium access
+            setTimeout(() => {
+                updateExportButtons();
+            }, 100);
+            
+            // Re-initialize Lucide icons for new content
+            if (typeof lucide !== 'undefined') {
+                setTimeout(() => {
+                    lucide.createIcons();
+                }, 100);
+            }
+        }
+        
+        function updateExportButtons() {
+            const isPremium = checkPremiumAccess();
+            const pdfButton = document.getElementById('pdfExportBtn');
+            
+            if (pdfButton) {
+                if (isPremium) {
+                    pdfButton.innerHTML = '<i data-lucide="file-text"></i> Export Detailed PDF Report';
+                    pdfButton.classList.remove('btn-secondary');
+                    pdfButton.classList.add('btn-primary');
+                    pdfButton.onclick = exportPDF;
+                } else {
+                    pdfButton.innerHTML = '<i data-lucide="lock"></i> Export PDF (Premium Required)';
+                    pdfButton.classList.remove('btn-primary');
+                    pdfButton.classList.add('btn-secondary');
+                    pdfButton.onclick = function() {
+                        showPremiumUpgrade('Detailed PDF reports with industry benchmarking and executive summaries are available in STEEL™ Premium ($29).');
+                    };
+                }
+            }
+            
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
         }
 
         function saveProgress() {
@@ -2606,10 +2719,22 @@
             }
         }
 
-        // Initialize Lucide icons
+        // Initialize Lucide icons and check for premium activation
         document.addEventListener('DOMContentLoaded', function() {
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
+            }
+            // Check for premium activation from purchase
+            checkPurchaseSuccess();
+        });
+        
+        // Listen for premium updates
+        window.addEventListener('steel_premium_updated', function() {
+            // Refresh export buttons if results are displayed
+            if (assessmentData.composite) {
+                updateExportButtons();
+                // Re-display results to show premium badge
+                displayResults(assessmentData);
             }
         });
     </script>
