@@ -124,6 +124,9 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
 
   // Measure container width and update on window resize
   useEffect(() => {
+    // Capture the current ref value to use in cleanup
+    const containerElement = containerRef.current;
+    
     const updateContainerWidth = () => {
       if (containerRef.current) {
         const width = containerRef.current.offsetWidth || containerRef.current.clientWidth || 800;
@@ -139,19 +142,19 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
     
     // Use ResizeObserver for better performance
     let resizeObserver: ResizeObserver | null = null;
-    if (containerRef.current && window.ResizeObserver) {
+    if (containerElement && window.ResizeObserver) {
       resizeObserver = new ResizeObserver(() => {
         updateContainerWidth();
       });
-      resizeObserver.observe(containerRef.current);
+      resizeObserver.observe(containerElement);
     }
     
     // Fallback to window resize listener
     window.addEventListener('resize', updateContainerWidth);
     
     return () => {
-      if (resizeObserver && containerRef.current) {
-        resizeObserver.unobserve(containerRef.current);
+      if (resizeObserver && containerElement) {
+        resizeObserver.unobserve(containerElement);
       }
       window.removeEventListener('resize', updateContainerWidth);
     };
