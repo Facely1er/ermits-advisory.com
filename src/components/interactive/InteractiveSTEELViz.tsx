@@ -357,6 +357,13 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
 
   const containerHeight = Math.max(responsiveRadius * 2.8, 600);
   const dynamicStyles = `
+    .hexagon {
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
     .steel-viz-container {
       height: ${containerHeight}px;
       min-height: 600px;
@@ -564,7 +571,8 @@ export const InteractiveSTEELViz: React.FC<InteractiveSTEELVizProps> = ({
       {/* Interactive Visualization */}
       <div 
         ref={containerRef}
-        className="relative w-full max-w-2xl mx-auto steel-viz-container"
+        className="relative w-full max-w-4xl mx-auto steel-viz-container"
+        style={{ minWidth: '320px' }}
       >
         {/* Center STEEL Logo */}
         <motion.div 
