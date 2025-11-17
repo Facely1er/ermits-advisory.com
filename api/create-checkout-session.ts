@@ -71,7 +71,11 @@ export default async function handler(
       ],
       mode: 'payment',
       success_url: successUrl || `${baseUrl}/purchase-success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: cancelUrl || `${baseUrl}/steel/premium`,
+      cancel_url: cancelUrl || (productType === 'vciso-kit' 
+        ? `${baseUrl}/vciso-kit` 
+        : productType === 'dashboard-template'
+        ? `${baseUrl}/dashboard-template`
+        : `${baseUrl}/steel/premium`),
       metadata: {
         productType: productType,
       },
