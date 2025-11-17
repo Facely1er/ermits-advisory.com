@@ -6,7 +6,7 @@ import { Button } from '../components/shared/Button';
 import { InteractiveCard } from '../components/shared/InteractiveCard';
 import {
   Shield, ArrowRight,
-  Zap, Target, Layers, CheckCircle, TrendingUp, AlertCircle,
+  Zap, Target, Layers, CheckCircle, AlertCircle,
   FileCheck, Search, Rocket, ArrowDown,
   Network, Server, Users
 } from 'lucide-react';
@@ -689,103 +689,6 @@ export const EcosystemPage: React.FC = () => {
               </div>
             </div>
           </Card>
-        </motion.div>
-
-        {/* Client Journey Examples */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.9 }}
-          className="mb-16"
-        >
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              Client Success Stories
-            </h2>
-                <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                  Examples of results from organizations using the ERMITS ecosystem. Individual results vary.
-                </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card className="p-6">
-              <div className="mb-4">
-                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-4">
-                  <TrendingUp size={24} className="text-blue-600 dark:text-blue-400" />
-                </div>
-                <h3 className="text-lg font-bold dark:text-white mb-2">Mid-Market SaaS</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                  Example: ERMITS Advisory → CyberCorrect™ → SOC 2 (timeline varies by organization)
-                </p>
-              </div>
-              <ul className="space-y-2 text-sm">
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-600 dark:text-gray-400">Faster time to certification possible (results vary by organization)</span>
-                  </li>
-                <li className="flex items-start">
-                  <CheckCircle size={16} className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-600 dark:text-gray-400">Automated evidence collection</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle size={16} className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-600 dark:text-gray-400">First-time audit pass</span>
-                </li>
-              </ul>
-            </Card>
-
-            <Card className="p-6">
-              <div className="mb-4">
-                <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-4">
-                  <Shield size={24} className="text-green-600 dark:text-green-400" />
-                </div>
-                <h3 className="text-lg font-bold dark:text-white mb-2">Healthcare Provider</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                  Compliance Assessment → MediSoluce → HIPAA compliance
-                </p>
-              </div>
-              <ul className="space-y-2 text-sm">
-                <li className="flex items-start">
-                  <CheckCircle size={16} className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-600 dark:text-gray-400">Industry-specific controls</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle size={16} className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-600 dark:text-gray-400">Continuous compliance monitoring</span>
-                </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-600 dark:text-gray-400">Reduced audit preparation time possible (results vary)</span>
-                  </li>
-              </ul>
-            </Card>
-
-            <Card className="p-6">
-              <div className="mb-4">
-                <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mb-4">
-                  <Target size={24} className="text-purple-600 dark:text-purple-400" />
-                </div>
-                <h3 className="text-lg font-bold dark:text-white mb-2">Manufacturing</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                  Example: ERMITS Advisory → Full platform ecosystem (results vary by organization)
-                </p>
-              </div>
-              <ul className="space-y-2 text-sm">
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-600 dark:text-gray-400">Risk score improvements possible (results vary by organization)</span>
-                  </li>
-                <li className="flex items-start">
-                  <CheckCircle size={16} className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-600 dark:text-gray-400">Full ecosystem implementation</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle size={16} className="text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-600 dark:text-gray-400">Board-ready reporting automated</span>
-                </li>
-              </ul>
-            </Card>
-          </div>
         </motion.div>
 
         {/* How Components Work Together */}

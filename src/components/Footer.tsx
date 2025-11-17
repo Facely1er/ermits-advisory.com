@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logoImg from '../assets/ermits-advisory.png';
 import {
-  Mail, Shield, BarChart2, Users, FileText, Scale, Cookie
+  Mail, Shield, Users, FileText, Scale, Cookie, Layers, Download, Briefcase
 } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
     <footer className="bg-slate-800 dark:bg-slate-900 text-white border-t border-slate-700/50 dark:border-slate-800/50">
-      <div className="container mx-auto px-4 py-0">
+      <div className="container mx-auto px-4 pt-6 pb-0">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-2">
           {/* Company Info - Compact */}
@@ -23,26 +23,32 @@ export const Footer: React.FC = () => {
             <p className="text-silver text-sm leading-relaxed">Global Intelligence. Resilient Strategy. Streamlined for Success.</p>
           </div>
 
-          {/* Services */}
+          {/* Services & Solutions */}
           <div>
-            <h3 className="text-base font-semibold mb-3">Services</h3>
+            <h3 className="text-base font-semibold mb-3">Services & Solutions</h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/services" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
-                  <Shield size={14} className="mr-2 group-hover:scale-110 transition-transform" />
-                  Strategic Advisory
+                  <Briefcase size={14} className="mr-2 group-hover:scale-110 transition-transform" />
+                  Advisory Services
                 </Link>
               </li>
               <li>
                 <Link to="/steel" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
-                  <BarChart2 size={14} className="mr-2 group-hover:scale-110 transition-transform" />
-                  STEEL™ Framework
+                  <Shield size={14} className="mr-2 group-hover:scale-110 transition-transform" />
+                  STEEL™ Assessment
                 </Link>
               </li>
               <li>
-                <Link to="/dashboard" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
-                  <BarChart2 size={14} className="mr-2 group-hover:scale-110 transition-transform" />
-                  Executive Dashboard
+                <Link to="/vciso-kit" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
+                  <Download size={14} className="mr-2 group-hover:scale-110 transition-transform" />
+                  vCISO Starter Kit
+                </Link>
+              </li>
+              <li>
+                <Link to="/ecosystem" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
+                  <Layers size={14} className="mr-2 group-hover:scale-110 transition-transform" />
+                  ERMITS Ecosystem
                 </Link>
               </li>
             </ul>

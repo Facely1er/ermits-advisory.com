@@ -5,7 +5,7 @@ import { useTheme } from '../contexts/ThemeContext';
 import { Button } from './shared/Button';
 import {
   Sun, Moon, Menu, X,
-  Home, Briefcase, Mail, Users, Shield, Layers, DollarSign, Focus
+  Home, Briefcase, Mail, Users, Shield, Layers, Focus
 } from 'lucide-react';
 import logoImg from '../assets/ermits-advisory.png';
 import { cn } from '../utils/cn';
@@ -29,7 +29,6 @@ export const Navigation: React.FC = () => {
     { to: '/services', label: 'Services', icon: <Briefcase size={16} /> },
     { to: '/ecosystem', label: 'Ecosystem', icon: <Layers size={16} /> },
     { to: '/about', label: 'About', icon: <Users size={16} /> },
-    { to: '/pricing', label: 'Pricing', icon: <DollarSign size={16} /> },
   ];
 
   return (

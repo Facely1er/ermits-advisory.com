@@ -27,7 +27,7 @@ export const ServiceOffering: React.FC = () => {
         'Strategic recommendations',
         'Executive briefing'
       ],
-      link: '/pricing'
+      link: '/contact'
     },
     {
       id: 'on-demand-advisory',
@@ -64,24 +64,6 @@ export const ServiceOffering: React.FC = () => {
         'Instant digital download'
       ],
       link: '/vciso-kit'
-    },
-    {
-      id: 'compliance-toolkit',
-      icon: 'file',
-      title: 'Compliance Framework Toolkit',
-      description: 'Complete compliance templates for NIST, ISO 27001, SOC 2, HIPAA, GDPR, CMMC, and PCI-DSS frameworks.',
-      price: '$199',
-      timeline: 'One-time purchase',
-      features: [
-        'Multi-framework gap analysis templates',
-        'Control mapping matrices for all major frameworks',
-        'Evidence collection checklists and guides',
-        'Audit preparation templates and workflows',
-        'Compliance program templates',
-        'CyberCorrect platform integration guides',
-        'Instant digital download'
-      ],
-      link: '/compliance-toolkit'
     }
   ];
   
@@ -166,7 +148,7 @@ export const ServiceOffering: React.FC = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 gap-8 max-w-2xl mx-auto">
             {toolkitServices.map((toolkit) => (
               <Card key={toolkit.id} variant="glass" padding="lg" className="h-full hover:shadow-xl transition-shadow border-2 border-blue-200 dark:border-blue-800">
                 <div className="flex flex-col h-full">
@@ -311,18 +293,6 @@ export const ServiceOffering: React.FC = () => {
                 </div>
               </Card>
             ))}
-          </div>
-          
-          <div className="text-center mt-8">
-            <Button 
-              variant="outline" 
-              size="lg"
-              onClick={() => navigate('/pricing')}
-              icon={<DollarSign size={20} />}
-              iconPosition="right"
-            >
-              View Pricing
-            </Button>
           </div>
         </motion.div>
 
