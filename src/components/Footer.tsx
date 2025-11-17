@@ -8,9 +8,9 @@ import {
 export const Footer: React.FC = () => {
   return (
     <footer className="bg-slate-800 dark:bg-slate-900 text-white border-t border-slate-700/50 dark:border-slate-800/50">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-1">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-2">
           {/* Company Info - Compact */}
           <div className="md:col-span-1">
             <Link to="/" className="flex items-center mb-3">
@@ -113,7 +113,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Footer - More Compact */}
-        <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center">
+        <div className="pt-1 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center">
           <p className="text-xs text-silver mb-3 sm:mb-0">
             © {new Date().getFullYear()} ERMITS LLC. All rights reserved.
           </p>
