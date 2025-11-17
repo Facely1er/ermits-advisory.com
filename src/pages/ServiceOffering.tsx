@@ -30,46 +30,19 @@ export const ServiceOffering: React.FC = () => {
       link: '/pricing'
     },
     {
-      id: 'vCISO',
-      icon: 'user',
-      title: 'Strategic vCISO Services',
-      description: 'Fractional CISO leadership with three tiers available.',
-      price: '$8K - $70K/month',
-      timeline: 'Ongoing',
+      id: 'on-demand-advisory',
+      icon: 'presentation',
+      title: 'On-demand Advisory Services',
+      description: 'Flexible expert guidance for specific cybersecurity challenges and strategic initiatives.',
+      price: 'Custom pricing',
+      timeline: 'As needed',
       features: [
-        'Strategic, Operational, or Executive tiers',
-        'Board presentations',
-        '60-70% cost savings vs full-time CISO'
+        'Hourly or project-based consulting',
+        'Strategic guidance and recommendations',
+        'Expert review and analysis',
+        'Customized solutions for your needs'
       ],
-      link: '/vciso-kit'
-    },
-    {
-      id: 'compliance-advisory',
-      icon: 'file',
-      title: 'Compliance Advisory',
-      description: 'Expert compliance guidance for major frameworks.',
-      price: '$3.5K - $30K',
-      timeline: '3-5 weeks or ongoing',
-      features: [
-        'Gap analysis and readiness assessment',
-        'Audit preparation support',
-        'Framework guidance (NIST, ISO 27001, SOC 2, HIPAA, CMMC, PCI-DSS)'
-      ],
-      link: '/compliance'
-    },
-    {
-      id: 'vendor-risk-advisory',
-      icon: 'users',
-      title: 'Vendor Risk Advisory',
-      description: 'Third-party risk management program design.',
-      price: '$5K - $35K',
-      timeline: '3-5 weeks or per vendor',
-      features: [
-        'Vendor risk program design',
-        'Critical vendor assessments',
-        'Supply chain risk strategy'
-      ],
-      link: '/pricing'
+      link: '/contact'
     }
   ];
 
@@ -109,43 +82,6 @@ export const ServiceOffering: React.FC = () => {
         'Instant digital download'
       ],
       link: '/compliance-toolkit'
-    },
-    {
-      id: 'incident-response-toolkit',
-      icon: 'shield',
-      title: 'Incident Response Toolkit',
-      description: 'Comprehensive incident response playbooks, templates, and checklists for security operations teams.',
-      price: '$149',
-      timeline: 'One-time purchase',
-      features: [
-        'Scenario-specific IR playbooks (ransomware, breach, DDoS)',
-        'Communication templates (internal, customer, regulatory)',
-        'Incident tracking and reporting templates',
-        'Tabletop exercise scenarios and guides',
-        'Post-incident analysis templates',
-        'Crisis management checklists',
-        'Instant digital download'
-      ],
-      link: '/incident-response-toolkit'
-    },
-    {
-      id: 'vendor-risk-toolkit',
-      icon: 'users',
-      title: 'Vendor Risk Management Toolkit',
-      description: 'Complete vendor risk assessment templates, questionnaires, and frameworks for third-party risk management.',
-      price: '$179',
-      timeline: 'One-time purchase',
-      features: [
-        'Vendor security assessment questionnaires',
-        'Vendor risk scoring frameworks and matrices',
-        'Third-party risk assessment templates',
-        'Vendor contract security clauses library',
-        'Supply chain risk assessment templates',
-        'Vendor monitoring and review templates',
-        'VendorSoluce platform integration guides',
-        'Instant digital download'
-      ],
-      link: '/vendor-risk-toolkit'
     }
   ];
   
@@ -277,11 +213,7 @@ export const ServiceOffering: React.FC = () => {
                       onClick={() => navigate(toolkit.link)}
                       className="w-full"
                     >
-                      {toolkit.id === 'vciso-kit' ? 'View Toolkit' : 
-                       toolkit.id === 'compliance-toolkit' ? 'View Toolkit' :
-                       toolkit.id === 'incident-response-toolkit' ? 'View Toolkit' :
-                       toolkit.id === 'vendor-risk-toolkit' ? 'View Toolkit' :
-                       'View Toolkit'}
+                      View Toolkit
                     </Button>
                   </div>
                 </div>
@@ -308,7 +240,7 @@ export const ServiceOffering: React.FC = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {premiumAdvisoryServices.map((service) => (
               <Card key={service.id} variant="glass" padding="lg" className="h-full hover:shadow-xl transition-shadow border-2 border-purple-200 dark:border-purple-800">
                 <div className="flex flex-col h-full">
@@ -361,26 +293,18 @@ export const ServiceOffering: React.FC = () => {
                         // Map service IDs to quote form values
                         const serviceMap: Record<string, string> = {
                           'steel-assessment': 'comprehensive-steel',
-                          'vCISO': 'strategic-vciso',
-                          'compliance-advisory': 'compliance-readiness',
-                          'vendor-risk-advisory': 'vendor-risk'
+                          'on-demand-advisory': 'on-demand-advisory'
                         };
                         
                         const serviceValue = serviceMap[service.id] || service.id;
                         
-                        if (service.id === 'compliance-advisory') {
-                          navigate('/compliance-advisory');
-                        } else if (service.id === 'vCISO') {
-                          navigate('/vciso-kit');
-                        } else {
-                          // Navigate to quote form with service pre-selected
-                          navigate(`/contact?type=quote&service=${serviceValue}`);
-                        }
+                        // Navigate to quote form with service pre-selected
+                        navigate(`/contact?type=quote&service=${serviceValue}`);
                       }}
                       className="w-full"
                     >
-                      {service.id === 'compliance-advisory' ? 'Explore Compliance' : 
-                       service.id === 'vCISO' ? 'View vCISO Services' : 
+                      {service.id === 'steel-assessment' ? 'Request Quote' : 
+                       service.id === 'on-demand-advisory' ? 'Request Consultation' :
                        'Request Quote'}
                     </Button>
                   </div>
