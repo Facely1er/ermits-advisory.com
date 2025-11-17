@@ -1,79 +1,13 @@
-feat: Add luxury design enhancements and comprehensive link verification
+Simplify service and pricing pages
 
-## Luxury Design Enhancements
-
-### Component Updates
-- Enhanced Button component with luxury variants (luxury, luxury-outline)
-  - Gold gradient backgrounds with shimmer effects
-  - Enhanced hover animations with spring physics
-  - Premium shadow effects with gold glow
-  
-- Enhanced Card component with luxury variants
-  - Added luxury and luxury-glass variants
-  - Added glowOnHover prop for gold glow effects
-  - Improved hover animations with scale and translate
-  - Enhanced border styling with luxury accents
-
-- Enhanced InteractiveCard component
-  - Improved glow effects with luxury gold accents
-  - Better 3D hover effects with gold border highlights
-  - Enhanced gradient overlays
-  - Smoother animations with better easing
-
-- Polished Navigation component
-  - Enhanced backdrop blur for premium glass effect
-  - Improved hover transitions with border animations
-  - Better active state indicators
-  - Smoother transition animations
-
-- Polished Footer component
-  - Added border styling for visual separation
-  - Enhanced link hover effects with translate animations
-  - Icon scale animations on hover
-  - Improved transition timing
-
-### Design System Updates
-- Updated Tailwind config with luxury utilities
-  - New shadow utilities (luxury-glow, luxury-glow-lg)
-  - New animations (shimmer, pulse-luxury, float)
-  - Enhanced keyframes for smooth animations
-
-- Enhanced global styles
-  - New luxury classes (luxury-glass, luxury-card, luxury-button)
-  - Enhanced hover effects with luxury transitions
-  - Improved glassmorphism with better blur and saturation
-  - Better shadow layering and border effects
-
-### Documentation
-- Created LINK_VERIFICATION.md with comprehensive link audit
-- Created LUXURY_DESIGN_ENHANCEMENTS.md with usage guide
-- All 33 routes verified and working
-- All navigation and footer links verified
-
-## Bug Fixes
-- Fixed PricingPage dynamic import issue
-  - Updated vercel.json with proper asset handling
-  - Added explicit base path in vite.config.ts
-  - Improved cache headers for better deployment
-
-## Files Changed
-- src/components/shared/Button.tsx
-- src/components/shared/Card.tsx
-- src/components/shared/InteractiveCard.tsx
-- src/components/Navigation.tsx
-- src/components/Footer.tsx
-- tailwind.config.js
-- src/styles/globals.css
-- vercel.json
-- vite.config.ts
-- LINK_VERIFICATION.md (new)
-- LUXURY_DESIGN_ENHANCEMENTS.md (new)
-
-## Testing
-- All components render correctly
-- Luxury variants work in both light and dark modes
-- Hover effects are smooth and performant
-- All links verified and functional
-- Responsive design maintained
-- Accessibility features preserved
-
+- Reorganized Service page: moved toolkits to top, simplified advisory services
+- Removed heavy content sections (STEEL details, advisory process, etc.)
+- Simplified advisory service features (reduced to 3 key points each)
+- Updated Pricing page to match simplified services
+- Removed unused service variants (Comprehensive STEEL, Industry-Specific STEEL)
+- Added missing services to pricing (Vendor Risk, Incident Response, GDPR/CCPA, M&A)
+- Fixed CSS validation warnings for Tailwind directives
+- Updated About page: removed Our Story, Core Values, and STEEL Innovation sections
+- Changed heading from 'Global' to 'Worldclass' Cybersecurity Leadership
+- Cleaned up unused imports and variables
+- Added GDPR/CCPA and M&A Legal Advisory services to ServiceOffering page

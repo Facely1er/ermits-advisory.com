@@ -4,8 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { 
-  Shield, DollarSign, Clock, CheckCircle, ArrowRight, 
-  TrendingUp, Users, FileText, Calendar, Zap
+  Shield, DollarSign, Clock, CheckCircle, ArrowRight, Zap
 } from 'lucide-react';
 
 export const PricingPage: React.FC = () => {
@@ -29,81 +28,88 @@ export const PricingPage: React.FC = () => {
   // Assessment Services (One-Time)
   const assessmentServices = [
     {
-      name: 'Rapid STEEL Assessment',
-      price: '$25K - $45K',
-      duration: '2-3 weeks',
-      description: 'Quick wins + platform recommendations',
+      name: 'STEEL™ Strategic Assessment',
+      price: '$25K - $125K',
+      duration: '2-8 weeks',
+      description: 'Expert risk assessment and strategic recommendations',
       deliverables: [
-        'Composite risk scoring across PESTEL factors',
-        'NIST CSF maturity baseline',
-        'Critical vulnerability identification',
-        'Quick-win recommendations (30/60/90 day)',
-        'ERMITS platform recommendations',
-        'Executive briefing presentation'
+        'Professional STEEL™ assessment',
+        'Strategic recommendations',
+        'Executive briefing'
       ],
       idealFor: 'First engagement, annual reviews, board prep, budget planning'
     },
     {
-      name: 'Comprehensive STEEL Analysis',
-      price: '$75K - $125K',
-      duration: '6-8 weeks',
-      description: 'Strategic roadmap + implementation plan',
+      name: 'Compliance Advisory',
+      price: '$3.5K - $30K',
+      duration: '3-5 weeks or ongoing',
+      description: 'Expert compliance guidance for major frameworks',
       deliverables: [
-        'Deep-dive PESTEL risk analysis',
-        'Full NIST CSF gap assessment',
-        'Threat landscape profiling',
-        'Multi-year strategic roadmap',
-        'Technology stack evaluation',
-        'Budget optimization analysis',
-        'ERMITS implementation plan',
-        'Quarterly board report package'
-      ],
-      idealFor: 'Program building, compliance transformation, digital transformation'
-    },
-    {
-      name: 'Industry-Specific STEEL',
-      price: '$50K - $90K',
-      duration: '4-6 weeks',
-      description: 'Sector roadmap + compliance strategy',
-      deliverables: [
-        'Industry-specific STEEL model application',
-        'Regulatory compliance roadmap (HIPAA/SOX/CMMC)',
-        'Sector threat intelligence',
-        'Peer benchmarking analysis',
-        'Industry-tailored ERMITS configuration',
-        'Sector-specific quick wins'
-      ],
-      idealFor: 'Healthcare, Financial Services, Manufacturing, Government'
-    },
-    {
-      name: 'Compliance Readiness Assessment',
-      price: '$12K - $30K',
-      duration: '3-5 weeks',
-      description: 'Gap analysis + CyberCorrect setup',
-      deliverables: [
-        'Current state assessment',
-        'Framework gap analysis',
-        'Control mapping and prioritization',
-        'Evidence requirements documentation',
-        'Remediation roadmap (phased)',
-        'CyberCorrect configuration plan'
+        'Gap analysis and readiness assessment',
+        'Audit preparation support',
+        'Framework guidance (NIST, ISO 27001, SOC 2, HIPAA, CMMC, PCI-DSS)'
       ],
       idealFor: 'NIST CSF, ISO 27001, SOC 2, HIPAA, CMMC, PCI-DSS'
     },
     {
-      name: 'Governance Foundation',
-      price: '$18K - $40K',
-      duration: '4-8 weeks',
-      description: 'Complete program + CyberSoluce setup',
+      name: 'Governance & Risk Strategy',
+      price: '$12K - $40K',
+      duration: '3-8 weeks',
+      description: 'Security program design and risk management',
       deliverables: [
-        'Security program charter development',
-        'Organizational design recommendations',
-        'Policy framework architecture',
-        'Risk management methodology',
-        'Governance structure design',
-        'CyberSoluce implementation roadmap'
+        'Security program foundation',
+        'Risk management program',
+        'Board governance framework'
       ],
       idealFor: 'Organizations building security programs from scratch'
+    },
+    {
+      name: 'Vendor Risk Advisory',
+      price: '$5K - $35K',
+      duration: '3-5 weeks or per vendor',
+      description: 'Third-party risk management program design',
+      deliverables: [
+        'Vendor risk program design',
+        'Critical vendor assessments',
+        'Supply chain risk strategy'
+      ],
+      idealFor: 'Organizations managing third-party risk'
+    },
+    {
+      name: 'Incident Response Advisory',
+      price: '$12K - $100K',
+      duration: '3-6 weeks or crisis response',
+      description: 'Crisis leadership and response planning',
+      deliverables: [
+        'IR plan development',
+        'Tabletop exercises',
+        'Crisis leadership support'
+      ],
+      idealFor: 'Organizations needing incident response capabilities'
+    },
+    {
+      name: 'GDPR/CCPA Privacy Compliance',
+      price: '$15K - $75K',
+      duration: '4-10 weeks or ongoing',
+      description: 'Data protection and privacy compliance expertise',
+      deliverables: [
+        'GDPR/CCPA compliance assessment',
+        'Privacy impact assessments',
+        'Data subject rights procedures'
+      ],
+      idealFor: 'Organizations handling personal data'
+    },
+    {
+      name: 'M&A Legal Advisory',
+      price: '$25K - $150K',
+      duration: '2-12 weeks per transaction',
+      description: 'Legal counsel for technology transactions',
+      deliverables: [
+        'Technology transaction due diligence',
+        'Cybersecurity risk assessment',
+        'Post-merger integration planning'
+      ],
+      idealFor: 'Technology M&A transactions'
     }
   ];
 
@@ -118,10 +124,7 @@ export const PricingPage: React.FC = () => {
         'Monthly executive strategy sessions',
         'Quarterly board presentations',
         'Annual security roadmap development',
-        'Budget planning and justification',
-        'Vendor evaluation guidance',
-        'Regulatory compliance strategy',
-        'ERMITS platform optimization'
+        'Budget planning and justification'
       ],
       idealFor: 'Organizations needing executive guidance and board support'
     },
@@ -134,10 +137,7 @@ export const PricingPage: React.FC = () => {
         'All Strategic Advisory services',
         'Weekly team meetings and guidance',
         'Security program management',
-        'Policy development and review',
-        'Incident response oversight',
-        'Audit preparation support',
-        'ERMITS platform administration support'
+        'Policy development and review'
       ],
       idealFor: 'Organizations needing program management and team leadership'
     },
@@ -150,10 +150,7 @@ export const PricingPage: React.FC = () => {
         'All Operational vCISO services',
         'Daily security operations oversight',
         'Direct team leadership',
-        'Executive committee participation',
-        'Real-time crisis management',
-        'Strategic technology advisory',
-        'Complete ERMITS ecosystem orchestration'
+        'Real-time crisis management'
       ],
       idealFor: 'Organizations needing near full-time CISO leadership'
     },
@@ -166,9 +163,7 @@ export const PricingPage: React.FC = () => {
         'Monthly compliance health checks',
         'Regulatory change monitoring',
         'Control effectiveness reviews',
-        'Evidence management oversight',
-        'Internal audit coordination',
-        'CyberCorrect optimization'
+        'Internal audit coordination'
       ],
       idealFor: 'Organizations maintaining ongoing compliance requirements'
     }

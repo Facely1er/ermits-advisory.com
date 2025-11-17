@@ -26,7 +26,8 @@
     "**/dist/**",
     "**/globals.css",
     "src/styles/globals.css",
-    "**/src/styles/globals.css"
+    "**/src/styles/globals.css",
+    "ermits-advisory.com/src/styles/globals.css"
   ]
 }
 

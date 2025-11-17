@@ -4,26 +4,15 @@ import { useNavigate } from 'react-router-dom';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import {
-  Award, Target, Globe,
-  Calendar, Briefcase, ArrowRight, Shield,
-  GraduationCap, Scale, UserCheck, Brain, CheckCircle
+  Award, Target,
+  Calendar, ArrowRight, Shield,
+  GraduationCap, Scale
 } from 'lucide-react';
-import teamImage from '../assets/image.png';
 
 export const AboutPage: React.FC = () => {
   const navigate = useNavigate();
   
   // Animation variants
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-  
   const item = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0 }
@@ -53,67 +42,6 @@ export const AboutPage: React.FC = () => {
     }
   ];
 
-  // Enhanced company values with professional focus
-  const companyValues = [
-    {
-      icon: <UserCheck size={24} className="text-navy dark:text-silver" />,
-      title: "Excellence",
-      description: "Delivering exceptional results through technical mastery and strategic insight"
-    },
-    {
-      icon: <Brain size={24} className="text-navy dark:text-silver" />,
-      title: "Intelligence",
-      description: "Leveraging global threat intelligence to inform strategic decision-making"
-    },
-    {
-      icon: <Scale size={24} className="text-navy dark:text-silver" />,
-      title: "Legal Precision",
-      description: "Ensuring compliance and risk mitigation through legal expertise"
-    },
-    {
-      icon: <Target size={24} className="text-navy dark:text-silver" />,
-      title: "Strategic Focus",
-      description: "Connecting cybersecurity initiatives to business objectives and outcomes"
-    }
-  ];
-
-  // Professional achievements
-  const professionalStats = [
-    {
-      icon: <Award size={24} className="text-navy dark:text-silver" />,
-      value: "5+",
-      label: "Professional Certifications",
-      description: "Professional credentials"
-    },
-    {
-      icon: <Globe size={24} className="text-navy dark:text-silver" />,
-      value: "100+",
-      label: "Risk Assessments Completed",
-      description: "Strategic evaluations delivered"
-    },
-    {
-      icon: <Briefcase size={24} className="text-navy dark:text-silver" />,
-      value: "Improved",
-      label: "Board Confidence Improvement",
-      description: "Enhanced decision-making capability"
-    },
-    {
-      icon: <CheckCircle size={24} className="text-navy dark:text-silver" />,
-      value: "Significant",
-      label: "Average Risk Reduction",
-      description: "Measurable security improvement"
-    }
-  ];
-
-  // STEEL methodology dimensions
-  const steelDimensions = [
-    { letter: "S", word: "Social", color: "bg-blue-500" },
-    { letter: "T", word: "Technology", color: "bg-green-500" },
-    { letter: "E", word: "Economic", color: "bg-yellow-500" },
-    { letter: "E", word: "Environmental", color: "bg-purple-500" },
-    { letter: "L", word: "Legal", color: "bg-red-500" },
-    { letter: "L", word: "Political", color: "bg-indigo-500" }
-  ];
 
   return (
     <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
@@ -130,7 +58,7 @@ export const AboutPage: React.FC = () => {
               Industry Leadership
             </span>
           </div>
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 dark:text-white">Global Cybersecurity Leadership</h1>
+          <h1 className="text-3xl md:text-5xl font-bold mb-4 dark:text-white">Worldclass Cybersecurity Leadership</h1>
           <p className="text-xl text-gray-600 dark:text-gray-100 max-w-4xl mx-auto mb-8">
             Combining deep technical expertise with legal acumen to deliver unparalleled strategic cybersecurity advisory services worldwide.
           </p>
@@ -191,137 +119,6 @@ export const AboutPage: React.FC = () => {
               </motion.div>
             ))}
           </div>
-
-          {/* Professional Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {professionalStats.map((stat, index) => (
-              <motion.div 
-                key={index} 
-                variants={item}
-                className="text-center"
-              >
-                <Card variant="glass" padding="md">
-                  <div className="p-3 rounded-full bg-navy/10 dark:bg-silver/10 inline-flex mb-3">
-                    {stat.icon}
-                  </div>
-                  <div className="text-2xl font-bold text-navy dark:text-white mb-1">{stat.value}</div>
-                  <div className="text-sm font-semibold text-gray-800 dark:text-gray-200 mb-1">{stat.label}</div>
-                  <div className="text-xs text-gray-500 dark:text-gray-400">{stat.description}</div>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Enhanced Our Story Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="mb-16"
-        >
-          <Card variant="glass" padding="lg">
-            <div className="flex flex-col md:flex-row gap-8 items-center">
-              <div className="md:w-1/2">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 dark:text-white">Our Story</h2>
-                <p className="text-gray-600 dark:text-gray-200 mb-4">
-                  ERMITS Advisory was founded on the principle that cybersecurity strategy requires both technical depth and legal sophistication. Traditional cybersecurity consulting often lacks the legal perspective necessary for comprehensive risk management.
-                </p>
-                <p className="text-gray-600 dark:text-gray-200 mb-4">
-                  Our unique combination of advanced cybersecurity certifications and legal expertise positions us to address the complex intersection of technology, law, and business strategy.
-                </p>
-                <p className="text-gray-600 dark:text-gray-200 mb-6">
-                  The STEEL™ framework represents our commitment to innovation, extending traditional PESTEL analysis with cybersecurity-specific factors to provide comprehensive strategic visibility.
-                </p>
-
-                {/* Enhanced metrics */}
-                <div className="bg-navy/5 dark:bg-silver/5 rounded-lg p-4">
-                  <h4 className="font-semibold text-navy dark:text-white mb-3">Value We Deliver:</h4>
-                  <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                    <li className="flex items-center">
-                      <CheckCircle size={16} className="text-navy dark:text-silver mr-2" />
-                      Technical expertise backed by legal knowledge
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle size={16} className="text-navy dark:text-silver mr-2" />
-                      Strategic insights that connect security to business objectives
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle size={16} className="text-navy dark:text-silver mr-2" />
-                      Global perspective with local implementation capability
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="md:w-1/2">
-                <div className="rounded-lg overflow-hidden h-80 relative">
-                  <img
-                    src={teamImage}
-                    alt="ERMITS Advisory leadership team"
-                    className="object-cover w-full h-full"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent flex items-end">
-                    <div className="p-6 text-white">
-                      <h3 className="text-lg font-bold mb-2">Strategic Advisory Excellence</h3>
-                      <p className="text-sm opacity-90">Where cybersecurity meets legal expertise</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Card>
-        </motion.div>
-
-        {/* Enhanced Our Values Section */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-          className="mb-16"
-        >
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center dark:text-white">Our Core Values</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {companyValues.map((value, index) => (
-              <motion.div key={index} variants={item}>
-                <Card variant="glass" padding="md" className="h-full hover:shadow-lg transition-shadow duration-300">
-                  <div className="p-3 rounded-full bg-silver/20 dark:bg-navy/40 inline-flex mb-4">
-                    {value.icon}
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 dark:text-white">{value.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-200 text-sm leading-relaxed">{value.description}</p>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* STEEL™ Methodology Highlight */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="mb-16"
-        >
-          <Card variant="solid" padding="lg" className="bg-navy text-white">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">The STEEL™ Innovation</h2>
-              <p className="text-silver max-w-3xl mx-auto mb-8">
-                Our proprietary methodology revolutionizes strategic risk assessment by integrating cybersecurity intelligence into environmental analysis
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
-              {steelDimensions.map((dimension, index) => (
-                <div key={index} className="flex flex-col items-center">
-                  <div className={`w-12 h-12 ${dimension.color} rounded-full flex items-center justify-center text-white font-bold text-lg mb-2`}>
-                    {dimension.letter}
-                  </div>
-                  <span className="text-sm font-medium">{dimension.word}</span>
-                </div>
-              ))}
-            </div>
-          </Card>
         </motion.div>
 
         {/* Enhanced Global Presence */}

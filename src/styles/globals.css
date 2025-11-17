@@ -3,6 +3,8 @@
  * Tailwind CSS directives - these are valid and will be processed by Tailwind CSS
  * VS Code warnings for @tailwind and @apply can be ignored - they are configured
  * in .vscode/settings.json and .vscode/css_custom_data.json
+ * 
+ * If warnings persist, reload VS Code window (Ctrl+Shift+P -> "Developer: Reload Window")
  */
 @tailwind base;
 @tailwind components;

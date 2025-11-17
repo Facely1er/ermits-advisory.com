@@ -10,6 +10,7 @@
     "**/src/styles/globals.css": "tailwindcss",
     "globals.css": "tailwindcss",
     "src/styles/globals.css": "tailwindcss",
+    "ermits-advisory.com/src/styles/globals.css": "tailwindcss",
     "*.css": "tailwindcss"
   },
   "css.customData": [
@@ -26,6 +27,7 @@
     "css.validate": false,
     "css.lint.unknownAtRules": "ignore",
     "css.lint.unknownProperties": "ignore",
+    "css.lint.unknownVendorSpecificProperties": "ignore",
     "editor.defaultFormatter": null
   },
   "css.lint": {
