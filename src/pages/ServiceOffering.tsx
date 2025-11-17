@@ -24,7 +24,7 @@ export const ServiceOffering: React.FC = () => {
       timeline: '2-6 weeks',
       note: 'Pricing scales based on company size and complexity',
       features: [
-        '42-question executive assessment',
+        '46-question executive assessment',
         'Six-factor PESTEL risk analysis',
         'Strategic recommendations and roadmap',
         'Executive briefing presentation',
@@ -164,7 +164,7 @@ export const ServiceOffering: React.FC = () => {
                 Try STEEL™ Assessment Free
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-200 mb-6 max-w-2xl mx-auto">
-                Complete our 42-question executive assessment in 25-30 minutes and receive your personalized STEEL™ risk scores across all six PESTEL dimensions. No credit card required.
+                Complete our 46-question executive assessment in 25-30 minutes and receive your personalized STEEL™ risk scores across all six PESTEL dimensions. No credit card required.
               </p>
               <div className="flex gap-4 justify-center flex-wrap">
                 <Button

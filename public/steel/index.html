@@ -1550,6 +1550,84 @@
     <script>
         let assessmentData = {};
         const TOTAL_QUESTIONS = 46;
+        
+        // Premium Access Management
+        const PREMIUM_STORAGE_KEY = 'steel_premium_access';
+        const PREMIUM_PURCHASE_URL = '/steel/premium';
+        
+        function checkPremiumAccess() {
+            const premium = localStorage.getItem(PREMIUM_STORAGE_KEY);
+            if (premium) {
+                try {
+                    const data = JSON.parse(premium);
+                    // Check if premium is still valid (not expired)
+                    if (data.expiresAt && new Date(data.expiresAt) > new Date()) {
+                        return true;
+                    } else if (!data.expiresAt) {
+                        // Lifetime access
+                        return true;
+                    }
+                } catch (e) {
+                    console.warn('Error checking premium access:', e);
+                }
+            }
+            return false;
+        }
+        
+        function setPremiumAccess(purchaseData) {
+            const premiumData = {
+                purchased: true,
+                purchaseDate: new Date().toISOString(),
+                expiresAt: null, // Lifetime access
+                ...purchaseData
+            };
+            localStorage.setItem(PREMIUM_STORAGE_KEY, JSON.stringify(premiumData));
+            // Trigger event to refresh UI
+            window.dispatchEvent(new CustomEvent('steel_premium_updated', { detail: premiumData }));
+        }
+        
+        function showPremiumUpgrade(message = 'This feature requires STEEL™ Premium. Upgrade to unlock detailed reports, industry benchmarking, and executive templates.') {
+            const upgrade = confirm(message + '\n\nWould you like to upgrade to Premium ($29)?');
+            if (upgrade) {
+                window.location.href = PREMIUM_PURCHASE_URL;
+            }
+        }
+        
+        // Check for premium access from purchase success page
+        function checkPurchaseSuccess() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('premium') === 'activated') {
+                setPremiumAccess({ source: 'purchase' });
+                // Remove the parameter from URL
+                window.history.replaceState({}, document.title, window.location.pathname);
+                alert('Premium access activated! You now have access to all premium features.');
+            }
+        }
+        
+        // Import free assessment results into Premium
+        function importFreeAssessmentToPremium() {
+            const freeData = localStorage.getItem('steel_assessment');
+            if (!freeData) {
+                alert('No assessment data found. Please complete the assessment first.');
+                return;
+            }
+            
+            if (!checkPremiumAccess()) {
+                showPremiumUpgrade('Import your free assessment results into Premium to unlock detailed reports and advanced features.');
+                return;
+            }
+            
+            try {
+                const data = JSON.parse(freeData);
+                assessmentData = data;
+                displayResults(assessmentData);
+                showTab('results');
+                alert('Assessment results imported successfully! You now have access to all premium features for this assessment.');
+            } catch (e) {
+                alert('Error importing assessment data. Please try again.');
+                console.error('Import error:', e);
+            }
+        }
 
         function showTab(tabName, event) {
             document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
@@ -2307,6 +2385,12 @@
         function exportPDF() {
             if (!assessmentData.composite) {
                 alert('Please complete the assessment first.');
+                return;
+            }
+            
+            // Check premium access for detailed PDF
+            if (!checkPremiumAccess()) {
+                showPremiumUpgrade('Detailed PDF reports with industry benchmarking and executive summaries are available in STEEL™ Premium.');
                 return;
             }
 
