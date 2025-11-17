@@ -1,13 +1,29 @@
-Simplify service and pricing pages
+Fix STEEL visualization layout and enhance service pages
 
-- Reorganized Service page: moved toolkits to top, simplified advisory services
-- Removed heavy content sections (STEEL details, advisory process, etc.)
-- Simplified advisory service features (reduced to 3 key points each)
-- Updated Pricing page to match simplified services
-- Removed unused service variants (Comprehensive STEEL, Industry-Specific STEEL)
-- Added missing services to pricing (Vendor Risk, Incident Response, GDPR/CCPA, M&A)
-- Fixed CSS validation warnings for Tailwind directives
-- Updated About page: removed Our Story, Core Values, and STEEL Innovation sections
-- Changed heading from 'Global' to 'Worldclass' Cybersecurity Leadership
-- Cleaned up unused imports and variables
-- Added GDPR/CCPA and M&A Legal Advisory services to ServiceOffering page
+- Fixed STEEL visualization layout and alignment issues
+  - Redesigned hexagon positioning with fixed sizes instead of percentage-based
+  - Fixed text truncation with proper word-break and line-clamp
+  - Improved responsive breakpoints (mobile/tablet/desktop)
+  - Better container sizing and overflow handling
+  - Enhanced tooltip positioning
+
+- Enhanced STEEL visualization integration
+  - Integrated with localStorage to read actual assessment data
+  - Added tutorial mode and interactive tooltips
+  - Improved overall risk score display
+  - Better alignment with dashboard colors and data structure
+
+- Fixed ServiceOffering page
+  - Removed unused imports (Phone, Zap)
+  - Removed unused platformServices variable
+
+- Enhanced vCISO Toolkit page
+  - Refocused page on product (vCISO Starter Kit) instead of services
+  - Added prominent $299 price display
+  - Removed ROI calculator tab (service-related content)
+  - Updated metrics and content to focus on toolkit features
+  - Improved purchase CTAs
+
+- Added purpose statement to LandingPage
+  - Added ERMITS Advisory value proposition text in hero section
+  - Positioned below main headings for clarity

@@ -34,7 +34,7 @@ export const AboutPage: React.FC = () => {
       category: "Legal Credentials",
       icon: <Scale size={24} className="text-navy dark:text-silver" />,
       credentials: [
-        { name: "J.D. & LLM", description: "Legal Background - Focus on federal litigation, public records laws, and regulatory compliance with advanced knowledge of privacy and cybersecurity laws" }
+        { name: "J.D. & LL.M.", description: "Legal Background - Focus on federal litigation, public records laws, and regulatory compliance with advanced knowledge of privacy and cybersecurity laws" }
       ]
     }
   ];
