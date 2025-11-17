@@ -283,8 +283,12 @@ export const STEELVisualization: React.FC = () => {
                       <h3 className="text-xl font-bold mb-3 dark:text-white">{item.title}</h3>
                       <p className="text-gray-600 dark:text-gray-200 mb-4">{item.description}</p>
                       <button 
-                        onClick={item.onClick}
-                        className="text-navy dark:text-silver font-medium hover:underline text-sm flex items-center transition-colors cursor-pointer"
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          item.onClick();
+                        }}
+                        className="text-navy dark:text-silver font-medium hover:underline text-sm flex items-center transition-colors cursor-pointer relative z-20"
                       >
                         {item.link}
                         <ArrowRight size={14} className="ml-1" />

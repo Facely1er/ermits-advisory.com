@@ -6,71 +6,47 @@ import { Button } from '../components/shared/Button';
 import { 
   Shield, Users, UserCheck, CheckCircle, ArrowRight, 
   Mail, MapPin, Presentation, FileText, DollarSign, Clock, Server, Database,
-  Layers, Network, Download, Info, ExternalLink
+  Layers, Network, Info, ExternalLink
 } from 'lucide-react';
 
 export const ServiceOffering: React.FC = () => {
   const navigate = useNavigate();
   
 
-  // Simplified Core Services - 3 main offerings
+  // Core Advisory Services - 2 main offerings
   const coreServices = [
     {
       id: 'steel-assessment',
       icon: 'shield',
       title: 'STEEL™ Strategic Assessment',
-      description: 'Comprehensive risk assessment across six PESTEL dimensions with strategic recommendations and executive briefing.',
-      price: '$7.5K - $30K',
-      timeline: '2-6 weeks',
+      description: 'Expert risk assessment and strategic recommendations.',
+      price: '$25K - $125K',
+      timeline: '2-8 weeks',
       note: 'Pricing scales based on company size and complexity',
       features: [
-        '46-question executive assessment',
-        'Six-factor PESTEL risk analysis',
-        'Strategic recommendations and roadmap',
-        'Executive briefing presentation',
-        'ERMITS platform recommendations',
-        'Framework alignment (NIST, ISO, COSO)'
+        'Professional STEEL™ assessment',
+        'Strategic recommendations',
+        'Executive briefing'
       ],
-      cta: 'Request Assessment',
+      cta: 'Request Quote',
       link: '/contact'
     },
     {
-      id: 'vciso-services',
-      icon: 'users',
-      title: 'vCISO Services',
-      description: 'Ongoing cybersecurity leadership and strategic guidance tailored to your organization\'s needs.',
-      price: '$3.5K - $12K/month',
-      timeline: 'Ongoing',
-      note: 'Two tiers: Strategic (10-20 hrs) or Operational (30-50 hrs)',
+      id: 'on-demand-advisory',
+      icon: 'server',
+      title: 'On-demand Advisory Services',
+      description: 'Flexible expert guidance for specific cybersecurity challenges and strategic initiatives.',
+      price: 'Custom pricing',
+      timeline: 'As needed',
+      note: 'Hourly or project-based engagement',
       features: [
-        'Monthly strategic guidance sessions',
-        'Quarterly board presentations',
-        'Security program management',
-        'Team leadership and development',
-        'ERMITS platform optimization',
-        '60-70% less than full-time CISO'
+        'Hourly or project-based consulting',
+        'Strategic guidance and recommendations',
+        'Expert review and analysis',
+        'Customized solutions for your needs'
       ],
       cta: 'Request Consultation',
       link: '/contact'
-    },
-    {
-      id: 'vciso-kit',
-      icon: 'file',
-      title: 'vCISO Starter Kit',
-      description: 'Self-service toolkit with 37+ professional templates, playbooks, and delivery guides.',
-      price: '$299',
-      timeline: 'One-time purchase',
-      note: 'Instant digital download',
-      features: [
-        '37+ professional templates and playbooks',
-        'Service delivery guides and workflows',
-        'ERMITS platform integration guides',
-        'Board presentation templates',
-        'Policy templates and frameworks',
-        'Instant access after purchase'
-      ],
-      cta: 'View Toolkit',
-      link: '/vciso-kit'
     }
   ];
   
@@ -103,8 +79,8 @@ export const ServiceOffering: React.FC = () => {
   const handleServiceClick = (service: typeof coreServices[0]) => {
     if (service.id === 'steel-assessment') {
       navigate(`/contact?type=quote&service=steel-assessment`);
-    } else if (service.id === 'vciso-services') {
-      navigate(`/contact?type=quote&service=vciso-services`);
+    } else if (service.id === 'on-demand-advisory') {
+      navigate(`/contact?type=consultation&service=on-demand-advisory`);
     } else {
       navigate(service.link);
     }
@@ -135,11 +111,11 @@ export const ServiceOffering: React.FC = () => {
             </motion.div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
               <span className="bg-gradient-to-r from-white via-silver to-white bg-clip-text text-transparent">
-                ERMITS Advisory Services
+                Professional Advisory Services
               </span>
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-silver/90 max-w-3xl mx-auto leading-relaxed">
-              Start with a free assessment, then choose the level of support that fits your needs.
+              Expert strategic guidance and leadership services for your cybersecurity needs.
             </p>
           </motion.div>
         </div>
@@ -200,11 +176,11 @@ export const ServiceOffering: React.FC = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">Our Services</h2>
             <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              Choose the level of support that fits your organization's needs.
+              Expert strategic guidance and leadership services for your cybersecurity needs.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {coreServices.map((service) => (
               <Card 
                 key={service.id} 
@@ -218,6 +194,9 @@ export const ServiceOffering: React.FC = () => {
                       {getServiceIcon(service.icon)}
                     </div>
                     <div className="flex-1">
+                      <div className="text-xs font-semibold text-purple-600 dark:text-purple-400 uppercase tracking-wide mb-1">
+                        PROFESSIONAL
+                      </div>
                       <h3 className="text-xl font-bold mb-2 dark:text-white">
                         {service.title}
                       </h3>
@@ -244,9 +223,8 @@ export const ServiceOffering: React.FC = () => {
                   </p>
                   
                   <div className="mb-4">
-                    <h4 className="text-sm font-semibold mb-2 text-navy dark:text-silver">Includes:</h4>
                     <ul className="space-y-1.5">
-                      {service.features.slice(0, 5).map((feature, idx) => (
+                      {service.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start text-sm">
                           <CheckCircle size={14} className="text-purple-500 mt-0.5 mr-2 flex-shrink-0" />
                           <span className="text-gray-600 dark:text-gray-300">{feature}</span>
@@ -257,12 +235,12 @@ export const ServiceOffering: React.FC = () => {
                   
                   <div className="mt-auto pt-4 border-t border-gray-200 dark:border-gray-700">
                     <Button 
-                      variant={service.id === 'vciso-kit' ? 'primary' : 'outline'}
+                      variant="outline"
                       size="sm"
-                      icon={service.id === 'vciso-kit' ? <Download size={16} /> : <ArrowRight size={16} />}
+                      icon={<ArrowRight size={16} />}
                       iconPosition="right"
                       onClick={() => handleServiceClick(service)}
-                      className="w-full"
+                      className="w-full border-purple-200 dark:border-purple-800 text-purple-700 dark:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-900/20"
                     >
                       {service.cta}
                     </Button>
