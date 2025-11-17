@@ -87,33 +87,25 @@ export const STEELVisualization: React.FC = () => {
       id: 'predictiveIntelligence',
       icon: <Lightbulb size={24} className="text-navy dark:text-silver" />,
       title: "Predictive Intelligence Integration",
-      description: "Real-time threat intelligence feeds directly into environmental analysis",
-      link: "Learn about our intelligence sources",
-      onClick: () => navigate('/services')
+      description: "Real-time threat intelligence feeds directly into environmental analysis"
     },
     {
       id: 'enhancedPestel',
       icon: <BarChart2 size={24} className="text-navy dark:text-silver" />,
       title: "Enhanced PESTEL Framework",
-      description: "Traditional PESTEL analysis enhanced with cybersecurity-specific factors",
-      link: "Compare with traditional PESTEL",
-      onClick: () => navigate('/steel')
+      description: "Traditional PESTEL analysis enhanced with cybersecurity-specific factors"
     },
     {
       id: 'expertPartnership',
       icon: <Users size={24} className="text-navy dark:text-silver" />,
       title: "Expert Partnership Model",
-      description: "Legal and cybersecurity experts working together on every assessment",
-      link: "Meet our expert team",
-      onClick: () => navigate('/about')
+      description: "Legal and cybersecurity experts working together on every assessment"
     },
     {
       id: 'frameworkIntegration',
       icon: <FileText size={24} className="text-navy dark:text-silver" />,
       title: "Framework Integration",
-      description: "Seamless integration with existing risk management frameworks",
-      link: "View integration options",
-      onClick: () => navigate('/steel/implementation-guide')
+      description: "Seamless integration with existing risk management frameworks"
     }
   ];
 
@@ -281,18 +273,7 @@ export const STEELVisualization: React.FC = () => {
                     </div>
                     <div>
                       <h3 className="text-xl font-bold mb-3 dark:text-white">{item.title}</h3>
-                      <p className="text-gray-600 dark:text-gray-200 mb-4">{item.description}</p>
-                      <button 
-                        type="button"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          item.onClick();
-                        }}
-                        className="text-navy dark:text-silver font-medium hover:underline text-sm flex items-center transition-colors cursor-pointer relative z-20"
-                      >
-                        {item.link}
-                        <ArrowRight size={14} className="ml-1" />
-                      </button>
+                      <p className="text-gray-600 dark:text-gray-200">{item.description}</p>
                     </div>
                   </div>
                 </InteractiveCard>
