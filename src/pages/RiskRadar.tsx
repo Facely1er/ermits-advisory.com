@@ -50,19 +50,22 @@ export const RiskRadar: React.FC = () => {
       priority: 'Critical',
       action: 'Implement multi-factor authentication across all systems',
       impact: 'Prevent 99% of account takeover attacks',
-      timeline: 'Immediate'
+      timeline: 'Immediate',
+      effort: 'Medium'
     },
     {
       priority: 'High',
       action: 'Patch critical infrastructure vulnerabilities',
       impact: 'Reduce attack surface by 40%',
-      timeline: '1-2 weeks'
+      timeline: '1-2 weeks',
+      effort: 'High'
     },
     {
       priority: 'Medium',
       action: 'Update incident response playbooks',
       impact: 'Improve response time by 50%',
-      timeline: '1 month'
+      timeline: '1 month',
+      effort: 'Low'
     }
   ];
 
@@ -143,7 +146,7 @@ export const RiskRadar: React.FC = () => {
 
   // Radar chart data and options
   const radarData = {
-    labels: steelDimensions.map(dim => 'Political'),
+    labels: steelDimensions.map(dim => dim.title),
     datasets: [
       {
         label: 'Risk Visualization',
@@ -276,9 +279,12 @@ export const RiskRadar: React.FC = () => {
                       value={sliderValues[dimension.id]}
                       onChange={(e) => handleSliderChange(dimension.id, parseInt(e.target.value))}
                       className="w-full accent-navy dark:accent-silver"
-                      style={{
-                        '--range-color': dimension.color,
-                      } as React.CSSProperties}
+                      aria-label={`${dimension.id.charAt(0).toUpperCase() + dimension.id.slice(1)} risk level`}
+                      ref={(el) => {
+                        if (el) {
+                          el.style.setProperty('--range-color', dimension.color);
+                        }
+                      }}
                     />
                   </div>
                 ))}

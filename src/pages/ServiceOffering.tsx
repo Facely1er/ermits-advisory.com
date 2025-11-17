@@ -6,63 +6,70 @@ import { Button } from '../components/shared/Button';
 import { 
   Shield, Users, UserCheck, CheckCircle, ArrowRight, 
   Mail, MapPin, Presentation, FileText, DollarSign, Clock, Server, Database,
-  Layers, Network, Sparkles, Download
+  Layers, Network, Download, Info, ExternalLink
 } from 'lucide-react';
 
 export const ServiceOffering: React.FC = () => {
   const navigate = useNavigate();
   
 
-  // Simplified Professional Advisory Services
-  const premiumAdvisoryServices = [
+  // Simplified Core Services - 3 main offerings
+  const coreServices = [
     {
       id: 'steel-assessment',
       icon: 'shield',
       title: 'STEEL™ Strategic Assessment',
-      description: 'Expert risk assessment and strategic recommendations.',
-      price: '$25K - $125K',
-      timeline: '2-8 weeks',
+      description: 'Comprehensive risk assessment across six PESTEL dimensions with strategic recommendations and executive briefing.',
+      price: '$7.5K - $30K',
+      timeline: '2-6 weeks',
+      note: 'Pricing scales based on company size and complexity',
       features: [
-        'Professional STEEL™ assessment',
-        'Strategic recommendations',
-        'Executive briefing'
+        '42-question executive assessment',
+        'Six-factor PESTEL risk analysis',
+        'Strategic recommendations and roadmap',
+        'Executive briefing presentation',
+        'ERMITS platform recommendations',
+        'Framework alignment (NIST, ISO, COSO)'
       ],
+      cta: 'Request Assessment',
       link: '/contact'
     },
     {
-      id: 'on-demand-advisory',
-      icon: 'presentation',
-      title: 'On-demand Advisory Services',
-      description: 'Flexible expert guidance for specific cybersecurity challenges and strategic initiatives.',
-      price: 'Custom pricing',
-      timeline: 'As needed',
+      id: 'vciso-services',
+      icon: 'users',
+      title: 'vCISO Services',
+      description: 'Ongoing cybersecurity leadership and strategic guidance tailored to your organization\'s needs.',
+      price: '$3.5K - $12K/month',
+      timeline: 'Ongoing',
+      note: 'Two tiers: Strategic (10-20 hrs) or Operational (30-50 hrs)',
       features: [
-        'Hourly or project-based consulting',
-        'Strategic guidance and recommendations',
-        'Expert review and analysis',
-        'Customized solutions for your needs'
+        'Monthly strategic guidance sessions',
+        'Quarterly board presentations',
+        'Security program management',
+        'Team leadership and development',
+        'ERMITS platform optimization',
+        '60-70% less than full-time CISO'
       ],
+      cta: 'Request Consultation',
       link: '/contact'
-    }
-  ];
-
-  // SUPPORTING PRODUCTS: Toolkits
-  const toolkitServices = [
+    },
     {
       id: 'vciso-kit',
       icon: 'file',
       title: 'vCISO Starter Kit',
-      description: 'Self-service toolkit with 37+ templates, playbooks, and delivery guides for practitioners.',
+      description: 'Self-service toolkit with 37+ professional templates, playbooks, and delivery guides.',
       price: '$299',
       timeline: 'One-time purchase',
+      note: 'Instant digital download',
       features: [
         '37+ professional templates and playbooks',
         'Service delivery guides and workflows',
         'ERMITS platform integration guides',
         'Board presentation templates',
         'Policy templates and frameworks',
-        'Instant digital download'
+        'Instant access after purchase'
       ],
+      cta: 'View Toolkit',
       link: '/vciso-kit'
     }
   ];
@@ -90,6 +97,16 @@ export const ServiceOffering: React.FC = () => {
         return <Network size={size} className="text-navy dark:text-silver" />;
       default:
         return null;
+    }
+  };
+
+  const handleServiceClick = (service: typeof coreServices[0]) => {
+    if (service.id === 'steel-assessment') {
+      navigate(`/contact?type=quote&service=steel-assessment`);
+    } else if (service.id === 'vciso-services') {
+      navigate(`/contact?type=quote&service=vciso-services`);
+    } else {
+      navigate(service.link);
     }
   };
 
@@ -122,7 +139,7 @@ export const ServiceOffering: React.FC = () => {
               </span>
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-silver/90 max-w-3xl mx-auto leading-relaxed">
-              Professional templates and expert advisory services for cybersecurity practitioners.
+              Start with a free assessment, then choose the level of support that fits your needs.
             </p>
           </motion.div>
         </div>
@@ -130,7 +147,50 @@ export const ServiceOffering: React.FC = () => {
 
       <div className="container mx-auto px-4">
 
-        {/* TOOLKITS - Moved to Top */}
+        {/* Free Assessment CTA Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className="mb-12"
+        >
+          <Card variant="glass" padding="lg" className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border-2 border-blue-200 dark:border-blue-800">
+            <div className="text-center">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-sm font-semibold mb-4">
+                <Shield size={16} className="mr-2" />
+                START HERE
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold mb-3 dark:text-white">
+                Try STEEL™ Assessment Free
+              </h2>
+              <p className="text-lg text-gray-600 dark:text-gray-200 mb-6 max-w-2xl mx-auto">
+                Complete our 42-question executive assessment in 25-30 minutes and receive your personalized STEEL™ risk scores across all six PESTEL dimensions. No credit card required.
+              </p>
+              <div className="flex gap-4 justify-center flex-wrap">
+                <Button
+                  variant="primary"
+                  size="lg"
+                  onClick={() => window.open('/steel/index.html', '_blank')}
+                  icon={<ExternalLink size={20} />}
+                  iconPosition="right"
+                >
+                  Take Free Assessment
+                </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  onClick={() => navigate('/steel')}
+                  icon={<Info size={20} />}
+                  iconPosition="right"
+                >
+                  Learn About STEEL™
+                </Button>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Core Services - Simplified to 3 offerings */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -138,106 +198,30 @@ export const ServiceOffering: React.FC = () => {
           className="mb-16"
         >
           <div className="text-center mb-12">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-sm font-semibold mb-4">
-              <Download size={16} className="mr-2" />
-              SELF-SERVICE TOOLKITS
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">Professional Templates & Guides</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">Our Services</h2>
             <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              Instant access to professional templates, playbooks, and guides for cybersecurity practitioners.
+              Choose the level of support that fits your organization's needs.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 gap-8 max-w-2xl mx-auto">
-            {toolkitServices.map((toolkit) => (
-              <Card key={toolkit.id} variant="glass" padding="lg" className="h-full hover:shadow-xl transition-shadow border-2 border-blue-200 dark:border-blue-800">
-                <div className="flex flex-col h-full">
-                  <div className="flex items-start mb-4">
-                    <div className="p-3 rounded-full bg-blue-100 dark:bg-blue-900/30 mr-4">
-                      {getServiceIcon(toolkit.icon)}
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-xs font-semibold text-blue-600 dark:text-blue-400 mb-1">TOOLKIT</div>
-                      <h3 className="text-xl font-bold mb-2 dark:text-white">
-                        {toolkit.title}
-                      </h3>
-                      <div className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400 mb-3">
-                        <span className="flex items-center font-semibold text-navy dark:text-white">
-                          <DollarSign size={16} className="mr-1" />
-                          {toolkit.price}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <p className="text-gray-600 dark:text-gray-200 mb-4 flex-grow text-sm">
-                    {toolkit.description}
-                  </p>
-                  
-                  <div className="mb-4">
-                    <h4 className="text-sm font-semibold mb-2 text-navy dark:text-silver">Includes:</h4>
-                    <ul className="space-y-1">
-                      {toolkit.features.slice(0, 4).map((feature, index) => (
-                        <li key={index} className="flex items-start text-sm">
-                          <CheckCircle size={14} className="text-blue-500 mt-0.5 mr-2 flex-shrink-0" />
-                          <span className="text-gray-600 dark:text-gray-300">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <div className="mt-auto pt-4 border-t border-gray-200 dark:border-gray-700">
-                    <Button 
-                      variant="primary" 
-                      size="sm"
-                      icon={<Download size={16} />}
-                      iconPosition="right"
-                      onClick={() => navigate(toolkit.link)}
-                      className="w-full"
-                    >
-                      View Toolkit
-                    </Button>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Professional Advisory Services */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="mb-16"
-        >
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 text-sm font-semibold mb-4">
-              <Sparkles size={16} className="mr-2" />
-              EXPERT ADVISORY SERVICES
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">Professional Advisory Services</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              Expert strategic guidance and leadership services for your cybersecurity needs.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {premiumAdvisoryServices.map((service) => (
-              <Card key={service.id} variant="glass" padding="lg" className="h-full hover:shadow-xl transition-shadow border-2 border-purple-200 dark:border-purple-800">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {coreServices.map((service) => (
+              <Card 
+                key={service.id} 
+                variant="glass" 
+                padding="lg" 
+                className="h-full hover:shadow-xl transition-shadow border-2 border-purple-200 dark:border-purple-800"
+              >
                 <div className="flex flex-col h-full">
                   <div className="flex items-start mb-4">
                     <div className="p-3 rounded-full bg-purple-100 dark:bg-purple-900/30 mr-4">
                       {getServiceIcon(service.icon)}
                     </div>
                     <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="text-xs font-semibold text-purple-600 dark:text-purple-400">PROFESSIONAL</span>
-                      </div>
                       <h3 className="text-xl font-bold mb-2 dark:text-white">
                         {service.title}
                       </h3>
-                      <div className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400 mb-3">
+                      <div className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400 mb-2">
                         <span className="flex items-center font-semibold text-navy dark:text-white">
                           <DollarSign size={16} className="mr-1" />
                           {service.price}
@@ -247,6 +231,11 @@ export const ServiceOffering: React.FC = () => {
                           {service.timeline}
                         </span>
                       </div>
+                      {service.note && (
+                        <p className="text-xs text-gray-500 dark:text-gray-400 italic mb-2">
+                          {service.note}
+                        </p>
+                      )}
                     </div>
                   </div>
                   
@@ -255,9 +244,10 @@ export const ServiceOffering: React.FC = () => {
                   </p>
                   
                   <div className="mb-4">
+                    <h4 className="text-sm font-semibold mb-2 text-navy dark:text-silver">Includes:</h4>
                     <ul className="space-y-1.5">
-                      {service.features.map((feature, index) => (
-                        <li key={index} className="flex items-start text-sm">
+                      {service.features.slice(0, 5).map((feature, idx) => (
+                        <li key={idx} className="flex items-start text-sm">
                           <CheckCircle size={14} className="text-purple-500 mt-0.5 mr-2 flex-shrink-0" />
                           <span className="text-gray-600 dark:text-gray-300">{feature}</span>
                         </li>
@@ -267,27 +257,14 @@ export const ServiceOffering: React.FC = () => {
                   
                   <div className="mt-auto pt-4 border-t border-gray-200 dark:border-gray-700">
                     <Button 
-                      variant="outline" 
+                      variant={service.id === 'vciso-kit' ? 'primary' : 'outline'}
                       size="sm"
-                      icon={<ArrowRight size={16} />}
+                      icon={service.id === 'vciso-kit' ? <Download size={16} /> : <ArrowRight size={16} />}
                       iconPosition="right"
-                      onClick={() => {
-                        // Map service IDs to quote form values
-                        const serviceMap: Record<string, string> = {
-                          'steel-assessment': 'comprehensive-steel',
-                          'on-demand-advisory': 'on-demand-advisory'
-                        };
-                        
-                        const serviceValue = serviceMap[service.id] || service.id;
-                        
-                        // Navigate to quote form with service pre-selected
-                        navigate(`/contact?type=quote&service=${serviceValue}`);
-                      }}
+                      onClick={() => handleServiceClick(service)}
                       className="w-full"
                     >
-                      {service.id === 'steel-assessment' ? 'Request Quote' : 
-                       service.id === 'on-demand-advisory' ? 'Request Consultation' :
-                       'Request Quote'}
+                      {service.cta}
                     </Button>
                   </div>
                 </div>
@@ -332,15 +309,29 @@ export const ServiceOffering: React.FC = () => {
             </div>
 
             <div className="mt-8 text-center">
-              <Button
-                variant="primary"
-                size="lg"
-                onClick={() => navigate('/contact')}
-                icon={<ArrowRight size={20} />}
-                iconPosition="right"
-              >
-                Request Consultation
-              </Button>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                Not sure which service is right for you? Start with our free assessment or schedule a consultation.
+              </p>
+              <div className="flex gap-4 justify-center flex-wrap">
+                <Button
+                  variant="primary"
+                  size="lg"
+                  onClick={() => window.open('/steel/index.html', '_blank')}
+                  icon={<Shield size={20} />}
+                  iconPosition="left"
+                >
+                  Take Free Assessment
+                </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  onClick={() => navigate('/contact')}
+                  icon={<ArrowRight size={20} />}
+                  iconPosition="right"
+                >
+                  Schedule Consultation
+                </Button>
+              </div>
             </div>
           </Card>
         </motion.div>
