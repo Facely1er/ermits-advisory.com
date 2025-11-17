@@ -52,18 +52,6 @@ export const PricingPage: React.FC = () => {
       idealFor: 'NIST CSF, ISO 27001, SOC 2, HIPAA, CMMC, PCI-DSS'
     },
     {
-      name: 'Governance & Risk Strategy',
-      price: '$12K - $40K',
-      duration: '3-8 weeks',
-      description: 'Security program design and risk management',
-      deliverables: [
-        'Security program foundation',
-        'Risk management program',
-        'Board governance framework'
-      ],
-      idealFor: 'Organizations building security programs from scratch'
-    },
-    {
       name: 'Vendor Risk Advisory',
       price: '$5K - $35K',
       duration: '3-5 weeks or per vendor',
@@ -74,42 +62,6 @@ export const PricingPage: React.FC = () => {
         'Supply chain risk strategy'
       ],
       idealFor: 'Organizations managing third-party risk'
-    },
-    {
-      name: 'Incident Response Advisory',
-      price: '$12K - $100K',
-      duration: '3-6 weeks or crisis response',
-      description: 'Crisis leadership and response planning',
-      deliverables: [
-        'IR plan development',
-        'Tabletop exercises',
-        'Crisis leadership support'
-      ],
-      idealFor: 'Organizations needing incident response capabilities'
-    },
-    {
-      name: 'GDPR/CCPA Privacy Compliance',
-      price: '$15K - $75K',
-      duration: '4-10 weeks or ongoing',
-      description: 'Data protection and privacy compliance expertise',
-      deliverables: [
-        'GDPR/CCPA compliance assessment',
-        'Privacy impact assessments',
-        'Data subject rights procedures'
-      ],
-      idealFor: 'Organizations handling personal data'
-    },
-    {
-      name: 'M&A Legal Advisory',
-      price: '$25K - $150K',
-      duration: '2-12 weeks per transaction',
-      description: 'Legal counsel for technology transactions',
-      deliverables: [
-        'Technology transaction due diligence',
-        'Cybersecurity risk assessment',
-        'Post-merger integration planning'
-      ],
-      idealFor: 'Technology M&A transactions'
     }
   ];
 
@@ -270,7 +222,7 @@ export const PricingPage: React.FC = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.1 }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
           >
             {assessmentServices.map((service, index) => (
               <motion.div key={index} variants={item}>

@@ -34,10 +34,7 @@ export const AboutPage: React.FC = () => {
       category: "Legal Credentials",
       icon: <Scale size={24} className="text-navy dark:text-silver" />,
       credentials: [
-        { name: "J.D. & LLM", description: "Legal Background - Focus on federal litigation, public records laws, and regulatory compliance with advanced knowledge of privacy and cybersecurity laws and compliance" },
-        { name: "Privacy Law Specialist", description: "Expert in GDPR, CCPA, and international privacy regulations" },
-        { name: "GDPR/CCPA", description: "Data protection and privacy compliance expertise" },
-        { name: "M&A Legal Advisory", description: "Specialized legal counsel for technology transactions" }
+        { name: "J.D. & LLM", description: "Legal Background - Focus on federal litigation, public records laws, and regulatory compliance with advanced knowledge of privacy and cybersecurity laws and compliance" }
       ]
     }
   ];

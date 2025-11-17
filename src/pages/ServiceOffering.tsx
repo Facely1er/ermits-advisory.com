@@ -6,7 +6,7 @@ import { Button } from '../components/shared/Button';
 import { 
   Shield, Users, UserCheck, CheckCircle, ArrowRight, 
   Mail, MapPin, Presentation, FileText, DollarSign, Clock, Server, Database,
-  Layers, Network, Sparkles, Download, Scale, Lock
+  Layers, Network, Sparkles, Download
 } from 'lucide-react';
 
 export const ServiceOffering: React.FC = () => {
@@ -58,20 +58,6 @@ export const ServiceOffering: React.FC = () => {
       link: '/compliance'
     },
     {
-      id: 'governance-advisory',
-      icon: 'presentation',
-      title: 'Governance & Risk Strategy',
-      description: 'Security program design and risk management.',
-      price: '$12K - $40K',
-      timeline: '3-8 weeks',
-      features: [
-        'Security program foundation',
-        'Risk management program',
-        'Board governance framework'
-      ],
-      link: '/pricing'
-    },
-    {
       id: 'vendor-risk-advisory',
       icon: 'users',
       title: 'Vendor Risk Advisory',
@@ -82,48 +68,6 @@ export const ServiceOffering: React.FC = () => {
         'Vendor risk program design',
         'Critical vendor assessments',
         'Supply chain risk strategy'
-      ],
-      link: '/pricing'
-    },
-    {
-      id: 'incident-response',
-      icon: 'shield',
-      title: 'Incident Response Advisory',
-      description: 'Crisis leadership and response planning.',
-      price: '$12K - $100K',
-      timeline: '3-6 weeks or crisis response',
-      features: [
-        'IR plan development',
-        'Tabletop exercises',
-        'Crisis leadership support'
-      ],
-      link: '/pricing'
-    },
-    {
-      id: 'privacy-compliance',
-      icon: 'lock',
-      title: 'GDPR/CCPA Privacy Compliance',
-      description: 'Data protection and privacy compliance expertise.',
-      price: '$15K - $75K',
-      timeline: '4-10 weeks or ongoing',
-      features: [
-        'GDPR/CCPA compliance assessment',
-        'Privacy impact assessments',
-        'Data subject rights procedures'
-      ],
-      link: '/pricing'
-    },
-    {
-      id: 'ma-legal-advisory',
-      icon: 'scale',
-      title: 'M&A Legal Advisory',
-      description: 'Legal counsel for technology transactions.',
-      price: '$25K - $150K',
-      timeline: '2-12 weeks per transaction',
-      features: [
-        'Technology transaction due diligence',
-        'Cybersecurity risk assessment',
-        'Post-merger integration planning'
       ],
       link: '/pricing'
     }
@@ -226,10 +170,6 @@ export const ServiceOffering: React.FC = () => {
         return <Layers size={size} className="text-navy dark:text-silver" />;
       case 'network':
         return <Network size={size} className="text-navy dark:text-silver" />;
-      case 'lock':
-        return <Lock size={size} className="text-navy dark:text-silver" />;
-      case 'scale':
-        return <Scale size={size} className="text-navy dark:text-silver" />;
       default:
         return null;
     }
@@ -423,12 +363,7 @@ export const ServiceOffering: React.FC = () => {
                           'steel-assessment': 'comprehensive-steel',
                           'vCISO': 'strategic-vciso',
                           'compliance-advisory': 'compliance-readiness',
-                          'governance-advisory': 'security-program',
-                          'vendor-risk-advisory': 'vendor-risk',
-                          'incident-response': 'incident-response',
-                          'incident-response-advisory': 'incident-response',
-                          'privacy-compliance': 'privacy-compliance',
-                          'ma-legal-advisory': 'ma-legal-advisory'
+                          'vendor-risk-advisory': 'vendor-risk'
                         };
                         
                         const serviceValue = serviceMap[service.id] || service.id;
@@ -446,8 +381,6 @@ export const ServiceOffering: React.FC = () => {
                     >
                       {service.id === 'compliance-advisory' ? 'Explore Compliance' : 
                        service.id === 'vCISO' ? 'View vCISO Services' : 
-                       service.id === 'privacy-compliance' ? 'Request Privacy Compliance Quote' :
-                       service.id === 'ma-legal-advisory' ? 'Request M&A Legal Quote' :
                        'Request Quote'}
                     </Button>
                   </div>
