@@ -29,7 +29,7 @@ export const EcosystemPage: React.FC = () => {
       icon: <AlertCircle size={32} className="text-navy dark:text-silver" />,
       title: 'CyberCaution™',
       description: 'Real-time threat monitoring and intelligence platform for continuous security awareness',
-      link: '/cybercaution',
+      link: 'https://cybercaution.com',
       color: 'from-red-500 to-red-600',
       logo: cyberCautionLogo,
       integration: {
@@ -44,7 +44,7 @@ export const EcosystemPage: React.FC = () => {
       icon: <FileCheck size={32} className="text-navy dark:text-silver" />,
       title: 'CyberCorrect™',
       description: 'Automated compliance management and evidence collection for continuous compliance monitoring',
-      link: '/cybercorrect',
+      link: 'https://cybercorrect.com',
       color: 'from-green-500 to-green-600',
       logo: cyberCorrectLogo,
       integration: {
@@ -59,7 +59,7 @@ export const EcosystemPage: React.FC = () => {
       icon: <Network size={32} className="text-navy dark:text-silver" />,
       title: 'VendorSoluce™',
       description: 'Comprehensive vendor risk management and supply chain security platform',
-      link: '/vendorsoluce',
+      link: 'https://vendorsoluce.com',
       color: 'from-orange-500 to-orange-600',
       logo: vendorSoluceLogo,
       integration: {
@@ -74,7 +74,7 @@ export const EcosystemPage: React.FC = () => {
       icon: <Server size={32} className="text-navy dark:text-silver" />,
       title: 'TechnoSoluce™',
       description: 'Technology operations and IT risk management platform for infrastructure and systems security',
-      link: '/technosoluce',
+      link: 'https://technosoluce.com',
       color: 'from-blue-500 to-blue-600',
       logo: technoSoluceLogo,
       integration: {
@@ -89,7 +89,7 @@ export const EcosystemPage: React.FC = () => {
       icon: <Shield size={32} className="text-navy dark:text-silver" />,
       title: 'CyberCertitude™',
       description: 'Certification and assurance platform for security validation and confidence verification',
-      link: '/cybercertitude',
+      link: 'https://cybercertitude.com',
       color: 'from-yellow-500 to-orange-600',
       logo: cyberCertitudeLogo,
       integration: {
@@ -207,7 +207,7 @@ export const EcosystemPage: React.FC = () => {
                   hover3D={true}
                   glowEffect={true}
                   className="h-full bg-white dark:bg-dark-surface p-6 cursor-pointer overflow-hidden"
-                  onClick={() => navigate(component.link)}
+                  onClick={() => window.open(component.link, '_blank', 'noopener,noreferrer')}
                 >
                   <div className="flex items-start mb-4">
                     {component.logo ? (
@@ -282,7 +282,7 @@ export const EcosystemPage: React.FC = () => {
               hover3D={true}
               glowEffect={true}
               className="bg-gradient-to-br from-teal-50 to-cyan-50 dark:from-teal-900/20 dark:to-cyan-900/20 border-2 border-teal-200 dark:border-teal-800 p-8 cursor-pointer"
-              onClick={() => navigate('/socialcaution')}
+              onClick={() => window.open('https://socialcaution.com', '_blank', 'noopener,noreferrer')}
             >
               <div className="flex flex-col md:flex-row items-start gap-6">
                 <div className="flex-shrink-0 flex items-center justify-center">

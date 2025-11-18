@@ -58,6 +58,7 @@ const BoardPresentation = React.lazy(() => import('./pages/BoardPresentation').t
 const ContactPage = React.lazy(() => import('./pages/ContactPage').then(m => ({ default: m.ContactPage })));
 const AboutPage = React.lazy(() => import('./pages/AboutPage').then(m => ({ default: m.AboutPage })));
 const EcosystemPage = React.lazy(() => import('./pages/EcosystemPage').then(m => ({ default: m.EcosystemPage })));
+const ExternalRedirect = React.lazy(() => import('./components/shared/ExternalRedirect').then(m => ({ default: m.ExternalRedirect })));
 const NotFoundPage = React.lazy(() => import('./pages/NotFoundPage').then(m => ({ default: m.NotFoundPage })));
 const PrivacyPolicyPage = React.lazy(() => import('./pages/PrivacyPolicyPage').then(m => ({ default: m.PrivacyPolicyPage })));
 const TermsOfServicePage = React.lazy(() => import('./pages/TermsOfServicePage').then(m => ({ default: m.TermsOfServicePage })));
@@ -113,11 +114,13 @@ function App() {
                   <Route path="/contact" element={<ContactPage />} />
                   <Route path="/about" element={<AboutPage />} />
                   <Route path="/ecosystem" element={<EcosystemPage />} />
-                  <Route path="/cybercaution" element={<EcosystemPage />} />
-                  <Route path="/cybercorrect" element={<EcosystemPage />} />
+                  <Route path="/cybercaution" element={<ExternalRedirect to="https://cybercaution.com" />} />
+                  <Route path="/cybercorrect" element={<ExternalRedirect to="https://cybercorrect.com" />} />
                   <Route path="/cybersoluce" element={<EcosystemPage />} />
-                  <Route path="/vendorsoluce" element={<EcosystemPage />} />
-                  <Route path="/technosoluce" element={<EcosystemPage />} />
+                  <Route path="/vendorsoluce" element={<ExternalRedirect to="https://vendorsoluce.com" />} />
+                  <Route path="/technosoluce" element={<ExternalRedirect to="https://technosoluce.com" />} />
+                  <Route path="/cybercertitude" element={<ExternalRedirect to="https://cybercertitude.com" />} />
+                  <Route path="/socialcaution" element={<ExternalRedirect to="https://socialcaution.com" />} />
                   <Route path="/privacy" element={<PrivacyPolicyPage />} />
                   <Route path="/terms" element={<TermsOfServicePage />} />
                   <Route path="/cookies" element={<CookiePolicyPage />} />
