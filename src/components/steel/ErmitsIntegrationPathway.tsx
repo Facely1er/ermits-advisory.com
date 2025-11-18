@@ -17,6 +17,16 @@ export const ErmitsIntegrationPathway: React.FC<ErmitsIntegrationPathwayProps> =
 }) => {
   const navigate = useNavigate();
 
+  // Map platform names to their external URLs
+  const platformUrls: Record<string, string> = {
+    'CyberCaution': 'https://cybercaution.com',
+    'CyberCorrect': 'https://cybercorrect.com',
+    'VendorSoluce': 'https://vendorsoluce.com',
+    'TechnoSoluce': 'https://technosoluce.com',
+    'CyberCertitude': 'https://cybercertitude.com',
+    'SocialCaution': 'https://socialcaution.com',
+  };
+
   const ermitsSuggestions = [];
 
   if (recommendations.some((r) => r.factor === 'technological' && r.score < 60)) {
@@ -93,19 +103,33 @@ export const ErmitsIntegrationPathway: React.FC<ErmitsIntegrationPathwayProps> =
       </p>
 
       <ul className="space-y-3 mb-6">
-        {uniqueSuggestions.map((suggestion, index) => (
-          <li
-            key={index}
-            className="flex items-start gap-3 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800"
-          >
-            <span className="font-semibold text-blue-700 dark:text-blue-300 min-w-[140px]">
-              {suggestion.platform}:
-            </span>
-            <span className="text-gray-700 dark:text-gray-200 text-sm flex-1">
-              {suggestion.description}
-            </span>
-          </li>
-        ))}
+        {uniqueSuggestions.map((suggestion, index) => {
+          const platformUrl = platformUrls[suggestion.platform];
+          return (
+            <li
+              key={index}
+              className="flex items-start gap-3 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800"
+            >
+              {platformUrl ? (
+                <a
+                  href={platformUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-blue-700 dark:text-blue-300 min-w-[140px] hover:text-blue-900 dark:hover:text-blue-200 hover:underline transition-colors cursor-pointer"
+                >
+                  {suggestion.platform}:
+                </a>
+              ) : (
+                <span className="font-semibold text-blue-700 dark:text-blue-300 min-w-[140px]">
+                  {suggestion.platform}:
+                </span>
+              )}
+              <span className="text-gray-700 dark:text-gray-200 text-sm flex-1">
+                {suggestion.description}
+              </span>
+            </li>
+          );
+        })}
         <li className="flex items-start gap-3 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
           <span className="font-semibold text-blue-700 dark:text-blue-300 min-w-[140px]">
             vCISO Services:
