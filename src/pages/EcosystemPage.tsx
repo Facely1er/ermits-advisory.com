@@ -244,7 +244,15 @@ export const EcosystemPage: React.FC = () => {
                     </div>
                   </div>
                   
-                  <button className="text-navy dark:text-silver font-medium hover:underline text-sm flex items-center transition-colors mt-4">
+                  <button 
+                    type="button"
+                    className="text-navy dark:text-silver font-medium hover:underline text-sm flex items-center transition-colors mt-4"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      window.open(component.link, '_blank', 'noopener,noreferrer');
+                    }}
+                  >
                     Learn More
                     <ArrowRight size={14} className="ml-1" />
                   </button>
@@ -335,7 +343,15 @@ export const EcosystemPage: React.FC = () => {
                       </ul>
                     </div>
                   </div>
-                  <button className="text-teal-600 dark:text-teal-400 font-medium hover:underline text-base flex items-center transition-colors">
+                  <button 
+                    type="button"
+                    className="text-teal-600 dark:text-teal-400 font-medium hover:underline text-base flex items-center transition-colors"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      window.open('https://socialcaution.com', '_blank', 'noopener,noreferrer');
+                    }}
+                  >
                     Learn More About SocialCaution™
                     <ArrowRight size={16} className="ml-2" />
                   </button>
