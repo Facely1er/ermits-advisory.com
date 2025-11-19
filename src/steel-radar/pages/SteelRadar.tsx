@@ -33,7 +33,8 @@ import {
 import { calculateAutoScoring } from '../services/autoScoringService';
 import { DataIngestionResult } from '../types/radar';
 import { RadarDataPoint, TrendAnalysis } from '../types/radar';
-import { getSteelAssessmentFromStorage, SteelAssessmentData } from '../../types/steelAssessment';
+import { getSteelAssessmentFromStorage } from '../../services/steelAssessmentService';
+import { SteelAssessmentData } from '../../types/steelAssessment';
 import { useTheme } from '../../contexts/ThemeContext';
 
 export const SteelRadar: React.FC = () => {
