@@ -30,6 +30,11 @@ import {
   saveRadarDataPoint,
   exportRadarData,
 } from '../services/radarDataService';
+import {
+  generateDemoData,
+  hasDemoData,
+  markDemoDataLoaded,
+} from '../services/demoDataService';
 import { calculateAutoScoring } from '../services/autoScoringService';
 import { DataIngestionResult } from '../types/radar';
 import { RadarDataPoint, TrendAnalysis } from '../types/radar';
@@ -50,6 +55,7 @@ export const SteelRadar: React.FC = () => {
   const [showImportWizard, setShowImportWizard] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [selfAssessment, setSelfAssessment] = useState<SteelAssessmentData | null>(null);
+  const [isLoadingDemo, setIsLoadingDemo] = useState(false);
 
   useEffect(() => {
     loadData();
@@ -226,7 +232,16 @@ export const SteelRadar: React.FC = () => {
   };
 
   const calculateFactorTrends = () => {
-    if (!currentData || !historicalData) return {};
+    if (!currentData || !historicalData) {
+      return {
+        political: 0,
+        economic: 0,
+        social: 0,
+        technological: 0,
+        environmental: 0,
+        legal: 0,
+      };
+    }
 
     return {
       political: currentData.factorScores.political - historicalData.factorScores.political,
@@ -238,6 +253,32 @@ export const SteelRadar: React.FC = () => {
         currentData.factorScores.environmental - historicalData.factorScores.environmental,
       legal: currentData.factorScores.legal - historicalData.factorScores.legal,
     };
+  };
+
+  const handleLoadDemo = async () => {
+    setIsLoadingDemo(true);
+    try {
+      // Generate demo data
+      const demoDataPoints = await generateDemoData();
+      
+      // Save each data point
+      for (const point of demoDataPoints) {
+        await saveRadarDataPoint(point);
+      }
+      
+      // Mark as loaded
+      markDemoDataLoaded();
+      
+      // Reload data
+      await loadData();
+      
+      toast.success('Demo data loaded successfully! Explore the features with sample data.', 5000);
+    } catch (error) {
+      console.error('Error loading demo data:', error);
+      toast.error('Failed to load demo data. Please try again.', 5000);
+    } finally {
+      setIsLoadingDemo(false);
+    }
   };
 
   if (isLoading) {
@@ -414,6 +455,27 @@ export const SteelRadar: React.FC = () => {
                   </p>
                 </div>
               )}
+              
+              {/* Demo Data Section */}
+              <div className="mb-6 p-4 bg-gradient-to-r from-gold/10 to-navy/10 dark:from-gold/20 dark:to-navy/20 border border-gold/30 dark:border-gold/50 rounded-lg">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                  <div className="flex-1 text-center md:text-left">
+                    <h4 className="font-semibold mb-1 dark:text-white">Try STEEL™ Radar with Demo Data</h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
+                      Load sample data to explore all features including charts, trends, confidence scoring, and more.
+                    </p>
+                  </div>
+                  <Button
+                    variant="luxury"
+                    onClick={handleLoadDemo}
+                    disabled={isLoadingDemo}
+                    icon={<Shield size={18} />}
+                  >
+                    {isLoadingDemo ? 'Loading Demo...' : 'Load Demo Data'}
+                  </Button>
+                </div>
+              </div>
+              
               <div className="flex gap-3 justify-center flex-wrap">
                 <Button
                   variant="primary"

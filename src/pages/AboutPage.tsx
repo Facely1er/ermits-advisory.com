@@ -94,27 +94,46 @@ export const AboutPage: React.FC = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            {leadershipCredentials.map((category, index) => (
-              <motion.div key={index} variants={item}>
-                <Card variant="glass" padding="lg" className="h-full">
+          <div className="max-w-5xl mx-auto">
+            <Card variant="glass" padding="lg" className="bg-white dark:bg-dark-surface">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                {/* Technical Certifications */}
+                <div>
                   <div className="flex items-center mb-6">
                     <div className="p-3 rounded-full bg-navy/10 dark:bg-silver/10 mr-4">
-                      {category.icon}
+                      {leadershipCredentials[0].icon}
                     </div>
-                    <h3 className="text-xl font-bold dark:text-white">{category.category}</h3>
+                    <h3 className="text-xl font-bold dark:text-white">{leadershipCredentials[0].category}</h3>
                   </div>
                   <div className="space-y-4">
-                    {category.credentials.map((cred, credIndex) => (
-                      <div key={credIndex} className="border-l-4 border-navy/20 dark:border-silver/20 pl-4">
-                        <h4 className="font-semibold text-navy dark:text-white">{cred.name}</h4>
-                        <p className="text-sm text-gray-600 dark:text-gray-300">{cred.description}</p>
+                    {leadershipCredentials[0].credentials.map((cred, credIndex) => (
+                      <div key={credIndex} className="border-l-4 border-navy/30 dark:border-silver/30 pl-4 py-2">
+                        <h4 className="font-semibold text-navy dark:text-white mb-1">{cred.name}</h4>
+                        <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{cred.description}</p>
                       </div>
                     ))}
                   </div>
-                </Card>
-              </motion.div>
-            ))}
+                </div>
+
+                {/* Legal Credentials */}
+                <div>
+                  <div className="flex items-center mb-6">
+                    <div className="p-3 rounded-full bg-navy/10 dark:bg-silver/10 mr-4">
+                      {leadershipCredentials[1].icon}
+                    </div>
+                    <h3 className="text-xl font-bold dark:text-white">{leadershipCredentials[1].category}</h3>
+                  </div>
+                  <div className="space-y-4">
+                    {leadershipCredentials[1].credentials.map((cred, credIndex) => (
+                      <div key={credIndex} className="border-l-4 border-navy/30 dark:border-silver/30 pl-4 py-2">
+                        <h4 className="font-semibold text-navy dark:text-white mb-1">{cred.name}</h4>
+                        <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{cred.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </Card>
           </div>
         </motion.div>
 
