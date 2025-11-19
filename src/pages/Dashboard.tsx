@@ -5,7 +5,7 @@ import { Button } from '../components/shared/Button';
 import { 
   Shield, AlertTriangle, Zap, CheckCircle, 
   ChevronRight, TrendingUp, TrendingDown, Minus,
-  BarChart3, PieChart, Activity, Link as LinkIcon
+  BarChart3, PieChart, Activity, Link as LinkIcon, Radar
 } from 'lucide-react';
 // import { formatPercentage } from '../utils/formatters';
 import { riskDimensions, metrics, threats } from '../data/mockData';
@@ -20,6 +20,7 @@ import {
 } from 'chart.js';
 import { Radar } from 'react-chartjs-2';
 import { useTheme } from '../contexts/ThemeContext';
+import { useNavigate } from 'react-router-dom';
 import { 
   getSteelAssessmentFromStorage, 
   watchSteelStorage,
@@ -42,6 +43,7 @@ ChartJS.register(
 
 export const Dashboard: React.FC = () => {
   const { theme } = useTheme();
+  const navigate = useNavigate();
   const [selectedView, setSelectedView] = useState<'overview' | 'details'>('overview');
   const [steelData, setSteelData] = useState<SteelAssessmentData | null>(null);
   const [showImport, setShowImport] = useState(false);
@@ -375,13 +377,62 @@ export const Dashboard: React.FC = () => {
 
         {/* STEEL Assessment Results Section */}
         {steelData ? (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mb-8"
-          >
-            <SteelResultsSummary data={steelData} />
-          </motion.div>
+          <>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-8"
+            >
+              <SteelResultsSummary data={steelData} />
+            </motion.div>
+
+            {/* STEEL Radar Card - Only show if assessment is complete */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="mb-8"
+            >
+              <Card variant="glass" padding="lg" className="border-2 border-gold/30 bg-gradient-to-br from-gold/5 to-navy/5 dark:from-gold/10 dark:to-navy/10">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="p-2 bg-gold/20 rounded-lg">
+                        <Radar size={24} className="text-gold" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold dark:text-white">STEEL™ Radar</h3>
+                        <span className="text-xs bg-gold/20 text-gold px-2 py-0.5 rounded-full">Premium Feature</span>
+                      </div>
+                    </div>
+                    <p className="text-gray-700 dark:text-gray-200 mb-4">
+                      Take your assessment to the next level with continuous monitoring. Import data from your 
+                      security tools to automatically calculate scores and track trends over time.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      <span className="text-xs px-2 py-1 bg-navy/10 dark:bg-silver/20 rounded">Auto-Scoring</span>
+                      <span className="text-xs px-2 py-1 bg-navy/10 dark:bg-silver/20 rounded">Trend Analysis</span>
+                      <span className="text-xs px-2 py-1 bg-navy/10 dark:bg-silver/20 rounded">Data Import</span>
+                      <span className="text-xs px-2 py-1 bg-navy/10 dark:bg-silver/20 rounded">Confidence Scoring</span>
+                    </div>
+                    <Button
+                      variant="luxury"
+                      onClick={() => navigate('/steel/radar')}
+                      icon={<Radar size={18} />}
+                      iconPosition="right"
+                    >
+                      Launch STEEL™ Radar
+                    </Button>
+                  </div>
+                  <div className="flex-shrink-0">
+                    <div className="w-32 h-32 rounded-full bg-gradient-to-br from-gold/20 to-navy/20 dark:from-gold/30 dark:to-navy/30 flex items-center justify-center">
+                      <Radar size={48} className="text-gold" />
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </motion.div>
+          </>
         ) : (
           <motion.div
             initial={{ opacity: 0, y: 20 }}

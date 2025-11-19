@@ -65,6 +65,7 @@ const TermsOfServicePage = React.lazy(() => import('./pages/TermsOfServicePage')
 const CookiePolicyPage = React.lazy(() => import('./pages/CookiePolicyPage').then(m => ({ default: m.CookiePolicyPage })));
 const AcceptableUsePolicyPage = React.lazy(() => import('./pages/AcceptableUsePolicyPage').then(m => ({ default: m.AcceptableUsePolicyPage })));
 const PurchaseSuccess = React.lazy(() => import('./pages/PurchaseSuccess').then(m => ({ default: m.PurchaseSuccess })));
+const SteelRadar = React.lazy(() => import('./steel-radar/pages/SteelRadar').then(m => ({ default: m.SteelRadar })));
 
 // Loading component for Suspense fallback
 const LoadingSpinner = () => (
@@ -97,6 +98,7 @@ function App() {
                   <Route path="/steel/enterprise" element={<SteelEnterprisePricing />} />
                   <Route path="/steel/professional" element={<ProfessionalSteelAssessment />} />
                   <Route path="/steel/implementation-guide" element={<ImplementationGuidePage />} />
+                  <Route path="/steel/radar" element={<SteelRadar />} />
                   <Route path="/vciso-kit" element={<VcisoKit />} />
                   <Route path="/compliance" element={<ComplianceAdvisory />} />
                   <Route path="/toolkits" element={<ToolkitsOverview />} />

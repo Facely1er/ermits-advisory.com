@@ -3,11 +3,12 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/shared/Button';
 import { InteractiveCard } from '../components/shared/InteractiveCard';
+import { Card } from '../components/shared/Card';
 import { 
   Users, 
   Info, ArrowRight, ExternalLink, Download, Link as LinkIcon,
   Lightbulb, BarChart2, FileText, Search, Activity, Presentation, Shield,
-  TrendingUp, Server, Leaf, Scale
+  TrendingUp, Server, Leaf, Scale, Radar
 } from 'lucide-react';
 import backgroundNodeAnalysis from '../assets/background-node-analysis.png';
 import { getSteelAssessmentFromStorage, watchSteelStorage } from '../services/steelAssessmentService';
@@ -233,6 +234,17 @@ export const STEELVisualization: React.FC = () => {
                   onClick={() => navigate('/steel/implementation-guide')}
                 >
                   Download Methodology
+                </Button>
+                <Button
+                  variant="luxury"
+                  size="lg"
+                  className="border-gold text-gold hover:bg-gold/10 transform hover:scale-105 transition-transform"
+                  icon={<Radar size={18} />}
+                  iconPosition="left"
+                  onClick={() => navigate('/steel/radar')}
+                >
+                  STEEL™ Radar
+                  <span className="ml-2 text-xs bg-gold/20 text-gold px-2 py-0.5 rounded-full">Premium</span>
                 </Button>
               </div>
             </motion.div>
@@ -550,6 +562,58 @@ export const STEELVisualization: React.FC = () => {
               </div>
             </div>
           </InteractiveCard>
+        </motion.div>
+
+        {/* STEEL Radar Promotion Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+          className="mb-16"
+        >
+          <Card variant="luxury-glass" padding="lg" className="bg-gradient-to-br from-navy/10 to-gold/10 dark:from-navy/20 dark:to-gold/20">
+            <div className="flex flex-col md:flex-row items-center gap-6">
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-3">
+                  <Radar size={32} className="text-gold" />
+                  <h3 className="text-2xl font-bold dark:text-white">STEEL™ Radar</h3>
+                  <span className="text-xs bg-gold/20 text-gold px-2 py-1 rounded-full">Premium</span>
+                </div>
+                <p className="text-gray-700 dark:text-gray-200 mb-4">
+                  Continuous monitoring with automated data ingestion. Import data from your security tools 
+                  to automatically calculate and track your STEEL scores over time.
+                </p>
+                <Button
+                  variant="luxury"
+                  onClick={() => navigate('/steel/radar')}
+                  icon={<Radar size={18} />}
+                  iconPosition="right"
+                >
+                  Launch STEEL™ Radar
+                </Button>
+              </div>
+              <div className="flex-shrink-0">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="text-center p-4 bg-white/50 dark:bg-gray-800/50 rounded-lg">
+                    <div className="text-2xl font-bold text-navy dark:text-white">Auto-Scoring</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">From Data</div>
+                  </div>
+                  <div className="text-center p-4 bg-white/50 dark:bg-gray-800/50 rounded-lg">
+                    <div className="text-2xl font-bold text-navy dark:text-white">Trends</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">Over Time</div>
+                  </div>
+                  <div className="text-center p-4 bg-white/50 dark:bg-gray-800/50 rounded-lg">
+                    <div className="text-2xl font-bold text-navy dark:text-white">Confidence</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">Scoring</div>
+                  </div>
+                  <div className="text-center p-4 bg-white/50 dark:bg-gray-800/50 rounded-lg">
+                    <div className="text-2xl font-bold text-navy dark:text-white">Evidence</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">Based</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Card>
         </motion.div>
       </div>
     </div>
