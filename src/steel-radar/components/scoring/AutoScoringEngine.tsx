@@ -6,12 +6,13 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { AlertTriangle, CheckCircle, Info, TrendingUp, TrendingDown } from 'lucide-react';
+import { AlertTriangle, Info, TrendingUp, TrendingDown } from 'lucide-react';
 import { Card } from '../../../components/shared/Card';
-import { AutoScoringResult } from '../../types/radar';
-import { FactorScores } from '../../types/radar';
-import { getConfidenceBadgeStyle, getConfidenceColor } from '../../services/confidenceService';
-import { useTheme } from '../../../contexts/ThemeContext';
+import type { AutoScoringResult } from '../../types/radar';
+import type { FactorScores } from '../../../types/steelAssessment';
+import { getConfidenceBadgeStyle } from '../../services/confidenceService';
+import { InfoTooltip } from '../shared/InfoTooltip';
+import { cn } from '../../../utils/cn';
 
 interface AutoScoringEngineProps {
   autoScoringResult: AutoScoringResult;
@@ -22,10 +23,7 @@ interface AutoScoringEngineProps {
 export const AutoScoringEngine: React.FC<AutoScoringEngineProps> = ({
   autoScoringResult,
   selfAssessment,
-  onOverride,
 }) => {
-  const { theme } = useTheme();
-  const isDark = theme === 'dark';
 
   const factorNames: Record<keyof FactorScores, string> = {
     political: 'Political',
@@ -48,15 +46,55 @@ export const AutoScoringEngine: React.FC<AutoScoringEngineProps> = ({
   return (
     <div className="space-y-6">
       {/* Composite Score */}
-      <Card variant="glass" padding="lg">
+      <Card variant="glass" padding="lg" className="bg-gradient-to-br from-navy/5 to-gold/5 dark:from-navy/10 dark:to-gold/10">
         <div className="text-center">
-          <h3 className="text-lg font-semibold mb-2 dark:text-white">Auto-Calculated Composite Score</h3>
-          <div className="text-5xl font-bold text-navy dark:text-silver mb-2">
-            {autoScoringResult.composite}
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <h3 className="text-lg font-semibold dark:text-white">Auto-Calculated Composite Score</h3>
+            <InfoTooltip
+              content="The composite score is a weighted average of all PESTEL factors, adjusted by confidence levels. Higher confidence data has more influence on the final score. Scores range from 0-100, with higher scores indicating better security posture."
+              title="Composite Score Explanation"
+              size="md"
+            />
           </div>
-          <p className="text-sm text-gray-600 dark:text-gray-400">
-            Based on ingested data with confidence weighting
-          </p>
+          <div className="relative inline-block mb-4">
+            <div className="text-6xl font-bold text-navy dark:text-silver mb-2">
+              {autoScoringResult.composite}
+              <span className="text-2xl text-gray-500 dark:text-gray-400">/100</span>
+            </div>
+            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: `${autoScoringResult.composite}%` }}
+                transition={{ duration: 1, ease: 'easeOut' }}
+                className={cn(
+                  'h-full rounded-full',
+                  autoScoringResult.composite >= 80
+                    ? 'bg-green-500'
+                    : autoScoringResult.composite >= 60
+                    ? 'bg-blue-500'
+                    : autoScoringResult.composite >= 40
+                    ? 'bg-yellow-500'
+                    : 'bg-red-500'
+                )}
+              />
+            </div>
+          </div>
+          <div className="flex items-center justify-center gap-4 flex-wrap text-sm">
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-navy dark:bg-silver"></div>
+              <span className="text-gray-600 dark:text-gray-400">Weighted Average</span>
+            </div>
+            {selfAssessment && (
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                <span className="text-gray-600 dark:text-gray-400">Self-Assessment Available</span>
+              </div>
+            )}
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+              <span className="text-gray-600 dark:text-gray-400">Confidence Weighted</span>
+            </div>
+          </div>
         </div>
       </Card>
 
@@ -103,13 +141,35 @@ export const AutoScoringEngine: React.FC<AutoScoringEngineProps> = ({
                 {selfScore !== undefined && (
                   <div>
                     <div className="flex items-center justify-between mb-1">
-                      <span className="text-sm text-gray-600 dark:text-gray-400">
-                        Self Assessment
-                      </span>
-                      <span className="text-lg font-semibold dark:text-white">{selfScore}</span>
+                      <div className="flex items-center gap-1">
+                        <span className="text-sm text-gray-600 dark:text-gray-400">
+                          Self Assessment
+                        </span>
+                        <InfoTooltip
+                          content="Your self-reported score from the STEEL assessment. Compare with auto-score to identify discrepancies."
+                          size="sm"
+                        />
+                      </div>
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-lg font-semibold dark:text-white">{selfScore}</span>
+                        <span className={cn(
+                          'text-xs',
+                          selfScore > score
+                            ? 'text-green-600 dark:text-green-400'
+                            : selfScore < score
+                            ? 'text-red-600 dark:text-red-400'
+                            : 'text-gray-500 dark:text-gray-400'
+                        )}>
+                          ({selfScore > score ? '+' : ''}{selfScore - score})
+                        </span>
+                      </div>
                     </div>
                     {hasDiscrepancy && (
-                      <div className="mt-2 p-2 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded flex items-start gap-2">
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        className="mt-2 p-2 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded flex items-start gap-2"
+                      >
                         <AlertTriangle
                           size={16}
                           className="text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5"
@@ -119,10 +179,10 @@ export const AutoScoringEngine: React.FC<AutoScoringEngineProps> = ({
                             Discrepancy Detected
                           </p>
                           <p className="text-xs text-amber-600 dark:text-amber-400">
-                            Difference: {discrepancy.difference} points
+                            Difference: {discrepancy.difference} points - Review data sources for accuracy
                           </p>
                         </div>
-                      </div>
+                      </motion.div>
                     )}
                   </div>
                 )}

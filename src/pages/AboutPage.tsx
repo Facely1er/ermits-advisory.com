@@ -11,12 +11,6 @@ import {
 
 export const AboutPage: React.FC = () => {
   const navigate = useNavigate();
-  
-  // Animation variants
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 }
-  };
 
   // Leadership credentials
   const leadershipCredentials = [
