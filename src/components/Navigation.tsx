@@ -5,7 +5,7 @@ import { useTheme } from '../contexts/ThemeContext';
 import { Button } from './shared/Button';
 import {
   Sun, Moon, Menu, X,
-  Home, Briefcase, Mail, Users, Shield, Layers, Focus, ChevronDown
+  Home, Briefcase, Mail, Users, Shield, Layers, Focus, ChevronDown, Package
 } from 'lucide-react';
 import logoImg from '../assets/ermits-advisory.png';
 import { cn } from '../utils/cn';
@@ -37,7 +37,8 @@ export const Navigation: React.FC = () => {
         { to: '/steel/enterprise', label: 'Enterprise' },
       ]
     },
-    { to: '/services', label: 'Services', icon: <Briefcase size={16} /> },
+    { to: '/vciso-kit', label: 'vCISO Kit', icon: <Package size={16} /> },
+    { to: '/services', label: 'Advisory Services', icon: <Briefcase size={16} /> },
     { to: '/ecosystem', label: 'Ecosystem', icon: <Layers size={16} /> },
     { to: '/about', label: 'About', icon: <Users size={16} /> },
   ];
