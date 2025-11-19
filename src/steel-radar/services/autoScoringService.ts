@@ -136,7 +136,15 @@ export function calculateAutoScores(
   // Calculate scores for each question
   Object.entries(mappedQuestions).forEach(([questionId, data]) => {
     const factor = questionFactorMap[questionId];
-    if (!factor) return;
+    if (!factor) {
+      console.warn(`Question ${questionId} not mapped to any factor`);
+      return;
+    }
+
+    // Skip if data is empty or invalid
+    if (!data || data.length === 0) {
+      return;
+    }
 
     const result = calculateQuestionScore(questionId, data);
     const score = result.score;
@@ -159,6 +167,10 @@ export function calculateAutoScores(
     const f = factor as SteelFactor;
     if (factorCounts[f] > 0) {
       factorScores[f] = Math.round((factorScores[f] / (factorCounts[f] * 10)) * 100);
+    } else {
+      // If no questions mapped for this factor, set to undefined/null
+      // This will be handled by the composite calculation to use self-assessment
+      factorScores[f] = 0; // Will be replaced by self-assessment if available
     }
   });
 
@@ -188,12 +200,20 @@ export function calculateWeightedComposite(
   Object.keys(autoScores).forEach((factor) => {
     const f = factor as SteelFactor;
     const autoScore = autoScores[f];
-    const selfScore = selfAssessment?.[f] || autoScore;
+    const selfScore = selfAssessment?.[f];
     const conf = confidence?.[f] || 'LOW';
 
-    // Weight based on confidence
-    let finalScore = autoScore;
-    if (selfAssessment) {
+    // Determine final score based on data availability and confidence
+    let finalScore: number;
+    
+    // If auto-score is 0 and we have no data, use self-assessment or default
+    if (autoScore === 0 && (!selfScore || selfScore === undefined)) {
+      finalScore = 50; // Neutral default when no data available
+    } else if (autoScore === 0 && selfScore !== undefined) {
+      // No auto-data, use self-assessment
+      finalScore = selfScore;
+    } else if (selfScore !== undefined) {
+      // We have both, blend based on confidence
       if (conf === 'HIGH') {
         finalScore = autoScore * 0.7 + selfScore * 0.3;
       } else if (conf === 'MEDIUM') {
@@ -201,6 +221,9 @@ export function calculateWeightedComposite(
       } else {
         finalScore = selfScore; // Use self-assessment if low confidence
       }
+    } else {
+      // Only auto-score available
+      finalScore = autoScore;
     }
 
     weightedSum += finalScore * weights[f];

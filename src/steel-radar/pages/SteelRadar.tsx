@@ -36,10 +36,13 @@ import { RadarDataPoint, TrendAnalysis } from '../types/radar';
 import { getSteelAssessmentFromStorage } from '../../services/steelAssessmentService';
 import { SteelAssessmentData } from '../../types/steelAssessment';
 import { useTheme } from '../../contexts/ThemeContext';
+import { DataSourceInfo } from '../services/confidenceService';
+import { useToast, ToastContainer } from '../../components/shared/Toast';
 
 export const SteelRadar: React.FC = () => {
   const navigate = useNavigate();
   const { theme } = useTheme();
+  const toast = useToast();
   const [currentData, setCurrentData] = useState<RadarDataPoint | null>(null);
   const [historicalData, setHistoricalData] = useState<RadarDataPoint | null>(null);
   const [trendData, setTrendData] = useState<TrendAnalysis | null>(null);
@@ -97,15 +100,75 @@ export const SteelRadar: React.FC = () => {
 
   const handleImportComplete = async (result: DataIngestionResult) => {
     if (!result.success) {
-      alert('Import failed. Please check the errors and try again.');
+      // Show error notification
+      const errorMsg = result.errors.length > 0 
+        ? result.errors.join(', ') 
+        : 'Import failed. Please check the errors and try again.';
+      toast.error(errorMsg, 7000);
       return;
     }
 
     try {
+      // Build DataSourceInfo from ingestion results for confidence calculation
+      const dataSources: DataSourceInfo[] = [];
+      const questionFactorMap: Record<string, SteelFactor> = {
+        q1: 'political', q2: 'political', q3: 'political', q4: 'political',
+        q5: 'political', q6: 'political', q7: 'political',
+        q8: 'economic', q9: 'economic', q10: 'economic', q11: 'economic',
+        q12: 'economic', q13: 'economic', q14: 'economic',
+        q15: 'social', q16: 'social', q17: 'social', q18: 'social',
+        q19: 'social', q20: 'social', q21: 'social',
+        q22: 'technological', q23: 'technological', q24: 'technological',
+        q25: 'technological', q26: 'technological', q27: 'technological', q28: 'technological',
+        q29: 'environmental', q30: 'environmental', q31: 'environmental',
+        q32: 'environmental', q33: 'environmental', q34: 'environmental', q35: 'environmental',
+        q36: 'legal', q37: 'legal', q38: 'legal', q39: 'legal',
+        q40: 'legal', q41: 'legal', q42: 'legal',
+      };
+
+      // Group questions by factor
+      const factorQuestions: Record<SteelFactor, string[]> = {
+        political: [],
+        economic: [],
+        social: [],
+        technological: [],
+        environmental: [],
+        legal: [],
+      };
+
+      Object.keys(result.mappedQuestions).forEach((qId) => {
+        const factor = questionFactorMap[qId];
+        if (factor) {
+          factorQuestions[factor].push(qId);
+        }
+      });
+
+      // Create DataSourceInfo for each factor with data
+      Object.entries(factorQuestions).forEach(([factor, questions]) => {
+        if (questions.length > 0) {
+          // Determine data quality based on template and question count
+          const dataQuality: 'high' | 'medium' | 'low' = 
+            result.template && result.template !== 'generic-csv' && result.template !== 'generic-json'
+              ? 'high'
+              : questions.length >= 3
+              ? 'medium'
+              : 'low';
+
+          dataSources.push({
+            factor: factor as SteelFactor,
+            questions,
+            hasData: true,
+            dataQuality,
+            dataAge: 0, // Fresh data, just imported
+          });
+        }
+      });
+
       // Calculate auto-scores from ingested data
       const autoScoring = calculateAutoScoring(
         result.mappedQuestions,
-        selfAssessment || undefined
+        selfAssessment || undefined,
+        dataSources
       );
 
       // Create radar data point
@@ -139,6 +202,10 @@ export const SteelRadar: React.FC = () => {
   const handleExport = async () => {
     try {
       const data = await exportRadarData();
+      if (!data || data === '[]') {
+        toast.warning('No data available to export. Please import data first.', 5000);
+        return;
+      }
       const blob = new Blob([data], { type: 'application/json' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
@@ -148,9 +215,13 @@ export const SteelRadar: React.FC = () => {
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
+      toast.success('Data exported successfully!', 3000);
     } catch (error) {
       console.error('Error exporting data:', error);
-      alert('Failed to export data. Please try again.');
+      const errorMsg = error instanceof Error 
+        ? `Export failed: ${error.message}` 
+        : 'Failed to export data. Please try again.';
+      toast.error(errorMsg, 7000);
     }
   };
 
@@ -184,6 +255,7 @@ export const SteelRadar: React.FC = () => {
 
   return (
     <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
+      <ToastContainer toasts={toast.toasts} onDismiss={toast.dismissToast} />
       <div className="container mx-auto px-4">
         {/* Hero Section */}
         <motion.div
@@ -239,7 +311,10 @@ export const SteelRadar: React.FC = () => {
             exit={{ opacity: 0, height: 0 }}
             className="mb-8"
           >
-            <DataImportWizard onImportComplete={handleImportComplete} />
+            <DataImportWizard 
+              onImportComplete={handleImportComplete}
+              onError={(msg) => toast.error(msg, 7000)}
+            />
           </motion.div>
         )}
 
@@ -316,7 +391,7 @@ export const SteelRadar: React.FC = () => {
         )}
 
         {/* No Data State */}
-        {!currentData && (
+        {!currentData && !isLoading && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -331,7 +406,15 @@ export const SteelRadar: React.FC = () => {
                 Import data from your security tools to start continuous monitoring. STEEL Radar
                 will automatically calculate scores and track trends over time.
               </p>
-              <div className="flex gap-3 justify-center">
+              {!selfAssessment && (
+                <div className="mb-6 p-4 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
+                  <p className="text-sm text-amber-700 dark:text-amber-300">
+                    <strong>Tip:</strong> Complete a STEEL self-assessment first to enable comparison between 
+                    self-reported and data-validated scores.
+                  </p>
+                </div>
+              )}
+              <div className="flex gap-3 justify-center flex-wrap">
                 <Button
                   variant="primary"
                   onClick={() => setShowImportWizard(true)}
@@ -339,14 +422,16 @@ export const SteelRadar: React.FC = () => {
                 >
                   Import Your First Dataset
                 </Button>
-                <Button
-                  variant="outline"
-                  onClick={() => navigate('/steel')}
-                  icon={<ArrowRight size={18} />}
-                  iconPosition="right"
-                >
-                  Take STEEL Assessment First
-                </Button>
+                {!selfAssessment && (
+                  <Button
+                    variant="outline"
+                    onClick={() => navigate('/steel')}
+                    icon={<ArrowRight size={18} />}
+                    iconPosition="right"
+                  >
+                    Take STEEL Assessment First
+                  </Button>
+                )}
               </div>
             </Card>
           </motion.div>

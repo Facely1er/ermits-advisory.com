@@ -53,31 +53,34 @@ export async function getHistoricalData(
   endDate?: Date
 ): Promise<RadarDataPoint[]> {
   try {
-    let query = db.radarData.orderBy('timestamp');
+    let data: RadarDataPoint[];
 
     if (startDate || endDate) {
       const start = startDate ? startDate.toISOString() : undefined;
       const end = endDate ? endDate.toISOString() : undefined;
 
       if (start && end) {
-        query = db.radarData
+        data = await db.radarData
           .where('timestamp')
           .between(start, end, true, true)
           .sortBy('timestamp');
       } else if (start) {
-        query = db.radarData
+        data = await db.radarData
           .where('timestamp')
           .aboveOrEqual(start)
           .sortBy('timestamp');
       } else if (end) {
-        query = db.radarData
+        data = await db.radarData
           .where('timestamp')
           .belowOrEqual(end)
           .sortBy('timestamp');
+      } else {
+        data = await db.radarData.orderBy('timestamp').toArray();
       }
+    } else {
+      data = await db.radarData.orderBy('timestamp').toArray();
     }
 
-    const data = await query;
     return data.reverse(); // Most recent first
   } catch (error) {
     console.error('Error getting historical data:', error);

@@ -16,12 +16,14 @@ import { getAvailableTemplates, detectTemplate } from '../../data/ingestionTempl
 
 interface DataImportWizardProps {
   onImportComplete?: (result: DataIngestionResult) => void;
+  onError?: (message: string) => void;
 }
 
 type WizardStep = 'upload' | 'template' | 'validate' | 'import';
 
 export const DataImportWizard: React.FC<DataImportWizardProps> = ({
   onImportComplete,
+  onError,
 }) => {
   const [currentStep, setCurrentStep] = useState<WizardStep>('upload');
   const [parsedData, setParsedData] = useState<any[] | null>(null);
@@ -68,7 +70,19 @@ export const DataImportWizard: React.FC<DataImportWizardProps> = ({
 
 
   const handleTemplateSelect = async () => {
-    if (!selectedTemplate || !parsedData) return;
+    if (!selectedTemplate || !parsedData) {
+      const msg = 'Please select a template and ensure data is parsed.';
+      onError?.(msg);
+      alert(msg); // Fallback
+      return;
+    }
+
+    if (parsedData.length === 0) {
+      const msg = 'No data found in file. Please check your file format.';
+      onError?.(msg);
+      alert(msg); // Fallback
+      return;
+    }
 
     setIsProcessing(true);
     try {
@@ -77,9 +91,22 @@ export const DataImportWizard: React.FC<DataImportWizardProps> = ({
       const mockFile = selectedFile || new File([], `imported-data.${fileType}`, { type: fileType === 'json' ? 'application/json' : 'text/csv' });
       const result = await processFileIngestion(mockFile, selectedTemplate, parsedData);
       setIngestionResult(result);
-      setCurrentStep('validate');
+      
+      if (result.success) {
+        setCurrentStep('validate');
+      } else {
+        // Stay on template step if validation fails, show errors
+        const errorMsg = `Validation failed: ${result.errors.join(', ')}`;
+        onError?.(errorMsg);
+        alert(errorMsg); // Fallback
+      }
     } catch (error) {
       console.error('Error processing file:', error);
+      const errorMsg = error instanceof Error 
+        ? `Error: ${error.message}` 
+        : 'An unexpected error occurred while processing the file.';
+      onError?.(errorMsg);
+      alert(errorMsg); // Fallback
     } finally {
       setIsProcessing(false);
     }
