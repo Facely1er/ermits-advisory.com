@@ -390,7 +390,7 @@ export const AboutPage: React.FC = () => {
                   variant="outline"
                   icon={<ArrowRight size={16} />}
                   iconPosition="right"
-                  onClick={() => navigate('/contact')}
+                  onClick={() => navigate('/services')}
                 >
                   Explore Global Services
                 </Button>
