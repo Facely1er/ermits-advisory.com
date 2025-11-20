@@ -17,11 +17,21 @@ export const AboutPage: React.FC = () => {
     {
       category: "Technical Certifications",
       icon: <Shield size={24} className="text-navy dark:text-silver" />,
-      credentials: [
-        { name: "CISSP", description: "Certified Information Systems Security Professional - Advanced cybersecurity expertise" },
-        { name: "CISA", description: "Certified Information Systems Auditor - Risk assessment and compliance" },
-        { name: "PMP", description: "Project Management Professional - Strategic implementation leadership" },
-        { name: "PMI-ACP", description: "PMI Agile Certified Practitioner - Modern delivery methodologies" }
+      subcategories: [
+        {
+          name: "Security",
+          credentials: [
+            { name: "CISSP", description: "Certified Information Systems Security Professional - Advanced cybersecurity expertise" },
+            { name: "CISA", description: "Certified Information Systems Auditor - Risk assessment and compliance" }
+          ]
+        },
+        {
+          name: "Project Management",
+          credentials: [
+            { name: "PMP", description: "Project Management Professional - Strategic implementation leadership" },
+            { name: "PMI-ACP", description: "PMI Agile Certified Practitioner - Modern delivery methodologies" }
+          ]
+        }
       ]
     },
     {
@@ -99,11 +109,18 @@ export const AboutPage: React.FC = () => {
                     </div>
                     <h3 className="text-xl font-bold dark:text-white">{leadershipCredentials[0].category}</h3>
                   </div>
-                  <div className="space-y-4 flex-1">
-                    {leadershipCredentials[0].credentials.map((cred, credIndex) => (
-                      <div key={credIndex} className="border-l-4 border-navy/30 dark:border-silver/30 pl-4 py-2">
-                        <h4 className="font-semibold text-navy dark:text-white mb-1">{cred.name}</h4>
-                        <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{cred.description}</p>
+                  <div className="space-y-6 flex-1">
+                    {leadershipCredentials[0].subcategories?.map((subcategory, subIndex) => (
+                      <div key={subIndex} className="space-y-4">
+                        <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wide">
+                          {subcategory.name}
+                        </h4>
+                        {subcategory.credentials.map((cred, credIndex) => (
+                          <div key={credIndex} className="border-l-4 border-navy/30 dark:border-silver/30 pl-4 py-2">
+                            <h5 className="font-semibold text-navy dark:text-white mb-1">{cred.name}</h5>
+                            <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{cred.description}</p>
+                          </div>
+                        ))}
                       </div>
                     ))}
                   </div>
@@ -118,7 +135,7 @@ export const AboutPage: React.FC = () => {
                     <h3 className="text-xl font-bold dark:text-white">{leadershipCredentials[1].category}</h3>
                   </div>
                   <div className="space-y-4 flex-1 flex flex-col justify-start">
-                    {leadershipCredentials[1].credentials.map((cred, credIndex) => (
+                    {leadershipCredentials[1].credentials?.map((cred, credIndex) => (
                       <div key={credIndex} className="border-l-4 border-navy/30 dark:border-silver/30 pl-4 py-2">
                         <h4 className="font-semibold text-navy dark:text-white mb-1">{cred.name}</h4>
                         <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{cred.description}</p>
