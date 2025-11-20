@@ -6,7 +6,7 @@ import {
   ArrowRight, CheckCircle, FileText, Clock, 
   DollarSign, Target, Zap, Settings,
   Activity, CheckSquare, Download,
-  Briefcase, Lock, Star
+  Briefcase, Star
 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { createCheckoutSession } from '../services/stripe';
