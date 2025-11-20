@@ -34,6 +34,7 @@ export const Navigation: React.FC = () => {
         { to: '/steel', label: 'Assessment' },
         { to: '/steel/radar', label: 'STEEL™ Radar', premium: true },
         { to: '/steel/premium', label: 'Premium Features' },
+        { to: '/steel/professional', label: 'Professional' },
         { to: '/steel/enterprise', label: 'Enterprise' },
       ]
     },
