@@ -100,9 +100,9 @@ export const AboutPage: React.FC = () => {
           
           <div className="max-w-5xl mx-auto">
             <Card variant="glass" padding="lg" className="bg-white dark:bg-dark-surface">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-stretch">
                 {/* Technical Certifications */}
-                <div className="flex flex-col">
+                <div className="flex flex-col h-full">
                   <div className="flex items-center mb-6">
                     <div className="p-3 rounded-full bg-navy/10 dark:bg-silver/10 mr-4">
                       {leadershipCredentials[0].icon}
@@ -127,7 +127,7 @@ export const AboutPage: React.FC = () => {
                 </div>
 
                 {/* Legal Credentials */}
-                <div className="flex flex-col">
+                <div className="flex flex-col h-full">
                   <div className="flex items-center mb-6">
                     <div className="p-3 rounded-full bg-navy/10 dark:bg-silver/10 mr-4">
                       {leadershipCredentials[1].icon}
