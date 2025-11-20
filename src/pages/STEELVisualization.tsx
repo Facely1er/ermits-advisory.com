@@ -6,7 +6,7 @@ import { InteractiveCard } from '../components/shared/InteractiveCard';
 import { Card } from '../components/shared/Card';
 import { 
   Users, 
-  Info, ArrowRight, ExternalLink, Download, Link as LinkIcon,
+  Info, ArrowRight, ExternalLink, Link as LinkIcon,
   Lightbulb, BarChart2, FileText, Search, Activity, Presentation, Shield,
   TrendingUp, Server, Leaf, Scale, Radar
 } from 'lucide-react';
@@ -218,24 +218,6 @@ export const STEELVisualization: React.FC = () => {
                 Schedule Consultation
               </Button>
               <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-white text-white hover:bg-white/10 transform hover:scale-105 transition-transform"
-                  onClick={() => navigate('/contact')}
-                >
-                  Request Demo
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-white text-white hover:bg-white/10 transform hover:scale-105 transition-transform"
-                  icon={<Download size={18} />}
-                  iconPosition="left"
-                  onClick={() => navigate('/steel/implementation-guide')}
-                >
-                  Download Methodology
-                </Button>
-                <Button
                   variant="luxury"
                   size="lg"
                   className="border-gold text-gold hover:bg-gold/10 transform hover:scale-105 transition-transform"
