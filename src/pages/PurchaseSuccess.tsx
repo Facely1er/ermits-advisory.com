@@ -12,10 +12,31 @@ export const PurchaseSuccess: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Optionally verify the session with your backend
+    // Extract product type from URL if available, or verify session
     if (sessionId) {
-      // You can fetch session details to get product type
-      // For now, we'll show a generic success message
+      // Try to get product type from URL params or localStorage
+      const urlParams = new URLSearchParams(window.location.search);
+      const productParam = urlParams.get('product');
+      
+      if (productParam) {
+        setProductType(productParam);
+      } else {
+        // Try to get from localStorage (set during checkout)
+        const checkoutData = localStorage.getItem('pending_checkout');
+        if (checkoutData) {
+          try {
+            const data = JSON.parse(checkoutData);
+            if (data.productType) {
+              setProductType(data.productType);
+            }
+            // Clear after use
+            localStorage.removeItem('pending_checkout');
+          } catch (e) {
+            console.error('Error parsing checkout data:', e);
+          }
+        }
+      }
+      
       setLoading(false);
     } else {
       setLoading(false);

@@ -20,19 +20,38 @@ export const VcisoKit: React.FC = () => {
   // Check if Stripe is configured for professional product
   const hasProfessionalStripe = hasValidStripePriceId('vciso-professional');
 
-  const handlePurchase = async () => {
+  const handlePurchase = async (e?: React.MouseEvent) => {
+    // Prevent any default behavior
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    
+    console.log('Purchase button clicked for vCISO Kit');
     setLoading(true);
+    
     try {
+      console.log('Creating checkout session...');
       await createCheckoutSession({
         productType: 'vciso-kit',
         successUrl: `${window.location.origin}/purchase-success`,
         cancelUrl: window.location.href,
       });
+      console.log('Checkout session created, redirecting...');
       // Note: If successful, user will be redirected, so we don't set loading to false
     } catch (error) {
       console.error('Checkout error:', error);
       const errorMessage = error instanceof Error ? error.message : 'Failed to start checkout. Please try again or contact support.';
-      alert(`Checkout Error: ${errorMessage}\n\nYou can also use the Gumroad checkout option below.`);
+      
+      // Show user-friendly error with option to use Gumroad
+      const useGumroad = confirm(
+        `Stripe checkout is currently unavailable.\n\nError: ${errorMessage}\n\nWould you like to use Gumroad checkout instead?`
+      );
+      
+      if (useGumroad) {
+        window.open('https://gumroad.com/ermits/vciso-kit', '_blank');
+      }
+      
       setLoading(false);
     }
   };
@@ -662,11 +681,12 @@ export const VcisoKit: React.FC = () => {
                   <Button
                     variant="primary"
                     size="lg"
-                    onClick={handlePurchase}
+                    onClick={(e) => handlePurchase(e)}
                     disabled={loading}
                     icon={<Download size={18} />}
                     iconPosition="right"
                     className="bg-white text-navy hover:bg-silver"
+                    type="button"
                   >
                     {loading ? 'Processing...' : 'Purchase Now - $299'}
                   </Button>
@@ -705,13 +725,24 @@ export const VcisoKit: React.FC = () => {
               <Button
                 variant="primary"
                 size="lg"
-                onClick={handlePurchase}
+                onClick={(e) => handlePurchase(e)}
                 disabled={loading}
                 icon={<Download size={18} />}
                 iconPosition="right"
                 className="bg-white text-navy hover:bg-gray-100 dark:bg-white dark:text-navy dark:hover:bg-silver font-semibold shadow-lg transition-colors"
+                type="button"
               >
                 {loading ? 'Processing...' : 'Buy Now - $299'}
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() => window.open('https://gumroad.com/ermits/vciso-kit', '_blank')}
+                className="bg-white/20 text-white border-white/40 hover:bg-white/30 dark:bg-white/10 dark:text-white dark:border-white/30 dark:hover:bg-white/20 font-semibold transition-colors"
+                icon={<Download size={18} />}
+                iconPosition="right"
+              >
+                Buy on Gumroad
               </Button>
               <Button
                 variant="outline"

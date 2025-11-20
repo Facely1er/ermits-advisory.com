@@ -41,6 +41,14 @@ export const createCheckoutSession = async (options: CheckoutOptions): Promise<v
       ? 'http://localhost:3000/api/create-checkout-session'
       : '/api/create-checkout-session';
 
+    // Store product type in localStorage for success page
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('pending_checkout', JSON.stringify({
+        productType: options.productType,
+        timestamp: Date.now()
+      }));
+    }
+
     const response = await fetch(apiUrl, {
       method: 'POST',
       headers: {
@@ -48,7 +56,7 @@ export const createCheckoutSession = async (options: CheckoutOptions): Promise<v
       },
       body: JSON.stringify({
         productType: options.productType,
-        successUrl: options.successUrl || `${window.location.origin}/purchase-success`,
+        successUrl: (options.successUrl || `${window.location.origin}/purchase-success`) + `?product=${options.productType}`,
         cancelUrl: options.cancelUrl || window.location.href,
       }),
     });
