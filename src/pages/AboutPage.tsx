@@ -6,7 +6,7 @@ import { Button } from '../components/shared/Button';
 import {
   Award, Target,
   Calendar, ArrowRight, Shield,
-  GraduationCap, Scale
+  GraduationCap, Scale, Briefcase
 } from 'lucide-react';
 
 export const AboutPage: React.FC = () => {
@@ -39,6 +39,25 @@ export const AboutPage: React.FC = () => {
       icon: <Scale size={24} className="text-navy dark:text-silver" />,
       credentials: [
         { name: "J.D. & LL.M.", description: "Legal Background - Focus on federal litigation, public records laws, and regulatory compliance with advanced knowledge of privacy and cybersecurity laws" }
+      ]
+    },
+    {
+      category: "Business Experience",
+      icon: <Briefcase size={24} className="text-navy dark:text-silver" />,
+      subcategories: [
+        {
+          name: "International Trade",
+          credentials: [
+            { name: "Global Commerce", description: "Extensive experience in cross-border trade operations, customs compliance, and international regulatory frameworks" }
+          ]
+        },
+        {
+          name: "Supply Chain & Logistics",
+          credentials: [
+            { name: "Agro-Industries", description: "Deep expertise in supply chain management and logistics operations for agricultural and food processing industries" },
+            { name: "Operations Management", description: "Strategic oversight of complex logistics networks, inventory optimization, and end-to-end supply chain security" }
+          ]
+        }
       ]
     }
   ];
@@ -126,21 +145,51 @@ export const AboutPage: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Legal Credentials */}
+                {/* Legal Credentials & Business Experience */}
                 <div className="flex flex-col h-full">
-                  <div className="flex items-center mb-6">
-                    <div className="p-3 rounded-full bg-navy/10 dark:bg-silver/10 mr-4">
-                      {leadershipCredentials[1].icon}
-                    </div>
-                    <h3 className="text-xl font-bold dark:text-white">{leadershipCredentials[1].category}</h3>
-                  </div>
-                  <div className="space-y-4 flex-1 flex flex-col justify-end">
-                    {leadershipCredentials[1].credentials?.map((cred, credIndex) => (
-                      <div key={credIndex} className="border-l-4 border-navy/30 dark:border-silver/30 pl-4 py-2">
-                        <h4 className="font-semibold text-navy dark:text-white mb-1">{cred.name}</h4>
-                        <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{cred.description}</p>
+                  <div className="space-y-8 flex-1">
+                    {/* Legal Credentials */}
+                    <div>
+                      <div className="flex items-center mb-6">
+                        <div className="p-3 rounded-full bg-navy/10 dark:bg-silver/10 mr-4">
+                          {leadershipCredentials[1].icon}
+                        </div>
+                        <h3 className="text-xl font-bold dark:text-white">{leadershipCredentials[1].category}</h3>
                       </div>
-                    ))}
+                      <div className="space-y-4">
+                        {leadershipCredentials[1].credentials?.map((cred, credIndex) => (
+                          <div key={credIndex} className="border-l-4 border-navy/30 dark:border-silver/30 pl-4 py-2">
+                            <h4 className="font-semibold text-navy dark:text-white mb-1">{cred.name}</h4>
+                            <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{cred.description}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Business Experience */}
+                    <div>
+                      <div className="flex items-center mb-6">
+                        <div className="p-3 rounded-full bg-navy/10 dark:bg-silver/10 mr-4">
+                          {leadershipCredentials[2].icon}
+                        </div>
+                        <h3 className="text-xl font-bold dark:text-white">{leadershipCredentials[2].category}</h3>
+                      </div>
+                      <div className="space-y-6">
+                        {leadershipCredentials[2].subcategories?.map((subcategory, subIndex) => (
+                          <div key={subIndex} className="space-y-4">
+                            <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wide">
+                              {subcategory.name}
+                            </h4>
+                            {subcategory.credentials.map((cred, credIndex) => (
+                              <div key={credIndex} className="border-l-4 border-navy/30 dark:border-silver/30 pl-4 py-2">
+                                <h5 className="font-semibold text-navy dark:text-white mb-1">{cred.name}</h5>
+                                <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{cred.description}</p>
+                              </div>
+                            ))}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
