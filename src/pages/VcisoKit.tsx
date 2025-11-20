@@ -6,7 +6,7 @@ import {
   ArrowRight, CheckCircle, FileText, Clock, 
   DollarSign, Target, Zap, Settings,
   Activity, CheckSquare, Download,
-  Briefcase
+  Briefcase, Lock
 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { createCheckoutSession } from '../services/stripe';
@@ -15,6 +15,7 @@ export const VcisoKit: React.FC = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<'overview' | 'workflow' | 'templates'>('overview');
   const [loading, setLoading] = useState(false);
+  const [professionalLoading, setProfessionalLoading] = useState(false);
 
   const handlePurchase = async () => {
     setLoading(true);
@@ -24,10 +25,28 @@ export const VcisoKit: React.FC = () => {
         successUrl: `${window.location.origin}/purchase-success`,
         cancelUrl: window.location.href,
       });
+      // Note: If successful, user will be redirected, so we don't set loading to false
     } catch (error) {
       console.error('Checkout error:', error);
-      alert('Failed to start checkout. Please try again or contact support.');
+      const errorMessage = error instanceof Error ? error.message : 'Failed to start checkout. Please try again or contact support.';
+      alert(`Checkout Error: ${errorMessage}\n\nYou can also use the Gumroad checkout option below.`);
       setLoading(false);
+    }
+  };
+
+  const handleProfessionalPurchase = async () => {
+    setProfessionalLoading(true);
+    try {
+      await createCheckoutSession({
+        productType: 'vciso-professional',
+        successUrl: `${window.location.origin}/purchase-success`,
+        cancelUrl: window.location.href,
+      });
+    } catch (error) {
+      console.error('Checkout error:', error);
+      const errorMessage = error instanceof Error ? error.message : 'Failed to start checkout. Please try again or contact support.';
+      alert(`Checkout Error: ${errorMessage}\n\nYou can also use the Gumroad checkout option below.`);
+      setProfessionalLoading(false);
     }
   };
   const [workflowStep, setWorkflowStep] = useState(0);
@@ -318,10 +337,52 @@ export const VcisoKit: React.FC = () => {
                   })}
                 </div>
               </Card>
+
+              {/* Upgrade CTA */}
+              <Card variant="glass" padding="lg" className="mb-12 bg-gradient-to-r from-gold/10 to-navy/10 border-2 border-gold/30">
+                <div className="flex flex-col md:flex-row items-center gap-6">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold mb-2 dark:text-white">Need More? Upgrade to Professional Kit</h3>
+                    <p className="text-gray-600 dark:text-gray-200 mb-4">
+                      Get everything in Starter Kit PLUS complete vCISO delivery workflow guide, service delivery methodology, client engagement templates, and ERMITS platform integration workflows.
+                    </p>
+                    <ul className="space-y-1 text-sm text-gray-600 dark:text-gray-200">
+                      <li>✓ All Starter Kit templates ($299 value)</li>
+                      <li>✓ Complete 4-step delivery workflow guide</li>
+                      <li>✓ Client engagement & onboarding templates</li>
+                      <li>✓ ERMITS platform integration workflows</li>
+                    </ul>
+                  </div>
+                  <div className="flex flex-col gap-3">
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-navy dark:text-white">$499</div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400">One-time purchase</div>
+                    </div>
+                    <Button
+                      variant="primary"
+                      size="lg"
+                      onClick={handleProfessionalPurchase}
+                      disabled={professionalLoading}
+                      icon={<ArrowRight size={18} />}
+                      iconPosition="right"
+                    >
+                      {professionalLoading ? 'Processing...' : 'Upgrade to Professional'}
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => navigate('/vciso-professional')}
+                      className="text-navy dark:text-silver"
+                    >
+                      Learn More →
+                    </Button>
+                  </div>
+                </div>
+              </Card>
             </motion.div>
           )}
 
-          {/* Workflow Tab */}
+          {/* Workflow Tab - Locked Content with Preview */}
           {activeTab === 'workflow' && (
             <motion.div
               key="workflow"
@@ -333,37 +394,83 @@ export const VcisoKit: React.FC = () => {
                 <div className="text-center mb-8">
                   <Activity size={48} className="text-navy dark:text-silver mx-auto mb-4" />
                   <h2 className="text-3xl font-bold mb-2 dark:text-white">vCISO Delivery Workflow</h2>
-                  <p className="text-gray-600 dark:text-gray-200">
-                    Interactive guide through the complete vCISO service delivery process
+                  <p className="text-gray-600 dark:text-gray-200 mb-4">
+                    Complete guide through the vCISO service delivery process
                   </p>
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-gold/20 rounded-full text-gold font-semibold mb-4">
+                    <Lock size={16} />
+                    <span>Full workflow guide included in Professional Kit</span>
+                  </div>
                 </div>
 
-                {/* Step Navigation */}
-                <div className="flex justify-center gap-4 mb-8 overflow-x-auto pb-4">
-                  {workflowSteps.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setWorkflowStep(index)}
-                      className={`px-4 py-2 rounded-lg font-semibold whitespace-nowrap transition-all ${
-                        workflowStep === index
-                          ? 'bg-navy text-white'
-                          : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-navy/10'
-                      }`}
+                {/* Preview - First Step Only */}
+                <Card variant="glass" padding="lg" className="relative">
+                  {/* Locked Overlay for steps beyond first */}
+                  {workflowStep > 0 && (
+                    <div className="absolute inset-0 bg-white/95 dark:bg-dark-bg/95 backdrop-blur-sm z-10 rounded-lg flex items-center justify-center">
+                      <div className="text-center p-8">
+                        <Lock size={48} className="text-navy dark:text-silver mx-auto mb-4" />
+                        <h3 className="text-2xl font-bold mb-2 dark:text-white">Unlock Full Workflow Guide</h3>
+                        <p className="text-gray-600 dark:text-gray-200 mb-6 max-w-md">
+                          Get access to all 4 workflow steps, complete service delivery methodology, client engagement templates, and ERMITS platform integration guides.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                          <Button
+                            variant="primary"
+                            size="lg"
+                            onClick={handleProfessionalPurchase}
+                            disabled={professionalLoading}
+                            icon={<ArrowRight size={18} />}
+                            iconPosition="right"
+                          >
+                            {professionalLoading ? 'Processing...' : 'Upgrade to Professional Kit - $499'}
+                          </Button>
+                          <Button
+                            variant="outline"
+                            size="lg"
+                            onClick={() => navigate('/vciso-professional')}
+                          >
+                            Learn More
+                          </Button>
+                        </div>
+                        <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
+                          Includes Starter Kit ($299 value) + Complete Workflow Guide
+                        </p>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Step Navigation */}
+                  <div className="flex justify-center gap-4 mb-8 overflow-x-auto pb-4">
+                    {workflowSteps.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setWorkflowStep(index)}
+                        className={`px-4 py-2 rounded-lg font-semibold whitespace-nowrap transition-all relative ${
+                          workflowStep === index
+                            ? 'bg-navy text-white'
+                            : index > 0
+                            ? 'bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400 cursor-not-allowed'
+                            : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-navy/10'
+                        }`}
+                        disabled={index > 0}
+                      >
+                        Step {index + 1}
+                        {index > 0 && (
+                          <Lock size={12} className="absolute -top-1 -right-1 text-gold" />
+                        )}
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Current Step Display - Only First Step Visible */}
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={workflowStep}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -20 }}
                     >
-                      Step {index + 1}
-                    </button>
-                  ))}
-                </div>
-
-                {/* Current Step Display */}
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={workflowStep}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                  >
-                    <Card variant="glass" padding="lg">
                       <div className="flex items-center justify-between mb-6">
                         <div>
                           <h3 className="text-2xl font-bold mb-2 dark:text-white">
@@ -376,6 +483,7 @@ export const VcisoKit: React.FC = () => {
                         </div>
                         <div className="text-sm text-gray-500 dark:text-gray-400">
                           Step {workflowStep + 1} of {workflowSteps.length}
+                          {workflowStep === 0 && <span className="ml-2 text-green-600">(Preview)</span>}
                         </div>
                       </div>
 
@@ -419,19 +527,77 @@ export const VcisoKit: React.FC = () => {
                         >
                           Previous
                         </Button>
-                        <Button
-                          variant="primary"
-                          onClick={() => setWorkflowStep(Math.min(workflowSteps.length - 1, workflowStep + 1))}
-                          disabled={workflowStep === workflowSteps.length - 1}
-                          icon={<ArrowRight size={16} />}
-                          iconPosition="right"
-                        >
-                          Next Step
-                        </Button>
+                        {workflowStep === 0 ? (
+                          <Button
+                            variant="primary"
+                            onClick={handleProfessionalPurchase}
+                            disabled={professionalLoading}
+                            icon={<Lock size={16} />}
+                            iconPosition="right"
+                          >
+                            {professionalLoading ? 'Processing...' : 'Unlock All Steps - Upgrade to Professional'}
+                          </Button>
+                        ) : (
+                          <Button
+                            variant="primary"
+                            onClick={() => setWorkflowStep(Math.min(workflowSteps.length - 1, workflowStep + 1))}
+                            disabled={workflowStep === workflowSteps.length - 1}
+                            icon={<ArrowRight size={16} />}
+                            iconPosition="right"
+                          >
+                            Next Step
+                          </Button>
+                        )}
                       </div>
-                    </Card>
-                  </motion.div>
-                </AnimatePresence>
+                    </motion.div>
+                  </AnimatePresence>
+                </Card>
+
+                {/* Upgrade CTA Card */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="mt-8"
+                >
+                  <Card variant="glass" padding="lg" className="bg-gradient-to-r from-navy to-dark text-white">
+                    <div className="text-center">
+                      <h3 className="text-2xl font-bold mb-2">Unlock Complete vCISO Delivery Workflow</h3>
+                      <p className="text-silver mb-6">
+                        Get the Professional Kit and access all 4 workflow steps, complete methodology, client engagement templates, and ERMITS integration guides.
+                      </p>
+                      <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+                        <div className="text-left">
+                          <div className="text-sm text-silver/80 mb-1">Professional Kit includes:</div>
+                          <div className="text-sm">✓ Starter Kit ($299 value)</div>
+                          <div className="text-sm">✓ Complete Workflow Guide</div>
+                          <div className="text-sm">✓ Service Delivery Methodology</div>
+                        </div>
+                        <div className="flex flex-col gap-3">
+                          <Button
+                            variant="secondary"
+                            size="lg"
+                            onClick={handleProfessionalPurchase}
+                            disabled={professionalLoading}
+                            className="bg-white text-navy hover:bg-silver font-semibold"
+                            icon={<ArrowRight size={18} />}
+                            iconPosition="right"
+                          >
+                            {professionalLoading ? 'Processing...' : 'Get Professional Kit - $499'}
+                          </Button>
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={() => navigate('/vciso-professional')}
+                            className="text-white hover:bg-white/10"
+                          >
+                            View Full Details →
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  </Card>
+                </motion.div>
               </div>
             </motion.div>
           )}

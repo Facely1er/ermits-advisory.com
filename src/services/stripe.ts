@@ -16,7 +16,7 @@ const getStripe = () => {
   return stripePromise;
 };
 
-export type ProductType = 'steel-premium' | 'vciso-kit' | 'dashboard-template';
+export type ProductType = 'steel-premium' | 'vciso-kit' | 'vciso-professional' | 'dashboard-template';
 
 export interface CheckoutOptions {
   productType: ProductType;
@@ -29,7 +29,19 @@ export interface CheckoutOptions {
  */
 export const createCheckoutSession = async (options: CheckoutOptions): Promise<void> => {
   try {
-    const response = await fetch('/api/create-checkout-session', {
+    // Check if Stripe publishable key is configured
+    const publishableKey = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY;
+    if (!publishableKey) {
+      throw new Error('Stripe is not configured. Please contact support or use Gumroad checkout.');
+    }
+
+    // Check if we're in development and API might not be available
+    const isDevelopment = import.meta.env.DEV;
+    const apiUrl = isDevelopment 
+      ? 'http://localhost:3000/api/create-checkout-session'
+      : '/api/create-checkout-session';
+
+    const response = await fetch(apiUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -42,30 +54,50 @@ export const createCheckoutSession = async (options: CheckoutOptions): Promise<v
     });
 
     if (!response.ok) {
-      const error = await response.json();
-      throw new Error(error.error || 'Failed to create checkout session');
+      let errorMessage = 'Failed to create checkout session';
+      try {
+        const error = await response.json();
+        errorMessage = error.error || errorMessage;
+      } catch (e) {
+        // If response is not JSON, try to get text
+        const text = await response.text();
+        if (text) {
+          errorMessage = text;
+        } else {
+          errorMessage = `Server error: ${response.status} ${response.statusText}`;
+        }
+      }
+      
+      // Provide helpful error message for development
+      if (isDevelopment && response.status === 404) {
+        errorMessage = 'API route not found. In development, you need to run Vercel CLI or deploy to test checkout. Please use Gumroad checkout for now.';
+      }
+      
+      throw new Error(errorMessage);
     }
 
-    const { sessionId } = await response.json();
+    const data = await response.json();
 
-    if (!sessionId) {
-      throw new Error('No session ID returned');
+    if (!data.sessionId) {
+      throw new Error('No session ID returned from server');
     }
 
     const stripe = await getStripe();
     if (!stripe) {
-      throw new Error('Stripe failed to initialize');
+      throw new Error('Stripe failed to initialize. Please check your Stripe publishable key.');
     }
 
     // Redirect to Stripe Checkout
-    const { error } = await stripe.redirectToCheckout({ sessionId });
+    const { error } = await stripe.redirectToCheckout({ sessionId: data.sessionId });
 
     if (error) {
-      throw new Error(error.message);
+      throw new Error(error.message || 'Failed to redirect to checkout');
     }
-  } catch (error) {
+  } catch (error: any) {
     console.error('Checkout error:', error);
-    throw error;
+    // Re-throw with user-friendly message
+    const userMessage = error.message || 'An unexpected error occurred. Please try again or contact support.';
+    throw new Error(userMessage);
   }
 };
 
@@ -78,6 +110,7 @@ export const getProductPriceId = (productType: ProductType): string => {
   const priceIds: Record<ProductType, string> = {
     'steel-premium': import.meta.env.VITE_STRIPE_PRICE_STEEL_PREMIUM || 'price_1SU74XAjb9YEbEboc4sLuKtV',
     'vciso-kit': import.meta.env.VITE_STRIPE_PRICE_VCISO_KIT || 'price_1SU74YAjb9YEbEbohKsi0HZO',
+    'vciso-professional': import.meta.env.VITE_STRIPE_PRICE_VCISO_PROFESSIONAL || 'price_VCISO_PROFESSIONAL_PLACEHOLDER',
     'dashboard-template': import.meta.env.VITE_STRIPE_PRICE_DASHBOARD_TEMPLATE || 'price_1SU74YAjb9YEbEboGzeh3o78',
   };
 
@@ -93,6 +126,7 @@ export const getProductName = (productType: ProductType): string => {
   return product?.name || {
     'steel-premium': 'STEEL™ Premium Assessment',
     'vciso-kit': 'vCISO Starter Kit',
+    'vciso-professional': 'vCISO Professional Kit',
     'dashboard-template': 'Executive Dashboard Template',
   }[productType];
 };
@@ -106,6 +140,7 @@ export const getProductPrice = (productType: ProductType): number => {
   return product?.price || {
     'steel-premium': 29,
     'vciso-kit': 299,
+    'vciso-professional': 499,
     'dashboard-template': 79,
   }[productType];
 };

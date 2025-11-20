@@ -5,7 +5,7 @@
  * pricing, descriptions, and metadata.
  */
 
-export type ProductId = 'steel-premium' | 'vciso-kit' | 'dashboard-template';
+export type ProductId = 'steel-premium' | 'vciso-kit' | 'vciso-professional' | 'dashboard-template';
 
 export interface Product {
   id: ProductId;
@@ -60,6 +60,25 @@ export const PRODUCTS: Record<ProductId, Product> = {
       '4 Board Presentation Templates',
       '8+ Compliance Checklists',
       'Word/PDF Format'
+    ]
+  },
+  'vciso-professional': {
+    id: 'vciso-professional',
+    name: 'vCISO Professional Kit',
+    description: 'Everything in Starter Kit PLUS complete vCISO delivery workflow guide, service delivery methodology, client engagement templates, and ERMITS platform integration workflows.',
+    price: 499,
+    currency: 'USD',
+    stripePriceId: process.env.VITE_STRIPE_PRICE_VCISO_PROFESSIONAL || 'price_VCISO_PROFESSIONAL_PLACEHOLDER',
+    gumroadUrl: 'https://gumroad.com/ermits/vciso-professional',
+    category: 'toolkit',
+    features: [
+      'Everything in Starter Kit ($299 value)',
+      'Complete vCISO Delivery Workflow Guide',
+      'Step-by-step Service Delivery Methodology',
+      'Client Engagement Templates',
+      'Pricing & Scoping Guides',
+      'ERMITS Platform Integration Workflows',
+      'Monthly/Quarterly Delivery Templates'
     ]
   },
   'dashboard-template': {
@@ -117,6 +136,7 @@ export function getStripePriceId(productId: ProductId): string {
   const envMap: Record<ProductId, string> = {
     'steel-premium': import.meta.env.VITE_STRIPE_PRICE_STEEL_PREMIUM || '',
     'vciso-kit': import.meta.env.VITE_STRIPE_PRICE_VCISO_KIT || '',
+    'vciso-professional': import.meta.env.VITE_STRIPE_PRICE_VCISO_PROFESSIONAL || '',
     'dashboard-template': import.meta.env.VITE_STRIPE_PRICE_DASHBOARD_TEMPLATE || '',
   };
   

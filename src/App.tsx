@@ -75,6 +75,7 @@ const VcisoKit = React.lazy(() =>
       };
     })
 );
+const VcisoProfessional = React.lazy(() => import('./pages/VcisoProfessional').then(m => ({ default: m.VcisoProfessional })));
 const ComplianceAdvisory = React.lazy(() => import('./pages/ComplianceAdvisory').then(m => ({ default: m.ComplianceAdvisory })));
 const ComplianceToolkit = React.lazy(() => import('./pages/ComplianceToolkit').then(m => ({ default: m.ComplianceToolkit })));
 const IncidentResponseToolkit = React.lazy(() => import('./pages/IncidentResponseToolkit').then(m => ({ default: m.IncidentResponseToolkit })));
@@ -134,6 +135,7 @@ function App() {
                   <Route path="/steel/implementation-guide" element={<ImplementationGuidePage />} />
                   <Route path="/steel/radar" element={<SteelRadar />} />
                   <Route path="/vciso-kit" element={<VcisoKit />} />
+                  <Route path="/vciso-professional" element={<VcisoProfessional />} />
                   <Route path="/compliance" element={<ComplianceAdvisory />} />
                   <Route path="/toolkits" element={<ToolkitsOverview />} />
                   <Route path="/compliance-toolkit" element={<ComplianceToolkit />} />

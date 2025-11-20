@@ -17,9 +17,11 @@ export const DashboardTemplate: React.FC = () => {
         successUrl: `${window.location.origin}/purchase-success`,
         cancelUrl: window.location.href,
       });
-    } catch (error) {
+      // Note: If successful, user will be redirected, so we don't set loading to false
+    } catch (error: any) {
       console.error('Checkout error:', error);
-      alert('Failed to start checkout. Please try again or contact support.');
+      const errorMessage = error?.message || 'Failed to start checkout. Please try again or contact support.';
+      alert(`Checkout Error: ${errorMessage}\n\nYou can also use the Gumroad checkout option below.`);
       setLoading(false);
     }
   };

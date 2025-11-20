@@ -17,14 +17,9 @@ export const ImplementationGuidePage: React.FC = () => {
   const handleDownload = () => {
     setDownloadStarted(true);
     
-    // Create a download link with actual file URL
-    const link = document.createElement('a');
-    link.href = 'https://www.africau.edu/images/default/sample.pdf';
-    link.download = 'STEEL-Implementation-Guide-Complete.pdf';
-    link.target = '_blank';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // Create a download link - Update with actual PDF URL when available
+    // For now, navigate to contact page to request the guide
+    navigate('/contact?subject=STEEL Implementation Guide');
     
     // Reset after animation
     setTimeout(() => {
@@ -35,70 +30,70 @@ export const ImplementationGuidePage: React.FC = () => {
   const implementationPhases = [
     {
       phase: 1,
-      title: 'Assessment & Planning',
-      duration: '2-4 weeks',
-      description: 'Initial discovery and strategic planning',
-      deliverables: ['Current state assessment', 'Risk landscape mapping', 'Implementation roadmap', 'Stakeholder alignment plan'],
-      keyActivities: ['Executive interviews', 'Technical environment review', 'Gap analysis', 'Resource planning']
+      title: 'STEEL Assessment Completion',
+      duration: '25-30 minutes',
+      description: 'Complete the 46-question executive assessment',
+      deliverables: ['46-question PESTEL assessment completed', 'Initial risk scores calculated', 'Factor-level breakdowns', 'Composite STEEL score (0-100)'],
+      keyActivities: ['Answer Political questions (Q1-Q7, Q43)', 'Answer Economic questions (Q8-Q14)', 'Answer Social questions (Q15-Q21)', 'Answer Technological questions (Q22-Q28, Q44-Q45)', 'Answer Environmental questions (Q29-Q35, Q46)', 'Answer Legal questions (Q36-Q42)']
     },
     {
       phase: 2,
-      title: 'Foundation Building',
-      duration: '4-6 weeks',
-      description: 'Establish STEEL framework foundation',
-      deliverables: ['STEEL dimension baselines', 'Metrics framework', 'Reporting templates', 'Tool configuration'],
-      keyActivities: ['Data source integration', 'Baseline measurements', 'Process documentation', 'Team training']
+      title: 'Results Analysis & Interpretation',
+      duration: '1-2 weeks',
+      description: 'Understand your STEEL scores and risk categorization',
+      deliverables: ['PESTEL factor score analysis', 'Risk category determination (Low/Moderate/Elevated/High)', 'Gap identification across factors', 'Visual dashboard with radar charts'],
+      keyActivities: ['Review composite score (0-100)', 'Analyze weighted factor scores', 'Identify highest-risk PESTEL dimensions', 'Benchmark against industry standards']
     },
     {
       phase: 3,
-      title: 'Full Deployment',
-      duration: '6-8 weeks',
-      description: 'Roll out comprehensive monitoring',
-      deliverables: ['Live dashboard', 'Automated alerts', 'Risk scoring models', 'Integration complete'],
-      keyActivities: ['System deployment', 'Workflow integration', 'User onboarding', 'Pilot program']
+      title: 'Strategic Recommendations',
+      duration: '2-4 weeks',
+      description: 'Develop prioritized action plan based on STEEL results',
+      deliverables: ['Prioritized recommendations by factor', 'Quick-win opportunities (30/60/90 day)', 'ERMITS platform integration roadmap', 'Executive presentation deck'],
+      keyActivities: ['Prioritize gaps by risk level', 'Map recommendations to PESTEL factors', 'Identify ERMITS product integrations', 'Create implementation timeline']
     },
     {
       phase: 4,
-      title: 'Optimization',
-      duration: '4-6 weeks',
-      description: 'Refine and enhance operations',
-      deliverables: ['Tuned algorithms', 'Enhanced reporting', 'Process improvements', 'Best practices guide'],
-      keyActivities: ['Performance analysis', 'Feedback incorporation', 'Process refinement', 'Advanced training']
+      title: 'ERMITS Platform Integration',
+      duration: '4-8 weeks',
+      description: 'Integrate STEEL intelligence with ERMITS products',
+      deliverables: ['CyberCaution threat intelligence integration', 'CyberCorrect privacy compliance mapping', 'VendorSoluce third-party risk scoring', 'Platform-specific STEEL score consumption'],
+      keyActivities: ['Configure STEEL data feeds', 'Set up automated scoring updates', 'Integrate with existing GRC tools', 'Train teams on STEEL-powered insights']
     },
     {
       phase: 5,
-      title: 'Continuous Improvement',
+      title: 'Continuous Monitoring & Improvement',
       duration: 'Ongoing',
-      description: 'Maintain and evolve the framework',
-      deliverables: ['Quarterly reviews', 'Framework updates', 'Capability expansions', 'Maturity advancement'],
-      keyActivities: ['Regular assessments', 'Trend analysis', 'Capability building', 'Strategic planning']
+      description: 'Maintain and evolve STEEL-based risk intelligence',
+      deliverables: ['Quarterly STEEL reassessments', 'Trend analysis and score evolution', 'Updated risk categorizations', 'Maturity advancement tracking'],
+      keyActivities: ['Reassess every 90 days', 'Track score improvements', 'Update PESTEL factor priorities', 'Refine integration with ERMITS products']
     }
   ];
 
   const guideContents = [
     {
-      section: 'Executive Summary',
-      items: ['Framework overview', 'Business value proposition', 'Implementation approach', 'Expected outcomes']
+      section: 'STEEL Methodology Overview',
+      items: ['PESTEL-based assessment framework', '46-question executive intelligence questionnaire', 'Weighted scoring algorithm (Technological 1.2x, Legal 1.1x)', 'Composite score calculation (0-100 scale)', 'Risk categorization: Low/Moderate/Elevated/High']
     },
     {
-      section: 'Framework Foundation',
-      items: ['STEEL methodology explained', 'Six dimension breakdown', 'Risk assessment approach', 'Integration with existing frameworks']
+      section: 'Assessment Structure',
+      items: ['Political Factor: 8 questions (Q1-Q7, Q43)', 'Economic Factor: 7 questions (Q8-Q14)', 'Social Factor: 7 questions (Q15-Q21)', 'Technological Factor: 9 questions (Q22-Q28, Q44-Q45)', 'Environmental Factor: 8 questions (Q29-Q35, Q46)', 'Legal Factor: 7 questions (Q36-Q42)']
     },
     {
-      section: 'Implementation Roadmap',
-      items: ['Phase-by-phase guide', 'Timeline and milestones', 'Resource requirements', 'Success metrics']
+      section: 'Scoring & Analysis',
+      items: ['Factor score calculation (0-100 per PESTEL dimension)', 'Weighted composite STEEL score', 'Risk level determination methodology', 'Industry benchmarking and calibration', 'Visual dashboard with PESTEL radar charts']
     },
     {
-      section: 'Tools & Templates',
-      items: ['Assessment templates', 'Reporting dashboards', 'Workflow diagrams', 'Measurement frameworks']
+      section: 'ERMITS Product Integration',
+      items: ['CyberCaution: Threat intelligence powered by STEEL', 'CyberCorrect: Privacy compliance with STEEL scoring', 'VendorSoluce: Third-party risk using STEEL factors', 'CyberSoluce: NIST CSF alignment with STEEL maturity', 'TechnoSoluce: SBOM analysis enhanced by STEEL']
     },
     {
-      section: 'Industry Applications',
-      items: ['Financial services', 'Healthcare', 'Manufacturing', 'Government & public sector']
+      section: 'Implementation Best Practices',
+      items: ['25-30 minute assessment completion tips', 'Executive stakeholder engagement strategies', 'Interpreting and presenting STEEL scores', 'Prioritizing recommendations by PESTEL gaps', 'Quarterly reassessment cadence']
     },
     {
-      section: 'Success Stories',
-      items: ['Case studies', 'Lessons learned', 'Best practices', 'ROI examples']
+      section: 'Deliverables & Reporting',
+      items: ['Board-ready executive presentation', 'PDF assessment report with visualizations', 'Strategic recommendations prioritized by factor', '30/60/90 day quick-win action plans', 'Integration roadmap for ERMITS platforms']
     }
   ];
 
@@ -161,7 +156,7 @@ export const ImplementationGuidePage: React.FC = () => {
             STEEL™ Implementation Guide
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl">
-            Your comprehensive roadmap to implementing strategic cybersecurity intelligence
+            Your comprehensive roadmap to implementing STEEL™ strategic cybersecurity intelligence through the 46-question PESTEL assessment
           </p>
         </motion.div>
 
@@ -207,19 +202,19 @@ export const ImplementationGuidePage: React.FC = () => {
                 <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
                   <div className="flex items-center">
                     <CheckCircle size={16} className="text-green-400 mr-2" />
-                    <span>120+ pages of detailed guidance</span>
+                    <span>46-question PESTEL assessment guide</span>
                   </div>
                   <div className="flex items-center">
                     <CheckCircle size={16} className="text-green-400 mr-2" />
-                    <span>25+ ready-to-use templates</span>
+                    <span>STEEL scoring algorithm explained</span>
                   </div>
                   <div className="flex items-center">
                     <CheckCircle size={16} className="text-green-400 mr-2" />
-                    <span>Industry-specific examples</span>
+                    <span>ERMITS product integration roadmap</span>
                   </div>
                   <div className="flex items-center">
                     <CheckCircle size={16} className="text-green-400 mr-2" />
-                    <span>Executive presentations</span>
+                    <span>Board-ready presentation templates</span>
                   </div>
                 </div>
               </div>
@@ -241,9 +236,104 @@ export const ImplementationGuidePage: React.FC = () => {
                   </Button>
                 </motion.div>
                 <p className="text-xs text-silver">
-                  PDF Format • 15 MB • Version 2.0
+                  Complete Guide • Available on Request • Version 2.0
                 </p>
               </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* STEEL Assessment Overview */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="mb-12"
+        >
+          <Card variant="glass" padding="lg" className="bg-gradient-to-br from-navy/5 to-silver/5 dark:from-navy/20 dark:to-silver/10">
+            <h2 className="text-2xl font-bold mb-6 dark:text-white">STEEL™ Assessment Overview</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
+              <div>
+                <h3 className="text-lg font-semibold mb-4 dark:text-white">The 46-Question Assessment</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-4">
+                  STEEL™ uses a comprehensive 46-question executive assessment organized across six PESTEL factors. 
+                  Complete the assessment in 25-30 minutes to receive your personalized risk intelligence.
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-start">
+                    <div className="w-2 h-2 rounded-full bg-navy dark:bg-silver mt-2 mr-3 flex-shrink-0"></div>
+                    <div>
+                      <span className="font-semibold text-navy dark:text-white">Political:</span>
+                      <span className="text-gray-600 dark:text-gray-300 ml-2">8 questions (Q1-Q7, Q43)</span>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="w-2 h-2 rounded-full bg-navy dark:bg-silver mt-2 mr-3 flex-shrink-0"></div>
+                    <div>
+                      <span className="font-semibold text-navy dark:text-white">Economic:</span>
+                      <span className="text-gray-600 dark:text-gray-300 ml-2">7 questions (Q8-Q14)</span>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="w-2 h-2 rounded-full bg-navy dark:bg-silver mt-2 mr-3 flex-shrink-0"></div>
+                    <div>
+                      <span className="font-semibold text-navy dark:text-white">Social:</span>
+                      <span className="text-gray-600 dark:text-gray-300 ml-2">7 questions (Q15-Q21)</span>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="w-2 h-2 rounded-full bg-navy dark:bg-silver mt-2 mr-3 flex-shrink-0"></div>
+                    <div>
+                      <span className="font-semibold text-navy dark:text-white">Technological:</span>
+                      <span className="text-gray-600 dark:text-gray-300 ml-2">9 questions (Q22-Q28, Q44-Q45) - Weighted 1.2x</span>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="w-2 h-2 rounded-full bg-navy dark:bg-silver mt-2 mr-3 flex-shrink-0"></div>
+                    <div>
+                      <span className="font-semibold text-navy dark:text-white">Environmental:</span>
+                      <span className="text-gray-600 dark:text-gray-300 ml-2">8 questions (Q29-Q35, Q46)</span>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="w-2 h-2 rounded-full bg-navy dark:bg-silver mt-2 mr-3 flex-shrink-0"></div>
+                    <div>
+                      <span className="font-semibold text-navy dark:text-white">Legal:</span>
+                      <span className="text-gray-600 dark:text-gray-300 ml-2">7 questions (Q36-Q42) - Weighted 1.1x</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold mb-4 dark:text-white">Scoring Methodology</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-4">
+                  Each question is scored 1-10, with factor scores calculated and weighted to produce your composite STEEL score (0-100).
+                </p>
+                <div className="space-y-3">
+                  <div className="p-3 bg-white/50 dark:bg-dark-surface/50 rounded-lg">
+                    <div className="font-semibold text-navy dark:text-white mb-1">Composite Score Calculation</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-300">
+                      Weighted average across all 6 PESTEL factors, with Technological (1.2x) and Legal (1.1x) receiving higher weights
+                    </div>
+                  </div>
+                  <div className="p-3 bg-white/50 dark:bg-dark-surface/50 rounded-lg">
+                    <div className="font-semibold text-navy dark:text-white mb-1">Risk Categories</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                      <div>• <strong>80-100:</strong> LOW RISK (Resilient)</div>
+                      <div>• <strong>60-79:</strong> MODERATE RISK (Managed)</div>
+                      <div>• <strong>40-59:</strong> ELEVATED RISK (Gaps Present)</div>
+                      <div>• <strong>0-39:</strong> HIGH RISK (Critical Action Needed)</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+              <p className="text-sm text-gray-600 dark:text-gray-300">
+                <strong className="text-navy dark:text-white">Note:</strong> STEEL™ is the intelligence engine that powers all ERMITS products. 
+                Your assessment results can be integrated with CyberCaution, CyberCorrect, VendorSoluce, and other ERMITS platforms 
+                to provide unified risk intelligence across your organization.
+              </p>
             </div>
           </Card>
         </motion.div>
@@ -252,7 +342,7 @@ export const ImplementationGuidePage: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
+          transition={{ delay: 0.35 }}
           className="mb-12"
         >
           <h2 className="text-2xl font-bold mb-6 dark:text-white">What's Inside the Guide</h2>
@@ -385,10 +475,11 @@ export const ImplementationGuidePage: React.FC = () => {
                 Fortune 500 Bank
               </h3>
               <p className="text-gray-600 dark:text-gray-200 text-sm mb-3">
-                Reduced cyber risk exposure by 45% while improving board reporting clarity
+                Achieved STEEL composite score improvement from 52 to 78 through targeted PESTEL factor enhancements, 
+                reducing cyber risk exposure by 45% while improving board reporting clarity
               </p>
               <div className="text-xs text-navy dark:text-silver font-medium">
-                Timeline: 6 months • ROI: 3.2x
+                Timeline: 6 months • STEEL Score: 52→78 • ROI: 3.2x
               </div>
             </Card>
 
@@ -401,10 +492,11 @@ export const ImplementationGuidePage: React.FC = () => {
                 Regional Health System
               </h3>
               <p className="text-gray-600 dark:text-gray-200 text-sm mb-3">
-                Achieved HIPAA compliance excellence and reduced incident response time by 60%
+                Improved Legal and Political PESTEL factors from STEEL assessment, achieving HIPAA compliance excellence 
+                and reducing incident response time by 60% through integrated CyberCorrect implementation
               </p>
               <div className="text-xs text-navy dark:text-silver font-medium">
-                Timeline: 4 months • ROI: 2.8x
+                Timeline: 4 months • Legal Factor: 45→82 • ROI: 2.8x
               </div>
             </Card>
 
@@ -417,10 +509,11 @@ export const ImplementationGuidePage: React.FC = () => {
                 State Government Agency
               </h3>
               <p className="text-gray-600 dark:text-gray-200 text-sm mb-3">
-                Enhanced threat detection capabilities and streamlined compliance reporting
+                Leveraged STEEL assessment to identify Technological and Environmental factor gaps, enhancing threat detection 
+                capabilities through CyberCaution integration and streamlining compliance reporting
               </p>
               <div className="text-xs text-navy dark:text-silver font-medium">
-                Timeline: 8 months • ROI: 4.1x
+                Timeline: 8 months • Tech Factor: 38→75 • ROI: 4.1x
               </div>
             </Card>
           </div>

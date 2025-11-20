@@ -10,7 +10,7 @@ if (!stripeSecretKey) {
 
 const stripe = stripeSecretKey 
   ? new Stripe(stripeSecretKey, {
-      apiVersion: '2024-11-20.acacia',
+      apiVersion: '2023-10-16',
     })
   : null;
 
@@ -19,6 +19,7 @@ const stripe = stripeSecretKey
 const PRICE_IDS: Record<string, string> = {
   'steel-premium': process.env.STRIPE_PRICE_STEEL_PREMIUM || 'price_1SU74XAjb9YEbEboc4sLuKtV',
   'vciso-kit': process.env.STRIPE_PRICE_VCISO_KIT || 'price_1SU74YAjb9YEbEbohKsi0HZO',
+  'vciso-professional': process.env.STRIPE_PRICE_VCISO_PROFESSIONAL || 'price_VCISO_PROFESSIONAL_PLACEHOLDER',
   'dashboard-template': process.env.STRIPE_PRICE_DASHBOARD_TEMPLATE || 'price_1SU74YAjb9YEbEboGzeh3o78',
 };
 
@@ -44,7 +45,7 @@ export default async function handler(
     // Validate product type
     if (!productType || !PRICE_IDS[productType]) {
       return res.status(400).json({ 
-        error: 'Invalid product type. Must be: steel-premium, vciso-kit, or dashboard-template' 
+        error: 'Invalid product type. Must be: steel-premium, vciso-kit, vciso-professional, or dashboard-template' 
       });
     }
 
@@ -73,6 +74,8 @@ export default async function handler(
       success_url: successUrl || `${baseUrl}/purchase-success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: cancelUrl || (productType === 'vciso-kit' 
         ? `${baseUrl}/vciso-kit` 
+        : productType === 'vciso-professional'
+        ? `${baseUrl}/vciso-professional`
         : productType === 'dashboard-template'
         ? `${baseUrl}/dashboard-template`
         : `${baseUrl}/steel/premium`),
