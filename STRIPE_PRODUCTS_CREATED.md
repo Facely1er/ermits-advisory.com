@@ -80,11 +80,26 @@ Value: price_1SU74YAjb9YEbEboGzeh3o78
 
 ---
 
+## ⚠️ Missing Product
+
+**vCISO Professional Kit** ($499) is not yet created in Stripe. 
+
+To add it:
+1. Create product in Stripe Dashboard (see `STRIPE_UPDATE_GUIDE.md`)
+2. Get the Price ID
+3. Add `STRIPE_PRICE_VCISO_PROFESSIONAL` to Vercel environment variables
+4. Redeploy
+
+**Current Status:** Uses Gumroad checkout only until Stripe product is created.
+
+---
+
 ## ✅ Final Checklist
 
-- [x] Products created in Stripe
-- [x] Price IDs obtained
-- [ ] Add all 6 environment variables to Vercel
+- [x] Products created in Stripe (3 of 4)
+- [x] Price IDs obtained (3 of 4)
+- [ ] Create vCISO Professional product in Stripe
+- [ ] Add all 7 environment variables to Vercel
 - [ ] Set up webhook endpoint
 - [ ] Get webhook secret
 - [ ] Redeploy application

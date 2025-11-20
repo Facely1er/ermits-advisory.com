@@ -38,7 +38,14 @@ STRIPE_PRICE_DASHBOARD_TEMPLATE
 price_1SU74YAjb9YEbEboGzeh3o78
 ```
 
-### Variable 6: Webhook Secret (After setting up webhook)
+### Variable 6: vCISO Professional Price ID (Optional - Create product in Stripe first)
+```
+STRIPE_PRICE_VCISO_PROFESSIONAL
+price_YOUR_ACTUAL_PRICE_ID_HERE
+```
+*(Create the product in Stripe Dashboard first, then add the Price ID here)*
+
+### Variable 7: Webhook Secret (After setting up webhook)
 ```
 STRIPE_WEBHOOK_SECRET
 whsec_YOUR_WEBHOOK_SECRET_HERE

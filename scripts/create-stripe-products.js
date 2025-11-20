@@ -1,7 +1,8 @@
 /**
  * Stripe Product Creation Script
  * 
- * This script creates all 3 products in your Stripe account.
+ * This script creates all products in your Stripe account.
+ * Currently creates 3 products (vCISO Professional is optional).
  * 
  * Usage:
  * 1. Install Stripe: npm install stripe
@@ -47,6 +48,13 @@ const products = [
     price: 7900, // $79.00 in cents
     currency: 'usd',
     priceIdEnvVar: 'STRIPE_PRICE_DASHBOARD_TEMPLATE'
+  },
+  {
+    name: 'vCISO Professional Kit',
+    description: 'Everything in Starter Kit PLUS complete vCISO delivery workflow guide, service delivery methodology, client engagement templates, and ERMITS platform integration workflows.',
+    price: 49900, // $499.00 in cents
+    currency: 'usd',
+    priceIdEnvVar: 'STRIPE_PRICE_VCISO_PROFESSIONAL'
   }
 ];
 
