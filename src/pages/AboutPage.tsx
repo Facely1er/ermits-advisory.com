@@ -133,86 +133,95 @@ export const AboutPage: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* Leadership Excellence Section - Enhanced with ERMITS Style */}
+        {/* Leadership Excellence Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
           className="mb-16"
         >
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 dark:text-white">Leadership Excellence</h2>
+            <p className="text-lg text-gray-600 dark:text-gray-200 max-w-3xl mx-auto">
+              Our founding leadership brings together decades of cybersecurity expertise, legal knowledge, and strategic advisory experience.
+            </p>
+          </div>
+          
           <div className="max-w-6xl mx-auto">
-            <div className="bg-slate-950 dark:bg-slate-950 rounded-lg p-6 sm:p-8 lg:p-12">
+            <Card variant="glass" padding="lg" className="bg-white dark:bg-dark-surface">
               {/* Cross-Sector Insight Tagline */}
               <div className="mb-10 flex flex-col gap-4 sm:mb-12 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="inline-flex h-9 w-9 items-center justify-center rounded-2xl border border-amber-500/40 bg-amber-500/10">
-                    <CrossSectorInsightIcon />
+                  <div className="p-3 rounded-full bg-navy/10 dark:bg-silver/10">
+                    <CrossSectorInsightIcon className="h-6 w-6 text-amber-400" />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.15em] text-amber-400">
+                    <p className="text-xs font-semibold uppercase tracking-[0.15em] text-amber-500 dark:text-amber-400">
                       Cross-Sector Insight
                     </p>
-                    <p className="mt-1 text-sm text-slate-300">
+                    <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
                       Where legal understanding, cybersecurity expertise, and global trade experience intersect
                       to solve real-world risk challenges.
                     </p>
                   </div>
                 </div>
-                <p className="max-w-md text-sm text-slate-400">
+                <p className="max-w-md text-sm text-gray-600 dark:text-gray-400">
                   ERMITS-Advisory combines technical certifications, legal training, and operational leadership
                   to design practical, compliance-aligned solutions for complex environments.
                 </p>
               </div>
 
               {/* 4-column grid */}
-              <div className="grid gap-10 border-t border-slate-800 pt-10 lg:grid-cols-4 lg:gap-12">
+              <div className="grid gap-10 border-t border-gray-200 dark:border-gray-700 pt-10 lg:grid-cols-4 lg:gap-12">
                 {/* Column 1: Technical Certifications */}
                 <div className="space-y-6">
-                  <div className="flex items-center gap-3">
-                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-slate-700 bg-slate-900/60">
-                      <TechnicalCertificationsIcon />
+                  <div className="flex items-center mb-6">
+                    <div className="p-3 rounded-full bg-navy/10 dark:bg-silver/10 mr-4">
+                      <TechnicalCertificationsIcon className="h-6 w-6 text-amber-400" />
                     </div>
                     <div>
-                      <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-300">
-                        Technical Certifications
-                      </h3>
-                      <p className="mt-1 text-xs text-slate-400">
+                      <h3 className="text-xl font-bold dark:text-white">Technical Certifications</h3>
+                      <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
                         Credentials supporting security governance, risk, and compliance programs.
                       </p>
                     </div>
                   </div>
 
-                  <div className="space-y-4 text-sm text-slate-300">
+                  <div className="space-y-6">
                     <div>
-                      <p className="font-semibold text-slate-100">Security</p>
-                      <div className="mt-2 space-y-2 text-sm text-slate-300">
-                        <div>
-                          <p className="font-medium">CISSP</p>
-                          <p className="text-xs text-slate-400">
+                      <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wide mb-4">
+                        Security
+                      </h4>
+                      <div className="space-y-4">
+                        <div className="border-l-4 border-navy/30 dark:border-silver/30 pl-4 py-2">
+                          <h5 className="font-semibold text-navy dark:text-white mb-1">CISSP</h5>
+                          <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                             Security architecture, governance, and risk-driven control design for enterprise environments.
                           </p>
                         </div>
-                        <div>
-                          <p className="font-medium">CISA</p>
-                          <p className="text-xs text-slate-400">
+                        <div className="border-l-4 border-navy/30 dark:border-silver/30 pl-4 py-2">
+                          <h5 className="font-semibold text-navy dark:text-white mb-1">CISA</h5>
+                          <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                             Information systems auditing, control evaluation, and regulatory alignment.
                           </p>
                         </div>
                       </div>
                     </div>
 
-                    <div className="pt-2">
-                      <p className="font-semibold text-slate-100">Project Management</p>
-                      <div className="mt-2 space-y-2 text-sm text-slate-300">
-                        <div>
-                          <p className="font-medium">PMP</p>
-                          <p className="text-xs text-slate-400">
+                    <div>
+                      <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wide mb-4">
+                        Project Management
+                      </h4>
+                      <div className="space-y-4">
+                        <div className="border-l-4 border-navy/30 dark:border-silver/30 pl-4 py-2">
+                          <h5 className="font-semibold text-navy dark:text-white mb-1">PMP</h5>
+                          <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                             Structuring and delivering high-impact initiatives with disciplined execution.
                           </p>
                         </div>
-                        <div>
-                          <p className="font-medium">PMI-ACP</p>
-                          <p className="text-xs text-slate-400">
+                        <div className="border-l-4 border-navy/30 dark:border-silver/30 pl-4 py-2">
+                          <h5 className="font-semibold text-navy dark:text-white mb-1">PMI-ACP</h5>
+                          <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                             Agile delivery across dynamic operational and compliance-focused programs.
                           </p>
                         </div>
@@ -223,24 +232,22 @@ export const AboutPage: React.FC = () => {
 
                 {/* Column 2: Legal Credentials */}
                 <div className="space-y-6">
-                  <div className="flex items-center gap-3">
-                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-slate-700 bg-slate-900/60">
-                      <LegalCredentialsIcon />
+                  <div className="flex items-center mb-6">
+                    <div className="p-3 rounded-full bg-navy/10 dark:bg-silver/10 mr-4">
+                      <LegalCredentialsIcon className="h-6 w-6 text-sky-400" />
                     </div>
                     <div>
-                      <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-300">
-                        Legal Credentials
-                      </h3>
-                      <p className="mt-1 text-xs text-slate-400">
+                      <h3 className="text-xl font-bold dark:text-white">Legal Credentials</h3>
+                      <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
                         Legal and regulatory fluency at the intersection of privacy, cybersecurity, and public law.
                       </p>
                     </div>
                   </div>
 
-                  <div className="space-y-3 text-sm text-slate-300">
-                    <div>
-                      <p className="font-medium">J.D. & LL.M.</p>
-                      <p className="mt-1 text-xs text-slate-400">
+                  <div className="space-y-4">
+                    <div className="border-l-4 border-navy/30 dark:border-silver/30 pl-4 py-2">
+                      <h4 className="font-semibold text-navy dark:text-white mb-1">J.D. & LL.M.</h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                         Background in federal litigation, public records laws, and regulatory frameworks
                         with advanced depth in privacy and cybersecurity legislation.
                       </p>
@@ -250,27 +257,27 @@ export const AboutPage: React.FC = () => {
 
                 {/* Column 3: Business Experience */}
                 <div className="space-y-6">
-                  <div className="flex items-center gap-3">
-                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-slate-700 bg-slate-900/60">
-                      <BusinessExperienceIcon />
+                  <div className="flex items-center mb-6">
+                    <div className="p-3 rounded-full bg-navy/10 dark:bg-silver/10 mr-4">
+                      <BusinessExperienceIcon className="h-6 w-6 text-emerald-400" />
                     </div>
                     <div>
-                      <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-300">
-                        Business Experience
-                      </h3>
-                      <p className="mt-1 text-xs text-slate-400">
+                      <h3 className="text-xl font-bold dark:text-white">Business Experience</h3>
+                      <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
                         Operational and commercial leadership across international trade and supply chains.
                       </p>
                     </div>
                   </div>
 
-                  <div className="space-y-5 text-sm text-slate-300">
+                  <div className="space-y-6">
                     <div>
-                      <p className="font-semibold text-slate-100">International Trade</p>
-                      <div className="mt-2 space-y-2">
-                        <div>
-                          <p className="font-medium">Global Commerce</p>
-                          <p className="text-xs text-slate-400">
+                      <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wide mb-4">
+                        International Trade
+                      </h4>
+                      <div className="space-y-4">
+                        <div className="border-l-4 border-navy/30 dark:border-silver/30 pl-4 py-2">
+                          <h5 className="font-semibold text-navy dark:text-white mb-1">Global Commerce</h5>
+                          <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                             Experience in cross-border operations, customs requirements, and the governance of
                             international trade and compliance frameworks.
                           </p>
@@ -279,18 +286,20 @@ export const AboutPage: React.FC = () => {
                     </div>
 
                     <div>
-                      <p className="font-semibold text-slate-100">Supply Chain & Logistics</p>
-                      <div className="mt-2 space-y-2">
-                        <div>
-                          <p className="font-medium">Agro-Industries</p>
-                          <p className="text-xs text-slate-400">
+                      <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wide mb-4">
+                        Supply Chain & Logistics
+                      </h4>
+                      <div className="space-y-4">
+                        <div className="border-l-4 border-navy/30 dark:border-silver/30 pl-4 py-2">
+                          <h5 className="font-semibold text-navy dark:text-white mb-1">Agro-Industries</h5>
+                          <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                             Work in agricultural and food-sector supply chains, focusing on traceability,
                             export obligations, and alignment with global standards.
                           </p>
                         </div>
-                        <div>
-                          <p className="font-medium">Operations Management</p>
-                          <p className="text-xs text-slate-400">
+                        <div className="border-l-4 border-navy/30 dark:border-silver/30 pl-4 py-2">
+                          <h5 className="font-semibold text-navy dark:text-white mb-1">Operations Management</h5>
+                          <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                             Oversight of complex logistics networks, inventory flows, and end-to-end performance
                             with an emphasis on resilience and process integrity.
                           </p>
@@ -302,25 +311,23 @@ export const AboutPage: React.FC = () => {
 
                 {/* Column 4: Strategic Capabilities */}
                 <div className="space-y-6">
-                  <div className="flex items-center gap-3">
-                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-slate-700 bg-slate-900/60">
-                      <StrategicCapabilitiesIcon />
+                  <div className="flex items-center mb-6">
+                    <div className="p-3 rounded-full bg-navy/10 dark:bg-silver/10 mr-4">
+                      <StrategicCapabilitiesIcon className="h-6 w-6 text-indigo-400" />
                     </div>
                     <div>
-                      <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-300">
-                        Strategic Capabilities
-                      </h3>
-                      <p className="mt-1 text-xs text-slate-400">
+                      <h3 className="text-xl font-bold dark:text-white">Strategic Capabilities</h3>
+                      <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
                         Integrated services that connect governance, privacy, and operational resilience.
                       </p>
                     </div>
                   </div>
 
-                  <div className="space-y-3 text-sm text-slate-300">
+                  <div className="space-y-4">
                     {strategicCapabilities.map((capability, index) => (
-                      <div key={index}>
-                        <p className="font-medium">{capability.name}</p>
-                        <p className="mt-1 text-xs text-slate-400">
+                      <div key={index} className="border-l-4 border-navy/30 dark:border-silver/30 pl-4 py-2">
+                        <h4 className="font-semibold text-navy dark:text-white mb-1">{capability.name}</h4>
+                        <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                           {capability.description}
                         </p>
                       </div>
@@ -328,7 +335,7 @@ export const AboutPage: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </Card>
           </div>
         </motion.div>
 
