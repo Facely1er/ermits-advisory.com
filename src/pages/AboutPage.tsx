@@ -134,7 +134,7 @@ export const AboutPage: React.FC = () => {
                     </div>
                     <h3 className="text-xl font-bold dark:text-white">{leadershipCredentials[1].category}</h3>
                   </div>
-                  <div className="space-y-4 flex-1 flex flex-col justify-start">
+                  <div className="space-y-4 flex-1 flex flex-col justify-end">
                     {leadershipCredentials[1].credentials?.map((cred, credIndex) => (
                       <div key={credIndex} className="border-l-4 border-navy/30 dark:border-silver/30 pl-4 py-2">
                         <h4 className="font-semibold text-navy dark:text-white mb-1">{cred.name}</h4>
