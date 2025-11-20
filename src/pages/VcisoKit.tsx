@@ -9,13 +9,16 @@ import {
   Briefcase, Lock
 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
-import { createCheckoutSession } from '../services/stripe';
+import { createCheckoutSession, hasValidStripePriceId } from '../services/stripe';
 
 export const VcisoKit: React.FC = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<'overview' | 'workflow' | 'templates'>('overview');
   const [loading, setLoading] = useState(false);
   const [professionalLoading, setProfessionalLoading] = useState(false);
+  
+  // Check if Stripe is configured for professional product
+  const hasProfessionalStripe = hasValidStripePriceId('vciso-professional');
 
   const handlePurchase = async () => {
     setLoading(true);
@@ -35,6 +38,12 @@ export const VcisoKit: React.FC = () => {
   };
 
   const handleProfessionalPurchase = async () => {
+    if (!hasProfessionalStripe) {
+      // If Stripe not configured, redirect to Gumroad
+      window.open('https://gumroad.com/ermits/vciso-professional', '_blank');
+      return;
+    }
+    
     setProfessionalLoading(true);
     try {
       await createCheckoutSession({

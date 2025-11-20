@@ -91,7 +91,6 @@ const ServiceOffering = React.lazy(() => import('./pages/ServiceOffering').then(
 const BoardPresentation = React.lazy(() => import('./pages/BoardPresentation').then(m => ({ default: m.BoardPresentation })));
 const ContactPage = React.lazy(() => import('./pages/ContactPage').then(m => ({ default: m.ContactPage })));
 const AboutPage = React.lazy(() => import('./pages/AboutPage').then(m => ({ default: m.AboutPage })));
-const PricingPage = React.lazy(() => import('./pages/PricingPage').then(m => ({ default: m.PricingPage })));
 const EcosystemPage = React.lazy(() => import('./pages/EcosystemPage').then(m => ({ default: m.EcosystemPage })));
 const ExternalRedirect = React.lazy(() => import('./components/shared/ExternalRedirect').then(m => ({ default: m.ExternalRedirect })));
 const NotFoundPage = React.lazy(() => import('./pages/NotFoundPage').then(m => ({ default: m.NotFoundPage })));
@@ -151,7 +150,6 @@ function App() {
                   <Route path="/presentation" element={<BoardPresentation />} />
                   <Route path="/contact" element={<ContactPage />} />
                   <Route path="/about" element={<AboutPage />} />
-                  <Route path="/pricing" element={<PricingPage />} />
                   <Route path="/ecosystem" element={<EcosystemPage />} />
                   <Route path="/cybercaution" element={<ExternalRedirect to="https://cybercaution.com" />} />
                   <Route path="/cybercorrect" element={<ExternalRedirect to="https://cybercorrect.com" />} />

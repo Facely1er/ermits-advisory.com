@@ -16,6 +16,7 @@ const stripe = stripeSecretKey
 
 // Product price IDs - From Stripe live products
 // These should match environment variables, with fallback to actual Price IDs
+// NOTE: vciso-professional uses a placeholder - replace with actual Price ID when product is created in Stripe
 const PRICE_IDS: Record<string, string> = {
   'steel-premium': process.env.STRIPE_PRICE_STEEL_PREMIUM || 'price_1SU74XAjb9YEbEboc4sLuKtV',
   'vciso-kit': process.env.STRIPE_PRICE_VCISO_KIT || 'price_1SU74YAjb9YEbEbohKsi0HZO',
@@ -51,9 +52,9 @@ export default async function handler(
 
     const priceId = PRICE_IDS[productType];
 
-    if (!priceId) {
+    if (!priceId || priceId.includes('PLACEHOLDER')) {
       return res.status(400).json({ 
-        error: `Price ID not configured for product: ${productType}` 
+        error: `Price ID not configured for product: ${productType}. Please set STRIPE_PRICE_${productType.toUpperCase().replace('-', '_')} environment variable or update the product catalog.` 
       });
     }
 

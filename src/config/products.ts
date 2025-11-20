@@ -68,6 +68,8 @@ export const PRODUCTS: Record<ProductId, Product> = {
     description: 'Everything in Starter Kit PLUS complete vCISO delivery workflow guide, service delivery methodology, client engagement templates, and ERMITS platform integration workflows.',
     price: 499,
     currency: 'USD',
+    // TODO: Replace placeholder with actual Stripe Price ID when product is created in Stripe
+    // Get the Price ID from Stripe Dashboard after creating the product
     stripePriceId: process.env.VITE_STRIPE_PRICE_VCISO_PROFESSIONAL || 'price_VCISO_PROFESSIONAL_PLACEHOLDER',
     gumroadUrl: 'https://gumroad.com/ermits/vciso-professional',
     category: 'toolkit',

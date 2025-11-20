@@ -9,15 +9,24 @@ import {
   Briefcase
 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
-import { createCheckoutSession } from '../services/stripe';
+import { createCheckoutSession, hasValidStripePriceId } from '../services/stripe';
 
 export const VcisoProfessional: React.FC = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<'overview' | 'workflow' | 'templates'>('overview');
   const [loading, setLoading] = useState(false);
   const [workflowStep, setWorkflowStep] = useState(0);
+  
+  // Check if Stripe is configured for this product
+  const hasStripe = hasValidStripePriceId('vciso-professional');
 
   const handlePurchase = async () => {
+    if (!hasStripe) {
+      // If Stripe not configured, redirect to Gumroad
+      window.open('https://gumroad.com/ermits/vciso-professional', '_blank');
+      return;
+    }
+    
     setLoading(true);
     try {
       await createCheckoutSession({
@@ -523,16 +532,31 @@ export const VcisoProfessional: React.FC = () => {
               Get instant access to complete vCISO toolkit with workflow guide and delivery methodology
             </p>
             <div className="flex flex-wrap justify-center gap-4">
+              {hasStripe ? (
+                <Button
+                  variant="secondary"
+                  size="lg"
+                  onClick={handlePurchase}
+                  disabled={loading}
+                  icon={<Download size={18} />}
+                  iconPosition="right"
+                  className="bg-white text-navy hover:bg-gray-100 dark:bg-white dark:text-navy dark:hover:bg-silver font-semibold shadow-lg transition-colors"
+                >
+                  {loading ? 'Processing...' : 'Buy with Stripe - $499'}
+                </Button>
+              ) : null}
               <Button
-                variant="secondary"
+                variant={hasStripe ? "outline" : "secondary"}
                 size="lg"
-                onClick={handlePurchase}
-                disabled={loading}
+                onClick={() => window.open('https://gumroad.com/ermits/vciso-professional', '_blank')}
                 icon={<Download size={18} />}
                 iconPosition="right"
-                className="bg-white text-navy hover:bg-gray-100 dark:bg-white dark:text-navy dark:hover:bg-silver font-semibold shadow-lg transition-colors"
+                className={hasStripe 
+                  ? "bg-white/20 text-white border-white/40 hover:bg-white/30 dark:bg-white/10 dark:text-white dark:border-white/30 dark:hover:bg-white/20 font-semibold transition-colors"
+                  : "bg-white text-navy hover:bg-gray-100 dark:bg-white dark:text-navy dark:hover:bg-silver font-semibold shadow-lg transition-colors"
+                }
               >
-                {loading ? 'Processing...' : 'Purchase Professional Kit - $499'}
+                {hasStripe ? 'Buy with Gumroad' : 'Purchase Professional Kit - $499'}
               </Button>
               <Button
                 variant="outline"

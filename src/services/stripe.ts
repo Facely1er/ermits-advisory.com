@@ -107,6 +107,7 @@ export const createCheckoutSession = async (options: CheckoutOptions): Promise<v
  */
 export const getProductPriceId = (productType: ProductType): string => {
   // Actual Price IDs from Stripe (created products)
+  // NOTE: vciso-professional uses a placeholder - replace with actual Price ID when product is created in Stripe
   const priceIds: Record<ProductType, string> = {
     'steel-premium': import.meta.env.VITE_STRIPE_PRICE_STEEL_PREMIUM || 'price_1SU74XAjb9YEbEboc4sLuKtV',
     'vciso-kit': import.meta.env.VITE_STRIPE_PRICE_VCISO_KIT || 'price_1SU74YAjb9YEbEbohKsi0HZO',
@@ -115,6 +116,14 @@ export const getProductPriceId = (productType: ProductType): string => {
   };
 
   return priceIds[productType];
+};
+
+/**
+ * Check if a product has a valid Stripe Price ID (not a placeholder)
+ */
+export const hasValidStripePriceId = (productType: ProductType): boolean => {
+  const priceId = getProductPriceId(productType);
+  return Boolean(priceId && !priceId.includes('PLACEHOLDER') && priceId.startsWith('price_'));
 };
 
 /**
