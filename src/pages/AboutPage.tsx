@@ -100,7 +100,7 @@ export const AboutPage: React.FC = () => {
                   <div className="mb-8">
                     <h3 className="text-xl font-bold dark:text-white mb-2">Business Experience</h3>
                     <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                      Operational and commercial leadership across international trade and supply chains.
+                      Operational and commercial leadership across Fortune 500 organizations, international trade, and supply chains.
                     </p>
                   </div>
 
@@ -215,6 +215,24 @@ export const AboutPage: React.FC = () => {
                     </div>
                   </div>
                 </div>
+              </div>
+            </Card>
+
+            {/* Professional Memberships - Separate Card */}
+            <Card variant="glass" padding="lg" className="bg-white dark:bg-dark-surface p-8 sm:p-10 lg:p-12 mt-8">
+              <div className="mb-8">
+                <h3 className="text-xl font-bold dark:text-white mb-2">Professional Memberships</h3>
+                <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                  Our team members maintain active memberships in leading professional associations.
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                <p className="text-sm text-gray-700 dark:text-gray-300">International Association of Privacy Professionals (IAPP)</p>
+                <p className="text-sm text-gray-700 dark:text-gray-300">Association for Computing Machinery (ACM)</p>
+                <p className="text-sm text-gray-700 dark:text-gray-300">Information Systems Audit and Control Association (ISACA)</p>
+                <p className="text-sm text-gray-700 dark:text-gray-300">International Information System Security Certification Consortium (ISC2)</p>
+                <p className="text-sm text-gray-700 dark:text-gray-300">Project Management Institute (PMI)</p>
               </div>
             </Card>
 
