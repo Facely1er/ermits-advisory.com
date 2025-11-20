@@ -21,24 +21,32 @@ export const VcisoProfessional: React.FC = () => {
   const hasStripe = hasValidStripePriceId('vciso-professional');
 
   const handlePurchase = async () => {
-    if (!hasStripe) {
-      // If Stripe not configured, redirect to Gumroad
-      window.open('https://gumroad.com/ermits/vciso-professional', '_blank');
-      return;
+    setLoading(true);
+    
+    // Try Stripe first if configured
+    if (hasStripe) {
+      try {
+        await createCheckoutSession({
+          productType: 'vciso-professional',
+          successUrl: `${window.location.origin}/purchase-success`,
+          cancelUrl: window.location.href,
+        });
+        // If successful, user will be redirected, so we don't set loading to false
+        return;
+      } catch (error: unknown) {
+        console.error('Stripe checkout error:', error);
+        // Fall through to Gumroad fallback
+      }
     }
     
-    setLoading(true);
-    try {
-      await createCheckoutSession({
-        productType: 'vciso-professional',
-        successUrl: `${window.location.origin}/purchase-success`,
-        cancelUrl: window.location.href,
-      });
-    } catch (error: unknown) {
-      console.error('Checkout error:', error);
-      const errorMessage = error instanceof Error ? error.message : 'Failed to start checkout. Please try again or contact support.';
-      alert(`Checkout Error: ${errorMessage}\n\nYou can also use the Gumroad checkout option below.`);
-      setLoading(false);
+    // Fallback to Gumroad (if Stripe not configured or failed)
+    setLoading(false);
+    const useGumroad = hasStripe 
+      ? confirm('Stripe checkout is currently unavailable. Would you like to use Gumroad checkout instead?')
+      : true; // Auto-use Gumroad if Stripe not configured
+    
+    if (useGumroad) {
+      window.open('https://gumroad.com/ermits/vciso-professional', '_blank');
     }
   };
 
