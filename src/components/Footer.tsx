@@ -14,10 +14,10 @@ export const Footer: React.FC = () => {
           {/* Company Info - Compact */}
           <div className="md:col-span-1">
             <Link to="/" className="flex items-center mb-3">
-              <img src={logoImg} alt="ERMITS Advisory + STEEL" className="h-10" />
-              <span className="ml-3 font-outfit font-semibold text-white">
-                <span className="block text-sm">ERMITS Advisory</span>
-                <span className="text-xs tracking-wider">+ STEEL™</span>
+              <img src={logoImg} alt="ERMITS Advisory" className="h-10" />
+              <span className="ml-3 font-outfit font-semibold text-white leading-tight">
+                <span className="block text-sm">ERMITS</span>
+                <span className="block text-sm">Advisory</span>
               </span>
             </Link>
             <p className="text-silver text-sm leading-relaxed">Global Intelligence. Resilient Strategy. Streamlined for Success.</p>

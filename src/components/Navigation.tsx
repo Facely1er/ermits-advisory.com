@@ -50,8 +50,9 @@ export const Navigation: React.FC = () => {
           {/* Logo - Made more compact */}
           <Link to="/" className="flex items-center flex-shrink-0">
             <img src={logoImg} alt="ERMITS Advisory" className="h-10" />
-            <span className="ml-2 font-outfit font-semibold text-navy dark:text-white text-base">
-              ERMITS Advisory
+            <span className="ml-2 font-outfit font-semibold text-navy dark:text-white text-base leading-tight">
+              <span className="block">ERMITS</span>
+              <span className="block">Advisory</span>
             </span>
           </Link>
 

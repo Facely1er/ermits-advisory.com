@@ -9,62 +9,6 @@ import {
   GraduationCap, Scale
 } from 'lucide-react';
 
-// ERMITS-Style Icon Components
-const TechnicalCertificationsIcon: React.FC<{ className?: string }> = ({ className = "h-6 w-6 text-amber-400" }) => (
-  <svg viewBox="0 0 32 32" aria-hidden="true" className={className}>
-    <path fill="none" stroke="currentColor" strokeWidth="2"
-      d="M16 4.5 8.5 7v8.5c0 4.1 2.6 7.8 7.5 10 4.9-2.2 7.5-5.9 7.5-10V7L16 4.5z" />
-    <ellipse cx="16" cy="17" rx="7" ry="3.5"
-      fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeDasharray="2 3" />
-  </svg>
-);
-
-const LegalCredentialsIcon: React.FC<{ className?: string }> = ({ className = "h-6 w-6 text-sky-400" }) => (
-  <svg viewBox="0 0 32 32" aria-hidden="true" className={className}>
-    <path fill="none" stroke="currentColor" strokeWidth="2"
-      d="M16 4.5 8.5 7v8.5c0 4.1 2.6 7.8 7.5 10 4.9-2.2 7.5-5.9 7.5-10V7L16 4.5z" />
-    <path fill="none" stroke="currentColor" strokeWidth="1.5"
-      d="M16 10v7.5" />
-    <path fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"
-      d="M11 12.5h10" />
-    <path fill="none" stroke="currentColor" strokeWidth="1.2"
-      d="M11 12.5 9.5 15h3L11 12.5zM21 12.5 19.5 15h3L21 12.5z" />
-  </svg>
-);
-
-const BusinessExperienceIcon: React.FC<{ className?: string }> = ({ className = "h-6 w-6 text-emerald-400" }) => (
-  <svg viewBox="0 0 32 32" aria-hidden="true" className={className}>
-    <path fill="none" stroke="currentColor" strokeWidth="2"
-      d="M16 4.5 8.5 7v8.5c0 4.1 2.6 7.8 7.5 10 4.9-2.2 7.5-5.9 7.5-10V7L16 4.5z" />
-    <circle cx="16" cy="17" r="5" fill="none" stroke="currentColor" strokeWidth="1.3" />
-    <path fill="none" stroke="currentColor" strokeWidth="1"
-      d="M16 12c-1.7 1.7-2.5 3.3-2.5 5s.8 3.3 2.5 5c1.7-1.7 2.5-3.3 2.5-5S17.7 13.7 16 12z" />
-    <path fill="none" stroke="currentColor" strokeWidth="1"
-      d="M11.5 17h9" />
-  </svg>
-);
-
-const StrategicCapabilitiesIcon: React.FC<{ className?: string }> = ({ className = "h-6 w-6 text-indigo-400" }) => (
-  <svg viewBox="0 0 32 32" aria-hidden="true" className={className}>
-    <path fill="none" stroke="currentColor" strokeWidth="2"
-      d="M16 4.5 8.5 7v8.5c0 4.1 2.6 7.8 7.5 10 4.9-2.2 7.5-5.9 7.5-10V7L16 4.5z" />
-    <circle cx="16" cy="17" r="4.5" fill="none" stroke="currentColor" strokeWidth="1.2" />
-    <path fill="currentColor"
-      d="M16 13.5 14.5 18l3.5-1.5L16 13.5z" />
-    <circle cx="16" cy="17" r="0.9" fill="currentColor" />
-  </svg>
-);
-
-const CrossSectorInsightIcon: React.FC<{ className?: string }> = ({ className = "h-5 w-5 text-amber-400" }) => (
-  <svg viewBox="0 0 32 32" aria-hidden="true" className={className}>
-    <circle cx="16" cy="10" r="3" fill="currentColor" />
-    <circle cx="10" cy="20" r="2.3" fill="currentColor" />
-    <circle cx="22" cy="20" r="2.3" fill="currentColor" />
-    <path fill="none" stroke="currentColor" strokeWidth="1.3"
-      d="M16 13v3.5M13 18l-2.1 1.3M19 18l2.1 1.3" />
-  </svg>
-);
-
 export const AboutPage: React.FC = () => {
   const navigate = useNavigate();
 
@@ -149,42 +93,15 @@ export const AboutPage: React.FC = () => {
           
           <div className="max-w-7xl mx-auto">
             <Card variant="glass" padding="lg" className="bg-white dark:bg-dark-surface p-8 sm:p-10 lg:p-12">
-              {/* Cross-Sector Insight Tagline */}
-              <div className="mb-12 flex flex-col gap-6 sm:mb-16 sm:flex-row sm:items-start sm:justify-between">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-full bg-navy/10 dark:bg-silver/10 flex-shrink-0">
-                    <CrossSectorInsightIcon className="h-6 w-6 text-amber-400" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.15em] text-amber-500 dark:text-amber-400 mb-2">
-                      Cross-Sector Insight
-                    </p>
-                    <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                      Where legal understanding, cybersecurity expertise, and global trade experience intersect
-                      to solve real-world risk challenges.
-                    </p>
-                  </div>
-                </div>
-                <p className="max-w-md text-sm text-gray-600 dark:text-gray-400 leading-relaxed sm:mt-8">
-                  ERMITS-Advisory combines technical certifications, legal training, and operational leadership
-                  to design practical, compliance-aligned solutions for complex environments.
-                </p>
-              </div>
-
               {/* 3-column grid */}
-              <div className="grid gap-12 border-t border-gray-200 dark:border-gray-700 pt-12 lg:grid-cols-3 lg:gap-16">
+              <div className="grid gap-12 lg:grid-cols-3 lg:gap-16">
                 {/* Column 1: Business Experience */}
                 <div className="space-y-8">
-                  <div className="flex items-start mb-8">
-                    <div className="p-3 rounded-full bg-navy/10 dark:bg-silver/10 mr-4 flex-shrink-0">
-                      <BusinessExperienceIcon className="h-6 w-6 text-emerald-400" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold dark:text-white mb-2">Business Experience</h3>
-                      <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                        Operational and commercial leadership across international trade and supply chains.
-                      </p>
-                    </div>
+                  <div className="mb-8">
+                    <h3 className="text-xl font-bold dark:text-white mb-2">Business Experience</h3>
+                    <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                      Operational and commercial leadership across international trade and supply chains.
+                    </p>
                   </div>
 
                   <div className="space-y-8">
@@ -229,16 +146,11 @@ export const AboutPage: React.FC = () => {
 
                 {/* Column 2: Technical Certifications */}
                 <div className="space-y-8">
-                  <div className="flex items-start mb-8">
-                    <div className="p-3 rounded-full bg-navy/10 dark:bg-silver/10 mr-4 flex-shrink-0">
-                      <TechnicalCertificationsIcon className="h-6 w-6 text-amber-400" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold dark:text-white mb-2">Technical Certifications</h3>
-                      <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                        Credentials supporting security governance, risk, and compliance programs.
-                      </p>
-                    </div>
+                  <div className="mb-8">
+                    <h3 className="text-xl font-bold dark:text-white mb-2">Technical Certifications</h3>
+                    <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                      Credentials supporting security governance, risk, and compliance programs.
+                    </p>
                   </div>
 
                   <div className="space-y-8">
@@ -286,16 +198,11 @@ export const AboutPage: React.FC = () => {
 
                 {/* Column 3: Legal Credentials */}
                 <div className="space-y-8">
-                  <div className="flex items-start mb-8">
-                    <div className="p-3 rounded-full bg-navy/10 dark:bg-silver/10 mr-4 flex-shrink-0">
-                      <LegalCredentialsIcon className="h-6 w-6 text-sky-400" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold dark:text-white mb-2">Legal Credentials</h3>
-                      <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                        Legal and regulatory fluency at the intersection of privacy, cybersecurity, and public law.
-                      </p>
-                    </div>
+                  <div className="mb-8">
+                    <h3 className="text-xl font-bold dark:text-white mb-2">Legal Credentials</h3>
+                    <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                      Legal and regulatory fluency at the intersection of privacy, cybersecurity, and public law.
+                    </p>
                   </div>
 
                   <div className="space-y-5">
@@ -313,16 +220,11 @@ export const AboutPage: React.FC = () => {
 
             {/* Strategic Capabilities - Separate Card */}
             <Card variant="glass" padding="lg" className="bg-white dark:bg-dark-surface p-8 sm:p-10 lg:p-12 mt-8">
-              <div className="flex items-start mb-8">
-                <div className="p-3 rounded-full bg-navy/10 dark:bg-silver/10 mr-4 flex-shrink-0">
-                  <StrategicCapabilitiesIcon className="h-6 w-6 text-indigo-400" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold dark:text-white mb-2">Strategic Capabilities</h3>
-                  <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                    Integrated services that connect governance, privacy, and operational resilience.
-                  </p>
-                </div>
+              <div className="mb-8">
+                <h3 className="text-xl font-bold dark:text-white mb-2">Strategic Capabilities</h3>
+                <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                  Integrated services that connect governance, privacy, and operational resilience.
+                </p>
               </div>
 
               <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -336,6 +238,25 @@ export const AboutPage: React.FC = () => {
                 ))}
               </div>
             </Card>
+
+            {/* Cross-Sector Insight - Separate Card with darker background */}
+            <Card variant="glass" padding="lg" className="bg-gray-50 dark:bg-gray-900/50 p-8 sm:p-10 lg:p-12 mt-8">
+              <div className="mb-12 flex flex-col gap-6 sm:mb-16 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.15em] text-amber-500 dark:text-amber-400 mb-2">
+                    Cross-Sector Insight
+                  </p>
+                  <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Where legal understanding, cybersecurity expertise, and global trade experience intersect
+                    to solve real-world risk challenges.
+                  </p>
+                </div>
+                <p className="max-w-md text-sm text-gray-600 dark:text-gray-400 leading-relaxed sm:mt-8">
+                  ERMITS-Advisory combines technical certifications, legal training, and operational leadership
+                  to design practical, compliance-aligned solutions for complex environments.
+                </p>
+              </div>
+            </Card>
           </div>
         </motion.div>
 
@@ -346,7 +267,7 @@ export const AboutPage: React.FC = () => {
           transition={{ delay: 0.5 }}
           className="mb-16"
         >
-          <Card variant="glass" padding="lg">
+          <Card variant="glass" padding="lg" className="bg-gray-50 dark:bg-gray-900/50">
             <div className="flex flex-col md:flex-row gap-8 items-center">
               <div className="md:w-1/2">
                 <h2 className="text-2xl md:text-3xl font-bold mb-4 dark:text-white">Global Reach, Local Sensibility</h2>
