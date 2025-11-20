@@ -218,6 +218,25 @@ export const AboutPage: React.FC = () => {
               </div>
             </Card>
 
+            {/* Cross-Sector Insight - Separate Card with darker background */}
+            <Card variant="glass" padding="lg" className="bg-gray-50 dark:bg-gray-900/50 p-8 sm:p-10 lg:p-12 mt-8">
+              <div className="mb-12 flex flex-col gap-6 sm:mb-16 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.15em] text-amber-500 dark:text-amber-400 mb-2">
+                    Cross-Sector Insight
+                  </p>
+                  <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Where legal understanding, cybersecurity expertise, and global trade experience intersect
+                    to solve real-world risk challenges.
+                  </p>
+                </div>
+                <p className="max-w-md text-sm text-gray-600 dark:text-gray-400 leading-relaxed sm:mt-8">
+                  ERMITS-Advisory combines technical certifications, legal training, and operational leadership
+                  to design practical, compliance-aligned solutions for complex environments.
+                </p>
+              </div>
+            </Card>
+
             {/* Strategic Capabilities - Separate Card */}
             <Card variant="glass" padding="lg" className="bg-white dark:bg-dark-surface p-8 sm:p-10 lg:p-12 mt-8">
               <div className="mb-8">
@@ -236,25 +255,6 @@ export const AboutPage: React.FC = () => {
                     </p>
                   </div>
                 ))}
-              </div>
-            </Card>
-
-            {/* Cross-Sector Insight - Separate Card with darker background */}
-            <Card variant="glass" padding="lg" className="bg-gray-50 dark:bg-gray-900/50 p-8 sm:p-10 lg:p-12 mt-8">
-              <div className="mb-12 flex flex-col gap-6 sm:mb-16 sm:flex-row sm:items-start sm:justify-between">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.15em] text-amber-500 dark:text-amber-400 mb-2">
-                    Cross-Sector Insight
-                  </p>
-                  <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Where legal understanding, cybersecurity expertise, and global trade experience intersect
-                    to solve real-world risk challenges.
-                  </p>
-                </div>
-                <p className="max-w-md text-sm text-gray-600 dark:text-gray-400 leading-relaxed sm:mt-8">
-                  ERMITS-Advisory combines technical certifications, legal training, and operational leadership
-                  to design practical, compliance-aligned solutions for complex environments.
-                </p>
               </div>
             </Card>
           </div>
