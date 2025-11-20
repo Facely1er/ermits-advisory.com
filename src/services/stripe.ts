@@ -1,5 +1,5 @@
 import { loadStripe, Stripe } from '@stripe/stripe-js';
-import { getProduct, getStripePriceId } from '../config/products';
+import { getProduct } from '../config/products';
 
 // Initialize Stripe
 let stripePromise: Promise<Stripe | null>;
@@ -58,7 +58,7 @@ export const createCheckoutSession = async (options: CheckoutOptions): Promise<v
       try {
         const error = await response.json();
         errorMessage = error.error || errorMessage;
-      } catch (e) {
+      } catch {
         // If response is not JSON, try to get text
         const text = await response.text();
         if (text) {
@@ -93,10 +93,10 @@ export const createCheckoutSession = async (options: CheckoutOptions): Promise<v
     if (error) {
       throw new Error(error.message || 'Failed to redirect to checkout');
     }
-  } catch (error: any) {
+  } catch (error) {
     console.error('Checkout error:', error);
     // Re-throw with user-friendly message
-    const userMessage = error.message || 'An unexpected error occurred. Please try again or contact support.';
+    const userMessage = error instanceof Error ? error.message : 'An unexpected error occurred. Please try again or contact support.';
     throw new Error(userMessage);
   }
 };

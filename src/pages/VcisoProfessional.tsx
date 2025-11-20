@@ -6,7 +6,7 @@ import {
   ArrowRight, CheckCircle, FileText, Clock, 
   DollarSign, Target, Zap, Settings,
   Activity, CheckSquare, Download,
-  Briefcase, Star
+  Briefcase
 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { createCheckoutSession } from '../services/stripe';
@@ -25,9 +25,9 @@ export const VcisoProfessional: React.FC = () => {
         successUrl: `${window.location.origin}/purchase-success`,
         cancelUrl: window.location.href,
       });
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Checkout error:', error);
-      const errorMessage = error?.message || 'Failed to start checkout. Please try again or contact support.';
+      const errorMessage = error instanceof Error ? error.message : 'Failed to start checkout. Please try again or contact support.';
       alert(`Checkout Error: ${errorMessage}\n\nYou can also use the Gumroad checkout option below.`);
       setLoading(false);
     }
