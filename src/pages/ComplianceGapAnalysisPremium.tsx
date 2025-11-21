@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
@@ -63,6 +63,7 @@ export const ComplianceGapAnalysisPremium: React.FC = () => {
   const [savedAssessments, setSavedAssessments] = useState<SavedAssessment[]>([]);
   const [showSavedList, setShowSavedList] = useState(false);
   const [saving, setSaving] = useState(false);
+  const progressBarRef = useRef<HTMLDivElement>(null);
 
   const updateControlScore = (id: string, score: number) => {
     setControls(controls.map(c => c.id === id ? { ...c, score } : c));
@@ -111,6 +112,13 @@ export const ComplianceGapAnalysisPremium: React.FC = () => {
       setSavedAssessments(saved);
     }
   }, [isPremium]);
+
+  // Update CSS variable for progress bar width
+  useEffect(() => {
+    if (progressBarRef.current) {
+      progressBarRef.current.style.setProperty('--progress-width', `${maturityPercentage}%`);
+    }
+  }, [maturityPercentage]);
 
   const handleExportPDF = () => {
     if (!isPremium) {
@@ -444,10 +452,12 @@ export const ComplianceGapAnalysisPremium: React.FC = () => {
                     <span className="dark:text-gray-200">Total Score</span>
                     <span className="font-semibold dark:text-white">{totalScore} / {maxScore}</span>
                   </div>
-                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                  <div 
+                    ref={progressBarRef}
+                    className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2"
+                  >
                     <div
-                      className="bg-green-600 h-2 rounded-full transition-all duration-300"
-                      style={{ width: `${maturityPercentage}%` }}
+                      className="bg-green-600 h-2 rounded-full transition-all duration-300 w-[var(--progress-width)]"
                     />
                   </div>
                 </div>

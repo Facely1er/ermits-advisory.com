@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useSearchParams, Link } from 'react-router-dom';
+import { useSearchParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { CheckCircle, Download, Mail, ArrowRight } from 'lucide-react';
+import { grantPremiumAccess, ToolkitType, SubscriptionType } from '../utils/premiumAccess';
 
 export const PurchaseSuccess: React.FC = () => {
   const [searchParams] = useSearchParams();

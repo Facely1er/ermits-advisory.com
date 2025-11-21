@@ -6,7 +6,7 @@
 export interface SavedAssessment {
   id: string;
   name: string;
-  type: 'compliance' | 'vendor-risk';
+  type: 'compliance' | 'vendor-risk' | 'incident-response';
   data: any;
   timestamp: string;
   lastModified: string;
@@ -15,6 +15,7 @@ export interface SavedAssessment {
 const STORAGE_KEYS = {
   compliance: 'compliance-assessments',
   vendorRisk: 'vendor-risk-assessments',
+  incidentResponse: 'incident-response-assessments',
   metadata: 'toolkit-assessments-metadata'
 };
 
@@ -28,24 +29,32 @@ function generateId(): string {
 /**
  * Get storage key for assessment type
  */
-function getStorageKey(type: 'compliance' | 'vendor-risk'): string {
-  return type === 'compliance' ? STORAGE_KEYS.compliance : STORAGE_KEYS.vendorRisk;
+function getStorageKey(type: 'compliance' | 'vendor-risk' | 'incident-response'): string {
+  if (type === 'compliance') return STORAGE_KEYS.compliance;
+  if (type === 'vendor-risk') return STORAGE_KEYS.vendorRisk;
+  return STORAGE_KEYS.incidentResponse;
 }
 
 /**
  * Save assessment to localStorage
  */
 export function saveAssessment(
-  type: 'compliance' | 'vendor-risk',
+  type: 'compliance' | 'vendor-risk' | 'incident-response',
   data: any,
   name?: string
 ): SavedAssessment {
   const storageKey = getStorageKey(type);
   const savedAssessments = getSavedAssessments(type);
   
+  const typeLabels = {
+    'compliance': 'Compliance',
+    'vendor-risk': 'Vendor Risk',
+    'incident-response': 'Incident Response'
+  };
+  
   const assessment: SavedAssessment = {
     id: generateId(),
-    name: name || `${type === 'compliance' ? 'Compliance' : 'Vendor Risk'} Assessment - ${new Date().toLocaleDateString()}`,
+    name: name || `${typeLabels[type]} Assessment - ${new Date().toLocaleDateString()}`,
     type,
     data,
     timestamp: new Date().toISOString(),
@@ -80,7 +89,7 @@ export function saveAssessment(
  * Load assessment by ID
  */
 export function loadAssessment(
-  type: 'compliance' | 'vendor-risk',
+  type: 'compliance' | 'vendor-risk' | 'incident-response',
   id: string
 ): SavedAssessment | null {
   const savedAssessments = getSavedAssessments(type);
@@ -90,7 +99,7 @@ export function loadAssessment(
 /**
  * Get all saved assessments for a type
  */
-export function getSavedAssessments(type: 'compliance' | 'vendor-risk'): SavedAssessment[] {
+export function getSavedAssessments(type: 'compliance' | 'vendor-risk' | 'incident-response'): SavedAssessment[] {
   const storageKey = getStorageKey(type);
   try {
     const stored = localStorage.getItem(storageKey);
@@ -106,7 +115,7 @@ export function getSavedAssessments(type: 'compliance' | 'vendor-risk'): SavedAs
  * Delete assessment by ID
  */
 export function deleteAssessment(
-  type: 'compliance' | 'vendor-risk',
+  type: 'compliance' | 'vendor-risk' | 'incident-response',
   id: string
 ): boolean {
   const storageKey = getStorageKey(type);
@@ -127,7 +136,7 @@ export function deleteAssessment(
  * Update assessment
  */
 export function updateAssessment(
-  type: 'compliance' | 'vendor-risk',
+  type: 'compliance' | 'vendor-risk' | 'incident-response',
   id: string,
   data: any,
   name?: string
@@ -162,16 +171,19 @@ export function getStorageInfo(): {
   totalAssessments: number;
   complianceCount: number;
   vendorRiskCount: number;
+  incidentResponseCount: number;
   estimatedSize: string;
 } {
   const compliance = getSavedAssessments('compliance');
   const vendorRisk = getSavedAssessments('vendor-risk');
-  const total = compliance.length + vendorRisk.length;
+  const incidentResponse = getSavedAssessments('incident-response');
+  const total = compliance.length + vendorRisk.length + incidentResponse.length;
   
   // Estimate size (rough calculation)
   const complianceSize = JSON.stringify(compliance).length;
   const vendorRiskSize = JSON.stringify(vendorRisk).length;
-  const totalSize = complianceSize + vendorRiskSize;
+  const incidentResponseSize = JSON.stringify(incidentResponse).length;
+  const totalSize = complianceSize + vendorRiskSize + incidentResponseSize;
   
   const sizeInKB = (totalSize / 1024).toFixed(2);
   const sizeInMB = (totalSize / (1024 * 1024)).toFixed(2);
@@ -180,6 +192,7 @@ export function getStorageInfo(): {
     totalAssessments: total,
     complianceCount: compliance.length,
     vendorRiskCount: vendorRisk.length,
+    incidentResponseCount: incidentResponse.length,
     estimatedSize: totalSize > 1024 * 1024 ? `${sizeInMB} MB` : `${sizeInKB} KB`
   };
 }
@@ -187,12 +200,13 @@ export function getStorageInfo(): {
 /**
  * Clear all assessments (use with caution)
  */
-export function clearAllAssessments(type?: 'compliance' | 'vendor-risk'): void {
+export function clearAllAssessments(type?: 'compliance' | 'vendor-risk' | 'incident-response'): void {
   if (type) {
     localStorage.removeItem(getStorageKey(type));
   } else {
     localStorage.removeItem(STORAGE_KEYS.compliance);
     localStorage.removeItem(STORAGE_KEYS.vendorRisk);
+    localStorage.removeItem(STORAGE_KEYS.incidentResponse);
   }
   localStorage.removeItem(STORAGE_KEYS.metadata);
 }

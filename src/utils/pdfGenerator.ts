@@ -224,6 +224,115 @@ export function generateVendorRiskPDF(data: {
 }
 
 /**
+ * Generate professional PDF for Incident Response Assessment
+ */
+export function generateIncidentResponsePDF(data: {
+  incidentData: {
+    incidentTitle: string;
+    incidentDate: string;
+    incidentType: string;
+    severity: number;
+    status: string;
+    description: string;
+    detectionMethod: string;
+    affectedSystems: string;
+    dataImpact: number;
+    businessImpact: number;
+    financialImpact: number;
+    containmentTime: string;
+    eradicationTime: string;
+    recoveryTime: string;
+    communicationStatus: number;
+    regulatoryNotification: boolean;
+    customerNotification: boolean;
+    lessonsLearned: string;
+    remediationActions: string;
+  };
+  responseTime: number;
+  impactScore: number;
+  severityLabel: string;
+}): void {
+  const doc = createPDFDocument();
+  let yPosition = addPDFHeader(doc, 'Incident Response Assessment Report', undefined, PDF_CONFIG.colors.danger);
+
+  // Incident Information
+  const incidentInfo: Array<[string, string]> = [
+    ['Incident Title', data.incidentData.incidentTitle || 'Not specified'],
+    ['Incident Date', data.incidentData.incidentDate],
+    ['Incident Type', data.incidentData.incidentType],
+    ['Severity', `${data.incidentData.severity}/5 - ${data.severityLabel}`],
+    ['Status', data.incidentData.status]
+  ];
+  yPosition = addInfoTable(doc, yPosition, incidentInfo, 'Incident Information');
+
+  // Incident Summary
+  const summaryData: Array<[string, string]> = [
+    ['Impact Score', `${data.impactScore.toFixed(1)}/10`],
+    ['Total Response Time', `${data.responseTime.toFixed(1)} hours`],
+    ['Containment Time', `${data.incidentData.containmentTime} hours`],
+    ['Eradication Time', `${data.incidentData.eradicationTime} hours`],
+    ['Recovery Time', `${data.incidentData.recoveryTime} hours`]
+  ];
+  yPosition = addInfoTable(doc, yPosition, summaryData, 'Response Summary');
+
+  // Impact Assessment
+  yPosition = checkNewPage(doc, yPosition, 60);
+  const impactData: Array<[string, string]> = [
+    ['Data Impact', `${data.incidentData.dataImpact}/10`],
+    ['Business Impact', `${data.incidentData.businessImpact}/10`],
+    ['Financial Impact', `${data.incidentData.financialImpact}/10`],
+    ['Communication Status', `${data.incidentData.communicationStatus}/5`]
+  ];
+  yPosition = addInfoTable(doc, yPosition, impactData, 'Impact Assessment', PDF_CONFIG.colors.danger);
+
+  // Detection & Systems
+  yPosition = checkNewPage(doc, yPosition, 60);
+  yPosition = addSectionHeading(doc, yPosition, 'Detection & Affected Systems');
+  
+  if (data.incidentData.detectionMethod) {
+    yPosition = addTextBlock(doc, yPosition, `Detection Method: ${data.incidentData.detectionMethod}`);
+  }
+  if (data.incidentData.affectedSystems) {
+    yPosition = addTextBlock(doc, yPosition, `Affected Systems: ${data.incidentData.affectedSystems}`);
+  }
+  if (data.incidentData.description) {
+    yPosition = checkNewPage(doc, yPosition, 40);
+    yPosition = addSectionHeading(doc, yPosition, 'Incident Description');
+    yPosition = addTextBlock(doc, yPosition, data.incidentData.description);
+  }
+
+  // Notifications
+  yPosition = checkNewPage(doc, yPosition, 60);
+  yPosition = addSectionHeading(doc, yPosition, 'Notifications');
+  const notificationData: Array<[string, string]> = [
+    ['Regulatory Notification', data.incidentData.regulatoryNotification ? 'Yes' : 'No'],
+    ['Customer Notification', data.incidentData.customerNotification ? 'Yes' : 'No']
+  ];
+  yPosition = addInfoTable(doc, yPosition, notificationData, 'Notification Status');
+
+  // Remediation Actions
+  if (data.incidentData.remediationActions) {
+    yPosition = checkNewPage(doc, yPosition, 60);
+    yPosition = addSectionHeading(doc, yPosition, 'Remediation Actions');
+    yPosition = addTextBlock(doc, yPosition, data.incidentData.remediationActions);
+  }
+
+  // Lessons Learned
+  if (data.incidentData.lessonsLearned) {
+    yPosition = checkNewPage(doc, yPosition, 60);
+    yPosition = addSectionHeading(doc, yPosition, 'Lessons Learned');
+    addTextBlock(doc, yPosition, data.incidentData.lessonsLearned);
+  }
+
+  // Add footer
+  addPDFFooter(doc);
+
+  // Export
+  const filename = `incident-response-${data.incidentData.incidentTitle || 'report'}-${data.incidentData.incidentDate}`;
+  exportPDF(doc, filename);
+}
+
+/**
  * Helper function to get score label
  */
 function getScoreLabel(score: number): string {
