@@ -545,7 +545,7 @@ export const VcisoProfessional: React.FC = () => {
                   iconPosition="right"
                   className="bg-white text-navy hover:bg-gray-100 dark:bg-white dark:text-navy dark:hover:bg-silver font-semibold shadow-lg transition-colors"
                 >
-                  {loading ? 'Processing...' : 'Buy with Stripe - $499'}
+                  {loading ? 'Processing...' : 'Buy Now - $499'}
                 </Button>
               ) : null}
               <Button

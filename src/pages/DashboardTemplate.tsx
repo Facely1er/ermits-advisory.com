@@ -131,7 +131,7 @@ export const DashboardTemplate: React.FC = () => {
                 className="w-full"
               >
                 <Lock size={18} className="mr-2" />
-                {loading ? 'Processing...' : 'Buy with Stripe'}
+                {loading ? 'Processing...' : 'Buy Now'}
               </Button>
               
             </div>
@@ -333,7 +333,7 @@ export const DashboardTemplate: React.FC = () => {
                 icon={<ArrowRight size={18} />}
                 iconPosition="right"
               >
-                {loading ? 'Processing...' : 'Buy with Stripe ($79)'}
+                {loading ? 'Processing...' : 'Buy Now ($79)'}
               </Button>
               <Button
                 variant="outline"

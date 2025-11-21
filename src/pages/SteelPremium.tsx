@@ -118,7 +118,7 @@ export const SteelPremium: React.FC = () => {
                 className="w-full"
               >
                 <Lock size={18} className="mr-2" />
-                {loading ? 'Processing...' : 'Buy with Stripe'}
+                {loading ? 'Processing...' : 'Buy Now'}
               </Button>
               
               <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
@@ -279,7 +279,7 @@ export const SteelPremium: React.FC = () => {
                 icon={<ArrowRight size={18} />}
                 iconPosition="right"
               >
-                {loading ? 'Processing...' : 'Buy with Stripe ($29)'}
+                {loading ? 'Processing...' : 'Buy Now ($29)'}
               </Button>
             </div>
           </Card>
