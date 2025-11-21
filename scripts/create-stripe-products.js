@@ -1,8 +1,7 @@
 /**
  * Stripe Product Creation Script
  * 
- * This script creates all products in your Stripe account.
- * Currently creates 3 products (vCISO Professional is optional).
+ * This script creates all 4 products in your Stripe account.
  * 
  * Usage:
  * 1. Install Stripe: npm install stripe
