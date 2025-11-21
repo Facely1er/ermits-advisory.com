@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
@@ -98,6 +98,47 @@ export const VendorRiskScorerPremium: React.FC = () => {
   };
 
   const riskTier = getRiskTier(parseFloat(finalScore));
+
+  // Helper function to get Tailwind color classes based on risk tier
+  const getColorClasses = (shade: '600' | '700' | '100' | '900') => {
+    const colorMap = {
+      red: {
+        '600': 'text-red-600',
+        '700': 'text-red-700',
+        '100': 'bg-red-100',
+        '900': 'dark:bg-red-900/30'
+      },
+      orange: {
+        '600': 'text-orange-600',
+        '700': 'text-orange-700',
+        '100': 'bg-orange-100',
+        '900': 'dark:bg-orange-900/30'
+      },
+      yellow: {
+        '600': 'text-yellow-600',
+        '700': 'text-yellow-700',
+        '100': 'bg-yellow-100',
+        '900': 'dark:bg-yellow-900/30'
+      },
+      green: {
+        '600': 'text-green-600',
+        '700': 'text-green-700',
+        '100': 'bg-green-100',
+        '900': 'dark:bg-green-900/30'
+      }
+    };
+    return colorMap[riskTier.color as keyof typeof colorMap][shade];
+  };
+
+  const progressContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (progressContainerRef.current) {
+      progressContainerRef.current.style.setProperty('--inherent-risk-width', `${inherentRisk * 10}%`);
+      progressContainerRef.current.style.setProperty('--residual-risk-width', `${residualRisk * 10}%`);
+      progressContainerRef.current.style.setProperty('--business-criticality-width', `${businessCriticality * 10}%`);
+    }
+  }, [inherentRisk, residualRisk, businessCriticality]);
 
   const handleExportPDF = () => {
     if (!isPremium) {
@@ -610,31 +651,36 @@ export const VendorRiskScorerPremium: React.FC = () => {
                 <h3 className="text-lg font-bold mb-4 dark:text-white">Risk Score Summary</h3>
 
                 <div className="text-center mb-6">
-                  <div className="text-6xl font-bold mb-2" style={{ color: `var(--color-${riskTier.color}-600)` }}>
+                  <div className={`text-6xl font-bold mb-2 ${getColorClasses('600')}`}>
                     {finalScore}
                   </div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">out of 10.0</div>
                 </div>
 
-                <div className={`text-center py-3 px-4 rounded-lg mb-6 bg-${riskTier.color}-100 dark:bg-${riskTier.color}-900/30`}>
-                  <div className="text-2xl font-bold mb-1" style={{ color: `var(--color-${riskTier.color}-700)` }}>
+                <div className={`text-center py-3 px-4 rounded-lg mb-6 ${getColorClasses('100')} ${getColorClasses('900')}`}>
+                  <div className={`text-2xl font-bold mb-1 ${getColorClasses('700')}`}>
                     Tier {riskTier.tier}
                   </div>
-                  <div className="text-sm font-semibold" style={{ color: `var(--color-${riskTier.color}-600)` }}>
+                  <div className={`text-sm font-semibold ${getColorClasses('600')}`}>
                     {riskTier.label}
                   </div>
                 </div>
 
-                <div className="space-y-3">
+                <div 
+                  ref={progressContainerRef}
+                  className="space-y-3"
+                >
+                  <style>{`
+                    .progress-bar-inherent { width: var(--inherent-risk-width); }
+                    .progress-bar-residual { width: var(--residual-risk-width); }
+                    .progress-bar-criticality { width: var(--business-criticality-width); }
+                  `}</style>
                   <div className="flex justify-between items-center">
                     <span className="text-sm dark:text-gray-200">Inherent Risk</span>
                     <span className="font-bold text-orange-600 dark:text-orange-400">{inherentRisk}</span>
                   </div>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                    <div
-                      className="bg-orange-600 h-2 rounded-full transition-all duration-300"
-                      style={{ width: `${inherentRisk * 10}%` }}
-                    />
+                    <div className="bg-orange-600 h-2 rounded-full transition-all duration-300 progress-bar-inherent" />
                   </div>
 
                   <div className="flex justify-between items-center mt-4">
@@ -642,10 +688,7 @@ export const VendorRiskScorerPremium: React.FC = () => {
                     <span className="font-bold text-blue-600 dark:text-blue-400">{residualRisk}</span>
                   </div>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                    <div
-                      className="bg-blue-600 h-2 rounded-full transition-all duration-300"
-                      style={{ width: `${residualRisk * 10}%` }}
-                    />
+                    <div className="bg-blue-600 h-2 rounded-full transition-all duration-300 progress-bar-residual" />
                   </div>
 
                   <div className="flex justify-between items-center mt-4">
@@ -653,10 +696,7 @@ export const VendorRiskScorerPremium: React.FC = () => {
                     <span className="font-bold text-purple-600 dark:text-purple-400">{businessCriticality}</span>
                   </div>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                    <div
-                      className="bg-purple-600 h-2 rounded-full transition-all duration-300"
-                      style={{ width: `${businessCriticality * 10}%` }}
-                    />
+                    <div className="bg-purple-600 h-2 rounded-full transition-all duration-300 progress-bar-criticality" />
                   </div>
                 </div>
               </Card>
