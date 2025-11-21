@@ -99,6 +99,7 @@ const PrivacyPolicyPage = React.lazy(() => import('./pages/PrivacyPolicyPage').t
 const TermsOfServicePage = React.lazy(() => import('./pages/TermsOfServicePage').then(m => ({ default: m.TermsOfServicePage })));
 const CookiePolicyPage = React.lazy(() => import('./pages/CookiePolicyPage').then(m => ({ default: m.CookiePolicyPage })));
 const AcceptableUsePolicyPage = React.lazy(() => import('./pages/AcceptableUsePolicyPage').then(m => ({ default: m.AcceptableUsePolicyPage })));
+const ECommercePoliciesPage = React.lazy(() => import('./pages/ECommercePoliciesPage').then(m => ({ default: m.ECommercePoliciesPage })));
 const PurchaseSuccess = React.lazy(() => import('./pages/PurchaseSuccess').then(m => ({ default: m.PurchaseSuccess })));
 const PricingPage = React.lazy(() => import('./pages/PricingPage').then(m => ({ default: m.PricingPage })));
 const SteelRadar = React.lazy(() => import('./steel-radar/pages/SteelRadar').then(m => ({ default: m.SteelRadar })));
@@ -166,6 +167,7 @@ function App() {
                   <Route path="/terms" element={<TermsOfServicePage />} />
                   <Route path="/cookies" element={<CookiePolicyPage />} />
                   <Route path="/acceptable-use" element={<AcceptableUsePolicyPage />} />
+                  <Route path="/ecommerce-policies" element={<ECommercePoliciesPage />} />
                   <Route path="/purchase-success" element={<PurchaseSuccess />} />
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>

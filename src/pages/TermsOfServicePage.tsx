@@ -20,7 +20,7 @@ export const TermsOfServicePage: React.FC = () => {
           </Link>
           <h1 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">Master Terms of Service</h1>
           <p className="text-gray-600 dark:text-gray-200 mb-2">
-            <strong>Effective Date:</strong> October 31, 2025
+            <strong>Effective Date:</strong> November 19, 2025
           </p>
           <p className="text-gray-600 dark:text-gray-200 mb-4">
             <strong>Last Updated:</strong> October 31, 2025
@@ -38,7 +38,7 @@ export const TermsOfServicePage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.1 Scope and Applicability</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">1. Scope and Applicability</h2>
             <p className="text-gray-600 dark:text-gray-200 mb-4">
               These Terms govern your use of all ERMITS products, including but not limited to:
             </p>
@@ -78,6 +78,33 @@ export const TermsOfServicePage: React.FC = () => {
                   <li>RiskProfessional (CISA-aligned security assessments)</li>
                 </ul>
               </div>
+              <div>
+                <h3 className="font-semibold mb-2 dark:text-white">ERMITS Advisory + STEEL™ Brand Products and Services:</h3>
+                <ul className="list-disc list-inside text-gray-600 dark:text-gray-200 ml-4">
+                  <li>STEEL™ Assessment Platform (Strategic Threat & Enterprise Evaluation Layer)</li>
+                  <li>STEEL™ Premium Assessment ($29 digital product)</li>
+                  <li>vCISO Starter Kit ($299 digital product)</li>
+                  <li>Executive Dashboard Template ($79 digital product)</li>
+                  <li>Compliance Toolkit (digital product)</li>
+                  <li>Incident Response Toolkit (digital product)</li>
+                  <li>Vendor Risk Toolkit (digital product)</li>
+                  <li>Premium Toolkits (subscription-based digital products)</li>
+                  <li>STEEL Strategic Assessment Services ($25,000-$125,000 custom pricing)</li>
+                  <li>On-Demand Advisory Services (custom pricing)</li>
+                  <li>Compliance Advisory Services (custom pricing)</li>
+                  <li>Virtual CISO (vCISO) Services (custom pricing)</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2 dark:text-white">SocialCaution Brand Products:</h3>
+                <ul className="list-disc list-inside text-gray-600 dark:text-gray-200 ml-4">
+                  <li>Personalized Privacy Platform with AI-powered persona detection</li>
+                  <li>Privacy Exposure Index for online services</li>
+                  <li>Service Catalog with risk profiles</li>
+                  <li>Adaptive privacy resources and tools</li>
+                  <li>Digital footprint analysis</li>
+                </ul>
+              </div>
             </div>
             <p className="text-gray-600 dark:text-gray-200 mt-4">
               Product-specific terms may apply as set forth in Product-Specific Addendums.
@@ -93,13 +120,18 @@ export const TermsOfServicePage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.2 Definitions</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">2. Definitions</h2>
             <div className="space-y-3 text-gray-600 dark:text-gray-200">
               <p><strong>"Privacy-First Architecture"</strong> means ERMITS' system design philosophy ensuring that user data is processed locally whenever possible, with optional encrypted cloud synchronization, pseudonymized telemetry, and zero-knowledge data handling principles.</p>
               <p><strong>"User Data"</strong> means any information, content, files, or materials that you upload, submit, generate, or process through the Services.</p>
               <p><strong>"Controlled Unclassified Information" or "CUI"</strong> means information that requires safeguarding or dissemination controls pursuant to federal law, regulations, or government-wide policies.</p>
               <p><strong>"Federal Contract Information" or "FCI"</strong> means information not intended for public release that is provided by or generated for the U.S. Government under a contract.</p>
               <p><strong>"Beta Products"</strong> means Services explicitly marked as "Beta," "Preview," "Early Access," or similar designations indicating pre-release or testing status.</p>
+              <p><strong>"Advisory Services"</strong> means professional consulting, strategic guidance, assessments, and expert recommendations provided by ERMITS personnel or contractors, including but not limited to STEEL Strategic Assessments, vCISO services, compliance advisory, and on-demand consulting. Advisory Services are distinct from self-service Digital Products.</p>
+              <p><strong>"Digital Products"</strong> means self-service downloadable or web-based tools, templates, assessments, and resources available for immediate purchase and use without professional consulting, including but not limited to STEEL Premium Assessment, vCISO Starter Kit, Executive Dashboard Template, and Premium Toolkits.</p>
+              <p><strong>"STEEL™ Framework"</strong> means ERMITS' proprietary Strategic Threat & Enterprise Evaluation Layer methodology for assessing organizational cybersecurity and risk posture across Political, Economic, Social, Technological, Environmental, and Legal (PESTEL) factors.</p>
+              <p><strong>"Privacy Persona"</strong> means the AI-determined privacy profile classification assigned by SocialCaution based on user assessment responses, used to personalize privacy recommendations and resources.</p>
+              <p><strong>"Privacy Exposure Index"</strong> means SocialCaution's quantified privacy risk score (0-100) for online services based on publicly available data, privacy policies, and service characteristics.</p>
             </div>
           </Card>
         </motion.div>
@@ -112,7 +144,7 @@ export const TermsOfServicePage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.3 Eligibility and Account Requirements</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">3. Eligibility and Account Requirements</h2>
             
             <div className="space-y-4">
               <div>
@@ -151,7 +183,7 @@ export const TermsOfServicePage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg" className="bg-navy text-white">
-            <h2 className="text-2xl font-bold mb-4">1.4 Privacy-First Architecture and Data Handling</h2>
+            <h2 className="text-2xl font-bold mb-4">4. Privacy-First Architecture and Data Handling</h2>
             <p className="text-silver mb-4">
               ERMITS implements a Privacy-First Architecture across all products, built on the following principles:
             </p>
@@ -184,7 +216,7 @@ export const TermsOfServicePage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.5 License Grant and Restrictions</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">5. License Grant and Restrictions</h2>
             
             <div className="space-y-4">
               <div>
@@ -219,7 +251,7 @@ export const TermsOfServicePage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.6 User Data Ownership and Responsibilities</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">6. User Data Ownership and Responsibilities</h2>
             
             <div className="space-y-4">
               <div>
@@ -252,7 +284,7 @@ export const TermsOfServicePage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.9 Beta Products and Services</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">9. Beta Products and Services</h2>
             
             <div className="space-y-4">
               <div>
@@ -292,7 +324,7 @@ export const TermsOfServicePage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.10 Federal Contractor Specific Terms</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">10. Federal Contractor Specific Terms</h2>
             
             <div className="space-y-4">
               <div>
@@ -335,7 +367,7 @@ export const TermsOfServicePage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.12 Payment Terms</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">12. Payment Terms</h2>
             
             <div className="space-y-4">
               <div>
@@ -378,7 +410,7 @@ export const TermsOfServicePage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.13 Term and Termination</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">13. Term and Termination</h2>
             
             <div className="space-y-4">
               <div>
@@ -421,7 +453,7 @@ export const TermsOfServicePage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.14 Warranties and Disclaimers</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">14. Warranties and Disclaimers</h2>
             
             <div className="space-y-4">
               <div>
@@ -463,7 +495,7 @@ export const TermsOfServicePage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.15 Limitation of Liability</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">15. Limitation of Liability</h2>
             
             <div className="space-y-4">
               <div>
@@ -491,7 +523,7 @@ export const TermsOfServicePage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.16 Indemnification</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">16. Indemnification</h2>
             <p className="text-gray-600 dark:text-gray-200">
               You agree to indemnify, defend, and hold harmless ERMITS LLC, its affiliates, officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, costs, or expenses (including reasonable attorneys' fees) arising out of or relating to: (a) your use of the Services; (b) your violation of these Terms; (c) your violation of any third-party rights; or (d) your User Data.
             </p>
@@ -506,7 +538,7 @@ export const TermsOfServicePage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.17 Force Majeure</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">17. Force Majeure</h2>
             <p className="text-gray-600 dark:text-gray-200">
               ERMITS shall not be liable for any failure or delay in performance under these Terms due to circumstances beyond its reasonable control, including but not limited to acts of God, natural disasters, war, terrorism, labor disputes, government actions, internet or telecommunications failures, or cyberattacks.
             </p>
@@ -521,10 +553,39 @@ export const TermsOfServicePage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.18 Governing Law</h2>
-            <p className="text-gray-600 dark:text-gray-200">
-              These Terms shall be governed by and construed in accordance with the laws of the State of Delaware, United States, without regard to its conflict of law provisions. The United Nations Convention on Contracts for the International Sale of Goods does not apply to these Terms.
-            </p>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">20. Governing Law and Dispute Resolution</h2>
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">20.1 Governing Law</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  These Terms are governed by and construed in accordance with the laws of the District of Columbia, United States, without regard to conflict of law principles. The United Nations Convention on Contracts for the International Sale of Goods does not apply.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">20.2 Jurisdiction and Venue</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  Subject to the arbitration provision below, any legal action or proceeding relating to these Terms shall be brought exclusively in the federal or state courts located in Washington, D.C. You consent to the personal jurisdiction of such courts and waive any objection to venue.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">20.3 Binding Arbitration</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">
+                  Any dispute, controversy, or claim arising out of or relating to these Terms or the breach, termination, enforcement, interpretation, or validity thereof (collectively, "Disputes") shall be resolved by binding arbitration administered by the American Arbitration Association (AAA) under its Commercial Arbitration Rules.
+                </p>
+                <p className="text-gray-600 dark:text-gray-200 mb-2"><strong>Arbitration Procedures:</strong></p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>Arbitration shall be conducted in Washington, D.C.</li>
+                  <li>Arbitration shall be by a single arbitrator</li>
+                  <li>Arbitrator shall apply District of Columbia law</li>
+                  <li>Each party bears its own costs and fees</li>
+                  <li>Arbitrator's decision is final and binding</li>
+                </ul>
+                <p className="text-gray-600 dark:text-gray-200 mt-3 font-semibold">Class Action Waiver:</p>
+                <p className="text-gray-600 dark:text-gray-200">
+                  YOU AND ERMITS AGREE THAT DISPUTES MUST BE BROUGHT ON AN INDIVIDUAL BASIS ONLY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS, REPRESENTATIVE, OR COLLECTIVE PROCEEDING. CLASS ARBITRATIONS, CLASS ACTIONS, AND REPRESENTATIVE ACTIONS ARE NOT PERMITTED.
+                </p>
+              </div>
+            </div>
           </Card>
         </motion.div>
 
@@ -535,23 +596,6 @@ export const TermsOfServicePage: React.FC = () => {
           transition={{ delay: 0.79 }}
           className="mb-8"
         >
-          <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.19 Dispute Resolution</h2>
-            <div className="space-y-4">
-              <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">1.19.1 Informal Resolution</h3>
-                <p className="text-gray-600 dark:text-gray-200">
-                  Before initiating formal dispute resolution, you agree to contact ERMITS at contact@ermits.com to attempt to resolve the dispute informally. ERMITS will attempt to resolve disputes in good faith within 30 days.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">1.19.2 Binding Arbitration</h3>
-                <p className="text-gray-600 dark:text-gray-200">
-                  If informal resolution fails, disputes shall be resolved through binding arbitration administered by the American Arbitration Association (AAA) under its Commercial Arbitration Rules. Arbitration shall take place in Delaware, United States. You waive any right to a jury trial or to participate in class action proceedings.
-                </p>
-              </div>
-            </div>
-          </Card>
         </motion.div>
 
         {/* Modifications */}
@@ -562,7 +606,7 @@ export const TermsOfServicePage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.20 Modifications to Terms</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">19. Modifications to Services and Terms</h2>
             <p className="text-gray-600 dark:text-gray-200 mb-2">
               ERMITS reserves the right to modify these Terms at any time. Material changes will be communicated via email and in-app notification at least 30 days before they take effect. Continued use of Services after changes constitutes acceptance of modified Terms.
             </p>
@@ -580,7 +624,7 @@ export const TermsOfServicePage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.21 Severability</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">21. General Provisions</h2>
             <p className="text-gray-600 dark:text-gray-200">
               If any provision of these Terms is found to be invalid, illegal, or unenforceable, the remaining provisions shall remain in full force and effect. The invalid provision shall be replaced with a valid provision that most closely reflects the intent of the original provision.
             </p>
@@ -595,7 +639,7 @@ export const TermsOfServicePage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">1.22 Contact Information</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">22. Contact Information</h2>
             
             <div className="space-y-4">
               <div>
@@ -611,6 +655,28 @@ export const TermsOfServicePage: React.FC = () => {
                 <h3 className="font-semibold mb-2 dark:text-white">For technical support inquiries:</h3>
                 <p className="text-gray-600 dark:text-gray-200">
                   Email: <a href="mailto:contact@ermits.com" className="text-navy dark:text-silver hover:underline">contact@ermits.com</a>
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold mb-2 dark:text-white">For privacy inquiries:</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  Email: <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a>
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold mb-2 dark:text-white">For compliance and legal inquiries:</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  Email: <a href="mailto:legal@ermits.com" className="text-navy dark:text-silver hover:underline">legal@ermits.com</a>
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold mb-2 dark:text-white">For advisory services inquiries:</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  Email: <a href="mailto:advisory@ermits.com" className="text-navy dark:text-silver hover:underline">advisory@ermits.com</a><br />
+                  Website: <a href="https://www.ermits-advisory.com" className="text-navy dark:text-silver hover:underline" target="_blank" rel="noopener noreferrer">www.ermits-advisory.com</a>
                 </p>
               </div>
             </div>
