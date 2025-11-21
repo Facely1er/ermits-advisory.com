@@ -50,7 +50,7 @@ VITE_STRIPE_PRICE_STEEL_PREMIUM
 
 **Value:**
 ```
-price_1SU74XAjb9YEbEboc4sLuKtV
+price_1SVi4vAjb9YEbEbowE66I8GK
 ```
 
 **Environments:** ✅ Production, ✅ Preview, ✅ Development
@@ -65,7 +65,7 @@ STRIPE_PRICE_STEEL_PREMIUM
 
 **Value:**
 ```
-price_1SU74XAjb9YEbEboc4sLuKtV
+price_1SVi4vAjb9YEbEbowE66I8GK
 ```
 
 **Environments:** ✅ Production, ✅ Preview, ✅ Development
@@ -80,7 +80,7 @@ VITE_STRIPE_PRICE_VCISO_KIT
 
 **Value:**
 ```
-price_1SU74YAjb9YEbEbohKsi0HZO
+price_1SVi4vAjb9YEbEboXotfQmIt
 ```
 
 **Environments:** ✅ Production, ✅ Preview, ✅ Development
@@ -95,7 +95,7 @@ STRIPE_PRICE_VCISO_KIT
 
 **Value:**
 ```
-price_1SU74YAjb9YEbEbohKsi0HZO
+price_1SVi4vAjb9YEbEboXotfQmIt
 ```
 
 **Environments:** ✅ Production, ✅ Preview, ✅ Development
@@ -110,7 +110,7 @@ VITE_STRIPE_PRICE_DASHBOARD_TEMPLATE
 
 **Value:**
 ```
-price_1SU74YAjb9YEbEboGzeh3o78
+price_1SVi4wAjb9YEbEbotCv0xg05
 ```
 
 **Environments:** ✅ Production, ✅ Preview, ✅ Development
@@ -125,16 +125,44 @@ STRIPE_PRICE_DASHBOARD_TEMPLATE
 
 **Value:**
 ```
-price_1SU74YAjb9YEbEboGzeh3o78
+price_1SVi4wAjb9YEbEbotCv0xg05
+```
+
+---
+
+### 9️⃣ vCISO Professional Price ID (Frontend) ⭐ NEW
+**Variable Name:**
+```
+VITE_STRIPE_PRICE_VCISO_PROFESSIONAL
+```
+
+**Value:**
+```
+price_1SVi4wAjb9YEbEbol5NRVRWs
 ```
 
 **Environments:** ✅ Production, ✅ Preview, ✅ Development
 
 ---
 
-## ⚠️ vCISO Professional (Skip for now - needs product creation)
+### 🔟 vCISO Professional Price ID (Backend) ⭐ NEW
+**Variable Name:**
+```
+STRIPE_PRICE_VCISO_PROFESSIONAL
+```
 
-This product needs to be created in Stripe first. Skip this until you create the product.
+**Value:**
+```
+price_1SVi4wAjb9YEbEbol5NRVRWs
+```
+
+**Environments:** ✅ Production, ✅ Preview, ✅ Development
+
+---
+
+## ✅ vCISO Professional - NOW AVAILABLE!
+
+The vCISO Professional product has been created in Stripe. Add these variables:
 
 ---
 
@@ -155,7 +183,7 @@ This product needs to be created in Stripe first. Skip this until you create the
    - Check all three boxes: **Production**, **Preview**, **Development**
    - Click **Save**
 
-4. **Repeat for all 8 variables above**
+4. **Repeat for all 10 variables above** (including vCISO Professional)
 
 5. **Redeploy:**
    - Go to **Deployments** tab
@@ -171,7 +199,7 @@ After adding all variables, verify:
 
 - [ ] `VITE_STRIPE_PUBLISHABLE_KEY` added
 - [ ] `STRIPE_SECRET_KEY` added
-- [ ] All Price ID variables added (6 total)
+- [ ] All Price ID variables added (8 total, including vCISO Professional)
 - [ ] All variables set for Production, Preview, and Development
 - [ ] Deployment redeployed
 
