@@ -67,20 +67,35 @@ const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
  */
 async function fetchCISAKEV(): Promise<CISAKEVEntry[]> {
   try {
-    const response = await fetch('https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json', {
-      headers: {
-        'Accept': 'application/json',
-      },
-    });
+    // Add timeout to prevent hanging requests
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
     
-    if (!response.ok) {
-      throw new Error(`CISA KEV API error: ${response.status}`);
+    try {
+      const response = await fetch('https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json', {
+        headers: {
+          'Accept': 'application/json',
+        },
+        signal: controller.signal,
+      });
+      
+      clearTimeout(timeoutId);
+      
+      if (!response.ok) {
+        // Silently return empty array on any error
+        return [];
+      }
+      
+      const data = await response.json();
+      return data.vulnerabilities || [];
+    } catch (fetchError) {
+      clearTimeout(timeoutId);
+      throw fetchError;
     }
-    
-    const data = await response.json();
-    return data.vulnerabilities || [];
   } catch (error) {
-    console.error('Error fetching CISA KEV data:', error);
+    // Silently handle all errors (network errors, CORS, timeouts, etc.)
+    // These are expected in some environments and the app should continue working
+    // No logging in production to avoid console noise
     return [];
   }
 }
@@ -107,19 +122,15 @@ async function fetchRecentNVDVulnerabilities(): Promise<NVDFeedEntry[]> {
     });
     
     if (!response.ok) {
-      // If rate limited or error, return empty array (will use CISA data only)
-      if (response.status === 429 || response.status >= 500) {
-        console.warn('NVD API rate limited or unavailable, using CISA data only');
-        return [];
-      }
-      throw new Error(`NVD API error: ${response.status}`);
+      // Silently return empty array on any error (rate limited, server error, etc.)
+      return [];
     }
     
     const data = await response.json();
     return data.vulnerabilities || [];
   } catch (error) {
-    console.error('Error fetching NVD data:', error);
-    // Return empty array on error - component will still show CISA data
+    // Silently return empty array on error - component will still show CISA data
+    // No logging to avoid console noise in production
     return [];
   }
 }
@@ -208,9 +219,8 @@ export async function getThreatIntelligence(): Promise<ThreatIntelligenceData> {
 
     return result;
   } catch (error) {
-    console.error('Error fetching threat intelligence:', error);
-    
-    // Return fallback data if API fails
+    // Silently return fallback data if API fails
+    // No logging to avoid console noise in production
     return {
       activeThreats: 0,
       recentVulnerabilities: 0,

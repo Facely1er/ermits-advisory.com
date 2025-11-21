@@ -8,7 +8,7 @@ import {
   Users, 
   Info, ArrowRight, ExternalLink, Link as LinkIcon,
   Lightbulb, BarChart2, FileText, Search, Activity, Presentation, Shield,
-  TrendingUp, Server, Leaf, Scale, Radar
+  TrendingUp, Server, Leaf, Scale, Radar, Download
 } from 'lucide-react';
 import backgroundNodeAnalysis from '../assets/background-node-analysis.png';
 import { getSteelAssessmentFromStorage, watchSteelStorage } from '../services/steelAssessmentService';
