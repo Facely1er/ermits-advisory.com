@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import {
-  Download, Save, CheckCircle, XCircle, AlertTriangle,
-  TrendingUp, Lock, BarChart3, FileText
+  Download, Save, XCircle, AlertTriangle,
+  Lock, BarChart3, FolderOpen, Trash2, Loader
 } from 'lucide-react';
+import { generateCompliancePDF } from '../utils/pdfGenerator';
+import {
+  saveAssessment,
+  getSavedAssessments,
+  deleteAssessment,
+  SavedAssessment
+} from '../utils/storage';
 
 interface Control {
   id: string;
@@ -53,6 +60,9 @@ export const ComplianceGapAnalysisPremium: React.FC = () => {
   const [organizationName, setOrganizationName] = useState('');
   const [assessmentDate, setAssessmentDate] = useState(new Date().toISOString().split('T')[0]);
   const [selectedFramework, setSelectedFramework] = useState('NIST CSF');
+  const [savedAssessments, setSavedAssessments] = useState<SavedAssessment[]>([]);
+  const [showSavedList, setShowSavedList] = useState(false);
+  const [saving, setSaving] = useState(false);
 
   const updateControlScore = (id: string, score: number) => {
     setControls(controls.map(c => c.id === id ? { ...c, score } : c));
@@ -94,12 +104,36 @@ export const ComplianceGapAnalysisPremium: React.FC = () => {
   const criticalGaps = controls.filter(c => c.score <= 2);
   const needsImprovement = controls.filter(c => c.score === 3);
 
+  // Load saved assessments on mount and when premium mode changes
+  useEffect(() => {
+    if (isPremium) {
+      const saved = getSavedAssessments('compliance');
+      setSavedAssessments(saved);
+    }
+  }, [isPremium]);
+
   const handleExportPDF = () => {
     if (!isPremium) {
       alert('PDF Export is a Premium feature. Upgrade to access!');
       return;
     }
-    alert('Exporting comprehensive gap analysis report...');
+    
+    try {
+      generateCompliancePDF({
+        organizationName,
+        assessmentDate,
+        selectedFramework,
+        controls,
+        maturityPercentage,
+        scoreDistribution,
+        criticalGaps,
+        needsImprovement,
+        totalControls
+      });
+    } catch (error) {
+      console.error('PDF generation error:', error);
+      alert('Error generating PDF. Please try again.');
+    }
   };
 
   const handleSave = () => {
@@ -107,7 +141,54 @@ export const ComplianceGapAnalysisPremium: React.FC = () => {
       alert('Save functionality is a Premium feature. Upgrade to access!');
       return;
     }
-    alert('Gap analysis saved successfully!');
+    
+    setSaving(true);
+    
+    try {
+      const assessmentData = {
+        organizationName,
+        assessmentDate,
+        selectedFramework,
+        controls,
+        maturityPercentage,
+        scoreDistribution,
+        criticalGaps,
+        needsImprovement,
+        totalControls
+      };
+      
+      saveAssessment('compliance', assessmentData, organizationName || undefined);
+      const updated = getSavedAssessments('compliance');
+      setSavedAssessments(updated);
+      
+      setTimeout(() => {
+        setSaving(false);
+        alert(`Assessment saved successfully! (${updated.length} total saved)`);
+      }, 300);
+    } catch (error) {
+      setSaving(false);
+      alert('Error saving assessment. Please try again.');
+      console.error('Save error:', error);
+    }
+  };
+
+  const handleLoadAssessment = (assessment: SavedAssessment) => {
+    const data = assessment.data;
+    setOrganizationName(data.organizationName || '');
+    setAssessmentDate(data.assessmentDate || new Date().toISOString().split('T')[0]);
+    setSelectedFramework(data.selectedFramework || 'NIST CSF');
+    setControls(data.controls || nistControls);
+    setShowSavedList(false);
+    alert(`Assessment "${assessment.name}" loaded successfully!`);
+  };
+
+  const handleDeleteAssessment = (id: string) => {
+    if (confirm('Are you sure you want to delete this assessment?')) {
+      deleteAssessment('compliance', id);
+      const updated = getSavedAssessments('compliance');
+      setSavedAssessments(updated);
+      alert('Assessment deleted successfully!');
+    }
   };
 
   const PremiumBadge = () => (
@@ -141,6 +222,8 @@ export const ComplianceGapAnalysisPremium: React.FC = () => {
             <span className="text-sm text-gray-600 dark:text-gray-400">Try Demo Mode</span>
             <button
               onClick={() => setIsPremium(!isPremium)}
+              aria-label={isPremium ? 'Disable Premium Mode' : 'Enable Premium Mode'}
+              title={isPremium ? 'Disable Premium Mode' : 'Enable Premium Mode'}
               className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
                 isPremium ? 'bg-gradient-to-r from-yellow-400 to-orange-500' : 'bg-gray-300 dark:bg-gray-600'
               }`}
@@ -180,6 +263,8 @@ export const ComplianceGapAnalysisPremium: React.FC = () => {
                       type="date"
                       value={assessmentDate}
                       onChange={(e) => setAssessmentDate(e.target.value)}
+                      aria-label="Assessment Date"
+                      title="Assessment Date"
                       className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-dark-card text-gray-900 dark:text-white"
                     />
                   </div>
@@ -190,6 +275,8 @@ export const ComplianceGapAnalysisPremium: React.FC = () => {
                   <select
                     value={selectedFramework}
                     onChange={(e) => setSelectedFramework(e.target.value)}
+                    aria-label="Framework"
+                    title="Framework"
                     className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-dark-card text-gray-900 dark:text-white"
                     disabled={!isPremium}
                   >
@@ -235,6 +322,8 @@ export const ComplianceGapAnalysisPremium: React.FC = () => {
                             max="5"
                             value={control.score}
                             onChange={(e) => updateControlScore(control.id, parseInt(e.target.value))}
+                            aria-label={`${control.id} - ${control.description} - Score: ${control.score}`}
+                            title={`${control.id} - ${control.description} - Score: ${control.score}`}
                             className="w-full"
                           />
                           <div className="flex justify-between text-xs text-gray-600 dark:text-gray-400 mt-1">
@@ -252,14 +341,15 @@ export const ComplianceGapAnalysisPremium: React.FC = () => {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex gap-4 flex-wrap">
+              <div className="flex gap-4 flex-wrap mb-4">
                 <Button
                   variant="primary"
-                  icon={<Save size={20} />}
+                  icon={saving ? <Loader size={20} className="animate-spin" /> : <Save size={20} />}
                   onClick={handleSave}
                   className="relative"
+                  disabled={saving}
                 >
-                  Save Assessment
+                  {saving ? 'Saving...' : 'Save Assessment'}
                   {!isPremium && (
                     <div className="absolute -top-2 -right-2">
                       <PremiumBadge />
@@ -279,7 +369,59 @@ export const ComplianceGapAnalysisPremium: React.FC = () => {
                     </div>
                   )}
                 </Button>
+                {isPremium && savedAssessments.length > 0 && (
+                  <Button
+                    variant="outline"
+                    icon={<FolderOpen size={20} />}
+                    onClick={() => setShowSavedList(!showSavedList)}
+                  >
+                    Saved Assessments ({savedAssessments.length})
+                  </Button>
+                )}
               </div>
+
+              {/* Saved Assessments List */}
+              {isPremium && showSavedList && savedAssessments.length > 0 && (
+                <Card variant="glass" padding="md" className="mb-4">
+                  <h4 className="text-lg font-bold mb-3 dark:text-white">Saved Assessments</h4>
+                  <div className="space-y-2 max-h-60 overflow-y-auto">
+                    {savedAssessments.map((assessment) => (
+                      <div
+                        key={assessment.id}
+                        className="flex items-center justify-between p-3 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700"
+                      >
+                        <div className="flex-1">
+                          <div className="font-semibold text-sm dark:text-white">{assessment.name}</div>
+                          <div className="text-xs text-gray-500 dark:text-gray-400">
+                            {new Date(assessment.timestamp).toLocaleString()}
+                          </div>
+                        </div>
+                        <div className="flex gap-2">
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            icon={<FolderOpen size={16} />}
+                            onClick={() => handleLoadAssessment(assessment)}
+                            title="Load assessment"
+                          >
+                            Load
+                          </Button>
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            icon={<Trash2 size={16} />}
+                            onClick={() => handleDeleteAssessment(assessment.id)}
+                            title="Delete assessment"
+                            className="text-red-600 hover:text-red-700"
+                          >
+                            Delete
+                          </Button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </Card>
+              )}
             </Card>
           </div>
 

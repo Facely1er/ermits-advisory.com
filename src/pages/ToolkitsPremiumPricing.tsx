@@ -37,12 +37,9 @@ export const ToolkitsPremiumPricing: React.FC = () => {
           '✨ Interactive gap analysis tool',
           '✨ Auto-scoring and calculations',
           '✨ Progress dashboard with charts',
-          '✨ Save unlimited assessments',
-          '✨ Export PDF reports',
-          '✨ Multi-framework switching',
-          '✨ Remediation project tracker',
-          '✨ Multi-user collaboration',
-          '✨ CyberCorrect integration',
+          '✨ Save assessments (local storage)',
+          '✨ Export assessment reports',
+          '✨ NIST CSF framework (more coming soon)',
           '✨ Priority email support'
         ]
       },
@@ -71,15 +68,9 @@ export const ToolkitsPremiumPricing: React.FC = () => {
         lifetime: 599,
         features: [
           'Everything in Basic, plus:',
-          '✨ Interactive incident tracker',
-          '✨ Real-time timeline builder',
-          '✨ Auto-filled communication templates',
-          '✨ Evidence collection workflow',
-          '✨ Post-incident report generator',
-          '✨ Tabletop exercise simulator',
-          '✨ Incident history database',
-          '✨ Team collaboration features',
-          '✨ CyberSoluce integration',
+          '✨ Interactive incident response tool (coming soon)',
+          '✨ Save assessments (local storage)',
+          '✨ Export assessment reports',
           '✨ Priority email support'
         ]
       },
@@ -110,13 +101,9 @@ export const ToolkitsPremiumPricing: React.FC = () => {
           'Everything in Basic, plus:',
           '✨ Interactive risk scoring calculator',
           '✨ Automatic tier assignment',
-          '✨ Vendor portal for questionnaires',
           '✨ Risk dashboard with visualizations',
-          '✨ Vendor comparison matrix',
-          '✨ Contract clause builder',
-          '✨ Portfolio analytics',
-          '✨ Save unlimited assessments',
-          '✨ VendorSoluce integration',
+          '✨ Save assessments (local storage)',
+          '✨ Export assessment reports',
           '✨ Priority email support'
         ]
       },

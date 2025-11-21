@@ -35,18 +35,13 @@ export const VcisoProfessional: React.FC = () => {
         return;
       } catch (error: unknown) {
         console.error('Stripe checkout error:', error);
-        // Fall through to Gumroad fallback
+        setLoading(false);
+        const errorMessage = error instanceof Error ? error.message : 'Stripe checkout is currently unavailable';
+        alert(`Checkout Error: ${errorMessage}\n\nPlease try again or contact support.`);
       }
-    }
-    
-    // Fallback to Gumroad (if Stripe not configured or failed)
-    setLoading(false);
-    const useGumroad = hasStripe 
-      ? confirm('Stripe checkout is currently unavailable. Would you like to use Gumroad checkout instead?')
-      : true; // Auto-use Gumroad if Stripe not configured
-    
-    if (useGumroad) {
-      window.open('https://gumroad.com/ermits/vciso-professional', '_blank');
+    } else {
+      setLoading(false);
+      alert('Stripe checkout is not configured. Please contact support.');
     }
   };
 
@@ -553,19 +548,6 @@ export const VcisoProfessional: React.FC = () => {
                   {loading ? 'Processing...' : 'Buy with Stripe - $499'}
                 </Button>
               ) : null}
-              <Button
-                variant={hasStripe ? "outline" : "secondary"}
-                size="lg"
-                onClick={() => window.open('https://gumroad.com/ermits/vciso-professional', '_blank')}
-                icon={<Download size={18} />}
-                iconPosition="right"
-                className={hasStripe 
-                  ? "bg-white/20 text-white border-white/40 hover:bg-white/30 dark:bg-white/10 dark:text-white dark:border-white/30 dark:hover:bg-white/20 font-semibold transition-colors"
-                  : "bg-white text-navy hover:bg-gray-100 dark:bg-white dark:text-navy dark:hover:bg-silver font-semibold shadow-lg transition-colors"
-                }
-              >
-                {hasStripe ? 'Buy with Gumroad' : 'Purchase Professional Kit - $499'}
-              </Button>
               <Button
                 variant="outline"
                 size="lg"

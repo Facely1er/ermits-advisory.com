@@ -66,17 +66,17 @@ export const PRODUCTS: Record<ProductId, Product> = {
   'vciso-kit': {
     id: 'vciso-kit',
     name: 'vCISO Starter Kit',
-    description: 'Complete vCISO toolkit with 37 ready-to-use security policies, incident response playbooks, board materials, and compliance checklists. Includes Word/PDF templates for easy customization.',
+    description: 'Complete vCISO starter toolkit with 27 ready-to-use templates: 10 security policies, 5 basic incident response playbooks, 4 board materials, and 8 compliance checklists. Perfect for starting vCISO services. For detailed operational playbooks, see specialized toolkits.',
     price: 299,
     currency: 'USD',
     stripePriceId: import.meta.env.VITE_STRIPE_PRICE_VCISO_KIT || 'price_1SVi4vAjb9YEbEboXotfQmIt',
     category: 'toolkit',
     features: [
-      '37 Ready-to-Use Templates',
+      '27 Ready-to-Use Templates',
       '10 Security Policies',
       '5 Incident Response Playbooks',
       '4 Board Presentation Templates',
-      '8+ Compliance Checklists',
+      '8 Compliance Checklists',
       'Word/PDF Format'
     ]
   },
@@ -119,46 +119,45 @@ export const PRODUCTS: Record<ProductId, Product> = {
   'compliance-toolkit-basic': {
     id: 'compliance-toolkit-basic',
     name: 'Compliance Toolkit Basic',
-    description: 'Complete compliance toolkit with gap analysis templates, control mapping matrices, evidence checklists (200+ items), and audit preparation guides. Covers all 7 major frameworks (NIST, ISO 27001, SOC 2, PCI DSS, HIPAA, GDPR, CMMC).',
+    description: 'Comprehensive compliance program management with gap analysis templates, control mapping matrices, and evidence collection systems. More detailed than vCISO Kit basic checklists. Supports NIST, ISO 27001, SOC 2, HIPAA, GDPR, CMMC, and PCI-DSS.',
     price: 199,
     currency: 'USD',
     stripePriceId: import.meta.env.VITE_STRIPE_PRICE_COMPLIANCE_BASIC || '',
     category: 'toolkit',
     features: [
-      'Gap Analysis Templates',
-      'Control Mapping Matrices (50+ controls)',
-      'Evidence Collection Checklists (200+ items)',
-      'Audit Preparation Guides',
+      '4 Comprehensive Template Files',
+      'Gap Analysis Template',
+      'Control Mapping Matrix',
+      'Evidence Collection Checklist',
+      'Getting Started Guide',
       'All 7 Frameworks (NIST, ISO, SOC 2, PCI, HIPAA, GDPR, CMMC)',
-      'Downloadable Markdown Templates'
+      'Downloadable Markdown Format',
+      'One-time Purchase, Yours Forever'
     ]
   },
   'compliance-toolkit-premium-annual': {
     id: 'compliance-toolkit-premium-annual',
     name: 'Compliance Toolkit Premium (Annual)',
-    description: 'Everything in Basic PLUS interactive gap analysis tool, auto-scoring, progress dashboard, unlimited assessments, PDF exports, multi-framework switching, remediation tracker, collaboration features, and CyberCorrect integration.',
+    description: 'Interactive web-based compliance gap analysis tool with auto-scoring, progress dashboard, assessment saving, report export, and all basic templates included. Annual subscription.',
     price: 499,
     currency: 'USD',
     stripePriceId: import.meta.env.VITE_STRIPE_PRICE_COMPLIANCE_PREMIUM_ANNUAL || '',
     category: 'toolkit',
     features: [
-      'Everything in Basic',
-      'Interactive Gap Analysis Tool',
+      'Everything in Basic Templates (included)',
+      'Interactive Gap Analysis Web Tool',
       'Auto-Scoring and Calculations',
       'Progress Dashboard with Charts',
-      'Save Unlimited Assessments',
-      'Export PDF Reports',
-      'Multi-Framework Switching',
-      'Remediation Project Tracker',
-      'Multi-User Collaboration',
-      'CyberCorrect Integration',
+      'Save Assessments (Local Storage)',
+      'Export Assessment Reports (Text Format)',
+      'NIST CSF Framework (Additional frameworks coming soon)',
       'Priority Email Support'
     ]
   },
   'compliance-toolkit-premium-lifetime': {
     id: 'compliance-toolkit-premium-lifetime',
     name: 'Compliance Toolkit Premium (Lifetime)',
-    description: 'Everything in Premium Annual with lifetime access - no recurring fees. All premium features forever.',
+    description: 'Everything in Premium Annual with lifetime access - no recurring fees. All premium interactive features and all future updates included forever.',
     price: 899,
     currency: 'USD',
     stripePriceId: import.meta.env.VITE_STRIPE_PRICE_COMPLIANCE_PREMIUM_LIFETIME || '',
@@ -174,39 +173,35 @@ export const PRODUCTS: Record<ProductId, Product> = {
   'incident-response-toolkit-basic': {
     id: 'incident-response-toolkit-basic',
     name: 'Incident Response Toolkit Basic',
-    description: 'Complete incident response toolkit with ransomware response playbook, communication templates (12+), incident tracking forms, 6 scenario-specific playbooks, and regulatory notification templates.',
+    description: 'Comprehensive operational incident response playbooks, communication templates, and tracking forms. Detailed tactical playbooks for security operations teams. More detailed than vCISO Kit playbooks.',
     price: 149,
     currency: 'USD',
     stripePriceId: import.meta.env.VITE_STRIPE_PRICE_INCIDENT_BASIC || '',
     category: 'toolkit',
     features: [
-      'Ransomware Response Playbook',
+      '4 Comprehensive Template Files',
+      'Detailed Ransomware Response Playbook',
       'Communication Templates (12+)',
-      'Incident Tracking Forms',
-      '6 Scenario-Specific Playbooks',
-      'Regulatory Notification Templates',
-      'Downloadable Markdown Templates'
+      'Incident Tracking Form',
+      'Getting Started Guide',
+      '6+ Scenario-Specific Playbooks',
+      'Downloadable Markdown Format',
+      'One-time Purchase, Yours Forever'
     ]
   },
   'incident-response-toolkit-premium-annual': {
     id: 'incident-response-toolkit-premium-annual',
     name: 'Incident Response Toolkit Premium (Annual)',
-    description: 'Everything in Basic PLUS interactive incident tracker, real-time timeline builder, auto-filled communication templates, evidence collection workflow, post-incident report generator, tabletop exercise simulator, and CyberSoluce integration.',
+    description: 'Interactive web-based incident response tool (coming soon) with assessment saving, report export, and all basic templates included. Annual subscription.',
     price: 349,
     currency: 'USD',
     stripePriceId: import.meta.env.VITE_STRIPE_PRICE_INCIDENT_PREMIUM_ANNUAL || '',
     category: 'toolkit',
     features: [
-      'Everything in Basic',
-      'Interactive Incident Tracker',
-      'Real-Time Timeline Builder',
-      'Auto-Filled Communication Templates',
-      'Evidence Collection Workflow',
-      'Post-Incident Report Generator',
-      'Tabletop Exercise Simulator',
-      'Incident History Database',
-      'Team Collaboration Features',
-      'CyberSoluce Integration',
+      'Everything in Basic Templates (included)',
+      'Interactive Incident Response Tool (Coming Soon)',
+      'Save Assessments (Local Storage)',
+      'Export Assessment Reports (Text Format)',
       'Priority Email Support'
     ]
   },
@@ -228,37 +223,37 @@ export const PRODUCTS: Record<ProductId, Product> = {
   'vendor-risk-toolkit-basic': {
     id: 'vendor-risk-toolkit-basic',
     name: 'Vendor Risk Toolkit Basic',
-    description: 'Complete vendor risk management toolkit with security questionnaire (150 questions), risk scoring framework, contract security clauses, vendor assessment templates, and 4-tier risk management approach.',
+    description: 'Comprehensive vendor risk management system with 150-question security questionnaire, risk scoring framework, and contract clauses. More comprehensive than vCISO Kit basic vendor assessment.',
     price: 179,
     currency: 'USD',
     stripePriceId: import.meta.env.VITE_STRIPE_PRICE_VENDOR_BASIC || '',
     category: 'toolkit',
     features: [
-      'Security Questionnaire (150 Questions)',
-      'Risk Scoring Framework',
+      '3 Comprehensive Template Files',
+      'Vendor Security Questionnaire (150 questions)',
+      'Vendor Risk Scoring Framework',
+      'Getting Started Guide',
       'Contract Security Clauses',
-      'Vendor Assessment Templates',
       '4-Tier Risk Management Approach',
-      'Downloadable Markdown Templates'
+      'Downloadable Markdown Format',
+      'One-time Purchase, Yours Forever'
     ]
   },
   'vendor-risk-toolkit-premium-annual': {
     id: 'vendor-risk-toolkit-premium-annual',
     name: 'Vendor Risk Toolkit Premium (Annual)',
-    description: 'Everything in Basic PLUS interactive risk calculator, vendor portal, analytics dashboard, automated scoring, vendor database, and VendorSoluce integration.',
+    description: 'Interactive web-based vendor risk scoring tool with automated calculations, analytics dashboard, assessment saving, report export, and all basic templates included. Annual subscription.',
     price: 449,
     currency: 'USD',
     stripePriceId: import.meta.env.VITE_STRIPE_PRICE_VENDOR_PREMIUM_ANNUAL || '',
     category: 'toolkit',
     features: [
-      'Everything in Basic',
-      'Interactive Risk Calculator',
-      'Vendor Portal Access',
-      'Analytics Dashboard',
-      'Automated Risk Scoring',
-      'Vendor Database',
-      'Team Collaboration',
-      'VendorSoluce Integration',
+      'Everything in Basic Templates (included)',
+      'Interactive Risk Scoring Calculator',
+      'Automatic Tier Assignment',
+      'Analytics Dashboard with Visualizations',
+      'Save Assessments (Local Storage)',
+      'Export Assessment Reports (Text Format)',
       'Priority Email Support'
     ]
   },
@@ -280,23 +275,24 @@ export const PRODUCTS: Record<ProductId, Product> = {
   'toolkit-bundle-basic': {
     id: 'toolkit-bundle-basic',
     name: 'Toolkit Bundle Basic',
-    description: 'Get all three basic toolkits (Compliance, Incident Response, Vendor Risk) in one bundle. Save $28 compared to buying individually.',
+    description: 'Get all three basic template toolkits (Compliance, Incident Response, Vendor Risk) in one bundle. Save $28 compared to buying individually. Includes all downloadable templates from all three toolkits.',
     price: 499,
     currency: 'USD',
     stripePriceId: import.meta.env.VITE_STRIPE_PRICE_BUNDLE_BASIC || '',
     category: 'toolkit',
     features: [
-      'Compliance Toolkit Basic ($199 value)',
-      'Incident Response Toolkit Basic ($149 value)',
-      'Vendor Risk Toolkit Basic ($179 value)',
-      'Save $28 vs. buying individually',
-      'All Basic Features Included'
+      'Compliance Toolkit Basic ($199 value) - 4 template files',
+      'Incident Response Toolkit Basic ($149 value) - 4 template files',
+      'Vendor Risk Toolkit Basic ($179 value) - 3 template files',
+      'Save $28 (6% discount) vs. buying individually',
+      'All 11 Template Files Included',
+      'One-time Purchase'
     ]
   },
   'toolkit-bundle-premium-annual': {
     id: 'toolkit-bundle-premium-annual',
     name: 'Toolkit Bundle Premium (Annual)',
-    description: 'Get all three premium toolkits (Annual) in one bundle. Save $298 compared to buying individually.',
+    description: 'Get all three premium interactive tools (Annual) in one bundle. Includes all interactive web tools plus all basic templates. Save $298 compared to buying individually.',
     price: 999,
     currency: 'USD',
     stripePriceId: import.meta.env.VITE_STRIPE_PRICE_BUNDLE_PREMIUM_ANNUAL || '',
@@ -305,14 +301,16 @@ export const PRODUCTS: Record<ProductId, Product> = {
       'Compliance Toolkit Premium Annual ($499 value)',
       'Incident Response Toolkit Premium Annual ($349 value)',
       'Vendor Risk Toolkit Premium Annual ($449 value)',
-      'Save $298 vs. buying individually',
-      'All Premium Features Included'
+      'All Basic Templates Included (from all 3 toolkits)',
+      'Save $298 (23% discount) vs. buying individually',
+      'All Premium Interactive Features',
+      'Annual Subscription'
     ]
   },
   'toolkit-bundle-premium-lifetime': {
     id: 'toolkit-bundle-premium-lifetime',
     name: 'Toolkit Bundle Premium (Lifetime)',
-    description: 'Get all three premium toolkits (Lifetime) in one bundle. Save $499 compared to buying individually. Lifetime access to all premium features.',
+    description: 'Get all three premium interactive tools (Lifetime) in one bundle. Includes all interactive web tools plus all basic templates. Lifetime access - no recurring fees. Save $499 compared to buying individually.',
     price: 1799,
     currency: 'USD',
     stripePriceId: import.meta.env.VITE_STRIPE_PRICE_BUNDLE_PREMIUM_LIFETIME || '',
@@ -321,8 +319,10 @@ export const PRODUCTS: Record<ProductId, Product> = {
       'Compliance Toolkit Premium Lifetime ($899 value)',
       'Incident Response Toolkit Premium Lifetime ($599 value)',
       'Vendor Risk Toolkit Premium Lifetime ($799 value)',
-      'Save $499 vs. buying individually',
-      'Lifetime Access to All Premium Features'
+      'All Basic Templates Included (from all 3 toolkits)',
+      'Save $499 (22% discount) vs. buying individually',
+      'Lifetime Access to All Premium Features',
+      'All Future Updates Included Forever'
     ]
   }
 };

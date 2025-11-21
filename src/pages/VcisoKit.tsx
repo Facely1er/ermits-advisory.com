@@ -40,15 +40,7 @@ export const VcisoKit: React.FC = () => {
       console.error('Checkout error:', error);
       const errorMessage = error instanceof Error ? error.message : 'Failed to start checkout. Please try again or contact support.';
       
-      // Show user-friendly error with option to use Gumroad
-      const useGumroad = confirm(
-        `Stripe checkout is currently unavailable.\n\nError: ${errorMessage}\n\nWould you like to use Gumroad checkout instead?`
-      );
-      
-      if (useGumroad) {
-        window.open('https://gumroad.com/ermits/vciso-kit', '_blank');
-      }
-      
+      alert(`Checkout Error: ${errorMessage}\n\nPlease try again or contact support.`);
       setLoading(false);
     }
   };
@@ -68,14 +60,9 @@ export const VcisoKit: React.FC = () => {
     } catch (error) {
       console.error('Stripe checkout error:', error);
       
-      // Fallback to Gumroad if Stripe failed
       setProfessionalLoading(false);
       const errorMessage = error instanceof Error ? error.message : 'Stripe checkout is currently unavailable';
-      const useGumroad = confirm(`${errorMessage}\n\nWould you like to use Gumroad checkout instead?`);
-      
-      if (useGumroad) {
-        window.open('https://gumroad.com/ermits/vciso-professional', '_blank');
-      }
+      alert(`Checkout Error: ${errorMessage}\n\nPlease try again or contact support.`);
     }
   };
   const [workflowStep, setWorkflowStep] = useState(0);
@@ -136,38 +123,53 @@ export const VcisoKit: React.FC = () => {
     }
   ];
 
-  // Templates Library
+  // Templates Library - All 27 Templates from vCISO Kit
   const templates = [
     {
-      category: 'Monthly Deliverables',
+      category: 'Security Policies (10 Documents)',
       items: [
-        { name: 'Monthly Executive Briefing Template', description: 'Complete monthly report template with all sections' },
-        { name: 'Quarterly Board Presentation', description: 'Board-ready presentation template' },
-        { name: 'Monthly Metrics Dashboard', description: 'Key performance indicators and metrics' }
+        { name: 'Information Security Policy', description: 'Foundational security governance and risk management framework' },
+        { name: 'Access Control Policy', description: 'Role-based access control (RBAC) and privileged access management' },
+        { name: 'Data Protection & Privacy Policy', description: 'GDPR/CCPA compliance and personal data handling' },
+        { name: 'Incident Response Policy', description: 'Detection procedures, severity classifications, and response team roles' },
+        { name: 'Business Continuity & Disaster Recovery', description: 'RTO/RPO definitions and test validation schedules' },
+        { name: 'Acceptable Use Policy', description: 'Authorized usage guidelines and prohibited activities' },
+        { name: 'Password Management Policy', description: 'Complexity requirements, rotation schedules, and MFA' },
+        { name: 'Remote Access Security Policy', description: 'VPN requirements and device security standards' },
+        { name: 'Third-Party Risk Management', description: 'Vendor assessment criteria and continuous monitoring' },
+        { name: 'Vendor Management Policy', description: 'Procurement security requirements and SLAs' }
       ]
     },
     {
-      category: 'Onboarding',
+      category: 'Incident Response Playbooks (5 Documents)',
       items: [
-        { name: 'Client Kickoff Agenda', description: '90-120 minute kickoff meeting template' },
-        { name: 'Discovery Call Template', description: 'Initial discovery call agenda and questions' },
-        { name: '30-Day Assessment Report', description: 'Comprehensive assessment report template' }
+        { name: 'Ransomware Response Playbook', description: 'Detection indicators, containment procedures, and recovery strategies' },
+        { name: 'Data Breach Response Playbook', description: 'Investigation procedures, evidence preservation, and regulatory notifications' },
+        { name: 'Credential Compromise Response', description: 'Identification procedures, password reset protocols, and MFA enforcement' },
+        { name: 'Malware Outbreak Response', description: 'Detection procedures, isolation protocols, and eradication steps' },
+        { name: 'Insider Threat Response', description: 'Suspicious activity indicators and investigation protocols' }
       ]
     },
     {
-      category: 'Governance',
+      category: 'Board Materials (4 Documents)',
       items: [
-        { name: 'Security Program Charter', description: 'Program foundation and charter template' },
-        { name: 'Risk Management Framework', description: 'Risk assessment methodology template' },
-        { name: 'Board Governance Program', description: 'Board reporting framework template' }
+        { name: 'Monthly Security Executive Summary', description: 'Key metrics dashboard, incidents, compliance status, and budget tracking' },
+        { name: 'Quarterly Board Briefing Presentation', description: 'Strategic risk overview, financial impact analysis, and ROI recommendations' },
+        { name: 'Annual Risk Assessment Report', description: 'Enterprise-wide risk profile, trend analysis, and forward-looking recommendations' },
+        { name: 'Crisis Communication Template', description: 'Stakeholder notification, media response framework, and executive talking points' }
       ]
     },
     {
-      category: 'Operations',
+      category: 'Compliance Checklists (8 Documents)',
       items: [
-        { name: 'Incident Response Plan', description: 'Complete IR plan template' },
-        { name: 'Policy Framework Template', description: '25+ policy templates' },
-        { name: 'Vendor Risk Assessment', description: 'Vendor evaluation template' }
+        { name: 'SOC 2 Type II Audit Checklist', description: 'Control categories, evidence requirements, and testing procedures' },
+        { name: 'ISO 27001 Implementation Checklist', description: '114 control requirements and implementation status tracking' },
+        { name: 'NIST Cybersecurity Framework Assessment', description: 'Function mapping and current state assessment' },
+        { name: 'GDPR Compliance Checklist', description: 'Article-by-article requirements and data processing agreements' },
+        { name: 'Vendor Security Assessment Form', description: 'Technical security questions, compliance certifications, and risk scoring' },
+        { name: 'Security Awareness Training Tracker', description: 'Training attendance log, completion percentages, and phishing results' },
+        { name: 'Penetration Testing Request for Proposal', description: 'Scope definition, deliverables specification, and budget guidelines' },
+        { name: 'Annual Security Roadmap Template', description: 'Strategic initiatives, timeline, dependencies, and success metrics' }
       ]
     }
   ];
@@ -188,7 +190,7 @@ export const VcisoKit: React.FC = () => {
             vCISO Starter Kit
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto mb-8">
-            Self-service toolkit with 37+ professional templates, playbooks, and delivery guides for vCISO practitioners
+            Self-service toolkit with 27 professional templates, playbooks, and delivery guides for vCISO practitioners
           </p>
           
           {/* Price Badge */}
@@ -235,7 +237,7 @@ export const VcisoKit: React.FC = () => {
               {/* Key Metrics */}
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
                 {[
-                  { value: '37+', label: 'Professional Templates', icon: FileText },
+                  { value: '27', label: 'Professional Templates', icon: FileText },
                   { value: '4', label: 'Template Categories', icon: Target },
                   { value: 'Instant', label: 'Digital Download', icon: Zap },
                   { value: '$299', label: 'One-Time Purchase', icon: DollarSign }
@@ -272,7 +274,7 @@ export const VcisoKit: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                   {[
                     {
-                      title: '37+ Professional Templates',
+                      title: '27 Professional Templates',
                       description: 'Ready-to-use templates for all vCISO service delivery needs',
                       icon: FileText
                     },
@@ -643,7 +645,7 @@ export const VcisoKit: React.FC = () => {
                 <FileText size={48} className="text-navy dark:text-silver mx-auto mb-4" />
                 <h2 className="text-3xl font-bold mb-2 dark:text-white">Template Library</h2>
                 <p className="text-gray-600 dark:text-gray-200 mb-4">
-                  37+ professional templates organized by category for vCISO service delivery
+                  27 professional templates organized by category for vCISO service delivery
                 </p>
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 rounded-full text-green-700 dark:text-green-400 text-sm font-semibold">
                   <CheckCircle size={16} />
@@ -710,7 +712,7 @@ export const VcisoKit: React.FC = () => {
           <Card variant="glass" padding="lg" className="bg-gradient-to-r from-blue-600 to-blue-500 dark:from-navy dark:to-navy-dark">
             <h3 className="text-2xl font-bold text-white mb-4">Ready to Purchase?</h3>
             <p className="text-blue-50 dark:text-silver mb-6">
-              Get instant access to 37+ professional templates and delivery guides
+              Get instant access to 27 professional templates and delivery guides
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button
@@ -724,16 +726,6 @@ export const VcisoKit: React.FC = () => {
                 type="button"
               >
                 {loading ? 'Processing...' : 'Buy Now - $299'}
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                onClick={() => window.open('https://gumroad.com/ermits/vciso-kit', '_blank')}
-                className="bg-white/20 text-white border-white/40 hover:bg-white/30 dark:bg-white/10 dark:text-white dark:border-white/30 dark:hover:bg-white/20 font-semibold transition-colors"
-                icon={<Download size={18} />}
-                iconPosition="right"
-              >
-                Buy on Gumroad
               </Button>
               <Button
                 variant="outline"

@@ -3,9 +3,10 @@ import { motion } from 'framer-motion';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import {
-  Download, FileText, TrendingUp, AlertCircle,
-  CheckCircle, Save, BarChart3, Lock
+  Download, AlertCircle,
+  CheckCircle, Save, Lock
 } from 'lucide-react';
+import { generateVendorRiskPDF } from '../utils/pdfGenerator';
 
 interface VendorData {
   vendorName: string;
@@ -103,8 +104,38 @@ export const VendorRiskScorerPremium: React.FC = () => {
       alert('PDF Export is a Premium feature. Upgrade to access!');
       return;
     }
-    // PDF export logic would go here
-    alert('Exporting PDF report...');
+    
+    try {
+      generateVendorRiskPDF({
+        vendorName: vendorData.vendorName,
+        assessmentDate: vendorData.assessmentDate,
+        vendorData: {
+          dataSensitivity: vendorData.dataSensitivity,
+          dataVolume: vendorData.dataVolume,
+          systemAccess: vendorData.systemAccess,
+          regulatoryScore: vendorData.regulatoryScore,
+          geographicRisk: vendorData.geographicRisk,
+          securityPosture: vendorData.securityPosture,
+          certifications: vendorData.certifications,
+          incidentHistory: vendorData.incidentHistory,
+          securityMaturity: vendorData.securityMaturity,
+          transparency: vendorData.transparency,
+          serviceCriticality: vendorData.serviceCriticality,
+          financialImpact: vendorData.financialImpact,
+          dependency: vendorData.dependency,
+          integration: vendorData.integration,
+          userImpact: vendorData.userImpact
+        },
+        inherentRisk,
+        residualRisk,
+        businessCriticality,
+        finalScore: parseFloat(finalScore),
+        riskTier
+      });
+    } catch (error) {
+      console.error('PDF generation error:', error);
+      alert('Error generating PDF. Please try again.');
+    }
   };
 
   const handleSave = () => {
@@ -112,8 +143,9 @@ export const VendorRiskScorerPremium: React.FC = () => {
       alert('Save functionality is a Premium feature. Upgrade to access!');
       return;
     }
-    // Save logic would go here
-    alert('Assessment saved successfully!');
+    
+    // Save functionality can be implemented here when needed
+    alert('Save functionality coming soon!');
   };
 
   const PremiumBadge = () => (
@@ -147,6 +179,8 @@ export const VendorRiskScorerPremium: React.FC = () => {
             <span className="text-sm text-gray-600 dark:text-gray-400">Try Demo Mode</span>
             <button
               onClick={() => setIsPremium(!isPremium)}
+              aria-label={isPremium ? 'Disable Premium Mode' : 'Enable Premium Mode'}
+              title={isPremium ? 'Disable Premium Mode' : 'Enable Premium Mode'}
               className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
                 isPremium ? 'bg-gradient-to-r from-yellow-400 to-orange-500' : 'bg-gray-300 dark:bg-gray-600'
               }`}
@@ -185,6 +219,8 @@ export const VendorRiskScorerPremium: React.FC = () => {
                       type="date"
                       value={vendorData.assessmentDate}
                       onChange={(e) => setVendorData({ ...vendorData, assessmentDate: e.target.value })}
+                      aria-label="Assessment Date"
+                      title="Assessment Date"
                       className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-dark-card text-gray-900 dark:text-white"
                     />
                   </div>
@@ -208,6 +244,8 @@ export const VendorRiskScorerPremium: React.FC = () => {
                       max="10"
                       value={vendorData.dataSensitivity}
                       onChange={(e) => setVendorData({ ...vendorData, dataSensitivity: parseInt(e.target.value) })}
+                      aria-label="Data Sensitivity (0-10) - Weight: 35%"
+                      title="Data Sensitivity (0-10) - Weight: 35%"
                       className="w-full"
                     />
                     <div className="flex justify-between text-xs text-gray-600 dark:text-gray-400 mt-1">
@@ -227,6 +265,8 @@ export const VendorRiskScorerPremium: React.FC = () => {
                       max="6"
                       value={vendorData.dataVolume}
                       onChange={(e) => setVendorData({ ...vendorData, dataVolume: parseInt(e.target.value) })}
+                      aria-label="Data Volume (1-6) - Weight: 15%"
+                      title="Data Volume (1-6) - Weight: 15%"
                       className="w-full"
                     />
                     <div className="flex justify-between text-xs text-gray-600 dark:text-gray-400 mt-1">
@@ -246,6 +286,8 @@ export const VendorRiskScorerPremium: React.FC = () => {
                       max="6"
                       value={vendorData.systemAccess}
                       onChange={(e) => setVendorData({ ...vendorData, systemAccess: parseInt(e.target.value) })}
+                      aria-label="System Access Level (0-6) - Weight: 25%"
+                      title="System Access Level (0-6) - Weight: 25%"
                       className="w-full"
                     />
                     <div className="flex justify-between text-xs text-gray-600 dark:text-gray-400 mt-1">
@@ -265,6 +307,8 @@ export const VendorRiskScorerPremium: React.FC = () => {
                       max="10"
                       value={vendorData.regulatoryScore}
                       onChange={(e) => setVendorData({ ...vendorData, regulatoryScore: parseInt(e.target.value) })}
+                      aria-label="Regulatory Scope (0-10) - Weight: 15%"
+                      title="Regulatory Scope (0-10) - Weight: 15%"
                       className="w-full"
                     />
                     <div className="flex justify-between text-xs text-gray-600 dark:text-gray-400 mt-1">
@@ -284,6 +328,8 @@ export const VendorRiskScorerPremium: React.FC = () => {
                       max="9"
                       value={vendorData.geographicRisk}
                       onChange={(e) => setVendorData({ ...vendorData, geographicRisk: parseInt(e.target.value) })}
+                      aria-label="Geographic Risk (0-9) - Weight: 10%"
+                      title="Geographic Risk (0-9) - Weight: 10%"
                       className="w-full"
                     />
                     <div className="flex justify-between text-xs text-gray-600 dark:text-gray-400 mt-1">
@@ -312,6 +358,8 @@ export const VendorRiskScorerPremium: React.FC = () => {
                       max="10"
                       value={vendorData.securityPosture}
                       onChange={(e) => setVendorData({ ...vendorData, securityPosture: parseInt(e.target.value) })}
+                      aria-label="Security Posture Score (0-10) - Weight: 35%"
+                      title="Security Posture Score (0-10) - Weight: 35%"
                       className="w-full"
                     />
                     <div className="flex justify-between text-xs text-gray-600 dark:text-gray-400 mt-1">
@@ -331,6 +379,8 @@ export const VendorRiskScorerPremium: React.FC = () => {
                       max="10"
                       value={vendorData.certifications}
                       onChange={(e) => setVendorData({ ...vendorData, certifications: parseInt(e.target.value) })}
+                      aria-label="Certifications (0-10) - Weight: 25%"
+                      title="Certifications (0-10) - Weight: 25%"
                       className="w-full"
                     />
                     <div className="flex justify-between text-xs text-gray-600 dark:text-gray-400 mt-1">
@@ -350,6 +400,8 @@ export const VendorRiskScorerPremium: React.FC = () => {
                       max="10"
                       value={vendorData.incidentHistory}
                       onChange={(e) => setVendorData({ ...vendorData, incidentHistory: parseInt(e.target.value) })}
+                      aria-label="Incident History (0-10) - Weight: 20%"
+                      title="Incident History (0-10) - Weight: 20%"
                       className="w-full"
                     />
                     <div className="flex justify-between text-xs text-gray-600 dark:text-gray-400 mt-1">
@@ -369,6 +421,8 @@ export const VendorRiskScorerPremium: React.FC = () => {
                       max="10"
                       value={vendorData.securityMaturity}
                       onChange={(e) => setVendorData({ ...vendorData, securityMaturity: parseInt(e.target.value) })}
+                      aria-label="Security Maturity (0-10) - Weight: 15%"
+                      title="Security Maturity (0-10) - Weight: 15%"
                       className="w-full"
                     />
                     <div className="flex justify-between text-xs text-gray-600 dark:text-gray-400 mt-1">
@@ -388,6 +442,8 @@ export const VendorRiskScorerPremium: React.FC = () => {
                       max="3"
                       value={vendorData.transparency}
                       onChange={(e) => setVendorData({ ...vendorData, transparency: parseInt(e.target.value) })}
+                      aria-label="Transparency (0-3) - Weight: 5%"
+                      title="Transparency (0-3) - Weight: 5%"
                       className="w-full"
                     />
                     <div className="flex justify-between text-xs text-gray-600 dark:text-gray-400 mt-1">
@@ -416,6 +472,8 @@ export const VendorRiskScorerPremium: React.FC = () => {
                       max="10"
                       value={vendorData.serviceCriticality}
                       onChange={(e) => setVendorData({ ...vendorData, serviceCriticality: parseInt(e.target.value) })}
+                      aria-label="Service Criticality (0-10) - Weight: 40%"
+                      title="Service Criticality (0-10) - Weight: 40%"
                       className="w-full"
                     />
                     <div className="flex justify-between text-xs text-gray-600 dark:text-gray-400 mt-1">
@@ -435,6 +493,8 @@ export const VendorRiskScorerPremium: React.FC = () => {
                       max="5"
                       value={vendorData.financialImpact}
                       onChange={(e) => setVendorData({ ...vendorData, financialImpact: parseInt(e.target.value) })}
+                      aria-label="Financial Impact (1-5) - Weight: 20%"
+                      title="Financial Impact (1-5) - Weight: 20%"
                       className="w-full"
                     />
                     <div className="flex justify-between text-xs text-gray-600 dark:text-gray-400 mt-1">
@@ -454,6 +514,8 @@ export const VendorRiskScorerPremium: React.FC = () => {
                       max="4"
                       value={vendorData.dependency}
                       onChange={(e) => setVendorData({ ...vendorData, dependency: parseInt(e.target.value) })}
+                      aria-label="Business Dependency (1-4) - Weight: 20%"
+                      title="Business Dependency (1-4) - Weight: 20%"
                       className="w-full"
                     />
                     <div className="flex justify-between text-xs text-gray-600 dark:text-gray-400 mt-1">
@@ -473,6 +535,8 @@ export const VendorRiskScorerPremium: React.FC = () => {
                       max="3"
                       value={vendorData.integration}
                       onChange={(e) => setVendorData({ ...vendorData, integration: parseInt(e.target.value) })}
+                      aria-label="Integration Complexity (1-3) - Weight: 10%"
+                      title="Integration Complexity (1-3) - Weight: 10%"
                       className="w-full"
                     />
                     <div className="flex justify-between text-xs text-gray-600 dark:text-gray-400 mt-1">
@@ -493,6 +557,8 @@ export const VendorRiskScorerPremium: React.FC = () => {
                       step="0.5"
                       value={vendorData.userImpact}
                       onChange={(e) => setVendorData({ ...vendorData, userImpact: parseFloat(e.target.value) })}
+                      aria-label="User Impact (0.5-3) - Weight: 10%"
+                      title="User Impact (0.5-3) - Weight: 10%"
                       className="w-full"
                     />
                     <div className="flex justify-between text-xs text-gray-600 dark:text-gray-400 mt-1">

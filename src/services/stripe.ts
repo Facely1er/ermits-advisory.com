@@ -131,7 +131,7 @@ export const createCheckoutSession = async (options: CheckoutOptions): Promise<v
  */
 export const getProductPriceId = (productType: ProductType): string => {
   // Use product catalog for price IDs (with fallback to env vars)
-  const product = getProduct(productType as any);
+  const product = getProduct(productType as import('../config/products').ProductId);
   if (product?.stripePriceId) {
     return product.stripePriceId;
   }
@@ -172,7 +172,7 @@ export const hasValidStripePriceId = (productType: ProductType): boolean => {
  * Uses product catalog for consistency
  */
 export const getProductName = (productType: ProductType): string => {
-  const product = getProduct(productType as any);
+  const product = getProduct(productType as import('../config/products').ProductId);
   return product?.name || productType;
 };
 
@@ -181,7 +181,7 @@ export const getProductName = (productType: ProductType): string => {
  * Uses product catalog for consistency
  */
 export const getProductPrice = (productType: ProductType): number => {
-  const product = getProduct(productType as any);
+  const product = getProduct(productType as import('../config/products').ProductId);
   return product?.price || 0;
 };
 

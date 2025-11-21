@@ -21,7 +21,7 @@ export const DashboardTemplate: React.FC = () => {
     } catch (error: any) {
       console.error('Checkout error:', error);
       const errorMessage = error?.message || 'Failed to start checkout. Please try again or contact support.';
-      alert(`Checkout Error: ${errorMessage}\n\nYou can also use the Gumroad checkout option below.`);
+      alert(`Checkout Error: ${errorMessage}\n\nPlease try again or contact support.`);
       setLoading(false);
     }
   };
