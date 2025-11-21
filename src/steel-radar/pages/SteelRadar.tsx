@@ -66,6 +66,8 @@ export const SteelRadar: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [selfAssessment, setSelfAssessment] = useState<SteelAssessmentData | null>(null);
   const [isLoadingDemo, setIsLoadingDemo] = useState(false);
+  const [showDetailedView, setShowDetailedView] = useState(false);
+  const [expandedFactor, setExpandedFactor] = useState<SteelFactor | null>(null);
 
   useEffect(() => {
     loadData();
