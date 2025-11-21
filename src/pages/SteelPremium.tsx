@@ -22,7 +22,7 @@ export const SteelPremium: React.FC = () => {
     } catch (error: any) {
       console.error('Checkout error:', error);
       const errorMessage = error?.message || 'Failed to start checkout. Please try again or contact support.';
-      alert(`Checkout Error: ${errorMessage}\n\nYou can also use the Gumroad checkout option below.`);
+      alert(`Checkout Error: ${errorMessage}\n\nPlease try again or contact support.`);
       setLoading(false);
     }
   };
@@ -119,16 +119,6 @@ export const SteelPremium: React.FC = () => {
               >
                 <Lock size={18} className="mr-2" />
                 {loading ? 'Processing...' : 'Buy with Stripe'}
-              </Button>
-              
-              <Button
-                variant="outline"
-                size="lg"
-                onClick={() => window.open('https://gumroad.com/ermits/steel-premium', '_blank')}
-                className="w-full"
-              >
-                <Lock size={18} className="mr-2" />
-                Buy with Gumroad
               </Button>
               
               <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
@@ -290,14 +280,6 @@ export const SteelPremium: React.FC = () => {
                 iconPosition="right"
               >
                 {loading ? 'Processing...' : 'Buy with Stripe ($29)'}
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                onClick={() => window.open('https://gumroad.com/ermits/steel-premium', '_blank')}
-                className="bg-white/10 text-white border-white/30 hover:bg-white/20"
-              >
-                Buy with Gumroad
               </Button>
             </div>
           </Card>

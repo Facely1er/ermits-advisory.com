@@ -691,16 +691,6 @@ export const VcisoKit: React.FC = () => {
                   >
                     {loading ? 'Processing...' : 'Purchase Now - $299'}
                   </Button>
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    onClick={() => window.open('https://gumroad.com/ermits/vciso-kit', '_blank')}
-                    className="bg-white/10 text-white border-white/30 hover:bg-white/20"
-                    icon={<Download size={18} />}
-                    iconPosition="right"
-                  >
-                    Buy on Gumroad
-                  </Button>
                 </div>
                 <p className="text-silver/70 text-xs mt-4">
                   Secure checkout • Instant access • Lifetime updates

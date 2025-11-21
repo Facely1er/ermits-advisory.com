@@ -16,7 +16,23 @@ const getStripe = () => {
   return stripePromise;
 };
 
-export type ProductType = 'steel-premium' | 'vciso-kit' | 'vciso-professional' | 'dashboard-template';
+export type ProductType = 
+  | 'steel-premium' 
+  | 'vciso-kit' 
+  | 'vciso-professional' 
+  | 'dashboard-template'
+  | 'compliance-toolkit-basic'
+  | 'compliance-toolkit-premium-annual'
+  | 'compliance-toolkit-premium-lifetime'
+  | 'incident-response-toolkit-basic'
+  | 'incident-response-toolkit-premium-annual'
+  | 'incident-response-toolkit-premium-lifetime'
+  | 'vendor-risk-toolkit-basic'
+  | 'vendor-risk-toolkit-premium-annual'
+  | 'vendor-risk-toolkit-premium-lifetime'
+  | 'toolkit-bundle-basic'
+  | 'toolkit-bundle-premium-annual'
+  | 'toolkit-bundle-premium-lifetime';
 
 export interface CheckoutOptions {
   productType: ProductType;
@@ -114,16 +130,33 @@ export const createCheckoutSession = async (options: CheckoutOptions): Promise<v
  * Uses actual Stripe Price IDs with fallback to environment variables
  */
 export const getProductPriceId = (productType: ProductType): string => {
-  // Actual Price IDs from Stripe (created products)
-  // NOTE: vciso-professional uses a placeholder - replace with actual Price ID when product is created in Stripe
-  const priceIds: Record<ProductType, string> = {
-    'steel-premium': import.meta.env.VITE_STRIPE_PRICE_STEEL_PREMIUM || 'price_1SU74XAjb9YEbEboc4sLuKtV',
-    'vciso-kit': import.meta.env.VITE_STRIPE_PRICE_VCISO_KIT || 'price_1SU74YAjb9YEbEbohKsi0HZO',
-    'vciso-professional': import.meta.env.VITE_STRIPE_PRICE_VCISO_PROFESSIONAL || 'price_VCISO_PROFESSIONAL_PLACEHOLDER',
-    'dashboard-template': import.meta.env.VITE_STRIPE_PRICE_DASHBOARD_TEMPLATE || 'price_1SU74YAjb9YEbEboGzeh3o78',
+  // Use product catalog for price IDs (with fallback to env vars)
+  const product = getProduct(productType as any);
+  if (product?.stripePriceId) {
+    return product.stripePriceId;
+  }
+  
+  // Fallback to environment variables
+  const envMap: Partial<Record<ProductType, string>> = {
+    'steel-premium': import.meta.env.VITE_STRIPE_PRICE_STEEL_PREMIUM || 'price_1SVi4vAjb9YEbEbowE66I8GK',
+    'vciso-kit': import.meta.env.VITE_STRIPE_PRICE_VCISO_KIT || 'price_1SVi4vAjb9YEbEboXotfQmIt',
+    'vciso-professional': import.meta.env.VITE_STRIPE_PRICE_VCISO_PROFESSIONAL || 'price_1SVi4wAjb9YEbEbol5NRVRWs',
+    'dashboard-template': import.meta.env.VITE_STRIPE_PRICE_DASHBOARD_TEMPLATE || 'price_1SVi4wAjb9YEbEbotCv0xg05',
+    'compliance-toolkit-basic': import.meta.env.VITE_STRIPE_PRICE_COMPLIANCE_BASIC || '',
+    'compliance-toolkit-premium-annual': import.meta.env.VITE_STRIPE_PRICE_COMPLIANCE_PREMIUM_ANNUAL || '',
+    'compliance-toolkit-premium-lifetime': import.meta.env.VITE_STRIPE_PRICE_COMPLIANCE_PREMIUM_LIFETIME || '',
+    'incident-response-toolkit-basic': import.meta.env.VITE_STRIPE_PRICE_INCIDENT_BASIC || '',
+    'incident-response-toolkit-premium-annual': import.meta.env.VITE_STRIPE_PRICE_INCIDENT_PREMIUM_ANNUAL || '',
+    'incident-response-toolkit-premium-lifetime': import.meta.env.VITE_STRIPE_PRICE_INCIDENT_PREMIUM_LIFETIME || '',
+    'vendor-risk-toolkit-basic': import.meta.env.VITE_STRIPE_PRICE_VENDOR_BASIC || '',
+    'vendor-risk-toolkit-premium-annual': import.meta.env.VITE_STRIPE_PRICE_VENDOR_PREMIUM_ANNUAL || '',
+    'vendor-risk-toolkit-premium-lifetime': import.meta.env.VITE_STRIPE_PRICE_VENDOR_PREMIUM_LIFETIME || '',
+    'toolkit-bundle-basic': import.meta.env.VITE_STRIPE_PRICE_BUNDLE_BASIC || '',
+    'toolkit-bundle-premium-annual': import.meta.env.VITE_STRIPE_PRICE_BUNDLE_PREMIUM_ANNUAL || '',
+    'toolkit-bundle-premium-lifetime': import.meta.env.VITE_STRIPE_PRICE_BUNDLE_PREMIUM_LIFETIME || '',
   };
 
-  return priceIds[productType];
+  return envMap[productType] || '';
 };
 
 /**
@@ -139,13 +172,8 @@ export const hasValidStripePriceId = (productType: ProductType): boolean => {
  * Uses product catalog for consistency
  */
 export const getProductName = (productType: ProductType): string => {
-  const product = getProduct(productType);
-  return product?.name || {
-    'steel-premium': 'STEEL™ Premium Assessment',
-    'vciso-kit': 'vCISO Starter Kit',
-    'vciso-professional': 'vCISO Professional Kit',
-    'dashboard-template': 'Executive Dashboard Template',
-  }[productType];
+  const product = getProduct(productType as any);
+  return product?.name || productType;
 };
 
 /**
@@ -153,12 +181,7 @@ export const getProductName = (productType: ProductType): string => {
  * Uses product catalog for consistency
  */
 export const getProductPrice = (productType: ProductType): number => {
-  const product = getProduct(productType);
-  return product?.price || {
-    'steel-premium': 29,
-    'vciso-kit': 299,
-    'vciso-professional': 499,
-    'dashboard-template': 79,
-  }[productType];
+  const product = getProduct(productType as any);
+  return product?.price || 0;
 };
 

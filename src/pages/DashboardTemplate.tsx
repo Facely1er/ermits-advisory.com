@@ -134,15 +134,6 @@ export const DashboardTemplate: React.FC = () => {
                 {loading ? 'Processing...' : 'Buy with Stripe'}
               </Button>
               
-              <Button
-                variant="outline"
-                size="lg"
-                onClick={() => window.open('https://gumroad.com/ermits/dashboard-template', '_blank')}
-                className="w-full"
-              >
-                <Lock size={18} className="mr-2" />
-                Buy with Gumroad
-              </Button>
             </div>
 
             <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-4">
