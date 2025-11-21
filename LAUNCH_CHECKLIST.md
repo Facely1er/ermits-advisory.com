@@ -32,12 +32,12 @@
 
 ### Stripe Variables (Added to Vercel):
 ```env
-✅ VITE_STRIPE_PUBLISHABLE_KEY=pk_live_51SU6vmAjb9YEbEbooHztADla1WhTVxfxewp88WAQz3vF9uxYBCwBIt9ohzEPVpeSV9ddbOz6KkJqVPbKFuQVFU7P00uENiaN5r
-✅ STRIPE_SECRET_KEY=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
-✅ STRIPE_WEBHOOK_SECRET=whsec_... (configured)
-✅ STRIPE_PRICE_STEEL_PREMIUM=price_1SU74XAjb9YEbEboc4sLuKtV
-✅ STRIPE_PRICE_VCISO_KIT=price_1SU74YAjb9YEbEbohKsi0HZO
-✅ STRIPE_PRICE_DASHBOARD_TEMPLATE=price_1SU74YAjb9YEbEboGzeh3o78
+✅ VITE_STRIPE_PUBLISHABLE_KEY=pk_live_YOUR_KEY_HERE (Get from Stripe Dashboard)
+✅ STRIPE_SECRET_KEY=sk_live_YOUR_KEY_HERE (Get from Stripe Dashboard)
+✅ STRIPE_WEBHOOK_SECRET=whsec_... (Get from Stripe Webhooks)
+✅ STRIPE_PRICE_STEEL_PREMIUM=price_... (Get from Stripe Products)
+✅ STRIPE_PRICE_VCISO_KIT=price_... (Get from Stripe Products)
+✅ STRIPE_PRICE_DASHBOARD_TEMPLATE=price_... (Get from Stripe Products)
 ```
 
 ### Optional (Already have defaults):

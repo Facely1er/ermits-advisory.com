@@ -6,13 +6,15 @@ Your Stripe keys have been verified and match the documentation:
 
 **Publishable Key:**
 ```
-pk_live_51SU6vmAjb9YEbEbooHztADla1WhTVxfxewp88WAQz3vF9uxYBCwBIt9ohzEPVpeSV9ddbOz6KkJqVPbKFuQVFU7P00uENiaN5r
+pk_live_YOUR_PUBLISHABLE_KEY_HERE
 ```
+⚠️ **Get from:** https://dashboard.stripe.com/apikeys
 
 **Secret Key:**
 ```
-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
+sk_live_YOUR_SECRET_KEY_HERE
 ```
+⚠️ **Get from:** https://dashboard.stripe.com/apikeys (Reveal test key)
 
 ---
 
@@ -32,14 +34,14 @@ These keys **MUST** be set as environment variables in **Vercel** for Stripe to 
 3. **Add the Publishable Key:**
    - Click **Add New**
    - **Name:** `VITE_STRIPE_PUBLISHABLE_KEY`
-   - **Value:** `pk_live_51SU6vmAjb9YEbEbooHztADla1WhTVxfxewp88WAQz3vF9uxYBCwBIt9ohzEPVpeSV9ddbOz6KkJqVPbKFuQVFU7P00uENiaN5r`
+   - **Value:** Get from https://dashboard.stripe.com/apikeys (starts with `pk_live_` or `pk_test_`)
    - Select: **Production**, **Preview**, **Development**
    - Click **Save**
 
 4. **Add the Secret Key:**
    - Click **Add New**
    - **Name:** `STRIPE_SECRET_KEY`
-   - **Value:** `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`
+   - **Value:** Get from https://dashboard.stripe.com/apikeys (starts with `sk_live_` or `sk_test_`)
    - Select: **Production**, **Preview**, **Development**
    - Click **Save**
 

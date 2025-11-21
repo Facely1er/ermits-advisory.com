@@ -4,7 +4,7 @@ import Stripe from 'stripe';
 // Initialize Stripe
 const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
 
-if (!stripeSecretKey) {
+if (!stripeSecretKey && process.env.NODE_ENV === 'development') {
   console.warn('STRIPE_SECRET_KEY is not set. Stripe checkout will not work.');
 }
 
@@ -16,11 +16,11 @@ const stripe = stripeSecretKey
 
 // Product price IDs - From Stripe live products
 // These should match environment variables, with fallback to actual Price IDs
-// NOTE: vciso-professional uses a placeholder - replace with actual Price ID when product is created in Stripe
+// NOTE: vciso-professional uses fallback price ID - set STRIPE_PRICE_VCISO_PROFESSIONAL env var to override
 const PRICE_IDS: Record<string, string> = {
   'steel-premium': process.env.STRIPE_PRICE_STEEL_PREMIUM || 'price_1SU74XAjb9YEbEboc4sLuKtV',
   'vciso-kit': process.env.STRIPE_PRICE_VCISO_KIT || 'price_1SU74YAjb9YEbEbohKsi0HZO',
-  'vciso-professional': process.env.STRIPE_PRICE_VCISO_PROFESSIONAL || 'price_VCISO_PROFESSIONAL_PLACEHOLDER',
+  'vciso-professional': process.env.STRIPE_PRICE_VCISO_PROFESSIONAL || 'price_1SVi4wAjb9YEbEbol5NRVRWs',
   'dashboard-template': process.env.STRIPE_PRICE_DASHBOARD_TEMPLATE || 'price_1SU74YAjb9YEbEboGzeh3o78',
 };
 
@@ -52,9 +52,9 @@ export default async function handler(
 
     const priceId = PRICE_IDS[productType];
 
-    if (!priceId || priceId.includes('PLACEHOLDER')) {
+    if (!priceId || priceId.trim() === '') {
       return res.status(400).json({ 
-        error: `Price ID not configured for product: ${productType}. Please set STRIPE_PRICE_${productType.toUpperCase().replace('-', '_')} environment variable or update the product catalog.` 
+        error: `Price ID not configured for product: ${productType}. Please set STRIPE_PRICE_${productType.toUpperCase().replace(/-/g, '_')} environment variable in Vercel.` 
       });
     }
 
@@ -94,10 +94,13 @@ export default async function handler(
       url: session.url 
     });
   } catch (error: unknown) {
-    console.error('Stripe checkout error:', error);
-    const errorMessage = error instanceof Error ? error.message : 'Failed to create checkout session';
+    // Always log errors for monitoring, but don't expose details to client
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    console.error('Stripe checkout error:', errorMessage);
+    
+    // Return generic error message to client (don't expose internal details)
     return res.status(500).json({ 
-      error: errorMessage
+      error: 'Failed to create checkout session. Please try again or contact support.'
     });
   }
 }

@@ -12,12 +12,15 @@
 
 const Stripe = require('stripe');
 
-// Your Stripe secret key
-const stripeSecretKey = process.env.STRIPE_SECRET_KEY || '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';
+// Your Stripe secret key - MUST be set as environment variable
+const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
 
 if (!stripeSecretKey) {
-  console.error('❌ Error: STRIPE_SECRET_KEY not found');
-  console.log('Set it as environment variable or update the script');
+  console.error('❌ Error: STRIPE_SECRET_KEY environment variable is required');
+  console.error('   Set it before running this script:');
+  console.error('   export STRIPE_SECRET_KEY=sk_live_...');
+  console.error('   or');
+  console.error('   STRIPE_SECRET_KEY=sk_live_... node scripts/create-stripe-products.js');
   process.exit(1);
 }
 

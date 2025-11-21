@@ -18,8 +18,9 @@ VITE_STRIPE_PUBLISHABLE_KEY
 
 **Value:**
 ```
-pk_live_51SU6vmAjb9YEbEbooHztADla1WhTVxfxewp88WAQz3vF9uxYBCwBIt9ohzEPVpeSV9ddbOz6KkJqVPbKFuQVFU7P00uENiaN5r
+pk_live_YOUR_PUBLISHABLE_KEY_HERE
 ```
+**⚠️ Get this from:** https://dashboard.stripe.com/apikeys (Publishable key)
 
 **Environments:** ✅ Production, ✅ Preview, ✅ Development
 
@@ -33,8 +34,9 @@ STRIPE_SECRET_KEY
 
 **Value:**
 ```
-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
+sk_live_YOUR_SECRET_KEY_HERE
 ```
+**⚠️ Get this from:** https://dashboard.stripe.com/apikeys (Secret key - Reveal test key)
 
 **Environments:** ✅ Production, ✅ Preview, ✅ Development
 

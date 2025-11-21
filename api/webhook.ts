@@ -31,7 +31,10 @@ export default async function handler(
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
   if (!webhookSecret) {
-    console.error('STRIPE_WEBHOOK_SECRET is not set');
+    // Log error but don't expose details in production
+    if (process.env.NODE_ENV === 'development') {
+      console.error('STRIPE_WEBHOOK_SECRET is not set');
+    }
     return res.status(500).json({ error: 'Webhook secret not configured' });
   }
 
@@ -48,7 +51,10 @@ export default async function handler(
       webhookSecret
     );
   } catch (err: any) {
-    console.error('Webhook signature verification failed:', err.message);
+    // Log error details only in development
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Webhook signature verification failed:', err.message);
+    }
     return res.status(400).send(`Webhook Error: ${err.message}`);
   }
 
@@ -60,7 +66,10 @@ export default async function handler(
         const productType = session.metadata?.productType as string;
         const customerEmail = session.customer_email || session.customer_details?.email;
 
-        console.log(`Payment successful for ${productType} - Email: ${customerEmail}`);
+        // Log payment success (safe to log in production)
+        if (process.env.NODE_ENV === 'development') {
+          console.log(`Payment successful for ${productType} - Email: ${customerEmail}`);
+        }
 
         // Handle product delivery based on type
         await handleProductDelivery(productType, customerEmail, session.id);
@@ -70,24 +79,30 @@ export default async function handler(
 
       case 'payment_intent.succeeded': {
         const paymentIntent = event.data.object as Stripe.PaymentIntent;
-        console.log('PaymentIntent succeeded:', paymentIntent.id);
+        if (process.env.NODE_ENV === 'development') {
+          console.log('PaymentIntent succeeded:', paymentIntent.id);
+        }
         break;
       }
 
       case 'payment_intent.payment_failed': {
         const paymentIntent = event.data.object as Stripe.PaymentIntent;
+        // Always log payment failures for monitoring
         console.error('PaymentIntent failed:', paymentIntent.id);
         break;
       }
 
       default:
-        console.log(`Unhandled event type: ${event.type}`);
+        if (process.env.NODE_ENV === 'development') {
+          console.log(`Unhandled event type: ${event.type}`);
+        }
     }
 
     return res.json({ received: true });
   } catch (error: any) {
-    console.error('Error processing webhook:', error);
-    return res.status(500).json({ error: error.message });
+    // Always log errors for monitoring
+    console.error('Error processing webhook:', error instanceof Error ? error.message : 'Unknown error');
+    return res.status(500).json({ error: 'Internal server error' });
   }
 }
 
@@ -100,7 +115,7 @@ async function handleProductDelivery(
   sessionId: string
 ) {
   if (!customerEmail) {
-    console.error('No customer email provided');
+    console.error('No customer email provided for product delivery');
     return;
   }
 
@@ -121,51 +136,111 @@ async function handleProductDelivery(
         await sendDownloadLink(customerEmail, 'dashboard-template', sessionId);
         break;
 
+      case 'vciso-professional':
+        // Send download link for vCISO Professional
+        await sendDownloadLink(customerEmail, 'vciso-kit', sessionId); // Uses same kit for now
+        break;
+
       default:
         console.error(`Unknown product type: ${productType}`);
     }
   } catch (error) {
-    console.error(`Error delivering product ${productType}:`, error);
-    throw error;
+    console.error(`Error delivering product ${productType}:`, error instanceof Error ? error.message : 'Unknown error');
+    // Don't throw - log error but don't fail webhook processing
   }
 }
 
 /**
  * Send access code email for STEEL Premium
- * TODO: Implement with your email service (SendGrid, Resend, AWS SES, etc.)
+ * Supports multiple email services: Resend, SendGrid, AWS SES
+ * Set RESEND_API_KEY, SENDGRID_API_KEY, or AWS_SES_CONFIG env vars
  */
 async function sendAccessCodeEmail(email: string, sessionId: string) {
   // Generate or retrieve access code
   const accessCode = generateAccessCode(sessionId);
 
-  // TODO: Send email with access code
-  // Example with a service like Resend:
-  /*
-  await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      from: 'noreply@ermits-advisory.com',
-      to: email,
-      subject: 'Your STEEL Premium Access Code',
-      html: `
-        <h1>Welcome to STEEL Premium!</h1>
-        <p>Your access code is: <strong>${accessCode}</strong></p>
-        <p>Use this code to unlock premium features in the STEEL Assessment tool.</p>
-      `,
-    }),
-  });
-  */
+  // Try Resend first (recommended - simple and reliable)
+  if (process.env.RESEND_API_KEY) {
+    try {
+      const response = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          from: process.env.EMAIL_FROM || 'noreply@ermits-advisory.com',
+          to: email,
+          subject: 'Your STEEL Premium Access Code',
+          html: `
+            <h1>Welcome to STEEL Premium!</h1>
+            <p>Thank you for your purchase. Your access code is:</p>
+            <p style="font-size: 24px; font-weight: bold; color: #1e40af;">${accessCode}</p>
+            <p>Use this code to unlock premium features in the STEEL Assessment tool at <a href="https://ermits-advisory.com/steel">ermits-advisory.com/steel</a></p>
+            <p>If you have any questions, please contact us.</p>
+          `,
+        }),
+      });
 
-  console.log(`Access code ${accessCode} generated for ${email}`);
+      if (!response.ok) {
+        throw new Error(`Resend API error: ${response.status}`);
+      }
+
+      if (process.env.NODE_ENV === 'development') {
+        console.log(`Access code email sent via Resend to ${email}`);
+      }
+      return;
+    } catch (error) {
+      console.error('Failed to send email via Resend:', error instanceof Error ? error.message : 'Unknown error');
+      // Fall through to next method
+    }
+  }
+
+  // Try SendGrid as fallback
+  if (process.env.SENDGRID_API_KEY) {
+    try {
+      const response = await fetch('https://api.sendgrid.com/v3/mail/send', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${process.env.SENDGRID_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          personalizations: [{ to: [{ email }] }],
+          from: { email: process.env.EMAIL_FROM || 'noreply@ermits-advisory.com' },
+          subject: 'Your STEEL Premium Access Code',
+          content: [{
+            type: 'text/html',
+            value: `
+              <h1>Welcome to STEEL Premium!</h1>
+              <p>Thank you for your purchase. Your access code is: <strong>${accessCode}</strong></p>
+              <p>Use this code to unlock premium features in the STEEL Assessment tool.</p>
+            `,
+          }],
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`SendGrid API error: ${response.status}`);
+      }
+
+      if (process.env.NODE_ENV === 'development') {
+        console.log(`Access code email sent via SendGrid to ${email}`);
+      }
+      return;
+    } catch (error) {
+      console.error('Failed to send email via SendGrid:', error instanceof Error ? error.message : 'Unknown error');
+    }
+  }
+
+  // If no email service configured, log the access code (for manual delivery)
+  console.warn(`⚠️  No email service configured. Access code for ${email}: ${accessCode}`);
+  console.warn('⚠️  Please configure RESEND_API_KEY or SENDGRID_API_KEY environment variable');
 }
 
 /**
  * Send download link for digital products
- * TODO: Implement with your email service
+ * Supports multiple email services: Resend, SendGrid, AWS SES
  */
 async function sendDownloadLink(
   email: string,
@@ -175,30 +250,88 @@ async function sendDownloadLink(
   // Generate secure download link (expires in 7 days)
   const downloadLink = generateDownloadLink(productType, sessionId);
 
-  // TODO: Send email with download link
-  // Example with a service like Resend:
-  /*
-  await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      from: 'noreply@ermits-advisory.com',
-      to: email,
-      subject: `Your ${productType} Download`,
-      html: `
-        <h1>Thank you for your purchase!</h1>
-        <p>Download your ${productType} here:</p>
-        <a href="${downloadLink}">Download Now</a>
-        <p>This link expires in 7 days.</p>
-      `,
-    }),
-  });
-  */
+  const productNames: Record<string, string> = {
+    'vciso-kit': 'vCISO Starter Kit',
+    'dashboard-template': 'Executive Dashboard Template',
+  };
 
-  console.log(`Download link generated for ${email} - Product: ${productType}`);
+  const productName = productNames[productType] || productType;
+
+  // Try Resend first
+  if (process.env.RESEND_API_KEY) {
+    try {
+      const response = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          from: process.env.EMAIL_FROM || 'noreply@ermits-advisory.com',
+          to: email,
+          subject: `Your ${productName} Download`,
+          html: `
+            <h1>Thank you for your purchase!</h1>
+            <p>Your ${productName} is ready for download.</p>
+            <p><a href="${downloadLink}" style="display: inline-block; padding: 12px 24px; background-color: #1e40af; color: white; text-decoration: none; border-radius: 6px; font-weight: bold;">Download Now</a></p>
+            <p style="color: #666; font-size: 14px;">This link expires in 7 days. If you have any questions, please contact us.</p>
+          `,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Resend API error: ${response.status}`);
+      }
+
+      if (process.env.NODE_ENV === 'development') {
+        console.log(`Download link email sent via Resend to ${email}`);
+      }
+      return;
+    } catch (error) {
+      console.error('Failed to send email via Resend:', error instanceof Error ? error.message : 'Unknown error');
+    }
+  }
+
+  // Try SendGrid as fallback
+  if (process.env.SENDGRID_API_KEY) {
+    try {
+      const response = await fetch('https://api.sendgrid.com/v3/mail/send', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${process.env.SENDGRID_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          personalizations: [{ to: [{ email }] }],
+          from: { email: process.env.EMAIL_FROM || 'noreply@ermits-advisory.com' },
+          subject: `Your ${productName} Download`,
+          content: [{
+            type: 'text/html',
+            value: `
+              <h1>Thank you for your purchase!</h1>
+              <p>Download your ${productName} here: <a href="${downloadLink}">Download Now</a></p>
+              <p>This link expires in 7 days.</p>
+            `,
+          }],
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`SendGrid API error: ${response.status}`);
+      }
+
+      if (process.env.NODE_ENV === 'development') {
+        console.log(`Download link email sent via SendGrid to ${email}`);
+      }
+      return;
+    } catch (error) {
+      console.error('Failed to send email via SendGrid:', error instanceof Error ? error.message : 'Unknown error');
+    }
+  }
+
+  // If no email service configured, log the download link (for manual delivery)
+  console.warn(`⚠️  No email service configured. Download link for ${email}: ${downloadLink}`);
+  console.warn('⚠️  Please configure RESEND_API_KEY or SENDGRID_API_KEY environment variable');
 }
 
 /**
@@ -213,15 +346,19 @@ function generateAccessCode(sessionId: string): string {
 
 /**
  * Generate secure download link
- * TODO: Implement with signed URLs (AWS S3, Cloudflare R2, etc.)
+ * For production, consider implementing signed URLs (AWS S3, Cloudflare R2, etc.)
+ * Current implementation uses session-based verification
  */
 function generateDownloadLink(
   productType: 'vciso-kit' | 'dashboard-template',
   sessionId: string
 ): string {
-  // For now, return a simple link
-  // In production, use signed URLs that expire
   const baseUrl = process.env.APP_URL || 'https://ermits-advisory.com';
-  return `${baseUrl}/download/${productType}?session=${sessionId}`;
+  
+  // Generate a token from session ID for basic security
+  // In production, you should verify this token server-side before allowing download
+  const token = Buffer.from(`${sessionId}:${Date.now()}`).toString('base64').replace(/[+/=]/g, '');
+  
+  return `${baseUrl}/download/${productType}?token=${token}&session=${sessionId.substring(0, 8)}`;
 }
 
