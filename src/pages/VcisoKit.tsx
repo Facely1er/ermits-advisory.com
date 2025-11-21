@@ -9,16 +9,13 @@ import {
   Briefcase, Lock
 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
-import { createCheckoutSession, hasValidStripePriceId } from '../services/stripe';
+import { createCheckoutSession } from '../services/stripe';
 
 export const VcisoKit: React.FC = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<'overview' | 'workflow' | 'templates'>('overview');
   const [loading, setLoading] = useState(false);
   const [professionalLoading, setProfessionalLoading] = useState(false);
-  
-  // Check if Stripe is configured for professional product
-  const hasProfessionalStripe = hasValidStripePriceId('vciso-professional');
 
   const handlePurchase = async (e?: React.MouseEvent) => {
     // Prevent any default behavior
@@ -59,30 +56,26 @@ export const VcisoKit: React.FC = () => {
   const handleProfessionalPurchase = async () => {
     setProfessionalLoading(true);
     
-    // Try Stripe first if configured
-    if (hasProfessionalStripe) {
-      try {
-        await createCheckoutSession({
-          productType: 'vciso-professional',
-          successUrl: `${window.location.origin}/purchase-success`,
-          cancelUrl: window.location.href,
-        });
-        // If successful, user will be redirected, so we don't set loading to false
-        return;
-      } catch (error) {
-        console.error('Stripe checkout error:', error);
-        // Fall through to Gumroad fallback
+    // Always try Stripe first (even if Price ID is placeholder - API will handle validation)
+    try {
+      await createCheckoutSession({
+        productType: 'vciso-professional',
+        successUrl: `${window.location.origin}/purchase-success`,
+        cancelUrl: window.location.href,
+      });
+      // If successful, user will be redirected, so we don't set loading to false
+      return;
+    } catch (error) {
+      console.error('Stripe checkout error:', error);
+      
+      // Fallback to Gumroad if Stripe failed
+      setProfessionalLoading(false);
+      const errorMessage = error instanceof Error ? error.message : 'Stripe checkout is currently unavailable';
+      const useGumroad = confirm(`${errorMessage}\n\nWould you like to use Gumroad checkout instead?`);
+      
+      if (useGumroad) {
+        window.open('https://gumroad.com/ermits/vciso-professional', '_blank');
       }
-    }
-    
-    // Fallback to Gumroad (if Stripe not configured or failed)
-    setProfessionalLoading(false);
-    const useGumroad = hasProfessionalStripe 
-      ? confirm('Stripe checkout is currently unavailable. Would you like to use Gumroad checkout instead?')
-      : true; // Auto-use Gumroad if Stripe not configured
-    
-    if (useGumroad) {
-      window.open('https://gumroad.com/ermits/vciso-professional', '_blank');
     }
   };
   const [workflowStep, setWorkflowStep] = useState(0);
