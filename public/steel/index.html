@@ -4,18 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STEEL™ Assessment Platform | ERMITS Advisory</title>
-    <meta name="description" content="Strategic Threat & Enterprise Evaluation Layer - Executive cybersecurity assessment">
+    <meta name="description" content="Free STEEL™ cybersecurity risk assessment. Evaluate Political, Economic, Social, Technological, Environmental, and Legal factors. Privacy-first, 30-minute assessment aligned with ISO 31000, COSO ERM, NIST CSF 2.0, and ISO/IEC 27001 frameworks.">
+    <meta name="keywords" content="cybersecurity assessment, risk management, PESTEL analysis, STEEL framework, enterprise risk, NIST CSF, ISO 27001, ISO 31000, COSO ERM">
+    <meta name="author" content="ERMITS Advisory">
+    <meta name="theme-color" content="#004B87">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ermits-advisory.com/steel/">
+    <meta property="og:title" content="STEEL™ Assessment Platform | ERMITS Advisory">
+    <meta property="og:description" content="Free, privacy-first cybersecurity risk assessment. Get board-ready insights in 30 minutes. Aligned with ISO 31000, COSO ERM, NIST CSF 2.0, and ISO/IEC 27001.">
+    <meta property="og:image" content="https://ermits-advisory.com/steel/og-image.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://ermits-advisory.com/steel/">
+    <meta name="twitter:title" content="STEEL™ Assessment Platform">
+    <meta name="twitter:description" content="Free cybersecurity risk assessment in 30 minutes. Privacy-first, board-ready reports.">
+    <meta name="twitter:image" content="https://ermits-advisory.com/steel/og-image.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ermits-advisory.com/steel/">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "STEEL™ Assessment Platform",
+      "description": "Strategic Threat & Enterprise Evaluation Layer - Executive cybersecurity assessment",
+      "url": "https://ermits-advisory.com/steel/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "ERMITS Advisory",
+        "url": "https://ermits-advisory.com"
+      },
+      "featureList": [
+        "Free cybersecurity risk assessment",
+        "PESTEL framework analysis",
+        "Privacy-first architecture",
+        "Board-ready reports",
+        "ISO 31000, COSO ERM, NIST CSF 2.0 aligned"
+      ]
+    }
+    </script>
+    
+    <!-- Font Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Font Loading - Optimized -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet"></noscript>
+    <!-- External Scripts - Deferred for performance -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"
             integrity="sha384-OLC6/1yTVzBU7Rq/W0LE7mUh1kc+A/o2jlV3G+3FpYAL/RYmBnl/lBqz/R05W2zn"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
-            integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA=="
             crossorigin="anonymous"
-            referrerpolicy="no-referrer"></script>
+            defer></script>
+    <!-- jsPDF loaded dynamically when export is needed -->
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -999,6 +1053,111 @@
         .score-value-environmental { color: var(--environmental); }
         .score-value-legal { color: var(--legal); }
 
+        /* Skip Link for Accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--navy);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            z-index: 10000;
+            font-weight: 600;
+            border-radius: 0 0 8px 0;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+        
+        /* Screen Reader Only */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        
+        /* Loading Overlay */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            color: white;
+            -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+        }
+        .loading-overlay.hidden {
+            display: none;
+        }
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid var(--gold);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Error Message */
+        .error-message {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: white;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+        }
+        .error-message button {
+            margin-top: 15px;
+            padding: 12px 24px;
+            background: white;
+            color: #dc2626;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .error-message button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        /* Storage Warning */
+        .storage-warning {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: white;
+            padding: 15px 20px;
+            margin: 20px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            display: none;
+        }
+        .storage-warning.show {
+            display: block;
+        }
+
         @media (max-width: 768px) {
             h1 { font-size: 2.2em; }
             .subtitle { font-size: 1.2em; }
@@ -1023,7 +1182,25 @@
     </style>
 </head>
 <body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="spinner"></div>
+        <p>Processing your assessment...</p>
+    </div>
+    
+    <!-- Storage Warning -->
+    <div id="storage-warning" class="storage-warning">
+        <strong>⚠️ Local storage is not available.</strong> Please enable cookies to save your progress.
+    </div>
+    
+    <!-- Progress Announcement for Screen Readers -->
+    <div id="progress-announce" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+    
     <div class="container">
+        <main id="main-content" role="main" aria-label="STEEL Assessment Platform">
         <div class="header">
             <a href="/" class="back-to-site">
                 <i data-lucide="arrow-left"></i>
@@ -1902,6 +2079,91 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // Storage availability check
+        function checkStorageAvailable() {
+            try {
+                const test = '__storage_test__';
+                localStorage.setItem(test, test);
+                localStorage.removeItem(test);
+                return true;
+            } catch (e) {
+                return false;
+            }
+        }
+        
+        // Show storage warning if needed
+        function checkStorageOnLoad() {
+            if (!checkStorageAvailable()) {
+                document.getElementById('storage-warning').classList.add('show');
+            }
+        }
+        
+        // Progress persistence - Save progress automatically
+        let saveTimeout;
+        function saveProgress() {
+            if (!checkStorageAvailable()) return;
+            
+            clearTimeout(saveTimeout);
+            saveTimeout = setTimeout(() => {
+                try {
+                    const form = document.getElementById('assessmentForm');
+                    const progress = {};
+                    for (let i = 1; i <= TOTAL_QUESTIONS; i++) {
+                        const checked = form.querySelector(`input[name="q${i}"]:checked`);
+                        if (checked) {
+                            progress[`q${i}`] = checked.value;
+                        }
+                    }
+                    localStorage.setItem('steel_assessment_progress', JSON.stringify(progress));
+                    
+                    // Track progress save
+                    trackEvent('progress_saved', { questions_answered: Object.keys(progress).length });
+                } catch (e) {
+                    console.error('Error saving progress:', e);
+                }
+            }, 500); // Debounce saves
+        }
+        
+        // Load saved progress
+        function loadProgress() {
+            if (!checkStorageAvailable()) return;
+            
+            try {
+                const saved = localStorage.getItem('steel_assessment_progress');
+                if (saved) {
+                    const progress = JSON.parse(saved);
+                    let loadedCount = 0;
+                    Object.entries(progress).forEach(([name, value]) => {
+                        const input = document.querySelector(`input[name="${name}"][value="${value}"]`);
+                        if (input) {
+                            input.checked = true;
+                            loadedCount++;
+                        }
+                    });
+                    updateProgress();
+                    
+                    if (loadedCount > 0) {
+                        // Announce to screen readers
+                        announceToScreenReader(`Loaded ${loadedCount} saved answers`);
+                        trackEvent('progress_loaded', { questions_loaded: loadedCount });
+                    }
+                }
+            } catch (e) {
+                console.error('Error loading progress:', e);
+            }
+        }
+        
+        // Announce to screen readers
+        function announceToScreenReader(message) {
+            const announceEl = document.getElementById('progress-announce');
+            if (announceEl) {
+                announceEl.textContent = message;
+                setTimeout(() => {
+                    announceEl.textContent = '';
+                }, 1000);
+            }
+        }
+        
         function updateProgress() {
             const form = document.getElementById('assessmentForm');
             let answered = 0;
@@ -1911,9 +2173,47 @@
             const percent = Math.round((answered / TOTAL_QUESTIONS) * 100);
             document.getElementById('progressFill').style.setProperty('--progress-width', percent + '%');
             document.getElementById('progressText').textContent = `${percent}% Complete (${answered} of ${TOTAL_QUESTIONS} questions)`;
+            
+            // Announce progress to screen readers
+            if (answered > 0 && answered % 5 === 0) {
+                announceToScreenReader(`${percent}% complete, ${answered} of ${TOTAL_QUESTIONS} questions answered`);
+            }
+            
+            // Auto-save progress
+            saveProgress();
         }
 
+        // Analytics tracking
+        function trackEvent(eventName, eventData = {}) {
+            // Google Analytics 4
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, {
+                    'event_category': 'STEEL Assessment',
+                    ...eventData
+                });
+            }
+            
+            // Console log for debugging
+            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                console.log('Event tracked:', eventName, eventData);
+            }
+        }
+        
+        // Show loading overlay
+        function showLoading() {
+            document.getElementById('loading-overlay').classList.remove('hidden');
+        }
+        
+        // Hide loading overlay
+        function hideLoading() {
+            document.getElementById('loading-overlay').classList.add('hidden');
+        }
+        
         function calculateResults() {
+            // Track assessment completion
+            trackEvent('assessment_started');
+            showLoading();
+            
             const form = document.getElementById('assessmentForm');
             let factorScores = {
                 political: 0,
@@ -2002,15 +2302,28 @@
             
             // Save calculated results to localStorage for Dashboard integration
             try {
-                localStorage.setItem('steel_assessment', JSON.stringify(assessmentData));
-                // Trigger custom event for auto-refresh in Dashboard
-                window.dispatchEvent(new CustomEvent('steel_assessment_updated', { detail: assessmentData }));
+                if (checkStorageAvailable()) {
+                    localStorage.setItem('steel_assessment', JSON.stringify(assessmentData));
+                    // Trigger custom event for auto-refresh in Dashboard
+                    window.dispatchEvent(new CustomEvent('steel_assessment_updated', { detail: assessmentData }));
+                }
             } catch (e) {
                 console.warn('Could not save assessment results to localStorage:', e);
+                showError('Could not save results. Please try again or export your data.');
             }
             
+            // Track completion
+            trackEvent('assessment_completed', {
+                composite_score: composite,
+                risk_level: composite >= 80 ? 'LOW' : composite >= 60 ? 'MODERATE' : composite >= 40 ? 'ELEVATED' : 'HIGH'
+            });
+            
+            hideLoading();
             displayResults(assessmentData);
             showTab('results');
+            
+            // Clear progress save after completion
+            localStorage.removeItem('steel_assessment_progress');
         }
 
         function generateInsights(factorScores, composite) {
@@ -2703,37 +3016,55 @@
             }
         }
 
-        function saveProgress() {
-            const form = document.getElementById('assessmentForm');
-            const data = {};
-            for (let i = 1; i <= TOTAL_QUESTIONS; i++) {
-                const checked = form.querySelector(`input[name="q${i}"]:checked`);
-                if (checked) data[`q${i}`] = checked.value;
-            }
-            localStorage.setItem('steel_assessment', JSON.stringify(data));
-            alert('Progress saved successfully!');
-        }
+        // Note: saveProgress() and loadProgress() are defined earlier with enhanced features
+        // These are kept for backward compatibility with button onclick handlers
 
-        function loadProgress() {
-            const saved = localStorage.getItem('steel_assessment');
-            if (saved) {
-                const data = JSON.parse(saved);
-                for (let key in data) {
-                    const radio = document.querySelector(`input[name="${key}"][value="${data[key]}"]`);
-                    if (radio) radio.checked = true;
+        // Error handling function
+        function showError(message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.innerHTML = `
+                <p><strong>Error:</strong> ${message}</p>
+                <button onclick="this.parentElement.remove()">Dismiss</button>
+            `;
+            document.body.insertBefore(errorDiv, document.body.firstChild);
+            
+            // Auto-remove after 10 seconds
+            setTimeout(() => {
+                if (errorDiv.parentElement) {
+                    errorDiv.remove();
                 }
-                updateProgress();
-                alert('Progress loaded successfully!');
-            } else {
-                alert('No saved progress found.');
-            }
+            }, 10000);
         }
-
-        function exportPDF() {
+        
+        async function exportPDF() {
             if (!assessmentData.composite) {
                 alert('Please complete the assessment first.');
                 return;
             }
+            
+            // Lazy load jsPDF
+            if (typeof window.jspdf === 'undefined') {
+                showLoading();
+                try {
+                    await new Promise((resolve, reject) => {
+                        const script = document.createElement('script');
+                        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+                        script.integrity = 'sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA==';
+                        script.crossOrigin = 'anonymous';
+                        script.referrerPolicy = 'no-referrer';
+                        script.onload = resolve;
+                        script.onerror = reject;
+                        document.head.appendChild(script);
+                    });
+                } catch (e) {
+                    hideLoading();
+                    showError('Failed to load PDF library. Please check your internet connection and try again.');
+                    return;
+                }
+            }
+            
+            try {
             
             // Check premium access for detailed PDF
             if (!checkPremiumAccess()) {
@@ -2926,6 +3257,14 @@
             doc.text('STEEL™ Assessment Platform | ERMITS Advisory | www.ermits-advisory.com', margin, pageHeight - 10);
 
             doc.save(`STEEL_Assessment_${new Date(assessmentData.timestamp).toISOString().split('T')[0]}.pdf`);
+            
+            hideLoading();
+            trackEvent('export', { format: 'pdf', premium: checkPremiumAccess() });
+            } catch (e) {
+                hideLoading();
+                console.error('PDF export error:', e);
+                showError('Error generating PDF. Please try again.');
+            }
         }
 
         function exportJSON() {
@@ -2934,12 +3273,20 @@
                 return;
             }
 
-            const blob = new Blob([JSON.stringify(assessmentData, null, 2)], { type: 'application/json' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `STEEL_Assessment_${new Date().toISOString().split('T')[0]}.json`;
-            a.click();
+            try {
+                const blob = new Blob([JSON.stringify(assessmentData, null, 2)], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `STEEL_Assessment_${new Date().toISOString().split('T')[0]}.json`;
+                a.click();
+                URL.revokeObjectURL(url);
+                
+                trackEvent('export', { format: 'json' });
+            } catch (e) {
+                console.error('Export error:', e);
+                showError('Error exporting JSON. Please try again.');
+            }
         }
 
         function clearAllData() {
@@ -2953,13 +3300,104 @@
             }
         }
 
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            // Tab navigation between questions (Arrow keys)
+            if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+                const questions = Array.from(document.querySelectorAll('.question-item'));
+                const current = document.activeElement.closest('.question-item');
+                if (current) {
+                    e.preventDefault();
+                    const currentIndex = questions.indexOf(current);
+                    const nextIndex = e.key === 'ArrowDown' 
+                        ? (currentIndex + 1) % questions.length
+                        : (currentIndex - 1 + questions.length) % questions.length;
+                    questions[nextIndex]?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    // Focus first radio button in next question
+                    const firstRadio = questions[nextIndex]?.querySelector('input[type="radio"]');
+                    if (firstRadio) {
+                        setTimeout(() => firstRadio.focus(), 300);
+                    }
+                }
+            }
+            
+            // Number keys 1-4 for answer selection (when in a question)
+            if (e.key >= '1' && e.key <= '4' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+                const activeQuestion = document.activeElement.closest('.question-item');
+                if (activeQuestion) {
+                    const options = Array.from(activeQuestion.querySelectorAll('input[type="radio"]'));
+                    const selected = options[parseInt(e.key) - 1];
+                    if (selected) {
+                        e.preventDefault();
+                        selected.checked = true;
+                        selected.dispatchEvent(new Event('change'));
+                        // Move to next question
+                        const questions = Array.from(document.querySelectorAll('.question-item'));
+                        const currentIndex = questions.indexOf(activeQuestion);
+                        if (currentIndex < questions.length - 1) {
+                            setTimeout(() => {
+                                questions[currentIndex + 1]?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            }, 200);
+                        }
+                    }
+                }
+            }
+        });
+        
+        // Global error handler
+        window.addEventListener('error', function(e) {
+            console.error('Assessment error:', e.error);
+            showError('An unexpected error occurred. Your progress has been saved. Please refresh the page if the issue persists.');
+        });
+        
+        // Performance tracking
+        window.addEventListener('load', function() {
+            if ('performance' in window) {
+                const perfData = performance.timing;
+                const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
+                trackEvent('page_load_time', {
+                    load_time_ms: Math.round(pageLoadTime),
+                    non_interaction: true
+                });
+            }
+        });
+        
         // Initialize Lucide icons and check for premium activation
         document.addEventListener('DOMContentLoaded', function() {
+            // Check storage availability
+            checkStorageOnLoad();
+            
+            // Load saved progress
+            loadProgress();
+            
+            // Initialize Lucide icons
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
+            } else {
+                // Retry after a delay if lucide hasn't loaded yet
+                setTimeout(() => {
+                    if (typeof lucide !== 'undefined') {
+                        lucide.createIcons();
+                    }
+                }, 500);
             }
+            
             // Check for premium activation from purchase
             checkPurchaseSuccess();
+            
+            // Track page view
+            trackEvent('page_view', { page: 'steel_assessment' });
+            
+            // Add ARIA labels to form inputs
+            document.querySelectorAll('input[type="radio"]').forEach((input, index) => {
+                if (!input.getAttribute('aria-label')) {
+                    const questionText = input.closest('.question-item')?.querySelector('.question-text')?.textContent;
+                    const optionText = input.nextElementSibling?.textContent;
+                    if (questionText && optionText) {
+                        input.setAttribute('aria-label', `${questionText} - ${optionText}`);
+                    }
+                }
+            });
         });
         
         // Listen for premium updates
@@ -2972,5 +3410,6 @@
             }
         });
     </script>
+        </main>
 </body>
 </html>
