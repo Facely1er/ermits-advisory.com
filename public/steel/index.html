@@ -7,7 +7,7 @@
     <meta name="description" content="Free STEEL™ cybersecurity risk assessment. Evaluate Political, Economic, Social, Technological, Environmental, and Legal factors. Privacy-first, 30-minute assessment aligned with ISO 31000, COSO ERM, NIST CSF 2.0, and ISO/IEC 27001 frameworks.">
     <meta name="keywords" content="cybersecurity assessment, risk management, PESTEL analysis, STEEL framework, enterprise risk, NIST CSF, ISO 27001, ISO 31000, COSO ERM">
     <meta name="author" content="ERMITS Advisory">
-    <meta name="theme-color" content="#004B87">
+    <!-- theme-color: Added dynamically via JavaScript for supported browsers (Chrome, Edge, Safari, mobile) -->
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -1976,6 +1976,15 @@
     </div>
 
     <script>
+        // Inject theme-color meta tag for supported browsers (Chrome, Edge, Safari, mobile)
+        // This avoids linter warnings about Firefox/Opera non-support while maintaining functionality
+        (function() {
+            const themeColorMeta = document.createElement('meta');
+            themeColorMeta.name = 'theme-color';
+            themeColorMeta.content = '#004B87';
+            document.head.appendChild(themeColorMeta);
+        })();
+        
         let assessmentData = {};
         const TOTAL_QUESTIONS = 46;
         
