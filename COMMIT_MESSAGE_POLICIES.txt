@@ -1,0 +1,29 @@
+Update policy pages with comprehensive content from master documents
+
+- Updated Privacy Policy page with all sections from Master_Privacy_Policy.md
+  * Added Scope and Applicability section with all product lines
+  * Expanded Privacy-First Architecture Overview with detailed principles
+  * Enhanced Information We Collect section with comprehensive details
+  * Added Product-Specific Privacy Considerations section
+  * Expanded Special Considerations with Federal Contractor and HIPAA details
+  * Updated contact information to use privacy@ermits.com
+  * Added Effective Date and Acceptance section
+  * Updated effective date to November 19, 2025
+
+- Updated Terms of Service page with comprehensive content from Master_Terms_of_Service.md
+  * Added ERMITS Advisory + STEEL™ and SocialCaution product lines to scope
+  * Expanded definitions with Advisory Services, Digital Products, STEEL Framework, etc.
+  * Updated section numbers to match master document structure (1-22)
+  * Updated Governing Law to District of Columbia
+  * Expanded dispute resolution with binding arbitration details
+  * Updated contact information with additional email addresses
+  * Updated effective date to November 19, 2025
+
+- Created new E-Commerce Policies page with content from E-Commerce_Policies.md
+  * Subscription & Payment Terms section
+  * Refund & Cancellation Policy section
+  * Comprehensive billing, payment, and cancellation procedures
+  * Added route to App.tsx at /ecommerce-policies
+
+All policy pages now reflect the latest comprehensive content from the master policy documents.
+
