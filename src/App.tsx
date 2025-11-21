@@ -100,6 +100,7 @@ const TermsOfServicePage = React.lazy(() => import('./pages/TermsOfServicePage')
 const CookiePolicyPage = React.lazy(() => import('./pages/CookiePolicyPage').then(m => ({ default: m.CookiePolicyPage })));
 const AcceptableUsePolicyPage = React.lazy(() => import('./pages/AcceptableUsePolicyPage').then(m => ({ default: m.AcceptableUsePolicyPage })));
 const PurchaseSuccess = React.lazy(() => import('./pages/PurchaseSuccess').then(m => ({ default: m.PurchaseSuccess })));
+const PricingPage = React.lazy(() => import('./pages/PricingPage').then(m => ({ default: m.PricingPage })));
 const SteelRadar = React.lazy(() => import('./steel-radar/pages/SteelRadar').then(m => ({ default: m.SteelRadar })));
 
 // Loading component for Suspense fallback
@@ -152,6 +153,7 @@ function App() {
                   <Route path="/presentation" element={<BoardPresentation />} />
                   <Route path="/contact" element={<ContactPage />} />
                   <Route path="/about" element={<AboutPage />} />
+                  <Route path="/pricing" element={<PricingPage />} />
                   <Route path="/ecosystem" element={<EcosystemPage />} />
                   <Route path="/cybercaution" element={<ExternalRedirect to="https://cybercaution.com" />} />
                   <Route path="/cybercorrect" element={<ExternalRedirect to="https://cybercorrect.com" />} />
