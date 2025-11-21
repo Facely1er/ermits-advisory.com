@@ -14,6 +14,7 @@ export const Navigation: React.FC = () => {
   const { theme, toggleTheme, focusMode, toggleFocusMode } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [openMobileSubmenu, setOpenMobileSubmenu] = useState<string | null>(null);
   const navigate = useNavigate();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -87,25 +88,30 @@ export const Navigation: React.FC = () => {
                     <motion.div
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 py-2 z-50"
+                      exit={{ opacity: 0, y: -10 }}
+                      onMouseEnter={() => setActiveDropdown(link.to)}
+                      onMouseLeave={() => setActiveDropdown(null)}
+                      className="absolute top-full left-0 pt-2 w-56 z-50"
                     >
-                      {link.submenu.map((item) => (
-                        <NavLink
-                          key={item.to}
-                          to={item.to}
-                          className={({ isActive }) => cn(
-                            'flex items-center justify-between px-4 py-2 text-sm hover:bg-navy/5 dark:hover:bg-silver/10 transition-colors',
-                            isActive && 'bg-navy/10 dark:bg-silver/20 text-navy dark:text-white font-medium',
-                            !isActive && 'text-gray-700 dark:text-gray-300'
-                          )}
-                          onClick={() => setActiveDropdown(null)}
-                        >
-                          <span>{item.label}</span>
-                          {item.premium && (
-                            <span className="text-xs bg-gold/20 text-gold px-2 py-0.5 rounded-full">Premium</span>
-                          )}
-                        </NavLink>
-                      ))}
+                      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 py-2">
+                        {link.submenu.map((item) => (
+                          <NavLink
+                            key={item.to}
+                            to={item.to}
+                            className={({ isActive }) => cn(
+                              'flex items-center justify-between px-4 py-2 text-sm hover:bg-navy/5 dark:hover:bg-silver/10 transition-colors',
+                              isActive && 'bg-navy/10 dark:bg-silver/20 text-navy dark:text-white font-medium',
+                              !isActive && 'text-gray-700 dark:text-gray-300'
+                            )}
+                            onClick={() => setActiveDropdown(null)}
+                          >
+                            <span>{item.label}</span>
+                            {item.premium && (
+                              <span className="text-xs bg-gold/20 text-gold px-2 py-0.5 rounded-full">Premium</span>
+                            )}
+                          </NavLink>
+                        ))}
+                      </div>
                     </motion.div>
                   )}
                 </div>
@@ -187,45 +193,76 @@ export const Navigation: React.FC = () => {
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {navLinks.map((link) => (
                 <div key={link.to}>
-                  <NavLink
-                    to={link.to}
-                    className={({ isActive }) => cn(
-                      'flex items-center justify-between px-3 py-2 rounded-md text-base font-medium',
-                      isActive
-                        ? 'bg-navy/10 text-navy dark:bg-silver/20 dark:text-white'
-                        : 'text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10'
-                    )}
-                    onClick={() => {
-                      if (!link.submenu) setIsMenuOpen(false);
-                    }}
-                  >
-                    <div className="flex items-center">
-                      <span className="mr-2">{link.icon}</span>
-                      {link.label}
-                    </div>
-                    {link.submenu && <ChevronDown size={16} />}
-                  </NavLink>
-                  {link.submenu && (
-                    <div className="pl-8 space-y-1">
-                      {link.submenu.map((item) => (
-                        <NavLink
-                          key={item.to}
-                          to={item.to}
-                          className={({ isActive }) => cn(
-                            'flex items-center justify-between px-3 py-2 rounded-md text-sm',
-                            isActive
-                              ? 'bg-navy/10 text-navy dark:bg-silver/20 dark:text-white'
-                              : 'text-gray-600 dark:text-gray-300 hover:bg-navy/5 dark:hover:bg-silver/10'
-                          )}
-                          onClick={() => setIsMenuOpen(false)}
+                  {link.submenu ? (
+                    <>
+                      <button
+                        className={cn(
+                          'w-full flex items-center justify-between px-3 py-2 rounded-md text-base font-medium',
+                          openMobileSubmenu === link.to
+                            ? 'bg-navy/10 text-navy dark:bg-silver/20 dark:text-white'
+                            : 'text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10'
+                        )}
+                        onClick={() => setOpenMobileSubmenu(openMobileSubmenu === link.to ? null : link.to)}
+                      >
+                        <div className="flex items-center">
+                          <span className="mr-2">{link.icon}</span>
+                          {link.label}
+                        </div>
+                        <ChevronDown 
+                          size={16} 
+                          className={cn(
+                            'transition-transform duration-200',
+                            openMobileSubmenu === link.to && 'rotate-180'
+                          )} 
+                        />
+                      </button>
+                      {openMobileSubmenu === link.to && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          className="pl-8 space-y-1 overflow-hidden"
                         >
-                          <span>{item.label}</span>
-                          {item.premium && (
-                            <span className="text-xs bg-gold/20 text-gold px-2 py-0.5 rounded-full">Premium</span>
-                          )}
-                        </NavLink>
-                      ))}
-                    </div>
+                          {link.submenu.map((item) => (
+                            <NavLink
+                              key={item.to}
+                              to={item.to}
+                              className={({ isActive }) => cn(
+                                'flex items-center justify-between px-3 py-2 rounded-md text-sm',
+                                isActive
+                                  ? 'bg-navy/10 text-navy dark:bg-silver/20 dark:text-white'
+                                  : 'text-gray-600 dark:text-gray-300 hover:bg-navy/5 dark:hover:bg-silver/10'
+                              )}
+                              onClick={() => {
+                                setIsMenuOpen(false);
+                                setOpenMobileSubmenu(null);
+                              }}
+                            >
+                              <span>{item.label}</span>
+                              {item.premium && (
+                                <span className="text-xs bg-gold/20 text-gold px-2 py-0.5 rounded-full">Premium</span>
+                              )}
+                            </NavLink>
+                          ))}
+                        </motion.div>
+                      )}
+                    </>
+                  ) : (
+                    <NavLink
+                      to={link.to}
+                      className={({ isActive }) => cn(
+                        'flex items-center justify-between px-3 py-2 rounded-md text-base font-medium',
+                        isActive
+                          ? 'bg-navy/10 text-navy dark:bg-silver/20 dark:text-white'
+                          : 'text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10'
+                      )}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <div className="flex items-center">
+                        <span className="mr-2">{link.icon}</span>
+                        {link.label}
+                      </div>
+                    </NavLink>
                   )}
                 </div>
               ))}
