@@ -212,7 +212,7 @@ export const VcisoProfessional: React.FC = () => {
               {/* Key Metrics */}
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
                 {[
-                  { value: '37+', label: 'Professional Templates', icon: FileText },
+                  { value: '27', label: 'Professional Templates', icon: FileText },
                   { value: '4', label: 'Workflow Steps', icon: Activity },
                   { value: 'Complete', label: 'Delivery Methodology', icon: Target },
                   { value: '$499', label: 'One-Time Purchase', icon: DollarSign }
@@ -249,7 +249,7 @@ export const VcisoProfessional: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                   {[
                     {
-                      title: '37+ Professional Templates',
+                      title: '27 Professional Templates',
                       description: 'All templates from Starter Kit included',
                       icon: FileText,
                       included: true
@@ -323,7 +323,7 @@ export const VcisoProfessional: React.FC = () => {
                     </thead>
                     <tbody>
                       <tr className="border-b border-gray-200 dark:border-gray-700">
-                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">37+ Templates</td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">27 Templates</td>
                         <td className="text-center"><CheckCircle size={20} className="text-green-500 mx-auto" /></td>
                         <td className="text-center bg-gold/10"><CheckCircle size={20} className="text-green-500 mx-auto" /></td>
                       </tr>

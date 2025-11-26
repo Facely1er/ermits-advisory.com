@@ -50,12 +50,13 @@ export default async function handler(
       sig as string,
       webhookSecret
     );
-  } catch (err: any) {
+  } catch (err: unknown) {
     // Log error details only in development
+    const errorMessage = err instanceof Error ? err.message : 'Unknown error';
     if (process.env.NODE_ENV === 'development') {
-      console.error('Webhook signature verification failed:', err.message);
+      console.error('Webhook signature verification failed:', errorMessage);
     }
-    return res.status(400).send(`Webhook Error: ${err.message}`);
+    return res.status(400).send(`Webhook Error: ${errorMessage}`);
   }
 
   // Handle the event
@@ -99,9 +100,10 @@ export default async function handler(
     }
 
     return res.json({ received: true });
-  } catch (error: any) {
+  } catch (error: unknown) {
     // Always log errors for monitoring
-    console.error('Error processing webhook:', error instanceof Error ? error.message : 'Unknown error');
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    console.error('Error processing webhook:', errorMessage);
     return res.status(500).json({ error: 'Internal server error' });
   }
 }
