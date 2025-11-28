@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { 
-  ArrowRight, CheckCircle, FileText, Download,
-  DollarSign, Shield, FileCheck, Layers, Target
+  CheckCircle, FileText, Download,
+  Shield, FileCheck, Layers, Target
 } from 'lucide-react';
 
 export const ComplianceToolkit: React.FC = () => {

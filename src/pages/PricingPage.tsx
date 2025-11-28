@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import {
-  Shield, CheckCircle, ArrowRight, Zap, FileText, Users,
-  DollarSign, Clock, Star, TrendingUp, ExternalLink
+  Shield, CheckCircle, ArrowRight, FileText, Users,
+  DollarSign, Clock, Star, TrendingUp
 } from 'lucide-react';
 
 export const PricingPage: React.FC = () => {

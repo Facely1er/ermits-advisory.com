@@ -8,21 +8,6 @@ import { ArrowRight, Shield, CheckCircle, FileText, Users, Briefcase, Target } f
 export const SteelExecutiveDiagnostic: React.FC = () => {
   const navigate = useNavigate();
 
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 }
-  };
-
   return (
     <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
       <div className="container mx-auto px-4">
@@ -259,17 +244,18 @@ export const SteelExecutiveDiagnostic: React.FC = () => {
                     'Up to 3 structural asymmetries: The most critical gaps that traditional audits miss, explained in board-ready language.',
                     '3–5 enterprise priorities: Ranked recommendations for the next 12–24 months, with impact and feasibility assessments.'
                   ].map((item, idx) => (
-                    <motion.li
-                      key={idx}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: idx * 0.1 }}
-                      className="flex items-start"
-                    >
-                      <CheckCircle size={20} className="text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-700 dark:text-gray-300">{item}</span>
-                    </motion.li>
+                    <li key={idx}>
+                      <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: idx * 0.1 }}
+                        className="flex items-start"
+                      >
+                        <CheckCircle size={20} className="text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700 dark:text-gray-300">{item}</span>
+                      </motion.div>
+                    </li>
                   ))}
                 </ul>
               </div>

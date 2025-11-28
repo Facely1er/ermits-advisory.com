@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { 
-  Mail, Send, AlertCircle, CheckCircle, ArrowRight, ArrowLeft,
-  Briefcase, User, MessageSquare, Shield, ChevronRight, X
+  Mail, Send, AlertCircle, CheckCircle, ArrowRight, ArrowLeft, Shield
 } from 'lucide-react';
-import { useSearchParams } from 'react-router-dom';
 import { contactService } from '../services/localDataService';
 
 type FormState = {
@@ -29,7 +27,6 @@ type OnboardingData = {
 };
 
 export const ContactPage: React.FC = () => {
-  const [searchParams] = useSearchParams();
   const [mode, setMode] = useState<'demo' | 'form'>('demo');
   const [currentStep, setCurrentStep] = useState(1);
   const [onboardingData, setOnboardingData] = useState<OnboardingData>({

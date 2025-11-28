@@ -1,20 +1,12 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Card } from '../shared/Card';
-import { SteelRecommendation, SteelPriority } from '../../types/steelAssessment';
+import { SteelRecommendation } from '../../types/steelAssessment';
 import { Calendar, Clock } from 'lucide-react';
 
 interface ActionTimelineProps {
   recommendations: SteelRecommendation[];
   className?: string;
 }
-
-const timelineGroups = {
-  '30 days': '30-Day Critical Actions',
-  '60-90 days': '60-90 Day Strategic Improvements',
-  '90-180 days': '90-180 Day Optimization',
-  'Ongoing': 'Ongoing Maintenance',
-};
 
 export const ActionTimeline: React.FC<ActionTimelineProps> = ({
   recommendations,

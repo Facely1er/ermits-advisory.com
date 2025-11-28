@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { 
-  Shield, CheckCircle, ArrowRight, 
+  Shield, ArrowRight, 
   Mail, MapPin, FileText,
   Layers, Network, Info, ExternalLink
 } from 'lucide-react';

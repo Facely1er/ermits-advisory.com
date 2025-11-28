@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import {
-  CheckCircle, Lock, Zap, Star, TrendingUp,
-  Download, Save, BarChart3, Users, Cloud, Shield
+  CheckCircle, Zap, Star,
+  Download, Users, Shield
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
@@ -143,12 +143,13 @@ export const ToolkitsPremiumPricing: React.FC = () => {
             <span className={`text-sm font-medium ${billingCycle === 'annual' ? 'text-navy dark:text-white' : 'text-gray-500 dark:text-gray-400'}`}>
               Annual
             </span>
-            <button
-              onClick={() => setBillingCycle(billingCycle === 'annual' ? 'lifetime' : 'annual')}
-              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                billingCycle === 'lifetime' ? 'bg-gradient-to-r from-yellow-400 to-orange-500' : 'bg-gray-300 dark:bg-gray-600'
-              }`}
-            >
+          <button
+            onClick={() => setBillingCycle(billingCycle === 'annual' ? 'lifetime' : 'annual')}
+            aria-label={`Switch to ${billingCycle === 'annual' ? 'lifetime' : 'annual'} billing`}
+            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
+              billingCycle === 'lifetime' ? 'bg-gradient-to-r from-yellow-400 to-orange-500' : 'bg-gray-300 dark:bg-gray-600'
+            }`}
+          >
               <span
                 className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
                   billingCycle === 'lifetime' ? 'translate-x-6' : 'translate-x-1'

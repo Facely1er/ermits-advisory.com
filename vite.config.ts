@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import removeConsole from 'vite-plugin-remove-console';
@@ -70,6 +71,26 @@ export default defineConfig(({ mode }) => ({
     // Optimize HMR
     hmr: {
       overlay: false
+    }
+  },
+  // Vitest testing configuration
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['./src/test/setup.ts'],
+    css: true,
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'json', 'html', 'lcov'],
+      exclude: [
+        'node_modules/',
+        'src/test/',
+        '**/*.d.ts',
+        '**/*.config.*',
+        '**/mockData',
+        'dist/',
+        'api/'
+      ]
     }
   }
 }));

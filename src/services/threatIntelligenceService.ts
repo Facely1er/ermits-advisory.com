@@ -52,7 +52,7 @@ interface NVDFeedEntry {
 }
 
 // Cache for API responses to avoid rate limiting
-let cache: {
+const cache: {
   data: ThreatIntelligenceData | null;
   timestamp: number;
 } = {
