@@ -90,11 +90,12 @@ This changelog documents the alignment of the ERMITS-Advisory website with STEEL
 
 ## Files Modified
 1. `src/components/Navigation.tsx` - Navigation structure
-2. `src/pages/LandingPage.tsx` - Hero, STEEL teaser, strategic capabilities
-3. `src/pages/AboutPage.tsx` - STEEL origin story, separation statement
-4. `src/pages/ServiceOffering.tsx` - Reorganized services
-5. `src/pages/ContactPage.tsx` - Interactive onboarding demo + simple form toggle
-6. `src/App.tsx` - Added new routes
+2. `src/components/Footer.tsx` - Updated footer links to match new navigation (STEEL Executive Diagnostic, Insights, About ERMITS-Advisory)
+3. `src/pages/LandingPage.tsx` - Hero, STEEL teaser, strategic capabilities
+4. `src/pages/AboutPage.tsx` - STEEL origin story, separation statement
+5. `src/pages/ServiceOffering.tsx` - Reorganized services, updated "Learn About STEEL™" link to point to `/steel-executive-diagnostic`
+6. `src/pages/ContactPage.tsx` - Interactive onboarding demo + simple form toggle
+7. `src/App.tsx` - Added new routes
 
 ## Files Created
 1. `src/pages/SteelExecutiveDiagnostic.tsx` - New STEEL Executive Diagnostic page

@@ -160,7 +160,7 @@ export const ServiceOffering: React.FC = () => {
                 <Button
                   variant="outline"
                   size="lg"
-                  onClick={() => navigate('/steel')}
+                  onClick={() => navigate('/steel-executive-diagnostic')}
                   icon={<Info size={20} />}
                   iconPosition="right"
                 >

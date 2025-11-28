@@ -30,13 +30,13 @@ export const Footer: React.FC = () => {
               <li>
                 <Link to="/services" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
                   <Briefcase size={14} className="mr-2 group-hover:scale-110 transition-transform" />
-                  Advisory Services
+                  Services
                 </Link>
               </li>
               <li>
-                <Link to="/steel" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
+                <Link to="/steel-executive-diagnostic" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
                   <Shield size={14} className="mr-2 group-hover:scale-110 transition-transform" />
-                  STEEL™ Assessment
+                  STEEL™ Executive Diagnostic
                 </Link>
               </li>
               <li>
@@ -61,13 +61,19 @@ export const Footer: React.FC = () => {
               <li>
                 <Link to="/about" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
                   <Users size={14} className="mr-2 group-hover:scale-110 transition-transform" />
-                  About Us
+                  About ERMITS-Advisory
+                </Link>
+              </li>
+              <li>
+                <Link to="/insights" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
+                  <FileText size={14} className="mr-2 group-hover:scale-110 transition-transform" />
+                  Insights
                 </Link>
               </li>
               <li>
                 <Link to="/contact" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
                   <Mail size={14} className="mr-2 group-hover:scale-110 transition-transform" />
-                  Contact
+                  Request Briefing
                 </Link>
               </li>
             </ul>
