@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import {
-  Download, Zap, FileText, CheckCircle, Shield, Users,
-  ArrowRight, Star, Lock
+  Download, Zap, FileText, CheckCircle,
+  ArrowRight, Star
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 

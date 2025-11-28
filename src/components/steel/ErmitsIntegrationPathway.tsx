@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Card } from '../shared/Card';
 import { Button } from '../shared/Button';
 import { ArrowRight, Link as LinkIcon } from 'lucide-react';

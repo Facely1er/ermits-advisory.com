@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import {
-  Download, Save, AlertTriangle, Clock, Shield, CheckCircle,
-  Lock, FileText, FolderOpen, Trash2, Loader, XCircle
+  Download, Save, AlertTriangle,
+  Lock, FileText, FolderOpen, Trash2, Loader
 } from 'lucide-react';
 import { generateIncidentResponsePDF } from '../utils/pdfGenerator';
 import {

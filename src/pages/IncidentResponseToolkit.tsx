@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { 
-  ArrowRight, CheckCircle, Shield, Download,
-  DollarSign, AlertTriangle, FileText, Users, MessageSquare
+  CheckCircle, Shield, Download,
+  AlertTriangle, FileText, Users
 } from 'lucide-react';
 
 export const IncidentResponseToolkit: React.FC = () => {

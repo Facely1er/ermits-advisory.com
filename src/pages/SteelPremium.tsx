@@ -19,9 +19,9 @@ export const SteelPremium: React.FC = () => {
         cancelUrl: window.location.href,
       });
       // Note: If successful, user will be redirected, so we don't set loading to false
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Checkout error:', error);
-      const errorMessage = error?.message || 'Failed to start checkout. Please try again or contact support.';
+      const errorMessage = error instanceof Error ? error.message : 'Failed to start checkout. Please try again or contact support.';
       alert(`Checkout Error: ${errorMessage}\n\nPlease try again or contact support.`);
       setLoading(false);
     }

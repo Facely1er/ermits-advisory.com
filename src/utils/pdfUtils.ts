@@ -74,7 +74,7 @@ export function addPDFHeader(
   headerColor: number[] = PDF_CONFIG.colors.primary
 ): number {
   const pageWidth = doc.internal.pageSize.getWidth();
-  let yPosition = 0;
+  const yPosition = 0;
 
   // Header background
   doc.setFillColor(...headerColor);

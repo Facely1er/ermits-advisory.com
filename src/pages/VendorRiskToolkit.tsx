@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { 
-  ArrowRight, CheckCircle, Users, Download,
-  DollarSign, FileText, Network, Shield, Target
+  CheckCircle, Download,
+  FileText, Network, Shield, Target
 } from 'lucide-react';
 
 export const VendorRiskToolkit: React.FC = () => {

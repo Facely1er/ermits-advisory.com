@@ -505,6 +505,203 @@ STEEL Assessment → Strategic Recommendations → ERMITS Platform Implementatio
 
 ---
 
+## 💻 Development & Setup
+
+### Prerequisites
+
+- **Node.js** 18.x or higher
+- **npm** 9.x or higher
+- **Stripe account** (for payment integration)
+- **Vercel account** (for deployment, recommended)
+
+### Quick Start
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd ermits-advisory-steel
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables**
+   ```bash
+   # Copy the environment template
+   cp env.example.template .env
+   ```
+
+4. **Configure your `.env` file**
+
+   Required variables:
+   ```env
+   VITE_STRIPE_PUBLIC_KEY=pk_test_xxxxx  # Get from Stripe Dashboard
+   STRIPE_SECRET_KEY=sk_test_xxxxx       # Keep this secret!
+   ```
+
+   Optional variables:
+   ```env
+   VITE_APP_NAME=ERMITS Advisory
+   VITE_APP_URL=http://localhost:5173
+   VITE_ENABLE_ANALYTICS=false
+   VITE_LOG_LEVEL=debug
+   ```
+
+5. **Run development server**
+   ```bash
+   npm run dev
+   ```
+
+   The application will be available at `http://localhost:5173`
+
+6. **Build for production**
+   ```bash
+   npm run build
+   npm run preview  # Test production build locally
+   ```
+
+### Environment Variables
+
+All environment variables are documented in `env.example.template`. Key variables include:
+
+| Variable | Purpose | Required |
+|----------|---------|----------|
+| `VITE_STRIPE_PUBLIC_KEY` | Stripe publishable key for payments | Yes |
+| `STRIPE_SECRET_KEY` | Stripe secret key (server-side) | Yes |
+| `VITE_STRIPE_STEEL_PREMIUM_PRICE_ID` | Price ID for STEEL Premium | For payments |
+| `VITE_STRIPE_VCISO_KIT_PRICE_ID` | Price ID for vCISO Kit | For payments |
+| `VITE_STRIPE_DASHBOARD_TEMPLATE_PRICE_ID` | Price ID for Dashboard Template | For payments |
+| `STRIPE_WEBHOOK_SECRET` | Webhook signing secret | For webhooks |
+| `VITE_ENABLE_ANALYTICS` | Enable Vercel Analytics | No |
+| `VITE_LOG_LEVEL` | Logging level (error/warn/info/debug) | No |
+
+**Note:** Variables prefixed with `VITE_` are exposed to the client. Server-side variables (like `STRIPE_SECRET_KEY`) should NOT have the `VITE_` prefix.
+
+### Stripe Setup
+
+1. **Create a Stripe account** at https://stripe.com
+
+2. **Get your API keys**
+   - Go to https://dashboard.stripe.com/apikeys
+   - Use **test keys** (pk_test_xxx) for development
+   - Use **live keys** (pk_live_xxx) for production
+
+3. **Create products** (optional, for testing payments)
+   ```bash
+   node scripts/create-stripe-products.mjs
+   ```
+
+4. **Configure webhook** (for production)
+   - Webhook URL: `https://your-domain.com/api/webhook`
+   - Events to listen for: `checkout.session.completed`, `payment_intent.succeeded`
+   - Copy the webhook signing secret to `STRIPE_WEBHOOK_SECRET`
+
+### Vercel Deployment
+
+1. **Install Vercel CLI** (optional)
+   ```bash
+   npm i -g vercel
+   ```
+
+2. **Deploy**
+   ```bash
+   vercel
+   ```
+
+3. **Configure environment variables in Vercel**
+   - Go to Project Settings → Environment Variables
+   - Add all required variables from `env.example.template`
+   - Use **production** Stripe keys for production deployment
+   - Use **test** Stripe keys for preview/development deployments
+
+4. **Configure custom domain** (optional)
+   - Go to Project Settings → Domains
+   - Add your custom domain
+   - Update DNS records as instructed
+
+### Development Commands
+
+```bash
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+# Run linter
+npm run lint
+
+# Run linter with auto-fix
+npm run lint -- --fix
+```
+
+### Project Structure
+
+```
+ermits-advisory-steel/
+├── api/                    # Vercel serverless functions
+│   ├── create-checkout-session.ts
+│   └── webhook.ts
+├── public/                 # Static assets
+│   ├── templates/          # Downloadable templates
+│   ├── vciso-kit/          # vCISO Kit files
+│   └── zips/               # Product ZIP files
+├── src/
+│   ├── assets/             # Images and static files
+│   ├── components/         # React components
+│   │   ├── shared/         # Reusable components
+│   │   └── steel/          # STEEL-specific components
+│   ├── contexts/           # React contexts
+│   ├── hooks/              # Custom hooks
+│   ├── pages/              # Page components
+│   ├── services/           # Business logic & API calls
+│   ├── steel-radar/        # STEEL Radar feature
+│   ├── styles/             # Global styles
+│   ├── types/              # TypeScript types
+│   └── utils/              # Utility functions
+├── .env                    # Environment variables (gitignored)
+├── env.example.template    # Environment template
+├── package.json            # Dependencies & scripts
+├── tsconfig.json           # TypeScript configuration
+├── tailwind.config.js      # Tailwind CSS configuration
+├── vite.config.ts          # Vite build configuration
+└── vercel.json             # Vercel deployment configuration
+```
+
+### Troubleshooting
+
+**Issue: Environment variables not loading**
+- Solution: Restart the dev server after changing `.env`
+- Solution: Ensure variables start with `VITE_` for client-side access
+
+**Issue: Stripe checkout not working**
+- Solution: Verify Stripe keys are correct (test keys for development)
+- Solution: Check browser console for errors
+- Solution: Ensure products are created in Stripe dashboard
+
+**Issue: Build fails**
+- Solution: Run `npm run lint` to check for errors
+- Solution: Clear node_modules and reinstall: `rm -rf node_modules && npm install`
+- Solution: Check TypeScript errors: `npx tsc --noEmit`
+
+**Issue: Port already in use**
+- Solution: Kill the process on port 5173 or use a different port
+- Solution: Run `npm run dev -- --port 3000` to use port 3000
+
+### Additional Documentation
+
+- **Stripe Integration:** See `STRIPE_SETUP_COMPLETE.md`
+- **Production Readiness:** See `PRODUCTION_READINESS_REPORT.md`
+- **Project Review:** See `PROJECT_REVIEW.md`
+- **Action Plan:** See `ACTION_PLAN.md`
+
+---
+
 ## 🔐 About ERMITS
 
 **ERMITS Corporation** is a leading provider of integrated cybersecurity intelligence and advisory services. Our mission is to transform cybersecurity from defensive necessity into competitive advantage through strategic intelligence, automated implementation, and continuous optimization.
