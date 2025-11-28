@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { ReactElement } from 'react';
 import { render, RenderOptions } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
@@ -37,7 +38,7 @@ export function waitFor(callback: () => void, timeout = 3000): Promise<void> {
         callback();
         clearTimeout(timer);
         resolve();
-      } catch (error) {
+      } catch {
         setTimeout(check, 50);
       }
     };

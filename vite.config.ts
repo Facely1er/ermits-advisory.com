@@ -66,8 +66,6 @@ export default defineConfig(({ mode }) => ({
   },
   // Performance optimizations
   server: {
-    // Enable HTTP/2 for development
-    https: false,
     // Optimize HMR
     hmr: {
       overlay: false

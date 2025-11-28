@@ -1,31 +1,55 @@
-import { STEELAssessment, PESTELFactor } from '../../types/steelAssessment';
+import { SteelAssessmentData } from '../../types/steelAssessment';
 
-export const mockSTEELAssessment: STEELAssessment = {
-  id: 'test-assessment-1',
-  timestamp: new Date('2024-01-15'),
-  organizationName: 'Test Organization',
-  industry: 'Technology',
-  companySize: 'Mid-Market (500-5000)',
-  responses: {
-    political: Array(7).fill(5),
-    economic: Array(7).fill(6),
-    social: Array(7).fill(7),
-    technological: Array(7).fill(4),
-    environmental: Array(7).fill(5),
-    legal: Array(7).fill(6),
-  },
-  scores: {
+export const mockSteelAssessment: SteelAssessmentData = {
+  factorScores: {
     political: 50,
     economic: 60,
     social: 70,
     technological: 48,
     environmental: 45,
     legal: 66,
-    composite: 56.5,
   },
-  riskLevel: 'Moderate',
-  version: '2.0',
+  composite: 56.5,
+  timestamp: '2024-01-15T00:00:00.000Z',
+  insights: {
+    executiveSummary: 'Test organization shows moderate risk across all factors.',
+    keyInsights: [
+      { factor: 'social', text: 'Strong social compliance' },
+      { factor: 'technological', text: 'Technology infrastructure needs improvement' },
+    ],
+    strengths: [
+      { factor: 'social', text: 'Excellent social policies' },
+    ],
+    opportunities: [
+      { factor: 'technological', text: 'Digital transformation opportunities' },
+    ],
+    riskContext: 'Moderate overall risk profile',
+  },
+  recommendations: [
+    {
+      factor: 'technological',
+      factorName: 'Technological',
+      score: 48,
+      priority: 'HIGH',
+      timeline: '3-6 months',
+      actions: ['Upgrade infrastructure', 'Implement security measures'],
+      quickWins: ['Update software', 'Train staff'],
+      longTerm: ['Digital transformation', 'AI integration'],
+    },
+  ],
 };
+
+// Legacy mock data structure for backward compatibility
+export interface PESTELFactor {
+  name: string;
+  score: number;
+  weight: number;
+  questions: Array<{
+    id: string;
+    text: string;
+    response: number;
+  }>;
+}
 
 export const mockPESTELFactors: PESTELFactor[] = [
   {
