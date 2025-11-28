@@ -5,7 +5,7 @@ import { useTheme } from '../contexts/ThemeContext';
 import { Button } from './shared/Button';
 import {
   Sun, Moon, Menu, X,
-  Home, Briefcase, Mail, Users, Shield, Layers, Focus, ChevronDown, Package
+  Home, Briefcase, Mail, Users, Shield, Focus, FileText
 } from 'lucide-react';
 import logoImg from '../assets/ermits-advisory.png';
 import { cn } from '../utils/cn';
@@ -13,8 +13,6 @@ import { cn } from '../utils/cn';
 export const Navigation: React.FC = () => {
   const { theme, toggleTheme, focusMode, toggleFocusMode } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [openMobileSubmenu, setOpenMobileSubmenu] = useState<string | null>(null);
   const navigate = useNavigate();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -27,22 +25,10 @@ export const Navigation: React.FC = () => {
 
   const navLinks = [
     { to: '/', label: 'Home', icon: <Home size={16} /> },
-    { 
-      to: '/steel', 
-      label: 'STEEL™', 
-      icon: <Shield size={16} />,
-      submenu: [
-        { to: '/steel', label: 'Assessment' },
-        { to: '/steel/radar', label: 'STEEL™ Radar', premium: true },
-        { to: '/steel/premium', label: 'Premium Features' },
-        { to: '/steel/professional', label: 'Professional' },
-        { to: '/steel/enterprise', label: 'Enterprise' },
-      ]
-    },
-    { to: '/vciso-kit', label: 'vCISO Kit', icon: <Package size={16} /> },
-    { to: '/services', label: 'Advisory Services', icon: <Briefcase size={16} /> },
-    { to: '/ecosystem', label: 'Ecosystem', icon: <Layers size={16} /> },
-    { to: '/about', label: 'About', icon: <Users size={16} /> },
+    { to: '/about', label: 'About ERMITS-Advisory', icon: <Users size={16} /> },
+    { to: '/steel-executive-diagnostic', label: 'STEEL™ Executive Diagnostic', icon: <Shield size={16} /> },
+    { to: '/services', label: 'Services', icon: <Briefcase size={16} /> },
+    { to: '/insights', label: 'Insights', icon: <FileText size={16} /> },
   ];
 
   return (
@@ -63,58 +49,19 @@ export const Navigation: React.FC = () => {
             {/* Nav Links */}
             <div className="flex items-center space-x-6 h-full">
               {navLinks.map((link) => (
-                <div
+                <NavLink
                   key={link.to}
-                  className="relative h-full"
-                  onMouseEnter={() => link.submenu && setActiveDropdown(link.to)}
-                  onMouseLeave={() => setActiveDropdown(null)}
-                >
-                  <NavLink
-                    to={link.to}
-                    className={({ isActive }) => cn(
-                      'text-sm font-medium hover:text-navy dark:hover:text-white transition-all duration-300 nav-link flex items-center whitespace-nowrap h-full relative',
-                      isActive
-                        ? 'text-navy-dark dark:text-white font-semibold border-b-2 border-navy dark:border-silver'
-                        : 'text-gray-600 dark:text-white/95 hover:border-b-2 hover:border-navy/30 dark:hover:border-silver/30'
-                    )}
-                  >
-                    <span className="mr-1.5">{link.icon}</span>
-                    {link.label}
-                    {link.submenu && <ChevronDown size={14} className="ml-1" />}
-                  </NavLink>
-                  
-                  {/* Dropdown Menu */}
-                  {link.submenu && activeDropdown === link.to && (
-                    <motion.div
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      onMouseEnter={() => setActiveDropdown(link.to)}
-                      onMouseLeave={() => setActiveDropdown(null)}
-                      className="absolute top-full left-0 pt-2 w-56 z-50"
-                    >
-                      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 py-2">
-                        {link.submenu.map((item) => (
-                          <NavLink
-                            key={item.to}
-                            to={item.to}
-                            className={({ isActive }) => cn(
-                              'flex items-center justify-between px-4 py-2 text-sm hover:bg-navy/5 dark:hover:bg-silver/10 transition-colors',
-                              isActive && 'bg-navy/10 dark:bg-silver/20 text-navy dark:text-white font-medium',
-                              !isActive && 'text-gray-700 dark:text-gray-300'
-                            )}
-                            onClick={() => setActiveDropdown(null)}
-                          >
-                            <span>{item.label}</span>
-                            {item.premium && (
-                              <span className="text-xs bg-gold/20 text-gold px-2 py-0.5 rounded-full">Premium</span>
-                            )}
-                          </NavLink>
-                        ))}
-                      </div>
-                    </motion.div>
+                  to={link.to}
+                  className={({ isActive }) => cn(
+                    'text-sm font-medium hover:text-navy dark:hover:text-white transition-all duration-300 nav-link flex items-center whitespace-nowrap h-full relative',
+                    isActive
+                      ? 'text-navy-dark dark:text-white font-semibold border-b-2 border-navy dark:border-silver'
+                      : 'text-gray-600 dark:text-white/95 hover:border-b-2 hover:border-navy/30 dark:hover:border-silver/30'
                   )}
-                </div>
+                >
+                  <span className="mr-1.5">{link.icon}</span>
+                  {link.label}
+                </NavLink>
               ))}
             </div>
 
@@ -158,7 +105,7 @@ export const Navigation: React.FC = () => {
                 icon={<Mail size={16} />}
                 onClick={handleContactClick}
               >
-                Contact
+                Request Briefing
               </Button>
             </div>
           </div>
@@ -192,79 +139,22 @@ export const Navigation: React.FC = () => {
           >
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {navLinks.map((link) => (
-                <div key={link.to}>
-                  {link.submenu ? (
-                    <>
-                      <button
-                        className={cn(
-                          'w-full flex items-center justify-between px-3 py-2 rounded-md text-base font-medium',
-                          openMobileSubmenu === link.to
-                            ? 'bg-navy/10 text-navy dark:bg-silver/20 dark:text-white'
-                            : 'text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10'
-                        )}
-                        onClick={() => setOpenMobileSubmenu(openMobileSubmenu === link.to ? null : link.to)}
-                      >
-                        <div className="flex items-center">
-                          <span className="mr-2">{link.icon}</span>
-                          {link.label}
-                        </div>
-                        <ChevronDown 
-                          size={16} 
-                          className={cn(
-                            'transition-transform duration-200',
-                            openMobileSubmenu === link.to && 'rotate-180'
-                          )} 
-                        />
-                      </button>
-                      {openMobileSubmenu === link.to && (
-                        <motion.div
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: 'auto' }}
-                          exit={{ opacity: 0, height: 0 }}
-                          className="pl-8 space-y-1 overflow-hidden"
-                        >
-                          {link.submenu.map((item) => (
-                            <NavLink
-                              key={item.to}
-                              to={item.to}
-                              className={({ isActive }) => cn(
-                                'flex items-center justify-between px-3 py-2 rounded-md text-sm',
-                                isActive
-                                  ? 'bg-navy/10 text-navy dark:bg-silver/20 dark:text-white'
-                                  : 'text-gray-600 dark:text-gray-300 hover:bg-navy/5 dark:hover:bg-silver/10'
-                              )}
-                              onClick={() => {
-                                setIsMenuOpen(false);
-                                setOpenMobileSubmenu(null);
-                              }}
-                            >
-                              <span>{item.label}</span>
-                              {item.premium && (
-                                <span className="text-xs bg-gold/20 text-gold px-2 py-0.5 rounded-full">Premium</span>
-                              )}
-                            </NavLink>
-                          ))}
-                        </motion.div>
-                      )}
-                    </>
-                  ) : (
-                    <NavLink
-                      to={link.to}
-                      className={({ isActive }) => cn(
-                        'flex items-center justify-between px-3 py-2 rounded-md text-base font-medium',
-                        isActive
-                          ? 'bg-navy/10 text-navy dark:bg-silver/20 dark:text-white'
-                          : 'text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10'
-                      )}
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      <div className="flex items-center">
-                        <span className="mr-2">{link.icon}</span>
-                        {link.label}
-                      </div>
-                    </NavLink>
+                <NavLink
+                  key={link.to}
+                  to={link.to}
+                  className={({ isActive }) => cn(
+                    'flex items-center justify-between px-3 py-2 rounded-md text-base font-medium',
+                    isActive
+                      ? 'bg-navy/10 text-navy dark:bg-silver/20 dark:text-white'
+                      : 'text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10'
                   )}
-                </div>
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <div className="flex items-center">
+                    <span className="mr-2">{link.icon}</span>
+                    {link.label}
+                  </div>
+                </NavLink>
               ))}
             </div>
             <div className="pt-4 pb-3 border-t border-gray-200 dark:border-gray-700">
@@ -304,7 +194,7 @@ export const Navigation: React.FC = () => {
                     icon={<Mail size={16} />}
                     onClick={handleContactClick}
                   >
-                    Contact
+                    Request Briefing
                   </Button>
                 </div>
               </div>

@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { 
-  Shield, Users, UserCheck, CheckCircle, ArrowRight, 
-  Mail, MapPin, Presentation, FileText, DollarSign, Clock, Server, Database,
+  Shield, CheckCircle, ArrowRight, 
+  Mail, MapPin, FileText,
   Layers, Network, Info, ExternalLink
 } from 'lucide-react';
 
@@ -13,38 +13,49 @@ export const ServiceOffering: React.FC = () => {
   const navigate = useNavigate();
   
 
-  // Core Advisory Services - 2 main offerings
+  // Core Advisory Services - 4 main offerings
   const coreServices = [
     {
-      id: 'steel-assessment',
+      id: 'steel-executive-diagnostic',
       icon: 'shield',
-      title: 'STEEL™ Strategic Assessment',
-      description: 'Expert risk assessment and strategic recommendations.',
-      price: '$25K - $125K',
-      timeline: '2-8 weeks',
-      note: 'Pricing scales based on company size and complexity',
-      features: [
-        'Professional STEEL™ assessment',
-        'Strategic recommendations',
-        'Executive briefing'
-      ],
-      cta: 'Request Quote',
+      title: 'STEEL Executive Diagnostic',
+      description: 'Board and regulator-facing diagnostic using STEEL to expose structural cyber, privacy, and supply chain risk.',
+      audience: 'Board, C-suite, Risk/Compliance, Investors',
+      problem: 'Traditional audits miss structural asymmetries. STEEL reveals what control checklists cannot.',
+      artifacts: 'STEEL report with classification, six-dimension radar, structural asymmetries, and enterprise priorities.',
+      cta: 'Request STEEL Briefing',
       link: '/contact'
     },
     {
-      id: 'on-demand-advisory',
-      icon: 'server',
-      title: 'On-demand Advisory Services',
-      description: 'Flexible expert guidance for specific cybersecurity challenges and strategic initiatives.',
-      price: 'Custom pricing',
-      timeline: 'As needed',
-      note: 'Hourly or project-based engagement',
-      features: [
-        'Hourly or project-based consulting',
-        'Strategic guidance and recommendations',
-        'Expert review and analysis',
-        'Customized solutions for your needs'
-      ],
+      id: 'governance-architecture',
+      icon: 'layers',
+      title: 'Cyber & Privacy Governance Architecture',
+      description: 'Uses STEEL outputs to define committees, reporting structures, KPIs, and governance artifacts.',
+      audience: 'Board, C-suite, Risk/Compliance',
+      problem: 'Governance frameworks often lack connection to actual risk. We align governance with structural risk findings.',
+      artifacts: 'Governance blueprint, committee charters, reporting templates, KPI framework.',
+      cta: 'Request Consultation',
+      link: '/contact'
+    },
+    {
+      id: 'supply-chain-governance',
+      icon: 'network',
+      title: 'Supply Chain & Vendor Risk Governance',
+      description: 'Uses STEEL and VendorSoluce/TechnoSoluce data to restructure third-party oversight.',
+      audience: 'Risk/Compliance, Procurement, C-suite',
+      problem: 'Vendor risk programs are reactive and fragmented. We restructure oversight based on actual exposure patterns.',
+      artifacts: 'Vendor risk governance framework, SBOM risk roadmap, third-party oversight playbook.',
+      cta: 'Request Consultation',
+      link: '/contact'
+    },
+    {
+      id: 'regulatory-readiness',
+      icon: 'file',
+      title: 'Regulatory & Board Defense Readiness',
+      description: 'Legal defensibility, oversight evidence, and readiness for regulators and litigators.',
+      audience: 'Board, Legal, C-suite, Risk/Compliance',
+      problem: 'When regulators or litigators ask "what did you know and when," you need evidence of oversight and due diligence.',
+      artifacts: 'Oversight evidence package, regulatory readiness assessment, board defense materials.',
       cta: 'Request Consultation',
       link: '/contact'
     }
@@ -77,13 +88,7 @@ export const ServiceOffering: React.FC = () => {
   };
 
   const handleServiceClick = (service: typeof coreServices[0]) => {
-    if (service.id === 'steel-assessment') {
-      navigate(`/contact?type=quote&service=steel-assessment`);
-    } else if (service.id === 'on-demand-advisory') {
-      navigate(`/contact?type=consultation&service=on-demand-advisory`);
-    } else {
-      navigate(service.link);
-    }
+    navigate(service.link);
   };
 
   return (
@@ -180,7 +185,7 @@ export const ServiceOffering: React.FC = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
             {coreServices.map((service) => (
               <Card 
                 key={service.id} 
@@ -194,43 +199,29 @@ export const ServiceOffering: React.FC = () => {
                       {getServiceIcon(service.icon)}
                     </div>
                     <div className="flex-1">
-                      <div className="text-xs font-semibold text-purple-600 dark:text-purple-400 uppercase tracking-wide mb-1">
-                        PROFESSIONAL
-                      </div>
                       <h3 className="text-xl font-bold mb-2 dark:text-white">
                         {service.title}
                       </h3>
-                      <div className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400 mb-2">
-                        <span className="flex items-center font-semibold text-navy dark:text-white">
-                          <DollarSign size={16} className="mr-1" />
-                          {service.price}
-                        </span>
-                        <span className="flex items-center">
-                          <Clock size={16} className="mr-1" />
-                          {service.timeline}
-                        </span>
-                      </div>
-                      {service.note && (
-                        <p className="text-xs text-gray-500 dark:text-gray-400 italic mb-2">
-                          {service.note}
-                        </p>
-                      )}
                     </div>
                   </div>
                   
-                  <p className="text-gray-600 dark:text-gray-200 mb-4 flex-grow text-sm">
+                  <p className="text-gray-600 dark:text-gray-200 mb-4 text-sm">
                     {service.description}
                   </p>
-                  
-                  <div className="mb-4">
-                    <ul className="space-y-1.5">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start text-sm">
-                          <CheckCircle size={14} className="text-purple-500 mt-0.5 mr-2 flex-shrink-0" />
-                          <span className="text-gray-600 dark:text-gray-300">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
+
+                  <div className="mb-4 space-y-3">
+                    <div>
+                      <h4 className="text-sm font-semibold text-gray-800 dark:text-white mb-1">Who it's for:</h4>
+                      <p className="text-xs text-gray-600 dark:text-gray-300">{service.audience}</p>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-gray-800 dark:text-white mb-1">Problem addressed:</h4>
+                      <p className="text-xs text-gray-600 dark:text-gray-300">{service.problem}</p>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-gray-800 dark:text-white mb-1">What you receive:</h4>
+                      <p className="text-xs text-gray-600 dark:text-gray-300">{service.artifacts}</p>
+                    </div>
                   </div>
                   
                   <div className="mt-auto pt-4 border-t border-gray-200 dark:border-gray-700">

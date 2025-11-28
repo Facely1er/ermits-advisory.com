@@ -4,9 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../contexts/ThemeContext';
 import { Button } from '../components/shared/Button';
 import { Card } from '../components/shared/Card';
-import { InteractiveCard } from '../components/shared/InteractiveCard';
-import { HeroCarousel } from '../components/shared/HeroCarousel';
-import { ArrowRight, CheckCircle, Zap, Eye, Target, Calendar, Layers, Rocket, Search, Shield } from 'lucide-react';
+import { ArrowRight, CheckCircle, Calendar, Layers, Rocket, Search, Shield } from 'lucide-react';
 import { LiveMetrics } from '../components/interactive/LiveMetrics';
 import heroBackground from '../assets/background.jpg';
 
@@ -29,33 +27,6 @@ export const LandingPage: React.FC = () => {
     show: { opacity: 1, y: 0 }
   };
 
-  // Enhanced features for interactive display
-  const enhancedFeatures = [
-    {
-      icon: <Zap size={24} className="text-yellow-500" />,
-      title: 'Real-Time Intelligence',
-      description: 'Monitor threats and risks as they emerge with live data feeds',
-      metric: 'Continuous'
-    },
-    {
-      icon: <Eye size={24} className="text-blue-500" />,
-      title: 'Predictive Analytics',
-      description: 'AI-powered insights that forecast potential security threats',
-      metric: 'Advanced'
-    },
-    {
-      icon: <Target size={24} className="text-green-500" />,
-      title: 'Strategic Focus',
-      description: 'Prioritize actions based on business impact and risk severity',
-      metric: '6D'
-    },
-    {
-      icon: <Shield size={24} className="text-purple-500" />,
-      title: 'Comprehensive Coverage',
-      description: 'Visibility across all critical risk dimensions',
-      metric: 'Multi-D'
-    }
-  ];
 
   return (
     <div>
@@ -134,81 +105,32 @@ export const LandingPage: React.FC = () => {
               <span className="text-xs">Strategic Threat & Enterprise Evaluation Layer</span>
             </motion.div>
 
-            {/* Main Heading with Enhanced Carousel */}
-            <div className="mb-8 min-h-[140px] md:min-h-[180px] flex items-center justify-center">
-              <HeroCarousel
-                slides={[
-                  {
-                    id: '1',
-                    headline: 'Navigate Risks. Unlock Growth. Future-Proof Your Organization with ',
-                    highlight: 'ERMITS Advisory STEEL™ Diagnostic'
-                  },
-                  {
-                    id: '2',
-                    headline: 'Transform open-source intelligence into ',
-                    highlight: 'strategic board-ready decisions.'
-                  },
-                  {
-                    id: '3',
-                    headline: '46 strategic questions. ',
-                    highlight: 'Comprehensive insights. Actionable outcomes.'
-                  },
-                  {
-                    id: '4',
-                    headline: 'From threat assessment to ',
-                    highlight: 'implementation in weeks, not months.'
-                  }
-                ]}
-                autoRotateInterval={3500}
-              />
-            </div>
+            {/* Main Heading */}
+            <motion.h1
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-5xl mx-auto leading-tight"
+            >
+              Strategic Cyber & Privacy Governance for Boards, Regulators, and Investors.
+            </motion.h1>
 
-            {/* Enhanced Subtitle */}
+            {/* Subheadline */}
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
-              className="text-lg md:text-xl lg:text-2xl text-white/90 mb-6 max-w-4xl mx-auto leading-relaxed font-light"
+              className="text-lg md:text-xl lg:text-2xl text-white/90 mb-10 max-w-4xl mx-auto leading-relaxed font-light"
             >
-              A comprehensive cybersecurity risk assessment framework that maps geopolitical, cyber, privacy, and supply-chain exposure to actionable implementation tools.
+              ERMITS-Advisory uses the STEEL™ Executive Diagnostic to expose structural cyber, privacy, and supply chain risk—and then aligns the ERMITS platform ecosystem to actually fix it.
             </motion.p>
 
-            {/* Purpose Statement */}
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-              className="text-base md:text-lg lg:text-xl text-white/85 mb-10 max-w-4xl mx-auto leading-relaxed"
-            >
-              ERMITS Advisory empowers organizations to navigate complex risk landscapes with confidence. We provide cutting-edge tools and methodologies that transform security data into actionable intelligence, enabling better decision-making and resilient enterprise security postures.
-            </motion.p>
-
-            {/* Key Benefits Pills */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7, duration: 0.6 }}
-              className="flex flex-wrap gap-3 justify-center mb-10"
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm text-sm text-white/90">
-                <CheckCircle size={16} className="text-cyan-400" />
-                <span>46 Strategic Indicators</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm text-sm text-white/90">
-                <Zap size={16} className="text-yellow-400" />
-                <span>Real-Time Intelligence</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm text-sm text-white/90">
-                <Target size={16} className="text-green-400" />
-                <span>Actionable Outcomes</span>
-              </div>
-            </motion.div>
 
             {/* Enhanced CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.6 }}
+              transition={{ delay: 0.7, duration: 0.6 }}
               className="flex flex-wrap gap-4 justify-center"
             >
               <Button 
@@ -216,18 +138,18 @@ export const LandingPage: React.FC = () => {
                 size="lg"
                 icon={<ArrowRight size={20} />}
                 iconPosition="right"
-                onClick={() => navigate('/steel')}
+                onClick={() => navigate('/contact')}
                 className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold px-10 py-5 rounded-xl shadow-2xl hover:shadow-cyan-500/50 transition-all transform hover:-translate-y-1 hover:scale-105 text-lg"
               >
-                Explore STEEL™ →
+                Request STEEL Briefing
               </Button>
               <Button 
                 variant="ghost" 
                 size="lg"
-                onClick={() => navigate('/pricing')}
+                onClick={() => navigate('/steel-executive-diagnostic#steel-overview')}
                 className="border-2 border-white/30 text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm font-semibold px-10 py-5 rounded-xl transition-all transform hover:-translate-y-1 text-lg"
               >
-                View Pricing
+                View STEEL Sample Output
               </Button>
             </motion.div>
           </motion.div>
@@ -255,6 +177,74 @@ export const LandingPage: React.FC = () => {
           </motion.div>
           
           <LiveMetrics />
+        </div>
+      </section>
+
+      {/* STEEL Teaser Block */}
+      <section className="py-16 bg-white dark:bg-dark-bg">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-8"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
+              STEEL™: Strategic Threat & Enterprise Evaluation Layer
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
+              STEEL is a decision-grade diagnostic for enterprise cyber and privacy risk. It does not count controls or tools. Instead, it evaluates risk across six dimensions—Political, Economic, Social, Technological, Environmental, and Legal—to surface the structural asymmetries your usual audits miss.
+            </p>
+          </motion.div>
+
+          {/* Six PESTEL Dimensions Visual */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="mb-8"
+          >
+            <Card className="p-8 bg-gradient-to-br from-silver-light to-white dark:from-dark-surface dark:to-dark-bg">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                {[
+                  { letter: 'P', name: 'Political', desc: 'Regulation, policy, conflict' },
+                  { letter: 'E', name: 'Economic', desc: 'Market forces, trade' },
+                  { letter: 'S', name: 'Social', desc: 'Behavior, culture, trust' },
+                  { letter: 'T', name: 'Technological', desc: 'Innovation, threats' },
+                  { letter: 'E', name: 'Environmental', desc: 'Climate, resources' },
+                  { letter: 'L', name: 'Legal', desc: 'Compliance, liability' },
+                ].map((dim, idx) => (
+                  <div
+                    key={idx}
+                    className="text-center p-4 rounded-lg bg-white dark:bg-dark-surface border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow"
+                  >
+                    <div className="text-3xl font-bold text-navy dark:text-silver mb-2">{dim.letter}</div>
+                    <div className="text-sm font-semibold text-gray-800 dark:text-white mb-1">{dim.name}</div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400">{dim.desc}</div>
+                  </div>
+                ))}
+              </div>
+            </Card>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="text-center"
+          >
+            <Button
+              variant="outline"
+              size="lg"
+              onClick={() => navigate('/steel-executive-diagnostic')}
+              icon={<ArrowRight size={18} />}
+              iconPosition="right"
+            >
+              How STEEL Works
+            </Button>
+          </motion.div>
         </div>
       </section>
 
@@ -742,56 +732,78 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Enhanced Features Section - Capabilities */}
+      {/* Strategic Capabilities Strip */}
       <section className="py-16 bg-white dark:bg-dark-bg">
         <div className="container mx-auto px-4 max-w-7xl">
           <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <motion.div variants={item} className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-2">
-              Capabilities
-            </motion.div>
-            <motion.h2 variants={item} className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              Advanced Capabilities
-            </motion.h2>
-            <motion.p variants={item} className="text-lg text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              Powerful tools and insights to transform your security posture
-            </motion.p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
+              Strategic Capabilities
+            </h2>
           </motion.div>
           
           <motion.div 
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.1 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"
           >
-            {enhancedFeatures.map((feature, index) => (
-              <motion.div key={index} variants={item}>
-                <InteractiveCard 
-                  hover3D={true}
-                  glowEffect={true}
-                  className="bg-white dark:bg-dark-card-bg p-6 text-center h-full"
-                >
-                  <div className="p-4 rounded-full bg-gray-50 dark:bg-gray-800 inline-flex mb-4">
-                    {feature.icon}
-                  </div>
-                  <div className="text-3xl font-bold text-navy dark:text-white mb-2">
-                    {feature.metric}
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 dark:text-white">
-                    {feature.title}
+            {[
+              {
+                title: 'Cybersecurity Governance',
+                description: 'Design and evaluation of governance frameworks aligned with industry standards and sector-specific requirements.'
+              },
+              {
+                title: 'Privacy Compliance Architecture',
+                description: 'Program blueprints grounded in global privacy regulations to operationalize privacy-by-design principles.'
+              },
+              {
+                title: 'Operational Risk Management',
+                description: 'Identification, mitigation, and monitoring of enterprise risk across people, process, and technology.'
+              },
+              {
+                title: 'Supply Chain Resilience & Third-Party Risk',
+                description: 'Risk modeling and assurance for multi-tier supply chains with focus on vendor and SBOM exposure.'
+              },
+              {
+                title: 'Global Regulatory Alignment',
+                description: 'Cross-jurisdiction mapping of cybersecurity, privacy, and trade obligations into coherent, executable requirements.'
+              }
+            ].map((capability, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 + index * 0.1 }}
+              >
+                <Card className="h-full p-6 hover:shadow-lg transition-shadow">
+                  <h3 className="text-lg font-semibold mb-3 dark:text-white">
+                    {capability.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-200 text-sm">
-                    {feature.description}
+                  <p className="text-sm text-gray-600 dark:text-gray-300">
+                    {capability.description}
                   </p>
-                </InteractiveCard>
+                </Card>
               </motion.div>
             ))}
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="text-center"
+          >
+            <p className="text-sm text-gray-600 dark:text-gray-400 italic">
+              Where legal understanding, cybersecurity experience, and global trade exposure intersect to solve real-world risk.
+            </p>
           </motion.div>
         </div>
       </section>

@@ -77,6 +77,53 @@ export const AboutPage: React.FC = () => {
           </div>
         </motion.div>
 
+        {/* Origin Story & STEEL Creation */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className="mb-16"
+        >
+          <Card variant="glass" padding="lg" className="bg-white dark:bg-dark-surface p-8 sm:p-10 lg:p-12">
+            <div className="max-w-4xl mx-auto space-y-6">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 dark:text-white">Our Origin</h2>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  ERMITS-Advisory was founded in 2016 as a research and response to emerging global privacy and cybersecurity issues. Our cross-domain experience—spanning logistics and export, AI software development, finance, and education—gives us a unique perspective on real-world risk, not just theoretical frameworks.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold mb-3 dark:text-white">Why We Built STEEL</h3>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  ERMITS-Advisory created STEEL to move beyond control checklists and framework theater. Traditional audits count controls and tools, but they miss the structural asymmetries that create real risk. STEEL evaluates risk across six dimensions—Political, Economic, Social, Technological, Environmental, and Legal—to surface what your usual audits miss.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold mb-3 dark:text-white">Advisory vs. Platforms</h3>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                  ERMITS-Advisory serves as the governance and strategy layer above the ERMITS platform ecosystem:
+                </p>
+                <div className="space-y-4">
+                  <div className="border-l-4 border-navy/30 dark:border-silver/30 pl-5 py-2">
+                    <h4 className="font-semibold text-navy dark:text-white mb-1">ERMITS-Advisory</h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
+                      Governance, strategy, asymmetry detection, and board alignment. We identify structural risks and design governance frameworks that actually work.
+                    </p>
+                  </div>
+                  <div className="border-l-4 border-navy/30 dark:border-silver/30 pl-5 py-2">
+                    <h4 className="font-semibold text-navy dark:text-white mb-1">ERMITS Platforms</h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
+                      CyberCaution, CyberCorrect, VendorSoluce, TechnoSoluce, CyberSoluce, SocialCaution, and others serve as the execution and automation layer. They implement the governance strategies we design.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
         {/* Leadership Excellence Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

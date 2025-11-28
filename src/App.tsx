@@ -103,6 +103,8 @@ const ECommercePoliciesPage = React.lazy(() => import('./pages/ECommercePolicies
 const PurchaseSuccess = React.lazy(() => import('./pages/PurchaseSuccess').then(m => ({ default: m.PurchaseSuccess })));
 const PricingPage = React.lazy(() => import('./pages/PricingPage').then(m => ({ default: m.PricingPage })));
 const SteelRadar = React.lazy(() => import('./steel-radar/pages/SteelRadar').then(m => ({ default: m.SteelRadar })));
+const SteelExecutiveDiagnostic = React.lazy(() => import('./pages/SteelExecutiveDiagnostic').then(m => ({ default: m.SteelExecutiveDiagnostic })));
+const InsightsPage = React.lazy(() => import('./pages/InsightsPage').then(m => ({ default: m.InsightsPage })));
 
 // Loading component for Suspense fallback
 const LoadingSpinner = () => (
@@ -154,6 +156,8 @@ function App() {
                   <Route path="/presentation" element={<BoardPresentation />} />
                   <Route path="/contact" element={<ContactPage />} />
                   <Route path="/about" element={<AboutPage />} />
+                  <Route path="/steel-executive-diagnostic" element={<SteelExecutiveDiagnostic />} />
+                  <Route path="/insights" element={<InsightsPage />} />
                   <Route path="/pricing" element={<PricingPage />} />
                   <Route path="/ecosystem" element={<EcosystemPage />} />
                   <Route path="/cybercaution" element={<ExternalRedirect to="https://cybercaution.com" />} />
