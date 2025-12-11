@@ -1,6 +1,6 @@
 // SteelQuestionnaireForm.tsx
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   computeSteelIndexFull,
   type RawScores,
@@ -13,6 +13,7 @@ import SteelRadar from "./SteelRadar";
 export default function SteelQuestionnaireForm() {
   const [answers, setAnswers] = useState<RawScores>({});
   const [result, setResult] = useState<SteelIndexResult | null>(null);
+  const progressBarRef = useRef<HTMLDivElement>(null);
 
   const handleChange = (domainId: string, value: string) => {
     const numeric = value ? Number(value) : undefined;
@@ -40,8 +41,43 @@ export default function SteelQuestionnaireForm() {
         })
       : [];
 
+  // Calculate progress
+  const totalQuestions = STEEL_QUESTIONS.length;
+  const answeredQuestions = Object.values(answers).filter(value => value != null).length;
+  const progressPercentage = totalQuestions > 0 ? (answeredQuestions / totalQuestions) * 100 : 0;
+
+  // Set progress width via CSS variable
+  useEffect(() => {
+    if (progressBarRef.current) {
+      progressBarRef.current.style.setProperty('--progress-width', `${progressPercentage}%`);
+    }
+  }, [progressPercentage]);
+
   return (
     <div className="steel-questionnaire">
+      {/* Progress Indicator */}
+      <div className="mb-8 p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+        <div className="flex items-center justify-between mb-2">
+          <h3 className="text-lg font-semibold text-navy dark:text-white">
+            Assessment Progress
+          </h3>
+          <span className="text-sm text-gray-600 dark:text-gray-400">
+            {answeredQuestions} of {totalQuestions} questions answered
+          </span>
+        </div>
+        <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+          <div
+            ref={progressBarRef}
+            className="steel-progress-bar bg-gradient-to-r from-navy to-cyan-500 dark:from-gold dark:to-gold/80 h-3 rounded-full transition-all duration-300"
+          />
+        </div>
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
+          {progressPercentage < 100 
+            ? `Complete ${totalQuestions - answeredQuestions} more question${totalQuestions - answeredQuestions !== 1 ? 's' : ''} to compute your STEEL™ Index`
+            : 'All questions answered! Click "Compute STEEL™ Index" to see your results.'}
+        </p>
+      </div>
+
       <form onSubmit={handleSubmit} className="space-y-8">
         {["strategic", "threat", "enterprise"].map((axis) => (
           <fieldset key={axis} className="border border-gray-300 dark:border-gray-600 rounded-lg p-6">
@@ -85,9 +121,16 @@ export default function SteelQuestionnaireForm() {
         <div className="flex justify-center">
           <button
             type="submit"
-            className="px-8 py-3 bg-navy text-white rounded-lg font-semibold hover:bg-navy-dark dark:bg-gold dark:text-navy dark:hover:bg-gold/90 transition-colors"
+            disabled={answeredQuestions < totalQuestions}
+            className={`px-8 py-3 rounded-lg font-semibold transition-colors ${
+              answeredQuestions < totalQuestions
+                ? 'bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400 cursor-not-allowed'
+                : 'bg-navy text-white hover:bg-navy-dark dark:bg-gold dark:text-navy dark:hover:bg-gold/90'
+            }`}
           >
-            Compute STEEL™ Index
+            {answeredQuestions < totalQuestions
+              ? `Complete ${totalQuestions - answeredQuestions} more question${totalQuestions - answeredQuestions !== 1 ? 's' : ''} to continue`
+              : 'Compute STEEL™ Index'}
           </button>
         </div>
       </form>

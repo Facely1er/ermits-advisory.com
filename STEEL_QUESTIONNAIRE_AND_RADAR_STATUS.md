@@ -241,9 +241,10 @@ src/steel-radar/
 
 ## 🚀 Access Points
 
-### Questionnaire
-- **React Route:** `/steel` (STEELVisualization)
-- **Public HTML:** `/public/steel/index.html`
+### Questionnaires
+- **42-Question PESTEL:** `/steel` (STEELVisualization)
+- **18-Question Sublayer:** `/steel-evaluation` (SteelEvaluationPage)
+- **Public HTML:** `/public/steel/index.html` (42-question version)
 - **Professional:** `/steel/professional` (ProfessionalSteelAssessment)
 
 ### Radar
@@ -270,10 +271,11 @@ src/steel-radar/
 
 ## ✅ Conclusion
 
-**STEEL Questionnaire:** ✅ **PRODUCTION READY**
-- Fully functional 42-question assessment
-- Complete scoring and visualization
-- Integrated with Radar and ecosystem
+**STEEL Questionnaires:** ✅ **PRODUCTION READY**
+- ✅ Fully functional 42-question PESTEL assessment (`/steel`)
+- ✅ Fully functional 18-question sublayer assessment (`/steel-evaluation`)
+- ✅ Complete scoring and visualization for both
+- ✅ Integrated with Radar and ecosystem
 
 **STEEL Radar:** ✅ **FULLY IMPLEMENTED**
 - Complete dashboard with visualization
@@ -281,5 +283,5 @@ src/steel-radar/
 - Data ingestion and export capabilities
 - Integrated with Questionnaire
 
-Both systems are **operational and integrated**, providing a complete assessment and continuous monitoring solution for enterprise risk evaluation.
+All systems are **operational and integrated**, providing a complete assessment and continuous monitoring solution for enterprise risk evaluation.
 

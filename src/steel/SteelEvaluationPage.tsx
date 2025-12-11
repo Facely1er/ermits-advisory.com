@@ -1,10 +1,9 @@
-import React from "react";
 import SteelQuestionnaireForm from "./SteelQuestionnaireForm";
 
 export default function SteelEvaluationPage() {
   return (
-    <main style={{ padding: "2rem", maxWidth: 960, margin: "0 auto" }}>
-      <header style={{ marginBottom: "1.5rem" }}>
+    <main className="steel-evaluation-page">
+      <header className="steel-evaluation-header">
         <h1>STEEL™ Evaluation</h1>
         <p>
           This interactive STEEL™ evaluation uses the Strategic Threat &amp; Enterprise

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { SteelIndexCard } from '../components/steel/SteelIndexCard';
+import { SteelArchitectureDiagram } from '../components/diagrams/SteelArchitectureDiagram';
 import { 
   ArrowRight, Target, Layers, 
   CheckCircle, AlertCircle
@@ -229,6 +230,18 @@ export const SteelMethodPage: React.FC = () => {
                 </ul>
               </Card>
             </motion.div>
+          </motion.div>
+
+          {/* STEEL Architecture Diagram */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-5xl mx-auto mb-8"
+          >
+            <Card className="p-8 bg-white dark:bg-gray-800">
+              <SteelArchitectureDiagram />
+            </Card>
           </motion.div>
 
           <motion.div

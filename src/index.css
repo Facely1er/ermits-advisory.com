@@ -11,3 +11,107 @@
     background-attachment: fixed;
   }
 }
+
+/* Steel Questionnaire Form Styles */
+.steel-questionnaire-form {
+  /* Container styles */
+}
+
+.steel-questionnaire-form .form {
+  @apply space-y-8;
+}
+
+.steel-questionnaire-form fieldset {
+  @apply border border-gray-300 dark:border-gray-600 rounded-lg p-6;
+}
+
+.steel-questionnaire-form legend {
+  @apply text-xl font-bold text-navy dark:text-gold px-2 capitalize;
+}
+
+.steel-questionnaire-form .questions-container {
+  @apply mt-4 space-y-4;
+}
+
+.steel-questionnaire-form .question-card {
+  @apply p-4 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800;
+}
+
+.steel-questionnaire-form .question-label {
+  @apply block font-semibold text-navy dark:text-gold mb-2;
+}
+
+.steel-questionnaire-form .question-text {
+  @apply text-sm text-gray-600 dark:text-gray-300 mb-3;
+}
+
+.steel-questionnaire-form select {
+  @apply w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-navy dark:focus:ring-gold;
+}
+
+.steel-questionnaire-form .submit-button-container {
+  @apply flex justify-center;
+}
+
+.steel-questionnaire-form .submit-button {
+  @apply px-8 py-3 bg-navy text-white rounded-lg font-semibold hover:bg-navy-dark dark:bg-gold dark:text-navy dark:hover:bg-gold/90 transition-colors;
+}
+
+.steel-questionnaire-form .results-section {
+  @apply mt-8 space-y-6;
+}
+
+.steel-questionnaire-form .results-title {
+  @apply text-2xl font-bold text-navy dark:text-gold;
+}
+
+.steel-questionnaire-form .results-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6;
+}
+
+.steel-questionnaire-form .score-card {
+  @apply p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700;
+}
+
+.steel-questionnaire-form .score-label {
+  @apply text-sm text-gray-600 dark:text-gray-400 mb-1;
+}
+
+.steel-questionnaire-form .score-value {
+  @apply text-2xl font-bold text-navy dark:text-gold;
+}
+
+.steel-questionnaire-form .steel-index-card {
+  @apply p-4 bg-gradient-to-br from-navy to-navy-dark dark:from-gold dark:to-gold/80 rounded-lg border border-gray-200 dark:border-gray-700;
+}
+
+.steel-questionnaire-form .steel-index-label {
+  @apply text-sm text-white/90 mb-1;
+}
+
+.steel-questionnaire-form .steel-index-value {
+  @apply text-2xl font-bold text-white;
+}
+
+.steel-questionnaire-form .radar-container {
+  @apply mt-6 p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700;
+}
+
+/* Progress bar with dynamic width */
+.steel-progress-bar {
+  width: var(--progress-width, 0%);
+}
+
+/* Steel Evaluation Page Styles */
+.steel-evaluation-page {
+  @apply px-8 max-w-[960px] mx-auto;
+}
+
+.steel-evaluation-header {
+  @apply mb-6;
+}
+
+/* Steel Radar Chart Container */
+.steel-radar-chart-container {
+  height: var(--radar-height, 500px);
+}

@@ -49,12 +49,12 @@ export const VcisoKit: React.FC = () => {
       activities: [
         'Stakeholder interviews',
         'Documentation review',
-        'STEEL assessment',
+        'STEEL™ assessment',
         'Gap analysis',
         'Platform deployment',
         'User training'
       ],
-      deliverables: ['30-day assessment report', 'STEEL score baseline', 'Gap analysis', '90-day roadmap']
+      deliverables: ['30-day assessment report', 'STEEL™ score baseline', 'Gap analysis', '90-day roadmap']
     },
     {
       title: 'Ongoing Delivery',

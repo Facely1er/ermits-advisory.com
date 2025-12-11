@@ -1,63 +1,8 @@
 {
-  "css.validate": false,
   "css.lint.unknownAtRules": "ignore",
-  "css.lint.unknownProperties": "ignore",
-  "css.lint.unknownVendorSpecificProperties": "ignore",
-  "scss.lint.unknownAtRules": "ignore",
-  "less.lint.unknownAtRules": "ignore",
+  "css.validate": false,
+  "stylelint.validate": ["css", "scss"],
   "files.associations": {
-    "**/globals.css": "tailwindcss",
-    "**/src/styles/globals.css": "tailwindcss",
-    "globals.css": "tailwindcss",
-    "src/styles/globals.css": "tailwindcss",
-    "ermits-advisory.com/src/styles/globals.css": "tailwindcss",
-    "*.css": "tailwindcss"
-  },
-  "css.customData": [
-    ".vscode/css_custom_data.json"
-  ],
-  "[css]": {
-    "css.validate": false,
-    "css.lint.unknownAtRules": "ignore",
-    "css.lint.unknownProperties": "ignore",
-    "css.lint.unknownVendorSpecificProperties": "ignore",
-    "editor.defaultFormatter": null
-  },
-  "[tailwindcss]": {
-    "css.validate": false,
-    "css.lint.unknownAtRules": "ignore",
-    "css.lint.unknownProperties": "ignore",
-    "css.lint.unknownVendorSpecificProperties": "ignore",
-    "editor.defaultFormatter": null
-  },
-  "css.lint": {
-    "unknownAtRules": "ignore",
-    "unknownProperties": "ignore"
-  },
-  "css.lint.emptyRules": "ignore",
-  "css.lint.importStatement": "ignore",
-  "css.lint.duplicateProperties": "ignore",
-  "css.lint.hexColorLength": "ignore",
-  "css.lint.argumentsInColorFunction": "ignore",
-  "css.lint.unknownUnits": "ignore",
-  "css.lint.zeroUnits": "ignore",
-  "editor.codeActionsOnSave": {
-    "source.fixAll": "never"
-  },
-  "css.completion.completePropertyWithSemicolon": true,
-  "css.hover.documentation": true,
-  "files.watcherExclude": {
-    "**/node_modules/**": true,
-    "**/dist/**": true
-  },
-  "tailwindCSS.experimental.classRegex": [
-    ["class:\\s*?[\"'`]([^\"'`]*).*?[\"'`]", "[\"'`]([^\"'`]*).*?[\"'`]"]
-  ],
-  "tailwindCSS.includeLanguages": {
-    "tailwindcss": "css"
-  },
-  "tailwindCSS.experimental.configFile": "./tailwind.config.js",
-  "editor.quickSuggestions": {
-    "strings": true
+    "*.tsx": "typescriptreact"
   }
 }

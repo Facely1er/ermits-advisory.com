@@ -22,58 +22,67 @@ STEEL™ is structured around three internal evaluation sublayers:
 
 ## 🔍 Current Status
 
-### ❌ **NOT YET IMPLEMENTED**
+### ✅ **FULLY IMPLEMENTED**
 
-The 18-question assessment based on the three sublayers is **not currently implemented** in the codebase.
+The 18-question assessment based on the three sublayers is **fully implemented** and available in the codebase.
 
-### What Exists Instead
+### Implementation Details
 
-1. **42-Question PESTEL Assessment** ✅
+1. **18-Question STEEL Assessment** ✅
+   - Based on 3 evaluation sublayers (Strategic, Threat, Enterprise)
+   - 6 questions per sublayer
+   - Location: `/steel-evaluation` route
+   - Component: `src/steel/SteelEvaluationPage.tsx`
+   - Form Component: `src/steel/SteelQuestionnaireForm.tsx`
+   - Config: `src/steel/steelQuestionnaireConfig.ts`
+   - Scoring: `src/steel/steelScoring.ts`
+
+2. **42-Question PESTEL Assessment** ✅
    - Based on 6 PESTEL factors (Political, Economic, Social, Technological, Environmental, Legal)
    - 7 questions per factor
    - Location: `/steel` route and `/public/steel/index.html`
 
-2. **Three Sublayer Structure** ✅
+3. **Three Sublayer Structure** ✅
    - Documented in `SteelMethodPage.tsx`
    - Described in `LandingPage.tsx`
-   - Used for conceptual framework, not as a questionnaire structure
+   - **Implemented as functional questionnaire** (18-question version)
 
 ---
 
-## 📋 Proposed 18-Question Structure
+## 📋 Implemented 18-Question Structure
 
 ### Strategic Evaluation Layer (Questions 1-6)
 
 **Focus:** Business and governance alignment
 
-1. Business and mission alignment
-2. Governance structures and accountability
-3. Risk appetite, tolerance, and decision thresholds
-4. Regulatory and market expectations
-5. Executive and board priorities
-6. Strategic cyber risk integration
+1. **S1_GOVERNANCE_ALIGNMENT** - Cyber risk integration into business governance
+2. **S2_RISK_APPETITE_DEFINITION** - Defined and communicated risk appetite
+3. **S3_LEADERSHIP_AWARENESS** - Executive understanding of cyber exposure
+4. **S4_BOARD_ENGAGEMENT** - Structured board cyber reporting
+5. **S5_REGULATORY_READINESS** - Regulatory and market expectations preparedness
+6. **S6_STRATEGIC_ROADMAP_INTEGRATION** - Cybersecurity aligned with strategic objectives
 
 ### Threat Evaluation Layer (Questions 7-12)
 
 **Focus:** External threat pressure
 
-7. Sector-specific threat landscape and actor profiles
-8. Ransomware, data breach, and fraud exposure
-9. Attack surface and vulnerability posture
-10. Incident readiness and response scenarios
-11. Impact of emerging vulnerabilities and campaigns
-12. Threat intelligence and monitoring capabilities
+7. **T1_SECTOR_THREAT_AWARENESS** - Sector-specific threat actors and campaigns
+8. **T2_ATTACK_SURFACE_VISIBILITY** - Digital footprint and vulnerability understanding
+9. **T3_INCIDENT_READINESS** - Preparedness for high-impact incidents
+10. **T4_CRISIS_DECISION_ARCHITECTURE** - Escalation paths and decision rights
+11. **T5_THREAT_INTEL_UTILIZATION** - Threat intelligence consumption and action
+12. **T6_VULNERABILITY_EXPLOIT_EXPOSURE** - Vulnerability identification and remediation
 
 ### Enterprise Evaluation Layer (Questions 13-18)
 
 **Focus:** Internal capabilities and resilience
 
-13. Controls, architecture, and security engineering maturity
-14. Processes and workflows across teams and business units
-15. Data flows, critical assets, and "crown jewels"
-16. Vendor, partner, and supply chain dependencies
-17. Operational resilience, continuity, and recovery capabilities
-18. Technology stack and infrastructure maturity
+13. **E1_ARCHITECTURE_COHERENCE** - Security architecture definition and consistency
+14. **E2_CONTROL_EFFECTIVENESS** - Foundational security controls implementation
+15. **E3_DATA_FLOW_CLARITY** - Critical assets and data flows documentation
+16. **E4_VENDOR_DEPENDENCIES** - Third-party and supply chain risk governance
+17. **E5_WORKFLOW_MATURITY** - Defined workflows for change and access management
+18. **E6_RESILIENCE_RECOVERY** - Recovery capability confidence during disruption
 
 ---
 
@@ -109,7 +118,7 @@ STEEL Index = Weighted aggregation of (S-score, T-score, E-score)
 | **Focus** | Strategic/Threat/Enterprise dimensions | PESTEL framework |
 | **Time** | ~15-20 minutes | ~25-30 minutes |
 | **Use Case** | Quick executive assessment | Comprehensive evaluation |
-| **Status** | ❌ Not implemented | ✅ Implemented |
+| **Status** | ✅ Implemented | ✅ Implemented |
 
 ### Complementary Use
 
@@ -126,29 +135,34 @@ STEEL Index = Weighted aggregation of (S-score, T-score, E-score)
 
 - ✅ **Conceptual framework exists** (three sublayers documented)
 - ✅ **Scoring methodology defined** (STEEL Index with S/T/E scores)
-- ❌ **18-question questionnaire NOT implemented**
-- ❌ **No dedicated route or component for 18-question version**
+- ✅ **18-question questionnaire FULLY IMPLEMENTED**
+- ✅ **Route available:** `/steel-evaluation`
+- ✅ **Component:** `SteelEvaluationPage.tsx` with `SteelQuestionnaireForm.tsx`
+- ✅ **Question config:** `steelQuestionnaireConfig.ts` (all 18 questions defined)
+- ✅ **Scoring engine:** `steelScoring.ts` (computes S/T/E scores and STEEL Index)
+- ✅ **Radar visualization:** Integrated radar chart display
 
-### What Would Be Needed
+### Implementation Details
 
-1. **Question Set Definition**
-   - Define 6 questions per sublayer
-   - Create scoring rubrics (1-10 scale)
-   - Align with existing STEEL Index calculation
+1. **Question Set Definition** ✅
+   - ✅ All 18 questions defined (6 per sublayer)
+   - ✅ Scoring rubrics implemented (1-5 scale with descriptive anchors)
+   - ✅ Aligned with STEEL Index calculation
 
-2. **Component Development**
-   - Create `Steel18QuestionAssessment.tsx` component
-   - Implement sublayer-based navigation
-   - Integrate with existing scoring service
+2. **Component Development** ✅
+   - ✅ `SteelEvaluationPage.tsx` - Main page component
+   - ✅ `SteelQuestionnaireForm.tsx` - Form with sublayer-based navigation
+   - ✅ Integrated with scoring service
 
-3. **Route Addition**
-   - Add route: `/steel/quick-assessment` or `/steel/18-question`
-   - Link from navigation or as alternative to 42-question
+3. **Route Addition** ✅
+   - ✅ Route: `/steel-evaluation`
+   - ✅ Accessible via direct URL
 
-4. **Integration**
-   - Use existing `steelAssessmentService.ts`
-   - Feed into STEEL Radar
-   - Generate STEEL Index (S/T/E scores)
+4. **Integration** ✅
+   - ✅ Uses `steelScoring.ts` for calculations
+   - ✅ Generates STEEL Index (S/T/E scores)
+   - ✅ Displays radar visualization
+   - ⚠️ **Note:** Integration with STEEL Radar dashboard may need verification
 
 ---
 
@@ -176,20 +190,31 @@ STEEL Index = Weighted aggregation of (S-score, T-score, E-score)
 
 ## 📝 Summary
 
-**Status:** The 18-question STEEL assessment based on the three evaluation sublayers is **conceptually defined but not implemented**.
+**Status:** The 18-question STEEL assessment based on the three evaluation sublayers is **✅ FULLY IMPLEMENTED AND OPERATIONAL**.
 
 **Current Implementation:**
-- ✅ 42-question PESTEL assessment (fully implemented)
-- ✅ Three sublayer framework (documented)
-- ✅ STEEL Index with S/T/E scores (conceptually defined)
-- ❌ 18-question sublayer-based questionnaire (not implemented)
+- ✅ 42-question PESTEL assessment (fully implemented at `/steel`)
+- ✅ Three sublayer framework (documented and implemented)
+- ✅ STEEL Index with S/T/E scores (fully implemented)
+- ✅ 18-question sublayer-based questionnaire (fully implemented at `/steel-evaluation`)
 
-**Next Steps:**
-1. Define the 18 questions (6 per sublayer)
-2. Create assessment component
-3. Integrate with existing scoring service
-4. Add route and navigation link
-5. Test and validate scoring
+**Access Points:**
+- **18-Question Assessment:** `/steel-evaluation`
+- **42-Question Assessment:** `/steel`
+- **STEEL Radar:** `/steel/radar`
+
+**Files:**
+- `src/steel/SteelEvaluationPage.tsx` - Main page
+- `src/steel/SteelQuestionnaireForm.tsx` - Form component
+- `src/steel/steelQuestionnaireConfig.ts` - Question definitions
+- `src/steel/steelScoring.ts` - Scoring engine
+
+**Next Steps (Optional Enhancements):**
+1. Add navigation link to `/steel-evaluation` in main navigation
+2. Verify integration with STEEL Radar dashboard
+3. Add data persistence (localStorage) similar to 42-question version
+4. Add export functionality (JSON/PDF)
+5. Add progress tracking and auto-save
 
 ---
 

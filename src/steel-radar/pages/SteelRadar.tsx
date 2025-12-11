@@ -4,7 +4,7 @@
  * Main dashboard for continuous monitoring with automated data ingestion
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -52,17 +52,16 @@ export const SteelRadar: React.FC = () => {
   const [selfAssessment, setSelfAssessment] = useState<SteelAssessmentData | null>(null);
   const [isLoadingDemo, setIsLoadingDemo] = useState(false);
 
-  useEffect(() => {
-    loadData();
+  const loadTrendData = useCallback(async (period: '7d' | '30d' | '90d') => {
+    try {
+      const trends = await calculateTrends(period);
+      setTrendData(trends);
+    } catch (error) {
+      console.error('Error loading trend data:', error);
+    }
   }, []);
 
-  useEffect(() => {
-    if (selectedPeriod) {
-      loadTrendData(selectedPeriod);
-    }
-  }, [selectedPeriod]);
-
-  const loadData = async () => {
+  const loadData = useCallback(async () => {
     setIsLoading(true);
     try {
       // Load latest score
@@ -88,16 +87,17 @@ export const SteelRadar: React.FC = () => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [selectedPeriod, loadTrendData]);
 
-  const loadTrendData = async (period: '7d' | '30d' | '90d') => {
-    try {
-      const trends = await calculateTrends(period);
-      setTrendData(trends);
-    } catch (error) {
-      console.error('Error loading trend data:', error);
+  useEffect(() => {
+    loadData();
+  }, [loadData]);
+
+  useEffect(() => {
+    if (selectedPeriod) {
+      loadTrendData(selectedPeriod);
     }
-  };
+  }, [selectedPeriod, loadTrendData]);
 
   const handleImportComplete = async (result: DataIngestionResult) => {
     if (!result.success) {

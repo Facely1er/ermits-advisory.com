@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import {
-  ArrowRight, Target, Shield, CheckCircle, FileCheck, Network, Gavel, TrendingUp
+  ArrowRight, Target, Shield, CheckCircle, FileCheck, Network, Gavel, TrendingUp, Map
 } from 'lucide-react';
 
 export const ServiceOffering: React.FC = () => {
@@ -28,17 +28,32 @@ export const ServiceOffering: React.FC = () => {
   const services = [
     {
       id: 'steel-eval',
-      title: 'STEEL™ Evaluation & Governance Roadmap',
-      description: 'A structured assessment that uses STEEL™—the Strategic Threat & Enterprise Evaluation Layer—to understand your current posture and define your next moves.',
+      title: 'STEEL™ Evaluation',
+      description: 'A structured assessment that uses STEEL™—the Strategic Threat & Enterprise Evaluation Layer—to understand your current posture and generate a STEEL™ Index.',
       icon: Target,
       color: 'cyan',
       whatWeDo: [
         'Run a STEEL™ evaluation across strategic, threat, and enterprise dimensions',
         'Generate a STEEL™ Index (Strategic, Threat, and Enterprise scores)',
         'Identify priority gaps, dependencies, and quick wins',
-        'Produce a governance and transformation roadmap aligned with your reality'
+        'Provide baseline assessment for governance and transformation planning'
       ],
-      whoItsFor: 'Organizations that need a structured baseline and governance roadmap, often at the start of a transformation or in response to heightened regulatory, customer, or board pressure.'
+      whoItsFor: 'Organizations that need a structured baseline assessment, often at the start of a transformation or in response to heightened regulatory, customer, or board pressure.'
+    },
+    {
+      id: 'roadmap',
+      title: 'Strategic Roadmap Development',
+      description: 'Transform STEEL™ evaluation results into an actionable, prioritized governance and transformation roadmap aligned with your business objectives and risk appetite.',
+      icon: TrendingUp,
+      color: 'purple',
+      whatWeDo: [
+        'Translate STEEL™ Index scores into strategic priorities',
+        'Develop sequenced implementation roadmap with timelines',
+        'Prioritize initiatives based on business impact and risk severity',
+        'Map roadmap to ERMITS ecosystem capabilities',
+        'Create governance structures to support execution'
+      ],
+      whoItsFor: 'Organizations that have completed a STEEL™ evaluation and need a clear, prioritized path forward for cyber governance and risk management transformation.'
     },
     {
       id: 'vciso',
@@ -58,15 +73,16 @@ export const ServiceOffering: React.FC = () => {
     },
     {
       id: 'grc',
-      title: 'Governance, Risk & Compliance Advisory',
-      description: 'Strategic guidance for aligning governance, risk management, and compliance with your business model, risk appetite, and regulatory context.',
+      title: 'GRC+ Advisory',
+      description: 'Strategic guidance for aligning governance, risk management, and compliance with your business model, risk appetite, and regulatory context—enhanced with STEEL™ intelligence.',
       icon: FileCheck,
       color: 'green',
       whatWeDo: [
         'Design and refine governance structures and decision rights',
         'Align risk management with business and regulatory expectations',
         'Support frameworks such as ISO, NIST, SOC 2, and sector-specific regimes',
-        'Connect GRC work to STEEL™ evaluations and the ERMITS ecosystem'
+        'Connect GRC work to STEEL™ evaluations and the ERMITS ecosystem',
+        'Enhance traditional GRC with threat intelligence and enterprise context'
       ],
       whoItsFor: 'Organizations facing growing regulatory complexity, customer due diligence pressure, or internal fragmentation around risk and compliance responsibilities.'
     },
@@ -131,6 +147,12 @@ export const ServiceOffering: React.FC = () => {
         text: 'text-blue-700 dark:text-blue-400',
         border: 'border-blue-500',
         icon: 'text-blue-600 dark:text-blue-400'
+      },
+      purple: {
+        bg: 'bg-purple-100 dark:bg-purple-900/30',
+        text: 'text-purple-700 dark:text-purple-400',
+        border: 'border-purple-500',
+        icon: 'text-purple-600 dark:text-purple-400'
       }
     };
     return colors[color] || colors.navy;

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
+import { ErmitsBridgeDiagram } from '../components/diagrams/ErmitsBridgeDiagram';
 import {
   Shield, ArrowRight,
   Zap, Target, Layers, CheckCircle, AlertCircle,
@@ -136,30 +137,11 @@ export const EcosystemPage: React.FC = () => {
                   </li>
                 </ol>
 
-                {/* Conceptual Flow Diagram */}
-                <div className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
-                  <p className="font-semibold text-navy dark:text-white mb-4">Conceptual Flow:</p>
-                  <div className="space-y-3 text-center">
-                    <div className="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 rounded-lg inline-block">
-                      <p className="font-semibold text-navy dark:text-white">Business & Leadership</p>
-                    </div>
-                    <ArrowDown size={24} className="mx-auto text-navy dark:text-silver" />
-                    <div className="px-4 py-2 bg-navy text-white rounded-lg inline-block">
-                      <p className="font-semibold">ERMITS Advisory – interprets and governs via STEEL™</p>
-                    </div>
-                    <ArrowDown size={24} className="mx-auto text-navy dark:text-silver" />
-                    <div className="px-4 py-2 bg-cyan-100 dark:bg-cyan-900/30 rounded-lg inline-block">
-                      <p className="font-semibold text-navy dark:text-white">STEEL™ Evaluation Layer – defines priorities</p>
-                    </div>
-                    <ArrowDown size={24} className="mx-auto text-navy dark:text-silver" />
-                    <div className="px-4 py-2 bg-green-100 dark:bg-green-900/30 rounded-lg inline-block">
-                      <p className="font-semibold text-navy dark:text-white">ERMITS Ecosystem Capabilities – execute priorities</p>
-                    </div>
-                    <ArrowDown size={24} className="mx-auto text-navy dark:text-silver" />
-                    <div className="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg inline-block">
-                      <p className="font-semibold text-navy dark:text-white">Telemetry & Evidence – feeds back into STEEL™</p>
-                    </div>
-                  </div>
+                {/* ERMITS Bridge Diagram */}
+                <div className="mt-8">
+                  <Card className="p-8 bg-white dark:bg-gray-800">
+                    <ErmitsBridgeDiagram />
+                  </Card>
                 </div>
               </div>
             </Card>
