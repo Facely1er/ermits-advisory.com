@@ -43,7 +43,7 @@ export const EcosystemPage: React.FC = () => {
               The ERMITS Ecosystem
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-200 max-w-4xl mx-auto mb-10 leading-relaxed">
-              The ERMITS ecosystem is a set of focused capabilities—CyberCaution, CyberCorrect, CyberSoluce, VendorSoluce, and more—that execute on priorities defined by ERMITS Advisory through the STEEL™ method.
+              The ERMITS ecosystem is a set of focused capabilities—CyberCaution™, CyberCorrect™, CyberSoluce™, VendorSoluce™, and more—that execute on priorities defined by ERMITS Advisory through the STEEL™ method.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button
@@ -85,19 +85,19 @@ export const EcosystemPage: React.FC = () => {
                 <ul className="space-y-4 text-base text-gray-700 dark:text-gray-300">
                   <li className="flex items-start">
                     <AlertCircle size={20} className="mr-3 mt-0.5 text-red-500 flex-shrink-0" />
-                    <span><strong className="text-navy dark:text-white">CyberCaution</strong> – threat, incident, and operational readiness capabilities informed by real-world attack dynamics.</span>
+                    <span><strong className="text-navy dark:text-white">CyberCaution™</strong> – threat, incident, and operational readiness capabilities informed by real-world attack dynamics.</span>
                   </li>
                   <li className="flex items-start">
                     <FileCheck size={20} className="mr-3 mt-0.5 text-green-500 flex-shrink-0" />
-                    <span><strong className="text-navy dark:text-white">CyberCorrect</strong> – compliance, privacy, and control implementation capabilities for standards and regulatory expectations.</span>
+                    <span><strong className="text-navy dark:text-white">CyberCorrect™</strong> – compliance, privacy, and control implementation capabilities for standards and regulatory expectations.</span>
                   </li>
                   <li className="flex items-start">
                     <Settings size={20} className="mr-3 mt-0.5 text-blue-500 flex-shrink-0" />
-                    <span><strong className="text-navy dark:text-white">CyberSoluce</strong> – solution and architecture design, integration, and enablement across your technology stack.</span>
+                    <span><strong className="text-navy dark:text-white">CyberSoluce™</strong> – solution and architecture design, integration, and enablement across your technology stack.</span>
                   </li>
                   <li className="flex items-start">
                     <Network size={20} className="mr-3 mt-0.5 text-orange-500 flex-shrink-0" />
-                    <span><strong className="text-navy dark:text-white">VendorSoluce</strong> – vendor, partner, and supply chain risk governance across your external ecosystem.</span>
+                    <span><strong className="text-navy dark:text-white">VendorSoluce™</strong> – vendor, partner, and supply chain risk governance across your external ecosystem.</span>
                   </li>
                 </ul>
               </div>
@@ -130,7 +130,7 @@ export const EcosystemPage: React.FC = () => {
                     <strong className="text-navy dark:text-white">STEEL™ defines priorities.</strong> Which risks matter most, what must happen first, and where governance focus is required.
                   </li>
                   <li>
-                    <strong className="text-navy dark:text-white">The ERMITS ecosystem executes.</strong> The relevant capabilities—such as CyberCaution, CyberCorrect, CyberSoluce, or VendorSoluce—are activated to carry out those priorities.
+                    <strong className="text-navy dark:text-white">The ERMITS ecosystem executes.</strong> The relevant capabilities—such as CyberCaution™, CyberCorrect™, CyberSoluce™, or VendorSoluce™—are activated to carry out those priorities.
                   </li>
                   <li>
                     <strong className="text-navy dark:text-white">Telemetry flows back into STEEL™.</strong> Evidence from these capabilities updates the STEEL™ evaluation and Index, reinforcing governance with real data.
@@ -192,7 +192,7 @@ export const EcosystemPage: React.FC = () => {
                       <td className="py-4 px-4">
                         <div className="flex items-center gap-3">
                           <AlertCircle size={20} className="text-red-500 flex-shrink-0" />
-                          <span className="font-semibold text-navy dark:text-white">CyberCaution</span>
+                          <span className="font-semibold text-navy dark:text-white">CyberCaution™</span>
                         </div>
                       </td>
                       <td className="py-4 px-4 text-sm text-gray-600 dark:text-gray-300">
@@ -206,7 +206,7 @@ export const EcosystemPage: React.FC = () => {
                       <td className="py-4 px-4">
                         <div className="flex items-center gap-3">
                           <FileCheck size={20} className="text-green-500 flex-shrink-0" />
-                          <span className="font-semibold text-navy dark:text-white">CyberCorrect</span>
+                          <span className="font-semibold text-navy dark:text-white">CyberCorrect™</span>
                         </div>
                       </td>
                       <td className="py-4 px-4 text-sm text-gray-600 dark:text-gray-300">
@@ -220,7 +220,7 @@ export const EcosystemPage: React.FC = () => {
                       <td className="py-4 px-4">
                         <div className="flex items-center gap-3">
                           <Settings size={20} className="text-blue-500 flex-shrink-0" />
-                          <span className="font-semibold text-navy dark:text-white">CyberSoluce</span>
+                          <span className="font-semibold text-navy dark:text-white">CyberSoluce™</span>
                         </div>
                       </td>
                       <td className="py-4 px-4 text-sm text-gray-600 dark:text-gray-300">
@@ -234,7 +234,7 @@ export const EcosystemPage: React.FC = () => {
                       <td className="py-4 px-4">
                         <div className="flex items-center gap-3">
                           <Network size={20} className="text-orange-500 flex-shrink-0" />
-                          <span className="font-semibold text-navy dark:text-white">VendorSoluce</span>
+                          <span className="font-semibold text-navy dark:text-white">VendorSoluce™</span>
                         </div>
                       </td>
                       <td className="py-4 px-4 text-sm text-gray-600 dark:text-gray-300">

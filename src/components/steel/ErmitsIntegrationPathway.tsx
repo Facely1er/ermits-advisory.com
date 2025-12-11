@@ -27,6 +27,19 @@ export const ErmitsIntegrationPathway: React.FC<ErmitsIntegrationPathwayProps> =
     'SocialCaution': 'https://socialcaution.com',
   };
 
+  // Map platform names to display names with trademark
+  const platformDisplayNames: Record<string, string> = {
+    'CyberCaution': 'CyberCaution™',
+    'CyberCorrect': 'CyberCorrect™',
+    'VendorSoluce': 'VendorSoluce™',
+    'TechnoSoluce': 'TechnoSoluce™',
+    'CyberCertitude': 'CyberCertitude™',
+    'SocialCaution': 'SocialCaution™',
+    'CyberSoluce': 'CyberSoluce™',
+    'ImpactSoluce': 'ImpactSoluce™',
+    'EduSoluce': 'EduSoluce™',
+  };
+
   const ermitsSuggestions = [];
 
   if (recommendations.some((r) => r.factor === 'technological' && r.score < 60)) {
@@ -105,6 +118,7 @@ export const ErmitsIntegrationPathway: React.FC<ErmitsIntegrationPathwayProps> =
       <ul className="space-y-3 mb-6">
         {uniqueSuggestions.map((suggestion, index) => {
           const platformUrl = platformUrls[suggestion.platform];
+          const displayName = platformDisplayNames[suggestion.platform] || suggestion.platform;
           return (
             <li
               key={index}
@@ -117,11 +131,11 @@ export const ErmitsIntegrationPathway: React.FC<ErmitsIntegrationPathwayProps> =
                   rel="noopener noreferrer"
                   className="font-semibold text-blue-700 dark:text-blue-300 min-w-[140px] hover:text-blue-900 dark:hover:text-blue-200 hover:underline transition-colors cursor-pointer"
                 >
-                  {suggestion.platform}:
+                  {displayName}:
                 </a>
               ) : (
                 <span className="font-semibold text-blue-700 dark:text-blue-300 min-w-[140px]">
-                  {suggestion.platform}:
+                  {displayName}:
                 </span>
               )}
               <span className="text-gray-700 dark:text-gray-200 text-sm flex-1">
@@ -144,8 +158,8 @@ export const ErmitsIntegrationPathway: React.FC<ErmitsIntegrationPathwayProps> =
       <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4 mb-6">
         <p className="text-sm text-gray-700 dark:text-gray-200 italic">
           <strong>Cross-Product Intelligence:</strong> ERMITS Advisory ensures that every
-          tool—CyberCaution, CyberCorrect, VendorSoluce, CyberSoluce, TechnoSoluce, ImpactSoluce,
-          EduSoluce, and SocialCaution—uses the same STEEL intelligence base, eliminating
+          tool—CyberCaution™, CyberCorrect™, VendorSoluce™, CyberSoluce™, TechnoSoluce™, ImpactSoluce™,
+          EduSoluce™, and SocialCaution™—uses the same STEEL intelligence base, eliminating
           fragmentation and inconsistent scoring across departments.
         </p>
       </div>

@@ -423,7 +423,7 @@ export const LandingPage: React.FC = () => {
                   </p>
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                  When technology is needed, we connect you into the right ERMITS ecosystem capabilities (CyberCaution, CyberCorrect, CyberSoluce, VendorSoluce, and more) without forcing tools where they don't belong.
+                  When technology is needed, we connect you into the right ERMITS ecosystem capabilities (CyberCaution™, CyberCorrect™, CyberSoluce™, VendorSoluce™, and more) without forcing tools where they don't belong.
                 </p>
                 <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
                   <p className="text-xs text-gray-500 dark:text-gray-400">
@@ -574,7 +574,7 @@ export const LandingPage: React.FC = () => {
                     </li>
                     <li className="flex items-start">
                       <CheckCircle size={18} className="mr-3 mt-0.5 text-green-600 dark:text-green-400 flex-shrink-0" />
-                      <span>CyberCaution, CyberCorrect, VendorSoluce, and more</span>
+                      <span>CyberCaution™, CyberCorrect™, VendorSoluce™, and more</span>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle size={18} className="mr-3 mt-0.5 text-green-600 dark:text-green-400 flex-shrink-0" />
@@ -638,7 +638,7 @@ export const LandingPage: React.FC = () => {
                             <Shield size={16} className="text-red-600 dark:text-red-400" />
                           </div>
                           <div>
-                            <p className="font-semibold text-navy dark:text-white text-sm mb-1">CyberCaution</p>
+                            <p className="font-semibold text-navy dark:text-white text-sm mb-1">CyberCaution™</p>
                             <p className="text-xs text-gray-600 dark:text-gray-400">Threat, incident, readiness, and operational resilience</p>
                           </div>
                         </div>
@@ -647,7 +647,7 @@ export const LandingPage: React.FC = () => {
                             <CheckCircle size={16} className="text-green-600 dark:text-green-400" />
                           </div>
                           <div>
-                            <p className="font-semibold text-navy dark:text-white text-sm mb-1">CyberCorrect</p>
+                            <p className="font-semibold text-navy dark:text-white text-sm mb-1">CyberCorrect™</p>
                             <p className="text-xs text-gray-600 dark:text-gray-400">Compliance, privacy, and control implementation</p>
                           </div>
                         </div>
@@ -656,7 +656,7 @@ export const LandingPage: React.FC = () => {
                             <Settings size={16} className="text-blue-600 dark:text-blue-400" />
                           </div>
                           <div>
-                            <p className="font-semibold text-navy dark:text-white text-sm mb-1">CyberSoluce</p>
+                            <p className="font-semibold text-navy dark:text-white text-sm mb-1">CyberSoluce™</p>
                             <p className="text-xs text-gray-600 dark:text-gray-400">Solution architecture and integration</p>
                           </div>
                         </div>
@@ -665,7 +665,7 @@ export const LandingPage: React.FC = () => {
                             <Network size={16} className="text-orange-600 dark:text-orange-400" />
                           </div>
                           <div>
-                            <p className="font-semibold text-navy dark:text-white text-sm mb-1">VendorSoluce</p>
+                            <p className="font-semibold text-navy dark:text-white text-sm mb-1">VendorSoluce™</p>
                             <p className="text-xs text-gray-600 dark:text-gray-400">Vendor and supply chain risk</p>
                           </div>
                         </div>
@@ -822,7 +822,7 @@ export const LandingPage: React.FC = () => {
                   All three evaluation sublayers form a single method: <strong className="text-navy dark:text-white">STEEL™ = Strategic Threat & Enterprise Evaluation Layer</strong>, not an acronym with individual letters.
                 </p>
                 <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed">
-                  ERMITS Advisory interprets STEEL™ evaluations to set priorities, while the ERMITS ecosystem (CyberCaution, CyberCorrect, CyberSoluce, VendorSoluce, etc.) executes and automates those priorities.
+                  ERMITS Advisory interprets STEEL™ evaluations to set priorities, while the ERMITS ecosystem (CyberCaution™, CyberCorrect™, CyberSoluce™, VendorSoluce™, etc.) executes and automates those priorities.
                 </p>
               </div>
             </Card>
@@ -1221,7 +1221,7 @@ export const LandingPage: React.FC = () => {
                   SMBs under ransomware pressure
                 </h3>
                 <div className="text-xs text-slate-400 mb-3">
-                  CyberCaution · CyberSoluce
+                  CyberCaution™ · CyberSoluce™
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
                   Identify which ransomware families, regions, and attack chains matter for your sector, then prioritize affordable controls instead of generic checklists.
@@ -1234,7 +1234,7 @@ export const LandingPage: React.FC = () => {
                   Privacy-heavy service providers
                 </h3>
                 <div className="text-xs text-slate-400 mb-3">
-                  CyberCorrect · SocialCaution
+                  CyberCorrect™ · SocialCaution™
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
                   Blend regulatory risk (GDPR, CCPA, LGPD, DPDP, etc.) with behavioral trends and data broker exposure to build a realistic privacy roadmap.
@@ -1247,7 +1247,7 @@ export const LandingPage: React.FC = () => {
                   Complex vendor & SBOM exposure
                 </h3>
                 <div className="text-xs text-slate-400 mb-3">
-                  VendorSoluce · VendorTal · TechnoSoluce
+                  VendorSoluce™ · VendorTal · TechnoSoluce™
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
                   Combine geopolitics, regulation, and software supply-chain indicators to see where your vendor stack and SBOMs are most fragile.
@@ -1260,7 +1260,7 @@ export const LandingPage: React.FC = () => {
                   Public sector & education
                 </h3>
                 <div className="text-xs text-slate-400 mb-3">
-                  CyberCaution · SocialCaution
+                  CyberCaution™ · SocialCaution™
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
                   Use STEEL™ to translate national threat bulletins and policy changes into pragmatic steps for municipalities, schools, and agencies.
