@@ -11,12 +11,6 @@ import {
 
 export const AboutPage: React.FC = () => {
   const navigate = useNavigate();
-  
-  // Animation variants
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 }
-  };
 
   // Business Experience data
   const businessExperience = {
@@ -128,7 +122,7 @@ export const AboutPage: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-16 text-center"
+          className="pt-16 mb-16 text-center"
         >
           <h1 className="text-3xl md:text-5xl font-bold mb-4 dark:text-white">Leadership Excellence</h1>
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-200 max-w-4xl mx-auto">
@@ -176,7 +170,7 @@ export const AboutPage: React.FC = () => {
                     <p className="text-xs font-semibold text-navy/70 dark:text-silver/70 uppercase tracking-wide mb-2">
                       {businessExperience.sections[1].category}
                     </p>
-                    {businessExperience.sections[1].items.map((item, idx) => (
+                    {businessExperience.sections[1].items?.map((item, idx) => (
                       <div key={idx} className="mb-4">
                         <h4 className="font-semibold text-navy dark:text-white mb-2">
                           {item.title}

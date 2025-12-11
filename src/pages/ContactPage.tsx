@@ -179,7 +179,7 @@ export const ContactPage: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-12 text-center"
+          className="pt-16 mb-12 text-center"
         >
           <h1 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
             {typeParam === 'quote' ? 'Request a Quote' : 'Contact Us'}
