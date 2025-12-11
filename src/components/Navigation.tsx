@@ -5,7 +5,7 @@ import { useTheme } from '../contexts/ThemeContext';
 import { Button } from './shared/Button';
 import {
   Sun, Moon, Menu, X,
-  Home, Briefcase, Mail, Users, Shield, Layers, Focus, ChevronDown, Package
+  Briefcase, Mail, Users, Layers, Focus, ChevronDown, BookOpen
 } from 'lucide-react';
 import logoImg from '../assets/ermits-advisory.png';
 import { cn } from '../utils/cn';
@@ -25,20 +25,28 @@ export const Navigation: React.FC = () => {
 
 
   const navLinks = [
-    { to: '/', label: 'Home', icon: <Home size={16} /> },
     { 
-      to: '/steel', 
-      label: 'STEEL™', 
-      icon: <Shield size={16} />,
+      to: '/ermits-advisory', 
+      label: 'Advisory', 
+      icon: <Briefcase size={16} />,
       submenu: [
+        { to: '/ermits-advisory', label: 'Overview' },
+        { to: '/services', label: 'Services' },
+        { to: '/vciso-kit', label: 'vCISO Services' },
+      ]
+    },
+    { 
+      to: '/method/steel', 
+      label: 'Method: STEEL™', 
+      icon: <BookOpen size={16} />,
+      submenu: [
+        { to: '/method/steel', label: 'Overview' },
         { to: '/steel', label: 'Assessment' },
         { to: '/steel/radar', label: 'STEEL™ Radar', premium: true },
         { to: '/steel/premium', label: 'Premium Features' },
         { to: '/steel/enterprise', label: 'Enterprise' },
       ]
     },
-    { to: '/vciso-kit', label: 'vCISO Kit', icon: <Package size={16} /> },
-    { to: '/services', label: 'Advisory Services', icon: <Briefcase size={16} /> },
     { to: '/ecosystem', label: 'Ecosystem', icon: <Layers size={16} /> },
     { to: '/about', label: 'About', icon: <Users size={16} /> },
   ];

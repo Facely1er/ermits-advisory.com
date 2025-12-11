@@ -1,15 +1,23 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Card } from '../components/shared/Card';
-import { Button } from '../components/shared/Button';
-import {
-  Download, Zap, FileText, CheckCircle, Shield, Users,
-  ArrowRight, Star, Lock
-} from 'lucide-react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export const ToolkitsOverview: React.FC = () => {
   const navigate = useNavigate();
+  
+  useEffect(() => {
+    // Redirect to ERMITS Landing page products section
+    window.location.href = 'https://ermits.com/products';
+  }, []);
+  
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-silver-light dark:bg-dark-bg">
+      <div className="text-center p-8">
+        <p className="text-gray-600 dark:text-gray-200 mb-4">
+          Redirecting to products section...
+        </p>
+      </div>
+    </div>
+  );
 
   return (
     <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">

@@ -4,32 +4,15 @@ import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { 
   ArrowRight, CheckCircle, FileText, Clock, 
-  DollarSign, Target, Zap, Settings,
-  Activity, CheckSquare, Download,
+  Target, Settings,
+  Activity, CheckSquare,
   Briefcase
 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
-import { createCheckoutSession } from '../services/stripe';
 
 export const VcisoKit: React.FC = () => {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState<'overview' | 'workflow' | 'templates'>('overview');
-  const [loading, setLoading] = useState(false);
-
-  const handlePurchase = async () => {
-    setLoading(true);
-    try {
-      await createCheckoutSession({
-        productType: 'vciso-kit',
-        successUrl: `${window.location.origin}/purchase-success`,
-        cancelUrl: window.location.href,
-      });
-    } catch (error) {
-      console.error('Checkout error:', error);
-      alert('Failed to start checkout. Please try again or contact support.');
-      setLoading(false);
-    }
-  };
+  const [activeTab, setActiveTab] = useState<'overview' | 'workflow' | 'services'>('overview');
   const [workflowStep, setWorkflowStep] = useState(0);
 
   // Workflow Steps
@@ -88,41 +71,6 @@ export const VcisoKit: React.FC = () => {
     }
   ];
 
-  // Templates Library
-  const templates = [
-    {
-      category: 'Monthly Deliverables',
-      items: [
-        { name: 'Monthly Executive Briefing Template', description: 'Complete monthly report template with all sections' },
-        { name: 'Quarterly Board Presentation', description: 'Board-ready presentation template' },
-        { name: 'Monthly Metrics Dashboard', description: 'Key performance indicators and metrics' }
-      ]
-    },
-    {
-      category: 'Onboarding',
-      items: [
-        { name: 'Client Kickoff Agenda', description: '90-120 minute kickoff meeting template' },
-        { name: 'Discovery Call Template', description: 'Initial discovery call agenda and questions' },
-        { name: '30-Day Assessment Report', description: 'Comprehensive assessment report template' }
-      ]
-    },
-    {
-      category: 'Governance',
-      items: [
-        { name: 'Security Program Charter', description: 'Program foundation and charter template' },
-        { name: 'Risk Management Framework', description: 'Risk assessment methodology template' },
-        { name: 'Board Governance Program', description: 'Board reporting framework template' }
-      ]
-    },
-    {
-      category: 'Operations',
-      items: [
-        { name: 'Incident Response Plan', description: 'Complete IR plan template' },
-        { name: 'Policy Framework Template', description: '25+ policy templates' },
-        { name: 'Vendor Risk Assessment', description: 'Vendor evaluation template' }
-      ]
-    }
-  ];
 
   return (
     <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
@@ -134,33 +82,33 @@ export const VcisoKit: React.FC = () => {
           className="pt-16 mb-12 text-center"
         >
           <div className="inline-block px-4 py-2 bg-navy/20 rounded-full mb-6">
-            <span className="text-navy dark:text-silver font-semibold">Interactive vCISO Toolkit</span>
+            <span className="text-navy dark:text-silver font-semibold">Strategic Cyber Governance & Stewardship</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 dark:text-white">
-            vCISO Starter Kit
+            vCISO Services
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto mb-8">
-            Self-service toolkit with 37+ professional templates, playbooks, and delivery guides for vCISO practitioners
+            ERMITS Advisory provides strategic cyber governance and stewardship through expert virtual CISO leadership, comprehensive risk assessments, and executive-ready guidance tailored to your organization's unique risk profile.
           </p>
           
-          {/* Price Badge */}
+          {/* Service Focus */}
           <div className="flex items-center justify-center gap-4 mb-8">
-            <div className="text-4xl font-bold text-navy dark:text-silver">$299</div>
-            <div className="text-gray-600 dark:text-gray-400">One-time purchase</div>
+            <div className="text-4xl font-bold text-navy dark:text-silver">Strategic Advisory</div>
+            <div className="text-gray-600 dark:text-gray-400">Expert Governance Services</div>
           </div>
 
           {/* Tab Navigation */}
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             {[
               { id: 'overview', label: 'Overview', icon: Briefcase },
-              { id: 'templates', label: 'Template Library', icon: FileText },
-              { id: 'workflow', label: 'Delivery Guides', icon: Activity }
+              { id: 'services', label: 'Service Approach', icon: FileText },
+              { id: 'workflow', label: 'Engagement Model', icon: Activity }
             ].map((tab) => {
               const Icon = tab.icon;
               return (
                 <button
                   key={tab.id}
-                  onClick={() => setActiveTab(tab.id as 'overview' | 'workflow' | 'templates')}
+                  onClick={() => setActiveTab(tab.id as 'overview' | 'workflow' | 'services')}
                   className={`px-6 py-3 rounded-lg font-semibold transition-all flex items-center gap-2 ${
                     activeTab === tab.id
                       ? 'bg-navy text-white'
@@ -187,10 +135,10 @@ export const VcisoKit: React.FC = () => {
               {/* Key Metrics */}
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
                 {[
-                  { value: '37+', label: 'Professional Templates', icon: FileText },
-                  { value: '4', label: 'Template Categories', icon: Target },
-                  { value: 'Instant', label: 'Digital Download', icon: Zap },
-                  { value: '$299', label: 'One-Time Purchase', icon: DollarSign }
+                  { value: 'Strategic', label: 'Governance Leadership', icon: Briefcase },
+                  { value: 'STEEL™', label: 'Risk Assessment', icon: Target },
+                  { value: 'Executive', label: 'Board-Ready Guidance', icon: FileText },
+                  { value: 'Ongoing', label: 'Continuous Stewardship', icon: Activity }
                 ].map((metric, index) => {
                   const Icon = metric.icon;
                   return (
@@ -219,39 +167,39 @@ export const VcisoKit: React.FC = () => {
               {/* What's Included */}
               <div className="mb-12">
                 <h2 className="text-3xl font-bold text-center mb-8 dark:text-white">
-                  What's Included in the Toolkit
+                  Strategic Governance Services
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                   {[
                     {
-                      title: '37+ Professional Templates',
-                      description: 'Ready-to-use templates for all vCISO service delivery needs',
-                      icon: FileText
+                      title: 'Strategic Risk Assessment',
+                      description: 'Comprehensive STEEL™ framework assessments to identify and prioritize cyber risks',
+                      icon: Target
                     },
                     {
-                      title: 'Service Delivery Guides',
-                      description: 'Complete workflows and processes for vCISO engagements',
-                      icon: Activity
-                    },
-                    {
-                      title: 'ERMITS Platform Integration',
-                      description: 'Guides for integrating ERMITS platforms into your services',
-                      icon: Settings
-                    },
-                    {
-                      title: 'Board Presentation Templates',
-                      description: 'Executive-ready presentation templates for board meetings',
+                      title: 'Executive Leadership',
+                      description: 'Virtual CISO leadership providing strategic guidance and board-ready insights',
                       icon: Briefcase
                     },
                     {
-                      title: 'Policy Templates & Frameworks',
-                      description: 'Comprehensive policy templates and governance frameworks',
+                      title: 'Governance Framework Development',
+                      description: 'Establish and mature your cyber governance program with expert guidance',
+                      icon: Settings
+                    },
+                    {
+                      title: 'Board & Executive Reporting',
+                      description: 'Executive-ready briefings and strategic recommendations for leadership',
+                      icon: FileText
+                    },
+                    {
+                      title: 'Compliance Advisory',
+                      description: 'Strategic compliance guidance aligned with your risk profile and business objectives',
                       icon: CheckSquare
                     },
                     {
-                      title: 'Instant Digital Download',
-                      description: 'Get immediate access after purchase - no waiting',
-                      icon: Download
+                      title: 'Platform Integration Support',
+                      description: 'Strategic guidance on implementing ERMITS platform solutions for operational excellence',
+                      icon: Activity
                     }
                   ].map((item, index) => {
                     const Icon = item.icon;
@@ -275,30 +223,35 @@ export const VcisoKit: React.FC = () => {
                 </div>
               </div>
 
-              {/* Why This Toolkit */}
+              {/* Why ERMITS Advisory */}
               <Card variant="glass" padding="lg" className="mb-12">
-                <h2 className="text-2xl font-bold mb-6 dark:text-white">Why Choose the vCISO Starter Kit?</h2>
+                <h2 className="text-2xl font-bold mb-6 dark:text-white">Why Choose ERMITS Advisory for vCISO Services?</h2>
+                <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 rounded">
+                  <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                    <strong className="text-navy dark:text-white">Our vCISO role operates on top of the STEEL™ evaluation layer and the broader ERMITS ecosystem, using internal frameworks and playbooks as instruments—not as standalone products.</strong> We provide fractional security leadership and governance oversight through strategic stewardship, not product delivery.
+                  </p>
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {[
                     {
-                      title: 'Save Time & Effort',
-                      description: 'Skip creating templates from scratch - use proven, professional formats',
-                      icon: Clock
-                    },
-                    {
-                      title: 'Professional Quality',
-                      description: 'Board-ready templates used by experienced vCISO practitioners',
-                      icon: CheckCircle
-                    },
-                    {
-                      title: 'Complete Coverage',
-                      description: 'Everything you need for vCISO service delivery in one package',
+                      title: 'Strategic Intelligence',
+                      description: 'STEEL™ framework provides data-driven risk intelligence, not generic checklists',
                       icon: Target
                     },
                     {
-                      title: 'ERMITS Integration',
-                      description: 'Includes guides for integrating ERMITS platforms into your services',
+                      title: 'Executive-Ready Guidance',
+                      description: 'Board-level strategic recommendations tailored to your organization\'s unique risk profile',
+                      icon: CheckCircle
+                    },
+                    {
+                      title: 'Platform-Enabled Implementation',
+                      description: 'Strategic guidance connected to ERMITS platform solutions for operational execution',
                       icon: Settings
+                    },
+                    {
+                      title: 'Ongoing Stewardship',
+                      description: 'Continuous strategic leadership and governance support, not just point-in-time assessments',
+                      icon: Clock
                     }
                   ].map((benefit, index) => {
                     const Icon = benefit.icon;
@@ -332,9 +285,9 @@ export const VcisoKit: React.FC = () => {
               <div className="max-w-5xl mx-auto">
                 <div className="text-center mb-8">
                   <Activity size={48} className="text-navy dark:text-silver mx-auto mb-4" />
-                  <h2 className="text-3xl font-bold mb-2 dark:text-white">vCISO Delivery Workflow</h2>
+                  <h2 className="text-3xl font-bold mb-2 dark:text-white">vCISO Engagement Model</h2>
                   <p className="text-gray-600 dark:text-gray-200">
-                    Interactive guide through the complete vCISO service delivery process
+                    Strategic governance engagement model for comprehensive cyber stewardship
                   </p>
                 </div>
 
@@ -436,8 +389,8 @@ export const VcisoKit: React.FC = () => {
             </motion.div>
           )}
 
-          {/* Templates Tab */}
-          {activeTab === 'templates' && (
+          {/* Services Tab */}
+          {activeTab === 'services' && (
             <motion.div
               key="templates"
               initial={{ opacity: 0, y: 20 }}
@@ -445,31 +398,29 @@ export const VcisoKit: React.FC = () => {
               exit={{ opacity: 0, y: -20 }}
             >
               <div className="text-center mb-8">
-                <FileText size={48} className="text-navy dark:text-silver mx-auto mb-4" />
-                <h2 className="text-3xl font-bold mb-2 dark:text-white">Template Library</h2>
+                <Briefcase size={48} className="text-navy dark:text-silver mx-auto mb-4" />
+                <h2 className="text-3xl font-bold mb-2 dark:text-white">Service Delivery Approach</h2>
                 <p className="text-gray-600 dark:text-gray-200 mb-4">
-                  37+ professional templates organized by category for vCISO service delivery
+                  ERMITS Advisory delivers strategic cyber governance through a structured, outcome-driven engagement model
                 </p>
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 rounded-full text-green-700 dark:text-green-400 text-sm font-semibold">
                   <CheckCircle size={16} />
-                  All templates included in your purchase
+                  Strategic governance & stewardship services
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                {templates.map((category, catIndex) => (
-                  <Card key={catIndex} variant="glass" padding="lg">
+                {workflowSteps.map((step, stepIndex) => (
+                  <Card key={stepIndex} variant="glass" padding="lg">
                     <h3 className="text-xl font-bold mb-4 dark:text-white flex items-center gap-2">
-                      <FileText size={20} />
-                      {category.category}
+                      <Activity size={20} />
+                      {step.title}
                     </h3>
-                    <ul className="space-y-3">
-                      {category.items.map((item, itemIndex) => (
+                    <div className="text-sm text-gray-600 dark:text-gray-400 mb-3">{step.duration}</div>
+                    <ul className="space-y-2">
+                      {step.activities.slice(0, 3).map((activity, itemIndex) => (
                         <li key={itemIndex} className="border-l-2 border-navy pl-4">
-                          <div className="font-semibold text-sm dark:text-white">{item.name}</div>
-                          <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">
-                            {item.description}
-                          </div>
+                          <div className="text-sm dark:text-white">{activity}</div>
                         </li>
                       ))}
                     </ul>
@@ -478,36 +429,35 @@ export const VcisoKit: React.FC = () => {
               </div>
 
               <Card variant="glass" padding="lg" className="bg-gradient-to-r from-navy to-dark text-center">
-                <h3 className="text-2xl font-bold text-white mb-2">Get the Complete vCISO Starter Kit</h3>
-                <p className="text-silver mb-1 text-lg font-semibold">$299 - One-Time Purchase</p>
+                <h3 className="text-2xl font-bold text-white mb-2">Strategic Cyber Governance Services</h3>
+                <p className="text-silver mb-1 text-lg font-semibold">Expert Advisory & Stewardship</p>
                 <p className="text-silver/90 mb-6 text-sm">
-                  Instant digital download • 37+ templates • All delivery guides included
+                  Comprehensive risk assessment • Executive leadership • Ongoing strategic guidance
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <Button
                     variant="primary"
                     size="lg"
-                    onClick={handlePurchase}
-                    disabled={loading}
-                    icon={<Download size={18} />}
+                    onClick={() => navigate('/contact')}
+                    icon={<ArrowRight size={18} />}
                     iconPosition="right"
                     className="bg-white text-navy hover:bg-silver"
                   >
-                    {loading ? 'Processing...' : 'Purchase Now - $299'}
+                    Schedule Consultation
                   </Button>
                   <Button
                     variant="outline"
                     size="lg"
-                    onClick={() => window.open('https://gumroad.com/ermits/vciso-kit', '_blank')}
+                    onClick={() => navigate('/services')}
                     className="bg-white/10 text-white border-white/30 hover:bg-white/20"
-                    icon={<Download size={18} />}
+                    icon={<ArrowRight size={18} />}
                     iconPosition="right"
                   >
-                    Buy on Gumroad
+                    View All Services
                   </Button>
                 </div>
                 <p className="text-silver/70 text-xs mt-4">
-                  Secure checkout • Instant access • Lifetime updates
+                  Strategic governance • Platform integration • Executive-ready outcomes
                 </p>
               </Card>
             </motion.div>
@@ -522,21 +472,20 @@ export const VcisoKit: React.FC = () => {
           className="text-center mt-12"
         >
           <Card variant="glass" padding="lg" className="bg-gradient-to-r from-blue-600 to-blue-500 dark:from-navy dark:to-navy-dark">
-            <h3 className="text-2xl font-bold text-white mb-4">Ready to Purchase?</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">Ready for Strategic Cyber Governance?</h3>
             <p className="text-blue-50 dark:text-silver mb-6">
-              Get instant access to 37+ professional templates and delivery guides
+              ERMITS Advisory provides strategic intelligence and executive-ready guidance through comprehensive risk assessments, vCISO services, and compliance advisory
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button
                 variant="primary"
                 size="lg"
-                onClick={handlePurchase}
-                disabled={loading}
-                icon={<Download size={18} />}
+                onClick={() => navigate('/contact')}
+                icon={<ArrowRight size={18} />}
                 iconPosition="right"
                 className="bg-white text-navy hover:bg-gray-100 dark:bg-white dark:text-navy dark:hover:bg-silver font-semibold shadow-lg transition-colors"
               >
-                {loading ? 'Processing...' : 'Buy Now - $299'}
+                Schedule Consultation
               </Button>
               <Button
                 variant="outline"

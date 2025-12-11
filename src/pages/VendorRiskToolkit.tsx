@@ -1,13 +1,20 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Card } from '../components/shared/Card';
-import { Button } from '../components/shared/Button';
-import { 
-  ArrowRight, CheckCircle, Users, Download,
-  DollarSign, FileText, Network, Shield, Target
-} from 'lucide-react';
+import React, { useEffect } from 'react';
 
 export const VendorRiskToolkit: React.FC = () => {
+  useEffect(() => {
+    // Redirect to ERMITS Landing page products section
+    window.location.href = 'https://ermits.com/products';
+  }, []);
+  
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-silver-light dark:bg-dark-bg">
+      <div className="text-center p-8">
+        <p className="text-gray-600 dark:text-gray-200 mb-4">
+          Redirecting to products section...
+        </p>
+      </div>
+    </div>
+  );
   const toolkitAreas = [
     { name: 'Vendor Assessment', icon: <FileText size={24} /> },
     { name: 'Risk Scoring', icon: <Target size={24} /> },

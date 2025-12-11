@@ -7,12 +7,12 @@
 
 ## 🎯 Overview
 
-**ERMITS Advisory + STEEL™** is a comprehensive cybersecurity platform offering both self-service digital products and strategic advisory services. We combine proprietary STEEL™ risk assessment methodology with integrated platform implementation, providing organizations with both immediate tools and expert guidance.
+**ERMITS Advisory + STEEL™** is a strategic cybersecurity advisory firm specializing in executive-level risk assessment and cyber governance stewardship. We combine proprietary STEEL™ risk assessment methodology with integrated platform guidance, providing organizations with strategic intelligence and expert advisory services.
 
-**Our Platform Includes:**
-- **Digital Products** - Self-service toolkits and assessments available for immediate purchase
-- **Advisory Services** - Strategic consulting and enterprise assessments (custom pricing)
-- **ERMITS Ecosystem Integration** - Seamless connection to CyberCaution, CyberCorrect, CyberSoluce, and VendorSoluce
+**Our Services Include:**
+- **Strategic Advisory Services** - Comprehensive risk assessments, vCISO leadership, and compliance advisory
+- **STEEL™ Risk Assessment** - Proprietary framework for strategic threat and enterprise evaluation
+- **ERMITS Ecosystem Integration** - Strategic guidance connecting assessments to platform implementation (CyberCaution, CyberCorrect, CyberSoluce, VendorSoluce, and more)
 
 ### The Problem We Solve
 
@@ -21,11 +21,11 @@ Most organizations face a critical gap: they receive strategic cybersecurity rec
 ### Our Solution
 
 ERMITS Advisory bridges this gap by delivering:
-- **Self-Service Digital Products** - Immediate access to professional toolkits and assessments
-- **Strategic Intelligence** through the proprietary STEEL™ framework
-- **Implementation Tools** via the integrated ERMITS platform ecosystem
-- **Expert Advisory Services** for organizations needing strategic guidance
-- **Measurable Results** with quantified risk scoring and continuous improvement
+- **Strategic Intelligence** through the proprietary STEEL™ framework for comprehensive risk assessment
+- **Cyber Governance & Stewardship** via expert virtual CISO leadership and strategic guidance
+- **Executive-Ready Recommendations** that connect strategic assessments to ERMITS platform implementation
+- **Ongoing Strategic Advisory** for continuous governance and risk management maturity
+- **Measurable Outcomes** with quantified risk scoring and actionable roadmaps
 
 **Result:** 80-90% implementation rate vs. 30-40% industry average (with advisory services).
 
@@ -89,90 +89,11 @@ STEEL evaluates organizations across **six PESTEL factors**:
 
 ---
 
-## 📦 Digital Products (Self-Service)
+## 📦 Digital Products
 
-### Available for Immediate Purchase
+**Note:** Digital products (templates, toolkits, and interactive tools) are available on the [ERMITS Landing Page](https://ermits.com/products). ERMITS Advisory focuses exclusively on strategic cyber governance and stewardship services.
 
-#### 1. STEEL™ Premium Assessment - $29
-**One-time purchase with lifetime access**
-
-Premium features for STEEL Assessment including:
-- Detailed PDF Reports (20+ pages)
-- Industry Benchmarking
-- Custom Visualizations
-- Executive Summary Templates
-- Multiple Export Formats (PDF, PNG, PowerPoint, JSON)
-- Unlimited Assessments
-
-**Perfect For:** Security professionals, risk managers, CISOs, compliance officers conducting self-assessments.
-
-**Purchase:** Available at `/steel/premium` with Stripe checkout integration.
-
----
-
-#### 2. vCISO Starter Kit - $299
-**Complete toolkit with 37 ready-to-use templates**
-
-Includes:
-- **10 Security Policies** (Information Security, Access Control, Data Protection, Incident Response, Business Continuity, Acceptable Use, Password Management, Remote Access, Third-Party Risk, Vendor Management)
-- **5 Incident Response Playbooks** (Ransomware, Data Breach, Credential Compromise, Malware Outbreak, Insider Threat)
-- **4 Board Presentation Templates** (Monthly Executive Summary, Quarterly Board Briefing, Annual Risk Assessment, Crisis Communication)
-- **8+ Compliance Checklists** (SOC 2, ISO 27001, NIST CSF, GDPR, Vendor Security Assessment, Security Awareness Training Tracker, Penetration Testing RFP, Annual Security Roadmap)
-- Word/PDF format for easy customization
-
-**Perfect For:** Virtual CISOs, security consultants, small to medium businesses building security programs.
-
-**Purchase:** Available at `/vciso-kit` with Stripe checkout integration.
-
----
-
-#### 3. Executive Dashboard Template - $79
-**White-label HTML/CSS/JS dashboard template**
-
-Features:
-- HTML/CSS/JS Template (no backend required)
-- White-Label Ready
-- Risk Radar Visualization
-- CSV Data Import
-- Professional Charts (Chart.js)
-- Fully Customizable
-- Dark/Light Mode Support
-- Responsive Design
-
-**Perfect For:** Security teams, risk management professionals, executives needing dashboards, consultants building client dashboards.
-
-**Purchase:** Available at `/dashboard-template` with Stripe checkout integration.
-
----
-
-#### 4. Compliance Toolkit
-**Comprehensive compliance framework templates and tools**
-
-Available at `/compliance-toolkit` (Gumroad integration)
-
----
-
-#### 5. Incident Response Toolkit
-**Complete incident response playbooks and procedures**
-
-Available at `/incident-response-toolkit` (Gumroad integration)
-
----
-
-#### 6. Vendor Risk Toolkit
-**Vendor risk assessment and management templates**
-
-Available at `/vendor-risk-toolkit` (Gumroad integration)
-
----
-
-#### 7. Premium Toolkits
-**Interactive premium versions with advanced features**
-
-Available at `/toolkits-premium` (Gumroad integration)
-- Compliance Gap Analysis Premium
-- Vendor Risk Scorer Premium
-- Annual and Lifetime subscription options
+For product purchases, please visit the ERMITS Landing Page products section.
 
 ---
 
@@ -322,19 +243,9 @@ STEEL Assessment → Strategic Recommendations → ERMITS Platform Implementatio
 
 ## 💰 Pricing Summary
 
-### Digital Products (Self-Service - Available Now)
+### Digital Products
 
-| Product | Price | Category | Purchase |
-|---------|-------|----------|----------|
-| STEEL™ Premium Assessment | $29 | Assessment | `/steel/premium` |
-| vCISO Starter Kit | $299 | Toolkit | `/vciso-kit` |
-| Executive Dashboard Template | $79 | Template | `/dashboard-template` |
-| Compliance Toolkit | Varies | Toolkit | `/compliance-toolkit` |
-| Incident Response Toolkit | Varies | Toolkit | `/incident-response-toolkit` |
-| Vendor Risk Toolkit | Varies | Toolkit | `/vendor-risk-toolkit` |
-| Premium Toolkits | Varies | Toolkit | `/toolkits-premium` |
-
-**Payment:** Stripe checkout (for main products) or Gumroad (for toolkit products)
+Digital products (templates, toolkits, and interactive tools) are available on the [ERMITS Landing Page](https://ermits.com/products). ERMITS Advisory focuses exclusively on strategic advisory services.
 
 ---
 
@@ -359,15 +270,14 @@ STEEL Assessment → Strategic Recommendations → ERMITS Platform Implementatio
 
 ## 🎯 Target Clients
 
-### Digital Products (Self-Service)
+### Strategic Advisory Services
 **Perfect For:**
-- Security professionals and consultants
-- Small to medium businesses
-- Organizations building security programs
-- Risk managers and compliance officers
-- Anyone needing immediate access to professional templates and tools
+- Organizations needing strategic cyber governance and executive-level guidance
+- Companies requiring comprehensive risk assessment and vCISO leadership
+- Businesses seeking compliance advisory and strategic intelligence
+- Organizations wanting to connect strategic assessments to platform implementation
 
-**Solution:** Purchase digital products directly - no consultation required.
+**Solution:** Engage ERMITS Advisory for strategic governance and stewardship services.
 
 ---
 
@@ -384,7 +294,7 @@ STEEL Assessment → Strategic Recommendations → ERMITS Platform Implementatio
 - **Security Maturity:** Minimal to Low
 - **Current State:** No dedicated security resources
 - **Pain Points:** Starting from zero, compliance for growth, limited budget
-- **Solution:** Digital products + Strategic assessment + Platform tools
+- **Solution:** Strategic advisory services + Platform integration guidance
 
 **Tertiary: Industry-Specific Organizations**
 - **Industries:** Healthcare, Financial Services, Manufacturing, Government
@@ -491,10 +401,10 @@ STEEL Assessment → Strategic Recommendations → ERMITS Platform Implementatio
 - [STEEL Framework Documentation](docs/steel/STEEL_Official_Description_FINAL.md)
 - [ERMITS Advisory Service Guide](docs/advisory/ERMITS_Advisory_Offerings_Review_REVISED.md)
 - [vCISO Implementation Guide](docs/vciso/vCISO_Implementation_Quick_Start.md)
-- [Product Catalog](PRODUCT_CATALOG.md)
+- **Digital Products:** Available on [ERMITS Landing Page](https://ermits.com/products)
 
 ### Website Pages
-- **Digital Products:** `/steel/premium`, `/vciso-kit`, `/dashboard-template`, `/toolkits`
+- **Strategic Services:** `/services`, `/vciso-kit`, `/steel`, `/ecosystem`
 - **Advisory Services:** `/services`, `/steel/enterprise`, `/compliance`
 - **Information:** `/about`, `/ecosystem`, `/contact`
 

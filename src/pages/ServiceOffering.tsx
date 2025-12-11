@@ -3,316 +3,288 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
-import { 
-  Shield, Users, UserCheck, CheckCircle, ArrowRight, 
-  Mail, MapPin, Presentation, FileText, DollarSign, Clock, Server, Database,
-  Layers, Network, Info, ExternalLink
+import {
+  ArrowRight, Target, Shield, CheckCircle, FileCheck, Network, Gavel, TrendingUp
 } from 'lucide-react';
 
 export const ServiceOffering: React.FC = () => {
   const navigate = useNavigate();
-  
 
-  // Core Advisory Services - 2 main offerings
-  const coreServices = [
-    {
-      id: 'steel-assessment',
-      icon: 'shield',
-      title: 'STEEL™ Strategic Assessment',
-      description: 'Expert risk assessment and strategic recommendations.',
-      price: '$25K - $125K',
-      timeline: '2-8 weeks',
-      note: 'Pricing scales based on company size and complexity',
-      features: [
-        'Professional STEEL™ assessment',
-        'Strategic recommendations',
-        'Executive briefing'
-      ],
-      cta: 'Request Quote',
-      link: '/contact'
-    },
-    {
-      id: 'on-demand-advisory',
-      icon: 'server',
-      title: 'On-demand Advisory Services',
-      description: 'Flexible expert guidance for specific cybersecurity challenges and strategic initiatives.',
-      price: 'Custom pricing',
-      timeline: 'As needed',
-      note: 'Hourly or project-based engagement',
-      features: [
-        'Hourly or project-based consulting',
-        'Strategic guidance and recommendations',
-        'Expert review and analysis',
-        'Customized solutions for your needs'
-      ],
-      cta: 'Request Consultation',
-      link: '/contact'
-    }
-  ];
-  
-
-  const getServiceIcon = (icon: string, size = 24) => {
-    switch (icon) {
-      case 'presentation':
-        return <Presentation size={size} className="text-navy dark:text-silver" />;
-      case 'shield':
-        return <Shield size={size} className="text-navy dark:text-silver" />;
-      case 'user':
-        return <UserCheck size={size} className="text-navy dark:text-silver" />;
-      case 'file':
-        return <FileText size={size} className="text-navy dark:text-silver" />;
-      case 'users':
-        return <Users size={size} className="text-navy dark:text-silver" />;
-      case 'server':
-        return <Server size={size} className="text-navy dark:text-silver" />;
-      case 'database':
-        return <Database size={size} className="text-navy dark:text-silver" />;
-      case 'layers':
-        return <Layers size={size} className="text-navy dark:text-silver" />;
-      case 'network':
-        return <Network size={size} className="text-navy dark:text-silver" />;
-      default:
-        return null;
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
     }
   };
 
-  const handleServiceClick = (service: typeof coreServices[0]) => {
-    if (service.id === 'steel-assessment') {
-      navigate(`/contact?type=quote&service=steel-assessment`);
-    } else if (service.id === 'on-demand-advisory') {
-      navigate(`/contact?type=consultation&service=on-demand-advisory`);
-    } else {
-      navigate(service.link);
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 }
+  };
+
+  const services = [
+    {
+      id: 'steel-eval',
+      title: 'STEEL™ Evaluation & Governance Roadmap',
+      description: 'A structured assessment that uses STEEL™—the Strategic Threat & Enterprise Evaluation Layer—to understand your current posture and define your next moves.',
+      icon: Target,
+      color: 'cyan',
+      whatWeDo: [
+        'Run a STEEL™ evaluation across strategic, threat, and enterprise dimensions',
+        'Generate a STEEL™ Index (Strategic, Threat, and Enterprise scores)',
+        'Identify priority gaps, dependencies, and quick wins',
+        'Produce a governance and transformation roadmap aligned with your reality'
+      ],
+      whoItsFor: 'Organizations that need a structured baseline and governance roadmap, often at the start of a transformation or in response to heightened regulatory, customer, or board pressure.'
+    },
+    {
+      id: 'vciso',
+      title: 'vCISO Stewardship',
+      description: 'Fractional or part-time executive security leadership focused on governance, risk, and resilience—not just technology and alerts.',
+      icon: Shield,
+      color: 'navy',
+      whatWeDo: [
+        'Provide vCISO leadership operating on top of the STEEL™ evaluation layer',
+        'Translate technical and threat realities into board-ready narratives',
+        'Oversee execution of the STEEL™-aligned roadmap',
+        'Coordinate internal teams and external vendors across the ERMITS ecosystem',
+        'Continuously update leadership on risk posture using the STEEL™ Index'
+      ],
+      whoItsFor: 'Organizations that require dedicated security leadership but don't have—or don't want to start with—a full-time CISO, and that value governance and stewardship over purely operational metrics.',
+      learnMoreLink: '/vciso-kit'
+    },
+    {
+      id: 'grc',
+      title: 'Governance, Risk & Compliance Advisory',
+      description: 'Strategic guidance for aligning governance, risk management, and compliance with your business model, risk appetite, and regulatory context.',
+      icon: FileCheck,
+      color: 'green',
+      whatWeDo: [
+        'Design and refine governance structures and decision rights',
+        'Align risk management with business and regulatory expectations',
+        'Support frameworks such as ISO, NIST, SOC 2, and sector-specific regimes',
+        'Connect GRC work to STEEL™ evaluations and the ERMITS ecosystem'
+      ],
+      whoItsFor: 'Organizations facing growing regulatory complexity, customer due diligence pressure, or internal fragmentation around risk and compliance responsibilities.'
+    },
+    {
+      id: 'vendor',
+      title: 'Vendor & Ecosystem Governance',
+      description: 'Advisory support focused on managing risk across vendors, partners, and supply chains, aligned with the Enterprise Evaluation Layer in STEEL™.',
+      icon: Network,
+      color: 'orange',
+      whatWeDo: [
+        'Assess vendor and third-party risk posture using STEEL™ inputs',
+        'Define governance models and requirements for vendors and partners',
+        'Align contract expectations, due diligence, and monitoring',
+        'Coordinate with VendorSoluce and other ERMITS capabilities as needed'
+      ],
+      whoItsFor: 'Organizations with complex supply chains, critical vendors, or regulatory expectations around third-party and ecosystem risk.'
+    },
+    {
+      id: 'exec-board',
+      title: 'Executive & Board Reporting',
+      description: 'Structured reporting and facilitation that helps executives and boards understand, question, and act on cyber risk information anchored in the STEEL™ Index.',
+      icon: Gavel,
+      color: 'blue',
+      whatWeDo: [
+        'Design reporting that maps STEEL™ outcomes into business language',
+        'Support leadership meetings, board sessions, and critical decision points',
+        'Provide external perspective on risk, resilience, and ecosystem dependencies',
+        'Align messaging to regulatory and stakeholder expectations'
+      ],
+      whoItsFor: 'Organizations where cyber has become a board-level topic and leadership needs structured, credible, and non-technical framing of complex realities.'
     }
+  ];
+
+  const getColorClasses = (color: string) => {
+    const colors: Record<string, { bg: string; text: string; border: string; icon: string }> = {
+      cyan: {
+        bg: 'bg-cyan-100 dark:bg-cyan-900/30',
+        text: 'text-cyan-700 dark:text-cyan-400',
+        border: 'border-cyan-500',
+        icon: 'text-cyan-600 dark:text-cyan-400'
+      },
+      navy: {
+        bg: 'bg-navy/10 dark:bg-navy/30',
+        text: 'text-navy dark:text-silver',
+        border: 'border-navy',
+        icon: 'text-navy dark:text-silver'
+      },
+      green: {
+        bg: 'bg-green-100 dark:bg-green-900/30',
+        text: 'text-green-700 dark:text-green-400',
+        border: 'border-green-500',
+        icon: 'text-green-600 dark:text-green-400'
+      },
+      orange: {
+        bg: 'bg-orange-100 dark:bg-orange-900/30',
+        text: 'text-orange-700 dark:text-orange-400',
+        border: 'border-orange-500',
+        icon: 'text-orange-600 dark:text-orange-400'
+      },
+      blue: {
+        bg: 'bg-blue-100 dark:bg-blue-900/30',
+        text: 'text-blue-700 dark:text-blue-400',
+        border: 'border-blue-500',
+        icon: 'text-blue-600 dark:text-blue-400'
+      }
+    };
+    return colors[color] || colors.navy;
   };
 
   return (
-    <div className="min-h-screen bg-silver-light dark:bg-dark-bg">
-      {/* Enhanced Hero Section */}
-      <section className="relative bg-gradient-to-br from-navy via-navy-dark to-navy text-white pt-16 pb-10 md:pt-20 md:pb-14 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-navy-dark/90 to-navy/95"></div>
-        <div className="absolute inset-0 opacity-10 bg-[url('https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-center bg-cover"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
+      <div className="container mx-auto px-4 max-w-7xl">
+        {/* Hero Section */}
+        <section id="hero" className="pt-16 mb-16">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center max-w-4xl mx-auto"
+            className="text-center"
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="mb-6"
-            >
-              <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium text-silver">
-                <Shield size={16} className="mr-2" />
-                Professional Advisory Services
-              </span>
-            </motion.div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-white via-silver to-white bg-clip-text text-transparent">
-                Professional Advisory Services
-              </span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 dark:text-white">
+              ERMITS Advisory Services
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-silver/90 max-w-3xl mx-auto leading-relaxed">
-              Expert strategic guidance and leadership services for your cybersecurity needs.
+            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-200 max-w-4xl mx-auto leading-relaxed mb-6">
+              A focused set of governance and stewardship services built on top of the STEEL™ Strategic Threat & Enterprise Evaluation Layer.
             </p>
-          </motion.div>
-        </div>
-      </section>
-
-      <div className="container mx-auto px-4">
-
-        {/* Free Assessment CTA Banner */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          className="mb-12"
-        >
-          <Card variant="glass" padding="lg" className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border-2 border-blue-200 dark:border-blue-800">
-            <div className="text-center">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-sm font-semibold mb-4">
-                <Shield size={16} className="mr-2" />
-                START HERE
-              </div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-3 dark:text-white">
-                Try STEEL™ Assessment Free
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-200 mb-6 max-w-2xl mx-auto">
-                Complete our 46-question executive assessment in 25-30 minutes and receive your personalized STEEL™ risk scores across all six PESTEL dimensions. No credit card required.
-              </p>
-              <div className="flex gap-4 justify-center flex-wrap">
-                <Button
-                  variant="primary"
-                  size="lg"
-                  onClick={() => window.open('/steel/index.html', '_blank')}
-                  icon={<ExternalLink size={20} />}
-                  iconPosition="right"
-                >
-                  Take Free Assessment
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  onClick={() => navigate('/steel')}
-                  icon={<Info size={20} />}
-                  iconPosition="right"
-                >
-                  Learn About STEEL™
-                </Button>
-              </div>
-            </div>
-          </Card>
-        </motion.div>
-
-        {/* Core Services - Simplified to 3 offerings */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="mb-16"
-        >
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">Our Services</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              Expert strategic guidance and leadership services for your cybersecurity needs.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {coreServices.map((service) => (
-              <Card 
-                key={service.id} 
-                variant="glass" 
-                padding="lg" 
-                className="h-full hover:shadow-xl transition-shadow border-2 border-purple-200 dark:border-purple-800"
+            <div className="flex flex-wrap justify-center gap-3 text-sm text-gray-600 dark:text-gray-400">
+              <span>Learn more:</span>
+              <button
+                onClick={() => navigate('/method/steel')}
+                className="text-cyan-600 dark:text-cyan-400 hover:underline font-medium"
               >
-                <div className="flex flex-col h-full">
-                  <div className="flex items-start mb-4">
-                    <div className="p-3 rounded-full bg-purple-100 dark:bg-purple-900/30 mr-4">
-                      {getServiceIcon(service.icon)}
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-xs font-semibold text-purple-600 dark:text-purple-400 uppercase tracking-wide mb-1">
-                        PROFESSIONAL
+                About STEEL™
+              </button>
+              <span>•</span>
+              <button
+                onClick={() => navigate('/ecosystem')}
+                className="text-cyan-600 dark:text-cyan-400 hover:underline font-medium"
+              >
+                ERMITS Ecosystem
+              </button>
+            </div>
+          </motion.div>
+        </section>
+
+        {/* Services */}
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="space-y-16 mb-16"
+        >
+          {services.map((service, index) => {
+            const Icon = service.icon;
+            const colors = getColorClasses(service.color);
+            return (
+              <motion.div
+                key={service.id}
+                id={`service-${service.id}`}
+                variants={item}
+              >
+                <Card className="p-8 md:p-12">
+                  <div className="max-w-4xl mx-auto">
+                    <div className="flex items-start gap-4 mb-6">
+                      <div className={`w-16 h-16 ${colors.bg} rounded-full flex items-center justify-center flex-shrink-0`}>
+                        <Icon size={32} className={colors.icon} />
                       </div>
-                      <h3 className="text-xl font-bold mb-2 dark:text-white">
-                        {service.title}
-                      </h3>
-                      <div className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400 mb-2">
-                        <span className="flex items-center font-semibold text-navy dark:text-white">
-                          <DollarSign size={16} className="mr-1" />
-                          {service.price}
-                        </span>
-                        <span className="flex items-center">
-                          <Clock size={16} className="mr-1" />
-                          {service.timeline}
-                        </span>
-                      </div>
-                      {service.note && (
-                        <p className="text-xs text-gray-500 dark:text-gray-400 italic mb-2">
-                          {service.note}
+                      <div className="flex-1">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
+                          {service.title}
+                        </h2>
+                        <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                          {service.description}
                         </p>
-                      )}
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                      <div>
+                        <h3 className="text-xl font-bold text-navy dark:text-white mb-4 flex items-center gap-2">
+                          <CheckCircle size={20} className={colors.icon} />
+                          What We Do
+                        </h3>
+                        <ul className="space-y-3 text-base text-gray-700 dark:text-gray-300">
+                          {service.whatWeDo.map((item, idx) => (
+                            <li key={idx} className="flex items-start">
+                              <CheckCircle size={18} className={`mr-3 mt-0.5 ${colors.icon} flex-shrink-0`} />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div>
+                        <h3 className="text-xl font-bold text-navy dark:text-white mb-4 flex items-center gap-2">
+                          <Target size={20} className={colors.icon} />
+                          Who It's For
+                        </h3>
+                        <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                          {service.whoItsFor}
+                        </p>
+                        {service.learnMoreLink && (
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={() => navigate(service.learnMoreLink!)}
+                            className="mt-2"
+                          >
+                            Learn More
+                            <ArrowRight size={16} className="ml-2" />
+                          </Button>
+                        )}
+                      </div>
                     </div>
                   </div>
-                  
-                  <p className="text-gray-600 dark:text-gray-200 mb-4 flex-grow text-sm">
-                    {service.description}
-                  </p>
-                  
-                  <div className="mb-4">
-                    <ul className="space-y-1.5">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start text-sm">
-                          <CheckCircle size={14} className="text-purple-500 mt-0.5 mr-2 flex-shrink-0" />
-                          <span className="text-gray-600 dark:text-gray-300">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <div className="mt-auto pt-4 border-t border-gray-200 dark:border-gray-700">
-                    <Button 
-                      variant="outline"
-                      size="sm"
-                      icon={<ArrowRight size={16} />}
-                      iconPosition="right"
-                      onClick={() => handleServiceClick(service)}
-                      className="w-full border-purple-200 dark:border-purple-800 text-purple-700 dark:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-900/20"
-                    >
-                      {service.cta}
-                    </Button>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
+                </Card>
+              </motion.div>
+            );
+          })}
         </motion.div>
 
-        {/* Contact Information */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-        >
-          <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-6 dark:text-white">Get In Touch</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="flex items-start">
-                <div className="p-3 rounded-full bg-silver/20 dark:bg-navy/40 mr-4">
-                  <Mail size={24} className="text-navy dark:text-silver" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-1 dark:text-white">Email</h3>
-                  <p className="text-gray-600 dark:text-gray-200">
-                    advisory@ermits.com
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <div className="p-3 rounded-full bg-silver/20 dark:bg-navy/40 mr-4">
-                  <MapPin size={24} className="text-navy dark:text-silver" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-1 dark:text-white">Schedule Consultation</h3>
-                  <p className="text-gray-600 dark:text-gray-200">
-                    Book a call to discuss your needs
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-8 text-center">
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
-                Not sure which service is right for you? Start with our free assessment or schedule a consultation.
+        {/* Final CTA */}
+        <section id="final-cta" className="mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <Card className="p-8 md:p-12 bg-gradient-to-r from-navy to-navy-dark text-white text-center">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Design the Right Engagement with ERMITS Advisory
+              </h2>
+              <p className="text-lg text-silver/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+                Every engagement starts with understanding your context. From a focused STEEL™ Evaluation to an ongoing vCISO stewardship model, ERMITS Advisory can be calibrated to your scale, sector, and urgency.
               </p>
-              <div className="flex gap-4 justify-center flex-wrap">
+              <div className="flex flex-wrap justify-center gap-4">
                 <Button
-                  variant="primary"
+                  variant="secondary"
                   size="lg"
-                  onClick={() => window.open('/steel/index.html', '_blank')}
-                  icon={<Shield size={20} />}
-                  iconPosition="left"
+                  onClick={() => navigate('/contact')}
+                  icon={<ArrowRight size={20} />}
+                  iconPosition="right"
+                  className="bg-white text-navy hover:bg-silver"
                 >
-                  Take Free Assessment
+                  Talk to an Advisor
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
                   onClick={() => navigate('/contact')}
-                  icon={<ArrowRight size={20} />}
-                  iconPosition="right"
+                  className="border-2 border-white/30 text-white bg-white/10 hover:bg-white/20"
                 >
-                  Schedule Consultation
+                  Request a STEEL™ Evaluation
                 </Button>
               </div>
-            </div>
-          </Card>
-        </motion.div>
+            </Card>
+          </motion.div>
+        </section>
       </div>
     </div>
   );

@@ -15,6 +15,7 @@ const SteelRecommendationsPage = React.lazy(() => import('./pages/SteelRecommend
 const SteelEnterprisePricing = React.lazy(() => import('./pages/SteelEnterprisePricing').then(m => ({ default: m.SteelEnterprisePricing })));
 const ProfessionalSteelAssessment = React.lazy(() => import('./pages/ProfessionalSteelAssessment').then(m => ({ default: m.ProfessionalSteelAssessment })));
 const STEELVisualization = React.lazy(() => import('./pages/STEELVisualization').then(m => ({ default: m.STEELVisualization })));
+const SteelMethodPage = React.lazy(() => import('./pages/SteelMethodPage').then(m => ({ default: m.SteelMethodPage })));
 const SteelPremium = React.lazy(() => import('./pages/SteelPremium').then(m => ({ default: m.SteelPremium })));
 const VcisoKit = React.lazy(() => 
   import('./pages/VcisoKit')
@@ -90,6 +91,9 @@ function App() {
               <Suspense fallback={<LoadingSpinner />}>
                 <Routes>
                   <Route path="/" element={<LandingPage />} />
+                  <Route path="/ermits-advisory" element={<LandingPage />} />
+                  <Route path="/method/steel" element={<SteelMethodPage />} />
+                  <Route path="/ermits-method/steel" element={<SteelMethodPage />} />
                   <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/dashboard/steel-results" element={<SteelRecommendationsPage />} />
                   <Route path="/dashboard/recommendations" element={<SteelRecommendationsPage />} />
@@ -116,6 +120,7 @@ function App() {
                   <Route path="/contact" element={<ContactPage />} />
                   <Route path="/about" element={<AboutPage />} />
                   <Route path="/ecosystem" element={<EcosystemPage />} />
+                  <Route path="/ermits-ecosystem" element={<EcosystemPage />} />
                   <Route path="/cybercaution" element={<ExternalRedirect to="https://cybercaution.com" />} />
                   <Route path="/cybercorrect" element={<ExternalRedirect to="https://cybercorrect.com" />} />
                   <Route path="/cybersoluce" element={<EcosystemPage />} />
