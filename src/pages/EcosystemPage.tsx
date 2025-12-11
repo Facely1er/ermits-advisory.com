@@ -120,7 +120,7 @@ export const EcosystemPage: React.FC = () => {
                   STEEL™—the Strategic Threat & Enterprise Evaluation Layer—is the bridge between ERMITS Advisory and the ERMITS ecosystem. It determines where attention, budget, and effort should go, and which capabilities should be activated.
                 </p>
 
-                <p className="text-base text-gray-600 dark:text-gray-400 mb-6 font-semibold">The interaction is simple:</p>
+                <p className="text-lg text-gray-600 dark:text-gray-400 mb-6 font-semibold">The interaction is simple:</p>
                 <ol className="space-y-4 text-base text-gray-700 dark:text-gray-300 mb-8 list-decimal list-inside">
                   <li>
                     <strong className="text-navy dark:text-white">ERMITS Advisory runs a STEEL™ evaluation.</strong> Strategic, threat, and enterprise realities are assessed and expressed as a STEEL™ Index.

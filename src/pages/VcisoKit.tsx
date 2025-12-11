@@ -79,7 +79,7 @@ export const VcisoKit: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="pt-16 mb-12 text-center"
+          className="pt-16 mb-16 text-center"
         >
           <div className="inline-block px-4 py-2 bg-navy/20 rounded-full mb-6">
             <span className="text-navy dark:text-silver font-semibold">Strategic Cyber Governance & Stewardship</span>

@@ -238,7 +238,7 @@ export const SteelMethodPage: React.FC = () => {
             className="max-w-4xl mx-auto"
           >
             <Card className="p-6 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 border border-blue-200 dark:border-blue-800">
-              <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed text-center">
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-center">
                 Together, these sublayers form a single method: <strong className="text-navy dark:text-white">STEEL™</strong>, the Strategic Threat & Enterprise Evaluation Layer. It is one evaluation layer with internal structure—not a list of independent acronym pillars.
               </p>
             </Card>
@@ -280,7 +280,7 @@ export const SteelMethodPage: React.FC = () => {
                 <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                   To make STEEL™ actionable, ERMITS Advisory expresses the evaluation as the <strong className="text-navy dark:text-white">STEEL™ Index</strong>: a unified view of where you stand and what must happen next.
                 </p>
-                <p className="text-base text-gray-600 dark:text-gray-400">The STEEL™ Index combines three underlying scores:</p>
+                <p className="text-lg text-gray-600 dark:text-gray-400">The STEEL™ Index combines three underlying scores:</p>
                 <ul className="space-y-3 text-base text-gray-700 dark:text-gray-300">
                   <li className="flex items-start">
                     <CheckCircle size={20} className="mr-3 mt-0.5 text-navy dark:text-silver flex-shrink-0" />
@@ -296,7 +296,7 @@ export const SteelMethodPage: React.FC = () => {
                   </li>
                 </ul>
                 <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
-                  <p className="text-base text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+                  <p className="text-lg text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
                     The STEEL™ Index is a weighted aggregation of these scores. Its purpose is not to chase a perfect number, but to guide:
                   </p>
                   <ul className="space-y-2 text-base text-gray-600 dark:text-gray-400">
@@ -470,7 +470,7 @@ export const SteelMethodPage: React.FC = () => {
             className="max-w-4xl mx-auto mt-8"
           >
             <Card className="p-6 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 border border-blue-200 dark:border-blue-800">
-              <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed text-center">
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-center">
                 As these capabilities execute and generate evidence, telemetry flows back into STEEL™. This keeps your STEEL™ Index—and your decision-making—continuously current.
               </p>
             </Card>

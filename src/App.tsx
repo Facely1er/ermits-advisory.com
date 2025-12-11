@@ -84,10 +84,17 @@ function App() {
       <ThemeProvider>
         <Router>
           <div className="min-h-screen flex flex-col">
+            {/* Skip to main content link for accessibility */}
+            <a 
+              href="#main-content" 
+              className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-navy focus:text-white focus:rounded-lg focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy"
+            >
+              Skip to main content
+            </a>
             <ScrollProgressBar />
             <Navigation />
             
-            <main className="flex-grow pt-16" role="main" aria-label="Main content">
+            <main id="main-content" className="flex-grow pt-16" role="main" aria-label="Main content">
               <Suspense fallback={<LoadingSpinner />}>
                 <Routes>
                   <Route path="/" element={<LandingPage />} />

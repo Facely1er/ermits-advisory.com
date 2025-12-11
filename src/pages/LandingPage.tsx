@@ -168,7 +168,7 @@ export const LandingPage: React.FC = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
-              className="text-lg md:text-xl lg:text-2xl text-white/90 mb-6 max-w-4xl mx-auto leading-relaxed font-light"
+              className="text-xl md:text-2xl text-white/90 mb-6 max-w-4xl mx-auto leading-relaxed font-light"
             >
               ERMITS Advisory is the strategic cyber governance and risk stewardship arm of the ERMITS ecosystem.
             </motion.p>
@@ -267,7 +267,7 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Advisory First Clarification */}
-      <section className="py-12 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20">
+      <section className="py-16 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20">
         <div className="container mx-auto px-4 max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
