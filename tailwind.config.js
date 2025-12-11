@@ -15,6 +15,11 @@ export default {
           light: '#E8F4FF',
           lighter: '#F0F8FF'
         },
+        gold: {
+          DEFAULT: '#D4AF37',
+          light: '#F4E4BC',
+          dark: '#B8941F'
+        },
         golden: {
           light: '#FFF4E6',
           DEFAULT: '#F5A623',

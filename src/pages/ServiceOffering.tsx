@@ -68,7 +68,7 @@ export const ServiceOffering: React.FC = () => {
         'Coordinate internal teams and external vendors across the ERMITS ecosystem',
         'Continuously update leadership on risk posture using the STEEL™ Index'
       ],
-      whoItsFor: 'Organizations that require dedicated security leadership but don't have—or don't want to start with—a full-time CISO, and that value governance and stewardship over purely operational metrics.',
+      whoItsFor: 'Organizations that require dedicated security leadership but don\'t have—or don\'t want to start with—a full-time CISO, and that value governance and stewardship over purely operational metrics.',
       learnMoreLink: '/vciso-kit'
     },
     {
