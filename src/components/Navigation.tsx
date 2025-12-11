@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { NavLink, Link, useNavigate } from 'react-router-dom';
+import { NavLink, Link, useNavigate, useLocation } from 'react-router-dom';
 import { useTheme } from '../contexts/ThemeContext';
 import { Button } from './shared/Button';
 import {
@@ -15,6 +15,7 @@ export const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -23,6 +24,22 @@ export const Navigation: React.FC = () => {
     setIsMenuOpen(false);
   };
 
+  // Helper function to check if a route is active (including nested routes)
+  const isRouteActive = (path: string, exact: boolean = false): boolean => {
+    if (exact) {
+      return location.pathname === path;
+    }
+    // Check if current path starts with the nav path, or if it's home and nav is advisory
+    if (path === '/ermits-advisory' && (location.pathname === '/' || location.pathname === '/ermits-advisory')) {
+      return true;
+    }
+    return location.pathname === path || location.pathname.startsWith(path + '/');
+  };
+
+  // Check if any submenu item is active
+  const isSubmenuActive = (submenu: Array<{ to: string }>): boolean => {
+    return submenu.some(item => isRouteActive(item.to, false));
+  };
 
   const navLinks = [
     { 
@@ -76,12 +93,16 @@ export const Navigation: React.FC = () => {
                 >
                   <NavLink
                     to={link.to}
-                    className={({ isActive }) => cn(
-                      'text-sm font-medium hover:text-navy dark:hover:text-white transition-all duration-300 nav-link flex items-center whitespace-nowrap h-full relative',
-                      isActive
-                        ? 'text-navy-dark dark:text-white font-semibold border-b-2 border-navy dark:border-silver'
-                        : 'text-gray-600 dark:text-white/95 hover:border-b-2 hover:border-navy/30 dark:hover:border-silver/30'
-                    )}
+                    className={({ isActive }) => {
+                      // Check if route is active (including nested routes and submenu items)
+                      const routeActive = isActive || isRouteActive(link.to) || (link.submenu && isSubmenuActive(link.submenu));
+                      return cn(
+                        'text-sm font-medium hover:text-navy dark:hover:text-white transition-all duration-300 nav-link flex items-center whitespace-nowrap h-full relative',
+                        routeActive
+                          ? 'text-navy-dark dark:text-white font-semibold border-b-2 border-navy dark:border-silver'
+                          : 'text-gray-600 dark:text-white/95 hover:border-b-2 hover:border-navy/30 dark:hover:border-silver/30'
+                      );
+                    }}
                   >
                     <span className="mr-1.5">{link.icon}</span>
                     {link.label}
@@ -104,11 +125,14 @@ export const Navigation: React.FC = () => {
                           <NavLink
                             key={item.to}
                             to={item.to}
-                            className={({ isActive }) => cn(
-                              'flex items-center justify-between px-4 py-2 text-sm hover:bg-navy/5 dark:hover:bg-silver/10 transition-colors',
-                              isActive && 'bg-navy/10 dark:bg-silver/20 text-navy dark:text-white font-medium',
-                              !isActive && 'text-gray-700 dark:text-gray-300'
-                            )}
+                            className={({ isActive }) => {
+                              const itemActive = isActive || isRouteActive(item.to, false);
+                              return cn(
+                                'flex items-center justify-between px-4 py-2 text-sm hover:bg-navy/5 dark:hover:bg-silver/10 transition-colors',
+                                itemActive && 'bg-navy/10 dark:bg-silver/20 text-navy dark:text-white font-medium',
+                                !itemActive && 'text-gray-700 dark:text-gray-300'
+                              );
+                            }}
                             onClick={() => setActiveDropdown(null)}
                           >
                             <span>{item.label}</span>
@@ -201,12 +225,15 @@ export const Navigation: React.FC = () => {
                 <div key={link.to}>
                   <NavLink
                     to={link.to}
-                    className={({ isActive }) => cn(
-                      'flex items-center justify-between px-3 py-2 rounded-md text-base font-medium',
-                      isActive
-                        ? 'bg-navy/10 text-navy dark:bg-silver/20 dark:text-white'
-                        : 'text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10'
-                    )}
+                    className={({ isActive }) => {
+                      const routeActive = isActive || isRouteActive(link.to) || (link.submenu && isSubmenuActive(link.submenu));
+                      return cn(
+                        'flex items-center justify-between px-3 py-2 rounded-md text-base font-medium',
+                        routeActive
+                          ? 'bg-navy/10 text-navy dark:bg-silver/20 dark:text-white'
+                          : 'text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10'
+                      );
+                    }}
                     onClick={() => {
                       if (!link.submenu) setIsMenuOpen(false);
                     }}
@@ -223,12 +250,15 @@ export const Navigation: React.FC = () => {
                         <NavLink
                           key={item.to}
                           to={item.to}
-                          className={({ isActive }) => cn(
-                            'flex items-center justify-between px-3 py-2 rounded-md text-sm',
-                            isActive
-                              ? 'bg-navy/10 text-navy dark:bg-silver/20 dark:text-white'
-                              : 'text-gray-600 dark:text-gray-300 hover:bg-navy/5 dark:hover:bg-silver/10'
-                          )}
+                          className={({ isActive }) => {
+                            const itemActive = isActive || isRouteActive(item.to, false);
+                            return cn(
+                              'flex items-center justify-between px-3 py-2 rounded-md text-sm',
+                              itemActive
+                                ? 'bg-navy/10 text-navy dark:bg-silver/20 dark:text-white'
+                                : 'text-gray-600 dark:text-gray-300 hover:bg-navy/5 dark:hover:bg-silver/10'
+                            );
+                          }}
                           onClick={() => setIsMenuOpen(false)}
                         >
                           <span>{item.label}</span>

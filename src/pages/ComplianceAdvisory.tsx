@@ -1031,7 +1031,7 @@ export const ComplianceAdvisory: React.FC = () => {
               <Button
                 variant="outline"
                 size="lg"
-                onClick={() => navigate('/pricing')}
+                onClick={() => navigate('/toolkits-premium')}
                 className="bg-white/10 text-white border-white/30 hover:bg-white/20"
               >
                 View Pricing
