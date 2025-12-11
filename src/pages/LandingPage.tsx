@@ -1530,16 +1530,24 @@ export const LandingPage: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <div>
+                <div className="space-y-3">
                   <Button
                     variant="secondary"
                     size="lg"
-                    onClick={() => navigate('/contact')}
+                    onClick={() => navigate('/steel-evaluation')}
                     className="w-full bg-navy-dark text-white hover:bg-navy-dark/90 shadow-lg"
                     icon={<ArrowRight size={20} />}
                     iconPosition="right"
                   >
-                    Request a STEEL™ Evaluation
+                    Run a STEEL™ Evaluation
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    onClick={() => navigate('/contact')}
+                    className="w-full border-2 border-white/30 text-white bg-white/10 hover:bg-white/20"
+                  >
+                    Request Professional Assessment
                   </Button>
                 </div>
               </div>

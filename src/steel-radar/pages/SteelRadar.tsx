@@ -11,8 +11,6 @@ import {
   Download,
   Upload,
   AlertCircle,
-  TrendingUp,
-  TrendingDown,
   Shield,
   ArrowRight,
   ExternalLink,
@@ -32,21 +30,18 @@ import {
 } from '../services/radarDataService';
 import {
   generateDemoData,
-  hasDemoData,
   markDemoDataLoaded,
 } from '../services/demoDataService';
 import { calculateAutoScoring } from '../services/autoScoringService';
 import { DataIngestionResult } from '../types/radar';
 import { RadarDataPoint, TrendAnalysis } from '../types/radar';
 import { getSteelAssessmentFromStorage } from '../../services/steelAssessmentService';
-import { SteelAssessmentData } from '../../types/steelAssessment';
-import { useTheme } from '../../contexts/ThemeContext';
+import { SteelAssessmentData, SteelFactor } from '../../types/steelAssessment';
 import { DataSourceInfo } from '../services/confidenceService';
 import { useToast, ToastContainer } from '../../components/shared/Toast';
 
 export const SteelRadar: React.FC = () => {
   const navigate = useNavigate();
-  const { theme } = useTheme();
   const toast = useToast();
   const [currentData, setCurrentData] = useState<RadarDataPoint | null>(null);
   const [historicalData, setHistoricalData] = useState<RadarDataPoint | null>(null);

@@ -489,18 +489,19 @@ export const SteelMethodPage: React.FC = () => {
                 Start with a STEEL™ Evaluation
               </h2>
               <p className="text-lg text-silver/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-                A STEEL™ Evaluation is the most direct way to bring structure to your cyber governance journey. ERMITS Advisory leads the assessment, delivers a STEEL™ Index, and defines a prioritized roadmap anchored in your reality.
+                Use the STEEL™ Questionnaire and Radar to derive a STEEL™ Index for your
+                organization and identify prioritized actions.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button
                   variant="secondary"
                   size="lg"
-                  onClick={() => navigate('/contact')}
+                  onClick={() => navigate('/steel-evaluation')}
                   icon={<ArrowRight size={20} />}
                   iconPosition="right"
                   className="bg-white text-navy hover:bg-silver"
                 >
-                  Request a STEEL™ Evaluation
+                  Launch STEEL™ Evaluation
                 </Button>
                 <Button
                   variant="outline"

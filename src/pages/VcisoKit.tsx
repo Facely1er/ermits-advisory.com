@@ -464,6 +464,32 @@ export const VcisoKit: React.FC = () => {
           )}
         </AnimatePresence>
 
+        {/* STEEL Evaluation Entry Point Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="text-center mt-12 mb-8"
+        >
+          <Card variant="glass" padding="lg" className="bg-gradient-to-r from-gold/10 to-navy/10 dark:from-gold/20 dark:to-navy/20 border border-gold/30 dark:border-gold/50">
+            <h3 className="text-2xl font-bold mb-4 dark:text-white">vCISO Engagement Entry Point</h3>
+            <p className="text-gray-700 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
+              Most ERMITS vCISO engagements begin with a STEEL™ Evaluation that establishes
+              the initial STEEL™ Index and governance roadmap.
+            </p>
+            <Button
+              variant="primary"
+              size="lg"
+              onClick={() => navigate('/steel-evaluation')}
+              icon={<ArrowRight size={18} />}
+              iconPosition="right"
+              className="bg-navy text-white hover:bg-navy-dark dark:bg-gold dark:text-navy dark:hover:bg-gold/90 font-semibold shadow-lg transition-colors"
+            >
+              Request a STEEL™ Evaluation
+            </Button>
+          </Card>
+        </motion.div>
+
         {/* CTA Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
