@@ -1,7 +1,7 @@
 // SteelRadar.tsx
 // Radar chart component for STEEL domain visualization
 
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import { Radar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
