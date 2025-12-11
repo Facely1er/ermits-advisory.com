@@ -917,7 +917,7 @@ export const ComplianceAdvisory: React.FC = () => {
                       step: '4', 
                       title: 'Monitoring', 
                       desc: 'Continuous compliance via platform dashboards', 
-                      platform: 'Ongoing CyberCorrect optimization',
+                      platform: 'Ongoing CyberCorrect™ optimization',
                       advisory: 'Monthly compliance reviews',
                       platformAction: 'Automated compliance monitoring'
                     }
@@ -1015,7 +1015,7 @@ export const ComplianceAdvisory: React.FC = () => {
           <Card variant="glass" padding="lg" className="bg-gradient-to-r from-navy to-dark">
             <h3 className="text-2xl font-bold text-white mb-4">Ready to Achieve Compliance?</h3>
             <p className="text-silver mb-6">
-              Schedule a consultation to discuss your compliance needs and CyberCorrect integration
+              Schedule a consultation to discuss your compliance needs and CyberCorrect™ integration
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button

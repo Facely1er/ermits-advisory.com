@@ -93,25 +93,31 @@ export const Navigation: React.FC = () => {
                     <motion.div
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 py-2 z-50"
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-0 pt-2 w-56 z-50"
+                      onMouseEnter={() => setActiveDropdown(link.to)}
+                      onMouseLeave={() => setActiveDropdown(null)}
                     >
-                      {link.submenu.map((item) => (
-                        <NavLink
-                          key={item.to}
-                          to={item.to}
-                          className={({ isActive }) => cn(
-                            'flex items-center justify-between px-4 py-2 text-sm hover:bg-navy/5 dark:hover:bg-silver/10 transition-colors',
-                            isActive && 'bg-navy/10 dark:bg-silver/20 text-navy dark:text-white font-medium',
-                            !isActive && 'text-gray-700 dark:text-gray-300'
-                          )}
-                          onClick={() => setActiveDropdown(null)}
-                        >
-                          <span>{item.label}</span>
-                          {item.premium && (
-                            <span className="text-xs bg-gold/20 text-gold px-2 py-0.5 rounded-full">Premium</span>
-                          )}
-                        </NavLink>
-                      ))}
+                      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 py-2">
+                        {link.submenu.map((item) => (
+                          <NavLink
+                            key={item.to}
+                            to={item.to}
+                            className={({ isActive }) => cn(
+                              'flex items-center justify-between px-4 py-2 text-sm hover:bg-navy/5 dark:hover:bg-silver/10 transition-colors',
+                              isActive && 'bg-navy/10 dark:bg-silver/20 text-navy dark:text-white font-medium',
+                              !isActive && 'text-gray-700 dark:text-gray-300'
+                            )}
+                            onClick={() => setActiveDropdown(null)}
+                          >
+                            <span>{item.label}</span>
+                            {item.premium && (
+                              <span className="text-xs bg-gold/20 text-gold px-2 py-0.5 rounded-full">Premium</span>
+                            )}
+                          </NavLink>
+                        ))}
+                      </div>
                     </motion.div>
                   )}
                 </div>
