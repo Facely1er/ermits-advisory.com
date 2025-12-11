@@ -74,10 +74,10 @@ export const IncidentResponseToolkit: React.FC = () => {
     {
       category: 'Platform Integration',
       items: [
-        'CyberSoluce workflow configuration',
+        'CyberSoluce™ workflow configuration',
         'Incident automation setup guides',
         'Dashboard customization templates',
-        'Integration with CyberCaution alerts'
+        'Integration with CyberCaution™ alerts'
       ]
     }
   ];
@@ -200,7 +200,7 @@ export const IncidentResponseToolkit: React.FC = () => {
                 'Ensure consistent response procedures',
                 'Meet regulatory notification requirements',
                 'Reduce incident response time by 40%',
-                'Integrate with CyberSoluce workflows',
+                'Integrate with CyberSoluce™ workflows',
                 'Improve post-incident learning and recovery'
               ].map((benefit, index) => (
                 <div key={index} className="flex items-start">

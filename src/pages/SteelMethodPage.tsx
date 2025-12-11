@@ -450,7 +450,7 @@ export const SteelMethodPage: React.FC = () => {
                         Threat modelling, ransomware exposure assessment, incident readiness reviews, scenario planning.
                       </td>
                       <td className="py-4 px-4 text-sm text-gray-600 dark:text-gray-300">
-                        CyberCaution (threat intelligence, readiness, incident playbooks).
+                        CyberCaution™ (threat intelligence, readiness, incident playbooks).
                       </td>
                     </tr>
                     <tr className="hover:bg-gray-50 dark:hover:bg-gray-800/50">
@@ -466,7 +466,7 @@ export const SteelMethodPage: React.FC = () => {
                         Controls and architecture maturity assessment, vendor risk review, workflow and resilience analysis.
                       </td>
                       <td className="py-4 px-4 text-sm text-gray-600 dark:text-gray-300">
-                        CyberCorrect, CyberSoluce, VendorSoluce and related integrations.
+                        CyberCorrect™, CyberSoluce™, VendorSoluce™ and related integrations.
                       </td>
                     </tr>
                   </tbody>

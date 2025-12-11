@@ -145,19 +145,19 @@ export const ComplianceAdvisory: React.FC = () => {
         'Control mapping and prioritization',
         'Evidence requirements documentation',
         'Phased remediation roadmap',
-        'CyberCorrect configuration plan'
+        'CyberCorrect™ configuration plan'
       ],
       deliverables: [
         'Gap analysis report',
         'Prioritized remediation roadmap',
         'Control implementation guides',
         'Evidence collection templates',
-        'CyberCorrect automation setup',
+        'CyberCorrect™ automation setup',
         'Timeline and resource estimates'
       ],
       platformIntegration: {
         primary: 'CyberCorrect',
-        setup: 'Full CyberCorrect platform configuration and automation setup',
+        setup: 'Full CyberCorrect™ platform configuration and automation setup',
         features: [
           'Evidence collection workflows configured',
           'Compliance dashboards customized',
@@ -166,9 +166,9 @@ export const ComplianceAdvisory: React.FC = () => {
         ],
         secondary: ['CyberSoluce', 'CyberCaution'],
         secondaryFeatures: [
-          'Policy templates loaded into CyberSoluce',
-          'Threat intelligence feeds configured in CyberCaution',
-          'Vendor compliance tracking in VendorSoluce (if applicable)'
+          'Policy templates loaded into CyberSoluce™',
+          'Threat intelligence feeds configured in CyberCaution™',
+          'Vendor compliance tracking in VendorSoluce™ (if applicable)'
         ]
       },
       idealFor: 'Organizations preparing for first-time certification or major framework adoption'
@@ -185,7 +185,7 @@ export const ComplianceAdvisory: React.FC = () => {
         'Documentation gap remediation',
         'Mock audit execution',
         'Auditor communication preparation',
-        'CyberCorrect audit trail validation'
+        'CyberCorrect™ audit trail validation'
       ],
       deliverables: [
         'Audit readiness checklist',
@@ -193,22 +193,22 @@ export const ComplianceAdvisory: React.FC = () => {
         'Control testing results',
         'Pre-audit findings report',
         'Auditor response templates',
-        'CyberCorrect compliance dashboard'
+        'CyberCorrect™ compliance dashboard'
       ],
       platformIntegration: {
         primary: 'CyberCorrect',
-        setup: 'CyberCorrect evidence management and audit trail validation',
+        setup: 'CyberCorrect™ evidence management and audit trail validation',
         features: [
-          'Evidence repository organized in CyberCorrect',
+          'Evidence repository organized in CyberCorrect™',
           'Audit trail validated and documented',
           'Compliance dashboard prepared for auditor review',
           'Control testing results automated'
         ],
         secondary: ['CyberSoluce', 'VendorSoluce'],
         secondaryFeatures: [
-          'Policy documentation validated in CyberSoluce',
-          'Vendor evidence reviewed in VendorSoluce',
-          'CyberCaution monitoring coverage confirmed'
+          'Policy documentation validated in CyberSoluce™',
+          'Vendor evidence reviewed in VendorSoluce™',
+          'CyberCaution™ monitoring coverage confirmed'
         ]
       },
       idealFor: 'Organizations with upcoming audits or renewals'
@@ -225,7 +225,7 @@ export const ComplianceAdvisory: React.FC = () => {
         'Control effectiveness reviews',
         'Evidence management oversight',
         'Internal audit coordination',
-        'CyberCorrect optimization'
+        'CyberCorrect™ optimization'
       ],
       deliverables: [
         'Monthly compliance dashboards',
@@ -237,18 +237,18 @@ export const ComplianceAdvisory: React.FC = () => {
       ],
       platformIntegration: {
         primary: 'CyberCorrect',
-        setup: 'Ongoing CyberCorrect optimization and monitoring',
+        setup: 'Ongoing CyberCorrect™ optimization and monitoring',
         features: [
-          'Continuous monitoring via CyberCorrect dashboards',
+          'Continuous monitoring via CyberCorrect™ dashboards',
           'Real-time regulatory change notifications',
           'Automated evidence collection and validation',
           'Monthly compliance health reports generated'
         ],
         secondary: ['CyberSoluce', 'CyberCaution', 'VendorSoluce'],
         secondaryFeatures: [
-          'Real-time policy updates in CyberSoluce',
-          'Compliance-driven alerts from CyberCaution',
-          'Vendor compliance tracking in VendorSoluce',
+          'Real-time policy updates in CyberSoluce™',
+          'Compliance-driven alerts from CyberCaution™',
+          'Vendor compliance tracking in VendorSoluce™',
           'Unified compliance governance across all platforms'
         ]
       },
@@ -302,7 +302,7 @@ export const ComplianceAdvisory: React.FC = () => {
             Framework-Driven Compliance
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto mb-8">
-            Transform compliance from burden to competitive advantage with CyberCorrect-powered automation
+            Transform compliance from burden to competitive advantage with CyberCorrect™-powered automation
           </p>
 
           {/* Tab Navigation */}
@@ -381,7 +381,7 @@ export const ComplianceAdvisory: React.FC = () => {
                       </h2>
                     </div>
                     <p className="text-gray-600 dark:text-gray-200 mb-6">
-                      Our compliance advisory services seamlessly integrate with CyberCorrect, 
+                      Our compliance advisory services seamlessly integrate with CyberCorrect™, 
                       transforming manual compliance processes into automated, continuous monitoring.
                     </p>
                     <div className="space-y-4">
@@ -416,7 +416,7 @@ export const ComplianceAdvisory: React.FC = () => {
                         {[
                           { step: '1', title: 'Assessment', desc: 'Gap analysis & roadmap' },
                           { step: '2', title: 'Implementation', desc: 'Control deployment' },
-                          { step: '3', title: 'Automation', desc: 'CyberCorrect setup' },
+                          { step: '3', title: 'Automation', desc: 'CyberCorrect™ setup' },
                           { step: '4', title: 'Monitoring', desc: 'Continuous compliance' }
                         ].map((item, idx) => (
                           <div key={idx} className="flex items-center gap-4">
@@ -468,7 +468,7 @@ export const ComplianceAdvisory: React.FC = () => {
                         </p>
                         <div className="flex items-center gap-2 text-xs text-green-600 dark:text-green-400 mb-4">
                           <FileCheck size={14} />
-                          <span>CyberCorrect Integration</span>
+                          <span>CyberCorrect™ Integration</span>
                         </div>
                         <Button
                           variant="outline"
@@ -495,7 +495,7 @@ export const ComplianceAdvisory: React.FC = () => {
                   {[
                     {
                       title: 'Platform Automation',
-                      description: 'CyberCorrect eliminates 70% of manual compliance work',
+                      description: 'CyberCorrect™ eliminates 70% of manual compliance work',
                       icon: Zap
                     },
                     {
@@ -822,11 +822,11 @@ export const ComplianceAdvisory: React.FC = () => {
                       ))}
                     </div>
                     <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
-                      <h4 className="font-semibold mb-2 dark:text-white">How Compliance Advisory Uses CyberCorrect:</h4>
+                      <h4 className="font-semibold mb-2 dark:text-white">How Compliance Advisory Uses CyberCorrect™:</h4>
                       <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
                         <li className="flex items-start gap-2">
                           <ChevronRight size={14} className="text-green-500 mt-0.5 flex-shrink-0" />
-                          <span>Assessment findings configure CyberCorrect evidence collection workflows</span>
+                          <span>Assessment findings configure CyberCorrect™ evidence collection workflows</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <ChevronRight size={14} className="text-green-500 mt-0.5 flex-shrink-0" />
@@ -893,15 +893,15 @@ export const ComplianceAdvisory: React.FC = () => {
                       step: '1', 
                       title: 'Assessment', 
                       desc: 'Compliance readiness assessment identifies gaps', 
-                      platform: 'CyberCorrect configuration planned',
+                      platform: 'CyberCorrect™ configuration planned',
                       advisory: 'Advisory team conducts gap analysis',
-                      platformAction: 'CyberCorrect workflows designed'
+                      platformAction: 'CyberCorrect™ workflows designed'
                     },
                     { 
                       step: '2', 
                       title: 'Remediation', 
                       desc: 'Advisory guides control implementation', 
-                      platform: 'CyberCorrect automates evidence collection',
+                      platform: 'CyberCorrect™ automates evidence collection',
                       advisory: 'Expert guidance on control deployment',
                       platformAction: 'Evidence collection automated'
                     },
@@ -909,7 +909,7 @@ export const ComplianceAdvisory: React.FC = () => {
                       step: '3', 
                       title: 'Automation', 
                       desc: 'Platform setup and workflow configuration', 
-                      platform: 'CyberCorrect + CyberSoluce + supporting platforms',
+                      platform: 'CyberCorrect™ + CyberSoluce™ + supporting platforms',
                       advisory: 'Platform configuration oversight',
                       platformAction: 'Full ecosystem integration'
                     },

@@ -76,11 +76,11 @@ export const VendorRiskToolkit: React.FC = () => {
     {
       category: 'Platform Integration',
       items: [
-        'VendorSoluce setup guides',
+        'VendorSoluce™ setup guides',
         'Automated assessment workflows',
         'Risk scoring automation templates',
         'Dashboard configuration guides',
-        'Integration with CyberCaution alerts'
+        'Integration with CyberCaution™ alerts'
       ]
     }
   ];
@@ -209,7 +209,7 @@ export const VendorRiskToolkit: React.FC = () => {
                 'Accelerate vendor onboarding by 50%',
                 'Ensure consistent risk scoring',
                 'Protect your organization with contract clauses',
-                'Integrate with VendorSoluce platform',
+                'Integrate with VendorSoluce™ platform',
                 'Manage supply chain risks effectively'
               ].map((benefit, index) => (
                 <div key={index} className="flex items-start">

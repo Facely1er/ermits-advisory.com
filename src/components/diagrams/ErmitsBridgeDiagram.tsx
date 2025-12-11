@@ -184,7 +184,7 @@ export const ErmitsBridgeDiagram: React.FC<ErmitsBridgeDiagramProps> = ({ classN
           className="fill-gray-700 dark:fill-gray-300"
           fontSize="11"
         >
-          CyberCaution
+          CyberCaution™
         </text>
         <text
           x="300"
@@ -193,7 +193,7 @@ export const ErmitsBridgeDiagram: React.FC<ErmitsBridgeDiagramProps> = ({ classN
           className="fill-gray-700 dark:fill-gray-300"
           fontSize="11"
         >
-          CyberCorrect
+          CyberCorrect™
         </text>
         <text
           x="400"
@@ -202,7 +202,7 @@ export const ErmitsBridgeDiagram: React.FC<ErmitsBridgeDiagramProps> = ({ classN
           className="fill-gray-700 dark:fill-gray-300"
           fontSize="11"
         >
-          CyberSoluce
+          CyberSoluce™
         </text>
         <text
           x="500"
@@ -211,7 +211,7 @@ export const ErmitsBridgeDiagram: React.FC<ErmitsBridgeDiagramProps> = ({ classN
           className="fill-gray-700 dark:fill-gray-300"
           fontSize="11"
         >
-          VendorSoluce
+          VendorSoluce™
         </text>
         <text
           x="600"
@@ -220,7 +220,7 @@ export const ErmitsBridgeDiagram: React.FC<ErmitsBridgeDiagramProps> = ({ classN
           className="fill-gray-700 dark:fill-gray-300"
           fontSize="11"
         >
-          SocialCaution
+          SocialCaution™
         </text>
         <text
           x="700"
@@ -229,7 +229,7 @@ export const ErmitsBridgeDiagram: React.FC<ErmitsBridgeDiagramProps> = ({ classN
           className="fill-gray-700 dark:fill-gray-300"
           fontSize="11"
         >
-          TechnoSoluce
+          TechnoSoluce™
         </text>
 
         {/* Feedback Loop (Telemetry) */}

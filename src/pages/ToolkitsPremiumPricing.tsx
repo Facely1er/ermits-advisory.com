@@ -42,7 +42,7 @@ export const ToolkitsPremiumPricing: React.FC = () => {
           '✨ Multi-framework switching',
           '✨ Remediation project tracker',
           '✨ Multi-user collaboration',
-          '✨ CyberCorrect integration',
+          '✨ CyberCorrect™ integration',
           '✨ Priority email support'
         ]
       },
@@ -79,7 +79,7 @@ export const ToolkitsPremiumPricing: React.FC = () => {
           '✨ Tabletop exercise simulator',
           '✨ Incident history database',
           '✨ Team collaboration features',
-          '✨ CyberSoluce integration',
+          '✨ CyberSoluce™ integration',
           '✨ Priority email support'
         ]
       },
@@ -116,7 +116,7 @@ export const ToolkitsPremiumPricing: React.FC = () => {
           '✨ Contract clause builder',
           '✨ Portfolio analytics',
           '✨ Save unlimited assessments',
-          '✨ VendorSoluce integration',
+          '✨ VendorSoluce™ integration',
           '✨ Priority email support'
         ]
       },

@@ -168,14 +168,14 @@ export const ProfessionalSteelAssessment: React.FC = () => {
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              'CyberCaution',
-              'CyberCorrect',
-              'VendorSoluce',
-              'CyberSoluce',
-              'TechnoSoluce',
-              'ImpactSoluce',
-              'EduSoluce',
-              'SocialCaution',
+              'CyberCaution™',
+              'CyberCorrect™',
+              'VendorSoluce™',
+              'CyberSoluce™',
+              'TechnoSoluce™',
+              'ImpactSoluce™',
+              'EduSoluce™',
+              'SocialCaution™',
             ].map((platform) => (
               <div
                 key={platform}

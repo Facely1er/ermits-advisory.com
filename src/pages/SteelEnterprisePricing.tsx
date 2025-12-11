@@ -33,7 +33,7 @@ export const SteelEnterprisePricing: React.FC = () => {
     {
       icon: <LinkIcon size={24} className="text-navy dark:text-silver" />,
       title: 'ERMITS Platform Integration',
-      description: 'Seamless integration with all ERMITS platforms (CyberCaution, CyberCorrect, VendorSoluce, etc.)',
+      description: 'Seamless integration with all ERMITS platforms (CyberCaution™, CyberCorrect™, VendorSoluce™, etc.)',
     },
     {
       icon: <Users size={24} className="text-navy dark:text-silver" />,

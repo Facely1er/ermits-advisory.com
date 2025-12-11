@@ -96,7 +96,7 @@ export const ServiceOffering: React.FC = () => {
         'Assess vendor and third-party risk posture using STEEL™ inputs',
         'Define governance models and requirements for vendors and partners',
         'Align contract expectations, due diligence, and monitoring',
-        'Coordinate with VendorSoluce and other ERMITS capabilities as needed'
+        'Coordinate with VendorSoluce™ and other ERMITS capabilities as needed'
       ],
       whoItsFor: 'Organizations with complex supply chains, critical vendors, or regulatory expectations around third-party and ecosystem risk.'
     },

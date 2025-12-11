@@ -65,7 +65,7 @@ export const ComplianceToolkit: React.FC = () => {
     {
       category: 'Platform Integration',
       items: [
-        'CyberCorrect setup guides',
+        'CyberCorrect™ setup guides',
         'Workflow configuration templates',
         'Automation setup instructions',
         'Dashboard customization guides'
@@ -196,7 +196,7 @@ export const ComplianceToolkit: React.FC = () => {
                 'Save 50+ hours of template creation time',
                 'Ensure consistency across all frameworks',
                 'Accelerate audit preparation by 60%',
-                'Integrate seamlessly with CyberCorrect platform',
+                'Integrate seamlessly with CyberCorrect™ platform',
                 'Maintain compliance with automated workflows',
                 'Reduce audit findings with comprehensive checklists'
               ].map((benefit, index) => (
