@@ -14,7 +14,32 @@ const Dashboard = React.lazy(() => import('./pages/Dashboard').then(m => ({ defa
 const SteelRecommendationsPage = React.lazy(() => import('./pages/SteelRecommendationsPage').then(m => ({ default: m.SteelRecommendationsPage })));
 const SteelEnterprisePricing = React.lazy(() => import('./pages/SteelEnterprisePricing').then(m => ({ default: m.SteelEnterprisePricing })));
 const ProfessionalSteelAssessment = React.lazy(() => import('./pages/ProfessionalSteelAssessment').then(m => ({ default: m.ProfessionalSteelAssessment })));
-const STEELVisualization = React.lazy(() => import('./pages/STEELVisualization').then(m => ({ default: m.STEELVisualization })));
+const STEELVisualization = React.lazy(() => 
+  import('./pages/STEELVisualization')
+    .then(m => ({ default: m.STEELVisualization }))
+    .catch(error => {
+      console.error('Failed to load STEELVisualization:', error);
+      // Return a fallback component
+      return { 
+        default: () => (
+          <div className="min-h-screen flex items-center justify-center bg-silver-light dark:bg-dark-bg">
+            <div className="text-center p-8">
+              <h1 className="text-2xl font-bold mb-4 dark:text-white">Page Load Error</h1>
+              <p className="text-gray-600 dark:text-gray-200 mb-4">
+                Unable to load the STEEL Visualization page. Please try refreshing the page.
+              </p>
+              <button 
+                onClick={() => window.location.reload()} 
+                className="px-4 py-2 bg-navy text-white rounded hover:bg-navy-dark"
+              >
+                Refresh Page
+              </button>
+            </div>
+          </div>
+        )
+      };
+    })
+);
 const SteelMethodPage = React.lazy(() => import('./pages/SteelMethodPage').then(m => ({ default: m.SteelMethodPage })));
 const SteelPremium = React.lazy(() => import('./pages/SteelPremium').then(m => ({ default: m.SteelPremium })));
 const VcisoKit = React.lazy(() => 

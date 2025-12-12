@@ -47,14 +47,23 @@ export class ErrorBoundary extends Component<Props, State> {
     // - LogRocket
     
     // For now, we'll just log to console in production
-    console.error('Production Error:', {
-      message: error.message,
-      stack: error.stack,
-      componentStack: errorInfo.componentStack,
-      timestamp: new Date().toISOString(),
-      userAgent: navigator.userAgent,
-      url: window.location.href
-    });
+    // Only log if not a module loading error (those are handled by lazy loading)
+    if (!error.message.includes('Failed to fetch dynamically imported module') && 
+        !error.message.includes('Loading chunk')) {
+      try {
+        console.error('Production Error:', {
+          message: error.message,
+          stack: error.stack,
+          componentStack: errorInfo.componentStack,
+          timestamp: new Date().toISOString(),
+          userAgent: navigator.userAgent,
+          url: window.location.href
+        });
+      } catch (e) {
+        // Fallback if error object can't be serialized
+        console.error('Production Error:', error.message || 'Unknown error');
+      }
+    }
   };
 
   handleReload = () => {
