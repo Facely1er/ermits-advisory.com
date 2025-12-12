@@ -42,14 +42,14 @@ export const Navigation: React.FC = () => {
       icon: <Briefcase size={16} />,
     },
     { 
-      to: '/services', 
-      label: 'Services', 
-      icon: <Layers size={16} />,
-    },
-    { 
       to: '/method/steel', 
       label: 'STEEL™ Method', 
       icon: <BookOpen size={16} />,
+    },
+    { 
+      to: '/services', 
+      label: 'Services', 
+      icon: <Layers size={16} />,
     },
     { 
       to: '/ecosystem', 
