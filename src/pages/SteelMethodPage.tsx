@@ -569,6 +569,29 @@ export const SteelMethodPage: React.FC = () => {
           </motion.div>
         </section>
 
+        {/* Don't Start with Tools */}
+        <section id="tools-callout" className="mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <Card className="p-8 md:p-12 bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 border-2 border-yellow-300 dark:border-yellow-700">
+              <div className="max-w-4xl mx-auto text-center">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 dark:text-white">
+                  Don't Start with Tools
+                </h2>
+                <blockquote className="text-xl md:text-2xl text-gray-800 dark:text-gray-200 mb-6 leading-relaxed italic border-l-4 border-navy dark:border-silver pl-6">
+                  Instead of guessing which product to buy, organizations enter ERMITS through Advisory. STEEL™ evaluations define what matters most, and only then do we activate the right mix of ERMITS capabilities.
+                </blockquote>
+                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                  This approach keeps your ecosystem lean, purposeful, and aligned with real business and threat realities.
+                </p>
+              </div>
+            </Card>
+          </motion.div>
+        </section>
+
         {/* Final CTA */}
         <section id="final-cta" className="mb-16">
           <motion.div

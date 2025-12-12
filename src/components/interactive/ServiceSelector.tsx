@@ -22,27 +22,28 @@ const services: Service[] = [
     icon: <Search size={32} />,
     title: 'Assess',
     tagline: 'STEEL™ Evaluation',
-    description: 'Structured assessment across strategic, threat, and enterprise dimensions',
+    description: 'Structured assessment across strategic, threat, and enterprise dimensions to establish your security baseline',
     details: [
-      'Run STEEL™ evaluation to generate your security baseline',
+      'Run STEEL™ evaluation across strategic, threat, and enterprise dimensions',
+      'Generate STEEL™ Index (Strategic, Threat, and Enterprise scores)',
       'Identify priority gaps, dependencies, and quick wins',
-      'Generate STEEL™ Index scores (Strategic, Threat, Enterprise)',
-      'Establish foundation for governance transformation'
+      'Provide baseline assessment for governance and transformation planning'
     ],
     whoItsFor: 'Organizations needing a structured baseline assessment at the start of transformation or in response to regulatory, customer, or board pressure.',
-    link: '/steel'
+    link: '/services'
   },
   {
     id: 'architect',
     icon: <DraftingCompass size={32} />,
     title: 'Architect',
     tagline: 'Strategic Roadmap',
-    description: 'Transform evaluation results into actionable governance roadmap',
+    description: 'Transform STEEL™ evaluation results into actionable, prioritized governance roadmap',
     details: [
-      'Translate STEEL™ Index into strategic priorities',
+      'Translate STEEL™ Index scores into strategic priorities',
       'Develop sequenced implementation roadmap with timelines',
       'Prioritize based on business impact and risk severity',
-      'Map roadmap to ERMITS ecosystem capabilities'
+      'Map roadmap to ERMITS ecosystem capabilities',
+      'Create governance structures to support execution'
     ],
     whoItsFor: 'Organizations that completed STEEL™ evaluation and need a clear, prioritized path forward for cyber governance transformation.',
     link: '/services'
@@ -52,12 +53,13 @@ const services: Service[] = [
     icon: <Shield size={32} />,
     title: 'Govern',
     tagline: 'vCISO Stewardship',
-    description: 'Fractional executive security leadership focused on governance and risk',
+    description: 'Fractional executive security leadership focused on governance, risk, and resilience',
     details: [
-      'Provide strategic vCISO leadership on STEEL™ foundation',
-      'Translate technical realities into board-ready narratives',
+      'Provide vCISO leadership operating on STEEL™ foundation',
+      'Translate technical and threat realities into board-ready narratives',
       'Oversee execution of STEEL™-aligned roadmap',
-      'Coordinate teams and vendors across ERMITS ecosystem'
+      'Coordinate internal teams and external vendors across ERMITS ecosystem',
+      'Continuously update leadership on risk posture using STEEL™ Index'
     ],
     whoItsFor: 'Organizations requiring dedicated security leadership but prefer fractional engagement over full-time CISO, valuing governance over purely operational metrics.',
     link: '/vciso-kit'
@@ -66,16 +68,17 @@ const services: Service[] = [
     id: 'orchestrate',
     icon: <Network size={32} />,
     title: 'Orchestrate',
-    tagline: 'Ecosystem Integration',
-    description: 'Connect you to the right ERMITS capabilities when technology is needed',
+    tagline: 'GRC+ & Ecosystem',
+    description: 'Strategic guidance for GRC alignment, vendor governance, and ecosystem integration',
     details: [
-      'Strategic integration consulting, not product sales',
-      'Map your needs to ERMITS ecosystem capabilities',
-      'Connect to CyberCaution™, CyberCorrect™, VendorSoluce™, etc.',
-      'Tools deployed only where they deliver strategic value'
+      'Design and refine governance structures aligned with STEEL™',
+      'Manage vendor and third-party risk across supply chains',
+      'Support frameworks: ISO, NIST, SOC 2, sector-specific regimes',
+      'Connect to ERMITS capabilities when technology is needed',
+      'Enhance traditional GRC with threat intelligence and enterprise context'
     ],
-    whoItsFor: 'Organizations ready to implement solutions after assessment and roadmapping, needing guidance on which tools and platforms to deploy.',
-    link: '/ecosystem'
+    whoItsFor: 'Organizations facing regulatory complexity, vendor risk challenges, or needing ecosystem integration guidance.',
+    link: '/services'
   }
 ];
 
