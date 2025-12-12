@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import {
-  ArrowRight, Target, Shield, CheckCircle, FileCheck, Network, Gavel, TrendingUp, Map
+  ArrowRight, Target, Shield, CheckCircle, FileCheck, Network, Gavel, TrendingUp
 } from 'lucide-react';
 
 export const ServiceOffering: React.FC = () => {
@@ -201,7 +201,7 @@ export const ServiceOffering: React.FC = () => {
           viewport={{ once: true }}
           className="space-y-16 mb-16"
         >
-          {services.map((service, index) => {
+          {services.map((service) => {
             const Icon = service.icon;
             const colors = getColorClasses(service.color);
             return (

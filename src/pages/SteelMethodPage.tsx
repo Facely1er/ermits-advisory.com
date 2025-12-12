@@ -400,7 +400,7 @@ export const SteelMethodPage: React.FC = () => {
                 The ERMITS Ecosystem Capabilities
               </h3>
               <p className="text-base text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                Each ERMITS capability has a specific role. They are designed to be orchestrated by ERMITS Advisory based on your STEEL™ evaluation, not purchased in isolation.
+                Each ERMITS capability has a specific role.
               </p>
               <ul className="space-y-4 text-base text-gray-700 dark:text-gray-300">
                 <li className="flex items-start">
