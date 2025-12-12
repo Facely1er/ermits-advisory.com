@@ -138,7 +138,7 @@ export const LandingPage: React.FC = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.6 }}
-              className="flex flex-wrap gap-3 justify-center mb-10"
+              className="flex flex-wrap gap-3 justify-center mb-14"
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm text-sm text-white/90">
                 <CheckCircle size={16} className="text-cyan-400" />
