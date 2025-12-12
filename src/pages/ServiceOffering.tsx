@@ -284,26 +284,16 @@ export const ServiceOffering: React.FC = () => {
               <p className="text-lg text-silver/90 mb-8 max-w-3xl mx-auto leading-relaxed">
                 Every engagement starts with understanding your context. From a focused STEEL™ Evaluation to an ongoing vCISO stewardship model, ERMITS Advisory can be calibrated to your scale, sector, and urgency.
               </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button
-                  variant="secondary"
-                  size="lg"
-                  onClick={() => navigate('/contact')}
-                  icon={<ArrowRight size={20} />}
-                  iconPosition="right"
-                  className="bg-white text-navy hover:bg-silver"
-                >
-                  Talk to an Advisor
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  onClick={() => navigate('/contact')}
-                  className="border-2 border-white/30 text-white bg-white/10 hover:bg-white/20"
-                >
-                  Request a STEEL™ Evaluation
-                </Button>
-              </div>
+              <Button
+                variant="secondary"
+                size="lg"
+                onClick={() => navigate('/contact')}
+                icon={<ArrowRight size={20} />}
+                iconPosition="right"
+                className="bg-white text-navy hover:bg-silver"
+              >
+                Contact Our Team
+              </Button>
             </Card>
           </motion.div>
         </section>
