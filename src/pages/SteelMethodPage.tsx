@@ -6,7 +6,7 @@ import { Button } from '../components/shared/Button';
 import { SteelIndexCard } from '../components/steel/SteelIndexCard';
 import { 
   ArrowRight, Target, Layers, 
-  CheckCircle, AlertCircle, Settings, Network, FileCheck
+  CheckCircle, AlertCircle
 } from 'lucide-react';
 
 export const SteelMethodPage: React.FC = () => {
@@ -397,29 +397,59 @@ export const SteelMethodPage: React.FC = () => {
           >
             <Card className="p-8">
               <h3 className="text-2xl font-bold mb-6 dark:text-white text-center">
-                The ERMITS Ecosystem Capabilities
+                Mapping STEEL™ Layers to the ERMITS Ecosystem
               </h3>
               <p className="text-base text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                Each ERMITS capability has a specific role.
+                Each layer of the STEEL™ evaluation framework connects directly to specialized capabilities within the ERMITS ecosystem. Together, they create a closed-loop system for governance, risk management, and resilience.
               </p>
-              <ul className="space-y-4 text-base text-gray-700 dark:text-gray-300">
-                <li className="flex items-start">
-                  <AlertCircle size={20} className="mr-3 mt-0.5 text-red-500 flex-shrink-0" />
-                  <span><strong className="text-navy dark:text-white">CyberCaution™</strong> – Threat intelligence, incident response, and operational readiness capabilities informed by real-world attack dynamics.</span>
-                </li>
-                <li className="flex items-start">
-                  <FileCheck size={20} className="mr-3 mt-0.5 text-green-500 flex-shrink-0" />
-                  <span><strong className="text-navy dark:text-white">CyberCorrect™</strong> – Compliance, privacy, and control implementation capabilities for standards and regulatory expectations.</span>
-                </li>
-                <li className="flex items-start">
-                  <Settings size={20} className="mr-3 mt-0.5 text-blue-500 flex-shrink-0" />
-                  <span><strong className="text-navy dark:text-white">CyberSoluce™</strong> – Solution and architecture design, integration, and enablement across your technology stack.</span>
-                </li>
-                <li className="flex items-start">
-                  <Network size={20} className="mr-3 mt-0.5 text-orange-500 flex-shrink-0" />
-                  <span><strong className="text-navy dark:text-white">VendorSoluce™</strong> – Vendor, partner, and supply chain risk governance across your external ecosystem.</span>
-                </li>
-              </ul>
+              
+              <div className="space-y-6">
+                {/* Strategic Layer */}
+                <div className="border-l-4 border-blue-500 pl-6 py-2">
+                  <h4 className="text-xl font-bold text-navy dark:text-white mb-3">Strategic Evaluation Layer</h4>
+                  <p className="text-base text-gray-700 dark:text-gray-300 mb-4">
+                    Assesses business context, governance maturity, stakeholder alignment, and risk appetite.
+                  </p>
+                  <div className="flex items-start mb-2">
+                    <ArrowRight size={18} className="mr-2 mt-1 text-blue-500 flex-shrink-0" />
+                    <span className="text-gray-700 dark:text-gray-300"><strong className="text-navy dark:text-white">Maps to:</strong> ERMITS Advisory Services – vCISO Stewardship, GRC+ Advisory, Executive & Board Reporting</span>
+                  </div>
+                </div>
+
+                {/* Threat Layer */}
+                <div className="border-l-4 border-red-500 pl-6 py-2">
+                  <h4 className="text-xl font-bold text-navy dark:text-white mb-3">Threat Evaluation Layer</h4>
+                  <p className="text-base text-gray-700 dark:text-gray-300 mb-4">
+                    Evaluates threat landscape, adversary tactics, operational readiness, and incident response capability.
+                  </p>
+                  <div className="flex items-start mb-2">
+                    <ArrowRight size={18} className="mr-2 mt-1 text-red-500 flex-shrink-0" />
+                    <span className="text-gray-700 dark:text-gray-300"><strong className="text-navy dark:text-white">Maps to:</strong> CyberCaution™ – Threat intelligence, incident response, and operational readiness capabilities</span>
+                  </div>
+                </div>
+
+                {/* Enterprise Layer */}
+                <div className="border-l-4 border-green-500 pl-6 py-2">
+                  <h4 className="text-xl font-bold text-navy dark:text-white mb-3">Enterprise Evaluation Layer</h4>
+                  <p className="text-base text-gray-700 dark:text-gray-300 mb-4">
+                    Examines technology architecture, vendor ecosystem, operational dependencies, and control implementation.
+                  </p>
+                  <div className="space-y-2">
+                    <div className="flex items-start">
+                      <ArrowRight size={18} className="mr-2 mt-1 text-green-500 flex-shrink-0" />
+                      <span className="text-gray-700 dark:text-gray-300"><strong className="text-navy dark:text-white">Maps to:</strong> CyberCorrect™ – Compliance, privacy, and control implementation</span>
+                    </div>
+                    <div className="flex items-start">
+                      <ArrowRight size={18} className="mr-2 mt-1 text-green-500 flex-shrink-0" />
+                      <span className="text-gray-700 dark:text-gray-300"><strong className="text-navy dark:text-white">Maps to:</strong> CyberSoluce™ – Solution design, architecture, and technology enablement</span>
+                    </div>
+                    <div className="flex items-start">
+                      <ArrowRight size={18} className="mr-2 mt-1 text-green-500 flex-shrink-0" />
+                      <span className="text-gray-700 dark:text-gray-300"><strong className="text-navy dark:text-white">Maps to:</strong> VendorSoluce™ – Vendor and supply chain risk governance</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </Card>
           </motion.div>
 
