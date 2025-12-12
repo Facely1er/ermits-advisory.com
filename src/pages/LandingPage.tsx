@@ -6,7 +6,7 @@ import { Button } from '../components/shared/Button';
 import { Card } from '../components/shared/Card';
 import { InteractiveCard } from '../components/shared/InteractiveCard';
 import { HeroCarousel } from '../components/shared/HeroCarousel';
-import { ArrowRight, CheckCircle, Zap, Eye, Target, Shield } from 'lucide-react';
+import { ArrowRight, CheckCircle, Zap, Eye, Target } from 'lucide-react';
 import { ServiceSelector } from '../components/interactive/ServiceSelector';
 import heroBackground from '../assets/background.jpg';
 
@@ -28,34 +28,6 @@ export const LandingPage: React.FC = () => {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0 }
   };
-
-  // Enhanced features for interactive display
-  const enhancedFeatures = [
-    {
-      icon: <Zap size={24} className="text-yellow-500" />,
-      title: 'Real-Time Intelligence',
-      description: 'Monitor threats and risks as they emerge with live data feeds',
-      metric: 'Continuous'
-    },
-    {
-      icon: <Eye size={24} className="text-blue-500" />,
-      title: 'Predictive Analytics',
-      description: 'AI-powered insights that forecast potential security threats',
-      metric: 'Advanced'
-    },
-    {
-      icon: <Target size={24} className="text-green-500" />,
-      title: 'Strategic Focus',
-      description: 'Prioritize actions based on business impact and risk severity',
-      metric: '6D'
-    },
-    {
-      icon: <Shield size={24} className="text-purple-500" />,
-      title: 'Comprehensive Coverage',
-      description: 'Visibility across all critical risk dimensions',
-      metric: 'Multi-D'
-    }
-  ];
 
   return (
     <div>
@@ -213,7 +185,7 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Quick Value Props */}
-      <section className="py-12 bg-white dark:bg-dark-surface">
+      <section className="py-12 bg-gray-50 dark:bg-gray-900/50">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -253,7 +225,7 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Service Architecture */}
-      <section className="py-20 bg-gradient-to-b from-white via-silver-lighter to-white dark:from-dark-luxury-bg dark:via-dark-luxury-surface dark:to-dark-luxury-bg">
+      <section className="py-20 bg-white dark:bg-dark-bg">
         <div className="container mx-auto px-4 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -285,7 +257,7 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Our Methodology: STEEL™ - Simplified */}
-      <section className="py-20 bg-gradient-to-b from-white via-silver-lighter to-white dark:from-dark-luxury-bg dark:via-dark-luxury-surface dark:to-dark-luxury-bg">
+      <section className="py-20 bg-gray-50 dark:bg-gray-900/50">
         <div className="container mx-auto px-4 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -353,7 +325,7 @@ export const LandingPage: React.FC = () => {
 
 
       {/* Engagement Model / How It Works Section - Luxury */}
-      <section id="how-it-works" className="py-20 bg-gradient-to-b from-white via-silver-lighter to-white dark:from-dark-luxury-bg dark:via-dark-luxury-surface dark:to-dark-luxury-bg">
+      <section id="how-it-works" className="py-20 bg-white dark:bg-dark-bg">
         <div className="container mx-auto px-4 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -362,7 +334,7 @@ export const LandingPage: React.FC = () => {
             className="text-center mb-12"
           >
             <div className="text-xs uppercase tracking-widest text-cyan-400 mb-2">
-              Engagement model
+              Typical Engagement model
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
               A compact, outcome-driven engagement — not another endless audit
@@ -443,7 +415,7 @@ export const LandingPage: React.FC = () => {
 
 
       {/* Use Cases Section - Luxury */}
-      <section id="use-cases" className="py-20 bg-gradient-to-b from-silver-lighter via-white to-silver-lighter dark:from-dark-luxury-bg dark:via-dark-luxury-surface dark:to-dark-luxury-bg">
+      <section id="use-cases" className="py-20 bg-gray-50 dark:bg-gray-900/50">
         <div className="container mx-auto px-4 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -526,60 +498,6 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Enhanced Features Section - Capabilities */}
-      <section className="py-16 bg-white dark:bg-dark-bg">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
-            className="text-center mb-12"
-          >
-            <motion.div variants={item} className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-2">
-              Capabilities
-            </motion.div>
-            <motion.h2 variants={item} className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              Advanced Capabilities
-            </motion.h2>
-            <motion.p variants={item} className="text-lg text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              Powerful tools and insights to transform your security posture
-            </motion.p>
-          </motion.div>
-          
-          <motion.div 
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.1 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
-            {enhancedFeatures.map((feature, index) => (
-              <motion.div key={index} variants={item}>
-                <InteractiveCard 
-                  hover3D={true}
-                  glowEffect={true}
-                  className="bg-white dark:bg-dark-card-bg p-6 text-center h-full"
-                >
-                  <div className="p-4 rounded-full bg-gray-50 dark:bg-gray-800 inline-flex mb-4">
-                    {feature.icon}
-                  </div>
-                  <div className="text-3xl font-bold text-navy dark:text-white mb-2">
-                    {feature.metric}
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 dark:text-white">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-200 text-sm">
-                    {feature.description}
-                  </p>
-                </InteractiveCard>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
       {/* Trust Indicators Section */}
       <section className="py-16 bg-white dark:bg-dark-bg">
         <div className="container mx-auto px-4 max-w-7xl">
@@ -654,50 +572,38 @@ export const LandingPage: React.FC = () => {
             className="max-w-4xl mx-auto"
           >
             <Card className="luxury-card p-10 md:p-12 bg-gradient-to-br from-luxury-gold/25 via-white/95 to-white/95 dark:from-luxury-gold/20 dark:via-dark-luxury-surface/95 dark:to-dark-luxury-surface/95 border-luxury-gold/40 dark:border-luxury-gold/50 shadow-luxury-gold-lg backdrop-blur-xl">
-              <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-8 items-center">
-                <div>
-                  <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">
-                    Book an initial STEEL™ discovery call
-                  </h2>
-                  <p className="text-base text-navy-dark dark:text-slate-300 mb-4">
-                    Use one <strong className="text-navy-dark dark:text-white">STEEL™ run</strong> to clarify where your next euros or dollars of
-                    cyber and privacy budget should go — and which ERMITS ecosystem capabilities can deliver the most impact.
-                  </p>
-                  <div className="space-y-2 text-sm text-navy-dark dark:text-slate-400">
-                    <div className="flex items-center gap-2">
-                      <CheckCircle size={16} className="text-green-500 flex-shrink-0" />
-                      <span>No generic boilerplate risk report</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle size={16} className="text-green-500 flex-shrink-0" />
-                      <span>Open-data driven, tool-integrated</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle size={16} className="text-green-500 flex-shrink-0" />
-                      <span>Designed for small and mid-size organizations</span>
-                    </div>
+              <div className="text-center">
+                <h2 className="text-2xl md:text-3xl font-bold mb-3 text-navy dark:text-white">
+                  Book an initial STEEL™ discovery call
+                </h2>
+                <p className="text-base text-gray-700 dark:text-slate-300 mb-6 max-w-2xl mx-auto">
+                  Use one <strong className="text-navy dark:text-white">STEEL™ run</strong> to clarify where your next euros or dollars of
+                  cyber and privacy budget should go — and which ERMITS ecosystem capabilities can deliver the most impact.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 items-center justify-center mb-6">
+                  <div className="flex items-center gap-2 text-sm text-gray-700 dark:text-slate-400">
+                    <CheckCircle size={16} className="text-green-500 flex-shrink-0" />
+                    <span>No generic boilerplate risk report</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-700 dark:text-slate-400">
+                    <CheckCircle size={16} className="text-green-500 flex-shrink-0" />
+                    <span>Open-data driven, tool-integrated</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-700 dark:text-slate-400">
+                    <CheckCircle size={16} className="text-green-500 flex-shrink-0" />
+                    <span>Designed for small and mid-size organizations</span>
                   </div>
                 </div>
-                <div className="space-y-3">
-                  <Button
-                    variant="secondary"
-                    size="lg"
-                    onClick={() => navigate('/steel-evaluation')}
-                    className="w-full bg-navy-dark text-white hover:bg-navy-dark/90 shadow-lg"
-                    icon={<ArrowRight size={20} />}
-                    iconPosition="right"
-                  >
-                    Run a STEEL™ Evaluation
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    onClick={() => navigate('/contact')}
-                    className="w-full border-2 border-white/30 text-white bg-white/10 hover:bg-white/20"
-                  >
-                    Request Professional Assessment
-                  </Button>
-                </div>
+                <Button
+                  variant="primary"
+                  size="lg"
+                  onClick={() => navigate('/contact')}
+                  className="bg-navy hover:bg-navy-dark text-white shadow-lg"
+                  icon={<ArrowRight size={20} />}
+                  iconPosition="right"
+                >
+                  Request Professional Assessment
+                </Button>
               </div>
             </Card>
           </motion.div>
