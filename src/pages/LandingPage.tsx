@@ -6,9 +6,7 @@ import { Button } from '../components/shared/Button';
 import { Card } from '../components/shared/Card';
 import { InteractiveCard } from '../components/shared/InteractiveCard';
 import { HeroCarousel } from '../components/shared/HeroCarousel';
-import { ArrowRight, CheckCircle, Zap, Eye, Target, Calendar, Layers, Rocket, Search, Shield, Network, Settings, AlertCircle } from 'lucide-react';
-import { SteelArchitectureDiagram } from '../components/diagrams/SteelArchitectureDiagram';
-import { ErmitsBridgeDiagram } from '../components/diagrams/ErmitsBridgeDiagram';
+import { ArrowRight, CheckCircle, Zap, Eye, Target, Shield } from 'lucide-react';
 import { ServiceSelector } from '../components/interactive/ServiceSelector';
 import heroBackground from '../assets/background.jpg';
 
@@ -227,7 +225,7 @@ export const LandingPage: React.FC = () => {
               {
                 icon: <Eye size={32} className="text-blue-500" />,
                 title: 'Executive Ready',
-                description: 'Board-ready guidance backed by PESTEL methodology'
+                description: 'Board-ready guidance backed by proven strategic frameworks'
               },
               {
                 icon: <Target size={32} className="text-green-500" />,
@@ -286,7 +284,7 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* How We Evaluate: The STEEL™ Method Section */}
+      {/* Our Methodology: STEEL™ - Simplified */}
       <section className="py-20 bg-gradient-to-b from-white via-silver-lighter to-white dark:from-dark-luxury-bg dark:via-dark-luxury-surface dark:to-dark-luxury-bg">
         <div className="container mx-auto px-4 max-w-7xl">
           <motion.div
@@ -296,177 +294,13 @@ export const LandingPage: React.FC = () => {
             className="text-center mb-12"
           >
             <div className="text-xs uppercase tracking-widest text-cyan-400 mb-2">
-              Evaluation Methodology
+              Our Methodology
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              How We Evaluate: The STEEL™ Method
+              Powered by STEEL™
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto mb-6">
-              <strong className="text-navy dark:text-white">STEEL™</strong> — the Strategic Threat & Enterprise Evaluation Layer, ERMITS' multi-layer evaluation architecture used to understand your organization's security, governance, resilience, and enterprise context.
-            </p>
-          </motion.div>
-
-          {/* Three Evaluation Sublayers */}
-          <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.1 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
-          >
-            {/* Strategic Evaluation Layer */}
-            <motion.div variants={item}>
-              <Card className="h-full p-6 hover:shadow-xl transition-shadow border-l-4 border-l-navy">
-                <div className="mb-4">
-                  <div className="w-16 h-16 bg-navy/10 dark:bg-navy/30 rounded-full flex items-center justify-center mb-4">
-                    <Target size={32} className="text-navy dark:text-silver" />
-                  </div>
-                  <h3 className="text-xl font-bold text-navy dark:text-white mb-3">
-                    Strategic Evaluation Layer
-                  </h3>
-                </div>
-                <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-navy dark:text-silver flex-shrink-0" />
-                    <span>Business alignment & governance maturity</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-navy dark:text-silver flex-shrink-0" />
-                    <span>Risk appetite & executive expectations</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-navy dark:text-silver flex-shrink-0" />
-                    <span>Regulatory and market context</span>
-                  </li>
-                </ul>
-              </Card>
-            </motion.div>
-
-            {/* Threat Evaluation Layer */}
-            <motion.div variants={item}>
-              <Card className="h-full p-6 hover:shadow-xl transition-shadow border-l-4 border-l-red-500">
-                <div className="mb-4">
-                  <div className="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mb-4">
-                    <AlertCircle size={32} className="text-red-600 dark:text-red-400" />
-                  </div>
-                  <h3 className="text-xl font-bold text-navy dark:text-white mb-3">
-                    Threat Evaluation Layer
-                  </h3>
-                </div>
-                <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-red-500 flex-shrink-0" />
-                    <span>Current and emerging threat landscape</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-red-500 flex-shrink-0" />
-                    <span>Ransomware readiness and exposure</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-red-500 flex-shrink-0" />
-                    <span>Attack surface & vulnerability posture</span>
-                  </li>
-                </ul>
-              </Card>
-            </motion.div>
-
-            {/* Enterprise Evaluation Layer */}
-            <motion.div variants={item}>
-              <Card className="h-full p-6 hover:shadow-xl transition-shadow border-l-4 border-l-blue-500">
-                <div className="mb-4">
-                  <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-4">
-                    <Layers size={32} className="text-blue-600 dark:text-blue-400" />
-                  </div>
-                  <h3 className="text-xl font-bold text-navy dark:text-white mb-3">
-                    Enterprise Evaluation Layer
-                  </h3>
-                </div>
-                <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-blue-500 flex-shrink-0" />
-                    <span>Controls & architecture maturity</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-blue-500 flex-shrink-0" />
-                    <span>Vendor & supply chain dependencies</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-blue-500 flex-shrink-0" />
-                    <span>Operational resilience & workflow readiness</span>
-                  </li>
-                </ul>
-              </Card>
-            </motion.div>
-          </motion.div>
-
-          {/* STEEL Architecture Diagram */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-8"
-          >
-            <Card className="p-8 bg-white dark:bg-gray-800">
-              <SteelArchitectureDiagram />
-            </Card>
-          </motion.div>
-
-          {/* Explanation Text */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-8"
-          >
-            <Card className="p-8 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 border border-blue-200 dark:border-blue-800">
-              <div className="max-w-4xl mx-auto text-center">
-                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                  All three evaluation sublayers form a single method: <strong className="text-navy dark:text-white">STEEL™ = Strategic Threat & Enterprise Evaluation Layer</strong>, not an acronym with individual letters.
-                </p>
-                <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed">
-                  ERMITS Advisory interprets STEEL™ evaluations to set priorities, while the ERMITS ecosystem (CyberCaution™, CyberCorrect™, CyberSoluce™, VendorSoluce™, etc.) executes and automates those priorities.
-                </p>
-              </div>
-            </Card>
-          </motion.div>
-
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <Button
-              variant="primary"
-              size="lg"
-              onClick={() => navigate('/method/steel')}
-              icon={<ArrowRight size={20} />}
-              iconPosition="right"
-            >
-              Learn More About STEEL™
-            </Button>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* How We Prioritize Using the STEEL™ Index */}
-      <section className="py-20 bg-gradient-to-b from-white via-silver-lighter to-white dark:from-dark-luxury-bg dark:via-dark-luxury-surface dark:to-dark-luxury-bg">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <div className="text-xs uppercase tracking-widest text-cyan-400 mb-2">
-              Prioritization Framework
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              How We Prioritize Using the STEEL™ Index
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto mb-8">
-              ERMITS Advisory generates a STEEL™ Index to determine what matters most for your organization. This prioritized view guides strategy, sequencing, governance decisions, and activation of ERMITS ecosystem capabilities.
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
+              Strategic Threat & Enterprise Evaluation Layer — a comprehensive framework that evaluates your organization across strategic, threat, and enterprise dimensions to deliver prioritized, actionable intelligence.
             </p>
           </motion.div>
 
@@ -477,227 +311,46 @@ export const LandingPage: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="max-w-4xl mx-auto"
           >
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <Card className="p-6 text-center">
-                <div className="w-16 h-16 bg-navy/10 dark:bg-navy/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield size={32} className="text-navy dark:text-silver" />
-                </div>
-                <h3 className="text-lg font-bold text-navy dark:text-white mb-2">
-                  Advisory Interprets It
+            <Card className="p-8 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 border border-blue-200 dark:border-blue-800 mb-8">
+              <div className="text-center">
+                <h3 className="text-2xl font-bold text-navy dark:text-white mb-4">
+                  From Assessment to Action
                 </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">
-                  Our advisors translate STEEL™ Index scores into strategic priorities and actionable governance decisions.
+                <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                  STEEL™ evaluates 18 strategic questions across multiple layers to create a prioritized roadmap for your cybersecurity and risk management initiatives. No generic checklists — only what matters for your business.
                 </p>
-              </Card>
-
-              <Card className="p-6 text-center">
-                <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Settings size={32} className="text-green-600 dark:text-green-400" />
+                <div className="flex flex-wrap justify-center gap-4">
+                  <div className="flex items-center gap-2 px-4 py-2 bg-white/60 dark:bg-gray-800/60 rounded-lg">
+                    <CheckCircle size={20} className="text-green-500" />
+                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Strategic Alignment</span>
+                  </div>
+                  <div className="flex items-center gap-2 px-4 py-2 bg-white/60 dark:bg-gray-800/60 rounded-lg">
+                    <CheckCircle size={20} className="text-green-500" />
+                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Threat Intelligence</span>
+                  </div>
+                  <div className="flex items-center gap-2 px-4 py-2 bg-white/60 dark:bg-gray-800/60 rounded-lg">
+                    <CheckCircle size={20} className="text-green-500" />
+                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Enterprise Context</span>
+                  </div>
                 </div>
-                <h3 className="text-lg font-bold text-navy dark:text-white mb-2">
-                  The Ecosystem Feeds It
-                </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">
-                  ERMITS ecosystem capabilities provide continuous telemetry and evidence that updates your STEEL™ Index.
-                </p>
-              </Card>
-
-              <Card className="p-6 text-center">
-                <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Target size={32} className="text-blue-600 dark:text-blue-400" />
-                </div>
-                <h3 className="text-lg font-bold text-navy dark:text-white mb-2">
-                  Leadership Consumes It
-                </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">
-                  Executive teams use the STEEL™ Index to drive prioritization, not compliance checklists.
-                </p>
-              </Card>
-            </div>
-
-            <Card className="p-6 bg-gradient-to-r from-navy/5 to-cyan/5 dark:from-navy/20 dark:to-cyan/20 border border-navy/20 dark:border-navy/40">
-              <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed text-center">
-                <strong className="text-navy dark:text-white">The STEEL™ Index drives prioritization, not compliance checklists.</strong> It provides a unified view of what matters most, enabling strategic decision-making and focused resource allocation across your organization's security, risk, and governance initiatives.
-              </p>
+              </div>
             </Card>
-          </motion.div>
-        </div>
-      </section>
 
-      {/* Enhanced STEEL Methodology Section - Luxury */}
-      <section id="steel" className="py-20 bg-gradient-to-b from-silver-lighter via-white to-silver-light dark:from-dark-luxury-bg dark:via-dark-luxury-surface dark:to-dark-luxury-bg steel-section">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <div className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-2">
-              Implementation
+            <div className="text-center">
+              <Button
+                variant="primary"
+                size="lg"
+                onClick={() => navigate('/method/steel')}
+                icon={<ArrowRight size={20} />}
+                iconPosition="right"
+              >
+                Explore the STEEL™ Framework
+              </Button>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              From Assessment to Implementation
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Strategic insights that become operational reality through the ERMITS ecosystem. Typical implementation timelines vary by organization size and complexity.
-            </p>
-          </motion.div>
-
-          <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
-          >
-            {/* Week 1-3 */}
-            <motion.div variants={item}>
-              <Card className="h-full p-6 text-center hover:shadow-xl transition-shadow">
-                <div className="mb-4">
-                  <div className="w-16 h-16 bg-navy/10 dark:bg-silver/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Search size={32} className="text-navy dark:text-silver" />
-                  </div>
-                  <div className="flex items-center justify-center gap-2 mb-2">
-                    <Calendar size={18} className="text-navy dark:text-silver" />
-                    <span className="text-sm font-semibold text-navy dark:text-white">Week 1-3</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-navy dark:text-white mb-3">
-                    STEEL™ Assessment
-                  </h3>
-                </div>
-                <ul className="text-left space-y-2 text-sm text-gray-600 dark:text-gray-400 mb-4">
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
-                    <span>Risk scoring and gap identification</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
-                    <span>ERMITS platform recommendations</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
-                    <span>Quick-win prioritization</span>
-                  </li>
-                </ul>
-              </Card>
-            </motion.div>
-
-            {/* Week 4-8 */}
-            <motion.div variants={item}>
-              <Card className="h-full p-6 text-center hover:shadow-xl transition-shadow">
-                <div className="mb-4">
-                  <div className="w-16 h-16 bg-navy/10 dark:bg-silver/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Target size={32} className="text-navy dark:text-silver" />
-                  </div>
-                  <div className="flex items-center justify-center gap-2 mb-2">
-                    <Calendar size={18} className="text-navy dark:text-silver" />
-                    <span className="text-sm font-semibold text-navy dark:text-white">Week 4-8</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-navy dark:text-white mb-3">
-                    Strategic Planning
-                  </h3>
-                </div>
-                <ul className="text-left space-y-2 text-sm text-gray-600 dark:text-gray-400 mb-4">
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
-                    <span>Implementation roadmap development</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
-                    <span>Platform configuration design</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
-                    <span>Resource planning and budgeting</span>
-                  </li>
-                </ul>
-              </Card>
-            </motion.div>
-
-            {/* Week 9-12 */}
-            <motion.div variants={item}>
-              <Card className="h-full p-6 text-center hover:shadow-xl transition-shadow">
-                <div className="mb-4">
-                  <div className="w-16 h-16 bg-navy/10 dark:bg-silver/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Rocket size={32} className="text-navy dark:text-silver" />
-                  </div>
-                  <div className="flex items-center justify-center gap-2 mb-2">
-                    <Calendar size={18} className="text-navy dark:text-silver" />
-                    <span className="text-sm font-semibold text-navy dark:text-white">Week 9-12</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-navy dark:text-white mb-3">
-                    Platform Deployment
-                  </h3>
-                </div>
-                <ul className="text-left space-y-2 text-sm text-gray-600 dark:text-gray-400 mb-4">
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
-                    <span>Tool implementation and integration</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
-                    <span>Policy and workflow configuration</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
-                    <span>Team training and adoption</span>
-                  </li>
-                </ul>
-              </Card>
-            </motion.div>
-
-            {/* Week 13+ */}
-            <motion.div variants={item}>
-              <Card className="h-full p-6 text-center hover:shadow-xl transition-shadow">
-                <div className="mb-4">
-                  <div className="w-16 h-16 bg-navy/10 dark:bg-silver/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Layers size={32} className="text-navy dark:text-silver" />
-                  </div>
-                  <div className="flex items-center justify-center gap-2 mb-2">
-                    <Calendar size={18} className="text-navy dark:text-silver" />
-                    <span className="text-sm font-semibold text-navy dark:text-white">Week 13+</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-navy dark:text-white mb-3">
-                    Continuous Advisory
-                  </h3>
-                </div>
-                <ul className="text-left space-y-2 text-sm text-gray-600 dark:text-gray-400 mb-4">
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
-                    <span>Monthly vCISO strategic guidance</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
-                    <span>Quarterly STEEL™ reassessments</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-green-500 flex-shrink-0" />
-                    <span>Ongoing optimization support</span>
-                  </li>
-                </ul>
-              </Card>
-            </motion.div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <Button
-              variant="primary"
-              size="lg"
-              onClick={() => navigate('/ecosystem')}
-              icon={<ArrowRight size={20} />}
-              iconPosition="right"
-            >
-              Explore ERMITS Ecosystem
-            </Button>
           </motion.div>
         </div>
       </section>
+
 
       {/* Engagement Model / How It Works Section - Luxury */}
       <section id="how-it-works" className="py-20 bg-gradient-to-b from-white via-silver-lighter to-white dark:from-dark-luxury-bg dark:via-dark-luxury-surface dark:to-dark-luxury-bg">
@@ -760,7 +413,7 @@ export const LandingPage: React.FC = () => {
                   with your stakeholders.
                 </p>
                 <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
-                  <li>Visual threat weather & PESTEL overlays.</li>
+                  <li>Visual threat weather & strategic risk overlays.</li>
                   <li>Scenario-based risk scores.</li>
                   <li>Pre-mapping to ERMITS tools.</li>
                 </ul>
