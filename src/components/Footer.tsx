@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logoImg from '../assets/ermits-advisory.png';
 import {
-  Mail, Shield, Users, FileText, Scale, Briefcase, Layers
+  Mail, Shield, Users, FileText, Scale, Briefcase, Layers, Cookie
 } from 'lucide-react';
 
 export const Footer: React.FC = () => {
@@ -82,6 +82,12 @@ export const Footer: React.FC = () => {
                 <Link to="/terms" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
                   <Scale size={14} className="mr-2 group-hover:scale-110 transition-transform" />
                   Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link to="/cookies" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
+                  <Cookie size={14} className="mr-2 group-hover:scale-110 transition-transform" />
+                  Cookie Policy
                 </Link>
               </li>
               <li>
