@@ -12,13 +12,13 @@
   "dir": "ltr",
   "icons": [
     {
-      "src": "/src/assets/favicon.svg",
+      "src": "/ermits-advisory-logo.png",
       "sizes": "any",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "/src/assets/ermits-advisory.png",
+      "src": "/ermits-advisory-logo.png",
       "sizes": "512x512",
       "type": "image/png"
     }
@@ -32,9 +32,9 @@
       "url": "/dashboard",
       "icons": [
         {
-          "src": "/src/assets/favicon.svg",
+          "src": "/ermits-advisory-logo.png",
           "sizes": "any",
-          "type": "image/svg+xml"
+          "type": "image/png"
         }
       ]
     },
@@ -45,9 +45,9 @@
       "url": "/steel",
       "icons": [
         {
-          "src": "/src/assets/favicon.svg",
+          "src": "/ermits-advisory-logo.png",
           "sizes": "any",
-          "type": "image/svg+xml"
+          "type": "image/png"
         }
       ]
     },
@@ -58,9 +58,9 @@
       "url": "/risk-radar",
       "icons": [
         {
-          "src": "/src/assets/favicon.svg",
+          "src": "/ermits-advisory-logo.png",
           "sizes": "any",
-          "type": "image/svg+xml"
+          "type": "image/png"
         }
       ]
     },
@@ -71,9 +71,9 @@
       "url": "/contact",
       "icons": [
         {
-          "src": "/src/assets/favicon.svg",
+          "src": "/ermits-advisory-logo.png",
           "sizes": "any",
-          "type": "image/svg+xml"
+          "type": "image/png"
         }
       ]
     }

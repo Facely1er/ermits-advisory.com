@@ -6,9 +6,10 @@ import { Button } from '../components/shared/Button';
 import { Card } from '../components/shared/Card';
 import { InteractiveCard } from '../components/shared/InteractiveCard';
 import { HeroCarousel } from '../components/shared/HeroCarousel';
-import { ArrowRight, CheckCircle, Zap, Eye, Target, Calendar, Layers, Rocket, Search, Shield, FileSearch, DraftingCompass, Gavel, Network, Settings, AlertCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle, Zap, Eye, Target, Calendar, Layers, Rocket, Search, Shield, Network, Settings, AlertCircle } from 'lucide-react';
 import { SteelArchitectureDiagram } from '../components/diagrams/SteelArchitectureDiagram';
 import { ErmitsBridgeDiagram } from '../components/diagrams/ErmitsBridgeDiagram';
+import { ServiceSelector } from '../components/interactive/ServiceSelector';
 import heroBackground from '../assets/background.jpg';
 
 export const LandingPage: React.FC = () => {
@@ -203,12 +204,14 @@ export const LandingPage: React.FC = () => {
               className="flex flex-wrap gap-4 justify-center"
             >
               <Button 
-                variant="ghost" 
+                variant="secondary" 
                 size="lg"
+                icon={<ArrowRight size={20} />}
+                iconPosition="right"
                 onClick={() => navigate('/contact')}
-                className="border-2 border-white/30 text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm font-semibold px-10 py-5 rounded-xl transition-all transform hover:-translate-y-1 text-lg"
+                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold px-10 py-5 rounded-xl shadow-2xl hover:shadow-cyan-500/50 transition-all transform hover:-translate-y-1 hover:scale-105 text-lg"
               >
-                Schedule a Strategic Session
+                Talk to an Advisor
               </Button>
               <Button 
                 variant="ghost" 
@@ -216,60 +219,54 @@ export const LandingPage: React.FC = () => {
                 onClick={() => navigate('/services')}
                 className="border-2 border-white/30 text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm font-semibold px-10 py-5 rounded-xl transition-all transform hover:-translate-y-1 text-lg"
               >
-                View Our Services
+                Explore Services
               </Button>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* STEEL™ Live Metrics Section */}
-      <section className="py-16 bg-silver-light dark:bg-dark-surface">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <div className="text-xs uppercase tracking-[0.2em] text-cyan-400 mb-2">
-              STEEL™ Radar
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              Real-Time Risk Intelligence
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              Monitor enterprise risk indicators across PESTEL dimensions with live STEEL™ metrics
-            </p>
-          </motion.div>
-          
-          <LiveMetrics />
+      {/* Quick Value Props */}
+      <section className="py-12 bg-white dark:bg-dark-surface">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <Zap size={32} className="text-yellow-500" />,
+                title: 'STEEL™ Powered',
+                description: '46 strategic indicators across 3 evaluation layers'
+              },
+              {
+                icon: <Eye size={32} className="text-blue-500" />,
+                title: 'Executive Ready',
+                description: 'Board-ready guidance backed by PESTEL methodology'
+              },
+              {
+                icon: <Target size={32} className="text-green-500" />,
+                title: 'Action Oriented',
+                description: 'Prioritized roadmaps with clear implementation paths'
+              }
+            ].map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="text-center"
+              >
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full mb-4">
+                  {item.icon}
+                </div>
+                <h3 className="text-xl font-bold text-navy dark:text-white mb-2">{item.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Advisory First Clarification */}
-      <section className="py-16 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <Card className="p-8 border-2 border-blue-200 dark:border-blue-800">
-              <div className="text-center mb-6">
-                <h3 className="text-2xl md:text-3xl font-bold text-navy dark:text-white mb-4">
-                  Advisory first. Tools second.
-                </h3>
-                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                  ERMITS Advisory is a strategic governance and stewardship partner. We don't sell you a toolkit and walk away. We use the ERMITS ecosystem and our internal STEEL™-aligned libraries as instruments inside a guided engagement, led by advisors who are accountable for outcomes.
-                </p>
-              </div>
-            </Card>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Our Service Architecture Section */}
+      {/* Service Architecture */}
       <section className="py-20 bg-gradient-to-b from-white via-silver-lighter to-white dark:from-dark-luxury-bg dark:via-dark-luxury-surface dark:to-dark-luxury-bg">
         <div className="container mx-auto px-4 max-w-7xl">
           <motion.div
@@ -282,149 +279,22 @@ export const LandingPage: React.FC = () => {
               Service Architecture
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              Our Service Architecture
+              How ERMITS Advisory Works
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-6">
-              ERMITS Advisory operates as a strategic cyber governance layer, not a product shop. We work in four integrated motions:
+              Strategic cyber governance delivered in four integrated services. Click to explore each:
             </p>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800">
-              <Shield size={16} className="text-blue-600 dark:text-blue-400" />
-              <span className="text-sm font-semibold text-blue-700 dark:text-blue-300">Strategic Cyber Governance & Stewardship</span>
-            </div>
-          </motion.div>
-
-          <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.1 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
-            {/* Layer 1: Assess */}
-            <motion.div variants={item}>
-              <Card className="h-full p-6 hover:shadow-xl transition-shadow border-l-4 border-l-cyan-500">
-                <div className="mb-4">
-                  <div className="w-16 h-16 bg-cyan-100 dark:bg-cyan-900/30 rounded-full flex items-center justify-center mb-4">
-                    <FileSearch size={32} className="text-cyan-600 dark:text-cyan-400" />
-                  </div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-cyan-50 dark:bg-cyan-900/20 rounded-full mb-3">
-                    <span className="text-xs font-bold text-cyan-700 dark:text-cyan-300">Layer 1</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-navy dark:text-white mb-2">
-                    Assess
-                  </h3>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mb-4 italic">
-                    Strategic Assessment Services
-                  </p>
-                </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                  We use the STEEL™ method to evaluate your security, risk, compliance, and ecosystem posture across strategy, threat, engineering, ecosystem, and leadership dimensions. Our advisors leverage a proprietary ERMITS governance library—policies, playbooks, and evaluation artifacts—within the STEEL™ method to accelerate work while keeping it tailored to your reality.
-                </p>
-                <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
-                  <p className="text-xs text-gray-500 dark:text-gray-400">
-                    <strong className="text-gray-700 dark:text-gray-300">Service Type:</strong> Strategic consulting engagement
-                  </p>
-                </div>
-              </Card>
-            </motion.div>
-
-            {/* Layer 2: Architect */}
-            <motion.div variants={item}>
-              <Card className="h-full p-6 hover:shadow-xl transition-shadow border-l-4 border-l-blue-500">
-                <div className="mb-4">
-                  <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-4">
-                    <DraftingCompass size={32} className="text-blue-600 dark:text-blue-400" />
-                  </div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 dark:bg-blue-900/20 rounded-full mb-3">
-                    <span className="text-xs font-bold text-blue-700 dark:text-blue-300">Layer 2</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-navy dark:text-white mb-2">
-                    Architect
-                  </h3>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mb-4 italic">
-                    Governance Architecture Services
-                  </p>
-                </div>
-                <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                  We design governance, risk, and compliance architectures that align to your business, regulatory context, and risk appetite.
-                </p>
-                <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
-                  <p className="text-xs text-gray-500 dark:text-gray-400">
-                    <strong className="text-gray-700 dark:text-gray-300">Service Type:</strong> Strategic consulting engagement
-                  </p>
-                </div>
-              </Card>
-            </motion.div>
-
-            {/* Layer 3: Govern */}
-            <motion.div variants={item}>
-              <Card className="h-full p-6 hover:shadow-xl transition-shadow border-l-4 border-l-purple-500">
-                <div className="mb-4">
-                  <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mb-4">
-                    <Gavel size={32} className="text-purple-600 dark:text-purple-400" />
-                  </div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-purple-50 dark:bg-purple-900/20 rounded-full mb-3">
-                    <span className="text-xs font-bold text-purple-700 dark:text-purple-300">Layer 3</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-navy dark:text-white mb-2">
-                    Govern
-                  </h3>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mb-4 italic">
-                    Executive Stewardship Services
-                  </p>
-                </div>
-                <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                  Through vCISO stewardship and executive advisory, we oversee progress, ensure accountability, and brief leadership and boards in business language.
-                </p>
-                <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
-                  <p className="text-xs text-gray-500 dark:text-gray-400">
-                    <strong className="text-gray-700 dark:text-gray-300">Service Type:</strong> Ongoing advisory engagement
-                  </p>
-                </div>
-              </Card>
-            </motion.div>
-
-            {/* Layer 4: Orchestrate */}
-            <motion.div variants={item}>
-              <Card className="h-full p-6 hover:shadow-xl transition-shadow border-l-4 border-l-green-500">
-                <div className="mb-4">
-                  <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-4">
-                    <Network size={32} className="text-green-600 dark:text-green-400" />
-                  </div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-50 dark:bg-green-900/20 rounded-full mb-3">
-                    <span className="text-xs font-bold text-green-700 dark:text-green-300">Layer 4</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-navy dark:text-white mb-2">
-                    Orchestrate
-                  </h3>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mb-4 italic">
-                    Ecosystem Integration Services
-                  </p>
-                </div>
-                <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                  When technology is needed, we connect you into the right ERMITS ecosystem capabilities (CyberCaution™, CyberCorrect™, CyberSoluce™, VendorSoluce™, and more) without forcing tools where they don't belong.
-                </p>
-                <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
-                  <p className="text-xs text-gray-500 dark:text-gray-400">
-                    <strong className="text-gray-700 dark:text-gray-300">Service Type:</strong> Strategic integration consulting
-                  </p>
-                </div>
-              </Card>
-            </motion.div>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-12 text-center"
+            transition={{ delay: 0.2 }}
           >
-            <div className="max-w-3xl mx-auto p-6 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
-              <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
-                <strong className="text-navy dark:text-white">Important:</strong> All layers represent professional consulting and stewardship services provided by ERMITS Advisory. We do not sell products, toolkits, or downloadable resources. Our services focus on strategic cyber governance, risk stewardship, and expert advisory guidance tailored to your organization's unique needs.
-              </p>
-            </div>
+            <ServiceSelector />
           </motion.div>
+            {/* Layer 1: Assess */}
         </div>
       </section>
 
