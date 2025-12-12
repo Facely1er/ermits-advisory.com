@@ -5,29 +5,15 @@ import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { ErmitsBridgeDiagram } from '../components/diagrams/ErmitsBridgeDiagram';
 import {
-  Shield, ArrowRight,
-  Zap, Target, Layers, CheckCircle, AlertCircle,
-  FileCheck, Search, Rocket, ArrowDown,
-  Network, Server, Users, Settings, TrendingUp, Gavel, DraftingCompass
+  ArrowRight,
+  AlertCircle,
+  FileCheck,
+  Network,
+  Settings
 } from 'lucide-react';
 
 export const EcosystemPage: React.FC = () => {
   const navigate = useNavigate();
-
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 }
-  };
 
   return (
     <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
