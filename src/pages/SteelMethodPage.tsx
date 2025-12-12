@@ -5,9 +5,10 @@ import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { SteelIndexCard } from '../components/steel/SteelIndexCard';
 import { SteelArchitectureDiagram } from '../components/diagrams/SteelArchitectureDiagram';
+import { ErmitsBridgeDiagram } from '../components/diagrams/ErmitsBridgeDiagram';
 import { 
   ArrowRight, Target, Layers, 
-  CheckCircle, AlertCircle
+  CheckCircle, AlertCircle, Settings, Network, FileCheck
 } from 'lucide-react';
 
 export const SteelMethodPage: React.FC = () => {
@@ -49,6 +50,48 @@ export const SteelMethodPage: React.FC = () => {
                   </p>
                   <p>
                     STEEL™ combines three internal evaluation sublayers into one coherent method: the <strong className="text-navy dark:text-white">Strategic Evaluation Layer</strong>, the <strong className="text-navy dark:text-white">Threat Evaluation Layer</strong>, and the <strong className="text-navy dark:text-white">Enterprise Evaluation Layer</strong>.
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </motion.div>
+        </section>
+
+        {/* PESTEL Foundation & STEEL Enhancement */}
+        <section id="pestel-foundation" className="mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <Card className="p-8 md:p-12 bg-gradient-to-r from-cyan-50 to-blue-50 dark:from-cyan-900/20 dark:to-blue-900/20 border border-cyan-200 dark:border-cyan-700/50">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 dark:text-white text-center">
+                  Built on PESTEL, Enhanced for Cybersecurity
+                </h2>
+                <div className="space-y-4 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                  <p>
+                    STEEL™ is built on the proven foundation of <strong className="text-navy dark:text-white">PESTEL analysis</strong> (Political, Economic, Social, Technological, Environmental, Legal) — a strategic framework used by organizations worldwide to understand external factors affecting their business.
+                  </p>
+                  <p>
+                    ERMITS enhanced PESTEL specifically for <strong className="text-navy dark:text-white">cybersecurity and enterprise risk management</strong> by adding three critical evaluation dimensions that PESTEL alone doesn't address:
+                  </p>
+                  <ul className="space-y-3 my-6 ml-6">
+                    <li className="flex items-start">
+                      <CheckCircle size={20} className="mr-3 mt-0.5 text-cyan-500 flex-shrink-0" />
+                      <span><strong className="text-navy dark:text-white">Strategic Layer</strong> — How cyber risk integrates with business strategy, governance, and board-level decision-making</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle size={20} className="mr-3 mt-0.5 text-cyan-500 flex-shrink-0" />
+                      <span><strong className="text-navy dark:text-white">Threat Layer</strong> — Real-time threat intelligence, attack surface analysis, and incident readiness specific to your sector</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle size={20} className="mr-3 mt-0.5 text-cyan-500 flex-shrink-0" />
+                      <span><strong className="text-navy dark:text-white">Enterprise Layer</strong> — Internal capabilities, vendor dependencies, controls maturity, and operational resilience</span>
+                    </li>
+                  </ul>
+                  <p className="pt-4 border-t border-cyan-200 dark:border-cyan-700">
+                    <strong className="text-navy dark:text-white">The result:</strong> STEEL™ maintains PESTEL's strategic rigor while adding the cyber-specific depth that executives need to make informed security investments and understand their true risk posture.
                   </p>
                 </div>
               </div>
@@ -352,13 +395,87 @@ export const SteelMethodPage: React.FC = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              How the ERMITS Ecosystem Connects to STEEL™
+              How STEEL™ Connects Advisory to the ERMITS Ecosystem
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-6">
-              The ERMITS ecosystem provides the capabilities that execute on STEEL™-driven priorities. STEEL™ decides <em className="text-navy dark:text-white">what matters</em>; the ecosystem delivers <em className="text-navy dark:text-white">how it gets done</em>.
+              STEEL™ is the bridge between ERMITS Advisory and the ERMITS ecosystem capabilities. It determines where attention, budget, and effort should go, and which capabilities should be activated.
             </p>
           </motion.div>
 
+          {/* Ecosystem Capabilities Overview */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-5xl mx-auto mb-12"
+          >
+            <Card className="p-8">
+              <h3 className="text-2xl font-bold mb-6 dark:text-white text-center">
+                The ERMITS Ecosystem Capabilities
+              </h3>
+              <p className="text-base text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                Each ERMITS capability has a specific role. They are designed to be orchestrated by ERMITS Advisory based on your STEEL™ evaluation, not purchased in isolation.
+              </p>
+              <ul className="space-y-4 text-base text-gray-700 dark:text-gray-300">
+                <li className="flex items-start">
+                  <AlertCircle size={20} className="mr-3 mt-0.5 text-red-500 flex-shrink-0" />
+                  <span><strong className="text-navy dark:text-white">CyberCaution™</strong> – Threat intelligence, incident response, and operational readiness capabilities informed by real-world attack dynamics.</span>
+                </li>
+                <li className="flex items-start">
+                  <FileCheck size={20} className="mr-3 mt-0.5 text-green-500 flex-shrink-0" />
+                  <span><strong className="text-navy dark:text-white">CyberCorrect™</strong> – Compliance, privacy, and control implementation capabilities for standards and regulatory expectations.</span>
+                </li>
+                <li className="flex items-start">
+                  <Settings size={20} className="mr-3 mt-0.5 text-blue-500 flex-shrink-0" />
+                  <span><strong className="text-navy dark:text-white">CyberSoluce™</strong> – Solution and architecture design, integration, and enablement across your technology stack.</span>
+                </li>
+                <li className="flex items-start">
+                  <Network size={20} className="mr-3 mt-0.5 text-orange-500 flex-shrink-0" />
+                  <span><strong className="text-navy dark:text-white">VendorSoluce™</strong> – Vendor, partner, and supply chain risk governance across your external ecosystem.</span>
+                </li>
+              </ul>
+            </Card>
+          </motion.div>
+
+          {/* ERMITS Bridge Diagram */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-6xl mx-auto mb-12"
+          >
+            <Card className="p-8 bg-white dark:bg-gray-800">
+              <ErmitsBridgeDiagram />
+            </Card>
+          </motion.div>
+
+          {/* How It Works Flow */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto mb-12"
+          >
+            <Card className="p-8 bg-gradient-to-r from-navy/5 to-cyan/5 dark:from-navy/20 dark:to-cyan/20 border border-navy/20 dark:border-cyan-700/50">
+              <h3 className="text-xl font-bold mb-4 dark:text-white text-center">The Flow</h3>
+              <ol className="space-y-4 text-base text-gray-700 dark:text-gray-300 list-decimal list-inside">
+                <li>
+                  <strong className="text-navy dark:text-white">ERMITS Advisory runs a STEEL™ evaluation</strong> — Strategic, threat, and enterprise realities are assessed and expressed as a STEEL™ Index.
+                </li>
+                <li>
+                  <strong className="text-navy dark:text-white">STEEL™ defines priorities</strong> — Which risks matter most, what must happen first, and where governance focus is required.
+                </li>
+                <li>
+                  <strong className="text-navy dark:text-white">The ERMITS ecosystem executes</strong> — The relevant capabilities (CyberCaution™, CyberCorrect™, etc.) are activated to carry out those priorities.
+                </li>
+                <li>
+                  <strong className="text-navy dark:text-white">Telemetry flows back into STEEL™</strong> — Evidence from these capabilities updates the STEEL™ evaluation and Index.
+                </li>
+              </ol>
+            </Card>
+          </motion.div>
+
+          {/* Mapping Table */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -461,32 +578,21 @@ export const SteelMethodPage: React.FC = () => {
           >
             <Card className="p-8 md:p-12 bg-gradient-to-r from-navy to-navy-dark text-white text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Start with a STEEL™ Evaluation
+                Ready to Get Started?
               </h2>
               <p className="text-lg text-silver/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Use the STEEL™ Questionnaire and Radar to derive a STEEL™ Index for your
-                organization and identify prioritized actions.
+                Let's discuss how STEEL™ and the ERMITS ecosystem can strengthen your organization's risk posture.
               </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button
-                  variant="secondary"
-                  size="lg"
-                  onClick={() => navigate('/steel-evaluation')}
-                  icon={<ArrowRight size={20} />}
-                  iconPosition="right"
-                  className="bg-white text-navy hover:bg-silver"
-                >
-                  Launch STEEL™ Evaluation
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  onClick={() => navigate('/contact')}
-                  className="border-2 border-white/30 text-white bg-white/10 hover:bg-white/20"
-                >
-                  Talk to an Advisor
-                </Button>
-              </div>
+              <Button
+                variant="secondary"
+                size="lg"
+                onClick={() => navigate('/contact')}
+                icon={<ArrowRight size={20} />}
+                iconPosition="right"
+                className="bg-white text-navy hover:bg-silver"
+              >
+                Contact Our Team
+              </Button>
             </Card>
           </motion.div>
         </section>

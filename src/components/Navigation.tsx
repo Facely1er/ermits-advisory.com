@@ -43,18 +43,13 @@ export const Navigation: React.FC = () => {
     },
     { 
       to: '/method/steel', 
-      label: 'STEEL™ Method', 
+      label: 'STEEL™ & Ecosystem', 
       icon: <BookOpen size={16} />,
     },
     { 
       to: '/services', 
       label: 'Services', 
       icon: <Layers size={16} />,
-    },
-    { 
-      to: '/ecosystem', 
-      label: 'Ecosystem', 
-      icon: <Layers size={16} />
     },
     { 
       to: '/about', 
