@@ -32,7 +32,7 @@ export const LandingPage: React.FC = () => {
   return (
     <div>
       {/* Hero Section - Enhanced STEEL Risk Assessment Framework */}
-      <section className="relative min-h-[500px] md:min-h-[600px] flex items-center justify-center text-white overflow-hidden">
+      <section className="relative min-h-[500px] md:min-h-[600px] py-20 md:py-24 flex items-center justify-center text-white overflow-hidden">
         <style>{`
           .hero-background-image {
             background-image: url(${heroBackground});
