@@ -523,7 +523,7 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Enhanced CTA Section - Luxury */}
-      <section id="contact" className={`py-20 ${theme === 'dark' ? 'bg-gradient-to-br from-dark-luxury-bg via-navy-darker to-dark-luxury-bg' : 'bg-gradient-to-br from-navy-dark via-navy to-navy-darker'} text-white relative overflow-hidden`}>
+      <section id="contact" className={`py-12 ${theme === 'dark' ? 'bg-gradient-to-br from-dark-luxury-bg via-navy-darker to-dark-luxury-bg' : 'bg-gradient-to-br from-navy-dark via-navy to-navy-darker'} text-white relative overflow-hidden`}>
         <div className="container mx-auto px-4 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -570,7 +570,7 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* FTC Compliance Disclaimer */}
-      <section className="py-8 bg-gray-50 dark:bg-gradient-to-r dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 border-t border-gray-200 dark:border-slate-700">
+      <section className="py-6 bg-gray-50 dark:bg-gradient-to-r dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 border-t border-gray-200 dark:border-slate-700">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center">
             <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed max-w-4xl mx-auto">

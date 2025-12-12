@@ -72,9 +72,9 @@ export const Navigation: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation - Centered layout with flexible spacing */}
-          <div className="hidden md:flex items-center flex-grow justify-center gap-x-6 h-full">
+          <div className="hidden md:flex items-center flex-grow justify-between h-full">
             {/* Nav Links */}
-            <div className="flex items-center space-x-6 h-full">
+            <div className="flex items-center space-x-6 h-full flex-grow justify-center">
               {navLinks.map((link) => (
                 <NavLink
                   key={link.to}
@@ -97,7 +97,7 @@ export const Navigation: React.FC = () => {
             </div>
 
             {/* Controls - Removed language selector */}
-            <div className="flex items-center space-x-3 h-full">
+            <div className="flex items-center space-x-3 h-full ml-6">
               {/* Focus Mode Toggle */}
               <button
                 onClick={toggleFocusMode}
