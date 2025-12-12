@@ -31,46 +31,8 @@ export const SteelMethodPage: React.FC = () => {
   return (
     <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
       <div className="container mx-auto px-4 max-w-7xl">
-        {/* Hero Section */}
-        <section id="hero" className="pt-16 mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center"
-          >
-            <div className="inline-block px-4 py-2 bg-cyan-100 dark:bg-cyan-900/30 rounded-full mb-6">
-              <span className="text-cyan-700 dark:text-cyan-400 font-semibold">ERMITS Method</span>
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 dark:text-white">
-              STEEL™ – The ERMITS Strategic Threat & Enterprise Evaluation Layer
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-200 max-w-4xl mx-auto mb-10 leading-relaxed">
-              STEEL™ is the evaluation layer ERMITS uses to understand your organization's cyber risk, governance, and resilience across the entire enterprise. It turns strategic intent, live threat dynamics, and enterprise realities into a single decision layer.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button
-                variant="primary"
-                size="lg"
-                onClick={() => navigate('/contact')}
-                icon={<ArrowRight size={20} />}
-                iconPosition="right"
-              >
-                Talk to an Advisor
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                onClick={() => navigate('/services')}
-                className="border-2 border-navy text-navy dark:border-silver dark:text-silver hover:bg-navy/10 dark:hover:bg-silver/10"
-              >
-                View Our Services
-              </Button>
-            </div>
-          </motion.div>
-        </section>
-
         {/* What Is STEEL */}
-        <section id="what-is-steel" className="mb-16">
+        <section id="what-is-steel" className="pt-16 mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
