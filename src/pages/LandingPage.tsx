@@ -169,7 +169,7 @@ export const LandingPage: React.FC = () => {
                 onClick={() => navigate('/contact')}
                 className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold px-10 py-5 rounded-xl shadow-2xl hover:shadow-cyan-500/50 transition-all transform hover:-translate-y-1 hover:scale-105 text-lg"
               >
-                Talk to an Advisor
+                Contact Our Team
               </Button>
               <Button 
                 variant="ghost" 
@@ -185,7 +185,7 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Quick Value Props */}
-      <section className="py-12 bg-gray-50 dark:bg-gray-900/50">
+      <section className="py-12 bg-gray-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -213,7 +213,7 @@ export const LandingPage: React.FC = () => {
                 transition={{ delay: idx * 0.1 }}
                 className="text-center"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-100 dark:bg-gradient-to-br dark:from-cyan-900/30 dark:to-blue-900/30 rounded-full mb-4">
                   {item.icon}
                 </div>
                 <h3 className="text-xl font-bold text-navy dark:text-white mb-2">{item.title}</h3>
@@ -225,7 +225,7 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Service Architecture */}
-      <section className="py-20 bg-white dark:bg-dark-bg">
+      <section className="py-20 bg-white dark:bg-gradient-to-b dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
         <div className="container mx-auto px-4 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -257,7 +257,7 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Our Methodology: STEEL™ - Simplified */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900/50">
+      <section className="py-20 bg-gray-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
         <div className="container mx-auto px-4 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -283,7 +283,7 @@ export const LandingPage: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="max-w-4xl mx-auto"
           >
-            <Card className="p-8 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 border border-blue-200 dark:border-blue-800 mb-8">
+            <Card className="p-8 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-cyan-900/30 dark:via-blue-900/30 dark:to-cyan-900/30 border border-blue-200 dark:border-cyan-700/50 mb-8">
               <div className="text-center">
                 <h3 className="text-2xl font-bold text-navy dark:text-white mb-4">
                   From Assessment to Action
@@ -292,15 +292,15 @@ export const LandingPage: React.FC = () => {
                   STEEL™ evaluates 18 strategic questions across multiple layers to create a prioritized roadmap for your cybersecurity and risk management initiatives. No generic checklists — only what matters for your business.
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
-                  <div className="flex items-center gap-2 px-4 py-2 bg-white/60 dark:bg-gray-800/60 rounded-lg">
+                  <div className="flex items-center gap-2 px-4 py-2 bg-white/60 dark:bg-slate-800/80 dark:border dark:border-cyan-500/30 rounded-lg">
                     <CheckCircle size={20} className="text-green-500" />
                     <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Strategic Alignment</span>
                   </div>
-                  <div className="flex items-center gap-2 px-4 py-2 bg-white/60 dark:bg-gray-800/60 rounded-lg">
+                  <div className="flex items-center gap-2 px-4 py-2 bg-white/60 dark:bg-slate-800/80 dark:border dark:border-cyan-500/30 rounded-lg">
                     <CheckCircle size={20} className="text-green-500" />
                     <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Threat Intelligence</span>
                   </div>
-                  <div className="flex items-center gap-2 px-4 py-2 bg-white/60 dark:bg-gray-800/60 rounded-lg">
+                  <div className="flex items-center gap-2 px-4 py-2 bg-white/60 dark:bg-slate-800/80 dark:border dark:border-cyan-500/30 rounded-lg">
                     <CheckCircle size={20} className="text-green-500" />
                     <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Enterprise Context</span>
                   </div>
@@ -325,7 +325,7 @@ export const LandingPage: React.FC = () => {
 
 
       {/* Engagement Model / How It Works Section - Luxury */}
-      <section id="how-it-works" className="py-20 bg-white dark:bg-dark-bg">
+      <section id="how-it-works" className="py-20 bg-white dark:bg-gradient-to-b dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
         <div className="container mx-auto px-4 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -415,7 +415,7 @@ export const LandingPage: React.FC = () => {
 
 
       {/* Use Cases Section - Luxury */}
-      <section id="use-cases" className="py-20 bg-gray-50 dark:bg-gray-900/50">
+      <section id="use-cases" className="py-20 bg-gray-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
         <div className="container mx-auto px-4 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -499,7 +499,7 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Trust Indicators Section */}
-      <section className="py-16 bg-white dark:bg-dark-bg">
+      <section className="py-16 bg-white dark:bg-gradient-to-b dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
         <div className="container mx-auto px-4 max-w-7xl">
           <motion.div
             variants={container}
@@ -574,11 +574,10 @@ export const LandingPage: React.FC = () => {
             <Card className="luxury-card p-10 md:p-12 bg-gradient-to-br from-luxury-gold/25 via-white/95 to-white/95 dark:from-luxury-gold/20 dark:via-dark-luxury-surface/95 dark:to-dark-luxury-surface/95 border-luxury-gold/40 dark:border-luxury-gold/50 shadow-luxury-gold-lg backdrop-blur-xl">
               <div className="text-center">
                 <h2 className="text-2xl md:text-3xl font-bold mb-3 text-navy dark:text-white">
-                  Book an initial STEEL™ discovery call
+                  Ready to Get Started?
                 </h2>
                 <p className="text-base text-gray-700 dark:text-slate-300 mb-6 max-w-2xl mx-auto">
-                  Use one <strong className="text-navy dark:text-white">STEEL™ run</strong> to clarify where your next euros or dollars of
-                  cyber and privacy budget should go — and which ERMITS ecosystem capabilities can deliver the most impact.
+                  Let's discuss how ERMITS Advisory can help strengthen your cybersecurity posture and governance.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 items-center justify-center mb-6">
                   <div className="flex items-center gap-2 text-sm text-gray-700 dark:text-slate-400">
@@ -602,7 +601,7 @@ export const LandingPage: React.FC = () => {
                   icon={<ArrowRight size={20} />}
                   iconPosition="right"
                 >
-                  Request Professional Assessment
+                  Contact Our Team
                 </Button>
               </div>
             </Card>
@@ -611,7 +610,7 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* FTC Compliance Disclaimer */}
-      <section className="py-8 bg-gray-50 dark:bg-gray-900/50 border-t border-gray-200 dark:border-gray-800">
+      <section className="py-8 bg-gray-50 dark:bg-gradient-to-r dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 border-t border-gray-200 dark:border-slate-700">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center">
             <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed max-w-4xl mx-auto">
