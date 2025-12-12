@@ -9,6 +9,12 @@ import {
   CheckCircle, AlertCircle
 } from 'lucide-react';
 
+// Import brand logos
+import cyberCautionLogo from '../assets/cybercaution.png';
+import cyberCorrectLogo from '../assets/cybercorrect.png';
+import cyberSoluceLogo from '../assets/cybersoluce.png';
+import vendorSoluceLogo from '../assets/vendorsoluce.png';
+
 export const SteelMethodPage: React.FC = () => {
   const navigate = useNavigate();
 
@@ -422,9 +428,9 @@ export const SteelMethodPage: React.FC = () => {
                   <p className="text-base text-gray-700 dark:text-gray-300 mb-4">
                     Evaluates threat landscape, adversary tactics, operational readiness, and incident response capability.
                   </p>
-                  <div className="flex items-start mb-2">
-                    <ArrowRight size={18} className="mr-2 mt-1 text-red-500 flex-shrink-0" />
-                    <span className="text-gray-700 dark:text-gray-300"><strong className="text-navy dark:text-white">Maps to:</strong> CyberCaution™ – Threat intelligence, incident response, and operational readiness capabilities</span>
+                  <div className="flex items-center gap-3 mb-2">
+                    <img src={cyberCautionLogo} alt="CyberCaution" className="w-10 h-10 object-contain flex-shrink-0" />
+                    <span className="text-gray-700 dark:text-gray-300"><strong className="text-navy dark:text-white">Maps to:</strong> <strong className="text-red-600 dark:text-red-400">CyberCaution™</strong> – Threat intelligence, incident response, and operational readiness capabilities</span>
                   </div>
                 </div>
 
@@ -434,18 +440,18 @@ export const SteelMethodPage: React.FC = () => {
                   <p className="text-base text-gray-700 dark:text-gray-300 mb-4">
                     Examines technology architecture, vendor ecosystem, operational dependencies, and control implementation.
                   </p>
-                  <div className="space-y-2">
-                    <div className="flex items-start">
-                      <ArrowRight size={18} className="mr-2 mt-1 text-green-500 flex-shrink-0" />
-                      <span className="text-gray-700 dark:text-gray-300"><strong className="text-navy dark:text-white">Maps to:</strong> CyberCorrect™ – Compliance, privacy, and control implementation</span>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <img src={cyberCorrectLogo} alt="CyberCorrect" className="w-10 h-10 object-contain flex-shrink-0" />
+                      <span className="text-gray-700 dark:text-gray-300"><strong className="text-navy dark:text-white">Maps to:</strong> <strong className="text-green-600 dark:text-green-400">CyberCorrect™</strong> – Compliance, privacy, and control implementation</span>
                     </div>
-                    <div className="flex items-start">
-                      <ArrowRight size={18} className="mr-2 mt-1 text-green-500 flex-shrink-0" />
-                      <span className="text-gray-700 dark:text-gray-300"><strong className="text-navy dark:text-white">Maps to:</strong> CyberSoluce™ – Solution design, architecture, and technology enablement</span>
+                    <div className="flex items-center gap-3">
+                      <img src={cyberSoluceLogo} alt="CyberSoluce" className="w-10 h-10 object-contain flex-shrink-0" />
+                      <span className="text-gray-700 dark:text-gray-300"><strong className="text-navy dark:text-white">Maps to:</strong> <strong className="text-blue-600 dark:text-blue-400">CyberSoluce™</strong> – Solution design, architecture, and technology enablement</span>
                     </div>
-                    <div className="flex items-start">
-                      <ArrowRight size={18} className="mr-2 mt-1 text-green-500 flex-shrink-0" />
-                      <span className="text-gray-700 dark:text-gray-300"><strong className="text-navy dark:text-white">Maps to:</strong> VendorSoluce™ – Vendor and supply chain risk governance</span>
+                    <div className="flex items-center gap-3">
+                      <img src={vendorSoluceLogo} alt="VendorSoluce" className="w-10 h-10 object-contain flex-shrink-0" />
+                      <span className="text-gray-700 dark:text-gray-300"><strong className="text-navy dark:text-white">Maps to:</strong> <strong className="text-orange-600 dark:text-orange-400">VendorSoluce™</strong> – Vendor and supply chain risk governance</span>
                     </div>
                   </div>
                 </div>
@@ -464,29 +470,6 @@ export const SteelMethodPage: React.FC = () => {
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-center">
                 As these capabilities execute and generate evidence, telemetry flows back into STEEL™. This keeps your STEEL™ Index—and your decision-making—continuously current.
               </p>
-            </Card>
-          </motion.div>
-        </section>
-
-        {/* Don't Start with Tools */}
-        <section id="tools-callout" className="mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <Card className="p-8 md:p-12 bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 border-2 border-yellow-300 dark:border-yellow-700">
-              <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 dark:text-white">
-                  Don't Start with Tools
-                </h2>
-                <blockquote className="text-xl md:text-2xl text-gray-800 dark:text-gray-200 mb-6 leading-relaxed italic border-l-4 border-navy dark:border-silver pl-6">
-                  Instead of guessing which product to buy, organizations enter ERMITS through Advisory. STEEL™ evaluations define what matters most, and only then do we activate the right mix of ERMITS capabilities.
-                </blockquote>
-                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                  This approach keeps your ecosystem lean, purposeful, and aligned with real business and threat realities.
-                </p>
-              </div>
             </Card>
           </motion.div>
         </section>
