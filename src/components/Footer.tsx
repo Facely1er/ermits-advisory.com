@@ -14,13 +14,18 @@ export const Footer: React.FC = () => {
           {/* Company Info - Compact */}
           <div className="md:col-span-1">
             <Link to="/" className="flex items-center mb-3">
-              <img src={logoImg} alt="ERMITS Advisory + STEEL" className="h-10" />
+              <img src={logoImg} alt="ERMITS Advisory" className="h-10" />
               <span className="ml-3 font-outfit font-semibold text-white">
-                <span className="block text-sm">ERMITS Advisory</span>
-                <span className="text-xs tracking-wider">+ STEEL™</span>
+                <span className="block text-sm">ERMITS</span>
+                <span className="block text-sm">Advisory</span>
               </span>
             </Link>
-            <p className="text-silver text-sm leading-relaxed">Global Intelligence. Resilient Strategy. Streamlined for Success.</p>
+            <p className="text-silver text-sm leading-relaxed">
+              Global Intelligence. Resilient Strategy.
+              <br />
+              <br />
+              Streamlined for Success.
+            </p>
           </div>
 
           {/* Services & Solutions */}
@@ -34,9 +39,21 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/steel" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
+                <Link to="/method/steel" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
                   <Shield size={14} className="mr-2 group-hover:scale-110 transition-transform" />
-                  STEEL™ Assessment
+                  STEEL™ Framework
+                </Link>
+              </li>
+              <li>
+                <Link to="/steel-evaluation" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
+                  <Shield size={14} className="mr-2 group-hover:scale-110 transition-transform" />
+                  STEEL™ Evaluation
+                </Link>
+              </li>
+              <li>
+                <Link to="/steel/radar" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
+                  <Shield size={14} className="mr-2 group-hover:scale-110 transition-transform" />
+                  STEEL Radar
                 </Link>
               </li>
               <li>
@@ -46,9 +63,9 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/ecosystem" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
+                <Link to="/toolkits" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
                   <Layers size={14} className="mr-2 group-hover:scale-110 transition-transform" />
-                  ERMITS Ecosystem
+                  Toolkits Overview
                 </Link>
               </li>
             </ul>
