@@ -184,79 +184,7 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Quick Value Props */}
-      <section className="py-12 bg-gray-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <Zap size={32} className="text-yellow-500" />,
-                title: 'STEEL™ Powered',
-                description: '18 strategic questions across 3 evaluation layers'
-              },
-              {
-                icon: <Eye size={32} className="text-blue-500" />,
-                title: 'Executive Ready',
-                description: 'Board-ready guidance backed by proven strategic frameworks'
-              },
-              {
-                icon: <Target size={32} className="text-green-500" />,
-                title: 'Action Oriented',
-                description: 'Prioritized roadmaps with clear implementation paths'
-              }
-            ].map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="text-center"
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-100 dark:bg-gradient-to-br dark:from-cyan-900/30 dark:to-blue-900/30 rounded-full mb-4">
-                  {item.icon}
-                </div>
-                <h3 className="text-xl font-bold text-navy dark:text-white mb-2">{item.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Service Architecture */}
-      <section className="py-20 bg-white dark:bg-gradient-to-b dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <div className="text-xs uppercase tracking-widest text-cyan-400 mb-2">
-              Service Architecture
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              How ERMITS Advisory Works
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-6">
-              Strategic cyber governance delivered in four integrated services. Click to explore each:
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            <ServiceSelector />
-          </motion.div>
-            {/* Layer 1: Assess */}
-        </div>
-      </section>
-
-      {/* Our Methodology: STEEL™ - Simplified */}
+      {/* Our Methodology: Powered by STEEL™ */}
       <section className="py-20 bg-gray-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
         <div className="container mx-auto px-4 max-w-7xl">
           <motion.div
@@ -323,9 +251,41 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
+      {/* Service Architecture */}
+      <section className="py-20 bg-white dark:bg-gradient-to-b dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <div className="text-xs uppercase tracking-widest text-cyan-400 mb-2">
+              Service Architecture
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
+              How ERMITS Advisory Works
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-6">
+              Strategic cyber governance delivered in four integrated services. Click to explore each:
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <ServiceSelector />
+          </motion.div>
+            {/* Layer 1: Assess */}
+        </div>
+      </section>
+
 
       {/* Engagement Model / How It Works Section - Luxury */}
-      <section id="how-it-works" className="py-20 bg-white dark:bg-gradient-to-b dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+      <section id="how-it-works" className="py-20 bg-gray-50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
         <div className="container mx-auto px-4 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
