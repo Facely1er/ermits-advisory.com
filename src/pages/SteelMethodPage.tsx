@@ -4,8 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { SteelIndexCard } from '../components/steel/SteelIndexCard';
-import { SteelArchitectureDiagram } from '../components/diagrams/SteelArchitectureDiagram';
-import { ErmitsBridgeDiagram } from '../components/diagrams/ErmitsBridgeDiagram';
 import { 
   ArrowRight, Target, Layers, 
   CheckCircle, AlertCircle, Settings, Network, FileCheck
@@ -94,6 +92,51 @@ export const SteelMethodPage: React.FC = () => {
                     <strong className="text-navy dark:text-white">The result:</strong> STEEL™ maintains PESTEL's strategic rigor while adding the cyber-specific depth that executives need to make informed security investments and understand their true risk posture.
                   </p>
                 </div>
+              </div>
+            </Card>
+          </motion.div>
+        </section>
+
+        {/* How Advisory Uses STEEL */}
+        <section id="advisory-uses-steel" className="mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <Card className="p-8 md:p-12">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 dark:text-white text-center">
+                  How ERMITS Advisory Uses STEEL™
+                </h2>
+                <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                  ERMITS Advisory operates on top of the STEEL™ layer. We run STEEL™ evaluations to establish: where you are today, what pressures matter most, and what the next moves should be.
+                </p>
+                <ul className="space-y-3 text-base text-gray-700 dark:text-gray-300 mb-6">
+                  <li className="flex items-start">
+                    <CheckCircle size={20} className="mr-3 mt-0.5 text-navy dark:text-silver flex-shrink-0" />
+                    <span>Assess your posture across the three STEEL™ sublayers</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle size={20} className="mr-3 mt-0.5 text-navy dark:text-silver flex-shrink-0" />
+                    <span>Generate a STEEL™ Index that reflects your real exposure and readiness</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle size={20} className="mr-3 mt-0.5 text-navy dark:text-silver flex-shrink-0" />
+                    <span>Translate the STEEL™ Index into a governance and transformation roadmap</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle size={20} className="mr-3 mt-0.5 text-navy dark:text-silver flex-shrink-0" />
+                    <span>Support executives and boards with STEEL™-aligned reporting and decision support</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle size={20} className="mr-3 mt-0.5 text-navy dark:text-silver flex-shrink-0" />
+                    <span>Govern ongoing execution using STEEL™ as the reference layer</span>
+                  </li>
+                </ul>
+                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                  STEEL™ is therefore the central method that connects strategy, threat, and enterprise realities into one advisory view.
+                </p>
               </div>
             </Card>
           </motion.div>
@@ -237,18 +280,6 @@ export const SteelMethodPage: React.FC = () => {
             </motion.div>
           </motion.div>
 
-          {/* STEEL Architecture Diagram */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-5xl mx-auto mb-8"
-          >
-            <Card className="p-8 bg-white dark:bg-gray-800">
-              <SteelArchitectureDiagram />
-            </Card>
-          </motion.div>
-
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -341,51 +372,6 @@ export const SteelMethodPage: React.FC = () => {
           </motion.div>
         </section>
 
-        {/* How Advisory Uses STEEL */}
-        <section id="advisory-uses-steel" className="mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <Card className="p-8 md:p-12">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 dark:text-white text-center">
-                  How ERMITS Advisory Uses STEEL™
-                </h2>
-                <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  ERMITS Advisory operates on top of the STEEL™ layer. We run STEEL™ evaluations to establish: where you are today, what pressures matter most, and what the next moves should be.
-                </p>
-                <ul className="space-y-3 text-base text-gray-700 dark:text-gray-300 mb-6">
-                  <li className="flex items-start">
-                    <CheckCircle size={20} className="mr-3 mt-0.5 text-navy dark:text-silver flex-shrink-0" />
-                    <span>Assess your posture across the three STEEL™ sublayers</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={20} className="mr-3 mt-0.5 text-navy dark:text-silver flex-shrink-0" />
-                    <span>Generate a STEEL™ Index that reflects your real exposure and readiness</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={20} className="mr-3 mt-0.5 text-navy dark:text-silver flex-shrink-0" />
-                    <span>Translate the STEEL™ Index into a governance and transformation roadmap</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={20} className="mr-3 mt-0.5 text-navy dark:text-silver flex-shrink-0" />
-                    <span>Support executives and boards with STEEL™-aligned reporting and decision support</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={20} className="mr-3 mt-0.5 text-navy dark:text-silver flex-shrink-0" />
-                    <span>Govern ongoing execution using STEEL™ as the reference layer</span>
-                  </li>
-                </ul>
-                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                  STEEL™ is therefore the central method that connects strategy, threat, and enterprise realities into one advisory view.
-                </p>
-              </div>
-            </Card>
-          </motion.div>
-        </section>
-
         {/* How Ecosystem Connects to STEEL */}
         <section id="ecosystem-connection" className="mb-16">
           <motion.div
@@ -434,123 +420,6 @@ export const SteelMethodPage: React.FC = () => {
                   <span><strong className="text-navy dark:text-white">VendorSoluce™</strong> – Vendor, partner, and supply chain risk governance across your external ecosystem.</span>
                 </li>
               </ul>
-            </Card>
-          </motion.div>
-
-          {/* ERMITS Bridge Diagram */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-6xl mx-auto mb-12"
-          >
-            <Card className="p-8 bg-white dark:bg-gray-800">
-              <ErmitsBridgeDiagram />
-            </Card>
-          </motion.div>
-
-          {/* How It Works Flow */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-4xl mx-auto mb-12"
-          >
-            <Card className="p-8 bg-gradient-to-r from-navy/5 to-cyan/5 dark:from-navy/20 dark:to-cyan/20 border border-navy/20 dark:border-cyan-700/50">
-              <h3 className="text-xl font-bold mb-4 dark:text-white text-center">The Flow</h3>
-              <ol className="space-y-4 text-base text-gray-700 dark:text-gray-300 list-decimal list-inside">
-                <li>
-                  <strong className="text-navy dark:text-white">ERMITS Advisory runs a STEEL™ evaluation</strong> — Strategic, threat, and enterprise realities are assessed and expressed as a STEEL™ Index.
-                </li>
-                <li>
-                  <strong className="text-navy dark:text-white">STEEL™ defines priorities</strong> — Which risks matter most, what must happen first, and where governance focus is required.
-                </li>
-                <li>
-                  <strong className="text-navy dark:text-white">The ERMITS ecosystem executes</strong> — The relevant capabilities (CyberCaution™, CyberCorrect™, etc.) are activated to carry out those priorities.
-                </li>
-                <li>
-                  <strong className="text-navy dark:text-white">Telemetry flows back into STEEL™</strong> — Evidence from these capabilities updates the STEEL™ evaluation and Index.
-                </li>
-              </ol>
-            </Card>
-          </motion.div>
-
-          {/* Mapping Table */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="max-w-6xl mx-auto"
-          >
-            <Card className="p-6 md:p-8 overflow-x-auto">
-              <div className="min-w-full">
-                <table className="w-full">
-                  <thead>
-                    <tr className="border-b-2 border-gray-300 dark:border-gray-600">
-                      <th className="text-left py-4 px-4 font-bold text-navy dark:text-white">
-                        STEEL™ Evaluation Sublayer
-                      </th>
-                      <th className="text-left py-4 px-4 font-bold text-navy dark:text-white">
-                        Advisory Focus
-                      </th>
-                      <th className="text-left py-4 px-4 font-bold text-navy dark:text-white">
-                        Activated ERMITS Capabilities
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
-                    <tr className="hover:bg-gray-50 dark:hover:bg-gray-800/50">
-                      <td className="py-4 px-4">
-                        <div className="flex items-start gap-3">
-                          <Target size={20} className="text-navy dark:text-silver mt-0.5 flex-shrink-0" />
-                          <div>
-                            <p className="font-semibold text-navy dark:text-white">Strategic Evaluation Layer</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td className="py-4 px-4 text-sm text-gray-600 dark:text-gray-300">
-                        Governance design, risk appetite definition, executive and board alignment, roadmap and prioritization.
-                      </td>
-                      <td className="py-4 px-4 text-sm text-gray-600 dark:text-gray-300">
-                        ERMITS Advisory (core), strategic reporting, governance structures.
-                      </td>
-                    </tr>
-                    <tr className="hover:bg-gray-50 dark:hover:bg-gray-800/50">
-                      <td className="py-4 px-4">
-                        <div className="flex items-start gap-3">
-                          <AlertCircle size={20} className="text-red-500 mt-0.5 flex-shrink-0" />
-                          <div>
-                            <p className="font-semibold text-navy dark:text-white">Threat Evaluation Layer</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td className="py-4 px-4 text-sm text-gray-600 dark:text-gray-300">
-                        Threat modelling, ransomware exposure assessment, incident readiness reviews, scenario planning.
-                      </td>
-                      <td className="py-4 px-4 text-sm text-gray-600 dark:text-gray-300">
-                        CyberCaution™ (threat intelligence, readiness, incident playbooks).
-                      </td>
-                    </tr>
-                    <tr className="hover:bg-gray-50 dark:hover:bg-gray-800/50">
-                      <td className="py-4 px-4">
-                        <div className="flex items-start gap-3">
-                          <Layers size={20} className="text-blue-500 mt-0.5 flex-shrink-0" />
-                          <div>
-                            <p className="font-semibold text-navy dark:text-white">Enterprise Evaluation Layer</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td className="py-4 px-4 text-sm text-gray-600 dark:text-gray-300">
-                        Controls and architecture maturity assessment, vendor risk review, workflow and resilience analysis.
-                      </td>
-                      <td className="py-4 px-4 text-sm text-gray-600 dark:text-gray-300">
-                        CyberCorrect™, CyberSoluce™, VendorSoluce™ and related integrations.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
             </Card>
           </motion.div>
 
