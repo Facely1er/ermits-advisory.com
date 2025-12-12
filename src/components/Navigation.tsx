@@ -5,7 +5,7 @@ import { useTheme } from '../contexts/ThemeContext';
 import { Button } from './shared/Button';
 import {
   Sun, Moon, Menu, X,
-  Briefcase, Mail, Users, Layers, Focus, ChevronDown, BookOpen
+  Briefcase, Mail, Users, Layers, Focus, BookOpen
 } from 'lucide-react';
 import logoImg from '../assets/ermits-advisory.png';
 import { cn } from '../utils/cn';
@@ -13,7 +13,6 @@ import { cn } from '../utils/cn';
 export const Navigation: React.FC = () => {
   const { theme, toggleTheme, focusMode, toggleFocusMode } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -29,16 +28,11 @@ export const Navigation: React.FC = () => {
     if (exact) {
       return location.pathname === path;
     }
-    // Check if current path starts with the nav path, or if it's home and nav is advisory
-    if (path === '/ermits-advisory' && (location.pathname === '/' || location.pathname === '/ermits-advisory')) {
+    // Check if current path starts with the nav path, or if it's home
+    if (path === '/' && location.pathname === '/') {
       return true;
     }
     return location.pathname === path || location.pathname.startsWith(path + '/');
-  };
-
-  // Check if any submenu item is active
-  const isSubmenuActive = (submenu: Array<{ to: string }>): boolean => {
-    return submenu.some(item => isRouteActive(item.to, false));
   };
 
   const navLinks = [
@@ -180,54 +174,23 @@ export const Navigation: React.FC = () => {
           >
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {navLinks.map((link) => (
-                <div key={link.to}>
-                  <NavLink
-                    to={link.to}
-                    className={({ isActive }) => {
-                      const routeActive = isActive || isRouteActive(link.to) || (link.submenu && isSubmenuActive(link.submenu));
-                      return cn(
-                        'flex items-center justify-between px-3 py-2 rounded-md text-base font-medium',
-                        routeActive
-                          ? 'bg-navy/10 text-navy dark:bg-silver/20 dark:text-white'
-                          : 'text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10'
-                      );
-                    }}
-                    onClick={() => {
-                      if (!link.submenu) setIsMenuOpen(false);
-                    }}
-                  >
-                    <div className="flex items-center">
-                      <span className="mr-2">{link.icon}</span>
-                      {link.label}
-                    </div>
-                    {link.submenu && <ChevronDown size={16} />}
-                  </NavLink>
-                  {link.submenu && (
-                    <div className="pl-8 space-y-1">
-                      {link.submenu.map((item) => (
-                        <NavLink
-                          key={item.to}
-                          to={item.to}
-                          className={({ isActive }) => {
-                            const itemActive = isActive || isRouteActive(item.to, false);
-                            return cn(
-                              'flex items-center justify-between px-3 py-2 rounded-md text-sm',
-                              itemActive
-                                ? 'bg-navy/10 text-navy dark:bg-silver/20 dark:text-white'
-                                : 'text-gray-600 dark:text-gray-300 hover:bg-navy/5 dark:hover:bg-silver/10'
-                            );
-                          }}
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          <span>{item.label}</span>
-                          {item.premium && (
-                            <span className="text-xs bg-gold/20 text-gold px-2 py-0.5 rounded-full">Premium</span>
-                          )}
-                        </NavLink>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                <NavLink
+                  key={link.to}
+                  to={link.to}
+                  className={({ isActive }) => {
+                    const routeActive = isActive || isRouteActive(link.to);
+                    return cn(
+                      'flex items-center px-3 py-2 rounded-md text-base font-medium',
+                      routeActive
+                        ? 'bg-navy/10 text-navy dark:bg-silver/20 dark:text-white'
+                        : 'text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10'
+                    );
+                  }}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <span className="mr-2">{link.icon}</span>
+                  {link.label}
+                </NavLink>
               ))}
             </div>
             <div className="pt-4 pb-3 border-t border-gray-200 dark:border-gray-700">
