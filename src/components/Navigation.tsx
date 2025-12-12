@@ -43,29 +43,30 @@ export const Navigation: React.FC = () => {
 
   const navLinks = [
     { 
-      to: '/ermits-advisory', 
-      label: 'Advisory', 
+      to: '/', 
+      label: 'Home', 
       icon: <Briefcase size={16} />,
-      submenu: [
-        { to: '/ermits-advisory', label: 'Overview' },
-        { to: '/services', label: 'Services' },
-        { to: '/vciso-kit', label: 'vCISO Services' },
-      ]
+    },
+    { 
+      to: '/services', 
+      label: 'Services', 
+      icon: <Layers size={16} />,
     },
     { 
       to: '/method/steel', 
-      label: 'Method: STEEL™', 
+      label: 'STEEL™ Method', 
       icon: <BookOpen size={16} />,
-      submenu: [
-        { to: '/method/steel', label: 'Overview' },
-        { to: '/steel', label: 'Assessment' },
-        { to: '/steel/radar', label: 'STEEL™ Radar', premium: true },
-        { to: '/steel/premium', label: 'Premium Features' },
-        { to: '/steel/enterprise', label: 'Enterprise' },
-      ]
     },
-    { to: '/ecosystem', label: 'Ecosystem', icon: <Layers size={16} /> },
-    { to: '/about', label: 'About', icon: <Users size={16} /> },
+    { 
+      to: '/ecosystem', 
+      label: 'Ecosystem', 
+      icon: <Layers size={16} />
+    },
+    { 
+      to: '/about', 
+      label: 'About', 
+      icon: <Users size={16} />
+    },
   ];
 
   return (
@@ -85,66 +86,23 @@ export const Navigation: React.FC = () => {
             {/* Nav Links */}
             <div className="flex items-center space-x-6 h-full">
               {navLinks.map((link) => (
-                <div
+                <NavLink
                   key={link.to}
-                  className="relative h-full"
-                  onMouseEnter={() => link.submenu && setActiveDropdown(link.to)}
-                  onMouseLeave={() => setActiveDropdown(null)}
+                  to={link.to}
+                  className={({ isActive }) => {
+                    // Check if route is active (including nested routes)
+                    const routeActive = isActive || isRouteActive(link.to);
+                    return cn(
+                      'text-sm font-medium hover:text-navy dark:hover:text-white transition-all duration-300 nav-link flex items-center whitespace-nowrap h-full relative',
+                      routeActive
+                        ? 'text-navy-dark dark:text-white font-semibold border-b-2 border-navy dark:border-silver'
+                        : 'text-gray-600 dark:text-white/95 hover:border-b-2 hover:border-navy/30 dark:hover:border-silver/30'
+                    );
+                  }}
                 >
-                  <NavLink
-                    to={link.to}
-                    className={({ isActive }) => {
-                      // Check if route is active (including nested routes and submenu items)
-                      const routeActive = isActive || isRouteActive(link.to) || (link.submenu && isSubmenuActive(link.submenu));
-                      return cn(
-                        'text-sm font-medium hover:text-navy dark:hover:text-white transition-all duration-300 nav-link flex items-center whitespace-nowrap h-full relative',
-                        routeActive
-                          ? 'text-navy-dark dark:text-white font-semibold border-b-2 border-navy dark:border-silver'
-                          : 'text-gray-600 dark:text-white/95 hover:border-b-2 hover:border-navy/30 dark:hover:border-silver/30'
-                      );
-                    }}
-                  >
-                    <span className="mr-1.5">{link.icon}</span>
-                    {link.label}
-                    {link.submenu && <ChevronDown size={14} className="ml-1" />}
-                  </NavLink>
-                  
-                  {/* Dropdown Menu */}
-                  {link.submenu && activeDropdown === link.to && (
-                    <motion.div
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 pt-2 w-56 z-50"
-                      onMouseEnter={() => setActiveDropdown(link.to)}
-                      onMouseLeave={() => setActiveDropdown(null)}
-                    >
-                      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 py-2">
-                        {link.submenu.map((item) => (
-                          <NavLink
-                            key={item.to}
-                            to={item.to}
-                            className={({ isActive }) => {
-                              const itemActive = isActive || isRouteActive(item.to, false);
-                              return cn(
-                                'flex items-center justify-between px-4 py-2 text-sm hover:bg-navy/5 dark:hover:bg-silver/10 transition-colors',
-                                itemActive && 'bg-navy/10 dark:bg-silver/20 text-navy dark:text-white font-medium',
-                                !itemActive && 'text-gray-700 dark:text-gray-300'
-                              );
-                            }}
-                            onClick={() => setActiveDropdown(null)}
-                          >
-                            <span>{item.label}</span>
-                            {item.premium && (
-                              <span className="text-xs bg-gold/20 text-gold px-2 py-0.5 rounded-full">Premium</span>
-                            )}
-                          </NavLink>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </div>
+                  <span className="mr-1.5">{link.icon}</span>
+                  {link.label}
+                </NavLink>
               ))}
             </div>
 
