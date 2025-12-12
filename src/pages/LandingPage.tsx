@@ -124,18 +124,6 @@ export const LandingPage: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            {/* Badge/Tagline */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-400/40 bg-gradient-to-r from-cyan-500/20 via-slate-900/80 to-transparent backdrop-blur-sm text-cyan-200 text-sm uppercase tracking-wider mb-6 shadow-lg"
-            >
-              <Shield size={16} className="text-cyan-400" />
-              <span className="font-semibold">STEEL™</span>
-              <span className="text-xs">Strategic Threat & Enterprise Evaluation Layer</span>
-            </motion.div>
-
             {/* Main Heading with Enhanced Carousel */}
             <div className="mb-8 min-h-[140px] md:min-h-[180px] flex items-center justify-center">
               <HeroCarousel
@@ -184,7 +172,7 @@ export const LandingPage: React.FC = () => {
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm text-sm text-white/90">
                 <CheckCircle size={16} className="text-cyan-400" />
-                <span>46 Strategic Indicators</span>
+                <span>18 Strategic Questions</span>
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm text-sm text-white/90">
                 <Zap size={16} className="text-yellow-400" />
@@ -234,7 +222,7 @@ export const LandingPage: React.FC = () => {
               {
                 icon: <Zap size={32} className="text-yellow-500" />,
                 title: 'STEEL™ Powered',
-                description: '46 strategic indicators across 3 evaluation layers'
+                description: '18 strategic questions across 3 evaluation layers'
               },
               {
                 icon: <Eye size={32} className="text-blue-500" />,

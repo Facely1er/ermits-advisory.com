@@ -13,16 +13,7 @@ All demo/example data is clearly marked with:
 
 ## Data Sources by Component
 
-### 1. LiveMetrics Component (`src/components/interactive/LiveMetrics.tsx`)
-- **Status**: Demo/Example Data
-- **Current Data**: Simulated metrics with random variations
-- **Production Data Sources**:
-  - Risk scores: Calculated from STEEL framework assessments
-  - Threat counts: Real-time threat intelligence feeds (CISA, commercial providers)
-  - Compliance scores: Compliance monitoring systems
-  - Incident counts: Security incident management systems
-
-### 2. Dashboard Metrics (`src/data/mockData.ts`)
+### 1. Dashboard Metrics (`src/data/mockData.ts`)
 - **Status**: Example/Demo Data
 - **Current Data**: Sample metrics for demonstration
 - **Production Data Sources**:
@@ -31,14 +22,14 @@ All demo/example data is clearly marked with:
   - Recent Incidents: Security incident management systems (SIEM)
   - Compliance Status: Compliance monitoring and assessment tools
 
-### 3. STEEL Framework Dimensions (`src/data/mockData.ts`)
+### 2. STEEL Framework Dimensions (`src/data/mockData.ts`)
 - **Status**: Example Data
 - **Current Data**: Sample risk values for demonstration
 - **Production Data Sources**:
   - Risk values: Calculated from STEEL framework assessment questionnaires
   - Based on: NIST Cybersecurity Framework, ISO 27001, industry best practices
 
-### 4. Threat Intelligence (`src/data/mockData.ts`)
+### 3. Threat Intelligence (`src/data/mockData.ts`)
 - **Status**: Example Data
 - **Current Data**: Sample threat categories
 - **Production Data Sources**:
@@ -47,7 +38,7 @@ All demo/example data is clearly marked with:
     - ENISA (European Union Agency for Cybersecurity) threat landscape reports
   - Real-time data: Commercial threat intelligence feeds
 
-### 5. Strategic Actions (`src/data/mockData.ts`)
+### 4. Strategic Actions (`src/data/mockData.ts`)
 - **Status**: Example Recommendations
 - **Current Data**: Sample recommendations with impact statements
 - **Production Data Sources**:
@@ -58,7 +49,7 @@ All demo/example data is clearly marked with:
     - Microsoft Security Intelligence Report (for MFA effectiveness: ~99%)
   - **Note**: Actual impact varies by organization, implementation quality, and threat landscape
 
-### 6. Risk Radar Scenarios (`src/data/mockData.ts`)
+### 5. Risk Radar Scenarios (`src/data/mockData.ts`)
 - **Status**: Example Scenarios
 - **Current Data**: Sample scenario calculations
 - **Production Data Sources**:
