@@ -7,7 +7,6 @@ import { Card } from '../components/shared/Card';
 import { InteractiveCard } from '../components/shared/InteractiveCard';
 import { HeroCarousel } from '../components/shared/HeroCarousel';
 import { ArrowRight, CheckCircle, Zap, Eye, Target, Calendar, Layers, Rocket, Search, Shield, FileSearch, DraftingCompass, Gavel, Network, Settings, AlertCircle } from 'lucide-react';
-import { LiveMetrics } from '../components/interactive/LiveMetrics';
 import { SteelArchitectureDiagram } from '../components/diagrams/SteelArchitectureDiagram';
 import { ErmitsBridgeDiagram } from '../components/diagrams/ErmitsBridgeDiagram';
 import heroBackground from '../assets/background.jpg';
@@ -165,16 +164,6 @@ export const LandingPage: React.FC = () => {
               />
             </div>
 
-            {/* Enhanced Subtitle */}
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              className="text-xl md:text-2xl text-white/90 mb-6 max-w-4xl mx-auto leading-relaxed font-light"
-            >
-              ERMITS Advisory is the strategic cyber governance and risk stewardship arm of the ERMITS ecosystem.
-            </motion.p>
-
             {/* Purpose Statement */}
             <motion.p
               initial={{ opacity: 0, y: 10 }}
@@ -182,7 +171,7 @@ export const LandingPage: React.FC = () => {
               transition={{ delay: 0.6, duration: 0.6 }}
               className="text-base md:text-lg lg:text-xl text-white/85 mb-10 max-w-4xl mx-auto leading-relaxed"
             >
-              We provide strategic intelligence and executive-ready guidance through comprehensive risk assessments, virtual CISO leadership, and compliance advisory. Our consulting approach integrates seamlessly with the ERMITS ecosystem, delivering actionable roadmaps and implementation support tailored to your organization's unique risk profile.
+              We provide strategic intelligence and executive-ready guidance through compliance advisory and virtual CISO leadership. Our consulting approach integrates seamlessly with the ERMITS ecosystem, delivering actionable roadmaps and implementation support tailored to your organization's unique risk profile.
             </motion.p>
 
             {/* Key Benefits Pills */}
@@ -213,16 +202,6 @@ export const LandingPage: React.FC = () => {
               transition={{ delay: 0.8, duration: 0.6 }}
               className="flex flex-wrap gap-4 justify-center"
             >
-              <Button 
-                variant="secondary" 
-                size="lg"
-                icon={<ArrowRight size={20} />}
-                iconPosition="right"
-                onClick={() => navigate('/contact')}
-                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold px-10 py-5 rounded-xl shadow-2xl hover:shadow-cyan-500/50 transition-all transform hover:-translate-y-1 hover:scale-105 text-lg"
-              >
-                Talk to an Advisor →
-              </Button>
               <Button 
                 variant="ghost" 
                 size="lg"
