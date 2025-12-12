@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logoImg from '../assets/ermits-advisory.png';
 import {
-  Mail, Shield, Users, FileText, Scale, Cookie, Layers, Download, Briefcase
+  Mail, Shield, Users, FileText, Scale, Briefcase, Layers
 } from 'lucide-react';
 
 export const Footer: React.FC = () => {
@@ -10,9 +10,9 @@ export const Footer: React.FC = () => {
     <footer className="bg-slate-800 dark:bg-slate-900 text-white border-t border-slate-700/50 dark:border-slate-800/50">
       <div className="container mx-auto px-4 pt-6 pb-0">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-2">
           {/* Company Info - Compact */}
-          <div className="md:col-span-1">
+          <div>
             <Link to="/" className="flex items-center mb-3">
               <img src={logoImg} alt="ERMITS Advisory" className="h-10" />
               <span className="ml-3 font-outfit font-semibold text-white">
@@ -20,12 +20,21 @@ export const Footer: React.FC = () => {
                 <span className="block text-sm">Advisory</span>
               </span>
             </Link>
-            <p className="text-silver text-sm leading-relaxed">
+            <p className="text-silver text-sm leading-relaxed mb-4">
               Global Intelligence. Resilient Strategy.
-              <br />
               <br />
               Streamlined for Success.
             </p>
+            <div className="space-y-2">
+              <Link to="/about" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
+                <Users size={14} className="mr-2 group-hover:scale-110 transition-transform" />
+                About Us
+              </Link>
+              <Link to="/contact" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
+                <Mail size={14} className="mr-2 group-hover:scale-110 transition-transform" />
+                Contact
+              </Link>
+            </div>
           </div>
 
           {/* Services & Solutions */}
@@ -51,40 +60,9 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/steel/radar" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
-                  <Shield size={14} className="mr-2 group-hover:scale-110 transition-transform" />
-                  STEEL Radar
-                </Link>
-              </li>
-              <li>
-                <Link to="/vciso-kit" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
-                  <Download size={14} className="mr-2 group-hover:scale-110 transition-transform" />
-                  vCISO Starter Kit
-                </Link>
-              </li>
-              <li>
                 <Link to="/toolkits" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
                   <Layers size={14} className="mr-2 group-hover:scale-110 transition-transform" />
-                  Toolkits Overview
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h3 className="text-base font-semibold mb-3">Company</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/about" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
-                  <Users size={14} className="mr-2 group-hover:scale-110 transition-transform" />
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
-                  <Mail size={14} className="mr-2 group-hover:scale-110 transition-transform" />
-                  Contact
+                  Toolkits & Resources
                 </Link>
               </li>
             </ul>
@@ -104,12 +82,6 @@ export const Footer: React.FC = () => {
                 <Link to="/terms" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
                   <Scale size={14} className="mr-2 group-hover:scale-110 transition-transform" />
                   Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link to="/cookies" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
-                  <Cookie size={14} className="mr-2 group-hover:scale-110 transition-transform" />
-                  Cookie Policy
                 </Link>
               </li>
               <li>
