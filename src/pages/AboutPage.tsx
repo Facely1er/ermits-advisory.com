@@ -369,7 +369,7 @@ export const AboutPage: React.FC = () => {
                   iconPosition="right"
                   onClick={() => navigate('/contact')}
                 >
-                  Explore Global Services
+                  Contact Our Team
                 </Button>
               </div>
               <div className="md:w-1/2">

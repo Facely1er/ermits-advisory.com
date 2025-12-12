@@ -64,9 +64,10 @@ export const Navigation: React.FC = () => {
         <div className="flex items-center justify-between h-full">
           {/* Logo - Made more compact */}
           <Link to="/" className="flex items-center flex-shrink-0">
-            <img src={logoImg} alt="ERMITS Advisory" className="h-10" />
-            <span className="ml-2 font-outfit font-semibold text-navy dark:text-white text-base">
-              ERMITS Advisory
+            <img src={logoImg} alt="ERMITS Advisory" className="h-12" />
+            <span className="ml-3 font-outfit font-semibold text-navy dark:text-white">
+              <span className="block text-sm">ERMITS</span>
+              <span className="block text-sm">Advisory</span>
             </span>
           </Link>
 
