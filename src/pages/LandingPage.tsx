@@ -6,7 +6,7 @@ import { Button } from '../components/shared/Button';
 import { Card } from '../components/shared/Card';
 import { InteractiveCard } from '../components/shared/InteractiveCard';
 import { HeroCarousel } from '../components/shared/HeroCarousel';
-import { ArrowRight, CheckCircle, Zap, Eye, Target } from 'lucide-react';
+import { ArrowRight, CheckCircle, Zap, Target } from 'lucide-react';
 import { ServiceSelector } from '../components/interactive/ServiceSelector';
 import heroBackground from '../assets/background.jpg';
 
@@ -546,7 +546,7 @@ export const LandingPage: React.FC = () => {
                   </div>
                   <div className="flex items-center gap-2 text-sm text-gray-700 dark:text-slate-400">
                     <CheckCircle size={16} className="text-green-500 flex-shrink-0" />
-                    <span>Open-data driven, tool-integrated</span>
+                    <span>Both Exclusive & Open-data driven, tool-integrated</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-gray-700 dark:text-slate-400">
                     <CheckCircle size={16} className="text-green-500 flex-shrink-0" />
