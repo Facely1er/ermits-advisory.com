@@ -517,7 +517,7 @@ export const VcisoKit: React.FC = () => {
                 variant="outline"
                 size="lg"
                 onClick={() => navigate('/services')}
-                className="bg-white/20 text-white border-white/40 hover:bg-white/30 dark:bg-white/10 dark:text-white dark:border-white/30 dark:hover:bg-white/20 font-semibold transition-colors"
+                className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-blue-600 dark:bg-transparent dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-navy font-semibold transition-colors"
               >
                 View All Services
               </Button>
