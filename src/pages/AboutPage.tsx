@@ -116,7 +116,7 @@ export const AboutPage: React.FC = () => {
 
 
   return (
-    <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
+    <div className="pb-8 bg-silver-light dark:bg-dark-bg min-h-screen">
       <div className="container mx-auto px-4">
         {/* Leadership Excellence Hero Section */}
         <motion.div
@@ -321,7 +321,7 @@ export const AboutPage: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          className="mb-16"
+          className="mb-8"
         >
           <Card variant="glass" padding="lg">
             <div className="flex flex-col md:flex-row gap-8 items-center">
