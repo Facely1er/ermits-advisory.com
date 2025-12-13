@@ -18,16 +18,10 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       output: {
         manualChunks(id) {
-          // React vendor chunk - separate React core from React DOM
+          // React vendor chunk - keep React, ReactDOM, and React Router together to avoid initialization issues
           if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
-              // Separate React core from React DOM for better caching
-              if (id.includes('react-dom')) {
-                return 'vendor-react-dom';
-              }
-              if (id.includes('react-router')) {
-                return 'vendor-router';
-              }
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router') || id.includes('scheduler')) {
+              // Keep all React-related packages in a single chunk to ensure proper initialization order
               return 'vendor-react';
             }
             // UI libraries chunk
@@ -65,8 +59,6 @@ export default defineConfig(({ mode }) => ({
   },
   // Performance optimizations
   server: {
-    // Enable HTTP/2 for development
-    https: false,
     // Optimize HMR
     hmr: {
       overlay: false
