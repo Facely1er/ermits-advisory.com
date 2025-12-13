@@ -531,24 +531,18 @@ export const LandingPage: React.FC = () => {
             <Card className="luxury-card p-10 md:p-12 bg-gradient-to-br from-luxury-gold/25 via-white/95 to-white/95 dark:from-luxury-gold/20 dark:via-dark-luxury-surface/95 dark:to-dark-luxury-surface/95 border-luxury-gold/40 dark:border-luxury-gold/50 shadow-luxury-gold-lg backdrop-blur-xl">
               <div className="text-center">
                 <h2 className="text-2xl md:text-3xl font-bold mb-3 text-navy dark:text-white">
-                  Ready to Get Started?
+                  {t('landing.finalCta.title')}
                 </h2>
                 <p className="text-base text-gray-700 dark:text-slate-300 mb-6 max-w-2xl mx-auto">
-                  Let's discuss how ERMITS Advisory can help strengthen your cybersecurity posture and governance.
+                  {t('landing.finalCta.description')}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 items-center justify-center mb-6">
-                  <div className="flex items-center gap-2 text-sm text-gray-700 dark:text-slate-400">
-                    <CheckCircle size={16} className="text-green-500 flex-shrink-0" />
-                    <span>No generic boilerplate risk report</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-700 dark:text-slate-400">
-                    <CheckCircle size={16} className="text-green-500 flex-shrink-0" />
-                    <span>Both Exclusive & Open-data driven, tool-integrated</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-700 dark:text-slate-400">
-                    <CheckCircle size={16} className="text-green-500 flex-shrink-0" />
-                    <span>Designed for small and mid-size organizations</span>
-                  </div>
+                  {t('landing.finalCta.benefits', { returnObjects: true }).map((benefit: string, idx: number) => (
+                    <div key={idx} className="flex items-center gap-2 text-sm text-gray-700 dark:text-slate-400">
+                      <CheckCircle size={16} className="text-green-500 flex-shrink-0" />
+                      <span>{benefit}</span>
+                    </div>
+                  ))}
                 </div>
                 <Button
                   variant="primary"
@@ -558,7 +552,7 @@ export const LandingPage: React.FC = () => {
                   icon={<ArrowRight size={20} />}
                   iconPosition="right"
                 >
-                  Contact Our Team
+                  {t('landing.finalCta.button')}
                 </Button>
               </div>
             </Card>
@@ -571,7 +565,7 @@ export const LandingPage: React.FC = () => {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center">
             <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed max-w-4xl mx-auto">
-              <strong className="text-gray-800 dark:text-gray-300">Disclaimer:</strong> Results, outcomes, and timelines may vary based on individual organization circumstances, size, complexity, industry, and implementation efforts. Performance claims are based on typical experiences and are not guarantees. Case studies and examples are illustrative and may not reflect all client experiences. Pricing is subject to change and final pricing will be confirmed in written proposals. ERMITS Advisory services are advisory in nature and do not guarantee specific security outcomes or compliance certifications.
+              <strong className="text-gray-800 dark:text-gray-300">{t('landing.disclaimer.label')}</strong> {t('landing.disclaimer.text')}
             </p>
           </div>
         </div>

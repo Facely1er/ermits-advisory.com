@@ -1,22 +1,28 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NavLink, Link, useNavigate, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useTheme } from '../contexts/ThemeContext';
 import { Button } from './shared/Button';
 import {
   Sun, Moon, Menu, X,
-  Briefcase, Mail, Users, Layers, Focus, BookOpen
+  Briefcase, Mail, Users, Layers, Focus, BookOpen, Globe
 } from 'lucide-react';
 import logoImg from '../assets/ermits-advisory.png';
 import { cn } from '../utils/cn';
 
 export const Navigation: React.FC = () => {
   const { theme, toggleTheme, focusMode, toggleFocusMode } = useTheme();
+  const { i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
 
   const handleContactClick = () => {
     navigate('/contact');
