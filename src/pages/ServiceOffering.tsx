@@ -170,25 +170,9 @@ export const ServiceOffering: React.FC = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 dark:text-white">
               ERMITS Advisory Services
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-200 max-w-4xl mx-auto mb-10 leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-200 max-w-4xl mx-auto leading-relaxed">
               A focused set of governance and stewardship services built on top of the STEEL™ Diagnostic framework.
             </p>
-            <div className="flex flex-wrap justify-center gap-3 text-sm text-gray-600 dark:text-gray-400">
-              <span>Learn more:</span>
-              <button
-                onClick={() => navigate('/method/steel')}
-                className="text-cyan-600 dark:text-cyan-400 hover:underline font-medium"
-              >
-                About STEEL™
-              </button>
-              <span>•</span>
-              <button
-                onClick={() => navigate('/method/steel')}
-                className="text-cyan-600 dark:text-cyan-400 hover:underline font-medium"
-              >
-                ERMITS Ecosystem
-              </button>
-            </div>
           </motion.div>
         </section>
 
