@@ -1,4 +1,16 @@
 {
+  "common": {
+    "brandName": "ERMITS Advisory",
+    "ermits": "ERMITS",
+    "advisory": "Advisory"
+  },
+  "navigation": {
+    "home": "Home",
+    "steel": "STEEL™",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact"
+  },
   "landing": {
     "hero": {
       "slides": {

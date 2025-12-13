@@ -13,7 +13,7 @@ import { cn } from '../utils/cn';
 
 export const Navigation: React.FC = () => {
   const { theme, toggleTheme, focusMode, toggleFocusMode } = useTheme();
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -44,22 +44,22 @@ export const Navigation: React.FC = () => {
   const navLinks = [
     { 
       to: '/', 
-      label: 'Home', 
+      label: t('navigation.home'), 
       icon: <Briefcase size={16} />,
     },
     { 
       to: '/method/steel', 
-      label: 'STEEL™', 
+      label: t('navigation.steel'), 
       icon: <BookOpen size={16} />,
     },
     { 
       to: '/services', 
-      label: 'Services', 
+      label: t('navigation.services'), 
       icon: <Layers size={16} />,
     },
     { 
       to: '/about', 
-      label: 'About', 
+      label: t('navigation.about'), 
       icon: <Users size={16} />
     },
   ];
@@ -70,11 +70,11 @@ export const Navigation: React.FC = () => {
         <div className="flex items-center justify-between h-full">
           {/* Logo - Made more compact */}
           <Link to="/" className="flex items-center flex-shrink-0">
-            <img src={logoImg} alt="ERMITS Advisory" className="h-12" />
+            <img src={logoImg} alt={t('common.brandName')} className="h-12" />
             <div className="ml-3">
               <span className="font-outfit font-semibold text-navy dark:text-white">
-                <span className="block text-sm">ERMITS</span>
-                <span className="block text-sm">Advisory</span>
+                <span className="block text-sm">{t('common.ermits')}</span>
+                <span className="block text-sm">{t('common.advisory')}</span>
               </span>
             </div>
           </Link>
@@ -172,7 +172,7 @@ export const Navigation: React.FC = () => {
                 icon={<Mail size={16} />}
                 onClick={handleContactClick}
               >
-                Contact
+                {t('navigation.contact')}
               </Button>
             </div>
           </div>
@@ -262,7 +262,7 @@ export const Navigation: React.FC = () => {
                     icon={<Mail size={16} />}
                     onClick={handleContactClick}
                   >
-                    Contact
+                    {t('navigation.contact')}
                   </Button>
                 </div>
               </div>
