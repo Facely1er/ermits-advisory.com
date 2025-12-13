@@ -467,9 +467,20 @@ export const SteelMethodPage: React.FC = () => {
             className="max-w-4xl mx-auto mt-8"
           >
             <Card className="p-6 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 border border-blue-200 dark:border-blue-800">
-              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-center">
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-center mb-6">
                 As these capabilities execute and generate evidence, telemetry flows back into STEEL™. This keeps your STEEL™ Index—and your decision-making—continuously current.
               </p>
+              <div className="flex justify-center">
+                <Button
+                  variant="primary"
+                  size="md"
+                  onClick={() => window.open('https://www.ermits.com', '_blank')}
+                  icon={<ArrowRight size={18} />}
+                  iconPosition="right"
+                >
+                  Explore the ERMITS Ecosystem
+                </Button>
+              </div>
             </Card>
           </motion.div>
         </section>
