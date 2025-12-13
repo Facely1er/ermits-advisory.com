@@ -168,8 +168,8 @@ export const SteelMethodPage: React.FC = () => {
             {/* Strategic Evaluation Layer */}
             <motion.div variants={item}>
               <Card className="h-full p-6 hover:shadow-xl transition-shadow border-l-4 border-l-navy">
-                <div className="mb-4">
-                  <div className="w-16 h-16 bg-navy/10 dark:bg-navy/30 rounded-full flex items-center justify-center mb-4">
+                <div className="mb-4 text-center">
+                  <div className="w-16 h-16 bg-navy/10 dark:bg-navy/30 rounded-full flex items-center justify-center mb-4 mx-auto">
                     <Target size={32} className="text-navy dark:text-silver" />
                   </div>
                   <h3 className="text-xl font-bold text-navy dark:text-white mb-3">
@@ -207,8 +207,8 @@ export const SteelMethodPage: React.FC = () => {
             {/* Threat Evaluation Layer */}
             <motion.div variants={item}>
               <Card className="h-full p-6 hover:shadow-xl transition-shadow border-l-4 border-l-red-500">
-                <div className="mb-4">
-                  <div className="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mb-4">
+                <div className="mb-4 text-center">
+                  <div className="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mb-4 mx-auto">
                     <AlertCircle size={32} className="text-red-600 dark:text-red-400" />
                   </div>
                   <h3 className="text-xl font-bold text-navy dark:text-white mb-3">
@@ -246,8 +246,8 @@ export const SteelMethodPage: React.FC = () => {
             {/* Enterprise Evaluation Layer */}
             <motion.div variants={item}>
               <Card className="h-full p-6 hover:shadow-xl transition-shadow border-l-4 border-l-blue-500">
-                <div className="mb-4">
-                  <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-4">
+                <div className="mb-4 text-center">
+                  <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-4 mx-auto">
                     <Layers size={32} className="text-blue-600 dark:text-blue-400" />
                   </div>
                   <h3 className="text-xl font-bold text-navy dark:text-white mb-3">
