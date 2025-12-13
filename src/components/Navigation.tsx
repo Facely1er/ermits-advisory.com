@@ -104,7 +104,7 @@ export const Navigation: React.FC = () => {
               ))}
             </div>
 
-            {/* Controls - Removed language selector */}
+            {/* Controls */}
             <div className="flex items-center space-x-3 h-full ml-6">
               {/* Language Switcher */}
               <div className="flex items-center bg-silver/20 dark:bg-navy/40 rounded-full p-1">
@@ -228,6 +228,33 @@ export const Navigation: React.FC = () => {
             <div className="pt-4 pb-3 border-t border-gray-200 dark:border-gray-700">
               <div className="flex items-center justify-end px-4">
                 <div className="flex items-center space-x-3">
+                  {/* Language Switcher - Mobile */}
+                  <div className="flex items-center bg-silver/20 dark:bg-navy/40 rounded-full p-1">
+                    <button
+                      onClick={() => changeLanguage('en')}
+                      className={cn(
+                        "px-3 py-1 rounded-full text-xs font-medium transition-colors",
+                        i18n.language === 'en'
+                          ? "bg-navy text-white dark:bg-silver dark:text-navy"
+                          : "text-gray-600 dark:text-gray-300 hover:text-navy dark:hover:text-white"
+                      )}
+                      aria-label="Switch to English"
+                    >
+                      EN
+                    </button>
+                    <button
+                      onClick={() => changeLanguage('fr')}
+                      className={cn(
+                        "px-3 py-1 rounded-full text-xs font-medium transition-colors",
+                        i18n.language === 'fr'
+                          ? "bg-navy text-white dark:bg-silver dark:text-navy"
+                          : "text-gray-600 dark:text-gray-300 hover:text-navy dark:hover:text-white"
+                      )}
+                      aria-label="Passer au français"
+                    >
+                      FR
+                    </button>
+                  </div>
                   {/* Focus Mode Toggle */}
                   <button
                     onClick={toggleFocusMode}
