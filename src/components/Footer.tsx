@@ -12,13 +12,11 @@ export const Footer: React.FC = () => {
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-2">
           {/* Logo and Branding */}
-          <div>
-            <div className="flex items-start gap-3">
-              <img src={logoImg} alt="ERMITS Advisory" className="h-10 w-auto" />
-              <div>
-                <h2 className="text-lg font-bold">ERMITS Advisory</h2>
-                <p className="text-sm text-silver">Enterprise Risk Management & Security</p>
-              </div>
+          <div className="flex items-start gap-3">
+            <img src={logoImg} alt="ERMITS Advisory" className="h-10 w-auto" />
+            <div>
+              <h2 className="text-lg font-bold">ERMITS Advisory</h2>
+              <p className="text-sm text-silver">Enterprise Risk Management & Security</p>
             </div>
           </div>
 
