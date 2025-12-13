@@ -140,9 +140,6 @@ export const SteelMethodPage: React.FC = () => {
                     <span>Govern ongoing execution using STEEL™ as the reference layer</span>
                   </li>
                 </ul>
-                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                  STEEL™ is therefore the central method that connects strategy, threat, and enterprise realities into one advisory view.
-                </p>
               </div>
             </Card>
           </motion.div>

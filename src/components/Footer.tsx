@@ -23,9 +23,9 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Services & Solutions */}
+          {/* Services */}
           <div>
-            <h3 className="text-base font-semibold mb-3">Services & Solutions</h3>
+            <h3 className="text-base font-semibold mb-3">Services</h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/services" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
