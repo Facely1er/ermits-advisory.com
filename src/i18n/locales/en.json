@@ -1,0 +1,143 @@
+{
+  "landing": {
+    "hero": {
+      "slides": {
+        "slide1": {
+          "headline": "Strategic Consulting & Advisory Services Powered by ",
+          "highlight": "STEEL™ Framework"
+        },
+        "slide2": {
+          "headline": "Expert guidance that transforms intelligence into ",
+          "highlight": "executive-ready strategic decisions."
+        },
+        "slide3": {
+          "headline": "vCISO leadership, compliance advisory, and ",
+          "highlight": "governance strategy for your organization."
+        },
+        "slide4": {
+          "headline": "From strategic assessment to ",
+          "highlight": "operational implementation with expert support."
+        }
+      },
+      "purposeStatement": "We provide strategic intelligence and executive-ready guidance through compliance advisory and virtual CISO leadership. Our consulting approach integrates seamlessly with the ERMITS ecosystem, delivering actionable roadmaps and implementation support tailored to your organization's unique risk profile.",
+      "benefits": {
+        "strategicQuestions": "18 Strategic Questions",
+        "realTimeIntelligence": "Real-Time Intelligence",
+        "actionableOutcomes": "Actionable Outcomes"
+      },
+      "cta": {
+        "contact": "Contact Our Team",
+        "exploreServices": "Explore Services"
+      }
+    },
+    "methodology": {
+      "subtitle": "Our Methodology",
+      "title": "Powered by STEEL™",
+      "description": "Strategic Threat & Enterprise Evaluation Layer — a comprehensive framework that evaluates your organization across strategic, threat, and enterprise dimensions to deliver prioritized, actionable intelligence.",
+      "card": {
+        "title": "From Assessment to Action",
+        "description": "STEEL™ evaluates 18 strategic questions across multiple layers to create a prioritized roadmap for your cybersecurity and risk management initiatives. No generic checklists — only what matters for your business.",
+        "pillars": {
+          "strategic": "Strategic Alignment",
+          "threat": "Threat Intelligence",
+          "enterprise": "Enterprise Context"
+        }
+      },
+      "cta": "Explore the STEEL™ Framework"
+    },
+    "serviceArchitecture": {
+      "subtitle": "Service Architecture",
+      "title": "How ERMITS Advisory Works",
+      "description": "Strategic cyber governance delivered in four integrated services. Click to explore each:"
+    },
+    "engagement": {
+      "subtitle": "Typical Engagement model",
+      "title": "A compact, outcome-driven engagement — not another endless audit",
+      "description": "ERMITS Advisory is built by practitioners who have lived inside GRC, cyber, and supply-chain teams. The process is designed to be lean, transparent, and immediately actionable.",
+      "steps": {
+        "step1": {
+          "label": "Step 1",
+          "title": "Scope & signal design",
+          "description": "We define your STEEL™ profile (sector, regions, data types, vendors, regulatory perimeter) and select relevant open data & RSS sources.",
+          "items": [
+            "Threat & regulation inventory.",
+            "Vendor & SBOM footprint sketch.",
+            "Risk appetite & board expectations."
+          ]
+        },
+        "step2": {
+          "label": "Step 2",
+          "title": "STEEL™ run & workshop",
+          "description": "We execute STEEL™, build the landscape dashboards, and run an interactive session with your stakeholders.",
+          "items": [
+            "Visual threat weather & strategic risk overlays.",
+            "Scenario-based risk scores.",
+            "Pre-mapping to ERMITS tools."
+          ]
+        },
+        "step3": {
+          "label": "Step 3",
+          "title": "Strategic roadmap with ERMITS ecosystem mapping",
+          "description": "You receive a concise strategic roadmap that links each priority finding to the relevant ERMITS ecosystem capabilities and implementation approach.",
+          "items": [
+            "Ranked recommendations (90-day view).",
+            "Which ERMITS ecosystem capabilities to activate first and why.",
+            "Options for ongoing STEEL™ monitoring if you want a live dashboard."
+          ]
+        }
+      }
+    },
+    "useCases": {
+      "subtitle": "Use cases",
+      "title": "Where STEEL™ delivers outsized value first",
+      "description": "Start where the threat landscape is moving faster than your internal bandwidth. ERMITS Advisory focuses STEEL™ on concrete decision points — not academic models.",
+      "cases": {
+        "smb": {
+          "title": "SMBs under ransomware pressure",
+          "tools": "CyberCaution™ · CyberSoluce™",
+          "description": "Identify which ransomware families, regions, and attack chains matter for your sector, then prioritize affordable controls instead of generic checklists."
+        },
+        "privacy": {
+          "title": "Privacy-heavy service providers",
+          "tools": "CyberCorrect™ · SocialCaution™",
+          "description": "Blend regulatory risk (GDPR, CCPA, LGPD, DPDP, etc.) with behavioral trends and data broker exposure to build a realistic privacy roadmap."
+        },
+        "vendor": {
+          "title": "Complex vendor & SBOM exposure",
+          "tools": "VendorSoluce™ · VendorTal · TechnoSoluce™",
+          "description": "Combine geopolitics, regulation, and software supply-chain indicators to see where your vendor stack and SBOMs are most fragile."
+        },
+        "publicSector": {
+          "title": "Public sector & education",
+          "tools": "CyberCaution™ · SocialCaution™",
+          "description": "Use STEEL™ to translate national threat bulletins and policy changes into pragmatic steps for municipalities, schools, and agencies."
+        }
+      }
+    },
+    "trustIndicators": {
+      "title": "Industry-Standard Frameworks",
+      "description": "Our methodology aligns with recognized security and compliance frameworks",
+      "frameworks": {
+        "iso": "ISO 27001 Aligned",
+        "soc2": "SOC 2 Compatible",
+        "gdpr": "GDPR Considerations",
+        "nist": "NIST Framework Based"
+      }
+    },
+    "finalCta": {
+      "title": "Ready to Get Started?",
+      "description": "Let's discuss how ERMITS Advisory can help strengthen your cybersecurity posture and governance.",
+      "benefits": [
+        "No generic boilerplate risk report",
+        "Both Exclusive & Open-data driven, tool-integrated",
+        "Designed for small and mid-size organizations"
+      ],
+      "button": "Contact Our Team"
+    },
+    "disclaimer": {
+      "label": "Disclaimer:",
+      "text": "Results, outcomes, and timelines may vary based on individual organization circumstances, size, complexity, industry, and implementation efforts. Performance claims are based on typical experiences and are not guarantees. Case studies and examples are illustrative and may not reflect all client experiences. Pricing is subject to change and final pricing will be confirmed in written proposals. ERMITS Advisory services are advisory in nature and do not guarantee specific security outcomes or compliance certifications."
+    }
+  }
+}
+

@@ -1,0 +1,143 @@
+{
+  "landing": {
+    "hero": {
+      "slides": {
+        "slide1": {
+          "headline": "Services de conseil et de consultation stratégiques propulsés par le ",
+          "highlight": "cadre STEEL™"
+        },
+        "slide2": {
+          "headline": "Des conseils d'experts qui transforment l'intelligence en ",
+          "highlight": "décisions stratégiques prêtes pour les cadres dirigeants."
+        },
+        "slide3": {
+          "headline": "Leadership de vCISO, conseil en conformité et ",
+          "highlight": "stratégie de gouvernance pour votre organisation."
+        },
+        "slide4": {
+          "headline": "De l'évaluation stratégique à ",
+          "highlight": "la mise en œuvre opérationnelle avec un soutien expert."
+        }
+      },
+      "purposeStatement": "Nous fournissons des renseignements stratégiques et des conseils prêts pour les cadres dirigeants grâce à des services de conseil en conformité et de leadership de RSSI virtuel. Notre approche de consultation s'intègre parfaitement à l'écosystème ERMITS, fournissant des feuilles de route exploitables et un soutien à la mise en œuvre adaptés au profil de risque unique de votre organisation.",
+      "benefits": {
+        "strategicQuestions": "18 questions stratégiques",
+        "realTimeIntelligence": "Renseignements en temps réel",
+        "actionableOutcomes": "Résultats exploitables"
+      },
+      "cta": {
+        "contact": "Contactez notre équipe",
+        "exploreServices": "Découvrir les services"
+      }
+    },
+    "methodology": {
+      "subtitle": "Notre méthodologie",
+      "title": "Propulsé par STEEL™",
+      "description": "Couche d'évaluation stratégique des menaces et de l'entreprise — un cadre complet qui évalue votre organisation selon les dimensions stratégique, de menaces et d'entreprise pour fournir des renseignements priorisés et exploitables.",
+      "card": {
+        "title": "De l'évaluation à l'action",
+        "description": "STEEL™ évalue 18 questions stratégiques à travers plusieurs couches pour créer une feuille de route priorisée pour vos initiatives de cybersécurité et de gestion des risques. Pas de listes de contrôle génériques — seulement ce qui compte pour votre entreprise.",
+        "pillars": {
+          "strategic": "Alignement stratégique",
+          "threat": "Renseignements sur les menaces",
+          "enterprise": "Contexte d'entreprise"
+        }
+      },
+      "cta": "Explorer le cadre STEEL™"
+    },
+    "serviceArchitecture": {
+      "subtitle": "Architecture de service",
+      "title": "Comment fonctionne ERMITS Advisory",
+      "description": "Gouvernance cybernétique stratégique fournie en quatre services intégrés. Cliquez pour explorer chacun :"
+    },
+    "engagement": {
+      "subtitle": "Modèle d'engagement typique",
+      "title": "Un engagement compact et axé sur les résultats — pas un autre audit interminable",
+      "description": "ERMITS Advisory est conçu par des praticiens qui ont travaillé au sein d'équipes GRC, cyber et de chaîne d'approvisionnement. Le processus est conçu pour être lean, transparent et immédiatement exploitable.",
+      "steps": {
+        "step1": {
+          "label": "Étape 1",
+          "title": "Conception de la portée et des signaux",
+          "description": "Nous définissons votre profil STEEL™ (secteur, régions, types de données, fournisseurs, périmètre réglementaire) et sélectionnons les sources de données ouvertes et RSS pertinentes.",
+          "items": [
+            "Inventaire des menaces et de la réglementation.",
+            "Esquisse de l'empreinte des fournisseurs et de la nomenclature logicielle (SBOM).",
+            "Appétit pour le risque et attentes du conseil d'administration."
+          ]
+        },
+        "step2": {
+          "label": "Étape 2",
+          "title": "Exécution de STEEL™ et atelier",
+          "description": "Nous exécutons STEEL™, construisons les tableaux de bord du paysage et organisons une session interactive avec vos parties prenantes.",
+          "items": [
+            "Météo visuelle des menaces et superpositions de risques stratégiques.",
+            "Scores de risques basés sur des scénarios.",
+            "Pré-cartographie vers les outils ERMITS."
+          ]
+        },
+        "step3": {
+          "label": "Étape 3",
+          "title": "Feuille de route stratégique avec cartographie de l'écosystème ERMITS",
+          "description": "Vous recevez une feuille de route stratégique concise qui relie chaque constat prioritaire aux capacités pertinentes de l'écosystème ERMITS et à l'approche de mise en œuvre.",
+          "items": [
+            "Recommandations classées (vue à 90 jours).",
+            "Quelles capacités de l'écosystème ERMITS activer en premier et pourquoi.",
+            "Options pour un suivi continu de STEEL™ si vous souhaitez un tableau de bord en direct."
+          ]
+        }
+      }
+    },
+    "useCases": {
+      "subtitle": "Cas d'utilisation",
+      "title": "Où STEEL™ apporte une valeur considérable en premier",
+      "description": "Commencez là où le paysage des menaces évolue plus rapidement que votre bande passante interne. ERMITS Advisory concentre STEEL™ sur des points de décision concrets — pas des modèles académiques.",
+      "cases": {
+        "smb": {
+          "title": "PME sous pression de ransomware",
+          "tools": "CyberCaution™ · CyberSoluce™",
+          "description": "Identifiez quelles familles de ransomwares, régions et chaînes d'attaque importent pour votre secteur, puis priorisez les contrôles abordables au lieu de listes de contrôle génériques."
+        },
+        "privacy": {
+          "title": "Fournisseurs de services à forte protection de la vie privée",
+          "tools": "CyberCorrect™ · SocialCaution™",
+          "description": "Combinez les risques réglementaires (RGPD, CCPA, LGPD, DPDP, etc.) avec les tendances comportementales et l'exposition aux courtiers de données pour construire une feuille de route réaliste en matière de confidentialité."
+        },
+        "vendor": {
+          "title": "Exposition complexe aux fournisseurs et à la nomenclature logicielle",
+          "tools": "VendorSoluce™ · VendorTal · TechnoSoluce™",
+          "description": "Combinez géopolitique, réglementation et indicateurs de chaîne d'approvisionnement logicielle pour voir où votre pile de fournisseurs et vos nomenclatures logicielles sont les plus fragiles."
+        },
+        "publicSector": {
+          "title": "Secteur public et éducation",
+          "tools": "CyberCaution™ · SocialCaution™",
+          "description": "Utilisez STEEL™ pour traduire les bulletins de menaces nationales et les changements de politique en étapes pragmatiques pour les municipalités, les écoles et les organismes."
+        }
+      }
+    },
+    "trustIndicators": {
+      "title": "Cadres standards de l'industrie",
+      "description": "Notre méthodologie s'aligne sur des cadres de sécurité et de conformité reconnus",
+      "frameworks": {
+        "iso": "Aligné ISO 27001",
+        "soc2": "Compatible SOC 2",
+        "gdpr": "Considérations RGPD",
+        "nist": "Basé sur le cadre NIST"
+      }
+    },
+    "finalCta": {
+      "title": "Prêt à commencer ?",
+      "description": "Discutons de la façon dont ERMITS Advisory peut aider à renforcer votre posture de cybersécurité et votre gouvernance.",
+      "benefits": [
+        "Pas de rapport de risque générique standard",
+        "Basé sur des données exclusives et ouvertes, intégré aux outils",
+        "Conçu pour les petites et moyennes organisations"
+      ],
+      "button": "Contactez notre équipe"
+    },
+    "disclaimer": {
+      "label": "Avertissement :",
+      "text": "Les résultats, les issues et les délais peuvent varier en fonction des circonstances individuelles de l'organisation, de sa taille, de sa complexité, de son secteur d'activité et de ses efforts de mise en œuvre. Les revendications de performance sont basées sur des expériences typiques et ne sont pas des garanties. Les études de cas et les exemples sont illustratifs et peuvent ne pas refléter toutes les expériences des clients. Les prix sont sujets à changement et les prix finaux seront confirmés dans les propositions écrites. Les services ERMITS Advisory sont de nature consultative et ne garantissent pas des résultats de sécurité spécifiques ou des certifications de conformité."
+    }
+  }
+}
+

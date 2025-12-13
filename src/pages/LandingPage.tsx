@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useTheme } from '../contexts/ThemeContext';
 import { Button } from '../components/shared/Button';
 import { Card } from '../components/shared/Card';
@@ -13,6 +14,7 @@ import heroBackground from '../assets/background.jpg';
 export const LandingPage: React.FC = () => {
   const { theme } = useTheme();
   const navigate = useNavigate();
+  const { t } = useTranslation();
   
   const container = {
     hidden: { opacity: 0 },
@@ -100,23 +102,23 @@ export const LandingPage: React.FC = () => {
                 slides={[
                   {
                     id: '1',
-                    headline: 'Strategic Consulting & Advisory Services Powered by ',
-                    highlight: 'STEEL™ Framework'
+                    headline: t('landing.hero.slides.slide1.headline'),
+                    highlight: t('landing.hero.slides.slide1.highlight')
                   },
                   {
                     id: '2',
-                    headline: 'Expert guidance that transforms intelligence into ',
-                    highlight: 'executive-ready strategic decisions.'
+                    headline: t('landing.hero.slides.slide2.headline'),
+                    highlight: t('landing.hero.slides.slide2.highlight')
                   },
                   {
                     id: '3',
-                    headline: 'vCISO leadership, compliance advisory, and ',
-                    highlight: 'governance strategy for your organization.'
+                    headline: t('landing.hero.slides.slide3.headline'),
+                    highlight: t('landing.hero.slides.slide3.highlight')
                   },
                   {
                     id: '4',
-                    headline: 'From strategic assessment to ',
-                    highlight: 'operational implementation with expert support.'
+                    headline: t('landing.hero.slides.slide4.headline'),
+                    highlight: t('landing.hero.slides.slide4.highlight')
                   }
                 ]}
                 autoRotateInterval={3500}
@@ -130,7 +132,7 @@ export const LandingPage: React.FC = () => {
               transition={{ delay: 0.6, duration: 0.6 }}
               className="text-base md:text-lg lg:text-xl text-white/85 mb-10 max-w-4xl mx-auto leading-relaxed"
             >
-              We provide strategic intelligence and executive-ready guidance through compliance advisory and virtual CISO leadership. Our consulting approach integrates seamlessly with the ERMITS ecosystem, delivering actionable roadmaps and implementation support tailored to your organization's unique risk profile.
+              {t('landing.hero.purposeStatement')}
             </motion.p>
 
             {/* Key Benefits Pills */}
@@ -142,15 +144,15 @@ export const LandingPage: React.FC = () => {
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm text-sm text-white/90">
                 <CheckCircle size={16} className="text-cyan-400" />
-                <span>18 Strategic Questions</span>
+                <span>{t('landing.hero.benefits.strategicQuestions')}</span>
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm text-sm text-white/90">
                 <Zap size={16} className="text-yellow-400" />
-                <span>Real-Time Intelligence</span>
+                <span>{t('landing.hero.benefits.realTimeIntelligence')}</span>
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm text-sm text-white/90">
                 <Target size={16} className="text-green-400" />
-                <span>Actionable Outcomes</span>
+                <span>{t('landing.hero.benefits.actionableOutcomes')}</span>
               </div>
             </motion.div>
 
@@ -169,7 +171,7 @@ export const LandingPage: React.FC = () => {
                 onClick={() => navigate('/contact')}
                 className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold px-10 py-5 rounded-xl shadow-2xl hover:shadow-cyan-500/50 transition-all transform hover:-translate-y-1 hover:scale-105 text-lg"
               >
-                Contact Our Team
+                {t('landing.hero.cta.contact')}
               </Button>
               <Button 
                 variant="ghost" 
@@ -177,7 +179,7 @@ export const LandingPage: React.FC = () => {
                 onClick={() => navigate('/services')}
                 className="border-2 border-white/30 text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm font-semibold px-10 py-5 rounded-xl transition-all transform hover:-translate-y-1 text-lg"
               >
-                Explore Services
+                {t('landing.hero.cta.exploreServices')}
               </Button>
             </motion.div>
           </motion.div>
@@ -194,13 +196,13 @@ export const LandingPage: React.FC = () => {
             className="text-center mb-12"
           >
             <div className="text-xs uppercase tracking-widest text-cyan-400 mb-2">
-              Our Methodology
+              {t('landing.methodology.subtitle')}
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              Powered by STEEL™
+              {t('landing.methodology.title')}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-              Strategic Threat & Enterprise Evaluation Layer — a comprehensive framework that evaluates your organization across strategic, threat, and enterprise dimensions to deliver prioritized, actionable intelligence.
+              {t('landing.methodology.description')}
             </p>
           </motion.div>
 
@@ -214,23 +216,23 @@ export const LandingPage: React.FC = () => {
             <Card className="p-8 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-cyan-900/30 dark:via-blue-900/30 dark:to-cyan-900/30 border border-blue-200 dark:border-cyan-700/50 mb-8">
               <div className="text-center">
                 <h3 className="text-2xl font-bold text-navy dark:text-white mb-4">
-                  From Assessment to Action
+                  {t('landing.methodology.card.title')}
                 </h3>
                 <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                  STEEL™ evaluates 18 strategic questions across multiple layers to create a prioritized roadmap for your cybersecurity and risk management initiatives. No generic checklists — only what matters for your business.
+                  {t('landing.methodology.card.description')}
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
                   <div className="flex items-center gap-2 px-4 py-2 bg-white/60 dark:bg-slate-800/80 dark:border dark:border-cyan-500/30 rounded-lg">
                     <CheckCircle size={20} className="text-green-500" />
-                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Strategic Alignment</span>
+                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{t('landing.methodology.card.pillars.strategic')}</span>
                   </div>
                   <div className="flex items-center gap-2 px-4 py-2 bg-white/60 dark:bg-slate-800/80 dark:border dark:border-cyan-500/30 rounded-lg">
                     <CheckCircle size={20} className="text-green-500" />
-                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Threat Intelligence</span>
+                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{t('landing.methodology.card.pillars.threat')}</span>
                   </div>
                   <div className="flex items-center gap-2 px-4 py-2 bg-white/60 dark:bg-slate-800/80 dark:border dark:border-cyan-500/30 rounded-lg">
                     <CheckCircle size={20} className="text-green-500" />
-                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Enterprise Context</span>
+                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{t('landing.methodology.card.pillars.enterprise')}</span>
                   </div>
                 </div>
               </div>
@@ -244,7 +246,7 @@ export const LandingPage: React.FC = () => {
                 icon={<ArrowRight size={20} />}
                 iconPosition="right"
               >
-                Explore the STEEL™ Framework
+                {t('landing.methodology.cta')}
               </Button>
             </div>
           </motion.div>
@@ -261,13 +263,13 @@ export const LandingPage: React.FC = () => {
             className="text-center mb-12"
           >
             <div className="text-xs uppercase tracking-widest text-cyan-400 mb-2">
-              Service Architecture
+              {t('landing.serviceArchitecture.subtitle')}
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              How ERMITS Advisory Works
+              {t('landing.serviceArchitecture.title')}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-6">
-              Strategic cyber governance delivered in four integrated services. Click to explore each:
+              {t('landing.serviceArchitecture.description')}
             </p>
           </motion.div>
 
@@ -294,15 +296,13 @@ export const LandingPage: React.FC = () => {
             className="text-center mb-12"
           >
             <div className="text-xs uppercase tracking-widest text-cyan-400 mb-2">
-              Typical Engagement model
+              {t('landing.engagement.subtitle')}
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              A compact, outcome-driven engagement — not another endless audit
+              {t('landing.engagement.title')}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              ERMITS Advisory is built by practitioners who have lived inside GRC, cyber, and
-              supply-chain teams. The process is designed to be <strong className="text-gray-900 dark:text-white">lean</strong>, <strong className="text-gray-900 dark:text-white">transparent</strong>,
-              and <strong className="text-gray-900 dark:text-white">immediately actionable</strong>.
+              {t('landing.engagement.description')}
             </p>
           </motion.div>
 
@@ -316,56 +316,54 @@ export const LandingPage: React.FC = () => {
             <motion.div variants={item}>
               <Card className="luxury-card luxury-hover h-full p-8 bg-white/95 dark:bg-dark-luxury-surface/95 border-luxury-gold/20 dark:border-luxury-gold/30">
                 <div className="text-xs uppercase tracking-widest text-slate-400 mb-2">
-                  Step 1
+                  {t('landing.engagement.steps.step1.label')}
                 </div>
                 <h3 className="text-lg font-semibold mb-3 dark:text-white">
-                  Scope & signal design
+                  {t('landing.engagement.steps.step1.title')}
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                  We define your STEEL™ profile (sector, regions, data types, vendors, regulatory
-                  perimeter) and select relevant open data & RSS sources.
+                  {t('landing.engagement.steps.step1.description')}
                 </p>
                 <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
-                  <li>Threat & regulation inventory.</li>
-                  <li>Vendor & SBOM footprint sketch.</li>
-                  <li>Risk appetite & board expectations.</li>
+                  {t('landing.engagement.steps.step1.items', { returnObjects: true }).map((item: string, idx: number) => (
+                    <li key={idx}>{item}</li>
+                  ))}
                 </ul>
               </Card>
             </motion.div>
             <motion.div variants={item}>
               <Card className="luxury-card luxury-hover h-full p-8 bg-white/95 dark:bg-dark-luxury-surface/95 border-luxury-gold/20 dark:border-luxury-gold/30">
                 <div className="text-xs uppercase tracking-widest text-slate-400 mb-2">
-                  Step 2
+                  {t('landing.engagement.steps.step2.label')}
                 </div>
                 <h3 className="text-lg font-semibold mb-3 dark:text-white">
-                  STEEL™ run & workshop
+                  {t('landing.engagement.steps.step2.title')}
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                  We execute STEEL™, build the landscape dashboards, and run an interactive session
-                  with your stakeholders.
+                  {t('landing.engagement.steps.step2.description')}
                 </p>
                 <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
-                  <li>Visual threat weather & strategic risk overlays.</li>
-                  <li>Scenario-based risk scores.</li>
-                  <li>Pre-mapping to ERMITS tools.</li>
+                  {t('landing.engagement.steps.step2.items', { returnObjects: true }).map((item: string, idx: number) => (
+                    <li key={idx}>{item}</li>
+                  ))}
                 </ul>
               </Card>
             </motion.div>
             <motion.div variants={item}>
               <Card className="luxury-card luxury-hover h-full p-8 bg-white/95 dark:bg-dark-luxury-surface/95 border-luxury-gold/20 dark:border-luxury-gold/30">
                 <div className="text-xs uppercase tracking-widest text-slate-400 mb-2">
-                  Step 3
+                  {t('landing.engagement.steps.step3.label')}
                 </div>
                 <h3 className="text-lg font-semibold mb-3 dark:text-white">
-                  Strategic roadmap with ERMITS ecosystem mapping
+                  {t('landing.engagement.steps.step3.title')}
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                  You receive a concise strategic roadmap that links each priority finding to the relevant ERMITS ecosystem capabilities and implementation approach.
+                  {t('landing.engagement.steps.step3.description')}
                 </p>
                 <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
-                  <li>Ranked recommendations (90-day view).</li>
-                  <li>Which ERMITS ecosystem capabilities to activate first and why.</li>
-                  <li>Options for ongoing STEEL™ monitoring if you want a live dashboard.</li>
+                  {t('landing.engagement.steps.step3.items', { returnObjects: true }).map((item: string, idx: number) => (
+                    <li key={idx}>{item}</li>
+                  ))}
                 </ul>
               </Card>
             </motion.div>
