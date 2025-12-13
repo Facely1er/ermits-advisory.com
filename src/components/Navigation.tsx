@@ -65,9 +65,11 @@ export const Navigation: React.FC = () => {
           {/* Logo - Made more compact */}
           <Link to="/" className="flex items-center flex-shrink-0">
             <img src={logoImg} alt="ERMITS Advisory" className="h-12" />
-            <div className="ml-3 font-['Inter',_'SF_Pro_Display',_system-ui,_-apple-system,_sans-serif]">
-              <span className="block text-xl font-bold text-navy dark:text-white tracking-tight">ERMITS</span>
-              <span className="block text-xl font-bold text-navy dark:text-white tracking-tight">Advisory</span>
+            <div className="ml-3">
+              <span className="font-outfit font-semibold text-navy dark:text-white">
+                <span className="block text-sm">ERMITS</span>
+                <span className="block text-sm">Advisory</span>
+              </span>
             </div>
           </Link>
 
