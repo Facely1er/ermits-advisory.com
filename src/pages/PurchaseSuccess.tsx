@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { CheckCircle, Download, Mail, ArrowRight } from 'lucide-react';
@@ -10,6 +11,7 @@ export const PurchaseSuccess: React.FC = () => {
   const sessionId = searchParams.get('session_id');
   const [productType, setProductType] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const { t } = useTranslation();
 
   useEffect(() => {
     // Get product type from URL parameters
@@ -32,30 +34,30 @@ export const PurchaseSuccess: React.FC = () => {
     switch (productType) {
       case 'steel-premium':
         return {
-          name: 'STEEL™ Premium Diagnostic',
-          message: 'Your access code has been sent to your email.',
-          action: 'Check your email for your access code',
+          name: t('purchaseSuccess.products.steelPremium.name'),
+          message: t('purchaseSuccess.products.steelPremium.message'),
+          action: t('purchaseSuccess.products.steelPremium.action'),
           icon: <Mail size={48} className="text-gold" />,
         };
       case 'vciso-kit':
         return {
-          name: 'vCISO Starter Kit',
-          message: 'Your download link has been sent to your email.',
-          action: 'Check your email for the download link',
+          name: t('purchaseSuccess.products.vcisoKit.name'),
+          message: t('purchaseSuccess.products.vcisoKit.message'),
+          action: t('purchaseSuccess.products.vcisoKit.action'),
           icon: <Download size={48} className="text-gold" />,
         };
       case 'dashboard-template':
         return {
-          name: 'Executive Dashboard Template',
-          message: 'Your download link has been sent to your email.',
-          action: 'Check your email for the download link',
+          name: t('purchaseSuccess.products.dashboardTemplate.name'),
+          message: t('purchaseSuccess.products.dashboardTemplate.message'),
+          action: t('purchaseSuccess.products.dashboardTemplate.action'),
           icon: <Download size={48} className="text-gold" />,
         };
       default:
         return {
-          name: 'Product',
-          message: 'Thank you for your purchase!',
-          action: 'Check your email for delivery instructions',
+          name: t('purchaseSuccess.products.default.name'),
+          message: t('purchaseSuccess.products.default.message'),
+          action: t('purchaseSuccess.products.default.action'),
           icon: <CheckCircle size={48} className="text-gold" />,
         };
     }

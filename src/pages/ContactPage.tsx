@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { 
@@ -25,6 +26,7 @@ export const ContactPage: React.FC = () => {
   const [searchParams] = useSearchParams();
   const serviceParam = searchParams.get('service') || '';
   const typeParam = searchParams.get('type') || 'contact'; // 'contact' or 'quote'
+  const { t } = useTranslation();
   
   const [formState, setFormState] = useState<FormState>({
     name: '',
@@ -40,21 +42,21 @@ export const ContactPage: React.FC = () => {
 
   // Service options for quote requests
   const serviceOptions = [
-    { value: '', label: 'Select a service...' },
-    { value: 'rapid-steel', label: 'Rapid STEEL™ Diagnostic' },
-    { value: 'comprehensive-steel', label: 'Comprehensive STEEL™ Diagnostic' },
-    { value: 'industry-steel', label: 'Industry-Specific STEEL™ Diagnostic' },
-    { value: 'compliance-readiness', label: 'Compliance Readiness' },
-    { value: 'audit-preparation', label: 'Audit Preparation' },
-    { value: 'strategic-vciso', label: 'Strategic Advisory vCISO' },
-    { value: 'operational-vciso', label: 'Operational vCISO' },
-    { value: 'executive-vciso', label: 'Executive vCISO' },
-    { value: 'security-program', label: 'Security Program Foundation' },
-    { value: 'risk-management', label: 'Risk Management Program' },
-    { value: 'board-governance', label: 'Board Governance Program' },
-    { value: 'vendor-risk', label: 'Vendor Risk Program' },
-    { value: 'incident-response', label: 'Incident Response Planning' },
-    { value: 'other', label: 'Other Service' }
+    { value: '', label: t('contact.services.select') },
+    { value: 'rapid-steel', label: t('contact.services.rapidSteel') },
+    { value: 'comprehensive-steel', label: t('contact.services.comprehensiveSteel') },
+    { value: 'industry-steel', label: t('contact.services.industrySteel') },
+    { value: 'compliance-readiness', label: t('contact.services.complianceReadiness') },
+    { value: 'audit-preparation', label: t('contact.services.auditPreparation') },
+    { value: 'strategic-vciso', label: t('contact.services.strategicVciso') },
+    { value: 'operational-vciso', label: t('contact.services.operationalVciso') },
+    { value: 'executive-vciso', label: t('contact.services.executiveVciso') },
+    { value: 'security-program', label: t('contact.services.securityProgram') },
+    { value: 'risk-management', label: t('contact.services.riskManagement') },
+    { value: 'board-governance', label: t('contact.services.boardGovernance') },
+    { value: 'vendor-risk', label: t('contact.services.vendorRisk') },
+    { value: 'incident-response', label: t('contact.services.incidentResponse') },
+    { value: 'other', label: t('contact.services.other') }
   ];
 
   // Update page title based on type
@@ -97,28 +99,28 @@ export const ContactPage: React.FC = () => {
     
     // Required fields
     if (!formState.name.trim()) {
-      newErrors.name = 'Name is required';
+      newErrors.name = t('contact.validation.nameRequired');
     }
     
     if (!formState.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = t('contact.validation.emailRequired');
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formState.email)) {
-      newErrors.email = 'Please enter a valid email';
+      newErrors.email = t('contact.validation.emailInvalid');
     }
     
     if (!formState.company.trim()) {
-      newErrors.company = 'Company is required';
+      newErrors.company = t('contact.validation.companyRequired');
     }
     
     if (!formState.message.trim()) {
-      newErrors.message = 'Message is required';
+      newErrors.message = t('contact.validation.messageRequired');
     } else if (formState.message.length < 10) {
-      newErrors.message = 'Message must be at least 10 characters';
+      newErrors.message = t('contact.validation.messageMinLength');
     }
     
     // Require service for quote requests
     if (typeParam === 'quote' && !formState.service.trim()) {
-      newErrors.service = 'Please select a service';
+      newErrors.service = t('contact.validation.serviceRequired');
     }
     
     setErrors(newErrors);
@@ -182,12 +184,12 @@ export const ContactPage: React.FC = () => {
           className="pt-16 mb-12 text-center"
         >
           <h1 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-            {typeParam === 'quote' ? 'Request a Quote' : 'Contact Us'}
+            {typeParam === 'quote' ? t('contact.hero.titleQuote') : t('contact.hero.titleContact')}
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
             {typeParam === 'quote' 
-              ? 'Get a customized quote for our professional services'
-              : 'Get in touch with our team to discuss your security needs'}
+              ? t('contact.hero.subtitleQuote')
+              : t('contact.hero.subtitleContact')}
           </p>
         </motion.div>
 
@@ -201,15 +203,15 @@ export const ContactPage: React.FC = () => {
           >
             <Card variant="glass" padding="lg">
               <h2 className="text-2xl font-bold mb-6 dark:text-white">
-                {typeParam === 'quote' ? 'Service Quote Request' : 'Send Us a Message'}
+                {typeParam === 'quote' ? t('contact.form.titleQuote') : t('contact.form.titleContact')}
               </h2>
               
               {submitStatus === 'success' && (
                 <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-900 rounded-lg flex items-start">
                   <CheckCircle className="text-green-500 mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-green-800 dark:text-green-400">Message Sent Successfully!</h3>
-                    <p className="text-green-700 dark:text-green-300">We'll get back to you within 24 hours</p>
+                    <h3 className="font-semibold text-green-800 dark:text-green-400">{t('contact.status.successTitle')}</h3>
+                    <p className="text-green-700 dark:text-green-300">{t('contact.status.successMessage')}</p>
                   </div>
                 </div>
               )}
@@ -218,8 +220,8 @@ export const ContactPage: React.FC = () => {
                 <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-900 rounded-lg flex items-start">
                   <AlertCircle className="text-red-500 mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-red-800 dark:text-red-400">Error Sending Message</h3>
-                    <p className="text-red-700 dark:text-red-300">Please try again or contact us directly</p>
+                    <h3 className="font-semibold text-red-800 dark:text-red-400">{t('contact.status.errorTitle')}</h3>
+                    <p className="text-red-700 dark:text-red-300">{t('contact.status.errorMessage')}</p>
                   </div>
                 </div>
               )}
@@ -228,7 +230,7 @@ export const ContactPage: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                      Name *
+                      {t('contact.form.name')} *
                     </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -241,7 +243,7 @@ export const ContactPage: React.FC = () => {
                         value={formState.name}
                         onChange={handleChange}
                         className={`w-full pl-10 pr-3 py-2 border ${errors.name ? 'border-red-500 dark:border-red-500' : 'border-gray-300 dark:border-gray-600'} rounded-md shadow-sm focus:outline-none focus:ring-navy focus:border-navy dark:bg-dark-surface dark:text-white`}
-                        placeholder="John Doe"
+                        placeholder={t('contact.form.placeholderName')}
                       />
                     </div>
                     {errors.name && (
@@ -251,7 +253,7 @@ export const ContactPage: React.FC = () => {
                   
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                      Email *
+                      {t('contact.form.email')} *
                     </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -264,7 +266,7 @@ export const ContactPage: React.FC = () => {
                         value={formState.email}
                         onChange={handleChange}
                         className={`w-full pl-10 pr-3 py-2 border ${errors.email ? 'border-red-500 dark:border-red-500' : 'border-gray-300 dark:border-gray-600'} rounded-md shadow-sm focus:outline-none focus:ring-navy focus:border-navy dark:bg-dark-surface dark:text-white`}
-                        placeholder="john@company.com"
+                        placeholder={t('contact.form.placeholderEmail')}
                       />
                     </div>
                     {errors.email && (
@@ -274,7 +276,7 @@ export const ContactPage: React.FC = () => {
                   
                   <div>
                     <label htmlFor="company" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                      Company *
+                      {t('contact.form.company')} *
                     </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -287,7 +289,7 @@ export const ContactPage: React.FC = () => {
                         value={formState.company}
                         onChange={handleChange}
                         className={`w-full pl-10 pr-3 py-2 border ${errors.company ? 'border-red-500 dark:border-red-500' : 'border-gray-300 dark:border-gray-600'} rounded-md shadow-sm focus:outline-none focus:ring-navy focus:border-navy dark:bg-dark-surface dark:text-white`}
-                        placeholder="Acme Corp"
+                        placeholder={t('contact.form.placeholderCompany')}
                       />
                     </div>
                     {errors.company && (
@@ -299,7 +301,7 @@ export const ContactPage: React.FC = () => {
                   {typeParam === 'quote' && (
                     <div className="md:col-span-2">
                       <label htmlFor="service" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                        Service of Interest *
+                        {t('contact.form.service')} *
                       </label>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -328,7 +330,7 @@ export const ContactPage: React.FC = () => {
                 
                 <div className="mb-6">
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                    Message *
+                    {t('contact.form.message')} *
                   </label>
                   <div className="relative">
                     <div className="absolute top-3 left-3 flex items-start pointer-events-none">
@@ -341,7 +343,7 @@ export const ContactPage: React.FC = () => {
                       value={formState.message}
                       onChange={handleChange}
                       className={`w-full pl-10 pr-3 py-2 border ${errors.message ? 'border-red-500 dark:border-red-500' : 'border-gray-300 dark:border-gray-600'} rounded-md shadow-sm focus:outline-none focus:ring-navy focus:border-navy dark:bg-dark-surface dark:text-white`}
-                      placeholder={typeParam === 'quote' ? 'Tell us about your requirements, timeline, and any specific needs...' : 'Tell us about your security needs...'}
+                      placeholder={typeParam === 'quote' ? t('contact.form.placeholderMessageQuote') : t('contact.form.placeholderMessageContact')}
                     ></textarea>
                   </div>
                   {errors.message && (
@@ -351,7 +353,7 @@ export const ContactPage: React.FC = () => {
                 
                 <div className="flex items-center justify-between">
                   <p className="text-sm text-gray-500 dark:text-gray-400">
-                    * Required fields
+                    * {t('contact.form.required')}
                   </p>
                   <Button
                     type="submit"
@@ -361,7 +363,7 @@ export const ContactPage: React.FC = () => {
                     icon={<Send size={16} />}
                     iconPosition="right"
                   >
-                    {typeParam === 'quote' ? 'Request Quote' : 'Send Message'}
+                    {typeParam === 'quote' ? t('contact.form.buttonQuote') : t('contact.form.buttonContact')}
                   </Button>
                 </div>
               </form>
@@ -375,7 +377,7 @@ export const ContactPage: React.FC = () => {
             transition={{ delay: 0.3 }}
           >
             <Card variant="glass" padding="lg" className="h-full">
-              <h2 className="text-2xl font-bold mb-6 dark:text-white">Get In Touch</h2>
+              <h2 className="text-2xl font-bold mb-6 dark:text-white">{t('contact.info.title')}</h2>
               
               <div className="space-y-6">
                 <div className="flex">
@@ -383,8 +385,8 @@ export const ContactPage: React.FC = () => {
                     <Mail size={20} className="text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold dark:text-white">Email</h3>
-                    <p className="text-gray-600 dark:text-gray-300">Send us an email anytime</p>
+                    <h3 className="text-lg font-semibold dark:text-white">{t('contact.info.emailTitle')}</h3>
+                    <p className="text-gray-600 dark:text-gray-300">{t('contact.info.emailDescription')}</p>
                     <a href="mailto:advisory@ermits.com" className="text-navy dark:text-silver font-medium hover:underline">
                       advisory@ermits.com
                     </a>
@@ -403,27 +405,27 @@ export const ContactPage: React.FC = () => {
           transition={{ delay: 0.5 }}
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-6 dark:text-white">Frequently Asked Questions</h2>
+            <h2 className="text-2xl font-bold mb-6 dark:text-white">{t('contact.faq.title')}</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <h3 className="text-lg font-semibold mb-2 dark:text-white">What is your response time?</h3>
-                <p className="text-gray-600 dark:text-gray-200 mb-4">We aim to respond to all inquiries within 24 hours during business days.</p>
+                <h3 className="text-lg font-semibold mb-2 dark:text-white">{t('contact.faq.q1.question')}</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-4">{t('contact.faq.q1.answer')}</p>
               </div>
               
               <div>
-                <h3 className="text-lg font-semibold mb-2 dark:text-white">Do you work with international clients?</h3>
-                <p className="text-gray-600 dark:text-gray-200 mb-4">Yes, we serve clients globally and can accommodate different time zones.</p>
+                <h3 className="text-lg font-semibold mb-2 dark:text-white">{t('contact.faq.q2.question')}</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-4">{t('contact.faq.q2.answer')}</p>
               </div>
               
               <div>
-                <h3 className="text-lg font-semibold mb-2 dark:text-white">Is my information kept confidential?</h3>
-                <p className="text-gray-600 dark:text-gray-200 mb-4">Absolutely. All communications and information are kept strictly confidential.</p>
+                <h3 className="text-lg font-semibold mb-2 dark:text-white">{t('contact.faq.q3.question')}</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-4">{t('contact.faq.q3.answer')}</p>
               </div>
               
               <div>
-                <h3 className="text-lg font-semibold mb-2 dark:text-white">What should I prepare for our call?</h3>
-                <p className="text-gray-600 dark:text-gray-200 mb-4">Brief overview of your current security posture and specific challenges you're facing.</p>
+                <h3 className="text-lg font-semibold mb-2 dark:text-white">{t('contact.faq.q4.question')}</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-4">{t('contact.faq.q4.answer')}</p>
               </div>
             </div>
           </Card>

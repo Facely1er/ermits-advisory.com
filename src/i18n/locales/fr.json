@@ -362,6 +362,282 @@
       "description": "Chaque engagement commence par la compréhension de votre contexte. D'un diagnostic STEEL™ ciblé à un modèle de gestion vCISO continu, ERMITS Advisory peut être calibré à votre échelle, secteur et urgence.",
       "button": "Contactez notre équipe"
     }
+  },
+  "steel": {
+    "whatIsSteel": {
+      "title": "Qu'est-ce que STEEL™ ?",
+      "intro": "signifie",
+      "fullName": "Couche d'évaluation stratégique des menaces et de l'entreprise",
+      "description1": "Ce n'est pas une liste de contrôle ou un score unique—c'est une architecture de diagnostic structurée que ERMITS Advisory utilise pour comprendre où vous êtes, quelles pressions vous affectent et ce qui doit se passer ensuite.",
+      "description2": "STEEL™ combine trois sous-couches de diagnostic internes en une méthode cohérente : la",
+      "strategic": "Couche de diagnostic stratégique",
+      "threat": "Couche de diagnostic des menaces",
+      "enterprise": "Couche de diagnostic d'entreprise"
+    },
+    "pestelFoundation": {
+      "title": "Construit sur PESTEL, amélioré pour la cybersécurité",
+      "description1": "STEEL™ est construit sur la base éprouvée de l'",
+      "pestel": "analyse PESTEL",
+      "pestelDescription": "(Politique, Économique, Social, Technologique, Environnemental, Légal) — un cadre stratégique utilisé par les organisations du monde entier pour comprendre les facteurs externes affectant leur entreprise.",
+      "description2": "ERMITS a amélioré PESTEL spécifiquement pour la",
+      "focus": "cybersécurité et la gestion des risques d'entreprise",
+      "description3": "en ajoutant trois dimensions d'évaluation critiques que PESTEL seul n'aborde pas :",
+      "strategicLayer": {
+        "title": "Couche stratégique",
+        "description": "Comment le risque cybernétique s'intègre à la stratégie commerciale, à la gouvernance et à la prise de décision au niveau du conseil d'administration"
+      },
+      "threatLayer": {
+        "title": "Couche de menaces",
+        "description": "Renseignements sur les menaces en temps réel, analyse de la surface d'attaque et préparation aux incidents spécifiques à votre secteur"
+      },
+      "enterpriseLayer": {
+        "title": "Couche d'entreprise",
+        "description": "Capacités internes, dépendances des fournisseurs, maturité des contrôles et résilience opérationnelle"
+      },
+      "result": "Le résultat :",
+      "conclusion": "STEEL™ maintient la rigueur stratégique de PESTEL tout en ajoutant la profondeur cyber-spécifique dont les dirigeants ont besoin pour prendre des décisions d'investissement en sécurité éclairées et comprendre leur véritable posture de risque."
+    },
+    "advisoryUses": {
+      "title": "Comment ERMITS Advisory utilise STEEL™",
+      "description": "ERMITS Advisory fonctionne au-dessus de la couche STEEL™. Nous exécutons des diagnostics STEEL™ pour établir : où vous êtes aujourd'hui, quelles pressions comptent le plus et quelles sont les prochaines étapes.",
+      "items": [
+        "Évaluer votre posture à travers les trois sous-couches STEEL™",
+        "Générer un indice STEEL™ qui reflète votre exposition réelle et votre préparation",
+        "Traduire l'indice STEEL™ en une feuille de route de gouvernance et de transformation",
+        "Soutenir les cadres et les conseils avec des rapports et un soutien décisionnel alignés sur STEEL™",
+        "Gouverner l'exécution continue en utilisant STEEL™ comme couche de référence"
+      ]
+    },
+    "sublayers": {
+      "title": "Les sous-couches de diagnostic STEEL™",
+      "strategic": {
+        "number": "1.",
+        "title": "Couche de diagnostic stratégique",
+        "description": "La couche de diagnostic stratégique examine comment le risque cybernétique et la résilience s'entrecroisent avec votre modèle commercial et de gouvernance.",
+        "items": [
+          "Alignement commercial et de mission",
+          "Structures de gouvernance et responsabilité",
+          "Appétit pour le risque, tolérance et seuils de décision",
+          "Attentes réglementaires et du marché",
+          "Priorités des cadres et du conseil d'administration"
+        ]
+      },
+      "threat": {
+        "number": "2.",
+        "title": "Couche de diagnostic des menaces",
+        "description": "La couche de diagnostic des menaces évalue la pression externe sur votre organisation provenant des menaces actuelles et émergentes.",
+        "items": [
+          "Paysage des menaces spécifiques au secteur et profils des acteurs",
+          "Exposition aux ransomwares, violations de données et fraudes",
+          "Surface d'attaque et posture de vulnérabilité",
+          "Préparation aux incidents et scénarios de réponse",
+          "Impact des vulnérabilités et campagnes émergentes"
+        ]
+      },
+      "enterprise": {
+        "number": "3.",
+        "title": "Couche de diagnostic d'entreprise",
+        "description": "La couche de diagnostic d'entreprise évalue la réalité interne de votre organisation : capacités, dépendances et résilience sous pression.",
+        "items": [
+          "Contrôles, architecture et maturité de l'ingénierie de sécurité",
+          "Processus et flux de travail à travers les équipes et les unités commerciales",
+          "Flux de données, actifs critiques et \"joyaux de la couronne\"",
+          "Dépendances des fournisseurs, partenaires et chaîne d'approvisionnement",
+          "Résilience opérationnelle, continuité et capacités de récupération"
+        ]
+      },
+      "conclusion": "Ensemble, ces sous-couches forment une méthode unique :",
+      "conclusionText": "la couche d'évaluation stratégique des menaces et de l'entreprise. C'est une couche de diagnostic avec une structure interne—pas une liste de piliers d'acronymes indépendants."
+    },
+    "steelIndex": {
+      "title": "L'indice STEEL™",
+      "intro": "Pour rendre STEEL™ exploitable, ERMITS Advisory exprime le diagnostic comme l'",
+      "indexName": "indice STEEL™",
+      "description": "une vue unifiée de votre position et de ce qui doit se passer ensuite.",
+      "combines": "L'indice STEEL™ combine trois scores sous-jacents :",
+      "scores": {
+        "strategic": {
+          "name": "Score stratégique (score S)",
+          "description": "alignement de la gouvernance, clarté de l'appétit pour le risque et intégration de la cybersécurité dans la prise de décision commerciale."
+        },
+        "threat": {
+          "name": "Score de menace (score T)",
+          "description": "exposition aux menaces actives et émergentes, préparation de la surface d'attaque et préparation aux incidents."
+        },
+        "enterprise": {
+          "name": "Score d'entreprise (score E)",
+          "description": "maturité des capacités à travers les contrôles, l'architecture, les flux de travail, les fournisseurs et la résilience."
+        }
+      },
+      "purpose": "L'indice STEEL™ est une agrégation pondérée de ces scores. Son objectif n'est pas de poursuivre un nombre parfait, mais de guider :",
+      "guidance": [
+        "Priorisation et séquençage des initiatives",
+        "Concentration de la gouvernance et de la surveillance au niveau de la direction",
+        "Quelles capacités de l'écosystème ERMITS doivent être activées en premier",
+        "Rapports aux cadres et aux conseils basés sur des preuves, pas des anecdotes"
+      ]
+    },
+    "ecosystem": {
+      "title": "Comment STEEL™ connecte Advisory à l'écosystème ERMITS",
+      "subtitle": "STEEL™ est le pont entre ERMITS Advisory et les capacités de l'écosystème ERMITS. Il détermine où l'attention, le budget et l'effort doivent aller, et quelles capacités doivent être activées.",
+      "mappingTitle": "Cartographie des sous-couches STEEL™ vers l'écosystème ERMITS",
+      "mappingDescription": "Chaque couche du cadre de diagnostic STEEL™ se connecte directement aux capacités spécialisées au sein de l'écosystème ERMITS. Ensemble, ils créent un système en boucle fermée pour la gouvernance, la gestion des risques et la résilience.",
+      "strategicLayer": {
+        "title": "Couche de diagnostic stratégique",
+        "description": "Évalue le contexte commercial, la maturité de la gouvernance, l'alignement des parties prenantes et l'appétit pour le risque.",
+        "mapsTo": "Mappe vers :",
+        "capabilities": "Services ERMITS Advisory – Gestion vCISO, Conseil GRC+, Rapports exécutifs et du conseil d'administration"
+      },
+      "threatLayer": {
+        "title": "Couche de diagnostic des menaces",
+        "description": "Évalue le paysage des menaces, les tactiques des adversaires, la préparation opérationnelle et la capacité de réponse aux incidents.",
+        "mapsTo": "Mappe vers :",
+        "capabilities": "Capacités de renseignement sur les menaces, de réponse aux incidents et de préparation opérationnelle"
+      },
+      "enterpriseLayer": {
+        "title": "Couche de diagnostic d'entreprise",
+        "description": "Examine l'architecture technologique, l'écosystème des fournisseurs, les dépendances opérationnelles et la mise en œuvre des contrôles.",
+        "mapsTo": "Mappe vers :",
+        "cyberCorrect": "Conformité, confidentialité et mise en œuvre des contrôles",
+        "cyberSoluce": "Conception de solutions, architecture et activation technologique",
+        "vendorSoluce": "Gouvernance des risques liés aux fournisseurs et à la chaîne d'approvisionnement"
+      },
+      "closedLoop": "Au fur et à mesure que ces capacités s'exécutent et génèrent des preuves, la télémétrie remonte dans STEEL™. Cela maintient votre indice STEEL™—et votre prise de décision—continuellement à jour.",
+      "exploreButton": "Explorer l'écosystème ERMITS"
+    },
+    "finalCta": {
+      "title": "Prêt à commencer ?",
+      "description": "Discutons de la façon dont STEEL™ peut renforcer la posture de risque de votre organisation.",
+      "button": "Contactez notre équipe"
+    }
+  },
+  "contact": {
+    "hero": {
+      "titleContact": "Contactez-nous",
+      "titleQuote": "Demander un devis",
+      "subtitleContact": "Contactez notre équipe pour discuter de vos besoins en sécurité",
+      "subtitleQuote": "Obtenez un devis personnalisé pour nos services professionnels"
+    },
+    "form": {
+      "titleContact": "Envoyez-nous un message",
+      "titleQuote": "Demande de devis de service",
+      "name": "Nom",
+      "email": "Courriel",
+      "company": "Entreprise",
+      "service": "Service d'intérêt",
+      "message": "Message",
+      "required": "Champs obligatoires",
+      "placeholderName": "Jean Dupont",
+      "placeholderEmail": "jean@entreprise.com",
+      "placeholderCompany": "Acme Corp",
+      "placeholderMessageContact": "Parlez-nous de vos besoins en sécurité...",
+      "placeholderMessageQuote": "Parlez-nous de vos exigences, de votre calendrier et de vos besoins spécifiques...",
+      "buttonContact": "Envoyer le message",
+      "buttonQuote": "Demander un devis"
+    },
+    "validation": {
+      "nameRequired": "Le nom est obligatoire",
+      "emailRequired": "Le courriel est obligatoire",
+      "emailInvalid": "Veuillez entrer un courriel valide",
+      "companyRequired": "L'entreprise est obligatoire",
+      "messageRequired": "Le message est obligatoire",
+      "messageMinLength": "Le message doit contenir au moins 10 caractères",
+      "serviceRequired": "Veuillez sélectionner un service"
+    },
+    "status": {
+      "successTitle": "Message envoyé avec succès !",
+      "successMessage": "Nous vous répondrons dans les 24 heures",
+      "errorTitle": "Erreur lors de l'envoi du message",
+      "errorMessage": "Veuillez réessayer ou nous contacter directement"
+    },
+    "info": {
+      "title": "Contactez-nous",
+      "emailTitle": "Courriel",
+      "emailDescription": "Envoyez-nous un courriel à tout moment"
+    },
+    "faq": {
+      "title": "Questions fréquemment posées",
+      "q1": {
+        "question": "Quel est votre temps de réponse ?",
+        "answer": "Nous visons à répondre à toutes les demandes dans les 24 heures pendant les jours ouvrables."
+      },
+      "q2": {
+        "question": "Travaillez-vous avec des clients internationaux ?",
+        "answer": "Oui, nous servons des clients dans le monde entier et pouvons accommoder différents fuseaux horaires."
+      },
+      "q3": {
+        "question": "Mes informations sont-elles gardées confidentielles ?",
+        "answer": "Absolument. Toutes les communications et informations sont gardées strictement confidentielles."
+      },
+      "q4": {
+        "question": "Que dois-je préparer pour notre appel ?",
+        "answer": "Un bref aperçu de votre posture de sécurité actuelle et des défis spécifiques auxquels vous êtes confronté."
+      }
+    },
+    "services": {
+      "select": "Sélectionnez un service...",
+      "rapidSteel": "Diagnostic STEEL™ rapide",
+      "comprehensiveSteel": "Diagnostic STEEL™ complet",
+      "industrySteel": "Diagnostic STEEL™ spécifique à l'industrie",
+      "complianceReadiness": "Préparation à la conformité",
+      "auditPreparation": "Préparation d'audit",
+      "strategicVciso": "vCISO conseil stratégique",
+      "operationalVciso": "vCISO opérationnel",
+      "executiveVciso": "vCISO exécutif",
+      "securityProgram": "Fondation de programme de sécurité",
+      "riskManagement": "Programme de gestion des risques",
+      "boardGovernance": "Programme de gouvernance du conseil",
+      "vendorRisk": "Programme de risque des fournisseurs",
+      "incidentResponse": "Planification de réponse aux incidents",
+      "other": "Autre service"
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "heading": "Page introuvable",
+    "description": "La page que vous recherchez n'existe pas ou a été déplacée.",
+    "returnHome": "Retour à l'accueil",
+    "goBack": "Retour",
+    "lookingFor": "Vous cherchez quelque chose de spécifique ?",
+    "searchPlaceholder": "Rechercher sur notre site...",
+    "popularPages": "Pages populaires :"
+  },
+  "purchaseSuccess": {
+    "processing": "Traitement de votre achat...",
+    "title": "Paiement réussi ! 🎉",
+    "thankYou": "Merci d'avoir acheté",
+    "products": {
+      "steelPremium": {
+        "name": "Diagnostic STEEL™ Premium",
+        "message": "Votre code d'accès a été envoyé à votre courriel.",
+        "action": "Consultez votre courriel pour votre code d'accès"
+      },
+      "vcisoKit": {
+        "name": "Kit de démarrage vCISO",
+        "message": "Votre lien de téléchargement a été envoyé à votre courriel.",
+        "action": "Consultez votre courriel pour le lien de téléchargement"
+      },
+      "dashboardTemplate": {
+        "name": "Modèle de tableau de bord exécutif",
+        "message": "Votre lien de téléchargement a été envoyé à votre courriel.",
+        "action": "Consultez votre courriel pour le lien de téléchargement"
+      },
+      "default": {
+        "name": "Produit",
+        "message": "Merci pour votre achat !",
+        "action": "Consultez votre courriel pour les instructions de livraison"
+      }
+    },
+    "nextSteps": "Prochaines étapes",
+    "steps": {
+      "step1": "Consultez votre courriel pour les détails d'accès",
+      "step2": "Suivez les instructions dans le courriel",
+      "step3": "Commencez à utiliser vos nouvelles ressources"
+    },
+    "needHelp": "Besoin d'aide ?",
+    "support": "Si vous n'avez pas reçu votre courriel dans les 10 minutes, ou si vous avez besoin d'assistance, veuillez contacter notre équipe de support :",
+    "returnHome": "Retour à l'accueil",
+    "viewServices": "Voir tous les services"
   }
 }
 

@@ -1,11 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { Home, ArrowLeft, Search, AlertCircle, BarChart2 } from 'lucide-react';
 
 export const NotFoundPage: React.FC = () => {
+  const { t } = useTranslation();
+  
   return (
     <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
       <div className="container mx-auto px-4">
@@ -18,12 +21,12 @@ export const NotFoundPage: React.FC = () => {
             <AlertCircle size={48} className="text-navy dark:text-silver" />
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 dark:text-white">404</h1>
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 dark:text-white">{t('notFound.title')}</h1>
           <h2 className="text-2xl md:text-3xl font-bold mb-6 dark:text-white">
-            Page Not Found
+            {t('notFound.heading')}
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-200 mb-8">
-            The page you're looking for doesn't exist or has been moved.
+            {t('notFound.description')}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
@@ -34,7 +37,7 @@ export const NotFoundPage: React.FC = () => {
                 icon={<Home size={18} />}
                 iconPosition="left"
               >
-                Return to Home
+                {t('notFound.returnHome')}
               </Button>
             </Link>
 
@@ -45,7 +48,7 @@ export const NotFoundPage: React.FC = () => {
               iconPosition="left"
               onClick={() => window.history.back()}
             >
-              Go Back
+              {t('notFound.goBack')}
             </Button>
           </div>
         </motion.div>
@@ -58,7 +61,7 @@ export const NotFoundPage: React.FC = () => {
         >
           <Card variant="glass" padding="lg">
             <h3 className="text-xl font-semibold mb-4 dark:text-white">
-              Looking for something specific?
+              {t('notFound.lookingFor')}
             </h3>
 
             <div className="space-y-4">
@@ -69,11 +72,11 @@ export const NotFoundPage: React.FC = () => {
                 <input
                   type="text"
                   className="block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-navy focus:border-navy dark:bg-dark-surface dark:text-white"
-                  placeholder="Search our website..."
+                  placeholder={t('notFound.searchPlaceholder')}
                 />
               </div>
 
-              <h4 className="font-medium text-lg dark:text-gray-100">Popular pages:</h4>
+              <h4 className="font-medium text-lg dark:text-gray-100">{t('notFound.popularPages')}</h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <Link
                   to="/steel"

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import { SteelIndexCard } from '../components/steel/SteelIndexCard';
@@ -17,6 +18,7 @@ import vendorSoluceLogo from '../assets/vendorsoluce.png';
 
 export const SteelMethodPage: React.FC = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const container = {
     hidden: { opacity: 0 },
@@ -46,14 +48,14 @@ export const SteelMethodPage: React.FC = () => {
             <Card className="p-8 md:p-12">
               <div className="max-w-4xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 dark:text-white text-center">
-                  What Is STEEL™?
+                  {t('steel.whatIsSteel.title')}
                 </h2>
                 <div className="space-y-4 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                   <p>
-                    <strong className="text-navy dark:text-white">STEEL™</strong> stands for <strong className="text-navy dark:text-white">Strategic Threat & Enterprise Evaluation Layer</strong>. It is not a checklist or a single score—it is a structured diagnostic architecture that ERMITS Advisory uses to understand where you are, what pressures you face, and what needs to happen next.
+                    <strong className="text-navy dark:text-white">STEEL™</strong> {t('steel.whatIsSteel.intro')} <strong className="text-navy dark:text-white">{t('steel.whatIsSteel.fullName')}</strong>. {t('steel.whatIsSteel.description1')}
                   </p>
                   <p>
-                    STEEL™ combines three internal diagnostic sublayers into one coherent method: the <strong className="text-navy dark:text-white">Strategic Diagnostic Layer</strong>, the <strong className="text-navy dark:text-white">Threat Diagnostic Layer</strong>, and the <strong className="text-navy dark:text-white">Enterprise Diagnostic Layer</strong>.
+                    {t('steel.whatIsSteel.description2')} <strong className="text-navy dark:text-white">{t('steel.whatIsSteel.strategic')}</strong>, {t('steel.whatIsSteel.threat')}, {t('steel.whatIsSteel.enterprise')}.
                   </p>
                 </div>
               </div>
@@ -71,31 +73,31 @@ export const SteelMethodPage: React.FC = () => {
             <Card className="p-8 md:p-12 bg-gradient-to-r from-cyan-50 to-blue-50 dark:from-cyan-900/20 dark:to-blue-900/20 border border-cyan-200 dark:border-cyan-700/50">
               <div className="max-w-4xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 dark:text-white text-center">
-                  Built on PESTEL, Enhanced for Cybersecurity
+                  {t('steel.pestelFoundation.title')}
                 </h2>
                 <div className="space-y-4 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                   <p>
-                    STEEL™ is built on the proven foundation of <strong className="text-navy dark:text-white">PESTEL analysis</strong> (Political, Economic, Social, Technological, Environmental, Legal) — a strategic framework used by organizations worldwide to understand external factors affecting their business.
+                    {t('steel.pestelFoundation.description1')} <strong className="text-navy dark:text-white">{t('steel.pestelFoundation.pestel')}</strong> {t('steel.pestelFoundation.pestelDescription')}
                   </p>
                   <p>
-                    ERMITS enhanced PESTEL specifically for <strong className="text-navy dark:text-white">cybersecurity and enterprise risk management</strong> by adding three critical evaluation dimensions that PESTEL alone doesn't address:
+                    {t('steel.pestelFoundation.description2')} <strong className="text-navy dark:text-white">{t('steel.pestelFoundation.focus')}</strong> {t('steel.pestelFoundation.description3')}
                   </p>
                   <ul className="space-y-3 my-6 ml-6">
                     <li className="flex items-start">
                       <CheckCircle size={20} className="mr-3 mt-0.5 text-cyan-500 flex-shrink-0" />
-                      <span><strong className="text-navy dark:text-white">Strategic Layer</strong> — How cyber risk integrates with business strategy, governance, and board-level decision-making</span>
+                      <span><strong className="text-navy dark:text-white">{t('steel.pestelFoundation.strategicLayer.title')}</strong> — {t('steel.pestelFoundation.strategicLayer.description')}</span>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle size={20} className="mr-3 mt-0.5 text-cyan-500 flex-shrink-0" />
-                      <span><strong className="text-navy dark:text-white">Threat Layer</strong> — Real-time threat intelligence, attack surface analysis, and incident readiness specific to your sector</span>
+                      <span><strong className="text-navy dark:text-white">{t('steel.pestelFoundation.threatLayer.title')}</strong> — {t('steel.pestelFoundation.threatLayer.description')}</span>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle size={20} className="mr-3 mt-0.5 text-cyan-500 flex-shrink-0" />
-                      <span><strong className="text-navy dark:text-white">Enterprise Layer</strong> — Internal capabilities, vendor dependencies, controls maturity, and operational resilience</span>
+                      <span><strong className="text-navy dark:text-white">{t('steel.pestelFoundation.enterpriseLayer.title')}</strong> — {t('steel.pestelFoundation.enterpriseLayer.description')}</span>
                     </li>
                   </ul>
                   <p className="pt-4 border-t border-cyan-200 dark:border-cyan-700">
-                    <strong className="text-navy dark:text-white">The result:</strong> STEEL™ maintains PESTEL's strategic rigor while adding the cyber-specific depth that executives need to make informed security investments and understand their true risk posture.
+                    <strong className="text-navy dark:text-white">{t('steel.pestelFoundation.result')}</strong> {t('steel.pestelFoundation.conclusion')}
                   </p>
                 </div>
               </div>
@@ -113,32 +115,18 @@ export const SteelMethodPage: React.FC = () => {
             <Card className="p-8 md:p-12">
               <div className="max-w-4xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 dark:text-white text-center">
-                  How ERMITS Advisory Uses STEEL™
+                  {t('steel.advisoryUses.title')}
                 </h2>
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  ERMITS Advisory operates on top of the STEEL™ layer. We run STEEL™ Diagnostics to establish: where you are today, what pressures matter most, and what the next moves should be.
+                  {t('steel.advisoryUses.description')}
                 </p>
                 <ul className="space-y-3 text-base text-gray-700 dark:text-gray-300 mb-6">
-                  <li className="flex items-start">
-                    <CheckCircle size={20} className="mr-3 mt-0.5 text-navy dark:text-silver flex-shrink-0" />
-                    <span>Assess your posture across the three STEEL™ sublayers</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={20} className="mr-3 mt-0.5 text-navy dark:text-silver flex-shrink-0" />
-                    <span>Generate a STEEL™ Index that reflects your real exposure and readiness</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={20} className="mr-3 mt-0.5 text-navy dark:text-silver flex-shrink-0" />
-                    <span>Translate the STEEL™ Index into a governance and transformation roadmap</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={20} className="mr-3 mt-0.5 text-navy dark:text-silver flex-shrink-0" />
-                    <span>Support executives and boards with STEEL™-aligned reporting and decision support</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={20} className="mr-3 mt-0.5 text-navy dark:text-silver flex-shrink-0" />
-                    <span>Govern ongoing execution using STEEL™ as the reference layer</span>
-                  </li>
+                  {(t('steel.advisoryUses.items', { returnObjects: true }) as string[]).map((item, idx) => (
+                    <li key={idx} className="flex items-start">
+                      <CheckCircle size={20} className="mr-3 mt-0.5 text-navy dark:text-silver flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </Card>
@@ -154,7 +142,7 @@ export const SteelMethodPage: React.FC = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              The STEEL™ Diagnostic Sublayers
+              {t('steel.sublayers.title')}
             </h2>
           </motion.div>
 
@@ -173,33 +161,19 @@ export const SteelMethodPage: React.FC = () => {
                     <Target size={32} className="text-navy dark:text-silver" />
                   </div>
                   <h3 className="text-xl font-bold text-navy dark:text-white mb-3">
-                    1. Strategic Diagnostic Layer
+                    {t('steel.sublayers.strategic.number')} {t('steel.sublayers.strategic.title')}
                   </h3>
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                  The Strategic Diagnostic Layer examines how cyber risk and resilience intersect with your business and governance model.
+                  {t('steel.sublayers.strategic.description')}
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-navy dark:text-silver flex-shrink-0" />
-                    <span>Business and mission alignment</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-navy dark:text-silver flex-shrink-0" />
-                    <span>Governance structures and accountability</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-navy dark:text-silver flex-shrink-0" />
-                    <span>Risk appetite, tolerance, and decision thresholds</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-navy dark:text-silver flex-shrink-0" />
-                    <span>Regulatory and market expectations</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-navy dark:text-silver flex-shrink-0" />
-                    <span>Executive and board priorities</span>
-                  </li>
+                  {(t('steel.sublayers.strategic.items', { returnObjects: true }) as string[]).map((item, idx) => (
+                    <li key={idx} className="flex items-start">
+                      <CheckCircle size={16} className="mr-2 mt-0.5 text-navy dark:text-silver flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
                 </ul>
               </Card>
             </motion.div>
@@ -212,33 +186,19 @@ export const SteelMethodPage: React.FC = () => {
                     <AlertCircle size={32} className="text-red-600 dark:text-red-400" />
                   </div>
                   <h3 className="text-xl font-bold text-navy dark:text-white mb-3">
-                    2. Threat Diagnostic Layer
+                    {t('steel.sublayers.threat.number')} {t('steel.sublayers.threat.title')}
                   </h3>
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                  The Threat Diagnostic Layer evaluates the external pressure on your organization from current and emerging threats.
+                  {t('steel.sublayers.threat.description')}
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-red-500 flex-shrink-0" />
-                    <span>Sector-specific threat landscape and actor profiles</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-red-500 flex-shrink-0" />
-                    <span>Ransomware, data breach, and fraud exposure</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-red-500 flex-shrink-0" />
-                    <span>Attack surface and vulnerability posture</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-red-500 flex-shrink-0" />
-                    <span>Incident readiness and response scenarios</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-red-500 flex-shrink-0" />
-                    <span>Impact of emerging vulnerabilities and campaigns</span>
-                  </li>
+                  {(t('steel.sublayers.threat.items', { returnObjects: true }) as string[]).map((item, idx) => (
+                    <li key={idx} className="flex items-start">
+                      <CheckCircle size={16} className="mr-2 mt-0.5 text-red-500 flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
                 </ul>
               </Card>
             </motion.div>
@@ -251,33 +211,19 @@ export const SteelMethodPage: React.FC = () => {
                     <Layers size={32} className="text-blue-600 dark:text-blue-400" />
                   </div>
                   <h3 className="text-xl font-bold text-navy dark:text-white mb-3">
-                    3. Enterprise Diagnostic Layer
+                    {t('steel.sublayers.enterprise.number')} {t('steel.sublayers.enterprise.title')}
                   </h3>
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                  The Enterprise Diagnostic Layer assesses the internal reality of your organization: capabilities, dependencies, and resilience under stress.
+                  {t('steel.sublayers.enterprise.description')}
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-blue-500 flex-shrink-0" />
-                    <span>Controls, architecture, and security engineering maturity</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-blue-500 flex-shrink-0" />
-                    <span>Processes and workflows across teams and business units</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-blue-500 flex-shrink-0" />
-                    <span>Data flows, critical assets, and "crown jewels"</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-blue-500 flex-shrink-0" />
-                    <span>Vendor, partner, and supply chain dependencies</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle size={16} className="mr-2 mt-0.5 text-blue-500 flex-shrink-0" />
-                    <span>Operational resilience, continuity, and recovery capabilities</span>
-                  </li>
+                  {(t('steel.sublayers.enterprise.items', { returnObjects: true }) as string[]).map((item, idx) => (
+                    <li key={idx} className="flex items-start">
+                      <CheckCircle size={16} className="mr-2 mt-0.5 text-blue-500 flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
                 </ul>
               </Card>
             </motion.div>
@@ -291,7 +237,7 @@ export const SteelMethodPage: React.FC = () => {
           >
             <Card className="p-6 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 border border-blue-200 dark:border-blue-800">
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-center">
-                Together, these sublayers form a single method: <strong className="text-navy dark:text-white">STEEL™</strong>, the Strategic Threat & Enterprise Evaluation Layer. It is one diagnostic layer with internal structure—not a list of independent acronym pillars.
+                {t('steel.sublayers.conclusion')} <strong className="text-navy dark:text-white">STEEL™</strong>, {t('steel.sublayers.conclusionText')}
               </p>
             </Card>
           </motion.div>
@@ -306,7 +252,7 @@ export const SteelMethodPage: React.FC = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              The STEEL™ Index
+              {t('steel.steelIndex.title')}
             </h2>
           </motion.div>
 
@@ -330,44 +276,34 @@ export const SteelMethodPage: React.FC = () => {
             <Card className="p-8">
               <div className="space-y-6">
                 <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                  To make STEEL™ actionable, ERMITS Advisory expresses the diagnostic as the <strong className="text-navy dark:text-white">STEEL™ Index</strong>: a unified view of where you stand and what must happen next.
+                  {t('steel.steelIndex.intro')} <strong className="text-navy dark:text-white">{t('steel.steelIndex.indexName')}</strong>: {t('steel.steelIndex.description')}
                 </p>
-                <p className="text-lg text-gray-600 dark:text-gray-400">The STEEL™ Index combines three underlying scores:</p>
+                <p className="text-lg text-gray-600 dark:text-gray-400">{t('steel.steelIndex.combines')}</p>
                 <ul className="space-y-3 text-base text-gray-700 dark:text-gray-300">
                   <li className="flex items-start">
                     <CheckCircle size={20} className="mr-3 mt-0.5 text-navy dark:text-silver flex-shrink-0" />
-                    <span><strong className="text-navy dark:text-white">Strategic Score (S-score)</strong> – governance alignment, risk appetite clarity, and integration of cyber into business decision-making.</span>
+                    <span><strong className="text-navy dark:text-white">{t('steel.steelIndex.scores.strategic.name')}</strong> – {t('steel.steelIndex.scores.strategic.description')}</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle size={20} className="mr-3 mt-0.5 text-red-500 flex-shrink-0" />
-                    <span><strong className="text-navy dark:text-white">Threat Score (T-score)</strong> – exposure to active and emerging threats, attack surface readiness, and incident readiness.</span>
+                    <span><strong className="text-navy dark:text-white">{t('steel.steelIndex.scores.threat.name')}</strong> – {t('steel.steelIndex.scores.threat.description')}</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle size={20} className="mr-3 mt-0.5 text-blue-500 flex-shrink-0" />
-                    <span><strong className="text-navy dark:text-white">Enterprise Score (E-score)</strong> – capability maturity across controls, architecture, workflows, vendors, and resilience.</span>
+                    <span><strong className="text-navy dark:text-white">{t('steel.steelIndex.scores.enterprise.name')}</strong> – {t('steel.steelIndex.scores.enterprise.description')}</span>
                   </li>
                 </ul>
                 <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
                   <p className="text-lg text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                    The STEEL™ Index is a weighted aggregation of these scores. Its purpose is not to chase a perfect number, but to guide:
+                    {t('steel.steelIndex.purpose')}
                   </p>
                   <ul className="space-y-2 text-base text-gray-600 dark:text-gray-400">
-                    <li className="flex items-start">
-                      <CheckCircle size={18} className="mr-2 mt-0.5 text-cyan-500 flex-shrink-0" />
-                      <span>Prioritization and sequencing of initiatives</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle size={18} className="mr-2 mt-0.5 text-cyan-500 flex-shrink-0" />
-                      <span>Governance and oversight focus at leadership level</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle size={18} className="mr-2 mt-0.5 text-cyan-500 flex-shrink-0" />
-                      <span>Which ERMITS ecosystem capabilities should be activated first</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle size={18} className="mr-2 mt-0.5 text-cyan-500 flex-shrink-0" />
-                      <span>Reporting to executives and boards based on evidence, not anecdotes</span>
-                    </li>
+                    {(t('steel.steelIndex.guidance', { returnObjects: true }) as string[]).map((item, idx) => (
+                      <li key={idx} className="flex items-start">
+                        <CheckCircle size={18} className="mr-2 mt-0.5 text-cyan-500 flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -384,10 +320,10 @@ export const SteelMethodPage: React.FC = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              How STEEL™ Connects Advisory to the ERMITS Ecosystem
+              {t('steel.ecosystem.title')}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-6">
-              STEEL™ is the bridge between ERMITS Advisory and the ERMITS ecosystem capabilities. It determines where attention, budget, and effort should go, and which capabilities should be activated.
+              {t('steel.ecosystem.subtitle')}
             </p>
           </motion.div>
 
@@ -400,55 +336,55 @@ export const SteelMethodPage: React.FC = () => {
           >
             <Card className="p-8">
               <h3 className="text-2xl font-bold mb-6 dark:text-white text-center">
-                Mapping STEEL™ sublayers to the ERMITS Ecosystem
+                {t('steel.ecosystem.mappingTitle')}
               </h3>
               <p className="text-base text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                Each layer of the STEEL™ diagnostic framework connects directly to specialized capabilities within the ERMITS ecosystem. Together, they create a closed-loop system for governance, risk management, and resilience.
+                {t('steel.ecosystem.mappingDescription')}
               </p>
               
               <div className="space-y-6">
                 {/* Strategic Layer */}
                 <div className="border-l-4 border-blue-500 pl-6 py-2">
-                  <h4 className="text-xl font-bold text-navy dark:text-white mb-3">Strategic Diagnostic Layer</h4>
+                  <h4 className="text-xl font-bold text-navy dark:text-white mb-3">{t('steel.ecosystem.strategicLayer.title')}</h4>
                   <p className="text-base text-gray-700 dark:text-gray-300 mb-4">
-                    Assesses business context, governance maturity, stakeholder alignment, and risk appetite.
+                    {t('steel.ecosystem.strategicLayer.description')}
                   </p>
                   <div className="flex items-start mb-2">
                     <ArrowRight size={18} className="mr-2 mt-1 text-blue-500 flex-shrink-0" />
-                    <span className="text-gray-700 dark:text-gray-300"><strong className="text-navy dark:text-white">Maps to:</strong> ERMITS Advisory Services – vCISO Stewardship, GRC+ Advisory, Executive & Board Reporting</span>
+                    <span className="text-gray-700 dark:text-gray-300"><strong className="text-navy dark:text-white">{t('steel.ecosystem.strategicLayer.mapsTo')}</strong> {t('steel.ecosystem.strategicLayer.capabilities')}</span>
                   </div>
                 </div>
 
                 {/* Threat Layer */}
                 <div className="border-l-4 border-red-500 pl-6 py-2">
-                  <h4 className="text-xl font-bold text-navy dark:text-white mb-3">Threat Diagnostic Layer</h4>
+                  <h4 className="text-xl font-bold text-navy dark:text-white mb-3">{t('steel.ecosystem.threatLayer.title')}</h4>
                   <p className="text-base text-gray-700 dark:text-gray-300 mb-4">
-                    Evaluates threat landscape, adversary tactics, operational readiness, and incident response capability.
+                    {t('steel.ecosystem.threatLayer.description')}
                   </p>
                   <div className="flex items-center gap-3 mb-2">
                     <img src={cyberCautionLogo} alt="CyberCaution" className="w-10 h-10 object-contain flex-shrink-0" />
-                    <span className="text-gray-700 dark:text-gray-300"><strong className="text-navy dark:text-white">Maps to:</strong> <strong className="text-red-600 dark:text-red-400">CyberCaution™</strong> – Threat intelligence, incident response, and operational readiness capabilities</span>
+                    <span className="text-gray-700 dark:text-gray-300"><strong className="text-navy dark:text-white">{t('steel.ecosystem.threatLayer.mapsTo')}</strong> <strong className="text-red-600 dark:text-red-400">CyberCaution™</strong> – {t('steel.ecosystem.threatLayer.capabilities')}</span>
                   </div>
                 </div>
 
                 {/* Enterprise Layer */}
                 <div className="border-l-4 border-green-500 pl-6 py-2">
-                  <h4 className="text-xl font-bold text-navy dark:text-white mb-3">Enterprise Diagnostic Layer</h4>
+                  <h4 className="text-xl font-bold text-navy dark:text-white mb-3">{t('steel.ecosystem.enterpriseLayer.title')}</h4>
                   <p className="text-base text-gray-700 dark:text-gray-300 mb-4">
-                    Examines technology architecture, vendor ecosystem, operational dependencies, and control implementation.
+                    {t('steel.ecosystem.enterpriseLayer.description')}
                   </p>
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
                       <img src={cyberCorrectLogo} alt="CyberCorrect" className="w-10 h-10 object-contain flex-shrink-0" />
-                      <span className="text-gray-700 dark:text-gray-300"><strong className="text-navy dark:text-white">Maps to:</strong> <strong className="text-green-600 dark:text-green-400">CyberCorrect™</strong> – Compliance, privacy, and control implementation</span>
+                      <span className="text-gray-700 dark:text-gray-300"><strong className="text-navy dark:text-white">{t('steel.ecosystem.enterpriseLayer.mapsTo')}</strong> <strong className="text-green-600 dark:text-green-400">CyberCorrect™</strong> – {t('steel.ecosystem.enterpriseLayer.cyberCorrect')}</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <img src={cyberSoluceLogo} alt="CyberSoluce" className="w-10 h-10 object-contain flex-shrink-0" />
-                      <span className="text-gray-700 dark:text-gray-300"><strong className="text-navy dark:text-white">Maps to:</strong> <strong className="text-blue-600 dark:text-blue-400">CyberSoluce™</strong> – Solution design, architecture, and technology enablement</span>
+                      <span className="text-gray-700 dark:text-gray-300"><strong className="text-navy dark:text-white">{t('steel.ecosystem.enterpriseLayer.mapsTo')}</strong> <strong className="text-blue-600 dark:text-blue-400">CyberSoluce™</strong> – {t('steel.ecosystem.enterpriseLayer.cyberSoluce')}</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <img src={vendorSoluceLogo} alt="VendorSoluce" className="w-10 h-10 object-contain flex-shrink-0" />
-                      <span className="text-gray-700 dark:text-gray-300"><strong className="text-navy dark:text-white">Maps to:</strong> <strong className="text-orange-600 dark:text-orange-400">VendorSoluce™</strong> – Vendor and supply chain risk governance</span>
+                      <span className="text-gray-700 dark:text-gray-300"><strong className="text-navy dark:text-white">{t('steel.ecosystem.enterpriseLayer.mapsTo')}</strong> <strong className="text-orange-600 dark:text-orange-400">VendorSoluce™</strong> – {t('steel.ecosystem.enterpriseLayer.vendorSoluce')}</span>
                     </div>
                   </div>
                 </div>
@@ -465,7 +401,7 @@ export const SteelMethodPage: React.FC = () => {
           >
             <Card className="p-6 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 border border-blue-200 dark:border-blue-800">
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-center mb-6">
-                As these capabilities execute and generate evidence, telemetry flows back into STEEL™. This keeps your STEEL™ Index—and your decision-making—continuously current.
+                {t('steel.ecosystem.closedLoop')}
               </p>
               <div className="flex justify-center">
                 <Button
@@ -475,7 +411,7 @@ export const SteelMethodPage: React.FC = () => {
                   icon={<ArrowRight size={18} />}
                   iconPosition="right"
                 >
-                  Explore the ERMITS Ecosystem
+                  {t('steel.ecosystem.exploreButton')}
                 </Button>
               </div>
             </Card>
@@ -491,10 +427,10 @@ export const SteelMethodPage: React.FC = () => {
           >
             <Card className="p-8 md:p-12 bg-gradient-to-r from-navy to-navy-dark text-white text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ready to Get Started?
+                {t('steel.finalCta.title')}
               </h2>
               <p className="text-lg text-silver/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Let's discuss how STEEL™ can strengthen your organization's risk posture.
+                {t('steel.finalCta.description')}
               </p>
               <Button
                 variant="secondary"
@@ -504,7 +440,7 @@ export const SteelMethodPage: React.FC = () => {
                 iconPosition="right"
                 className="bg-white text-navy hover:bg-silver"
               >
-                Contact Our Team
+                {t('steel.finalCta.button')}
               </Button>
             </Card>
           </motion.div>

@@ -362,6 +362,282 @@
       "description": "Every engagement starts with understanding your context. From a focused STEEL™ Diagnostic to an ongoing vCISO stewardship model, ERMITS Advisory can be calibrated to your scale, sector, and urgency.",
       "button": "Contact Our Team"
     }
+  },
+  "steel": {
+    "whatIsSteel": {
+      "title": "What Is STEEL™?",
+      "intro": "stands for",
+      "fullName": "Strategic Threat & Enterprise Evaluation Layer",
+      "description1": "It is not a checklist or a single score—it is a structured diagnostic architecture that ERMITS Advisory uses to understand where you are, what pressures you face, and what needs to happen next.",
+      "description2": "STEEL™ combines three internal diagnostic sublayers into one coherent method: the",
+      "strategic": "Strategic Diagnostic Layer",
+      "threat": "Threat Diagnostic Layer",
+      "enterprise": "Enterprise Diagnostic Layer"
+    },
+    "pestelFoundation": {
+      "title": "Built on PESTEL, Enhanced for Cybersecurity",
+      "description1": "STEEL™ is built on the proven foundation of",
+      "pestel": "PESTEL analysis",
+      "pestelDescription": "(Political, Economic, Social, Technological, Environmental, Legal) — a strategic framework used by organizations worldwide to understand external factors affecting their business.",
+      "description2": "ERMITS enhanced PESTEL specifically for",
+      "focus": "cybersecurity and enterprise risk management",
+      "description3": "by adding three critical evaluation dimensions that PESTEL alone doesn't address:",
+      "strategicLayer": {
+        "title": "Strategic Layer",
+        "description": "How cyber risk integrates with business strategy, governance, and board-level decision-making"
+      },
+      "threatLayer": {
+        "title": "Threat Layer",
+        "description": "Real-time threat intelligence, attack surface analysis, and incident readiness specific to your sector"
+      },
+      "enterpriseLayer": {
+        "title": "Enterprise Layer",
+        "description": "Internal capabilities, vendor dependencies, controls maturity, and operational resilience"
+      },
+      "result": "The result:",
+      "conclusion": "STEEL™ maintains PESTEL's strategic rigor while adding the cyber-specific depth that executives need to make informed security investments and understand their true risk posture."
+    },
+    "advisoryUses": {
+      "title": "How ERMITS Advisory Uses STEEL™",
+      "description": "ERMITS Advisory operates on top of the STEEL™ layer. We run STEEL™ Diagnostics to establish: where you are today, what pressures matter most, and what the next moves should be.",
+      "items": [
+        "Assess your posture across the three STEEL™ sublayers",
+        "Generate a STEEL™ Index that reflects your real exposure and readiness",
+        "Translate the STEEL™ Index into a governance and transformation roadmap",
+        "Support executives and boards with STEEL™-aligned reporting and decision support",
+        "Govern ongoing execution using STEEL™ as the reference layer"
+      ]
+    },
+    "sublayers": {
+      "title": "The STEEL™ Diagnostic Sublayers",
+      "strategic": {
+        "number": "1.",
+        "title": "Strategic Diagnostic Layer",
+        "description": "The Strategic Diagnostic Layer examines how cyber risk and resilience intersect with your business and governance model.",
+        "items": [
+          "Business and mission alignment",
+          "Governance structures and accountability",
+          "Risk appetite, tolerance, and decision thresholds",
+          "Regulatory and market expectations",
+          "Executive and board priorities"
+        ]
+      },
+      "threat": {
+        "number": "2.",
+        "title": "Threat Diagnostic Layer",
+        "description": "The Threat Diagnostic Layer evaluates the external pressure on your organization from current and emerging threats.",
+        "items": [
+          "Sector-specific threat landscape and actor profiles",
+          "Ransomware, data breach, and fraud exposure",
+          "Attack surface and vulnerability posture",
+          "Incident readiness and response scenarios",
+          "Impact of emerging vulnerabilities and campaigns"
+        ]
+      },
+      "enterprise": {
+        "number": "3.",
+        "title": "Enterprise Diagnostic Layer",
+        "description": "The Enterprise Diagnostic Layer assesses the internal reality of your organization: capabilities, dependencies, and resilience under stress.",
+        "items": [
+          "Controls, architecture, and security engineering maturity",
+          "Processes and workflows across teams and business units",
+          "Data flows, critical assets, and \"crown jewels\"",
+          "Vendor, partner, and supply chain dependencies",
+          "Operational resilience, continuity, and recovery capabilities"
+        ]
+      },
+      "conclusion": "Together, these sublayers form a single method:",
+      "conclusionText": "the Strategic Threat & Enterprise Evaluation Layer. It is one diagnostic layer with internal structure—not a list of independent acronym pillars."
+    },
+    "steelIndex": {
+      "title": "The STEEL™ Index",
+      "intro": "To make STEEL™ actionable, ERMITS Advisory expresses the diagnostic as the",
+      "indexName": "STEEL™ Index",
+      "description": "a unified view of where you stand and what must happen next.",
+      "combines": "The STEEL™ Index combines three underlying scores:",
+      "scores": {
+        "strategic": {
+          "name": "Strategic Score (S-score)",
+          "description": "governance alignment, risk appetite clarity, and integration of cyber into business decision-making."
+        },
+        "threat": {
+          "name": "Threat Score (T-score)",
+          "description": "exposure to active and emerging threats, attack surface readiness, and incident readiness."
+        },
+        "enterprise": {
+          "name": "Enterprise Score (E-score)",
+          "description": "capability maturity across controls, architecture, workflows, vendors, and resilience."
+        }
+      },
+      "purpose": "The STEEL™ Index is a weighted aggregation of these scores. Its purpose is not to chase a perfect number, but to guide:",
+      "guidance": [
+        "Prioritization and sequencing of initiatives",
+        "Governance and oversight focus at leadership level",
+        "Which ERMITS ecosystem capabilities should be activated first",
+        "Reporting to executives and boards based on evidence, not anecdotes"
+      ]
+    },
+    "ecosystem": {
+      "title": "How STEEL™ Connects Advisory to the ERMITS Ecosystem",
+      "subtitle": "STEEL™ is the bridge between ERMITS Advisory and the ERMITS ecosystem capabilities. It determines where attention, budget, and effort should go, and which capabilities should be activated.",
+      "mappingTitle": "Mapping STEEL™ sublayers to the ERMITS Ecosystem",
+      "mappingDescription": "Each layer of the STEEL™ diagnostic framework connects directly to specialized capabilities within the ERMITS ecosystem. Together, they create a closed-loop system for governance, risk management, and resilience.",
+      "strategicLayer": {
+        "title": "Strategic Diagnostic Layer",
+        "description": "Assesses business context, governance maturity, stakeholder alignment, and risk appetite.",
+        "mapsTo": "Maps to:",
+        "capabilities": "ERMITS Advisory Services – vCISO Stewardship, GRC+ Advisory, Executive & Board Reporting"
+      },
+      "threatLayer": {
+        "title": "Threat Diagnostic Layer",
+        "description": "Evaluates threat landscape, adversary tactics, operational readiness, and incident response capability.",
+        "mapsTo": "Maps to:",
+        "capabilities": "Threat intelligence, incident response, and operational readiness capabilities"
+      },
+      "enterpriseLayer": {
+        "title": "Enterprise Diagnostic Layer",
+        "description": "Examines technology architecture, vendor ecosystem, operational dependencies, and control implementation.",
+        "mapsTo": "Maps to:",
+        "cyberCorrect": "Compliance, privacy, and control implementation",
+        "cyberSoluce": "Solution design, architecture, and technology enablement",
+        "vendorSoluce": "Vendor and supply chain risk governance"
+      },
+      "closedLoop": "As these capabilities execute and generate evidence, telemetry flows back into STEEL™. This keeps your STEEL™ Index—and your decision-making—continuously current.",
+      "exploreButton": "Explore the ERMITS Ecosystem"
+    },
+    "finalCta": {
+      "title": "Ready to Get Started?",
+      "description": "Let's discuss how STEEL™ can strengthen your organization's risk posture.",
+      "button": "Contact Our Team"
+    }
+  },
+  "contact": {
+    "hero": {
+      "titleContact": "Contact Us",
+      "titleQuote": "Request a Quote",
+      "subtitleContact": "Get in touch with our team to discuss your security needs",
+      "subtitleQuote": "Get a customized quote for our professional services"
+    },
+    "form": {
+      "titleContact": "Send Us a Message",
+      "titleQuote": "Service Quote Request",
+      "name": "Name",
+      "email": "Email",
+      "company": "Company",
+      "service": "Service of Interest",
+      "message": "Message",
+      "required": "Required fields",
+      "placeholderName": "John Doe",
+      "placeholderEmail": "john@company.com",
+      "placeholderCompany": "Acme Corp",
+      "placeholderMessageContact": "Tell us about your security needs...",
+      "placeholderMessageQuote": "Tell us about your requirements, timeline, and any specific needs...",
+      "buttonContact": "Send Message",
+      "buttonQuote": "Request Quote"
+    },
+    "validation": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email",
+      "companyRequired": "Company is required",
+      "messageRequired": "Message is required",
+      "messageMinLength": "Message must be at least 10 characters",
+      "serviceRequired": "Please select a service"
+    },
+    "status": {
+      "successTitle": "Message Sent Successfully!",
+      "successMessage": "We'll get back to you within 24 hours",
+      "errorTitle": "Error Sending Message",
+      "errorMessage": "Please try again or contact us directly"
+    },
+    "info": {
+      "title": "Get In Touch",
+      "emailTitle": "Email",
+      "emailDescription": "Send us an email anytime"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": {
+        "question": "What is your response time?",
+        "answer": "We aim to respond to all inquiries within 24 hours during business days."
+      },
+      "q2": {
+        "question": "Do you work with international clients?",
+        "answer": "Yes, we serve clients globally and can accommodate different time zones."
+      },
+      "q3": {
+        "question": "Is my information kept confidential?",
+        "answer": "Absolutely. All communications and information are kept strictly confidential."
+      },
+      "q4": {
+        "question": "What should I prepare for our call?",
+        "answer": "Brief overview of your current security posture and specific challenges you're facing."
+      }
+    },
+    "services": {
+      "select": "Select a service...",
+      "rapidSteel": "Rapid STEEL™ Diagnostic",
+      "comprehensiveSteel": "Comprehensive STEEL™ Diagnostic",
+      "industrySteel": "Industry-Specific STEEL™ Diagnostic",
+      "complianceReadiness": "Compliance Readiness",
+      "auditPreparation": "Audit Preparation",
+      "strategicVciso": "Strategic Advisory vCISO",
+      "operationalVciso": "Operational vCISO",
+      "executiveVciso": "Executive vCISO",
+      "securityProgram": "Security Program Foundation",
+      "riskManagement": "Risk Management Program",
+      "boardGovernance": "Board Governance Program",
+      "vendorRisk": "Vendor Risk Program",
+      "incidentResponse": "Incident Response Planning",
+      "other": "Other Service"
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "heading": "Page Not Found",
+    "description": "The page you're looking for doesn't exist or has been moved.",
+    "returnHome": "Return to Home",
+    "goBack": "Go Back",
+    "lookingFor": "Looking for something specific?",
+    "searchPlaceholder": "Search our website...",
+    "popularPages": "Popular pages:"
+  },
+  "purchaseSuccess": {
+    "processing": "Processing your purchase...",
+    "title": "Payment Successful! 🎉",
+    "thankYou": "Thank you for purchasing",
+    "products": {
+      "steelPremium": {
+        "name": "STEEL™ Premium Diagnostic",
+        "message": "Your access code has been sent to your email.",
+        "action": "Check your email for your access code"
+      },
+      "vcisoKit": {
+        "name": "vCISO Starter Kit",
+        "message": "Your download link has been sent to your email.",
+        "action": "Check your email for the download link"
+      },
+      "dashboardTemplate": {
+        "name": "Executive Dashboard Template",
+        "message": "Your download link has been sent to your email.",
+        "action": "Check your email for the download link"
+      },
+      "default": {
+        "name": "Product",
+        "message": "Thank you for your purchase!",
+        "action": "Check your email for delivery instructions"
+      }
+    },
+    "nextSteps": "Next Steps",
+    "steps": {
+      "step1": "Check your email for access details",
+      "step2": "Follow the instructions in the email",
+      "step3": "Start using your new resources"
+    },
+    "needHelp": "Need Help?",
+    "support": "If you haven't received your email within 10 minutes, or if you need any assistance, please contact our support team:",
+    "returnHome": "Return to Home",
+    "viewServices": "View All Services"
   }
 }
 
