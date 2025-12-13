@@ -190,7 +190,7 @@ export const STEELVisualization: React.FC = () => {
               <span className="text-xs">Strategic Threat & Enterprise Evaluation Layer</span>
             </motion.div>
 
-            <h1 className="text-3xl md:text-5xl font-bold mb-4">STEEL™ Strategic Risk Assessment</h1>
+            <h1 className="text-3xl md:text-5xl font-bold mb-4">STEEL™ Strategic Risk Diagnostic</h1>
             <p className="text-xl md:text-2xl mb-4 text-silver/90">
               Beyond Traditional PESTEL Analysis
             </p>

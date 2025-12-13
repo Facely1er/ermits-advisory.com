@@ -85,7 +85,7 @@ export const SteelPremium: React.FC = () => {
             <span className="text-gold font-semibold">Premium Features Unlocked</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 dark:text-white">
-            STEEL™ Premium Assessment
+            STEEL™ Premium Diagnostic
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-100 max-w-2xl mx-auto">
             Get comprehensive executive-level reports with professional visualizations and templates
@@ -190,7 +190,7 @@ export const SteelPremium: React.FC = () => {
               <div>
                 <h3 className="text-lg font-bold mb-2 dark:text-white">Privacy-First Assessment Tool</h3>
                 <p className="text-gray-600 dark:text-gray-200 text-sm mb-3">
-                  STEEL™ processes all data entirely in your browser. No assessment results are sent to external servers, stored in databases, or used for analytics. Your security posture remains completely confidential.
+                  STEEL™ processes all data entirely in your browser. No diagnostic results are sent to external servers, stored in databases, or used for analytics. Your security posture remains completely confidential.
                 </p>
                 <ul className="text-sm text-gray-600 dark:text-gray-200 space-y-1">
                   <li>✓ Client-side processing only</li>
@@ -309,7 +309,7 @@ export const SteelPremium: React.FC = () => {
           className="text-center"
         >
           <Link to="/steel" className="text-navy dark:text-silver hover:underline inline-flex items-center gap-2">
-            ← Back to STEEL™ Assessment
+            ← Back to STEEL™ Diagnostic
           </Link>
         </motion.div>
       </div>

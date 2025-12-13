@@ -128,7 +128,7 @@ export const SteelRecommendationsPage: React.FC = () => {
           <div className="flex items-center justify-between mb-4">
             <div>
               <h1 className="text-3xl font-bold dark:text-white mb-2">
-                STEEL™ Assessment Results
+                STEEL™ Diagnostic Results
               </h1>
               <p className="text-gray-600 dark:text-gray-200">
                 Comprehensive recommendations and strategic action plan
