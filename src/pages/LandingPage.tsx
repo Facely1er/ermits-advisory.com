@@ -382,14 +382,13 @@ export const LandingPage: React.FC = () => {
             className="text-center mb-12"
           >
             <div className="text-xs uppercase tracking-widest text-cyan-400 mb-2">
-              Use cases
+              {t('landing.useCases.subtitle')}
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              Where STEEL™ delivers outsized value first
+              {t('landing.useCases.title')}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Start where the threat landscape is moving faster than your internal bandwidth.
-              ERMITS Advisory focuses STEEL™ on concrete decision points — not academic models.
+              {t('landing.useCases.description')}
             </p>
           </motion.div>
 
@@ -403,52 +402,52 @@ export const LandingPage: React.FC = () => {
             <motion.div variants={item}>
               <Card className="h-full p-5 bg-white dark:bg-slate-900/96 border-slate-700/45 hover:shadow-xl transition-shadow">
                 <h3 className="text-base font-semibold mb-2 dark:text-white">
-                  SMBs under ransomware pressure
+                  {t('landing.useCases.cases.smb.title')}
                 </h3>
                 <div className="text-xs text-slate-400 mb-3">
-                  CyberCaution™ · CyberSoluce™
+                  {t('landing.useCases.cases.smb.tools')}
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Identify which ransomware families, regions, and attack chains matter for your sector, then prioritize affordable controls instead of generic checklists.
+                  {t('landing.useCases.cases.smb.description')}
                 </p>
               </Card>
             </motion.div>
             <motion.div variants={item}>
               <Card className="h-full p-5 bg-white dark:bg-slate-900/96 border-slate-700/45 hover:shadow-xl transition-shadow">
                 <h3 className="text-base font-semibold mb-2 dark:text-white">
-                  Privacy-heavy service providers
+                  {t('landing.useCases.cases.privacy.title')}
                 </h3>
                 <div className="text-xs text-slate-400 mb-3">
-                  CyberCorrect™ · SocialCaution™
+                  {t('landing.useCases.cases.privacy.tools')}
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Blend regulatory risk (GDPR, CCPA, LGPD, DPDP, etc.) with behavioral trends and data broker exposure to build a realistic privacy roadmap.
+                  {t('landing.useCases.cases.privacy.description')}
                 </p>
               </Card>
             </motion.div>
             <motion.div variants={item}>
               <Card className="h-full p-5 bg-white dark:bg-slate-900/96 border-slate-700/45 hover:shadow-xl transition-shadow">
                 <h3 className="text-base font-semibold mb-2 dark:text-white">
-                  Complex vendor & SBOM exposure
+                  {t('landing.useCases.cases.vendor.title')}
                 </h3>
                 <div className="text-xs text-slate-400 mb-3">
-                  VendorSoluce™ · VendorTal · TechnoSoluce™
+                  {t('landing.useCases.cases.vendor.tools')}
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Combine geopolitics, regulation, and software supply-chain indicators to see where your vendor stack and SBOMs are most fragile.
+                  {t('landing.useCases.cases.vendor.description')}
                 </p>
               </Card>
             </motion.div>
             <motion.div variants={item}>
               <Card className="h-full p-5 bg-white dark:bg-slate-900/96 border-slate-700/45 hover:shadow-xl transition-shadow">
                 <h3 className="text-base font-semibold mb-2 dark:text-white">
-                  Public sector & education
+                  {t('landing.useCases.cases.publicSector.title')}
                 </h3>
                 <div className="text-xs text-slate-400 mb-3">
-                  CyberCaution™ · SocialCaution™
+                  {t('landing.useCases.cases.publicSector.tools')}
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Use STEEL™ to translate national threat bulletins and policy changes into pragmatic steps for municipalities, schools, and agencies.
+                  {t('landing.useCases.cases.publicSector.description')}
                 </p>
               </Card>
             </motion.div>
@@ -467,10 +466,10 @@ export const LandingPage: React.FC = () => {
             className="text-center mb-12"
           >
             <motion.h2 variants={item} className="text-3xl font-bold mb-4 dark:text-white">
-              Industry-Standard Frameworks
+              {t('landing.trustIndicators.title')}
             </motion.h2>
             <motion.p variants={item} className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              Our methodology aligns with recognized security and compliance frameworks
+              {t('landing.trustIndicators.description')}
             </motion.p>
           </motion.div>
           
@@ -486,7 +485,7 @@ export const LandingPage: React.FC = () => {
                 <CheckCircle size={32} className="text-white" />
               </InteractiveCard>
               <p className="text-center font-medium dark:text-gray-100">
-                ISO 27001 Aligned
+                {t('landing.trustIndicators.frameworks.iso')}
               </p>
             </motion.div>
 
@@ -495,7 +494,7 @@ export const LandingPage: React.FC = () => {
                 <CheckCircle size={32} className="text-white" />
               </InteractiveCard>
               <p className="text-center font-medium dark:text-gray-100">
-                SOC 2 Compatible
+                {t('landing.trustIndicators.frameworks.soc2')}
               </p>
             </motion.div>
 
@@ -504,7 +503,7 @@ export const LandingPage: React.FC = () => {
                 <CheckCircle size={32} className="text-white" />
               </InteractiveCard>
               <p className="text-center font-medium dark:text-gray-100">
-                GDPR Considerations
+                {t('landing.trustIndicators.frameworks.gdpr')}
               </p>
             </motion.div>
 
@@ -513,7 +512,7 @@ export const LandingPage: React.FC = () => {
                 <CheckCircle size={32} className="text-white" />
               </InteractiveCard>
               <p className="text-center font-medium dark:text-gray-100">
-                NIST Framework Based
+                {t('landing.trustIndicators.frameworks.nist')}
               </p>
             </motion.div>
           </motion.div>
