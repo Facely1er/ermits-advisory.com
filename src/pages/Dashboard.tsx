@@ -375,7 +375,7 @@ export const Dashboard: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* STEEL Assessment Results Section */}
+        {/* STEEL™ Diagnostic Results Section */}
         {steelData ? (
           <>
             <motion.div
@@ -406,7 +406,7 @@ export const Dashboard: React.FC = () => {
                       </div>
                     </div>
                     <p className="text-gray-700 dark:text-gray-200 mb-4">
-                      Take your assessment to the next level with continuous monitoring. Import data from your 
+                      Take your diagnostic to the next level with continuous monitoring. Import data from your 
                       security tools to automatically calculate scores and track trends over time.
                     </p>
                     <div className="flex flex-wrap gap-2 mb-4">
@@ -443,10 +443,10 @@ export const Dashboard: React.FC = () => {
               <div className="text-center py-8">
                 <Shield size={48} className="mx-auto mb-4 text-gray-400 dark:text-gray-500" />
                 <h3 className="text-xl font-semibold dark:text-white mb-2">
-                  No STEEL™ Assessment Data
+                  No STEEL™ Diagnostic Data
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
-                  Complete the STEEL™ assessment to view your personalized risk scores and recommendations in the dashboard.
+                  Complete the STEEL™ Diagnostic to view your personalized risk scores and recommendations in the dashboard.
                 </p>
                 <div className="flex gap-4 justify-center flex-wrap">
                   <Button
@@ -454,7 +454,7 @@ export const Dashboard: React.FC = () => {
                     onClick={() => window.open('/steel/index.html', '_blank')}
                     icon={<LinkIcon size={18} />}
                   >
-                    Take STEEL™ Assessment
+                    Take STEEL™ Diagnostic
                   </Button>
                   <Button
                     variant="outline"

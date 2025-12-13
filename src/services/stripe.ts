@@ -91,7 +91,7 @@ export const getProductPriceId = (productType: ProductType): string => {
 export const getProductName = (productType: ProductType): string => {
   const product = getProduct(productType);
   return product?.name || {
-    'steel-premium': 'STEEL™ Premium Assessment',
+    'steel-premium': 'STEEL™ Premium Diagnostic',
     'vciso-kit': 'vCISO Starter Kit',
     'dashboard-template': 'Executive Dashboard Template',
   }[productType];

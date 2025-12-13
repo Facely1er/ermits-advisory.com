@@ -486,7 +486,7 @@ export const SteelRadar: React.FC = () => {
                     icon={<ArrowRight size={18} />}
                     iconPosition="right"
                   >
-                    Take STEEL Diagnostic First
+                    Take STEEL™ Diagnostic First
                   </Button>
                 )}
               </div>

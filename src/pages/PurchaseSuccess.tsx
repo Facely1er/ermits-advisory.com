@@ -136,7 +136,7 @@ export const PurchaseSuccess: React.FC = () => {
               variant="secondary"
               onClick={() => window.location.href = '/steel'}
             >
-              Go to STEEL Diagnostic
+              Go to STEEL™ Diagnostic
             </Button>
           )}
         </div>

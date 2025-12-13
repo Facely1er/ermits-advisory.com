@@ -387,15 +387,15 @@ export const STEELVisualization: React.FC = () => {
             })}
           </div>
 
-          {/* Assessment Status */}
+          {/* Diagnostic Status */}
           <div className="mt-8">
             {assessmentData ? (
               <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-6 text-center">
                 <p className="text-green-800 dark:text-green-200 font-semibold mb-2 text-lg">
-                  ✓ Assessment Complete
+                  ✓ Diagnostic Complete
                 </p>
                 <p className="text-sm text-green-700 dark:text-green-300 mb-6">
-                  Your assessment was completed on {new Date(assessmentData.timestamp).toLocaleDateString()}. 
+                  Your diagnostic was completed on {new Date(assessmentData.timestamp).toLocaleDateString()}. 
                   View your full results and recommendations in the dashboard.
                 </p>
                 <div className="flex flex-wrap justify-center gap-3">
@@ -415,14 +415,14 @@ export const STEELVisualization: React.FC = () => {
                     iconPosition="right"
                     onClick={() => window.open('/steel/index.html', '_blank')}
                   >
-                    Retake Assessment
+                    Retake Diagnostic
                   </Button>
                 </div>
               </div>
             ) : (
               <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg p-6 text-center">
                 <p className="text-amber-800 dark:text-amber-200 font-semibold mb-2 text-lg">
-                  No Assessment Data Found
+                  No Diagnostic Data Found
                 </p>
                 <p className="text-sm text-amber-700 dark:text-amber-300 mb-6">
                   Complete the STEEL™ diagnostic to see your personalized risk scores. 
@@ -435,7 +435,7 @@ export const STEELVisualization: React.FC = () => {
                   iconPosition="right"
                   onClick={() => window.open('/steel/index.html', '_blank')}
                 >
-                  Take the Free STEEL Diagnostic
+                  Take the Free STEEL™ Diagnostic
                 </Button>
               </div>
             )}

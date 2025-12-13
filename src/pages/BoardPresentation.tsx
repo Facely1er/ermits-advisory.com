@@ -27,7 +27,7 @@ export const BoardPresentation: React.FC = () => {
   const slideBackgrounds = useMemo(() => [
     slide1, // Executive briefing - modern office/meeting room
     slide2, // Risk landscape - cyber security concept
-    slide3, // STEEL assessment - data visualization
+    slide3, // STEEL diagnostic - data visualization
     slide4, // Strategic vulnerabilities - security concept
     slide5, // Recommended actions - team planning
     slide6, // Investment considerations - finance concept
@@ -387,7 +387,7 @@ export const BoardPresentation: React.FC = () => {
                   >
                     {currentSlide === 0 && "Executive Briefing"}
                     {currentSlide === 1 && "Current Risk Landscape"}
-                    {currentSlide === 2 && "STEEL™ Assessment Overview"}
+                    {currentSlide === 2 && "STEEL™ Diagnostic Overview"}
                     {currentSlide === 3 && "Strategic Vulnerabilities"}
                     {currentSlide === 4 && "Recommended Actions"}
                     {currentSlide === 5 && "Investment Considerations"}
@@ -416,7 +416,7 @@ export const BoardPresentation: React.FC = () => {
                     animate="visible"
                   >
                     <p className="text-lg mb-6">
-                      {currentSlide === 0 && "Our comprehensive assessment reveals key insights into your organization's security posture."}
+                      {currentSlide === 0 && "Our comprehensive diagnostic reveals key insights into your organization's security posture."}
                       {currentSlide === 1 && "The threat landscape continues to evolve across political, economic, social, technology, environmental, and legal dimensions."}
                       {currentSlide === 2 && "The STEEL framework provides a holistic view of strategic risks across six critical dimensions."}
                       {currentSlide === 3 && "We've identified several high-priority vulnerabilities that require immediate executive attention."}
@@ -428,7 +428,7 @@ export const BoardPresentation: React.FC = () => {
                     {/* Demo content for slides */}
                     {currentSlide === 2 && (
                       <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-6">
-                        <h4 className="text-xl font-semibold mb-4">STEEL™ Risk Assessment</h4>
+                        <h4 className="text-xl font-semibold mb-4">STEEL™ Risk Diagnostic</h4>
                         <div className="grid grid-cols-2 gap-4">
                           <div>
                             <div className="mb-2">

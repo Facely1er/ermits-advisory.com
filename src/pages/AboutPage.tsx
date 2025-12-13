@@ -76,7 +76,7 @@ export const AboutPage: React.FC = () => {
     items: [
       {
         name: "J.D. & LL.M.",
-        description: "Background in federal litigation, public records laws, and regulatory frameworks with advanced depth in privacy and cybersecurity legislation."
+        description: "Background in federal litigation, public records laws, and regulatory frameworks with advanced knowledge in privacy and cybersecurity legislation."
       }
     ]
   };

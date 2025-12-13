@@ -42,7 +42,7 @@ export const SteelDataImport: React.FC<SteelDataImportProps> = ({
         setImportStatus('idle');
       }, 3000);
     } catch (error) {
-      const errorMsg = error instanceof Error ? error.message : 'Failed to import assessment data.';
+      const errorMsg = error instanceof Error ? error.message : 'Failed to import diagnostic data.';
       setErrorMessage(errorMsg);
       setImportStatus('error');
       onImportError?.(errorMsg);
@@ -80,7 +80,7 @@ export const SteelDataImport: React.FC<SteelDataImportProps> = ({
     <Card variant="glass" padding="md">
       <div className="flex items-center gap-3 mb-4">
         <Upload size={20} className="text-navy dark:text-silver" />
-        <h3 className="text-lg font-semibold dark:text-white">Import STEEL Assessment</h3>
+        <h3 className="text-lg font-semibold dark:text-white">Import STEEL™ Diagnostic</h3>
       </div>
 
       <div
@@ -95,7 +95,7 @@ export const SteelDataImport: React.FC<SteelDataImportProps> = ({
       >
         <FileText size={48} className="mx-auto mb-4 text-gray-400 dark:text-gray-500" />
         <p className="text-gray-600 dark:text-gray-300 mb-4">
-          Drag and drop your STEEL assessment JSON file here, or click to browse
+          Drag and drop your STEEL™ Diagnostic JSON file here, or click to browse
         </p>
         <Button
           variant="outline"
@@ -110,8 +110,8 @@ export const SteelDataImport: React.FC<SteelDataImportProps> = ({
           accept=".json"
           onChange={handleFileInputChange}
           className="hidden"
-          aria-label="Import STEEL assessment JSON file"
-          title="Select a JSON file exported from the STEEL assessment"
+          aria-label="Import STEEL™ Diagnostic JSON file"
+          title="Select a JSON file exported from the STEEL™ Diagnostic"
         />
       </div>
 
@@ -123,7 +123,7 @@ export const SteelDataImport: React.FC<SteelDataImportProps> = ({
         >
           <CheckCircle size={20} className="text-green-600 dark:text-green-400" />
           <span className="text-green-700 dark:text-green-300 text-sm">
-            Assessment data imported successfully!
+            Diagnostic data imported successfully!
           </span>
         </motion.div>
       )}
@@ -140,7 +140,7 @@ export const SteelDataImport: React.FC<SteelDataImportProps> = ({
       )}
 
       <p className="text-xs text-gray-500 dark:text-gray-400 mt-4">
-        Import a JSON file exported from the STEEL assessment to view results in the dashboard.
+        Import a JSON file exported from the STEEL™ Diagnostic to view results in the dashboard.
       </p>
     </Card>
   );

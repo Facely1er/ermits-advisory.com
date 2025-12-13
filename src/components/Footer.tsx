@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logoImg from '../assets/ermits-advisory.png';
 import {
-  Mail, Shield, Users, FileText, Scale, Briefcase, Cookie, Download, Layers
+  Mail, Shield, Users, FileText, Scale, Briefcase, Cookie
 } from 'lucide-react';
 
 export const Footer: React.FC = () => {
@@ -36,18 +36,6 @@ export const Footer: React.FC = () => {
                 <Link to="/method/steel" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
                   <Shield size={14} className="mr-2 group-hover:scale-110 transition-transform" />
                   STEEL™ Diagnostic
-                </Link>
-              </li>
-              <li>
-                <Link to="/vciso-kit" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
-                  <Download size={14} className="mr-2 group-hover:scale-110 transition-transform" />
-                  vCISO Starter Kit
-                </Link>
-              </li>
-              <li>
-                <Link to="/vciso-kit" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
-                  <Layers size={14} className="mr-2 group-hover:scale-110 transition-transform" />
-                  vCISO Kit
                 </Link>
               </li>
             </ul>

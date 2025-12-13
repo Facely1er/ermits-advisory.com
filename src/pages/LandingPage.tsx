@@ -31,7 +31,7 @@ export const LandingPage: React.FC = () => {
 
   return (
     <div>
-      {/* Hero Section - Enhanced STEEL Risk Assessment Framework */}
+      {/* Hero Section - Enhanced STEEL Risk Diagnostic Framework */}
       <section className="relative min-h-[500px] md:min-h-[600px] py-20 md:py-24 flex items-center justify-center text-white overflow-hidden">
         <style>{`
           .hero-background-image {
@@ -111,7 +111,7 @@ export const LandingPage: React.FC = () => {
                   {
                     id: '3',
                     headline: 'vCISO leadership, compliance advisory, and ',
-                    highlight: 'governance strategy tailored to your organization.'
+                    highlight: 'governance strategy for your organization.'
                   },
                   {
                     id: '4',

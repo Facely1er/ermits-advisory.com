@@ -49,12 +49,12 @@ export const VcisoKit: React.FC = () => {
       activities: [
         'Stakeholder interviews',
         'Documentation review',
-        'STEEL™ assessment',
+        'STEEL™ Diagnostic',
         'Gap analysis',
         'Platform deployment',
         'User training'
       ],
-      deliverables: ['30-day assessment report', 'STEEL™ score baseline', 'Gap analysis', '90-day roadmap']
+      deliverables: ['30-day diagnostic report', 'STEEL™ score baseline', 'Gap analysis', '90-day roadmap']
     },
     {
       title: 'Ongoing Delivery',
@@ -136,7 +136,7 @@ export const VcisoKit: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
                 {[
                   { value: 'Strategic', label: 'Governance Leadership', icon: Briefcase },
-                  { value: 'STEEL™', label: 'Risk Assessment', icon: Target },
+                  { value: 'STEEL™', label: 'Risk Diagnostic', icon: Target },
                   { value: 'Executive', label: 'Board-Ready Guidance', icon: FileText },
                   { value: 'Ongoing', label: 'Continuous Stewardship', icon: Activity }
                 ].map((metric, index) => {
@@ -172,8 +172,8 @@ export const VcisoKit: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                   {[
                     {
-                      title: 'Strategic Risk Assessment',
-                      description: 'Comprehensive STEEL™ framework assessments to identify and prioritize cyber risks',
+                      title: 'Strategic Risk Diagnostic',
+                      description: 'Comprehensive STEEL™ framework diagnostic to identify and prioritize cyber risks',
                       icon: Target
                     },
                     {
@@ -228,7 +228,7 @@ export const VcisoKit: React.FC = () => {
                 <h2 className="text-2xl font-bold mb-6 dark:text-white">Why Choose ERMITS Advisory for vCISO Services?</h2>
                 <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 rounded">
                   <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
-                    <strong className="text-navy dark:text-white">Our vCISO role operates on top of the STEEL™ evaluation layer and the broader ERMITS ecosystem, using internal frameworks and playbooks as instruments—not as standalone products.</strong> We provide fractional security leadership and governance oversight through strategic stewardship, not product delivery.
+                    <strong className="text-navy dark:text-white">Our vCISO role operates on top of the STEEL™ Diagnostic layer and the broader ERMITS ecosystem, using internal frameworks and playbooks as instruments—not as standalone products.</strong> We provide fractional security leadership and governance oversight through strategic stewardship, not product delivery.
                   </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -464,7 +464,7 @@ export const VcisoKit: React.FC = () => {
           )}
         </AnimatePresence>
 
-        {/* STEEL Evaluation Entry Point Section */}
+        {/* STEEL™ Diagnostic Entry Point Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -474,7 +474,7 @@ export const VcisoKit: React.FC = () => {
           <Card variant="glass" padding="lg" className="bg-gradient-to-r from-gold/10 to-navy/10 dark:from-gold/20 dark:to-navy/20 border border-gold/30 dark:border-gold/50">
             <h3 className="text-2xl font-bold mb-4 dark:text-white">vCISO Engagement Entry Point</h3>
             <p className="text-gray-700 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
-              Most ERMITS vCISO engagements begin with a STEEL™ Evaluation that establishes
+              Most ERMITS vCISO engagements begin with a STEEL™ Diagnostic that establishes
               the initial STEEL™ Index and governance roadmap.
             </p>
             <Button
@@ -485,7 +485,7 @@ export const VcisoKit: React.FC = () => {
               iconPosition="right"
               className="bg-navy text-white hover:bg-navy-dark dark:bg-gold dark:text-navy dark:hover:bg-gold/90 font-semibold shadow-lg transition-colors"
             >
-              Request a STEEL™ Evaluation
+              Request a STEEL™ Diagnostic
             </Button>
           </Card>
         </motion.div>

@@ -28,22 +28,22 @@ export const ServiceOffering: React.FC = () => {
   const services = [
     {
       id: 'steel-eval',
-      title: 'STEEL™ Evaluation',
-      description: 'A structured assessment that uses STEEL™—the Strategic Threat & Enterprise Evaluation Layer—to understand your current posture and generate a STEEL™ Index.',
+      title: 'STEEL™ Diagnostic',
+      description: 'A structured diagnostic that uses STEEL™—the Strategic Threat & Enterprise Evaluation Layer—to understand your current posture and generate a STEEL™ Index.',
       icon: Target,
       color: 'cyan',
       whatWeDo: [
-        'Run a STEEL™ evaluation across strategic, threat, and enterprise dimensions',
+        'Run a STEEL™ Diagnostic across strategic, threat, and enterprise dimensions',
         'Generate a STEEL™ Index (Strategic, Threat, and Enterprise scores)',
         'Identify priority gaps, dependencies, and quick wins',
-        'Provide baseline assessment for governance and transformation planning'
+        'Provide baseline diagnostic for governance and transformation planning'
       ],
-      whoItsFor: 'Organizations that need a structured baseline assessment, often at the start of a transformation or in response to heightened regulatory, customer, or board pressure.'
+      whoItsFor: 'Organizations that need a structured baseline diagnostic, often at the start of a transformation or in response to heightened regulatory, customer, or board pressure.'
     },
     {
       id: 'roadmap',
       title: 'Strategic Roadmap Development',
-      description: 'Transform STEEL™ evaluation results into an actionable, prioritized governance and transformation roadmap aligned with your business objectives and risk appetite.',
+      description: 'Transform STEEL™ Diagnostic results into an actionable, prioritized governance and transformation roadmap aligned with your business objectives and risk appetite.',
       icon: TrendingUp,
       color: 'purple',
       whatWeDo: [
@@ -53,7 +53,7 @@ export const ServiceOffering: React.FC = () => {
         'Map roadmap to ERMITS ecosystem capabilities',
         'Create governance structures to support execution'
       ],
-      whoItsFor: 'Organizations that have completed a STEEL™ evaluation and need a clear, prioritized path forward for cyber governance and risk management transformation.'
+      whoItsFor: 'Organizations that have completed a STEEL™ Diagnostic and need a clear, prioritized path forward for cyber governance and risk management transformation.'
     },
     {
       id: 'vciso',
@@ -62,14 +62,13 @@ export const ServiceOffering: React.FC = () => {
       icon: Shield,
       color: 'navy',
       whatWeDo: [
-        'Provide vCISO leadership operating on top of the STEEL™ evaluation layer',
+        'Provide vCISO leadership operating on top of the STEEL™ Diagnostic layer',
         'Translate technical and threat realities into board-ready narratives',
         'Oversee execution of the STEEL™-aligned roadmap',
         'Coordinate internal teams and external vendors across the ERMITS ecosystem',
         'Continuously update leadership on risk posture using the STEEL™ Index'
       ],
-      whoItsFor: 'Organizations that require dedicated security leadership but don\'t have—or don\'t want to start with—a full-time CISO, and that value governance and stewardship over purely operational metrics.',
-      learnMoreLink: '/vciso-kit'
+      whoItsFor: 'Organizations that require dedicated security leadership but don\'t have—or don\'t want to start with—a full-time CISO, and that value governance and stewardship over purely operational metrics.'
     },
     {
       id: 'grc',
@@ -81,7 +80,7 @@ export const ServiceOffering: React.FC = () => {
         'Design and refine governance structures and decision rights',
         'Align risk management with business and regulatory expectations',
         'Support frameworks such as ISO, NIST, SOC 2, and sector-specific regimes',
-        'Connect GRC work to STEEL™ evaluations and the ERMITS ecosystem',
+        'Connect GRC work to STEEL™ Diagnostic and the ERMITS ecosystem',
         'Enhance traditional GRC with threat intelligence and enterprise context'
       ],
       whoItsFor: 'Organizations facing growing regulatory complexity, customer due diligence pressure, or internal fragmentation around risk and compliance responsibilities.'
@@ -172,7 +171,7 @@ export const ServiceOffering: React.FC = () => {
               ERMITS Advisory Services
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-200 max-w-4xl mx-auto mb-10 leading-relaxed">
-              A focused set of governance and stewardship services built on top of the STEEL™ Strategic Threat & Enterprise Evaluation Layer.
+              A focused set of governance and stewardship services built on top of the STEEL™ Diagnostic framework.
             </p>
             <div className="flex flex-wrap justify-center gap-3 text-sm text-gray-600 dark:text-gray-400">
               <span>Learn more:</span>
@@ -247,20 +246,9 @@ export const ServiceOffering: React.FC = () => {
                           <Target size={20} className={colors.icon} />
                           Who It's For
                         </h3>
-                        <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                        <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                           {service.whoItsFor}
                         </p>
-                        {service.learnMoreLink && (
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            onClick={() => navigate(service.learnMoreLink!)}
-                            className="mt-2"
-                          >
-                            Learn More
-                            <ArrowRight size={16} className="ml-2" />
-                          </Button>
-                        )}
                       </div>
                     </div>
                   </div>
@@ -282,7 +270,7 @@ export const ServiceOffering: React.FC = () => {
                 Design the Right Engagement with ERMITS Advisory
               </h2>
               <p className="text-lg text-silver/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Every engagement starts with understanding your context. From a focused STEEL™ Evaluation to an ongoing vCISO stewardship model, ERMITS Advisory can be calibrated to your scale, sector, and urgency.
+                Every engagement starts with understanding your context. From a focused STEEL™ Diagnostic to an ongoing vCISO stewardship model, ERMITS Advisory can be calibrated to your scale, sector, and urgency.
               </p>
               <Button
                 variant="secondary"

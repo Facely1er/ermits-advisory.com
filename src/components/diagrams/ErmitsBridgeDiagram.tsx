@@ -111,7 +111,7 @@ export const ErmitsBridgeDiagram: React.FC<ErmitsBridgeDiagramProps> = ({ classN
           className="stroke-cyan-500 dark:stroke-cyan-400"
         />
 
-        {/* STEEL Evaluation Layer */}
+        {/* STEEL™ Diagnostic Layer */}
         <rect
           x="50"
           y="300"
@@ -132,7 +132,7 @@ export const ErmitsBridgeDiagram: React.FC<ErmitsBridgeDiagramProps> = ({ classN
           fontSize="16"
           fontWeight="bold"
         >
-          STEEL™ Evaluation Layer
+          STEEL™ Diagnostic Layer
         </text>
         <text
           x="450"

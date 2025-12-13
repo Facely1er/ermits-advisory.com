@@ -51,7 +51,7 @@ export const ErmitsIntegrationPathway: React.FC<ErmitsIntegrationPathwayProps> =
   if (recommendations.some((r) => (r.factor === 'political' || r.factor === 'legal') && r.score < 60)) {
     ermitsSuggestions.push({
       platform: 'CyberCorrect',
-      description: 'Privacy exposure and regulatory gaps identified through your STEEL assessment',
+      description: 'Privacy exposure and regulatory gaps identified through your STEEL™ Diagnostic',
     });
   }
 
@@ -110,7 +110,7 @@ export const ErmitsIntegrationPathway: React.FC<ErmitsIntegrationPathwayProps> =
       </div>
 
       <p className="text-gray-700 dark:text-gray-200 mb-6 leading-relaxed">
-        STEEL feeds every ERMITS product with consistent intelligence. Based on your assessment
+        STEEL feeds every ERMITS product with consistent intelligence. Based on your diagnostic
         results, your STEEL scores will inform these platform solutions:
       </p>
 

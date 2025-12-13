@@ -135,7 +135,7 @@ export const ProfessionalSteelAssessment: React.FC = () => {
                     className="w-full"
                     onClick={() => window.open('/steel/index.html', '_blank')}
                   >
-                    Start New Assessment
+                    Start New Diagnostic
                   </Button>
                 </>
               ) : (
@@ -149,7 +149,7 @@ export const ProfessionalSteelAssessment: React.FC = () => {
                     className="w-full"
                     onClick={() => window.open('/steel/index.html', '_blank')}
                   >
-                    Start Professional Assessment
+                    Start Professional Diagnostic
                     <ArrowRight size={18} className="ml-2" />
                   </Button>
                 </>

@@ -28,8 +28,8 @@ export interface Product {
 export const PRODUCTS: Record<ProductId, Product> = {
   'steel-premium': {
     id: 'steel-premium',
-    name: 'STEEL™ Premium Assessment',
-    description: 'Premium features for STEEL Assessment including detailed PDF reports, custom visualizations, executive summary templates, and multiple export formats. One-time purchase with lifetime access.',
+    name: 'STEEL™ Premium Diagnostic',
+    description: 'Premium features for STEEL™ Diagnostic including detailed PDF reports, custom visualizations, executive summary templates, and multiple export formats. One-time purchase with lifetime access.',
     price: 29,
     currency: 'USD',
     stripePriceId: 'price_1SU74XAjb9YEbEboc4sLuKtV',
@@ -41,7 +41,7 @@ export const PRODUCTS: Record<ProductId, Product> = {
       'Custom Visualizations',
       'Executive Summary Templates',
       'Multiple Export Formats',
-      'Unlimited Assessments'
+      'Unlimited Diagnostics'
     ]
   },
   'vciso-kit': {

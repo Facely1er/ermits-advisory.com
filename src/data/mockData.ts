@@ -244,7 +244,7 @@ export const services: Service[] = [
       'Strategic security planning with STEEL™',
       'Board and executive communication',
       'Security program development',
-      'STEEL-based risk assessments',
+      'STEEL-based risk diagnostics',
       'Compliance and governance oversight'
     ],
     icon: 'user'
@@ -350,9 +350,9 @@ export const presentationSlides = [
   },
   {
     id: 'slide3',
-    title: 'STEEL™ Risk Assessment',
+    title: 'STEEL™ Risk Diagnostic',
     subtitle: 'Holistic view of organizational risk',
-    content: 'Detailed assessment of risk across all six STEEL dimensions with comparative industry benchmarks.'
+    content: 'Detailed diagnostic of risk across all six STEEL dimensions with comparative industry benchmarks.'
   },
   {
     id: 'slide4',

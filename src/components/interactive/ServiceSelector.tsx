@@ -21,15 +21,15 @@ const services: Service[] = [
     id: 'assess',
     icon: <Search size={32} />,
     title: 'Assess',
-    tagline: 'STEEL™ Evaluation',
-    description: 'Structured assessment across strategic, threat, and enterprise dimensions to establish your security baseline',
+    tagline: 'STEEL™ Diagnostic',
+    description: 'Structured diagnostic across strategic, threat, and enterprise dimensions to establish your security baseline',
     details: [
-      'Run STEEL™ evaluation across strategic, threat, and enterprise dimensions',
+      'Run STEEL™ Diagnostic across strategic, threat, and enterprise dimensions',
       'Generate STEEL™ Index (Strategic, Threat, and Enterprise scores)',
       'Identify priority gaps, dependencies, and quick wins',
-      'Provide baseline assessment for governance and transformation planning'
+      'Provide baseline diagnostic for governance and transformation planning'
     ],
-    whoItsFor: 'Organizations needing a structured baseline assessment at the start of transformation or in response to regulatory, customer, or board pressure.',
+    whoItsFor: 'Organizations needing a structured baseline diagnostic at the start of transformation or in response to regulatory, customer, or board pressure.',
     link: '/services'
   },
   {
@@ -37,7 +37,7 @@ const services: Service[] = [
     icon: <DraftingCompass size={32} />,
     title: 'Architect',
     tagline: 'Strategic Roadmap',
-    description: 'Transform STEEL™ evaluation results into actionable, prioritized governance roadmap',
+    description: 'Transform STEEL™ Diagnostic results into actionable, prioritized governance roadmap',
     details: [
       'Translate STEEL™ Index scores into strategic priorities',
       'Develop sequenced implementation roadmap with timelines',
@@ -45,7 +45,7 @@ const services: Service[] = [
       'Map roadmap to ERMITS ecosystem capabilities',
       'Create governance structures to support execution'
     ],
-    whoItsFor: 'Organizations that completed STEEL™ evaluation and need a clear, prioritized path forward for cyber governance transformation.',
+    whoItsFor: 'Organizations that completed STEEL™ Diagnostic and need a clear, prioritized path forward for cyber governance transformation.',
     link: '/services'
   },
   {

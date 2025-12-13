@@ -50,10 +50,10 @@ export const SteelMethodPage: React.FC = () => {
                 </h2>
                 <div className="space-y-4 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                   <p>
-                    <strong className="text-navy dark:text-white">STEEL™</strong> stands for <strong className="text-navy dark:text-white">Strategic Threat & Enterprise Evaluation Layer</strong>. It is not a checklist or a single score—it is a structured evaluation architecture that ERMITS Advisory uses to understand where you are, what pressures you face, and what needs to happen next.
+                    <strong className="text-navy dark:text-white">STEEL™</strong> stands for <strong className="text-navy dark:text-white">Strategic Threat & Enterprise Evaluation Layer</strong>. It is not a checklist or a single score—it is a structured diagnostic architecture that ERMITS Advisory uses to understand where you are, what pressures you face, and what needs to happen next.
                   </p>
                   <p>
-                    STEEL™ combines three internal evaluation sublayers into one coherent method: the <strong className="text-navy dark:text-white">Strategic Evaluation Layer</strong>, the <strong className="text-navy dark:text-white">Threat Evaluation Layer</strong>, and the <strong className="text-navy dark:text-white">Enterprise Evaluation Layer</strong>.
+                    STEEL™ combines three internal diagnostic sublayers into one coherent method: the <strong className="text-navy dark:text-white">Strategic Diagnostic Layer</strong>, the <strong className="text-navy dark:text-white">Threat Diagnostic Layer</strong>, and the <strong className="text-navy dark:text-white">Enterprise Diagnostic Layer</strong>.
                   </p>
                 </div>
               </div>
@@ -116,7 +116,7 @@ export const SteelMethodPage: React.FC = () => {
                   How ERMITS Advisory Uses STEEL™
                 </h2>
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                  ERMITS Advisory operates on top of the STEEL™ layer. We run STEEL™ evaluations to establish: where you are today, what pressures matter most, and what the next moves should be.
+                  ERMITS Advisory operates on top of the STEEL™ layer. We run STEEL™ Diagnostics to establish: where you are today, what pressures matter most, and what the next moves should be.
                 </p>
                 <ul className="space-y-3 text-base text-gray-700 dark:text-gray-300 mb-6">
                   <li className="flex items-start">
@@ -157,7 +157,7 @@ export const SteelMethodPage: React.FC = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-              The STEEL™ Evaluation Sublayers
+              The STEEL™ Diagnostic Sublayers
             </h2>
           </motion.div>
 
@@ -176,11 +176,11 @@ export const SteelMethodPage: React.FC = () => {
                     <Target size={32} className="text-navy dark:text-silver" />
                   </div>
                   <h3 className="text-xl font-bold text-navy dark:text-white mb-3">
-                    1. Strategic Evaluation Layer
+                    1. Strategic Diagnostic Layer
                   </h3>
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                  The Strategic Evaluation Layer examines how cyber risk and resilience intersect with your business and governance model.
+                  The Strategic Diagnostic Layer examines how cyber risk and resilience intersect with your business and governance model.
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
                   <li className="flex items-start">
@@ -215,11 +215,11 @@ export const SteelMethodPage: React.FC = () => {
                     <AlertCircle size={32} className="text-red-600 dark:text-red-400" />
                   </div>
                   <h3 className="text-xl font-bold text-navy dark:text-white mb-3">
-                    2. Threat Evaluation Layer
+                    2. Threat Diagnostic Layer
                   </h3>
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                  The Threat Evaluation Layer evaluates the external pressure on your organization from current and emerging threats.
+                  The Threat Diagnostic Layer evaluates the external pressure on your organization from current and emerging threats.
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
                   <li className="flex items-start">
@@ -254,11 +254,11 @@ export const SteelMethodPage: React.FC = () => {
                     <Layers size={32} className="text-blue-600 dark:text-blue-400" />
                   </div>
                   <h3 className="text-xl font-bold text-navy dark:text-white mb-3">
-                    3. Enterprise Evaluation Layer
+                    3. Enterprise Diagnostic Layer
                   </h3>
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                  The Enterprise Evaluation Layer assesses the internal reality of your organization: capabilities, dependencies, and resilience under stress.
+                  The Enterprise Diagnostic Layer assesses the internal reality of your organization: capabilities, dependencies, and resilience under stress.
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
                   <li className="flex items-start">
@@ -294,7 +294,7 @@ export const SteelMethodPage: React.FC = () => {
           >
             <Card className="p-6 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 border border-blue-200 dark:border-blue-800">
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-center">
-                Together, these sublayers form a single method: <strong className="text-navy dark:text-white">STEEL™</strong>, the Strategic Threat & Enterprise Evaluation Layer. It is one evaluation layer with internal structure—not a list of independent acronym pillars.
+                Together, these sublayers form a single method: <strong className="text-navy dark:text-white">STEEL™</strong>, the Strategic Threat & Enterprise Evaluation Layer. It is one diagnostic layer with internal structure—not a list of independent acronym pillars.
               </p>
             </Card>
           </motion.div>
@@ -333,7 +333,7 @@ export const SteelMethodPage: React.FC = () => {
             <Card className="p-8">
               <div className="space-y-6">
                 <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                  To make STEEL™ actionable, ERMITS Advisory expresses the evaluation as the <strong className="text-navy dark:text-white">STEEL™ Index</strong>: a unified view of where you stand and what must happen next.
+                  To make STEEL™ actionable, ERMITS Advisory expresses the diagnostic as the <strong className="text-navy dark:text-white">STEEL™ Index</strong>: a unified view of where you stand and what must happen next.
                 </p>
                 <p className="text-lg text-gray-600 dark:text-gray-400">The STEEL™ Index combines three underlying scores:</p>
                 <ul className="space-y-3 text-base text-gray-700 dark:text-gray-300">
@@ -406,13 +406,13 @@ export const SteelMethodPage: React.FC = () => {
                 Mapping STEEL™ Layers to the ERMITS Ecosystem
               </h3>
               <p className="text-base text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                Each layer of the STEEL™ evaluation framework connects directly to specialized capabilities within the ERMITS ecosystem. Together, they create a closed-loop system for governance, risk management, and resilience.
+                Each layer of the STEEL™ diagnostic framework connects directly to specialized capabilities within the ERMITS ecosystem. Together, they create a closed-loop system for governance, risk management, and resilience.
               </p>
               
               <div className="space-y-6">
                 {/* Strategic Layer */}
                 <div className="border-l-4 border-blue-500 pl-6 py-2">
-                  <h4 className="text-xl font-bold text-navy dark:text-white mb-3">Strategic Evaluation Layer</h4>
+                  <h4 className="text-xl font-bold text-navy dark:text-white mb-3">Strategic Diagnostic Layer</h4>
                   <p className="text-base text-gray-700 dark:text-gray-300 mb-4">
                     Assesses business context, governance maturity, stakeholder alignment, and risk appetite.
                   </p>
@@ -424,7 +424,7 @@ export const SteelMethodPage: React.FC = () => {
 
                 {/* Threat Layer */}
                 <div className="border-l-4 border-red-500 pl-6 py-2">
-                  <h4 className="text-xl font-bold text-navy dark:text-white mb-3">Threat Evaluation Layer</h4>
+                  <h4 className="text-xl font-bold text-navy dark:text-white mb-3">Threat Diagnostic Layer</h4>
                   <p className="text-base text-gray-700 dark:text-gray-300 mb-4">
                     Evaluates threat landscape, adversary tactics, operational readiness, and incident response capability.
                   </p>
@@ -436,7 +436,7 @@ export const SteelMethodPage: React.FC = () => {
 
                 {/* Enterprise Layer */}
                 <div className="border-l-4 border-green-500 pl-6 py-2">
-                  <h4 className="text-xl font-bold text-navy dark:text-white mb-3">Enterprise Evaluation Layer</h4>
+                  <h4 className="text-xl font-bold text-navy dark:text-white mb-3">Enterprise Diagnostic Layer</h4>
                   <p className="text-base text-gray-700 dark:text-gray-300 mb-4">
                     Examines technology architecture, vendor ecosystem, operational dependencies, and control implementation.
                   </p>

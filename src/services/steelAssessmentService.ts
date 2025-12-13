@@ -1,5 +1,5 @@
 /**
- * STEEL Diagnostic Service
+ * STEEL™ Diagnostic Service
  * 
  * Handles reading, writing, and managing STEEL diagnostic data
  * from localStorage and JSON imports.
