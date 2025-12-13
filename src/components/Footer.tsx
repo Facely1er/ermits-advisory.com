@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-2">
           {/* Logo and Branding */}
           <div className="flex items-start gap-3">
-            <img src={logoImg} alt="ERMITS Advisory" className="h-10 w-auto" />
+            <img src={logoImg} alt="ERMITS Advisory" className="h-14 w-auto" />
             <div>
               <span className="font-outfit font-semibold text-white">
                 <span className="block text-sm">ERMITS</span>

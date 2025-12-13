@@ -43,7 +43,7 @@ export const Navigation: React.FC = () => {
     },
     { 
       to: '/method/steel', 
-      label: 'STEEL™ Diagnostic', 
+      label: 'STEEL™', 
       icon: <BookOpen size={16} />,
     },
     { 

@@ -400,7 +400,7 @@ export const SteelMethodPage: React.FC = () => {
           >
             <Card className="p-8">
               <h3 className="text-2xl font-bold mb-6 dark:text-white text-center">
-                Mapping STEEL™ to the ERMITS Ecosystem
+                Mapping STEEL™ sublayers to the ERMITS Ecosystem
               </h3>
               <p className="text-base text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
                 Each layer of the STEEL™ diagnostic framework connects directly to specialized capabilities within the ERMITS ecosystem. Together, they create a closed-loop system for governance, risk management, and resilience.
