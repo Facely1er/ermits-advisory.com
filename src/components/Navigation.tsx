@@ -70,15 +70,11 @@ export const Navigation: React.FC = () => {
         <div className="flex items-center justify-between h-full">
           {/* Logo - Made more compact */}
           <Link to="/" className="flex items-center flex-shrink-0">
-            <img src={logoImg} alt={t('common.brandName')} className="h-10 md:h-12" />
-            <div className="ml-2 md:ml-3">
+            <img src={logoImg} alt={t('common.brandName')} className="h-12" />
+            <div className="ml-3">
               <span className="font-outfit font-semibold text-navy dark:text-white">
-                <span className="block text-xs md:text-sm">{t('common.ermits')}</span>
-                <span className="block text-[0.5rem] leading-tight md:text-[0.6rem] md:leading-tight uppercase tracking-wide font-normal opacity-90">
-                  {t('common.tagline').split('\n').map((line, i) => (
-                    <span key={i} className="block">{line}</span>
-                  ))}
-                </span>
+                <span className="block text-sm">{t('common.ermits')}</span>
+                <span className="block text-sm">{t('common.advisory')}</span>
               </span>
             </div>
           </Link>

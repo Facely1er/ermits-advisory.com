@@ -2,8 +2,7 @@
   "common": {
     "brandName": "ERMITS Advisory",
     "ermits": "ERMITS",
-    "advisory": "Advisory",
-    "tagline": "GESTION DES RISQUES D'ENTREPRISE\nSOLUTIONS DE TECHNOLOGIES DE L'INFORMATION"
+    "advisory": "Advisory"
   },
   "navigation": {
     "home": "Accueil",
