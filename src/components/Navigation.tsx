@@ -80,9 +80,9 @@ export const Navigation: React.FC = () => {
             <div className="ml-0.5 md:ml-3">
               <span className="font-outfit font-semibold text-navy dark:text-white">
                 <span className="block text-[0.4rem] md:text-sm leading-tight">{t('common.ermits')}</span>
-                <span className="block text-[0.22rem] leading-[0.28rem] md:text-[0.6rem] md:leading-tight uppercase tracking-tighter md:tracking-wide font-light opacity-70 md:opacity-90 md:font-normal">
+                <span className="block leading-[0.28rem] md:text-[0.6rem] md:leading-tight uppercase tracking-tighter md:tracking-wide font-light opacity-70 md:opacity-90 md:font-normal">
                   {t('common.tagline').split('\n').map((line, i) => (
-                    <span key={i} className="block whitespace-nowrap overflow-hidden text-ellipsis">{line}</span>
+                    <span key={i} className={`block whitespace-nowrap overflow-hidden text-ellipsis ${i === 0 ? 'text-[0.24rem]' : 'text-[0.19rem]'}`}>{line}</span>
                   ))}
                 </span>
               </span>
