@@ -67,8 +67,7 @@ export const Navigation: React.FC = () => {
             <img src={logoImg} alt="ERMITS Advisory" className="h-12" />
             <div className="ml-3 font-['Inter',_'SF_Pro_Display',_system-ui,_-apple-system,_sans-serif]">
               <span className="block text-xl font-bold text-navy dark:text-white tracking-tight">ERMITS</span>
-              <span className="block text-[11px] font-medium text-navy/60 dark:text-white/60 tracking-wide uppercase">Enterprise Risk Management</span>
-              <span className="block text-[11px] font-medium text-navy/60 dark:text-white/60 tracking-wide uppercase leading-tight">Information Technology Solutions</span>
+              <span className="block text-xl font-bold text-navy dark:text-white tracking-tight">Advisory</span>
             </div>
           </Link>
 
