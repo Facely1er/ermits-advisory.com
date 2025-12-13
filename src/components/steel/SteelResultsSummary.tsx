@@ -2,12 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Card } from '../shared/Card';
 import { Button } from '../shared/Button';
-import { ArrowRight, TrendingUp, TrendingDown, Minus } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { SteelAssessmentData, SteelFactor } from '../../types/steelAssessment';
 import { SteelScoreCard } from './SteelScoreCard';
 import { SteelCompositeScore } from './SteelCompositeScore';
-import { getRiskLevel } from '../../services/steelAssessmentService';
 
 interface SteelResultsSummaryProps {
   data: SteelAssessmentData;
@@ -37,13 +36,6 @@ export const SteelResultsSummary: React.FC<SteelResultsSummaryProps> = ({
   showViewReport = true,
 }) => {
   const navigate = useNavigate();
-  const riskLevel = getRiskLevel(data.composite);
-
-  const getTrendIcon = (score: number) => {
-    // For now, we don't have historical data, so we'll show stable
-    // In a real implementation, you'd compare with previous scores
-    return <Minus size={16} className="text-gray-500" />;
-  };
 
   return (
     <motion.div
@@ -53,7 +45,7 @@ export const SteelResultsSummary: React.FC<SteelResultsSummaryProps> = ({
     >
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-2xl font-bold dark:text-white mb-2">STEEL™ Assessment Results</h2>
+          <h2 className="text-2xl font-bold dark:text-white mb-2">STEEL™ Diagnostic Results</h2>
           <p className="text-gray-600 dark:text-gray-300">
             Your comprehensive cybersecurity risk assessment
           </p>

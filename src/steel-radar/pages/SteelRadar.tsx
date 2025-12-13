@@ -445,7 +445,7 @@ export const SteelRadar: React.FC = () => {
               {!selfAssessment && (
                 <div className="mb-6 p-4 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
                   <p className="text-sm text-amber-700 dark:text-amber-300">
-                    <strong>Tip:</strong> Complete a STEEL self-assessment first to enable comparison between 
+                    <strong>Tip:</strong> Complete a STEEL self-diagnostic first to enable comparison between 
                     self-reported and data-validated scores.
                   </p>
                 </div>
@@ -486,7 +486,7 @@ export const SteelRadar: React.FC = () => {
                     icon={<ArrowRight size={18} />}
                     iconPosition="right"
                   >
-                    Take STEEL Assessment First
+                    Take STEEL Diagnostic First
                   </Button>
                 )}
               </div>

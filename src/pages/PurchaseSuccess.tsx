@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useSearchParams, Link } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
@@ -12,21 +12,27 @@ export const PurchaseSuccess: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Get product type from URL parameters
+    const productParam = searchParams.get('product_type');
+    if (productParam) {
+      setProductType(productParam);
+    }
+    
     // Optionally verify the session with your backend
     if (sessionId) {
       // You can fetch session details to get product type
-      // For now, we'll show a generic success message
+      // For now, we'll use the URL parameter or show a generic success message
       setLoading(false);
     } else {
       setLoading(false);
     }
-  }, [sessionId]);
+  }, [sessionId, searchParams]);
 
   const getProductInfo = () => {
     switch (productType) {
       case 'steel-premium':
         return {
-          name: 'STEEL™ Premium Assessment',
+          name: 'STEEL™ Premium Diagnostic',
           message: 'Your access code has been sent to your email.',
           action: 'Check your email for your access code',
           icon: <Mail size={48} className="text-gold" />,
@@ -130,7 +136,7 @@ export const PurchaseSuccess: React.FC = () => {
               variant="secondary"
               onClick={() => window.location.href = '/steel'}
             >
-              Go to STEEL Assessment
+              Go to STEEL Diagnostic
             </Button>
           )}
         </div>

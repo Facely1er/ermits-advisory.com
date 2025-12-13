@@ -239,11 +239,13 @@ export function clearSteelAssessment(): void {
 /**
  * Validate STEEL diagnostic data structure
  */
-export function validateSteelData(data: unknown): boolean {
+export function validateSteelData(data: unknown): data is SteelAssessmentData {
   if (!data || typeof data !== 'object') return false;
 
+  const candidate = data as Record<string, unknown>;
+
   // Check for required fields
-  if (!data.factorScores || typeof data.composite !== 'number') return false;
+  if (!candidate.factorScores || typeof candidate.composite !== 'number') return false;
 
   // Validate factor scores
   const requiredFactors: SteelFactor[] = [
@@ -255,18 +257,21 @@ export function validateSteelData(data: unknown): boolean {
     'legal',
   ];
 
+  const factorScores = candidate.factorScores as Record<string, unknown>;
   for (const factor of requiredFactors) {
+    const score = factorScores[factor];
     if (
-      typeof data.factorScores[factor] !== 'number' ||
-      data.factorScores[factor] < 0 ||
-      data.factorScores[factor] > 100
+      typeof score !== 'number' ||
+      score < 0 ||
+      score > 100
     ) {
       return false;
     }
   }
 
   // Validate composite score
-  if (data.composite < 0 || data.composite > 100) return false;
+  const composite = candidate.composite as number;
+  if (composite < 0 || composite > 100) return false;
 
   return true;
 }
@@ -327,8 +332,8 @@ export function generateInsights(
 
   insights.executiveSummary = `Your organization's composite STEEL score of ${composite} indicates a ${riskLevel.toLowerCase()} risk posture. `;
 
-  const lowFactors = Object.entries(factorScores).filter(([_, score]) => score < 60);
-  const highFactors = Object.entries(factorScores).filter(([_, score]) => score >= 80);
+  const lowFactors = Object.entries(factorScores).filter(([, score]) => score < 60);
+  const highFactors = Object.entries(factorScores).filter(([, score]) => score >= 80);
 
   if (lowFactors.length > 0) {
     insights.executiveSummary += `Critical attention is needed in ${lowFactors.length} PESTEL factor${lowFactors.length > 1 ? 's' : ''} (${lowFactors.map(([f]) => f.charAt(0).toUpperCase() + f.slice(1)).join(', ')}). `;

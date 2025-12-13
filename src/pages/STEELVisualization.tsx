@@ -262,7 +262,7 @@ export const STEELVisualization: React.FC = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">What Makes STEEL™ Different</h2>
             <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-              Four key innovations that set STEEL™ apart from traditional risk assessment frameworks
+              Four key innovations that set STEEL™ apart from traditional risk diagnostic frameworks
             </p>
           </div>
           
@@ -339,7 +339,7 @@ export const STEELVisualization: React.FC = () => {
           className="mb-16"
         >
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">STEEL™ Risk Assessment Framework</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">STEEL™ Risk Diagnostic Framework</h2>
             <p className="text-lg text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
               An innovative approach to cybersecurity risk assessment that extends traditional PESTEL analysis with cybersecurity-specific factors
             </p>
@@ -425,7 +425,7 @@ export const STEELVisualization: React.FC = () => {
                   No Assessment Data Found
                 </p>
                 <p className="text-sm text-amber-700 dark:text-amber-300 mb-6">
-                  Complete the STEEL™ assessment to see your personalized risk scores. 
+                  Complete the STEEL™ diagnostic to see your personalized risk scores. 
                   The framework evaluates your organization across six critical dimensions.
                 </p>
                 <Button
@@ -435,7 +435,7 @@ export const STEELVisualization: React.FC = () => {
                   iconPosition="right"
                   onClick={() => window.open('/steel/index.html', '_blank')}
                 >
-                  Take the Free STEEL Assessment
+                  Take the Free STEEL Diagnostic
                 </Button>
               </div>
             )}
