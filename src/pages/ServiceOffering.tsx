@@ -184,7 +184,7 @@ export const ServiceOffering: React.FC = () => {
               </button>
               <span>•</span>
               <button
-                onClick={() => navigate('/ecosystem')}
+                onClick={() => navigate('/method/steel')}
                 className="text-cyan-600 dark:text-cyan-400 hover:underline font-medium"
               >
                 ERMITS Ecosystem

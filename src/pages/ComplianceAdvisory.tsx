@@ -1039,7 +1039,7 @@ export const ComplianceAdvisory: React.FC = () => {
               <Button
                 variant="outline"
                 size="lg"
-                onClick={() => navigate('/ecosystem')}
+                onClick={() => navigate('/method/steel')}
                 className="bg-white/10 text-white border-white/30 hover:bg-white/20"
               >
                 Explore ERMITS Platform

@@ -372,7 +372,7 @@ export const SteelRecommendationsPage: React.FC = () => {
               <Button variant="primary" onClick={() => navigate('/contact')}>
                 Schedule Strategic Consultation
               </Button>
-              <Button variant="outline" onClick={() => navigate('/ecosystem')}>
+              <Button variant="outline" onClick={() => navigate('/method/steel')}>
                 Explore ERMITS Ecosystem
               </Button>
             </div>

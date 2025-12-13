@@ -45,9 +45,9 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/vciso" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
+                <Link to="/vciso-kit" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
                   <Layers size={14} className="mr-2 group-hover:scale-110 transition-transform" />
-                  ERMITS Ecosystem
+                  vCISO Kit
                 </Link>
               </li>
             </ul>

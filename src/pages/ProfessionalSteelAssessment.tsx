@@ -47,7 +47,7 @@ export const ProfessionalSteelAssessment: React.FC = () => {
               <Button variant="outline" onClick={() => navigate('/steel/enterprise')}>
                 Enterprise Solutions
               </Button>
-              <Button variant="ghost" onClick={() => navigate('/steel/index.html')}>
+              <Button variant="ghost" onClick={() => window.open('/steel/index.html', '_blank')}>
                 Use Free Assessment
               </Button>
             </div>
@@ -186,7 +186,7 @@ export const ProfessionalSteelAssessment: React.FC = () => {
             ))}
           </div>
           <div className="mt-6 text-center">
-            <Button variant="outline" onClick={() => navigate('/ecosystem')}>
+            <Button variant="outline" onClick={() => navigate('/method/steel')}>
               Learn More About ERMITS Ecosystem
             </Button>
           </div>

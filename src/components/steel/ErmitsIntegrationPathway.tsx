@@ -166,7 +166,7 @@ export const ErmitsIntegrationPathway: React.FC<ErmitsIntegrationPathwayProps> =
       <div className="flex gap-4">
         <Button
           variant="primary"
-          onClick={() => navigate('/ecosystem')}
+          onClick={() => navigate('/method/steel')}
           icon={<ArrowRight size={18} />}
           iconPosition="right"
         >
