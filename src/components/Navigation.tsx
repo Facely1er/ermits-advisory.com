@@ -75,14 +75,14 @@ export const Navigation: React.FC = () => {
       <div className="container mx-auto px-4 h-full">
         <div className="flex items-center justify-between h-full">
           {/* Logo - Made more compact */}
-          <Link to="/" className="flex items-center flex-shrink-0 max-w-[55%] md:max-w-none">
-            <img src={logoImg} alt={t('common.brandName')} className="h-7 md:h-12" />
+          <Link to="/" className="flex items-center flex-shrink-0 max-w-[50%] md:max-w-none">
+            <img src={logoImg} alt={t('common.brandName')} className="h-6 md:h-12" />
             <div className="ml-1 md:ml-3">
               <span className="font-outfit font-semibold text-navy dark:text-white">
-                <span className="block text-[0.5rem] md:text-sm leading-tight">{t('common.ermits')}</span>
-                <span className="block text-[0.32rem] leading-[0.4rem] md:text-[0.6rem] md:leading-tight uppercase tracking-tighter md:tracking-wide font-light opacity-80">
+                <span className="block text-[0.45rem] md:text-sm leading-tight">{t('common.ermits')}</span>
+                <span className="block text-[0.28rem] leading-[0.35rem] md:text-[0.6rem] md:leading-tight uppercase tracking-tighter md:tracking-wide font-light opacity-75 md:opacity-90 md:font-normal">
                   {t('common.tagline').split('\n').map((line, i) => (
-                    <span key={i} className="block">{line}</span>
+                    <span key={i} className="block whitespace-nowrap overflow-hidden text-ellipsis">{line}</span>
                   ))}
                 </span>
               </span>
