@@ -210,7 +210,7 @@ export const VcisoKit: React.FC = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.1 }}
                       >
-                        <Card variant="glass" padding="lg" className="h-full">
+                        <Card variant="glass" padding="lg" className="h-full text-center">
                           <div className="p-3 rounded-full bg-navy/20 dark:bg-navy/40 inline-flex mb-4">
                             <Icon size={24} className="text-navy dark:text-silver" />
                           </div>
