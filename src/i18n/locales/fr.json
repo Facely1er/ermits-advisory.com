@@ -150,6 +150,218 @@
       "label": "Avertissement :",
       "text": "Les résultats, les issues et les délais peuvent varier en fonction des circonstances individuelles de l'organisation, de sa taille, de sa complexité, de son secteur d'activité et de ses efforts de mise en œuvre. Les revendications de performance sont basées sur des expériences typiques et ne sont pas des garanties. Les études de cas et les exemples sont illustratifs et peuvent ne pas refléter toutes les expériences des clients. Les prix sont sujets à changement et les prix finaux seront confirmés dans les propositions écrites. Les services ERMITS Advisory sont de nature consultative et ne garantissent pas des résultats de sécurité spécifiques ou des certifications de conformité."
     }
+  },
+  "about": {
+    "hero": {
+      "title": "Excellence en leadership",
+      "subtitle": "Notre direction fondatrice réunit des décennies d'expertise en cybersécurité, de connaissances juridiques et d'expérience en conseil stratégique."
+    },
+    "businessExperience": {
+      "title": "Expérience commerciale",
+      "description": "Leadership opérationnel et commercial au sein d'organisations Fortune 500, du commerce international et des chaînes d'approvisionnement.",
+      "internationalTrade": {
+        "category": "COMMERCE INTERNATIONAL",
+        "title": "Commerce mondial",
+        "description": "Expérience dans les opérations transfrontalières, les exigences douanières et la gouvernance des cadres de commerce international et de conformité."
+      },
+      "supplyChain": {
+        "category": "CHAÎNE D'APPROVISIONNEMENT ET LOGISTIQUE",
+        "agroIndustries": {
+          "title": "Agro-industries",
+          "description": "Travail dans les chaînes d'approvisionnement des secteurs agricole et alimentaire, axé sur la traçabilité, les obligations d'exportation et l'alignement sur les normes mondiales."
+        },
+        "operations": {
+          "title": "Gestion des opérations",
+          "description": "Supervision de réseaux logistiques complexes, de flux d'inventaire et de performance de bout en bout, en mettant l'accent sur la résilience et l'intégrité des processus."
+        }
+      }
+    },
+    "technicalCertifications": {
+      "title": "Certifications techniques",
+      "description": "Accréditations soutenant les programmes de gouvernance de la sécurité, de risque et de conformité.",
+      "security": {
+        "category": "SÉCURITÉ",
+        "cissp": {
+          "name": "CISSP",
+          "description": "Architecture de sécurité, gouvernance et conception de contrôles axés sur les risques pour les environnements d'entreprise."
+        },
+        "cisa": {
+          "name": "CISA",
+          "description": "Audit des systèmes d'information, évaluation des contrôles et alignement réglementaire."
+        }
+      },
+      "projectManagement": {
+        "category": "GESTION DE PROJET",
+        "pmp": {
+          "name": "PMP",
+          "description": "Structuration et livraison d'initiatives à fort impact avec une exécution disciplinée."
+        },
+        "pmiacp": {
+          "name": "PMI-ACP",
+          "description": "Livraison agile dans des programmes dynamiques axés sur les opérations et la conformité."
+        }
+      }
+    },
+    "legalCredentials": {
+      "title": "Accréditations juridiques",
+      "description": "Maîtrise juridique et réglementaire à l'intersection de la vie privée, de la cybersécurité et du droit public.",
+      "jdllm": {
+        "name": "J.D. et LL.M.",
+        "description": "Formation en litiges fédéraux, lois sur les dossiers publics et cadres réglementaires avec des connaissances avancées en législation sur la vie privée et la cybersécurité."
+      }
+    },
+    "professionalMemberships": {
+      "title": "Adhésions professionnelles",
+      "description": "Les membres de notre équipe maintiennent des adhésions actives dans les principales associations professionnelles.",
+      "list": [
+        "Association internationale des professionnels de la vie privée (IAPP)",
+        "Association for Computing Machinery (ACM)",
+        "Information Systems Audit and Control Association (ISACA)",
+        "Consortium international de certification en sécurité des systèmes d'information (ISC2)",
+        "Institut de gestion de projet (PMI)"
+      ]
+    },
+    "crossSector": {
+      "title": "PERSPECTIVES INTERSECTORIELLES",
+      "text1": "Là où la compréhension juridique, l'expertise en cybersécurité et l'expérience du commerce mondial se rencontrent pour résoudre les défis de risques du monde réel.",
+      "text2": "ERMITS-Advisory combine certifications techniques, formation juridique et leadership opérationnel pour concevoir des solutions pratiques et conformes pour des environnements complexes."
+    },
+    "strategicCapabilities": {
+      "title": "Capacités stratégiques",
+      "description": "Services intégrés qui relient gouvernance, confidentialité et résilience opérationnelle.",
+      "items": [
+        {
+          "title": "Gouvernance de la cybersécurité",
+          "description": "Conception et évaluation de cadres de gouvernance alignés sur NIST, ISO et les exigences sectorielles spécifiques."
+        },
+        {
+          "title": "Architecture de conformité à la confidentialité",
+          "description": "Plans de programmes fondés sur le RGPD, la CCPA, la LGPD et la norme ISO 27701 pour opérationnaliser la confidentialité dès la conception."
+        },
+        {
+          "title": "Gestion des risques opérationnels",
+          "description": "Identification, atténuation et surveillance des risques d'entreprise à travers les personnes, les processus et la technologie."
+        },
+        {
+          "title": "Résilience de la chaîne d'approvisionnement",
+          "description": "Modélisation des risques et assurance pour les chaînes d'approvisionnement à plusieurs niveaux avec référence à NIST SP 800-161 et aux normes connexes."
+        },
+        {
+          "title": "Alignement réglementaire mondial",
+          "description": "Cartographie interjuridictionnelle des obligations en matière de cybersécurité, de confidentialité et de commerce en exigences cohérentes et exécutables."
+        }
+      ]
+    },
+    "globalReach": {
+      "title": "Portée mondiale, sensibilité locale",
+      "description": "Bien que notre siège soit aux États-Unis, nos services de conseil s'étendent dans le monde entier, fournissant des conseils stratégiques en cybersécurité aux organisations dans divers marchés et environnements réglementaires.",
+      "globalThreat": {
+        "title": "Renseignements sur les menaces mondiales",
+        "description": "Surveillance complète du paysage des menaces dans toutes les grandes régions"
+      },
+      "legalFramework": {
+        "title": "Cadre juridique international",
+        "description": "Connaissance des réglementations mondiales en matière de cybersécurité et des exigences de conformité"
+      },
+      "strategicImplementation": {
+        "title": "Mise en œuvre stratégique",
+        "description": "Méthodologies adaptées aux contextes commerciaux et culturels locaux"
+      },
+      "cta": "Contactez notre équipe",
+      "imageTitle": "Excellence consultative mondiale",
+      "imageSubtitle": "Conseils stratégiques en cybersécurité sur les marchés mondiaux",
+      "imageAlt": "Conseil exécutif en cybersécurité"
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "Services ERMITS Advisory",
+      "subtitle": "Un ensemble ciblé de services de gouvernance et de gestion construits sur le cadre de diagnostic STEEL™."
+    },
+    "whatWeDo": "Ce que nous faisons",
+    "whoItsFor": "Pour qui",
+    "items": [
+      {
+        "id": "steel-eval",
+        "title": "Diagnostic STEEL™",
+        "description": "Un diagnostic structuré qui utilise STEEL™—la couche d'évaluation stratégique des menaces et de l'entreprise—pour comprendre votre posture actuelle et générer un indice STEEL™.",
+        "whatWeDo": [
+          "Exécuter un diagnostic STEEL™ sur les dimensions stratégiques, de menaces et d'entreprise",
+          "Générer un indice STEEL™ (scores stratégiques, de menaces et d'entreprise)",
+          "Identifier les lacunes prioritaires, les dépendances et les gains rapides",
+          "Fournir un diagnostic de base pour la planification de la gouvernance et de la transformation"
+        ],
+        "whoItsFor": "Organisations qui ont besoin d'un diagnostic de base structuré, souvent au début d'une transformation ou en réponse à une pression réglementaire, client ou conseil d'administration accrue."
+      },
+      {
+        "id": "roadmap",
+        "title": "Développement de feuille de route stratégique",
+        "description": "Transformer les résultats du diagnostic STEEL™ en une feuille de route de gouvernance et de transformation exploitable et priorisée, alignée sur vos objectifs commerciaux et votre appétit pour le risque.",
+        "whatWeDo": [
+          "Traduire les scores de l'indice STEEL™ en priorités stratégiques",
+          "Développer une feuille de route de mise en œuvre séquencée avec des échéanciers",
+          "Prioriser les initiatives en fonction de l'impact commercial et de la gravité des risques",
+          "Mapper la feuille de route aux capacités de l'écosystème ERMITS",
+          "Créer des structures de gouvernance pour soutenir l'exécution"
+        ],
+        "whoItsFor": "Organisations qui ont terminé un diagnostic STEEL™ et ont besoin d'une voie claire et priorisée pour la transformation de la gouvernance cyber et de la gestion des risques."
+      },
+      {
+        "id": "vciso",
+        "title": "Gestion vCISO",
+        "description": "Leadership exécutif de sécurité fractionné ou à temps partiel axé sur la gouvernance, le risque et la résilience—pas seulement la technologie et les alertes.",
+        "whatWeDo": [
+          "Fournir un leadership vCISO fonctionnant au-dessus de la couche de diagnostic STEEL™",
+          "Traduire les réalités techniques et de menaces en récits prêts pour le conseil d'administration",
+          "Superviser l'exécution de la feuille de route alignée sur STEEL™",
+          "Coordonner les équipes internes et les fournisseurs externes dans l'écosystème ERMITS",
+          "Mettre à jour continuellement la direction sur la posture de risque en utilisant l'indice STEEL™"
+        ],
+        "whoItsFor": "Organisations qui nécessitent un leadership de sécurité dédié mais n'ont pas—ou ne veulent pas commencer avec—un RSSI à temps plein, et qui valorisent la gouvernance et la gestion plutôt que les métriques purement opérationnelles."
+      },
+      {
+        "id": "grc",
+        "title": "Conseil GRC+",
+        "description": "Conseils stratégiques pour aligner la gouvernance, la gestion des risques et la conformité avec votre modèle d'affaires, votre appétit pour le risque et votre contexte réglementaire—améliorés avec l'intelligence STEEL™.",
+        "whatWeDo": [
+          "Concevoir et affiner les structures de gouvernance et les droits de décision",
+          "Aligner la gestion des risques avec les attentes commerciales et réglementaires",
+          "Soutenir les cadres tels que ISO, NIST, SOC 2 et les régimes sectoriels spécifiques",
+          "Connecter le travail GRC au diagnostic STEEL™ et à l'écosystème ERMITS",
+          "Améliorer le GRC traditionnel avec l'intelligence des menaces et le contexte d'entreprise"
+        ],
+        "whoItsFor": "Organisations confrontées à une complexité réglementaire croissante, à une pression de diligence raisonnable des clients ou à une fragmentation interne autour des responsabilités de risque et de conformité."
+      },
+      {
+        "id": "vendor",
+        "title": "Gouvernance des fournisseurs et de l'écosystème",
+        "description": "Soutien consultatif axé sur la gestion des risques à travers les fournisseurs, les partenaires et les chaînes d'approvisionnement, aligné sur la couche d'évaluation d'entreprise dans STEEL™.",
+        "whatWeDo": [
+          "Évaluer la posture de risque des fournisseurs et des tiers en utilisant les entrées STEEL™",
+          "Définir les modèles de gouvernance et les exigences pour les fournisseurs et partenaires",
+          "Aligner les attentes contractuelles, la diligence raisonnable et la surveillance",
+          "Coordonner avec VendorSoluce™ et d'autres capacités ERMITS au besoin"
+        ],
+        "whoItsFor": "Organisations avec des chaînes d'approvisionnement complexes, des fournisseurs critiques ou des attentes réglementaires concernant les risques liés aux tiers et à l'écosystème."
+      },
+      {
+        "id": "exec-board",
+        "title": "Rapports exécutifs et du conseil d'administration",
+        "description": "Rapports structurés et facilitation qui aident les cadres et les conseils d'administration à comprendre, questionner et agir sur les informations de risque cybernétique ancrées dans l'indice STEEL™.",
+        "whatWeDo": [
+          "Concevoir des rapports qui traduisent les résultats STEEL™ en langage commercial",
+          "Soutenir les réunions de direction, les sessions du conseil et les points de décision critiques",
+          "Fournir une perspective externe sur le risque, la résilience et les dépendances de l'écosystème",
+          "Aligner les messages sur les attentes réglementaires et des parties prenantes"
+        ],
+        "whoItsFor": "Organisations où la cybersécurité est devenue un sujet au niveau du conseil d'administration et où la direction a besoin d'un cadrage structuré, crédible et non technique des réalités complexes."
+      }
+    ],
+    "finalCta": {
+      "title": "Concevez le bon engagement avec ERMITS Advisory",
+      "description": "Chaque engagement commence par la compréhension de votre contexte. D'un diagnostic STEEL™ ciblé à un modèle de gestion vCISO continu, ERMITS Advisory peut être calibré à votre échelle, secteur et urgence.",
+      "button": "Contactez notre équipe"
+    }
   }
 }
 

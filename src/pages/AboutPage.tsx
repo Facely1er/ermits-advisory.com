@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import {
@@ -11,26 +12,27 @@ import {
 
 export const AboutPage: React.FC = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   // Business Experience data
   const businessExperience = {
-    description: "Operational and commercial leadership across Fortune 500 organizations, international trade, and supply chains.",
+    description: t('about.businessExperience.description'),
     sections: [
       {
-        category: "INTERNATIONAL TRADE",
-        title: "Global Commerce",
-        description: "Experience in cross-border operations, customs requirements, and the governance of international trade and compliance frameworks."
+        category: t('about.businessExperience.internationalTrade.category'),
+        title: t('about.businessExperience.internationalTrade.title'),
+        description: t('about.businessExperience.internationalTrade.description')
       },
       {
-        category: "SUPPLY CHAIN & LOGISTICS",
+        category: t('about.businessExperience.supplyChain.category'),
         items: [
           {
-            title: "Agro-Industries",
-            description: "Work in agricultural and food-sector supply chains, focusing on traceability, export obligations, and alignment with global standards."
+            title: t('about.businessExperience.supplyChain.agroIndustries.title'),
+            description: t('about.businessExperience.supplyChain.agroIndustries.description')
           },
           {
-            title: "Operations Management",
-            description: "Oversight of complex logistics networks, inventory flows, and end-to-end performance with an emphasis on resilience and process integrity."
+            title: t('about.businessExperience.supplyChain.operations.title'),
+            description: t('about.businessExperience.supplyChain.operations.description')
           }
         ]
       }
@@ -39,31 +41,31 @@ export const AboutPage: React.FC = () => {
 
   // Technical Certifications data
   const technicalCertifications = {
-    description: "Credentials supporting security governance, risk, and compliance programs.",
+    description: t('about.technicalCertifications.description'),
     sections: [
       {
-        category: "SECURITY",
+        category: t('about.technicalCertifications.security.category'),
         items: [
           {
-            name: "CISSP",
-            description: "Security architecture, governance, and risk-driven control design for enterprise environments."
+            name: t('about.technicalCertifications.security.cissp.name'),
+            description: t('about.technicalCertifications.security.cissp.description')
           },
           {
-            name: "CISA",
-            description: "Information systems auditing, control evaluation, and regulatory alignment."
+            name: t('about.technicalCertifications.security.cisa.name'),
+            description: t('about.technicalCertifications.security.cisa.description')
           }
         ]
       },
       {
-        category: "PROJECT MANAGEMENT",
+        category: t('about.technicalCertifications.projectManagement.category'),
         items: [
           {
-            name: "PMP",
-            description: "Structuring and delivering high-impact initiatives with disciplined execution."
+            name: t('about.technicalCertifications.projectManagement.pmp.name'),
+            description: t('about.technicalCertifications.projectManagement.pmp.description')
           },
           {
-            name: "PMI-ACP",
-            description: "Agile delivery across dynamic operational and compliance-focused programs."
+            name: t('about.technicalCertifications.projectManagement.pmiacp.name'),
+            description: t('about.technicalCertifications.projectManagement.pmiacp.description')
           }
         ]
       }
@@ -72,47 +74,23 @@ export const AboutPage: React.FC = () => {
 
   // Legal Credentials data
   const legalCredentials = {
-    description: "Legal and regulatory fluency at the intersection of privacy, cybersecurity, and public law.",
+    description: t('about.legalCredentials.description'),
     items: [
       {
-        name: "J.D. & LL.M.",
-        description: "Background in federal litigation, public records laws, and regulatory frameworks with advanced knowledge of privacy and cybersecurity legislation."
+        name: t('about.legalCredentials.jdllm.name'),
+        description: t('about.legalCredentials.jdllm.description')
       }
     ]
   };
 
   // Professional Memberships
-  const professionalMemberships = [
-    "International Association of Privacy Professionals (IAPP)",
-    "Association for Computing Machinery (ACM)",
-    "Information Systems Audit and Control Association (ISACA)",
-    "International Information System Security Certification Consortium (ISC2)",
-    "Project Management Institute (PMI)"
-  ];
+  const professionalMemberships = t('about.professionalMemberships.list', { returnObjects: true }) as string[];
 
   // Strategic Capabilities
-  const strategicCapabilities = [
-    {
-      title: "Cybersecurity Governance",
-      description: "Design and evaluation of governance frameworks aligned with NIST, ISO, and sector-specific requirements."
-    },
-    {
-      title: "Privacy Compliance Architecture",
-      description: "Program blueprints grounded in GDPR, CCPA, LGPD, and ISO 27701 to operationalize privacy-by-design."
-    },
-    {
-      title: "Operational Risk Management",
-      description: "Identification, mitigation, and monitoring of enterprise risk across people, process, and technology."
-    },
-    {
-      title: "Supply Chain Resilience",
-      description: "Risk modeling and assurance for multi-tier supply chains with reference to NIST SP 800-161 and related standards."
-    },
-    {
-      title: "Global Regulatory Alignment",
-      description: "Cross-jurisdiction mapping of cybersecurity, privacy, and trade obligations into coherent, executable requirements."
-    }
-  ];
+  const strategicCapabilities = t('about.strategicCapabilities.items', { returnObjects: true }) as Array<{
+    title: string;
+    description: string;
+  }>;
 
 
   return (
@@ -124,9 +102,9 @@ export const AboutPage: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           className="pt-16 mb-16 text-center"
         >
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 dark:text-white">Leadership Excellence</h1>
+          <h1 className="text-3xl md:text-5xl font-bold mb-4 dark:text-white">{t('about.hero.title')}</h1>
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-200 max-w-4xl mx-auto">
-            Our founding leadership brings together decades of cybersecurity expertise, legal knowledge, and strategic advisory experience.
+            {t('about.hero.subtitle')}
           </p>
         </motion.div>
 
@@ -145,7 +123,7 @@ export const AboutPage: React.FC = () => {
                   <div className="p-3 rounded-full bg-navy/10 dark:bg-silver/10 mr-4">
                     <Building2 size={24} className="text-navy dark:text-silver" />
                   </div>
-                  <h3 className="text-xl font-bold dark:text-white">Business Experience</h3>
+                  <h3 className="text-xl font-bold dark:text-white">{t('about.businessExperience.title')}</h3>
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
                   {businessExperience.description}
@@ -190,7 +168,7 @@ export const AboutPage: React.FC = () => {
                   <div className="p-3 rounded-full bg-navy/10 dark:bg-silver/10 mr-4">
                     <Shield size={24} className="text-navy dark:text-silver" />
                   </div>
-                  <h3 className="text-xl font-bold dark:text-white">Technical Certifications</h3>
+                  <h3 className="text-xl font-bold dark:text-white">{t('about.technicalCertifications.title')}</h3>
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
                   {technicalCertifications.description}
@@ -223,7 +201,7 @@ export const AboutPage: React.FC = () => {
                   <div className="p-3 rounded-full bg-navy/10 dark:bg-silver/10 mr-4">
                     <Scale size={24} className="text-navy dark:text-silver" />
                   </div>
-                  <h3 className="text-xl font-bold dark:text-white">Legal Credentials</h3>
+                  <h3 className="text-xl font-bold dark:text-white">{t('about.legalCredentials.title')}</h3>
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
                   {legalCredentials.description}
@@ -254,9 +232,9 @@ export const AboutPage: React.FC = () => {
           className="mb-16"
         >
           <Card variant="glass" padding="lg" className="bg-white dark:bg-dark-surface">
-            <h2 className="text-2xl font-bold mb-3 dark:text-white">Professional Memberships</h2>
+            <h2 className="text-2xl font-bold mb-3 dark:text-white">{t('about.professionalMemberships.title')}</h2>
             <p className="text-gray-600 dark:text-gray-200 mb-6">
-              Our team members maintain active memberships in leading professional associations.
+              {t('about.professionalMemberships.description')}
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {professionalMemberships.map((membership, idx) => (
@@ -277,13 +255,13 @@ export const AboutPage: React.FC = () => {
           className="mb-16"
         >
           <Card variant="glass" padding="lg" className="bg-white dark:bg-dark-surface">
-            <h2 className="text-2xl font-bold mb-6 dark:text-white uppercase tracking-wide">Cross-Sector Insight</h2>
+            <h2 className="text-2xl font-bold mb-6 dark:text-white uppercase tracking-wide">{t('about.crossSector.title')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Where legal understanding, cybersecurity expertise, and global trade experience intersect to solve real-world risk challenges.
+                {t('about.crossSector.text1')}
               </p>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                ERMITS-Advisory combines technical certifications, legal training, and operational leadership to design practical, compliance-aligned solutions for complex environments.
+                {t('about.crossSector.text2')}
               </p>
             </div>
           </Card>
@@ -297,9 +275,9 @@ export const AboutPage: React.FC = () => {
           className="mb-16"
         >
           <Card variant="glass" padding="lg" className="bg-white dark:bg-dark-surface">
-            <h2 className="text-2xl font-bold mb-3 dark:text-white">Strategic Capabilities</h2>
+            <h2 className="text-2xl font-bold mb-3 dark:text-white">{t('about.strategicCapabilities.title')}</h2>
             <p className="text-gray-600 dark:text-gray-200 mb-8">
-              Integrated services that connect governance, privacy, and operational resilience.
+              {t('about.strategicCapabilities.description')}
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {strategicCapabilities.map((capability, idx) => (
@@ -326,9 +304,9 @@ export const AboutPage: React.FC = () => {
           <Card variant="glass" padding="lg">
             <div className="flex flex-col md:flex-row gap-8 items-center">
               <div className="md:w-1/2">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 dark:text-white">Global Reach, Local Sensibility</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 dark:text-white">{t('about.globalReach.title')}</h2>
                 <p className="text-gray-600 dark:text-gray-200 mb-6">
-                  While headquartered in the United States, our advisory services extend worldwide, providing strategic cybersecurity guidance to organizations across diverse markets and regulatory environments.
+                  {t('about.globalReach.description')}
                 </p>
 
                 <div className="space-y-4 mb-6">
@@ -337,8 +315,8 @@ export const AboutPage: React.FC = () => {
                       <Globe size={16} className="text-navy dark:text-silver" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800 dark:text-white">Global Threat Intelligence</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">Comprehensive threat landscape monitoring across all major regions</p>
+                      <h4 className="font-semibold text-gray-800 dark:text-white">{t('about.globalReach.globalThreat.title')}</h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">{t('about.globalReach.globalThreat.description')}</p>
                     </div>
                   </div>
 
@@ -347,8 +325,8 @@ export const AboutPage: React.FC = () => {
                       <Scale size={16} className="text-navy dark:text-silver" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800 dark:text-white">International Legal Framework</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">Knowledge of global cybersecurity regulations and compliance requirements</p>
+                      <h4 className="font-semibold text-gray-800 dark:text-white">{t('about.globalReach.legalFramework.title')}</h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">{t('about.globalReach.legalFramework.description')}</p>
                     </div>
                   </div>
 
@@ -357,8 +335,8 @@ export const AboutPage: React.FC = () => {
                       <Gauge size={16} className="text-navy dark:text-silver" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800 dark:text-white">Strategic Implementation</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">Methodologies adapted to local business and cultural contexts</p>
+                      <h4 className="font-semibold text-gray-800 dark:text-white">{t('about.globalReach.strategicImplementation.title')}</h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">{t('about.globalReach.strategicImplementation.description')}</p>
                     </div>
                   </div>
                 </div>
@@ -369,20 +347,20 @@ export const AboutPage: React.FC = () => {
                   iconPosition="right"
                   onClick={() => navigate('/contact')}
                 >
-                  Contact Our Team
+                  {t('about.globalReach.cta')}
                 </Button>
               </div>
               <div className="md:w-1/2">
                 <div className="rounded-lg overflow-hidden h-80 relative">
                   <img
                     src="https://images.pexels.com/photos/335393/pexels-photo-335393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                    alt="Executive cybersecurity advisory"
+                    alt={t('about.globalReach.imageAlt')}
                     className="object-cover w-full h-full"
                   />
                   <div className="absolute inset-0 bg-navy/40 flex items-center justify-center">
                     <div className="text-center text-white">
-                      <h3 className="text-xl font-bold mb-2">Worldwide Advisory Excellence</h3>
-                      <p className="text-sm opacity-90">Strategic cybersecurity guidance across global markets</p>
+                      <h3 className="text-xl font-bold mb-2">{t('about.globalReach.imageTitle')}</h3>
+                      <p className="text-sm opacity-90">{t('about.globalReach.imageSubtitle')}</p>
                     </div>
                   </div>
                 </div>

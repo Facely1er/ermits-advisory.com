@@ -150,6 +150,218 @@
       "label": "Disclaimer:",
       "text": "Results, outcomes, and timelines may vary based on individual organization circumstances, size, complexity, industry, and implementation efforts. Performance claims are based on typical experiences and are not guarantees. Case studies and examples are illustrative and may not reflect all client experiences. Pricing is subject to change and final pricing will be confirmed in written proposals. ERMITS Advisory services are advisory in nature and do not guarantee specific security outcomes or compliance certifications."
     }
+  },
+  "about": {
+    "hero": {
+      "title": "Leadership Excellence",
+      "subtitle": "Our founding leadership brings together decades of cybersecurity expertise, legal knowledge, and strategic advisory experience."
+    },
+    "businessExperience": {
+      "title": "Business Experience",
+      "description": "Operational and commercial leadership across Fortune 500 organizations, international trade, and supply chains.",
+      "internationalTrade": {
+        "category": "INTERNATIONAL TRADE",
+        "title": "Global Commerce",
+        "description": "Experience in cross-border operations, customs requirements, and the governance of international trade and compliance frameworks."
+      },
+      "supplyChain": {
+        "category": "SUPPLY CHAIN & LOGISTICS",
+        "agroIndustries": {
+          "title": "Agro-Industries",
+          "description": "Work in agricultural and food-sector supply chains, focusing on traceability, export obligations, and alignment with global standards."
+        },
+        "operations": {
+          "title": "Operations Management",
+          "description": "Oversight of complex logistics networks, inventory flows, and end-to-end performance with an emphasis on resilience and process integrity."
+        }
+      }
+    },
+    "technicalCertifications": {
+      "title": "Technical Certifications",
+      "description": "Credentials supporting security governance, risk, and compliance programs.",
+      "security": {
+        "category": "SECURITY",
+        "cissp": {
+          "name": "CISSP",
+          "description": "Security architecture, governance, and risk-driven control design for enterprise environments."
+        },
+        "cisa": {
+          "name": "CISA",
+          "description": "Information systems auditing, control evaluation, and regulatory alignment."
+        }
+      },
+      "projectManagement": {
+        "category": "PROJECT MANAGEMENT",
+        "pmp": {
+          "name": "PMP",
+          "description": "Structuring and delivering high-impact initiatives with disciplined execution."
+        },
+        "pmiacp": {
+          "name": "PMI-ACP",
+          "description": "Agile delivery across dynamic operational and compliance-focused programs."
+        }
+      }
+    },
+    "legalCredentials": {
+      "title": "Legal Credentials",
+      "description": "Legal and regulatory fluency at the intersection of privacy, cybersecurity, and public law.",
+      "jdllm": {
+        "name": "J.D. & LL.M.",
+        "description": "Background in federal litigation, public records laws, and regulatory frameworks with advanced knowledge of privacy and cybersecurity legislation."
+      }
+    },
+    "professionalMemberships": {
+      "title": "Professional Memberships",
+      "description": "Our team members maintain active memberships in leading professional associations.",
+      "list": [
+        "International Association of Privacy Professionals (IAPP)",
+        "Association for Computing Machinery (ACM)",
+        "Information Systems Audit and Control Association (ISACA)",
+        "International Information System Security Certification Consortium (ISC2)",
+        "Project Management Institute (PMI)"
+      ]
+    },
+    "crossSector": {
+      "title": "CROSS-SECTOR INSIGHT",
+      "text1": "Where legal understanding, cybersecurity expertise, and global trade experience intersect to solve real-world risk challenges.",
+      "text2": "ERMITS-Advisory combines technical certifications, legal training, and operational leadership to design practical, compliance-aligned solutions for complex environments."
+    },
+    "strategicCapabilities": {
+      "title": "Strategic Capabilities",
+      "description": "Integrated services that connect governance, privacy, and operational resilience.",
+      "items": [
+        {
+          "title": "Cybersecurity Governance",
+          "description": "Design and evaluation of governance frameworks aligned with NIST, ISO, and sector-specific requirements."
+        },
+        {
+          "title": "Privacy Compliance Architecture",
+          "description": "Program blueprints grounded in GDPR, CCPA, LGPD, and ISO 27701 to operationalize privacy-by-design."
+        },
+        {
+          "title": "Operational Risk Management",
+          "description": "Identification, mitigation, and monitoring of enterprise risk across people, process, and technology."
+        },
+        {
+          "title": "Supply Chain Resilience",
+          "description": "Risk modeling and assurance for multi-tier supply chains with reference to NIST SP 800-161 and related standards."
+        },
+        {
+          "title": "Global Regulatory Alignment",
+          "description": "Cross-jurisdiction mapping of cybersecurity, privacy, and trade obligations into coherent, executable requirements."
+        }
+      ]
+    },
+    "globalReach": {
+      "title": "Global Reach, Local Sensibility",
+      "description": "While headquartered in the United States, our advisory services extend worldwide, providing strategic cybersecurity guidance to organizations across diverse markets and regulatory environments.",
+      "globalThreat": {
+        "title": "Global Threat Intelligence",
+        "description": "Comprehensive threat landscape monitoring across all major regions"
+      },
+      "legalFramework": {
+        "title": "International Legal Framework",
+        "description": "Knowledge of global cybersecurity regulations and compliance requirements"
+      },
+      "strategicImplementation": {
+        "title": "Strategic Implementation",
+        "description": "Methodologies adapted to local business and cultural contexts"
+      },
+      "cta": "Contact Our Team",
+      "imageTitle": "Worldwide Advisory Excellence",
+      "imageSubtitle": "Strategic cybersecurity guidance across global markets",
+      "imageAlt": "Executive cybersecurity advisory"
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "ERMITS Advisory Services",
+      "subtitle": "A focused set of governance and stewardship services built on top of the STEEL™ Diagnostic framework."
+    },
+    "whatWeDo": "What We Do",
+    "whoItsFor": "Who It's For",
+    "items": [
+      {
+        "id": "steel-eval",
+        "title": "STEEL™ Diagnostic",
+        "description": "A structured diagnostic that uses STEEL™—the Strategic Threat & Enterprise Evaluation Layer—to understand your current posture and generate a STEEL™ Index.",
+        "whatWeDo": [
+          "Run a STEEL™ Diagnostic across strategic, threat, and enterprise dimensions",
+          "Generate a STEEL™ Index (Strategic, Threat, and Enterprise scores)",
+          "Identify priority gaps, dependencies, and quick wins",
+          "Provide baseline diagnostic for governance and transformation planning"
+        ],
+        "whoItsFor": "Organizations that need a structured baseline diagnostic, often at the start of a transformation or in response to heightened regulatory, customer, or board pressure."
+      },
+      {
+        "id": "roadmap",
+        "title": "Strategic Roadmap Development",
+        "description": "Transform STEEL™ Diagnostic results into an actionable, prioritized governance and transformation roadmap aligned with your business objectives and risk appetite.",
+        "whatWeDo": [
+          "Translate STEEL™ Index scores into strategic priorities",
+          "Develop sequenced implementation roadmap with timelines",
+          "Prioritize initiatives based on business impact and risk severity",
+          "Map roadmap to ERMITS ecosystem capabilities",
+          "Create governance structures to support execution"
+        ],
+        "whoItsFor": "Organizations that have completed a STEEL™ Diagnostic and need a clear, prioritized path forward for cyber governance and risk management transformation."
+      },
+      {
+        "id": "vciso",
+        "title": "vCISO Stewardship",
+        "description": "Fractional or part-time executive security leadership focused on governance, risk, and resilience—not just technology and alerts.",
+        "whatWeDo": [
+          "Provide vCISO leadership operating on top of the STEEL™ Diagnostic layer",
+          "Translate technical and threat realities into board-ready narratives",
+          "Oversee execution of the STEEL™-aligned roadmap",
+          "Coordinate internal teams and external vendors across the ERMITS ecosystem",
+          "Continuously update leadership on risk posture using the STEEL™ Index"
+        ],
+        "whoItsFor": "Organizations that require dedicated security leadership but don't have—or don't want to start with—a full-time CISO, and that value governance and stewardship over purely operational metrics."
+      },
+      {
+        "id": "grc",
+        "title": "GRC+ Advisory",
+        "description": "Strategic guidance for aligning governance, risk management, and compliance with your business model, risk appetite, and regulatory context—enhanced with STEEL™ intelligence.",
+        "whatWeDo": [
+          "Design and refine governance structures and decision rights",
+          "Align risk management with business and regulatory expectations",
+          "Support frameworks such as ISO, NIST, SOC 2, and sector-specific regimes",
+          "Connect GRC work to STEEL™ Diagnostic and the ERMITS ecosystem",
+          "Enhance traditional GRC with threat intelligence and enterprise context"
+        ],
+        "whoItsFor": "Organizations facing growing regulatory complexity, customer due diligence pressure, or internal fragmentation around risk and compliance responsibilities."
+      },
+      {
+        "id": "vendor",
+        "title": "Vendor & Ecosystem Governance",
+        "description": "Advisory support focused on managing risk across vendors, partners, and supply chains, aligned with the Enterprise Evaluation Layer in STEEL™.",
+        "whatWeDo": [
+          "Assess vendor and third-party risk posture using STEEL™ inputs",
+          "Define governance models and requirements for vendors and partners",
+          "Align contract expectations, due diligence, and monitoring",
+          "Coordinate with VendorSoluce™ and other ERMITS capabilities as needed"
+        ],
+        "whoItsFor": "Organizations with complex supply chains, critical vendors, or regulatory expectations around third-party and ecosystem risk."
+      },
+      {
+        "id": "exec-board",
+        "title": "Executive & Board Reporting",
+        "description": "Structured reporting and facilitation that helps executives and boards understand, question, and act on cyber risk information anchored in the STEEL™ Index.",
+        "whatWeDo": [
+          "Design reporting that maps STEEL™ outcomes into business language",
+          "Support leadership meetings, board sessions, and critical decision points",
+          "Provide external perspective on risk, resilience, and ecosystem dependencies",
+          "Align messaging to regulatory and stakeholder expectations"
+        ],
+        "whoItsFor": "Organizations where cyber has become a board-level topic and leadership needs structured, credible, and non-technical framing of complex realities."
+      }
+    ],
+    "finalCta": {
+      "title": "Design the Right Engagement with ERMITS Advisory",
+      "description": "Every engagement starts with understanding your context. From a focused STEEL™ Diagnostic to an ongoing vCISO stewardship model, ERMITS Advisory can be calibrated to your scale, sector, and urgency.",
+      "button": "Contact Our Team"
+    }
   }
 }
 
