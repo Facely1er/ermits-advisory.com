@@ -1,7 +1,7 @@
 /**
- * STEEL Assessment Service
+ * STEEL Diagnostic Service
  * 
- * Handles reading, writing, and managing STEEL assessment data
+ * Handles reading, writing, and managing STEEL diagnostic data
  * from localStorage and JSON imports.
  */
 
@@ -20,7 +20,7 @@ const STORAGE_KEY = 'steel_assessment';
 const STORAGE_EVENT_KEY = 'steel_assessment_updated';
 
 /**
- * Get STEEL assessment data from localStorage
+ * Get STEEL diagnostic data from localStorage
  */
 export function getSteelAssessmentFromStorage(): SteelAssessmentData | null {
   try {
@@ -41,14 +41,14 @@ export function getSteelAssessmentFromStorage(): SteelAssessmentData | null {
 
     return null;
   } catch (error) {
-    console.error('Error reading STEEL assessment from storage:', error);
+    console.error('Error reading STEEL diagnostic from storage:', error);
     return null;
   }
 }
 
 /**
- * Calculate assessment results from question answers
- * This replicates the logic from the HTML assessment
+ * Calculate diagnostic results from question answers
+ * This replicates the logic from the HTML diagnostic
  */
 function calculateResultsFromAnswers(answers: SteelAssessmentStorage): SteelAssessmentData {
   const factorScores: FactorScores = {
@@ -183,7 +183,7 @@ function calculateResultsFromAnswers(answers: SteelAssessmentStorage): SteelAsse
 }
 
 /**
- * Import STEEL assessment from JSON string
+ * Import STEEL diagnostic from JSON string
  */
 export function importSteelAssessment(jsonData: string): SteelAssessmentData {
   try {
@@ -203,15 +203,15 @@ export function importSteelAssessment(jsonData: string): SteelAssessmentData {
       return assessmentData;
     }
 
-    throw new Error('Invalid STEEL assessment data format');
+    throw new Error('Invalid STEEL diagnostic data format');
   } catch (error) {
-    console.error('Error importing STEEL assessment:', error);
-    throw new Error('Failed to import STEEL assessment. Please ensure the file is valid JSON.');
+    console.error('Error importing STEEL diagnostic:', error);
+    throw new Error('Failed to import STEEL diagnostic. Please ensure the file is valid JSON.');
   }
 }
 
 /**
- * Save STEEL assessment data to localStorage
+ * Save STEEL diagnostic data to localStorage
  */
 export function saveSteelAssessment(data: SteelAssessmentData): void {
   try {
@@ -219,27 +219,27 @@ export function saveSteelAssessment(data: SteelAssessmentData): void {
     // Trigger custom event for auto-refresh
     window.dispatchEvent(new CustomEvent(STORAGE_EVENT_KEY, { detail: data }));
   } catch (error) {
-    console.error('Error saving STEEL assessment to storage:', error);
+    console.error('Error saving STEEL diagnostic to storage:', error);
     throw new Error('Failed to save assessment data. Please check browser storage permissions.');
   }
 }
 
 /**
- * Clear STEEL assessment data from localStorage
+ * Clear STEEL diagnostic data from localStorage
  */
 export function clearSteelAssessment(): void {
   try {
     localStorage.removeItem(STORAGE_KEY);
     window.dispatchEvent(new CustomEvent(STORAGE_EVENT_KEY, { detail: null }));
   } catch (error) {
-    console.error('Error clearing STEEL assessment from storage:', error);
+    console.error('Error clearing STEEL diagnostic from storage:', error);
   }
 }
 
 /**
- * Validate STEEL assessment data structure
+ * Validate STEEL diagnostic data structure
  */
-export function validateSteelData(data: any): boolean {
+export function validateSteelData(data: unknown): boolean {
   if (!data || typeof data !== 'object') return false;
 
   // Check for required fields

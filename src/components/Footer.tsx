@@ -9,21 +9,23 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-slate-800 dark:bg-slate-900 text-white border-t border-slate-700/50 dark:border-slate-800/50">
       <div className="container mx-auto px-4 pt-6 pb-0">
-        {/* Logo and Branding */}
-        <div className="flex items-center gap-3 mb-6">
-          <img src={logoImg} alt="ERMITS Advisory" className="h-10 w-auto" />
-          <div>
-            <h2 className="text-lg font-bold">ERMITS Advisory</h2>
-            <p className="text-sm text-silver">Enterprise Risk Management & Security</p>
-          </div>
-        </div>
-
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-2">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-2">
+          {/* Logo and Branding */}
+          <div>
+            <div className="flex items-start gap-3">
+              <img src={logoImg} alt="ERMITS Advisory" className="h-10 w-auto" />
+              <div>
+                <h2 className="text-lg font-bold">ERMITS Advisory</h2>
+                <p className="text-sm text-silver">Enterprise Risk Management & Security</p>
+              </div>
+            </div>
+          </div>
+
           {/* Services & Solutions */}
           <div>
             <h3 className="text-base font-semibold mb-3">Services & Solutions</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               <li>
                 <Link to="/services" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
                   <Briefcase size={14} className="mr-2 group-hover:scale-110 transition-transform" />
@@ -33,7 +35,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link to="/method/steel" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
                   <Shield size={14} className="mr-2 group-hover:scale-110 transition-transform" />
-                  STEEL™ Assessment
+                  STEEL™ Diagnostic
                 </Link>
               </li>
               <li>
@@ -43,7 +45,7 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/method/steel" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
+                <Link to="/vciso" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
                   <Layers size={14} className="mr-2 group-hover:scale-110 transition-transform" />
                   ERMITS Ecosystem
                 </Link>
@@ -54,7 +56,7 @@ export const Footer: React.FC = () => {
           {/* Company */}
           <div>
             <h3 className="text-base font-semibold mb-3">Company</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               <li>
                 <Link to="/about" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
                   <Users size={14} className="mr-2 group-hover:scale-110 transition-transform" />
@@ -73,7 +75,7 @@ export const Footer: React.FC = () => {
           {/* Legal */}
           <div>
             <h3 className="text-base font-semibold mb-3">Legal</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               <li>
                 <Link to="/privacy" className="text-silver hover:text-white transition-all duration-300 hover:translate-x-1 flex items-center text-sm group">
                   <Shield size={14} className="mr-2 group-hover:scale-110 transition-transform" />

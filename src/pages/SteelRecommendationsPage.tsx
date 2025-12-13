@@ -64,7 +64,7 @@ export const SteelRecommendationsPage: React.FC = () => {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `STEEL_Assessment_${new Date().toISOString().split('T')[0]}.json`;
+    a.download = `STEEL_Diagnostic_${new Date().toISOString().split('T')[0]}.json`;
     a.click();
     URL.revokeObjectURL(url);
   };
@@ -88,7 +88,7 @@ export const SteelRecommendationsPage: React.FC = () => {
             <AlertCircle size={48} className="mx-auto mb-4 text-gray-400" />
             <h2 className="text-2xl font-bold dark:text-white mb-4">No Assessment Data Found</h2>
             <p className="text-gray-600 dark:text-gray-300 mb-6">
-              Please complete the STEEL assessment to view detailed recommendations.
+              Please complete the STEEL diagnostic to view detailed recommendations.
             </p>
             <div className="flex gap-4 justify-center">
               <Button variant="primary" onClick={() => navigate('/dashboard')}>

@@ -37,7 +37,7 @@ export const ProfessionalSteelAssessment: React.FC = () => {
               Professional Assessment Access Required
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-8">
-              The Professional STEEL™ Assessment includes ERMITS platform integration, advanced
+              The Professional STEEL™ Diagnostic includes ERMITS platform integration, advanced
               analytics, and enterprise features. Upgrade to access these capabilities.
             </p>
             <div className="flex gap-4 justify-center">
@@ -69,7 +69,7 @@ export const ProfessionalSteelAssessment: React.FC = () => {
             <span className="text-gold font-semibold">Professional Access</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 dark:text-white">
-            STEEL™ Professional Assessment
+            STEEL™ Professional Diagnostic
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
             Enhanced assessment with ERMITS platform integration, advanced analytics, and
@@ -141,7 +141,7 @@ export const ProfessionalSteelAssessment: React.FC = () => {
               ) : (
                 <>
                   <p className="text-gray-700 dark:text-gray-200 mb-4">
-                    Complete the STEEL assessment to unlock professional features and ERMITS
+                    Complete the STEEL diagnostic to unlock professional features and ERMITS
                     integration.
                   </p>
                   <Button
@@ -163,7 +163,7 @@ export const ProfessionalSteelAssessment: React.FC = () => {
             ERMITS Platform Integration
           </h3>
           <p className="text-gray-700 dark:text-gray-200 mb-6 text-center">
-            Your STEEL assessment automatically syncs with ERMITS platforms for seamless
+            Your STEEL diagnostic automatically syncs with ERMITS platforms for seamless
             integration:
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
