@@ -62,7 +62,7 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight px-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-relaxed px-4">
               {slides[currentIndex].highlight ? (
                 <>
                   <span className="text-white drop-shadow-lg">
