@@ -96,7 +96,7 @@ export const ServiceSelector: React.FC = () => {
           <motion.button
             key={service.id}
             onClick={() => setSelected(service.id === selected ? null : service.id)}
-            className={`p-6 rounded-xl transition-all text-left ${
+            className={`p-6 rounded-xl transition-all text-center ${
               selected === service.id
                 ? 'bg-navy dark:bg-navy-dark text-white shadow-2xl'
                 : 'bg-white dark:bg-gray-800 hover:shadow-lg hover:bg-navy/5 dark:hover:bg-gray-700'
@@ -104,7 +104,7 @@ export const ServiceSelector: React.FC = () => {
             whileHover={{ y: -4 }}
             whileTap={{ scale: 0.98 }}
           >
-            <div className={`mb-3 ${selected === service.id ? 'text-gold' : 'text-navy dark:text-silver'}`}>
+            <div className={`mb-3 flex justify-center ${selected === service.id ? 'text-gold' : 'text-navy dark:text-silver'}`}>
               {service.icon}
             </div>
             <h3 className={`font-bold mb-1 ${selected === service.id ? 'text-white' : 'text-navy dark:text-white'}`}>
