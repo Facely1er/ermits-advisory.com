@@ -91,12 +91,12 @@ export const ServiceSelector: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto">
       {/* Service tabs */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8">
         {services.map(service => (
           <motion.button
             key={service.id}
             onClick={() => setSelected(service.id === selected ? null : service.id)}
-            className={`p-6 rounded-xl transition-all text-center ${
+            className={`p-4 sm:p-6 rounded-xl transition-all text-center ${
               selected === service.id
                 ? 'bg-navy dark:bg-navy-dark text-white shadow-2xl'
                 : 'bg-white dark:bg-gray-800 hover:shadow-lg hover:bg-navy/5 dark:hover:bg-gray-700'
@@ -104,10 +104,10 @@ export const ServiceSelector: React.FC = () => {
             whileHover={{ y: -4 }}
             whileTap={{ scale: 0.98 }}
           >
-            <div className={`mb-3 flex justify-center ${selected === service.id ? 'text-gold' : 'text-navy dark:text-silver'}`}>
+            <div className={`mb-2 sm:mb-3 flex justify-center ${selected === service.id ? 'text-gold' : 'text-navy dark:text-silver'}`}>
               {service.icon}
             </div>
-            <h3 className={`font-bold mb-1 ${selected === service.id ? 'text-white' : 'text-navy dark:text-white'}`}>
+            <h3 className={`text-sm sm:text-base font-bold mb-1 ${selected === service.id ? 'text-white' : 'text-navy dark:text-white'}`}>
               {service.title}
             </h3>
             <p className={`text-xs ${selected === service.id ? 'text-white/80' : 'text-gray-600 dark:text-gray-400'}`}>
@@ -127,14 +127,14 @@ export const ServiceSelector: React.FC = () => {
             exit={{ opacity: 0, y: -20, height: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <Card className="p-8 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 border-2 border-blue-200 dark:border-blue-800">
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <Card className="p-4 sm:p-6 md:p-8 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 border-2 border-blue-200 dark:border-blue-800">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
                 {/* Left: Overview */}
                 <div className="lg:col-span-2">
-                  <h3 className="text-2xl font-bold text-navy dark:text-white mb-3">
+                  <h3 className="text-xl sm:text-2xl font-bold text-navy dark:text-white mb-3">
                     {selectedService.title}: {selectedService.tagline}
                   </h3>
-                  <p className="text-gray-700 dark:text-gray-200 mb-6 leading-relaxed">
+                  <p className="text-sm sm:text-base text-gray-700 dark:text-gray-200 mb-6 leading-relaxed">
                     {selectedService.description}
                   </p>
 
@@ -142,7 +142,7 @@ export const ServiceSelector: React.FC = () => {
                   <ul className="space-y-2 mb-6">
                     {selectedService.details.map((detail, idx) => (
                       <li key={idx} className="flex items-start text-sm text-gray-700 dark:text-gray-300">
-                        <span className="text-cyan-500 mr-2 mt-1">✓</span>
+                        <span className="text-cyan-500 mr-2 mt-1 flex-shrink-0">✓</span>
                         <span>{detail}</span>
                       </li>
                     ))}
@@ -151,7 +151,7 @@ export const ServiceSelector: React.FC = () => {
 
                 {/* Right: Who it's for + CTA */}
                 <div>
-                  <div className="bg-white dark:bg-gray-800 rounded-lg p-6 mb-4">
+                  <div className="bg-white dark:bg-gray-800 rounded-lg p-4 sm:p-6 mb-4">
                     <h4 className="font-bold text-navy dark:text-white mb-3">Who It's For:</h4>
                     <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
                       {selectedService.whoItsFor}
@@ -160,7 +160,7 @@ export const ServiceSelector: React.FC = () => {
 
                   <Button
                     variant="primary"
-                    className="w-full"
+                    className="w-full text-sm sm:text-base"
                     icon={<ArrowRight size={18} />}
                     iconPosition="right"
                     onClick={() => selectedService.link && navigate(selectedService.link)}
@@ -170,7 +170,7 @@ export const ServiceSelector: React.FC = () => {
 
                   <Button
                     variant="outline"
-                    className="w-full mt-3"
+                    className="w-full mt-3 text-sm sm:text-base"
                     onClick={() => navigate('/contact')}
                   >
                     Schedule Consultation
@@ -187,9 +187,9 @@ export const ServiceSelector: React.FC = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="text-center py-8"
+          className="text-center py-6 sm:py-8"
         >
-          <p className="text-gray-500 dark:text-gray-400 italic">
+          <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400 italic px-4">
             👆 Click any service above to learn more
           </p>
         </motion.div>

@@ -10,9 +10,9 @@ export const Footer: React.FC = () => {
     <footer className="bg-slate-800 dark:bg-slate-900 text-white border-t border-slate-700/50 dark:border-slate-800/50">
       <div className="container mx-auto px-4 pt-4 pb-2">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-3">
           {/* Logo and Branding */}
-          <div className="flex items-start gap-2">
+          <div className="flex items-start gap-2 sm:col-span-2 md:col-span-1">
             <img src={logoImg} alt="ERMITS Advisory" className="h-12 w-auto" />
             <div>
               <span className="font-outfit text-white">

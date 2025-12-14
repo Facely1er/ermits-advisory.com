@@ -302,7 +302,7 @@ export const AboutPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <div className="flex flex-col md:flex-row gap-8 items-center">
+            <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center">
               <div className="md:w-1/2">
                 <h2 className="text-2xl md:text-3xl font-bold mb-4 dark:text-white">{t('about.globalReach.title')}</h2>
                 <p className="text-gray-600 dark:text-gray-200 mb-6">
@@ -350,17 +350,17 @@ export const AboutPage: React.FC = () => {
                   {t('about.globalReach.cta')}
                 </Button>
               </div>
-              <div className="md:w-1/2">
-                <div className="rounded-lg overflow-hidden h-80 relative">
+              <div className="w-full md:w-1/2 mt-6 md:mt-0">
+                <div className="rounded-lg overflow-hidden h-64 sm:h-80 relative">
                   <img
                     src="https://images.pexels.com/photos/335393/pexels-photo-335393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                     alt={t('about.globalReach.imageAlt')}
                     className="object-cover w-full h-full"
                   />
                   <div className="absolute inset-0 bg-navy/40 flex items-center justify-center">
-                    <div className="text-center text-white">
-                      <h3 className="text-xl font-bold mb-2">{t('about.globalReach.imageTitle')}</h3>
-                      <p className="text-base md:text-lg opacity-90">{t('about.globalReach.imageSubtitle')}</p>
+                    <div className="text-center text-white px-4">
+                      <h3 className="text-lg sm:text-xl font-bold mb-2">{t('about.globalReach.imageTitle')}</h3>
+                      <p className="text-sm sm:text-base md:text-lg opacity-90">{t('about.globalReach.imageSubtitle')}</p>
                     </div>
                   </div>
                 </div>

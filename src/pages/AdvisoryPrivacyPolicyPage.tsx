@@ -360,19 +360,19 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
           className="text-center"
         >
           <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/advisory/terms">
+            <Link to="/terms">
               <Button variant="outline" size="sm">
-                Advisory Terms of Service
+                Terms of Service
               </Button>
             </Link>
-            <Link to="/advisory/acceptable-use">
+            <Link to="/acceptable-use">
               <Button variant="outline" size="sm">
-                Advisory Acceptable Use
+                Acceptable Use Policy
               </Button>
             </Link>
-            <Link to="/advisory/website-policy">
+            <Link to="/privacy">
               <Button variant="outline" size="sm">
-                Website & Portal Policy
+                Privacy Policy
               </Button>
             </Link>
           </div>

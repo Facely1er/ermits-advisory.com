@@ -218,7 +218,7 @@ export const Navigation: React.FC = () => {
                   className={({ isActive }) => {
                     const routeActive = isActive || isRouteActive(link.to);
                     return cn(
-                      'flex items-center px-3 py-2 rounded-md text-base font-medium',
+                      'flex items-center px-3 py-2.5 rounded-md text-sm sm:text-base font-medium',
                       routeActive
                         ? 'bg-navy/10 text-navy dark:bg-silver/20 dark:text-white'
                         : 'text-gray-600 dark:text-white/95 hover:bg-navy/5 dark:hover:bg-silver/10'
@@ -226,14 +226,14 @@ export const Navigation: React.FC = () => {
                   }}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <span className="mr-2">{link.icon}</span>
-                  {link.label}
+                  <span className="mr-2 flex-shrink-0">{link.icon}</span>
+                  <span>{link.label}</span>
                 </NavLink>
               ))}
             </div>
             <div className="pt-4 pb-3 border-t border-gray-200 dark:border-gray-700">
-              <div className="flex items-center justify-end px-4">
-                <div className="flex items-center space-x-3">
+              <div className="flex items-center justify-center sm:justify-end px-4">
+                <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
                   {/* Language Switcher - Mobile */}
                   <div className="flex items-center bg-silver/20 dark:bg-navy/40 rounded-full p-1">
                     <button
