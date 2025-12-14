@@ -25,16 +25,18 @@ export default defineConfig(({ mode }) => ({
           // Don't split React - keep it in the main bundle to avoid loading order issues
           // This ensures React is always available when needed
           if (id.includes('node_modules')) {
-            // Exclude React from chunking - it will stay in the main bundle
+            // Exclude React from chunking - return null/undefined to keep in main bundle
+            // Check for React modules first before other chunking logic
             if (
               id.includes('node_modules/react/') ||
               id.includes('node_modules/react-dom/') ||
               id.includes('node_modules/react-router') ||
               id.includes('node_modules/scheduler/') ||
-              id.includes('react/jsx-runtime')
+              id.includes('react/jsx-runtime') ||
+              id.includes('react/index')
             ) {
-              // Return undefined to keep React in the main bundle
-              return undefined;
+              // Don't return a chunk name - this keeps React in the entry bundle
+              return;
             }
             // UI libraries chunk
             if (id.includes('framer-motion') || id.includes('lucide-react')) {
