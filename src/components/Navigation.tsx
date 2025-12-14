@@ -76,13 +76,11 @@ export const Navigation: React.FC = () => {
         <div className="flex items-center justify-between h-full">
           {/* Logo and Branding */}
           <Link to="/" className="flex items-center flex-shrink-0 max-w-[45%] md:max-w-none">
-            <img src={logoImg} alt={t('common.brandName')} className="h-8 md:h-16 w-auto" />
-            <div className="ml-2 md:ml-4 flex flex-col justify-center">
-              <span className="font-outfit font-bold text-navy dark:text-white text-sm md:text-lg leading-none">
-                {t('common.ermits')}
-              </span>
-              <span className="font-outfit font-normal text-navy dark:text-white text-xs md:text-base leading-none mt-0.5 md:mt-1">
-                {t('common.advisory')}
+            <img src={logoImg} alt={t('common.brandName')} className="h-8 md:h-14 w-auto" />
+            <div className="ml-2 md:ml-3">
+              <span className="font-outfit font-semibold text-navy dark:text-white">
+                <span className="block text-sm">{t('common.ermits')}</span>
+                <span className="block text-sm">{t('common.advisory')}</span>
               </span>
             </div>
           </Link>
