@@ -23,8 +23,9 @@ export default defineConfig(({ mode }) => ({
       output: {
         manualChunks(id) {
           // React vendor chunk - keep React, ReactDOM, and React Router together to avoid initialization issues
+          // IMPORTANT: React must be in the first chunk to ensure it loads before any other code
           if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router') || id.includes('scheduler')) {
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router') || id.includes('scheduler') || id.includes('react/jsx-runtime')) {
               // Keep all React-related packages in a single chunk to ensure proper initialization order
               return 'vendor-react';
             }
