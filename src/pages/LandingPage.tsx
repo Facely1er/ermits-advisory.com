@@ -97,7 +97,7 @@ export const LandingPage: React.FC = () => {
             className="text-center"
           >
             {/* Main Heading with Enhanced Carousel */}
-            <div className="mb-8 min-h-[140px] md:min-h-[180px] flex items-center justify-center">
+            <div className="mb-8">
               <HeroCarousel
                 slides={[
                   {

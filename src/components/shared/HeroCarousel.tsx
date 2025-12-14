@@ -52,7 +52,8 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      <div className="relative overflow-hidden">
+      {/* Fixed height container to prevent layout shifts */}
+      <div className="relative overflow-hidden min-h-[160px] md:min-h-[200px] lg:min-h-[240px] xl:min-h-[280px] flex items-center justify-center">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentIndex}
@@ -60,21 +61,20 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="text-center"
+            className="text-center w-full"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-relaxed px-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight px-4">
               {slides[currentIndex].highlight ? (
                 <>
-                  <span className="text-white drop-shadow-lg">
+                  <span className="text-white drop-shadow-lg block">
                     {slides[currentIndex].headline}
                   </span>
-                  <br className="hidden md:block" />
-                  <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent drop-shadow-lg animate-gradient">
+                  <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent drop-shadow-lg animate-gradient block">
                     {slides[currentIndex].highlight}
                   </span>
                 </>
               ) : (
-                <span className="text-white drop-shadow-lg">
+                <span className="text-white drop-shadow-lg block">
                   {slides[currentIndex].headline}
                 </span>
               )}
