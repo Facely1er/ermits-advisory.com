@@ -15,19 +15,26 @@ export default defineConfig(({ mode }) => ({
   },
   optimizeDeps: {
     exclude: ['lucide-react'],
-    include: ['react', 'react-dom', 'react-router-dom'],
+    include: ['react', 'react-dom', 'react-router-dom', 'react/jsx-runtime'],
   },
   build: {
     // Enable code splitting and chunk optimization
     rollupOptions: {
       output: {
         manualChunks(id) {
-          // React vendor chunk - keep React, ReactDOM, and React Router together to avoid initialization issues
-          // IMPORTANT: React must be in the first chunk to ensure it loads before any other code
+          // Don't split React - keep it in the main bundle to avoid loading order issues
+          // This ensures React is always available when needed
           if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router') || id.includes('scheduler') || id.includes('react/jsx-runtime')) {
-              // Keep all React-related packages in a single chunk to ensure proper initialization order
-              return 'vendor-react';
+            // Exclude React from chunking - it will stay in the main bundle
+            if (
+              id.includes('node_modules/react/') ||
+              id.includes('node_modules/react-dom/') ||
+              id.includes('node_modules/react-router') ||
+              id.includes('node_modules/scheduler/') ||
+              id.includes('react/jsx-runtime')
+            ) {
+              // Return undefined to keep React in the main bundle
+              return undefined;
             }
             // UI libraries chunk
             if (id.includes('framer-motion') || id.includes('lucide-react')) {
