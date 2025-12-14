@@ -10,8 +10,12 @@ export default defineConfig(({ mode }) => ({
     // Only remove console statements in production builds
     ...(mode === 'production' ? [removeConsole()] : [])
   ],
+  resolve: {
+    dedupe: ['react', 'react-dom'],
+  },
   optimizeDeps: {
     exclude: ['lucide-react'],
+    include: ['react', 'react-dom', 'react-router-dom'],
   },
   build: {
     // Enable code splitting and chunk optimization
