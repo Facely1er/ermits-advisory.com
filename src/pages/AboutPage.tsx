@@ -360,7 +360,7 @@ export const AboutPage: React.FC = () => {
                   <div className="absolute inset-0 bg-navy/40 flex items-center justify-center">
                     <div className="text-center text-white">
                       <h3 className="text-xl font-bold mb-2">{t('about.globalReach.imageTitle')}</h3>
-                      <p className="text-sm opacity-90">{t('about.globalReach.imageSubtitle')}</p>
+                      <p className="text-base md:text-lg opacity-90">{t('about.globalReach.imageSubtitle')}</p>
                     </div>
                   </div>
                 </div>
