@@ -15,9 +15,9 @@ export const Footer: React.FC = () => {
           <div className="flex items-start gap-3">
             <img src={logoImg} alt="ERMITS Advisory" className="h-14 w-auto" />
             <div>
-              <span className="font-outfit font-semibold text-white">
-                <span className="block text-sm">ERMITS</span>
-                <span className="block text-sm">Advisory</span>
+              <span className="font-outfit text-white">
+                <span className="block text-sm font-bold">ERMITS</span>
+                <span className="block text-sm font-normal">Advisory</span>
               </span>
               <p className="text-sm text-silver mt-1">Global Intelligence. Resilient Strategy. Streamlined for Success.</p>
             </div>
