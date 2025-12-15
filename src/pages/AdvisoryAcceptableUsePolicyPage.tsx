@@ -72,114 +72,107 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
           transition={{ delay: 0.2 }}
           className="mb-8"
         >
-          <Card variant="glass" padding="lg" className="bg-navy text-white">
-            <div className="flex items-start">
-              <div className="p-3 rounded-full bg-white/10 mr-4">
-                <Shield size={32} />
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">2. PROFESSIONAL CONDUCT STANDARDS</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">2.1 Professional Standards</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3">All parties shall:</p>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Maintain Professional Conduct:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Act with honesty, integrity, and professionalism</li>
+                      <li>Respect confidentiality and trust relationships</li>
+                      <li>Communicate respectfully and professionally</li>
+                      <li>Meet commitments and deadlines</li>
+                      <li>Escalate issues promptly and appropriately</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Exercise Professional Judgment:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Provide objective, unbiased advice and recommendations</li>
+                      <li>Base recommendations on factual analysis and industry standards</li>
+                      <li>Disclose conflicts of interest promptly</li>
+                      <li>Acknowledge limitations of expertise</li>
+                      <li>Recommend specialists when appropriate</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Adhere to Industry Standards:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Follow applicable professional codes of conduct</li>
+                      <li>Comply with industry best practices and standards</li>
+                      <li>Maintain professional certifications and continuing education</li>
+                      <li>Apply quality assurance processes</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-              <div className="flex-1">
-                <h2 className="text-2xl font-bold mb-4 text-white">2. PROFESSIONAL CONDUCT STANDARDS</h2>
-                <div className="space-y-4 text-gray-200">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">2.2 Client Conduct</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3">Clients and client personnel shall:</p>
+                <div className="space-y-3">
                   <div>
-                    <h3 className="font-semibold text-white mb-2">2.1 Professional Standards</h3>
-                    <p className="mb-2 text-gray-200">All parties shall:</p>
-                    <div className="space-y-2 text-sm">
-                      <div>
-                        <h4 className="font-semibold text-white mb-1">Maintain Professional Conduct:</h4>
-                        <ul className="list-disc list-inside ml-4 text-gray-200">
-                          <li>Act with honesty, integrity, and professionalism</li>
-                          <li>Respect confidentiality and trust relationships</li>
-                          <li>Communicate respectfully and professionally</li>
-                          <li>Meet commitments and deadlines</li>
-                          <li>Escalate issues promptly and appropriately</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-white mb-1">Exercise Professional Judgment:</h4>
-                        <ul className="list-disc list-inside ml-4 text-gray-200">
-                          <li>Provide objective, unbiased advice and recommendations</li>
-                          <li>Base recommendations on factual analysis and industry standards</li>
-                          <li>Disclose conflicts of interest promptly</li>
-                          <li>Acknowledge limitations of expertise</li>
-                          <li>Recommend specialists when appropriate</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-white mb-1">Adhere to Industry Standards:</h4>
-                        <ul className="list-disc list-inside ml-4 text-gray-200">
-                          <li>Follow applicable professional codes of conduct</li>
-                          <li>Comply with industry best practices and standards</li>
-                          <li>Maintain professional certifications and continuing education</li>
-                          <li>Apply quality assurance processes</li>
-                        </ul>
-                      </div>
-                    </div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Provide Accurate Information:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Provide truthful, accurate, and complete information</li>
+                      <li>Not misrepresent facts, circumstances, or security posture</li>
+                      <li>Correct inaccuracies promptly when discovered</li>
+                      <li>Disclose material changes affecting engagement</li>
+                    </ul>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white mb-2">2.2 Client Conduct</h3>
-                    <p className="mb-2 text-gray-200">Clients and client personnel shall:</p>
-                    <div className="space-y-2 text-sm">
-                      <div>
-                        <h4 className="font-semibold text-white mb-1">Provide Accurate Information:</h4>
-                        <ul className="list-disc list-inside ml-4 text-gray-200">
-                          <li>Provide truthful, accurate, and complete information</li>
-                          <li>Not misrepresent facts, circumstances, or security posture</li>
-                          <li>Correct inaccuracies promptly when discovered</li>
-                          <li>Disclose material changes affecting engagement</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-white mb-1">Respect Professional Boundaries:</h4>
-                        <ul className="list-disc list-inside ml-4 text-gray-200">
-                          <li>Not request illegal, unethical, or unprofessional services</li>
-                          <li>Not pressure consultants to violate professional standards</li>
-                          <li>Not request access to confidential information about other clients</li>
-                          <li>Not attempt to recruit or hire ERMITS consultants during engagement (non-solicitation)</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-white mb-1">Cooperate in Good Faith:</h4>
-                        <ul className="list-disc list-inside ml-4 text-gray-200">
-                          <li>Provide timely access to personnel, systems, and documentation</li>
-                          <li>Respond to requests for information promptly</li>
-                          <li>Participate in scheduled meetings and reviews</li>
-                          <li>Implement reasonable security measures for consultant access</li>
-                        </ul>
-                      </div>
-                    </div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Respect Professional Boundaries:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Not request illegal, unethical, or unprofessional services</li>
+                      <li>Not pressure consultants to violate professional standards</li>
+                      <li>Not request access to confidential information about other clients</li>
+                      <li>Not attempt to recruit or hire ERMITS consultants during engagement (non-solicitation)</li>
+                    </ul>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white mb-2">2.3 ERMITS Consultant Conduct</h3>
-                    <p className="mb-2 text-gray-200">ERMITS consultants shall:</p>
-                    <div className="space-y-2 text-sm">
-                      <div>
-                        <h4 className="font-semibold text-white mb-1">Maintain Professional Independence:</h4>
-                        <ul className="list-disc list-inside ml-4 text-gray-200">
-                          <li>Provide objective recommendations without bias</li>
-                          <li>Disclose conflicts of interest</li>
-                          <li>Not accept gifts, kickbacks, or referral fees from vendors</li>
-                          <li>Not recommend specific vendors without transparent disclosure</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-white mb-1">Respect Client Confidentiality:</h4>
-                        <ul className="list-disc list-inside ml-4 text-gray-200">
-                          <li>Maintain strict confidentiality of Client Data and Confidential Information</li>
-                          <li>Use Confidential Information only for engagement purposes</li>
-                          <li>Not disclose engagement details to other clients or third parties</li>
-                          <li>Implement appropriate security measures</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-white mb-1">Deliver Quality Services:</h4>
-                        <ul className="list-disc list-inside ml-4 text-gray-200">
-                          <li>Perform services with appropriate expertise and care</li>
-                          <li>Meet professional standards and quality expectations</li>
-                          <li>Communicate proactively about issues, risks, and delays</li>
-                          <li>Stand behind recommendations with professional reasoning</li>
-                        </ul>
-                      </div>
-                    </div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Cooperate in Good Faith:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Provide timely access to personnel, systems, and documentation</li>
+                      <li>Respond to requests for information promptly</li>
+                      <li>Participate in scheduled meetings and reviews</li>
+                      <li>Implement reasonable security measures for consultant access</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">2.3 ERMITS Consultant Conduct</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3">ERMITS consultants shall:</p>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Maintain Professional Independence:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Provide objective recommendations without bias</li>
+                      <li>Disclose conflicts of interest</li>
+                      <li>Not accept gifts, kickbacks, or referral fees from vendors</li>
+                      <li>Not recommend specific vendors without transparent disclosure</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Respect Client Confidentiality:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Maintain strict confidentiality of Client Data and Confidential Information</li>
+                      <li>Use Confidential Information only for engagement purposes</li>
+                      <li>Not disclose engagement details to other clients or third parties</li>
+                      <li>Implement appropriate security measures</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Deliver Quality Services:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Perform services with appropriate expertise and care</li>
+                      <li>Meet professional standards and quality expectations</li>
+                      <li>Communicate proactively about issues, risks, and delays</li>
+                      <li>Stand behind recommendations with professional reasoning</li>
+                    </ul>
                   </div>
                 </div>
               </div>
