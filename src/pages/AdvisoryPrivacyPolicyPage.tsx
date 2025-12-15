@@ -20,10 +20,10 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
           </Link>
           <h1 className="text-3xl md:text-4xl font-bold mb-4 text-navy dark:text-white">ERMITS ADVISORY SERVICES PRIVACY POLICY</h1>
           <p className="text-gray-600 dark:text-gray-200 mb-2">
-            <strong>Effective Date:</strong> November 19, 2025
+            <strong>Effective Date:</strong> December 15, 2025
           </p>
           <p className="text-gray-600 dark:text-gray-200 mb-4">
-            <strong>Last Updated:</strong> November 19, 2025
+            <strong>Last Updated:</strong> December 15, 2025
           </p>
           <p className="text-lg text-gray-600 dark:text-gray-100 mb-4">
             ERMITS LLC ("ERMITS," "we," "our," or "us") is committed to protecting your privacy in connection with our professional advisory and consulting services. This Privacy Policy explains how we collect, use, disclose, and safeguard information when you engage us for Advisory Services.
@@ -1569,7 +1569,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                   Previous versions available upon request: <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a>
                 </p>
                 <p className="text-gray-600 dark:text-gray-200">
-                  <strong>Current Version:</strong> 1.0 (November 2025)
+                  <strong>Current Version:</strong> 1.0 (December 2025)
                 </p>
               </div>
             </div>
@@ -1682,10 +1682,10 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
             <h2 className="text-2xl font-bold mb-4 dark:text-white">14. EFFECTIVE DATE AND ACCEPTANCE</h2>
             <div className="space-y-4">
               <p className="text-gray-600 dark:text-gray-200">
-                <strong>Effective Date:</strong> November 19, 2025
+                <strong>Effective Date:</strong> December 15, 2025
               </p>
               <p className="text-gray-600 dark:text-gray-200">
-                <strong>Last Updated:</strong> November 19, 2025
+                <strong>Last Updated:</strong> December 15, 2025
               </p>
               <p className="text-gray-600 dark:text-gray-200">
                 <strong>By engaging ERMITS Advisory Services, you acknowledge that you have read, understood, and agree to be bound by this Privacy Policy.</strong>

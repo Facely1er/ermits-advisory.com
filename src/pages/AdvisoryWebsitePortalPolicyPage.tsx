@@ -1135,7 +1135,7 @@ export const AdvisoryWebsitePortalPolicyPage: React.FC = () => {
                   Previous versions available upon request: <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a>
                 </p>
                 <p className="text-gray-600 dark:text-gray-200 mt-2">
-                  <strong>Current Version:</strong> 1.0 (November 2025)
+                  <strong>Current Version:</strong> 1.0 (December 2025)
                 </p>
               </div>
             </div>
