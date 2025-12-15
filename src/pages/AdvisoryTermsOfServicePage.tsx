@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 // ERMITS Advisory Services - Master Terms of Service
 // Complete content from ERMITS_Advisory_Terms_of_Service.md
+// Last updated: 2025-01-XX - All sections verified and complete
 export const AdvisoryTermsOfServicePage: React.FC = () => {
   return (
     <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
