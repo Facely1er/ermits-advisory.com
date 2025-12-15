@@ -20,10 +20,10 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
           </Link>
           <h1 className="text-3xl md:text-4xl font-bold mb-4 text-navy dark:text-white">ERMITS ADVISORY SERVICES PRIVACY POLICY</h1>
           <p className="text-gray-600 dark:text-gray-200 mb-2">
-            <strong>Effective Date:</strong> December 15, 2025
+            <strong>Effective Date:</strong> November 19, 2025
           </p>
           <p className="text-gray-600 dark:text-gray-200 mb-4">
-            <strong>Last Updated:</strong> December 15, 2025
+            <strong>Last Updated:</strong> November 19, 2025
           </p>
           <p className="text-lg text-gray-600 dark:text-gray-100 mb-4">
             ERMITS LLC ("ERMITS," "we," "our," or "us") is committed to protecting your privacy in connection with our professional advisory and consulting services. This Privacy Policy explains how we collect, use, disclose, and safeguard information when you engage us for Advisory Services.
@@ -449,12 +449,12 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
             
             <div className="space-y-4">
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">4.1 Service Delivery</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">4.1 Service Delivery</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-3">We use collected information to:</p>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Provide Advisory Services:</h4>
-                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                    <h4 className="font-semibold mb-2 dark:text-white">Provide Advisory Services:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
                       <li>Conduct assessments and evaluations per SOW</li>
                       <li>Develop recommendations and strategic guidance</li>
                       <li>Produce deliverables (reports, roadmaps, policies, procedures)</li>
@@ -464,19 +464,98 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Quality Assurance:</h4>
-                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                    <h4 className="font-semibold mb-2 dark:text-white">Quality Assurance:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
                       <li>Internal review of deliverables for accuracy and completeness</li>
                       <li>Technical review by subject matter experts</li>
                       <li>Engagement oversight by senior advisors</li>
                       <li>Compliance with professional standards</li>
                     </ul>
                   </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Client Communication:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Project status updates and milestone notifications</li>
+                      <li>Scheduling meetings and coordination</li>
+                      <li>Deliverable transmission and review</li>
+                      <li>Issue escalation and resolution</li>
+                      <li>Post-engagement support during warranty period</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">4.4 What We Do NOT Do</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">4.2 Business Operations</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3">We use information for legitimate business purposes:</p>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Billing and Payment:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Generate invoices based on engagement terms</li>
+                      <li>Process payments and maintain financial records</li>
+                      <li>Track project hours and expenses (for time-and-materials engagements)</li>
+                      <li>Comply with tax and accounting requirements</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Engagement Management:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Resource allocation and consultant assignment</li>
+                      <li>Project timeline and milestone tracking</li>
+                      <li>Scope management and change control</li>
+                      <li>Contract compliance and deliverable tracking</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Legal and Compliance:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Comply with legal obligations and regulations</li>
+                      <li>Respond to lawful requests from authorities</li>
+                      <li>Enforce contracts and protect legal rights</li>
+                      <li>Maintain professional liability insurance requirements</li>
+                      <li>Comply with industry professional standards</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">4.3 Professional Development and Service Improvement</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3">We may use anonymized, aggregated information to:</p>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Improve Services:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Identify common client challenges and needs</li>
+                      <li>Develop new service offerings and methodologies</li>
+                      <li>Refine assessment frameworks and tools</li>
+                      <li>Train and develop consultant capabilities</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Research and Thought Leadership:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Publish anonymized case studies (with explicit client permission)</li>
+                      <li>Develop industry reports and white papers</li>
+                      <li>Contribute to industry standards and best practices</li>
+                      <li>Present at conferences and professional events</li>
+                    </ul>
+                  </div>
+                  <div className="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                    <h4 className="font-semibold mb-2 dark:text-white">Privacy Protections:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>All use is with anonymized, aggregated data only</li>
+                      <li>No client-identifiable information disclosed without explicit written consent</li>
+                      <li>Minimum anonymity set of 10+ organizations for any published statistics</li>
+                      <li>Opt-out available for inclusion in anonymized datasets</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">4.4 What We Do NOT Do</h3>
                 <div className="p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
                   <p className="font-semibold mb-2 text-navy dark:text-white">ERMITS Advisory Services Does NOT:</p>
                   <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
@@ -504,37 +583,114 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 text-navy dark:text-white">5. INFORMATION SHARING AND DISCLOSURE</h2>
-            <p className="text-gray-600 dark:text-gray-200 mb-4">
-              ERMITS shares client information only in the following circumstances:
-            </p>
-            <div className="space-y-3">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">5. INFORMATION SHARING AND DISCLOSURE</h2>
+            
+            <div className="space-y-6">
               <div>
-                <h4 className="font-semibold mb-2 text-navy dark:text-white">With Your Consent:</h4>
-                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
-                  <li>Sharing deliverables with your designated third parties</li>
-                  <li>Joint presentations with your technology vendors</li>
-                  <li>Collaboration with your legal counsel or other advisors</li>
-                  <li>Case studies or testimonials (with explicit written permission)</li>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">5.1 Limited Information Sharing</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-4">
+                  ERMITS shares client information only in the following circumstances:
+                </p>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">With Your Consent:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Sharing deliverables with your designated third parties</li>
+                      <li>Joint presentations with your technology vendors</li>
+                      <li>Collaboration with your legal counsel or other advisors</li>
+                      <li>Case studies or testimonials (with explicit written permission)</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Service Providers (Under NDA):</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Secure file sharing platforms (Supabase, encrypted storage)</li>
+                      <li>Payment processors (Stripe for invoicing)</li>
+                      <li>Document collaboration tools (as needed for engagement delivery)</li>
+                      <li>Professional liability insurance carriers (for coverage verification)</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Subcontractors and Specialists:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Technical specialists providing niche expertise</li>
+                      <li>All subcontractors bound by equivalent confidentiality terms</li>
+                      <li>Client notification and approval for subcontractor involvement</li>
+                      <li>ERMITS remains responsible for subcontractor confidentiality</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Legal and Regulatory Requirements:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Court orders, subpoenas, or legal process</li>
+                      <li>Regulatory investigations or examinations</li>
+                      <li>National security requests (where legally required)</li>
+                      <li>Professional standards board inquiries</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">5.2 Confidentiality Protections</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3">All service providers and subcontractors must:</p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                  <li>Execute Non-Disclosure Agreements (NDAs) with ERMITS</li>
+                  <li>Implement equivalent security and privacy measures</li>
+                  <li>Use data only for specified purposes (supporting your engagement)</li>
+                  <li>Delete or return data upon engagement completion</li>
+                  <li>Comply with applicable privacy laws (GDPR, CCPA, etc.)</li>
                 </ul>
               </div>
+
               <div>
-                <h4 className="font-semibold mb-2 text-navy dark:text-white">Service Providers (Under NDA):</h4>
-                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
-                  <li>Secure file sharing platforms (Supabase, encrypted storage)</li>
-                  <li>Payment processors (Stripe for invoicing)</li>
-                  <li>Document collaboration tools (as needed for engagement delivery)</li>
-                  <li>Professional liability insurance carriers (for coverage verification)</li>
-                </ul>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">5.3 Professional References and Case Studies</h3>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">References:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>We may request your permission to list you as a client reference</li>
+                      <li>You may decline or specify limited reference scope</li>
+                      <li>References provided only with your explicit consent</li>
+                      <li>You may withdraw consent at any time</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Case Studies:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Require explicit written permission before publication</li>
+                      <li>Client review and approval of all content before publication</li>
+                      <li>Option to be identified or remain anonymous</li>
+                      <li>Right to request removal of published case studies</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
+
               <div>
-                <h4 className="font-semibold mb-2 text-navy dark:text-white">Legal and Regulatory Requirements:</h4>
-                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
-                  <li>Court orders, subpoenas, or legal process</li>
-                  <li>Regulatory investigations or examinations</li>
-                  <li>National security requests (where legally required)</li>
-                  <li>Professional standards board inquiries</li>
-                </ul>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">5.4 Legal Disclosures</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3">When legally required to disclose information:</p>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Our Commitments:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Notify you promptly of requests (when legally permitted)</li>
+                      <li>Challenge overbroad or improper requests</li>
+                      <li>Provide minimum information required by law</li>
+                      <li>Seek protective orders for sensitive information</li>
+                      <li>Document all disclosures for your records</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Limitations:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Cannot notify if legally prohibited (e.g., national security letters)</li>
+                      <li>Cannot refuse legally valid court orders</li>
+                      <li>Must comply with regulatory examination requests</li>
+                      <li>Professional standards may require disclosure in limited circumstances</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </Card>
@@ -548,14 +704,14 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 text-navy dark:text-white">6. DATA SECURITY MEASURES</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">6. DATA SECURITY MEASURES</h2>
             
-            <div className="space-y-4">
+            <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">6.1 Technical Security Controls</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">6.1 Technical Security Controls</h3>
                 <div className="mb-3">
-                  <h4 className="font-semibold mb-2 text-navy dark:text-white">Data in Transit:</h4>
-                  <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <h4 className="font-semibold mb-2 dark:text-white">Data in Transit:</h4>
+                  <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
                     <li>TLS 1.3 encryption for all electronic communications</li>
                     <li>Secure file transfer protocols (SFTP, HTTPS)</li>
                     <li>Encrypted email options available (S/MIME, PGP)</li>
@@ -563,23 +719,131 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                   </ul>
                 </div>
                 <div className="mb-3">
-                  <h4 className="font-semibold mb-2 text-navy dark:text-white">Data at Rest:</h4>
-                  <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <h4 className="font-semibold mb-2 dark:text-white">Data at Rest:</h4>
+                  <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
                     <li>AES-256 encryption for stored client documents</li>
                     <li>Encrypted file storage platforms (Supabase with encryption)</li>
                     <li>Encrypted laptop drives (BitLocker, FileVault)</li>
                     <li>Secure document destruction (digital wiping, physical shredding)</li>
                   </ul>
                 </div>
-                <div>
-                  <h4 className="font-semibold mb-2 text-navy dark:text-white">Access Controls:</h4>
-                  <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                <div className="mb-3">
+                  <h4 className="font-semibold mb-2 dark:text-white">Access Controls:</h4>
+                  <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
                     <li>Multi-factor authentication (MFA) required for all consultants</li>
                     <li>Role-based access control (RBAC) for client data</li>
                     <li>Strong password requirements (minimum 16 characters)</li>
                     <li>Automatic session timeout and screen locking</li>
                     <li>Privileged access monitoring and logging</li>
                   </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-2 dark:text-white">Endpoint Security:</h4>
+                  <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                    <li>Company-managed devices with security controls</li>
+                    <li>Endpoint detection and response (EDR) software</li>
+                    <li>Regular security patching and updates</li>
+                    <li>Full-disk encryption on all devices</li>
+                    <li>Remote wipe capability for lost/stolen devices</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">6.2 Physical Security</h3>
+                <div className="mb-3">
+                  <h4 className="font-semibold mb-2 dark:text-white">Office Security:</h4>
+                  <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                    <li>Controlled access to office facilities</li>
+                    <li>Visitor management and escort policies</li>
+                    <li>Secure document storage (locked cabinets)</li>
+                    <li>Clean desk policy for confidential materials</li>
+                    <li>Secure disposal (shredding) of paper documents</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-2 dark:text-white">Remote Work Security:</h4>
+                  <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                    <li>Home office security requirements for consultants</li>
+                    <li>Prohibition on public Wi-Fi for client work</li>
+                    <li>Private workspace requirements for video calls</li>
+                    <li>Secure storage of client materials at home</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">6.3 Operational Security</h3>
+                <div className="mb-3">
+                  <h4 className="font-semibold mb-2 dark:text-white">Consultant Training:</h4>
+                  <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                    <li>Annual security awareness training</li>
+                    <li>Privacy and confidentiality training</li>
+                    <li>Data handling and classification training</li>
+                    <li>Incident response training</li>
+                    <li>Client data protection protocols</li>
+                  </ul>
+                </div>
+                <div className="mb-3">
+                  <h4 className="font-semibold mb-2 dark:text-white">Background Checks:</h4>
+                  <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                    <li>Background checks for all consulting personnel</li>
+                    <li>Enhanced screening for sensitive engagements</li>
+                    <li>Confidentiality agreements signed by all personnel</li>
+                    <li>Code of professional conduct</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-2 dark:text-white">Document Handling:</h4>
+                  <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                    <li>Classification of client documents (Confidential, Highly Confidential)</li>
+                    <li>Secure transmission protocols for document sharing</li>
+                    <li>Version control and document tracking</li>
+                    <li>Secure deletion after retention period</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">6.4 Security Incident Response</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3">In the event of a security incident affecting client data:</p>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Immediate Response (0-24 hours):</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Containment and isolation of affected systems</li>
+                      <li>Assessment of scope and impact</li>
+                      <li>Notification to affected clients within 24 hours</li>
+                      <li>Engagement of incident response procedures</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Investigation (24-72 hours):</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Forensic analysis of incident</li>
+                      <li>Determination of data affected</li>
+                      <li>Root cause identification</li>
+                      <li>Evidence preservation</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Notification (Within 72 hours):</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Formal written notification to affected clients</li>
+                      <li>Details of incident, data affected, and remediation steps</li>
+                      <li>Recommendations for client protective measures</li>
+                      <li>Ongoing communication and updates</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Remediation:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Implementation of corrective measures</li>
+                      <li>Enhanced security controls</li>
+                      <li>Post-incident review and lessons learned</li>
+                      <li>Updated security procedures</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -594,55 +858,135 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 text-navy dark:text-white">7. DATA RETENTION AND DELETION</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">7. DATA RETENTION AND DELETION</h2>
             
-            <div className="overflow-x-auto my-4">
-              <table className="w-full text-sm border border-gray-200 dark:border-gray-700">
-                <thead>
-                  <tr className="bg-gray-100 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
-                    <th className="text-left py-3 px-4 font-semibold text-navy dark:text-white">Data Type</th>
-                    <th className="text-left py-3 px-4 font-semibold text-navy dark:text-white">Retention Period</th>
-                    <th className="text-left py-3 px-4 font-semibold text-navy dark:text-white">Purpose</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b border-gray-100 dark:border-gray-800">
-                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Client Contact Information</td>
-                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Engagement duration + 7 years</td>
-                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Contract compliance, communication, professional standards</td>
-                  </tr>
-                  <tr className="border-b border-gray-100 dark:border-gray-800">
-                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Engagement Deliverables</td>
-                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Engagement duration + 7 years</td>
-                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Warranty support, professional liability, legal compliance</td>
-                  </tr>
-                  <tr className="border-b border-gray-100 dark:border-gray-800">
-                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Working Documents</td>
-                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Engagement duration + 3 years</td>
-                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Quality assurance, issue resolution, professional standards</td>
-                  </tr>
-                  <tr className="border-b border-gray-100 dark:border-gray-800">
-                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Meeting Notes</td>
-                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Engagement duration + 3 years</td>
-                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Deliverable support, context documentation</td>
-                  </tr>
-                  <tr className="border-b border-gray-100 dark:border-gray-800">
-                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Communications (Email)</td>
-                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Engagement duration + 7 years</td>
-                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Contract compliance, dispute resolution, professional standards</td>
-                  </tr>
-                  <tr className="border-b border-gray-100 dark:border-gray-800">
-                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Technical Findings</td>
-                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Engagement duration + 3 years</td>
-                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Deliverable support, warranty period assistance</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Financial Records</td>
-                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">7 years from engagement end</td>
-                    <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Tax compliance, audit requirements, financial regulations</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">7.1 Active Engagement Data</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-4">During active engagements, we retain:</p>
+                <div className="overflow-x-auto my-4">
+                  <table className="w-full text-sm border border-gray-200 dark:border-gray-700">
+                    <thead>
+                      <tr className="bg-gray-100 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+                        <th className="text-left py-3 px-4 font-semibold dark:text-white">Data Type</th>
+                        <th className="text-left py-3 px-4 font-semibold dark:text-white">Retention Period</th>
+                        <th className="text-left py-3 px-4 font-semibold dark:text-white">Purpose</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-gray-100 dark:border-gray-800">
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Client Contact Information</td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Engagement duration + 7 years</td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Contract compliance, communication, professional standards</td>
+                      </tr>
+                      <tr className="border-b border-gray-100 dark:border-gray-800">
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Engagement Deliverables</td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Engagement duration + 7 years</td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Warranty support, professional liability, legal compliance</td>
+                      </tr>
+                      <tr className="border-b border-gray-100 dark:border-gray-800">
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Working Documents</td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Engagement duration + 3 years</td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Quality assurance, issue resolution, professional standards</td>
+                      </tr>
+                      <tr className="border-b border-gray-100 dark:border-gray-800">
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Meeting Notes</td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Engagement duration + 3 years</td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Deliverable support, context documentation</td>
+                      </tr>
+                      <tr className="border-b border-gray-100 dark:border-gray-800">
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Communications (Email)</td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Engagement duration + 7 years</td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Contract compliance, dispute resolution, professional standards</td>
+                      </tr>
+                      <tr>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Financial Records</td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">7 years from engagement end</td>
+                        <td className="py-3 px-4 text-gray-600 dark:text-gray-200">Tax compliance, audit requirements, financial regulations</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">7.2 Post-Engagement Retention</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3">After engagement completion:</p>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Warranty Period (Typically 90 days):</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Full engagement file retained for issue resolution</li>
+                      <li>Client access to consultants for questions and clarifications</li>
+                      <li>Errata or corrections to deliverables if needed</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Professional Standards Period (3 years):</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Core deliverables and supporting documentation retained</li>
+                      <li>Required for professional liability insurance</li>
+                      <li>Support for quality assurance and peer review</li>
+                      <li>Evidence of professional standards compliance</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Legal Compliance Period (7 years):</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Financial records and invoices</li>
+                      <li>Contracts and Statements of Work</li>
+                      <li>Core deliverables (final reports)</li>
+                      <li>Required by tax regulations and professional standards</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">7.3 Data Deletion Process</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3">At the end of retention periods:</p>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Automated Deletion:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Working documents deleted after 3 years</li>
+                      <li>Communications purged from email systems</li>
+                      <li>Encrypted files deleted and keys destroyed</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Verified Deletion:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Secure data wiping (DoD 5220.22-M standard)</li>
+                      <li>Physical document shredding (cross-cut, unrecoverable)</li>
+                      <li>Certificate of destruction available upon request</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Early Deletion Requests:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Clients may request early deletion of data</li>
+                      <li>Subject to legal and professional standard requirements</li>
+                      <li>Cannot delete financial records (7-year requirement)</li>
+                      <li>Cannot delete documents under legal hold</li>
+                      <li>Deletion typically completed within 30 days of request</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">7.4 Engagement File Closeout</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3">Upon engagement completion:</p>
+                <ol className="list-decimal list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                  <li><strong>Deliverable Handoff:</strong> Final deliverables transmitted to client</li>
+                  <li><strong>File Review:</strong> Engagement file reviewed for completeness</li>
+                  <li><strong>Data Classification:</strong> Client data classified for retention/deletion</li>
+                  <li><strong>Secure Storage:</strong> Long-term retention materials moved to secure archive</li>
+                  <li><strong>Access Restriction:</strong> Access limited to authorized personnel only</li>
+                  <li><strong>Deletion Scheduling:</strong> Short-term materials scheduled for deletion</li>
+                </ol>
+              </div>
             </div>
           </Card>
         </motion.div>
