@@ -713,11 +713,11 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">10. SPECIAL CONSIDERATIONS</h2>
+            <h2 className="text-2xl font-bold mb-4 text-navy dark:text-white">10. SPECIAL CONSIDERATIONS</h2>
             
             <div className="space-y-4">
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">10.1 Federal Contractor Clients (CUI/FCI)</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">10.1 Federal Contractor Clients (CUI/FCI)</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-3">
                   For clients handling Controlled Unclassified Information (CUI) or Federal Contract Information (FCI):
                 </p>
@@ -733,7 +733,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">10.2 Healthcare Clients (HIPAA)</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">10.2 Healthcare Clients (HIPAA)</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-3">
                   For healthcare organizations subject to HIPAA:
                 </p>
@@ -749,7 +749,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">10.4 Attorney-Client Engagement Model</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">10.4 Attorney-Client Engagement Model</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-3">
                   For engagements conducted at the direction of legal counsel:
                 </p>
