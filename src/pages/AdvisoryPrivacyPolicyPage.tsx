@@ -709,7 +709,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
           </Card>
         </motion.div>
 
-        {/* Section 10: Special Considerations */}
+        {/* Section 9: Special Considerations */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -717,11 +717,11 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 text-navy dark:text-white">10. SPECIAL CONSIDERATIONS</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">9. SPECIAL CONSIDERATIONS</h2>
             
             <div className="space-y-4">
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">10.1 Federal Contractor Clients (CUI/FCI)</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">9.1 Federal Contractor Clients (CUI/FCI)</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-3">
                   For clients handling Controlled Unclassified Information (CUI) or Federal Contract Information (FCI):
                 </p>
@@ -737,7 +737,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">10.2 Healthcare Clients (HIPAA)</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">9.2 Healthcare Clients (HIPAA)</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-3">
                   For healthcare organizations subject to HIPAA:
                 </p>
@@ -753,7 +753,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">10.4 Attorney-Client Engagement Model</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">9.3 Attorney-Client Engagement Model</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-3">
                   For engagements conducted at the direction of legal counsel:
                 </p>
@@ -771,7 +771,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
           </Card>
         </motion.div>
 
-        {/* Section 13: Contact Information */}
+        {/* Section 10: Contact Information */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -779,11 +779,11 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 text-navy dark:text-white">13. CONTACT INFORMATION</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">10. CONTACT INFORMATION</h2>
             
             <div className="space-y-4">
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">13.1 Advisory Services Privacy Inquiries</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">10.1 Advisory Services Privacy Inquiries</h3>
                 <div className="space-y-3">
                   <div>
                     <h4 className="font-semibold mb-2 text-navy dark:text-white">General Privacy Questions:</h4>
