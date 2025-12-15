@@ -1165,43 +1165,7 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
           </Card>
         </motion.div>
 
-        {/* Section 16: Insurance */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.77 }}
-          className="mb-8"
-        >
-          <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">16. INSURANCE</h2>
-            <div className="space-y-4">
-              <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">16.1 ERMITS Insurance</h3>
-                <p className="text-gray-600 dark:text-gray-200 mb-2">ERMITS maintains the following insurance coverage:</p>
-                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
-                  <li><strong>Professional Liability (Errors & Omissions):</strong> $2,000,000 per claim / $2,000,000 aggregate</li>
-                  <li><strong>General Liability:</strong> $1,000,000 per occurrence / $2,000,000 aggregate</li>
-                  <li><strong>Cyber Liability:</strong> $1,000,000 per claim / $2,000,000 aggregate</li>
-                  <li><strong>Workers' Compensation:</strong> As required by law</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">16.2 Evidence of Insurance</h3>
-                <p className="text-gray-600 dark:text-gray-200">
-                  Upon request, ERMITS will provide Client with certificates of insurance evidencing coverage.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">16.3 Additional Insured</h3>
-                <p className="text-gray-600 dark:text-gray-200">
-                  For large engagements, Client may request to be named as additional insured (additional fees may apply).
-                </p>
-              </div>
-            </div>
-          </Card>
-        </motion.div>
-
-        {/* Section 17: Dispute Resolution */}
+        {/* Section 16: Dispute Resolution */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -1209,10 +1173,10 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">17. DISPUTE RESOLUTION</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">16. DISPUTE RESOLUTION</h2>
             <div className="space-y-4">
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">17.1 Informal Resolution</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">16.1 Informal Resolution</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-2">Before initiating formal dispute resolution, parties agree to:</p>
                 <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                   <li>Negotiate in good faith to resolve disputes</li>
@@ -1221,7 +1185,7 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
                 </ul>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">17.2 Mediation</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">16.2 Mediation</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-2">If informal resolution fails, parties agree to:</p>
                 <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                   <li>Mediate dispute with neutral third-party mediator</li>
@@ -1231,7 +1195,7 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
                 </ul>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">17.3 Binding Arbitration (Optional)</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">16.3 Binding Arbitration (Optional)</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-2">If SOW specifies binding arbitration:</p>
                 <div className="space-y-3">
                   <div>
@@ -1264,7 +1228,7 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">17.4 Litigation</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">16.4 Litigation</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-2">If arbitration not specified in SOW, disputes shall be resolved by litigation:</p>
                 <div className="space-y-3">
                   <div>
@@ -1286,7 +1250,7 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">17.5 Attorneys' Fees</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">16.5 Attorneys' Fees</h3>
                 <p className="text-gray-600 dark:text-gray-200">
                   Prevailing party in any arbitration or litigation entitled to recover reasonable attorneys' fees and costs from non-prevailing party.
                 </p>
@@ -1295,7 +1259,7 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
           </Card>
         </motion.div>
 
-        {/* Section 18: General Provisions */}
+        {/* Section 17: General Provisions */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -1303,10 +1267,10 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">18. GENERAL PROVISIONS</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">17. GENERAL PROVISIONS</h2>
             <div className="space-y-4">
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">18.1 Entire Agreement</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">17.1 Entire Agreement</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-2">
                   These Terms, together with any executed SOW and NDA, constitute the entire agreement between parties regarding Advisory Services and supersede all prior agreements and understandings.
                 </p>
@@ -1320,25 +1284,25 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">18.2 Amendments</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">17.2 Amendments</h3>
                 <p className="text-gray-600 dark:text-gray-200">
                   Amendments must be in writing and signed by authorized representatives of both parties. Email acceptance by authorized signatory is binding.
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">18.3 Severability</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">17.3 Severability</h3>
                 <p className="text-gray-600 dark:text-gray-200">
                   If any provision is found invalid or unenforceable, remaining provisions continue in full force. Invalid provision shall be modified to minimum extent necessary to make it enforceable.
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">18.4 Waiver</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">17.4 Waiver</h3>
                 <p className="text-gray-600 dark:text-gray-200">
                   Failure to enforce any right or provision does not constitute waiver. Waivers must be in writing and signed by party granting waiver.
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">18.5 Assignment</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">17.5 Assignment</h3>
                 <div className="space-y-3">
                   <div>
                     <h4 className="font-semibold mb-2 dark:text-white">Client Assignment:</h4>
@@ -1358,19 +1322,19 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">18.6 No Third-Party Beneficiaries</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">17.6 No Third-Party Beneficiaries</h3>
                 <p className="text-gray-600 dark:text-gray-200">
                   These Terms are for benefit of parties only and do not create rights in any third party. Deliverables are for Client's internal use only unless SOW specifies third-party reliance.
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">18.7 Independent Contractors</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">17.7 Independent Contractors</h3>
                 <p className="text-gray-600 dark:text-gray-200">
                   Parties are independent contractors. No partnership, joint venture, agency, or employment relationship is created.
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">18.8 Notices</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">17.8 Notices</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-2">All notices must be in writing and delivered to:</p>
                 <div className="space-y-2">
                   <div>
@@ -1390,7 +1354,7 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">18.9 Publicity</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">17.9 Publicity</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-2">
                   Neither party may issue press releases or public statements regarding engagement without prior written consent. Exceptions:
                 </p>
@@ -1400,13 +1364,13 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
                 </ul>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">18.10 Export Controls</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">17.10 Export Controls</h3>
                 <p className="text-gray-600 dark:text-gray-200">
                   Client shall not export or re-export Deliverables in violation of U.S. export control laws. Client is responsible for compliance with all export regulations.
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">18.11 U.S. Government Clients</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">17.11 U.S. Government Clients</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-2">For U.S. Government clients, the following additional terms apply:</p>
                 <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                   <li>Advisory Services are "commercial services" under FAR 12</li>
@@ -1416,7 +1380,7 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
                 </ul>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">18.12 Survival</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">17.12 Survival</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-2">The following provisions survive termination:</p>
                 <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                   <li>Payment obligations</li>
@@ -1429,7 +1393,7 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
                 </ul>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">18.13 Counterparts and Electronic Signatures</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">17.13 Counterparts and Electronic Signatures</h3>
                 <p className="text-gray-600 dark:text-gray-200">
                   Agreements may be executed in counterparts, each constituting an original. Electronic signatures (DocuSign, Adobe Sign, etc.) are binding and enforceable.
                 </p>
@@ -1438,7 +1402,7 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
           </Card>
         </motion.div>
 
-        {/* Section 19: Specific Service Provisions */}
+        {/* Section 18: Specific Service Provisions */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -1446,10 +1410,10 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">19. SPECIFIC SERVICE PROVISIONS</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">18. SPECIFIC SERVICE PROVISIONS</h2>
             <div className="space-y-4">
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">19.1 Virtual CISO (vCISO) Retainer Services</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">18.1 Virtual CISO (vCISO) Retainer Services</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-2">For ongoing vCISO advisory services:</p>
                 <div className="space-y-3">
                   <div>
@@ -1483,7 +1447,7 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">19.2 Incident Response Advisory</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">18.2 Incident Response Advisory</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-2">For incident response consulting:</p>
                 <div className="space-y-3">
                   <div>
@@ -1524,7 +1488,7 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">19.3 Compliance Assessment Services</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">18.3 Compliance Assessment Services</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-2">For CMMC, NIST 800-171, HIPAA, and other compliance assessments:</p>
                 <div className="space-y-3">
                   <div>
@@ -1562,7 +1526,7 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
           </Card>
         </motion.div>
 
-        {/* Section 20: Contact Information */}
+        {/* Section 19: Contact Information */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -1570,7 +1534,7 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">20. CONTACT INFORMATION</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">19. CONTACT INFORMATION</h2>
             <div className="space-y-4">
               <div>
                 <h3 className="font-semibold mb-2 dark:text-white">ERMITS LLC - Advisory Services</h3>
@@ -1615,7 +1579,7 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
           </Card>
         </motion.div>
 
-        {/* Section 21: Effective Date and Acceptance */}
+        {/* Section 20: Effective Date and Acceptance */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -1623,7 +1587,7 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">21. EFFECTIVE DATE AND ACCEPTANCE</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">20. EFFECTIVE DATE AND ACCEPTANCE</h2>
             <p className="text-gray-600 dark:text-gray-200 mb-2">
               <strong>Effective Date:</strong> December 15, 2025
             </p>
@@ -1632,21 +1596,6 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
             </p>
             <p className="text-gray-600 dark:text-gray-200">
               <strong>By executing a Statement of Work for Advisory Services, Client acknowledges that it has read, understood, and agrees to be bound by these Master Terms of Service.</strong>
-            </p>
-          </Card>
-        </motion.div>
-
-        {/* Schedule A: Standard Statement of Work (SOW) Template */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.82 }}
-          className="mb-8"
-        >
-          <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">SCHEDULE A: STANDARD STATEMENT OF WORK (SOW) TEMPLATE</h2>
-            <p className="text-gray-600 dark:text-gray-200">
-              [SOW template would be attached, including sections for: Engagement Overview, Scope of Services, Deliverables, Timeline and Milestones, Fees and Payment Terms, Client Responsibilities, ERMITS Responsibilities, Acceptance Criteria, Change Management, and Signature Blocks]
             </p>
           </Card>
         </motion.div>
