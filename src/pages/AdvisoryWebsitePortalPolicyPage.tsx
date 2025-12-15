@@ -23,10 +23,10 @@ export const AdvisoryWebsitePortalPolicyPage: React.FC = () => {
             <h1 className="text-3xl md:text-4xl font-bold text-navy dark:text-white">ERMITS ADVISORY SERVICES - COOKIE & PORTAL POLICY</h1>
           </div>
           <p className="text-gray-600 dark:text-gray-200 mb-2">
-            <strong>Effective Date:</strong> November 19, 2025
+            <strong>Effective Date:</strong> December 15, 2025
           </p>
           <p className="text-gray-600 dark:text-gray-200 mb-4">
-            <strong>Last Updated:</strong> November 19, 2025
+            <strong>Last Updated:</strong> December 15, 2025
           </p>
           <p className="text-lg text-gray-600 dark:text-gray-100">
             This Cookie & Portal Policy explains how ERMITS LLC ("ERMITS," "we," "our," or "us") uses cookies, tracking technologies, and collects information when you visit the ERMITS Advisory Services website (advisory.ermits.com) or use our secure client portal. This policy should be read in conjunction with our Advisory Services Privacy Policy.
