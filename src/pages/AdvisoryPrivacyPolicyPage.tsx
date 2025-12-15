@@ -52,7 +52,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                 
                 <div className="space-y-4">
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Cybersecurity Advisory Services:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Cybersecurity Advisory Services:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                       <li>CMMC consulting and readiness assessments</li>
                       <li>Cybersecurity program development and maturity assessments</li>
@@ -63,7 +63,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Compliance Advisory Services:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Compliance Advisory Services:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                       <li>NIST SP 800-171 compliance consulting</li>
                       <li>DFARS compliance guidance</li>
@@ -74,7 +74,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Third-Party Risk Management Advisory:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Third-Party Risk Management Advisory:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                       <li>Vendor risk assessment consulting</li>
                       <li>Supply chain security advisory</li>
@@ -84,7 +84,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Privacy Advisory Services:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Privacy Advisory Services:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                       <li>Privacy program development</li>
                       <li>Data Protection Impact Assessments (DPIA)</li>
@@ -95,7 +95,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Strategic Advisory Services:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Strategic Advisory Services:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                       <li>Executive advisory and virtual CISO services</li>
                       <li>Cybersecurity roadmap development</li>
@@ -108,7 +108,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">1.2 What This Policy Does NOT Cover</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">1.2 What This Policy Does NOT Cover</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-2">This Privacy Policy does NOT apply to:</p>
                 <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                   <li>ERMITS software products and platforms (covered by Master Privacy Policy)</li>
@@ -118,7 +118,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">1.3 Geographic Scope</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">1.3 Geographic Scope</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-2">
                   This Privacy Policy applies to clients worldwide and complies with:
                 </p>
