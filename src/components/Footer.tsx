@@ -87,25 +87,25 @@ export const Footer: React.FC = () => {
             <h3 className="text-sm font-semibold mb-2">Legal</h3>
             <ul className="space-y-1.5">
               <li>
-                <Link to="/privacy" className="text-silver hover:text-white transition-colors duration-200 flex items-center text-xs group">
+                <Link to="/advisory/privacy" className="text-silver hover:text-white transition-colors duration-200 flex items-center text-xs group">
                   <Shield size={12} className="mr-1.5 group-hover:scale-110 transition-transform" />
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link to="/terms" className="text-silver hover:text-white transition-colors duration-200 flex items-center text-xs group">
+                <Link to="/advisory/terms" className="text-silver hover:text-white transition-colors duration-200 flex items-center text-xs group">
                   <Scale size={12} className="mr-1.5 group-hover:scale-110 transition-transform" />
                   Terms of Service
                 </Link>
               </li>
               <li>
-                <Link to="/cookies" className="text-silver hover:text-white transition-colors duration-200 flex items-center text-xs group">
+                <Link to="/advisory/website-portal" className="text-silver hover:text-white transition-colors duration-200 flex items-center text-xs group">
                   <Cookie size={12} className="mr-1.5 group-hover:scale-110 transition-transform" />
                   Cookie Policy
                 </Link>
               </li>
               <li>
-                <Link to="/acceptable-use" className="text-silver hover:text-white transition-colors duration-200 flex items-center text-xs group">
+                <Link to="/advisory/acceptable-use" className="text-silver hover:text-white transition-colors duration-200 flex items-center text-xs group">
                   <FileText size={12} className="mr-1.5 group-hover:scale-110 transition-transform" />
                   Acceptable Use
                 </Link>
