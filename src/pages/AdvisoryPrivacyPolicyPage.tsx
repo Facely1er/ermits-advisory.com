@@ -147,17 +147,17 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                 <Shield size={32} />
               </div>
               <div className="flex-1">
-                <h2 className="text-2xl font-bold mb-4">2. ADVISORY SERVICES DATA HANDLING PRINCIPLES</h2>
-                <div className="space-y-4 text-silver">
+                <h2 className="text-2xl font-bold mb-4 text-navy dark:text-white">2. ADVISORY SERVICES DATA HANDLING PRINCIPLES</h2>
+                <div className="space-y-4 text-gray-700 dark:text-silver">
                   <div>
-                    <h3 className="font-semibold text-white mb-2">2.1 Professional Services Privacy Principles</h3>
-                    <p className="mb-3">ERMITS Advisory Services are built on professional consulting best practices:</p>
+                    <h3 className="font-semibold text-navy dark:text-white mb-2">2.1 Professional Services Privacy Principles</h3>
+                    <p className="mb-3 text-gray-700 dark:text-gray-200">ERMITS Advisory Services are built on professional consulting best practices:</p>
                     
                     <div className="space-y-3">
                       <div>
-                        <h4 className="font-semibold text-white mb-1">1. Client Confidentiality</h4>
-                        <p className="text-sm">All client information is treated as confidential and protected under:</p>
-                        <ul className="list-disc list-inside text-sm ml-4 mt-1">
+                        <h4 className="font-semibold text-navy dark:text-white mb-1">1. Client Confidentiality</h4>
+                        <p className="text-sm text-gray-700 dark:text-gray-200">All client information is treated as confidential and protected under:</p>
+                        <ul className="list-disc list-inside text-sm ml-4 mt-1 text-gray-700 dark:text-gray-200">
                           <li>Non-Disclosure Agreements (NDAs) executed prior to engagement</li>
                           <li>Professional confidentiality standards</li>
                           <li>Attorney-client privilege (where applicable with legal counsel involvement)</li>
@@ -166,9 +166,9 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                       </div>
 
                       <div>
-                        <h4 className="font-semibold text-white mb-1">2. Need-to-Know Access</h4>
-                        <p className="text-sm">Only ERMITS personnel directly involved in your engagement have access to your information:</p>
-                        <ul className="list-disc list-inside text-sm ml-4 mt-1">
+                        <h4 className="font-semibold text-navy dark:text-white mb-1">2. Need-to-Know Access</h4>
+                        <p className="text-sm text-gray-700 dark:text-gray-200">Only ERMITS personnel directly involved in your engagement have access to your information:</p>
+                        <ul className="list-disc list-inside text-sm ml-4 mt-1 text-gray-700 dark:text-gray-200">
                           <li>Consultants assigned to your project</li>
                           <li>Technical specialists providing support</li>
                           <li>Quality assurance reviewers (under confidentiality obligations)</li>
@@ -177,9 +177,9 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                       </div>
 
                       <div>
-                        <h4 className="font-semibold text-white mb-1">3. Data Minimization</h4>
-                        <p className="text-sm">We collect only information necessary to deliver Advisory Services:</p>
-                        <ul className="list-disc list-inside text-sm ml-4 mt-1">
+                        <h4 className="font-semibold text-navy dark:text-white mb-1">3. Data Minimization</h4>
+                        <p className="text-sm text-gray-700 dark:text-gray-200">We collect only information necessary to deliver Advisory Services:</p>
+                        <ul className="list-disc list-inside text-sm ml-4 mt-1 text-gray-700 dark:text-gray-200">
                           <li>Information required for the specific engagement scope</li>
                           <li>Background information for context and recommendations</li>
                           <li>Documentation necessary for deliverable production</li>
@@ -188,9 +188,9 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                       </div>
 
                       <div>
-                        <h4 className="font-semibold text-white mb-1">4. Secure Handling</h4>
-                        <p className="text-sm">Client data is protected through:</p>
-                        <ul className="list-disc list-inside text-sm ml-4 mt-1">
+                        <h4 className="font-semibold text-navy dark:text-white mb-1">4. Secure Handling</h4>
+                        <p className="text-sm text-gray-700 dark:text-gray-200">Client data is protected through:</p>
+                        <ul className="list-disc list-inside text-sm ml-4 mt-1 text-gray-700 dark:text-gray-200">
                           <li>Encrypted transmission (TLS 1.3) for all electronic communications</li>
                           <li>Encrypted storage for client documents and deliverables</li>
                           <li>Secure file sharing platforms (encrypted client portals)</li>
@@ -199,9 +199,9 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                       </div>
 
                       <div>
-                        <h4 className="font-semibold text-white mb-1">5. Limited Retention</h4>
-                        <p className="text-sm">Client data is retained only as long as necessary:</p>
-                        <ul className="list-disc list-inside text-sm ml-4 mt-1">
+                        <h4 className="font-semibold text-navy dark:text-white mb-1">5. Limited Retention</h4>
+                        <p className="text-sm text-gray-700 dark:text-gray-200">Client data is retained only as long as necessary:</p>
+                        <ul className="list-disc list-inside text-sm ml-4 mt-1 text-gray-700 dark:text-gray-200">
                           <li>During active engagement period</li>
                           <li>For contractual warranty periods (typically 90 days post-delivery)</li>
                           <li>As required by professional standards and legal obligations</li>
@@ -230,7 +230,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-3 dark:text-white">3.1 Client Contact and Business Information</h3>
                 <div className="mb-3">
-                  <p className="font-semibold mb-2 dark:text-white">What We Collect:</p>
+                  <p className="font-semibold mb-2 text-navy dark:text-white">What We Collect:</p>
                   <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                     <li>Primary contact information (name, title, email, phone)</li>
                     <li>Company information (name, address, industry, size)</li>
@@ -240,7 +240,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                   </ul>
                 </div>
                 <div className="mb-3">
-                  <p className="font-semibold mb-2 dark:text-white">Why We Collect:</p>
+                  <p className="font-semibold mb-2 text-navy dark:text-white">Why We Collect:</p>
                   <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                     <li>Establish and maintain client relationships</li>
                     <li>Communicate about engagement scope, deliverables, and recommendations</li>
@@ -250,7 +250,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                   </ul>
                 </div>
                 <div>
-                  <p className="font-semibold mb-2 dark:text-white">Legal Basis (GDPR):</p>
+                  <p className="font-semibold mb-2 text-navy dark:text-white">Legal Basis (GDPR):</p>
                   <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                     <li>Contract performance</li>
                     <li>Legitimate interests (business relationship management)</li>
@@ -266,7 +266,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                 
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Cybersecurity Assessment Information:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Cybersecurity Assessment Information:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
                       <li>Current security controls and implementations</li>
                       <li>Network architecture diagrams and documentation</li>
@@ -278,7 +278,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Compliance Assessment Information:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Compliance Assessment Information:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
                       <li>System Security Plans (SSPs)</li>
                       <li>Plans of Action and Milestones (POA&Ms)</li>
@@ -290,7 +290,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Risk Assessment Information:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Risk Assessment Information:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
                       <li>Business context and critical assets</li>
                       <li>Threat landscape and risk tolerance</li>
@@ -301,7 +301,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Privacy Assessment Information:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Privacy Assessment Information:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
                       <li>Data inventory and data flow mapping</li>
                       <li>Privacy policies and notices</li>
@@ -313,7 +313,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Organizational Information:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Organizational Information:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
                       <li>Business processes and workflows</li>
                       <li>IT infrastructure and technology stack</li>
@@ -325,7 +325,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                 </div>
 
                 <div className="mt-4 p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
-                  <p className="font-semibold mb-2 dark:text-white">We Do NOT Require:</p>
+                  <p className="font-semibold mb-2 text-navy dark:text-white">We Do NOT Require:</p>
                   <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                     <li>Production data or live datasets</li>
                     <li>Personal data of your employees or customers (beyond contact information)</li>
@@ -340,7 +340,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-3 dark:text-white">3.3 Information from Meetings and Communications</h3>
                 <div className="mb-3">
-                  <p className="font-semibold mb-2 dark:text-white">What We Collect:</p>
+                  <p className="font-semibold mb-2 text-navy dark:text-white">What We Collect:</p>
                   <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                     <li>Meeting notes and discussion summaries</li>
                     <li>Email and messaging communications</li>
@@ -351,7 +351,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                   </ul>
                 </div>
                 <div className="mb-3">
-                  <p className="font-semibold mb-2 dark:text-white">How We Use:</p>
+                  <p className="font-semibold mb-2 text-navy dark:text-white">How We Use:</p>
                   <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                     <li>Inform recommendations and deliverables</li>
                     <li>Document engagement activities</li>
@@ -360,7 +360,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                   </ul>
                 </div>
                 <div>
-                  <p className="font-semibold mb-2 dark:text-white">Retention:</p>
+                  <p className="font-semibold mb-2 text-navy dark:text-white">Retention:</p>
                   <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                     <li>Meeting notes retained for engagement duration + 3 years</li>
                     <li>Communications retained per engagement contract terms</li>
@@ -375,7 +375,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                   With your explicit authorization, we may observe or collect:
                 </p>
                 <div className="mb-3">
-                  <p className="font-semibold mb-2 dark:text-white">During Security Assessments:</p>
+                  <p className="font-semibold mb-2 text-navy dark:text-white">During Security Assessments:</p>
                   <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                     <li>System configurations (sanitized of sensitive data)</li>
                     <li>Security control implementations</li>
@@ -385,7 +385,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                   </ul>
                 </div>
                 <div>
-                  <p className="font-semibold mb-2 dark:text-white">Privacy Protections:</p>
+                  <p className="font-semibold mb-2 text-navy dark:text-white">Privacy Protections:</p>
                   <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                     <li>All access conducted under signed authorization</li>
                     <li>Access limited to scope defined in SOW</li>
@@ -400,21 +400,21 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                 <h3 className="text-xl font-semibold mb-3 dark:text-white">3.5 Information from Third Parties</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-3">We may receive information from:</p>
                 <div className="mb-3">
-                  <p className="font-semibold mb-2 dark:text-white">Professional References:</p>
+                  <p className="font-semibold mb-2 text-navy dark:text-white">Professional References:</p>
                   <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                     <li>Contact information from mutual business contacts</li>
                     <li>Professional reputation and background information</li>
                   </ul>
                 </div>
                 <div className="mb-3">
-                  <p className="font-semibold mb-2 dark:text-white">Subcontractors and Partners:</p>
+                  <p className="font-semibold mb-2 text-navy dark:text-white">Subcontractors and Partners:</p>
                   <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                     <li>Technical findings from authorized subcontractors</li>
                     <li>Specialist assessments (under same confidentiality terms)</li>
                   </ul>
                 </div>
                 <div className="mb-3">
-                  <p className="font-semibold mb-2 dark:text-white">Public Sources:</p>
+                  <p className="font-semibold mb-2 text-navy dark:text-white">Public Sources:</p>
                   <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                     <li>Publicly available company information</li>
                     <li>Industry reports and threat intelligence</li>
@@ -423,7 +423,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                   </ul>
                 </div>
                 <div className="p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
-                  <p className="font-semibold mb-2 dark:text-white">We Do NOT:</p>
+                  <p className="font-semibold mb-2 text-navy dark:text-white">We Do NOT:</p>
                   <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                     <li>Purchase client data from data brokers</li>
                     <li>Conduct covert investigations or surveillance</li>
@@ -453,7 +453,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                 <p className="text-gray-600 dark:text-gray-200 mb-3">We use collected information to:</p>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Provide Advisory Services:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Provide Advisory Services:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                       <li>Conduct assessments and evaluations per SOW</li>
                       <li>Develop recommendations and strategic guidance</li>
@@ -464,7 +464,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Quality Assurance:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Quality Assurance:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                       <li>Internal review of deliverables for accuracy and completeness</li>
                       <li>Technical review by subject matter experts</li>
@@ -478,7 +478,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-3 dark:text-white">4.4 What We Do NOT Do</h3>
                 <div className="p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
-                  <p className="font-semibold mb-2 dark:text-white">ERMITS Advisory Services Does NOT:</p>
+                  <p className="font-semibold mb-2 text-navy dark:text-white">ERMITS Advisory Services Does NOT:</p>
                   <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                     <li><strong>Sell or license</strong> your information to third parties</li>
                     <li><strong>Use your data for marketing</strong> to other clients</li>
@@ -510,7 +510,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
             </p>
             <div className="space-y-3">
               <div>
-                <h4 className="font-semibold mb-2 dark:text-white">With Your Consent:</h4>
+                <h4 className="font-semibold mb-2 text-navy dark:text-white">With Your Consent:</h4>
                 <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                   <li>Sharing deliverables with your designated third parties</li>
                   <li>Joint presentations with your technology vendors</li>
@@ -519,7 +519,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold mb-2 dark:text-white">Service Providers (Under NDA):</h4>
+                <h4 className="font-semibold mb-2 text-navy dark:text-white">Service Providers (Under NDA):</h4>
                 <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                   <li>Secure file sharing platforms (Supabase, encrypted storage)</li>
                   <li>Payment processors (Stripe for invoicing)</li>
@@ -528,7 +528,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold mb-2 dark:text-white">Legal and Regulatory Requirements:</h4>
+                <h4 className="font-semibold mb-2 text-navy dark:text-white">Legal and Regulatory Requirements:</h4>
                 <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                   <li>Court orders, subpoenas, or legal process</li>
                   <li>Regulatory investigations or examinations</li>
@@ -554,7 +554,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-3 dark:text-white">6.1 Technical Security Controls</h3>
                 <div className="mb-3">
-                  <h4 className="font-semibold mb-2 dark:text-white">Data in Transit:</h4>
+                  <h4 className="font-semibold mb-2 text-navy dark:text-white">Data in Transit:</h4>
                   <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                     <li>TLS 1.3 encryption for all electronic communications</li>
                     <li>Secure file transfer protocols (SFTP, HTTPS)</li>
@@ -563,7 +563,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                   </ul>
                 </div>
                 <div className="mb-3">
-                  <h4 className="font-semibold mb-2 dark:text-white">Data at Rest:</h4>
+                  <h4 className="font-semibold mb-2 text-navy dark:text-white">Data at Rest:</h4>
                   <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                     <li>AES-256 encryption for stored client documents</li>
                     <li>Encrypted file storage platforms (Supabase with encryption)</li>
@@ -572,7 +572,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2 dark:text-white">Access Controls:</h4>
+                  <h4 className="font-semibold mb-2 text-navy dark:text-white">Access Controls:</h4>
                   <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                     <li>Multi-factor authentication (MFA) required for all consultants</li>
                     <li>Role-based access control (RBAC) for client data</li>
@@ -600,9 +600,9 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
               <table className="w-full text-sm border border-gray-200 dark:border-gray-700">
                 <thead>
                   <tr className="bg-gray-100 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
-                    <th className="text-left py-3 px-4 font-semibold dark:text-white">Data Type</th>
-                    <th className="text-left py-3 px-4 font-semibold dark:text-white">Retention Period</th>
-                    <th className="text-left py-3 px-4 font-semibold dark:text-white">Purpose</th>
+                    <th className="text-left py-3 px-4 font-semibold text-navy dark:text-white">Data Type</th>
+                    <th className="text-left py-3 px-4 font-semibold text-navy dark:text-white">Retention Period</th>
+                    <th className="text-left py-3 px-4 font-semibold text-navy dark:text-white">Purpose</th>
                   </tr>
                 </thead>
                 <tbody>
