@@ -1213,10 +1213,10 @@ export const AdvisoryWebsitePortalPolicyPage: React.FC = () => {
           <Card variant="glass" padding="lg">
             <h2 className="text-2xl font-bold mb-4 dark:text-white">15. EFFECTIVE DATE AND ACCEPTANCE</h2>
             <p className="text-gray-600 dark:text-gray-200 mb-2">
-              <strong>Effective Date:</strong> November 19, 2025
+              <strong>Effective Date:</strong> December 15, 2025
             </p>
             <p className="text-gray-600 dark:text-gray-200 mb-4">
-              <strong>Last Updated:</strong> November 19, 2025
+              <strong>Last Updated:</strong> December 15, 2025
             </p>
             <p className="text-gray-600 dark:text-gray-200">
               <strong>By using the ERMITS Advisory Services website or client portal, you acknowledge that you have read and understood this Cookie & Portal Policy.</strong>

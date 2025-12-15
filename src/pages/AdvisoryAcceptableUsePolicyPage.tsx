@@ -1106,10 +1106,10 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
               By engaging ERMITS Advisory Services, you acknowledge that you have read, understood, and agree to comply with this Acceptable Use Policy. Violations may result in engagement termination and legal action.
             </p>
             <p className="text-gray-600 dark:text-gray-200 mb-2">
-              <strong>Effective Date:</strong> November 19, 2025
+              <strong>Effective Date:</strong> December 15, 2025
             </p>
             <p className="text-gray-600 dark:text-gray-200">
-              <strong>Last Updated:</strong> November 19, 2025
+              <strong>Last Updated:</strong> December 15, 2025
             </p>
           </Card>
         </motion.div>
