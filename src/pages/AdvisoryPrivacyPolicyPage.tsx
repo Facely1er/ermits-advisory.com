@@ -449,7 +449,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
             
             <div className="space-y-4">
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">4.1 Service Delivery</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">4.1 Service Delivery</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-3">We use collected information to:</p>
                 <div className="space-y-3">
                   <div>
@@ -476,7 +476,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">4.4 What We Do NOT Do</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">4.4 What We Do NOT Do</h3>
                 <div className="p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
                   <p className="font-semibold mb-2 text-navy dark:text-white">ERMITS Advisory Services Does NOT:</p>
                   <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
@@ -504,7 +504,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">5. INFORMATION SHARING AND DISCLOSURE</h2>
+            <h2 className="text-2xl font-bold mb-4 text-navy dark:text-white">5. INFORMATION SHARING AND DISCLOSURE</h2>
             <p className="text-gray-600 dark:text-gray-200 mb-4">
               ERMITS shares client information only in the following circumstances:
             </p>
@@ -548,11 +548,11 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">6. DATA SECURITY MEASURES</h2>
+            <h2 className="text-2xl font-bold mb-4 text-navy dark:text-white">6. DATA SECURITY MEASURES</h2>
             
             <div className="space-y-4">
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">6.1 Technical Security Controls</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">6.1 Technical Security Controls</h3>
                 <div className="mb-3">
                   <h4 className="font-semibold mb-2 text-navy dark:text-white">Data in Transit:</h4>
                   <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
@@ -594,7 +594,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">7. DATA RETENTION AND DELETION</h2>
+            <h2 className="text-2xl font-bold mb-4 text-navy dark:text-white">7. DATA RETENTION AND DELETION</h2>
             
             <div className="overflow-x-auto my-4">
               <table className="w-full text-sm border border-gray-200 dark:border-gray-700">
