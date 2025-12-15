@@ -73,15 +73,15 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">2. PROFESSIONAL CONDUCT STANDARDS</h2>
-            <div className="space-y-6">
+            <h2 className="text-2xl font-bold mb-4 text-navy dark:text-white">2. PROFESSIONAL CONDUCT STANDARDS</h2>
+            <div className="space-y-4">
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">2.1 Professional Standards</h3>
-                <p className="text-gray-600 dark:text-gray-200 mb-3">All parties shall:</p>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">2.1 Professional Standards</h3>
+                <p className="text-gray-700 dark:text-gray-200 mb-2">All parties shall:</p>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Maintain Professional Conduct:</h4>
-                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Maintain Professional Conduct:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Act with honesty, integrity, and professionalism</li>
                       <li>Respect confidentiality and trust relationships</li>
                       <li>Communicate respectfully and professionally</li>
@@ -90,8 +90,8 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Exercise Professional Judgment:</h4>
-                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Exercise Professional Judgment:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Provide objective, unbiased advice and recommendations</li>
                       <li>Base recommendations on factual analysis and industry standards</li>
                       <li>Disclose conflicts of interest promptly</li>
@@ -100,8 +100,8 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Adhere to Industry Standards:</h4>
-                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Adhere to Industry Standards:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Follow applicable professional codes of conduct</li>
                       <li>Comply with industry best practices and standards</li>
                       <li>Maintain professional certifications and continuing education</li>
@@ -111,12 +111,12 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">2.2 Client Conduct</h3>
-                <p className="text-gray-600 dark:text-gray-200 mb-3">Clients and client personnel shall:</p>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">2.2 Client Conduct</h3>
+                <p className="text-gray-700 dark:text-gray-200 mb-2">Clients and client personnel shall:</p>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Provide Accurate Information:</h4>
-                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Provide Accurate Information:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Provide truthful, accurate, and complete information</li>
                       <li>Not misrepresent facts, circumstances, or security posture</li>
                       <li>Correct inaccuracies promptly when discovered</li>
@@ -124,8 +124,8 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Respect Professional Boundaries:</h4>
-                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Respect Professional Boundaries:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Not request illegal, unethical, or unprofessional services</li>
                       <li>Not pressure consultants to violate professional standards</li>
                       <li>Not request access to confidential information about other clients</li>
@@ -133,8 +133,8 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Cooperate in Good Faith:</h4>
-                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Cooperate in Good Faith:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Provide timely access to personnel, systems, and documentation</li>
                       <li>Respond to requests for information promptly</li>
                       <li>Participate in scheduled meetings and reviews</li>
@@ -144,12 +144,12 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">2.3 ERMITS Consultant Conduct</h3>
-                <p className="text-gray-600 dark:text-gray-200 mb-3">ERMITS consultants shall:</p>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">2.3 ERMITS Consultant Conduct</h3>
+                <p className="text-gray-700 dark:text-gray-200 mb-2">ERMITS consultants shall:</p>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Maintain Professional Independence:</h4>
-                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Maintain Professional Independence:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Provide objective recommendations without bias</li>
                       <li>Disclose conflicts of interest</li>
                       <li>Not accept gifts, kickbacks, or referral fees from vendors</li>
@@ -157,8 +157,8 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Respect Client Confidentiality:</h4>
-                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Respect Client Confidentiality:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Maintain strict confidentiality of Client Data and Confidential Information</li>
                       <li>Use Confidential Information only for engagement purposes</li>
                       <li>Not disclose engagement details to other clients or third parties</li>
@@ -166,8 +166,8 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Deliver Quality Services:</h4>
-                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Deliver Quality Services:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Perform services with appropriate expertise and care</li>
                       <li>Meet professional standards and quality expectations</li>
                       <li>Communicate proactively about issues, risks, and delays</li>
