@@ -667,7 +667,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                       <li>Request copies of all information we hold about you or your organization</li>
                       <li>Receive engagement files and working documents</li>
                       <li>Obtain documentation of data processing activities</li>
-                      <li>Request: privacy@ermits.com</li>
+                      <li>Submit a <Link to="/advisory/dsar" className="text-navy dark:text-silver hover:underline font-semibold">Data Subject Access Request (DSAR)</Link> or email: privacy@ermits.com</li>
                     </ul>
                   </div>
                   <div>
@@ -693,7 +693,11 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
 
               <div className="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
                 <p className="text-gray-700 dark:text-gray-200 mb-2">
-                  <strong>How to Exercise Your Rights:</strong> Submit requests via email to{' '}
+                  <strong>How to Exercise Your Rights:</strong> Submit requests via our{' '}
+                  <Link to="/advisory/privacy-request" className="text-navy dark:text-silver hover:underline font-semibold">
+                    Privacy Rights Request Form
+                  </Link>{' '}
+                  or via email to{' '}
                   <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a>{' '}
                   (Subject: "Privacy Rights Request - Advisory Services")
                 </p>

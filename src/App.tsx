@@ -90,6 +90,8 @@ const TermsOfServicePage = React.lazy(() => import('./pages/TermsOfServicePage')
 const CookiePolicyPage = React.lazy(() => import('./pages/CookiePolicyPage').then(m => ({ default: m.CookiePolicyPage })));
 const AcceptableUsePolicyPage = React.lazy(() => import('./pages/AcceptableUsePolicyPage').then(m => ({ default: m.AcceptableUsePolicyPage })));
 const AdvisoryPrivacyPolicyPage = React.lazy(() => import('./pages/AdvisoryPrivacyPolicyPage').then(m => ({ default: m.AdvisoryPrivacyPolicyPage })));
+const AdvisoryPrivacyRequestPage = React.lazy(() => import('./pages/AdvisoryPrivacyRequestPage').then(m => ({ default: m.AdvisoryPrivacyRequestPage })));
+const AdvisoryDSARPage = React.lazy(() => import('./pages/AdvisoryDSARPage').then(m => ({ default: m.AdvisoryDSARPage })));
 const AdvisoryTermsOfServicePage = React.lazy(() => import('./pages/AdvisoryTermsOfServicePage').then(m => ({ default: m.AdvisoryTermsOfServicePage })));
 const AdvisoryAcceptableUsePolicyPage = React.lazy(() => import('./pages/AdvisoryAcceptableUsePolicyPage').then(m => ({ default: m.AdvisoryAcceptableUsePolicyPage })));
 const AdvisoryWebsitePortalPolicyPage = React.lazy(() => import('./pages/AdvisoryWebsitePortalPolicyPage').then(m => ({ default: m.AdvisoryWebsitePortalPolicyPage })));
@@ -170,6 +172,8 @@ function App() {
                   <Route path="/cookies" element={<CookiePolicyPage />} />
                   <Route path="/acceptable-use" element={<AcceptableUsePolicyPage />} />
                   <Route path="/advisory/privacy" element={<AdvisoryPrivacyPolicyPage />} />
+                  <Route path="/advisory/privacy-request" element={<AdvisoryPrivacyRequestPage />} />
+                  <Route path="/advisory/dsar" element={<AdvisoryDSARPage />} />
                   <Route path="/advisory/terms" element={<AdvisoryTermsOfServicePage />} />
                   <Route path="/advisory/acceptable-use" element={<AdvisoryAcceptableUsePolicyPage />} />
                   <Route path="/advisory/website-portal" element={<AdvisoryWebsitePortalPolicyPage />} />
