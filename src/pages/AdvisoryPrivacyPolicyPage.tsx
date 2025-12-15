@@ -1334,12 +1334,39 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                   For clients handling Controlled Unclassified Information (CUI) or Federal Contract Information (FCI):
                 </p>
                 <div className="mb-3">
-                  <h4 className="font-semibold mb-2 text-navy dark:text-white">Special Protections:</h4>
-                  <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <h4 className="font-semibold mb-2 dark:text-white">Special Protections:</h4>
+                  <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
                     <li>CUI/FCI is NOT stored on ERMITS infrastructure</li>
                     <li>All CUI/FCI processed on-site at client facilities or client-approved systems</li>
                     <li>ERMITS consultants access CUI/FCI only under client supervision and authorization</li>
                     <li>Consultants trained on CUI/FCI handling per NIST SP 800-171 and 32 CFR Part 2002</li>
+                  </ul>
+                </div>
+                <div className="mb-3">
+                  <h4 className="font-semibold mb-2 dark:text-white">Client Responsibilities:</h4>
+                  <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                    <li>Properly mark CUI/FCI per regulations</li>
+                    <li>Provide secure workspace and systems for consultant access</li>
+                    <li>Monitor and log consultant access to CUI/FCI</li>
+                    <li>Report cyber incidents per DFARS 252.204-7012 (ERMITS will cooperate)</li>
+                  </ul>
+                </div>
+                <div className="mb-3">
+                  <h4 className="font-semibold mb-2 dark:text-white">ERMITS Responsibilities:</h4>
+                  <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                    <li>Personnel with CUI/FCI access undergo background checks</li>
+                    <li>Sign SF-312 Classified Information Nondisclosure Agreement (if required)</li>
+                    <li>Comply with client's CUI/FCI handling procedures</li>
+                    <li>Do not transmit CUI/FCI outside authorized systems</li>
+                    <li>Report suspected security incidents immediately</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-2 dark:text-white">Incident Reporting:</h4>
+                  <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                    <li>ERMITS will immediately report suspected incidents to client</li>
+                    <li>Client is responsible for reporting to DoD within 72 hours</li>
+                    <li>ERMITS will cooperate with authorized investigations</li>
                   </ul>
                 </div>
               </div>
@@ -1349,14 +1376,45 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                 <p className="text-gray-600 dark:text-gray-200 mb-3">
                   For healthcare organizations subject to HIPAA:
                 </p>
-                <div className="mb-3">
-                  <h4 className="font-semibold mb-2 text-navy dark:text-white">Business Associate Agreement (BAA):</h4>
-                  <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
-                    <li>Required before any access to Protected Health Information (PHI)</li>
-                    <li>Executed as part of engagement contract</li>
-                    <li>HIPAA-compliant safeguards implemented</li>
-                    <li>Request: privacy@ermits.com</li>
-                  </ul>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Business Associate Agreement (BAA):</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Required before any access to Protected Health Information (PHI)</li>
+                      <li>Executed as part of engagement contract</li>
+                      <li>HIPAA-compliant safeguards implemented</li>
+                      <li>Request: <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a></li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">PHI Handling:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>PHI accessed only as necessary for engagement scope</li>
+                      <li>Minimum necessary standard applied</li>
+                      <li>PHI not stored on ERMITS infrastructure (processed at client site)</li>
+                      <li>Encrypted transmission if PHI must be transmitted</li>
+                      <li>Breach notification within 48 hours</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Recommended Approach:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Use de-identified or anonymized data for assessments (when possible)</li>
+                      <li>On-site consulting to avoid PHI transmission</li>
+                      <li>Client retains all PHI on client-controlled systems</li>
+                      <li>ERMITS access via secure client VPN only</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Your Responsibilities:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Determine if BAA is required for engagement scope</li>
+                      <li>Execute BAA before PHI access</li>
+                      <li>Provide HIPAA training to ERMITS consultants (if required)</li>
+                      <li>Supervise consultant access to PHI</li>
+                      <li>Report breaches involving PHI per HIPAA Breach Notification Rule</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
 
@@ -1646,7 +1704,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
+          transition={{ delay: 1.0 }}
           className="text-center"
         >
           <div className="flex flex-wrap justify-center gap-4">
