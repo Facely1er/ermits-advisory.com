@@ -1566,7 +1566,7 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
               <div>
                 <h3 className="font-semibold mb-2 dark:text-white">For billing and payment inquiries:</h3>
                 <p className="text-gray-600 dark:text-gray-200">
-                  Email: <a href="mailto:billing@ermits.com" className="text-navy dark:text-silver hover:underline">billing@ermits.com</a>
+                  Email: <a href="mailto:advisory@ermits.com" className="text-navy dark:text-silver hover:underline">advisory@ermits.com</a>
                 </p>
               </div>
               <div>

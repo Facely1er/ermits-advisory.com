@@ -393,7 +393,7 @@ export const TermsOfServicePage: React.FC = () => {
                 <p className="text-gray-600 dark:text-gray-200 mb-2">You may terminate your account at any time through:</p>
                 <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                   <li>Account settings within the Services</li>
-                  <li>Contacting ERMITS support at contact@ermits.com</li>
+                  <li>Contacting ERMITS support at <a href="mailto:support@ermits.com" className="text-navy dark:text-silver hover:underline">support@ermits.com</a></li>
                   <li>Following product-specific cancellation procedures</li>
                 </ul>
               </div>
@@ -541,7 +541,7 @@ export const TermsOfServicePage: React.FC = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-3 dark:text-white">1.19.1 Informal Resolution</h3>
                 <p className="text-gray-600 dark:text-gray-200">
-                  Before initiating formal dispute resolution, you agree to contact ERMITS at contact@ermits.com to attempt to resolve the dispute informally. ERMITS will attempt to resolve disputes in good faith within 30 days.
+                  Before initiating formal dispute resolution, you agree to contact ERMITS at <a href="mailto:advisory@ermits.com" className="text-navy dark:text-silver hover:underline">advisory@ermits.com</a> to attempt to resolve the dispute informally. ERMITS will attempt to resolve disputes in good faith within 30 days.
                 </p>
               </div>
               <div>
@@ -602,7 +602,7 @@ export const TermsOfServicePage: React.FC = () => {
                 <h3 className="font-semibold mb-2 dark:text-white">For questions, concerns, or notices regarding these Terms:</h3>
                 <p className="text-gray-600 dark:text-gray-200">
                   <strong>ERMITS LLC</strong><br />
-                  Email: <a href="mailto:contact@ermits.com" className="text-navy dark:text-silver hover:underline">contact@ermits.com</a><br />
+                  Email: <a href="mailto:advisory@ermits.com" className="text-navy dark:text-silver hover:underline">advisory@ermits.com</a><br />
                   Website: <a href="https://www.ermits.com" className="text-navy dark:text-silver hover:underline" target="_blank" rel="noopener noreferrer">www.ermits.com</a>
                 </p>
               </div>

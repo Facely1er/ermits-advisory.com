@@ -1085,7 +1085,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                   <div>
                     <h4 className="font-semibold mb-2 dark:text-white">Data Protection Officer:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
-                      <li>Contact: <a href="mailto:dpo@ermits.com" className="text-navy dark:text-silver hover:underline">dpo@ermits.com</a></li>
+                      <li>Contact: <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a></li>
                       <li>Subject: "GDPR Inquiry - Advisory Services"</li>
                     </ul>
                   </div>
@@ -1627,7 +1627,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                   <div>
                     <h4 className="font-semibold mb-2 dark:text-white">Data Protection Officer (EU/UK/Swiss):</h4>
                     <p className="text-gray-600 dark:text-gray-200">
-                      Email: <a href="mailto:dpo@ermits.com" className="text-navy dark:text-silver hover:underline">dpo@ermits.com</a>
+                      Email: <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a>
                     </p>
                     <p className="text-gray-600 dark:text-gray-200">Subject: "GDPR Inquiry - Advisory Services"</p>
                   </div>
@@ -1641,7 +1641,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                   <div>
                     <h4 className="font-semibold mb-2 dark:text-white">HIPAA Privacy Officer (Healthcare Clients):</h4>
                     <p className="text-gray-600 dark:text-gray-200">
-                      Email: <a href="mailto:hipaa@ermits.com" className="text-navy dark:text-silver hover:underline">hipaa@ermits.com</a>
+                      Email: <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a>
                     </p>
                     <p className="text-gray-600 dark:text-gray-200">Subject: "HIPAA Privacy Matter - Advisory Services"</p>
                   </div>

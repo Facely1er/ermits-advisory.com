@@ -840,7 +840,7 @@ export const AdvisoryWebsitePortalPolicyPage: React.FC = () => {
                     <h4 className="font-semibold mb-2 dark:text-white">Data Protection Authority:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                       <li>Contact your local DPA: <a href="https://edpb.europa.eu/about-edpb/board/members_en" className="text-navy dark:text-silver hover:underline" target="_blank" rel="noopener noreferrer">https://edpb.europa.eu/about-edpb/board/members_en</a></li>
-                      <li>ERMITS DPO: <a href="mailto:dpo@ermits.com" className="text-navy dark:text-silver hover:underline">dpo@ermits.com</a></li>
+                      <li>ERMITS DPO: <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a></li>
                     </ul>
                   </div>
                 </div>
@@ -1166,7 +1166,7 @@ export const AdvisoryWebsitePortalPolicyPage: React.FC = () => {
               <div>
                 <h3 className="font-semibold mb-2 dark:text-white">Data Protection Officer (EU/UK/Swiss):</h3>
                 <p className="text-gray-600 dark:text-gray-200">
-                  Email: <a href="mailto:dpo@ermits.com" className="text-navy dark:text-silver hover:underline">dpo@ermits.com</a>
+                  Email: <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a>
                 </p>
                 <p className="text-gray-600 dark:text-gray-200">Subject: "Cookie GDPR Inquiry - Advisory Services"</p>
               </div>
