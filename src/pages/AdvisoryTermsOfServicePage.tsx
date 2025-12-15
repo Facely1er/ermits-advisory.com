@@ -147,6 +147,14 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
                       <li>Detailed time tracking and reporting</li>
                     </ul>
                   </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Assessment Engagements:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Structured assessments with standardized methodology</li>
+                      <li>Deliverable-based (assessment report)</li>
+                      <li>Fixed or tiered pricing based on scope</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
 
@@ -1638,6 +1646,18 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
               [SOW template would be attached, including sections for: Engagement Overview, Scope of Services, Deliverables, Timeline and Milestones, Fees and Payment Terms, Client Responsibilities, ERMITS Responsibilities, Acceptance Criteria, Change Management, and Signature Blocks]
             </p>
           </Card>
+        </motion.div>
+
+        {/* Tagline */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.83 }}
+          className="mb-8 text-center"
+        >
+          <p className="text-lg font-semibold text-navy dark:text-silver">
+            ERMITS Advisory Services - Expert. Independent. Trusted.
+          </p>
         </motion.div>
 
         {/* Footer Links */}
