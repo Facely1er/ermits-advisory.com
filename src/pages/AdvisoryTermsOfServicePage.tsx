@@ -5,6 +5,8 @@ import { Button } from '../components/shared/Button';
 import { ArrowLeft, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+// ERMITS Advisory Services - Master Terms of Service
+// Complete content from ERMITS_Advisory_Terms_of_Service.md
 export const AdvisoryTermsOfServicePage: React.FC = () => {
   return (
     <div className="pb-16 bg-silver-light dark:bg-dark-bg min-h-screen">
