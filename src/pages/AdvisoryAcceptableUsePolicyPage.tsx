@@ -1134,7 +1134,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
             </Link>
             <Link to="/advisory/website-portal">
               <Button variant="outline" size="sm">
-                Website & Portal Policy
+                Cookie & Portal Policy
               </Button>
             </Link>
           </div>

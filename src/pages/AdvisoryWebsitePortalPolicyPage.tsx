@@ -20,7 +20,7 @@ export const AdvisoryWebsitePortalPolicyPage: React.FC = () => {
           </Link>
           <div className="flex items-center mb-4">
             <Cookie size={32} className="mr-3 text-navy dark:text-silver" />
-            <h1 className="text-3xl md:text-4xl font-bold dark:text-white">ERMITS ADVISORY SERVICES - WEBSITE AND CLIENT PORTAL POLICY</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-navy dark:text-white">ERMITS ADVISORY SERVICES - COOKIE & PORTAL POLICY</h1>
           </div>
           <p className="text-gray-600 dark:text-gray-200 mb-2">
             <strong>Effective Date:</strong> November 19, 2025
@@ -29,7 +29,7 @@ export const AdvisoryWebsitePortalPolicyPage: React.FC = () => {
             <strong>Last Updated:</strong> November 19, 2025
           </p>
           <p className="text-lg text-gray-600 dark:text-gray-100">
-            This Website and Client Portal Policy explains how ERMITS LLC ("ERMITS," "we," "our," or "us") uses cookies, tracking technologies, and collects information when you visit the ERMITS Advisory Services website (advisory.ermits.com) or use our secure client portal. This policy should be read in conjunction with our Advisory Services Privacy Policy.
+            This Cookie & Portal Policy explains how ERMITS LLC ("ERMITS," "we," "our," or "us") uses cookies, tracking technologies, and collects information when you visit the ERMITS Advisory Services website (advisory.ermits.com) or use our secure client portal. This policy should be read in conjunction with our Advisory Services Privacy Policy.
           </p>
         </motion.div>
 
@@ -1219,7 +1219,7 @@ export const AdvisoryWebsitePortalPolicyPage: React.FC = () => {
               <strong>Last Updated:</strong> November 19, 2025
             </p>
             <p className="text-gray-600 dark:text-gray-200">
-              <strong>By using the ERMITS Advisory Services website or client portal, you acknowledge that you have read and understood this Website and Client Portal Policy.</strong>
+              <strong>By using the ERMITS Advisory Services website or client portal, you acknowledge that you have read and understood this Cookie & Portal Policy.</strong>
             </p>
             <p className="text-gray-600 dark:text-gray-200 mt-3">
               You can manage your cookie preferences at any time via the Cookie Settings link in the website footer or by contacting <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a>.

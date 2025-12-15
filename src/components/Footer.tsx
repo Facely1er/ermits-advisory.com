@@ -101,7 +101,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link to="/advisory/website-portal" className="text-silver hover:text-white transition-colors duration-200 flex items-center text-xs group">
                   <Cookie size={12} className="mr-1.5 group-hover:scale-110 transition-transform" />
-                  Cookie Policy
+                  Cookie & Portal Policy
                 </Link>
               </li>
               <li>
