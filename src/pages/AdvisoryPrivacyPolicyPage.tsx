@@ -775,11 +775,11 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">13. CONTACT INFORMATION</h2>
+            <h2 className="text-2xl font-bold mb-4 text-navy dark:text-white">13. CONTACT INFORMATION</h2>
             
             <div className="space-y-4">
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">13.1 Advisory Services Privacy Inquiries</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">13.1 Advisory Services Privacy Inquiries</h3>
                 <div className="space-y-3">
                   <div>
                     <h4 className="font-semibold mb-2 text-navy dark:text-white">General Privacy Questions:</h4>
