@@ -224,11 +224,11 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">3. INFORMATION WE COLLECT</h2>
+            <h2 className="text-2xl font-bold mb-4 text-navy dark:text-white">3. INFORMATION WE COLLECT</h2>
             
             <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">3.1 Client Contact and Business Information</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">3.1 Client Contact and Business Information</h3>
                 <div className="mb-3">
                   <p className="font-semibold mb-2 text-navy dark:text-white">What We Collect:</p>
                   <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
@@ -259,7 +259,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">3.2 Engagement-Specific Information</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">3.2 Engagement-Specific Information</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-3">
                   Depending on the nature of your engagement, we may collect:
                 </p>
@@ -338,7 +338,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">3.3 Information from Meetings and Communications</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">3.3 Information from Meetings and Communications</h3>
                 <div className="mb-3">
                   <p className="font-semibold mb-2 text-navy dark:text-white">What We Collect:</p>
                   <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
@@ -370,7 +370,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">3.4 Information We Collect About Your Systems (With Permission)</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">3.4 Information We Collect About Your Systems (With Permission)</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-3">
                   With your explicit authorization, we may observe or collect:
                 </p>
@@ -397,7 +397,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">3.5 Information from Third Parties</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">3.5 Information from Third Parties</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-3">We may receive information from:</p>
                 <div className="mb-3">
                   <p className="font-semibold mb-2 text-navy dark:text-white">Professional References:</p>
@@ -445,7 +445,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">4. HOW WE USE INFORMATION</h2>
+            <h2 className="text-2xl font-bold mb-4 text-navy dark:text-white">4. HOW WE USE INFORMATION</h2>
             
             <div className="space-y-4">
               <div>
@@ -662,7 +662,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                 <h3 className="text-xl font-semibold mb-3 dark:text-white">8.1 Universal Rights (All Clients)</h3>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Right to Access:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Right to Access:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                       <li>Request copies of all information we hold about you or your organization</li>
                       <li>Receive engagement files and working documents</li>
@@ -671,7 +671,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Right to Rectification:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Right to Rectification:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                       <li>Correct inaccurate information in our records</li>
                       <li>Update contact information or organizational details</li>
@@ -680,7 +680,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Right to Deletion:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Right to Deletion:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                       <li>Request deletion of information (subject to legal/professional requirements)</li>
                       <li>Cannot delete financial records (7-year legal requirement)</li>
@@ -722,7 +722,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                   For clients handling Controlled Unclassified Information (CUI) or Federal Contract Information (FCI):
                 </p>
                 <div className="mb-3">
-                  <h4 className="font-semibold mb-2 dark:text-white">Special Protections:</h4>
+                  <h4 className="font-semibold mb-2 text-navy dark:text-white">Special Protections:</h4>
                   <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                     <li>CUI/FCI is NOT stored on ERMITS infrastructure</li>
                     <li>All CUI/FCI processed on-site at client facilities or client-approved systems</li>
@@ -738,7 +738,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                   For healthcare organizations subject to HIPAA:
                 </p>
                 <div className="mb-3">
-                  <h4 className="font-semibold mb-2 dark:text-white">Business Associate Agreement (BAA):</h4>
+                  <h4 className="font-semibold mb-2 text-navy dark:text-white">Business Associate Agreement (BAA):</h4>
                   <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                     <li>Required before any access to Protected Health Information (PHI)</li>
                     <li>Executed as part of engagement contract</li>
@@ -754,7 +754,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                   For engagements conducted at the direction of legal counsel:
                 </p>
                 <div className="mb-3">
-                  <h4 className="font-semibold mb-2 dark:text-white">Attorney-Client Privilege Protection:</h4>
+                  <h4 className="font-semibold mb-2 text-navy dark:text-white">Attorney-Client Privilege Protection:</h4>
                   <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                     <li>ERMITS may be engaged by your legal counsel to provide technical consulting</li>
                     <li>Work product prepared at counsel's direction may be privileged</li>
@@ -782,7 +782,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                 <h3 className="text-xl font-semibold mb-3 dark:text-white">13.1 Advisory Services Privacy Inquiries</h3>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">General Privacy Questions:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">General Privacy Questions:</h4>
                     <p className="text-gray-600 dark:text-gray-200">
                       Email: <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a>
                     </p>
@@ -790,14 +790,14 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                     <p className="text-gray-600 dark:text-gray-200">Website: <a href="https://advisory.ermits.com/privacy" className="text-navy dark:text-silver hover:underline" target="_blank" rel="noopener noreferrer">https://advisory.ermits.com/privacy</a></p>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Data Protection Officer (EU/UK/Swiss):</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Data Protection Officer (EU/UK/Swiss):</h4>
                     <p className="text-gray-600 dark:text-gray-200">
                       Email: <a href="mailto:dpo@ermits.com" className="text-navy dark:text-silver hover:underline">dpo@ermits.com</a>
                     </p>
                     <p className="text-gray-600 dark:text-gray-200">Subject: "GDPR Inquiry - Advisory Services"</p>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Security Concerns:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Security Concerns:</h4>
                     <p className="text-gray-600 dark:text-gray-200">
                       Email: <a href="mailto:security@ermits.com" className="text-navy dark:text-silver hover:underline">security@ermits.com</a>
                     </p>
