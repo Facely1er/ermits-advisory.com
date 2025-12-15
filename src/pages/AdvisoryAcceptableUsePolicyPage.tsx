@@ -18,7 +18,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
             <ArrowLeft size={16} className="mr-2" />
             Back to Home
           </Link>
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">ERMITS ADVISORY SERVICES - ACCEPTABLE USE POLICY</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 text-navy dark:text-white">ERMITS ADVISORY SERVICES - ACCEPTABLE USE POLICY</h1>
           <p className="text-gray-700 dark:text-gray-200 mb-2">
             <strong>Effective Date:</strong> December 15, 2025
           </p>
@@ -38,10 +38,10 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">1. PURPOSE AND SCOPE</h2>
+            <h2 className="text-2xl font-bold mb-4 text-navy dark:text-white">1. PURPOSE AND SCOPE</h2>
             <div className="space-y-4">
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">1.1 Applicability</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">1.1 Applicability</h3>
                 <p className="text-gray-700 dark:text-gray-200 mb-2">This AUP applies to:</p>
                 <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                   <li>All ERMITS Advisory Services engagements</li>
@@ -51,7 +51,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                 </ul>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">1.2 Purpose</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">1.2 Purpose</h3>
                 <p className="text-gray-700 dark:text-gray-200 mb-2">This AUP establishes:</p>
                 <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                   <li>Professional conduct standards for engagements</li>
@@ -195,10 +195,10 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">3. PROHIBITED ACTIVITIES</h2>
+            <h2 className="text-2xl font-bold mb-4 text-navy dark:text-white">3. PROHIBITED ACTIVITIES</h2>
             <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">3.1 Illegal and Unethical Activities</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">3.1 Illegal and Unethical Activities</h3>
                 <p className="text-gray-700 dark:text-gray-200 mb-3">Prohibited Activities:</p>
                 <div className="p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
                   <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
@@ -214,10 +214,10 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">3.2 Confidentiality and Data Protection Violations</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">3.2 Confidentiality and Data Protection Violations</h3>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Clients Shall Not:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Clients Shall Not:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Share ERMITS proprietary methodologies, tools, or frameworks with third parties without consent</li>
                       <li>Use ERMITS work product beyond scope of license granted</li>
@@ -226,7 +226,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">ERMITS Consultants Shall Not:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">ERMITS Consultants Shall Not:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Disclose Client Data or Confidential Information to unauthorized parties</li>
                       <li>Use Client Confidential Information for personal gain or other clients</li>
@@ -239,7 +239,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">3.3 Security Violations</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">3.3 Security Violations</h3>
                 <p className="text-gray-700 dark:text-gray-200 mb-3">Prohibited Security Activities:</p>
                 <div className="p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
                   <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
@@ -262,7 +262,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">3.4 Data Handling Violations</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">3.4 Data Handling Violations</h3>
                 <p className="text-gray-700 dark:text-gray-200 mb-3">Prohibited Data Activities:</p>
                 <div className="p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
                   <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
@@ -279,7 +279,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">3.5 Conflicts of Interest</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">3.5 Conflicts of Interest</h3>
                 <p className="text-gray-700 dark:text-gray-200 mb-3">Prohibited Conflict Activities:</p>
                 <div className="p-4 bg-red-50 dark:bg-red-900/20 rounded-lg mb-3">
                   <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
@@ -292,7 +292,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2 dark:text-white">Required Disclosures:</h4>
+                  <h4 className="font-semibold mb-2 text-navy dark:text-white">Required Disclosures:</h4>
                   <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                     <li>Consultants must disclose potential conflicts promptly</li>
                     <li>Clients must disclose relationships affecting engagement objectivity</li>
@@ -302,10 +302,10 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">3.6 Misrepresentation and Misuse</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">3.6 Misrepresentation and Misuse</h3>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Prohibited Misrepresentation:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Prohibited Misrepresentation:</h4>
                     <div className="p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
                       <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                         <li>Misrepresenting qualifications, certifications, or experience</li>
@@ -319,7 +319,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Prohibited Misuse of Deliverables:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Prohibited Misuse of Deliverables:</h4>
                     <div className="p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
                       <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                         <li>Using deliverables for purposes beyond internal business use (without consent)</li>
@@ -333,7 +333,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">3.7 Harassment and Discrimination</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">3.7 Harassment and Discrimination</h3>
                 <p className="text-gray-700 dark:text-gray-200 mb-3">Prohibited Conduct:</p>
                 <div className="p-4 bg-red-50 dark:bg-red-900/20 rounded-lg mb-3">
                   <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
@@ -345,7 +345,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2 dark:text-white">Professional Environment:</h4>
+                  <h4 className="font-semibold mb-2 text-navy dark:text-white">Professional Environment:</h4>
                   <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                     <li>All parties entitled to respectful, professional treatment</li>
                     <li>Violations reported to management and may result in termination</li>
@@ -365,13 +365,13 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">4. HANDLING CONTROLLED AND SENSITIVE INFORMATION</h2>
+            <h2 className="text-2xl font-bold mb-4 text-navy dark:text-white">4. HANDLING CONTROLLED AND SENSITIVE INFORMATION</h2>
             <div className="space-y-4">
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">4.1 Controlled Unclassified Information (CUI) and Federal Contract Information (FCI)</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">4.1 Controlled Unclassified Information (CUI) and Federal Contract Information (FCI)</h3>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Clients Processing CUI/FCI Shall:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Clients Processing CUI/FCI Shall:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Properly mark CUI/FCI per NIST SP 800-171 and 32 CFR Part 2002</li>
                       <li>Provide ERMITS consultants with CUI/FCI handling training</li>
@@ -382,7 +382,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">ERMITS Consultants Handling CUI/FCI Shall:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">ERMITS Consultants Handling CUI/FCI Shall:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Complete CUI/FCI handling training</li>
                       <li>Access CUI/FCI only on client-approved systems</li>
@@ -393,7 +393,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Prohibited CUI/FCI Activities:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Prohibited CUI/FCI Activities:</h4>
                     <div className="p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
                       <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                         <li>Accessing CUI/FCI without authorization</li>
@@ -408,10 +408,10 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">4.2 Protected Health Information (PHI) - HIPAA</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">4.2 Protected Health Information (PHI) - HIPAA</h3>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Clients Subject to HIPAA Shall:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Clients Subject to HIPAA Shall:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Execute Business Associate Agreement (BAA) before PHI disclosure</li>
                       <li>Provide minimum necessary PHI for engagement purposes</li>
@@ -421,7 +421,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">ERMITS Consultants Handling PHI Shall:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">ERMITS Consultants Handling PHI Shall:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Access PHI only as necessary for engagement deliverables</li>
                       <li>Apply minimum necessary standard</li>
@@ -432,7 +432,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Prohibited PHI Activities:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Prohibited PHI Activities:</h4>
                     <div className="p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
                       <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                         <li>Accessing PHI beyond engagement scope</li>
@@ -447,10 +447,10 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">4.3 Classified Information</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">4.3 Classified Information</h3>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">ERMITS Policy:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">ERMITS Policy:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>ERMITS Advisory Services do not involve classified information</li>
                       <li>Consultants do not have security clearances (unless specifically disclosed)</li>
@@ -459,7 +459,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">If Classified Information Inadvertently Disclosed:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">If Classified Information Inadvertently Disclosed:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Consultant shall immediately cease accessing and notify ERMITS management</li>
                       <li>ERMITS will notify client security officer</li>
@@ -480,14 +480,14 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">5. ACCEPTABLE TECHNOLOGY USE</h2>
+            <h2 className="text-2xl font-bold mb-4 text-navy dark:text-white">5. ACCEPTABLE TECHNOLOGY USE</h2>
             <div className="space-y-4">
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">5.1 Client System Access</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">5.1 Client System Access</h3>
                 <p className="text-gray-700 dark:text-gray-200 mb-2">When authorized to access client systems:</p>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Permitted Activities:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Permitted Activities:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Access systems and data within scope defined in SOW</li>
                       <li>Review configurations, logs, and documentation as authorized</li>
@@ -496,7 +496,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Prohibited Activities:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Prohibited Activities:</h4>
                     <div className="p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
                       <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                         <li>Accessing systems or data beyond authorized scope</li>
@@ -512,10 +512,10 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">5.2 ERMITS Technology and Tools</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">5.2 ERMITS Technology and Tools</h3>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Acceptable Use:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Acceptable Use:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Use ERMITS-provided devices and accounts for client work</li>
                       <li>Use approved collaboration and file sharing platforms</li>
@@ -524,7 +524,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Prohibited Use:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Prohibited Use:</h4>
                     <div className="p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
                       <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                         <li>Storing client data on personal devices or cloud accounts</li>
@@ -538,10 +538,10 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">5.3 Secure Communication</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">5.3 Secure Communication</h3>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Required Practices:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Required Practices:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Use encrypted email for sensitive communications (TLS minimum, S/MIME preferred)</li>
                       <li>Use secure file transfer platforms for document exchange</li>
@@ -551,7 +551,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Prohibited Practices:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Prohibited Practices:</h4>
                     <div className="p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
                       <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                         <li>Discussing confidential information in public places</li>
@@ -576,10 +576,10 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">6. INTELLECTUAL PROPERTY AND LICENSING</h2>
+            <h2 className="text-2xl font-bold mb-4 text-navy dark:text-white">6. INTELLECTUAL PROPERTY AND LICENSING</h2>
             <div className="space-y-4">
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">6.1 Respecting Intellectual Property Rights</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">6.1 Respecting Intellectual Property Rights</h3>
                 <p className="text-gray-700 dark:text-gray-200 mb-2">All parties shall:</p>
                 <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                   <li>Respect intellectual property rights of others</li>
@@ -590,10 +590,10 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                 </ul>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">6.2 ERMITS Intellectual Property</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">6.2 ERMITS Intellectual Property</h3>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Clients Shall Not:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Clients Shall Not:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Use ERMITS methodologies, frameworks, or tools beyond engagement scope</li>
                       <li>Reverse engineer ERMITS proprietary tools</li>
@@ -603,7 +603,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Permitted Use:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Permitted Use:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Use deliverables for internal business purposes</li>
                       <li>Share deliverables with regulators, auditors, and advisors as necessary</li>
@@ -614,7 +614,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">6.3 Client Intellectual Property</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">6.3 Client Intellectual Property</h3>
                 <p className="text-gray-700 dark:text-gray-200 mb-2">ERMITS Consultants Shall Not:</p>
                 <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                   <li>Use client intellectual property beyond engagement scope</li>
@@ -635,13 +635,13 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">7. REPORTING VIOLATIONS</h2>
+            <h2 className="text-2xl font-bold mb-4 text-navy dark:text-white">7. REPORTING VIOLATIONS</h2>
             <div className="space-y-4">
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">7.1 How to Report</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">7.1 How to Report</h3>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Client Reporting:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Client Reporting:</h4>
                     <p className="text-gray-700 dark:text-gray-200 mb-2">If you become aware of violations by ERMITS consultants:</p>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Contact engagement project manager immediately</li>
@@ -651,7 +651,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">ERMITS Consultant Reporting:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">ERMITS Consultant Reporting:</h4>
                     <p className="text-gray-700 dark:text-gray-200 mb-2">If you become aware of violations by clients or client personnel:</p>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Report to ERMITS management immediately</li>
@@ -663,10 +663,10 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">7.2 Good Faith Reporting</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">7.2 Good Faith Reporting</h3>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Protections:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Protections:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>No retaliation against good faith reporters</li>
                       <li>Confidential handling of reports</li>
@@ -675,7 +675,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Reporting Obligations:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Reporting Obligations:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Consultants must report violations of professional standards</li>
                       <li>Clients should report consultant misconduct or unprofessional behavior</li>
@@ -685,7 +685,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">7.3 False Reports</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">7.3 False Reports</h3>
                 <p className="text-gray-700 dark:text-gray-200">
                   Making knowingly false or malicious reports is prohibited and may result in:
                 </p>
@@ -707,14 +707,14 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">8. ENFORCEMENT AND CONSEQUENCES</h2>
+            <h2 className="text-2xl font-bold mb-4 text-navy dark:text-white">8. ENFORCEMENT AND CONSEQUENCES</h2>
             <div className="space-y-4">
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">8.1 Investigation</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">8.1 Investigation</h3>
                 <p className="text-gray-700 dark:text-gray-200 mb-2">Upon receiving report of violation:</p>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">ERMITS Investigation (for consultant violations):</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">ERMITS Investigation (for consultant violations):</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Prompt investigation by management</li>
                       <li>Review account activity and usage patterns</li>
@@ -728,7 +728,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Client Investigation (for client personnel violations):</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Client Investigation (for client personnel violations):</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Client responsible for investigating own personnel</li>
                       <li>ERMITS may suspend services pending investigation</li>
@@ -743,11 +743,11 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">8.2 Enforcement Actions - ERMITS Consultants</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">8.2 Enforcement Actions - ERMITS Consultants</h3>
                 <p className="text-gray-700 dark:text-gray-200 mb-3">For violations by ERMITS consultants:</p>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Warning and Remediation:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Warning and Remediation:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Written warning and corrective action plan</li>
                       <li>Additional training or supervision</li>
@@ -755,7 +755,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Suspension:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Suspension:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Temporary suspension from client engagements</li>
                       <li>Remediation and retraining required</li>
@@ -763,7 +763,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Termination:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Termination:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Immediate termination of employment</li>
                       <li>Removal from all client engagements</li>
@@ -772,7 +772,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Legal Action:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Legal Action:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Pursuit of damages for breach of confidentiality</li>
                       <li>Injunctive relief to prevent ongoing violations</li>
@@ -782,11 +782,11 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">8.3 Enforcement Actions - Clients</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">8.3 Enforcement Actions - Clients</h3>
                 <p className="text-gray-700 dark:text-gray-200 mb-3">For violations by clients or client personnel:</p>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Warning:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Warning:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Email notification of violation</li>
                       <li>Request for corrective action</li>
@@ -794,7 +794,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Temporary Suspension:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Temporary Suspension:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Immediate suspension of account access</li>
                       <li>Opportunity to respond and remediate</li>
@@ -802,7 +802,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Termination of Engagement:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Termination of Engagement:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Immediate and permanent account closure</li>
                       <li>Immediate termination for material breach</li>
@@ -813,7 +813,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Legal Action:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Legal Action:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Enforcement of confidentiality and intellectual property rights</li>
                       <li>Pursuit of damages for breach of contract</li>
@@ -825,7 +825,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">8.4 Appeals</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">8.4 Appeals</h3>
                 <p className="text-gray-700 dark:text-gray-200 mb-2">If you believe enforcement action was made in error:</p>
                 <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                   <li>Contact: <a href="mailto:legal@ermits.com" className="text-navy dark:text-silver hover:underline">legal@ermits.com</a> (Subject: "AUP Enforcement Appeal")</li>
@@ -846,14 +846,14 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">9. SPECIAL ENGAGEMENT TYPES</h2>
+            <h2 className="text-2xl font-bold mb-4 text-navy dark:text-white">9. SPECIAL ENGAGEMENT TYPES</h2>
             <div className="space-y-4">
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">9.1 Incident Response Engagements</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">9.1 Incident Response Engagements</h3>
                 <p className="text-gray-700 dark:text-gray-200 mb-2">During active incident response:</p>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Permitted:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Permitted:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Rapid access to systems and data as needed for containment and investigation</li>
                       <li>After-hours and emergency access</li>
@@ -862,7 +862,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Prohibited:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Prohibited:</h4>
                     <div className="p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
                       <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                         <li>Destroying evidence or altering forensic artifacts</li>
@@ -875,11 +875,11 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">9.2 Red Team / Adversarial Testing</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">9.2 Red Team / Adversarial Testing</h3>
                 <p className="text-gray-700 dark:text-gray-200 mb-2">For authorized adversarial testing engagements:</p>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Required:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Required:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Explicit written authorization before testing</li>
                       <li>Clear scope definition (systems, timeframes, methods)</li>
@@ -889,7 +889,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Prohibited:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Prohibited:</h4>
                     <div className="p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
                       <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                         <li>Testing systems or networks outside authorized scope</li>
@@ -903,11 +903,11 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">9.3 M&A Due Diligence</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">9.3 M&A Due Diligence</h3>
                 <p className="text-gray-700 dark:text-gray-200 mb-2">For merger and acquisition due diligence:</p>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Special Confidentiality:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Special Confidentiality:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Enhanced confidentiality for sensitive transaction information</li>
                       <li>Chinese Wall procedures if representing multiple parties</li>
@@ -916,7 +916,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Prohibited:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Prohibited:</h4>
                     <div className="p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
                       <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                         <li>Trading on material non-public information</li>
@@ -940,10 +940,10 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">10. COMPLIANCE WITH LAWS AND REGULATIONS</h2>
+            <h2 className="text-2xl font-bold mb-4 text-navy dark:text-white">10. COMPLIANCE WITH LAWS AND REGULATIONS</h2>
             <div className="space-y-4">
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">10.1 Legal and Regulatory Compliance</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">10.1 Legal and Regulatory Compliance</h3>
                 <p className="text-gray-700 dark:text-gray-200 mb-2">All parties shall:</p>
                 <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                   <li>Comply with applicable federal, state, and local laws</li>
@@ -954,7 +954,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                 </ul>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">10.2 Professional Standards</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">10.2 Professional Standards</h3>
                 <p className="text-gray-700 dark:text-gray-200 mb-2">ERMITS consultants shall:</p>
                 <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                   <li>Comply with professional codes of conduct ((ISC)², ISACA, IAPP, etc.)</li>
@@ -964,7 +964,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                 </ul>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">10.3 Anti-Bribery and Anti-Corruption</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">10.3 Anti-Bribery and Anti-Corruption</h3>
                 <p className="text-gray-700 dark:text-gray-200 mb-2">All parties shall:</p>
                 <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                   <li>Comply with U.S. Foreign Corrupt Practices Act (FCPA)</li>
@@ -975,10 +975,10 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                 </ul>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">10.4 Cooperation with Law Enforcement</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">10.4 Cooperation with Law Enforcement</h3>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Legal Requests:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Legal Requests:</h4>
                     <p className="text-gray-700 dark:text-gray-200 mb-2">ERMITS will cooperate with lawful requests from:</p>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Law enforcement agencies</li>
@@ -988,7 +988,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">User Notification:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">User Notification:</h4>
                     <p className="text-gray-700 dark:text-gray-200 mb-2">When legally permitted, ERMITS will:</p>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Notify affected users of legal requests</li>
@@ -997,7 +997,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Emergency Situations:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Emergency Situations:</h4>
                     <p className="text-gray-700 dark:text-gray-200 mb-2">In emergencies involving imminent threat to life or serious bodily harm:</p>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>ERMITS may disclose information without prior notice</li>
@@ -1019,10 +1019,10 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">11. UPDATES TO THIS POLICY</h2>
+            <h2 className="text-2xl font-bold mb-4 text-navy dark:text-white">11. UPDATES TO THIS POLICY</h2>
             <div className="space-y-4">
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">11.1 Policy Updates</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">11.1 Policy Updates</h3>
                 <p className="text-gray-700 dark:text-gray-200 mb-2">ERMITS may update this AUP to reflect:</p>
                 <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                   <li>Evolving security threats and professional standards</li>
@@ -1033,10 +1033,10 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                 </ul>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">11.2 Notification</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">11.2 Notification</h3>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Material Changes:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Material Changes:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>30 days' advance notice to active clients</li>
                       <li>Notification via email or engagement communication</li>
@@ -1045,7 +1045,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 dark:text-white">Non-Material Changes:</h4>
+                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Non-Material Changes:</h4>
                     <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-200 ml-4">
                       <li>Update "Last Updated" date</li>
                       <li>Effective immediately upon posting</li>
@@ -1066,24 +1066,24 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">12. CONTACT INFORMATION</h2>
+            <h2 className="text-2xl font-bold mb-4 text-navy dark:text-white">12. CONTACT INFORMATION</h2>
             <div className="space-y-4">
               <div>
-                <h3 className="font-semibold mb-2 dark:text-white">AUP Violation Reports:</h3>
+                <h3 className="font-semibold mb-2 text-navy dark:text-white">AUP Violation Reports:</h3>
                 <p className="text-gray-700 dark:text-gray-200">
                   Email: <a href="mailto:advisory@ermits.com" className="text-navy dark:text-silver hover:underline">advisory@ermits.com</a>
                 </p>
                 <p className="text-gray-700 dark:text-gray-200">Subject: "AUP Violation Report"</p>
               </div>
               <div>
-                <h3 className="font-semibold mb-2 dark:text-white">AUP Questions:</h3>
+                <h3 className="font-semibold mb-2 text-navy dark:text-white">AUP Questions:</h3>
                 <p className="text-gray-700 dark:text-gray-200">
                   Email: <a href="mailto:legal@ermits.com" className="text-navy dark:text-silver hover:underline">legal@ermits.com</a>
                 </p>
                 <p className="text-gray-700 dark:text-gray-200">Subject: "AUP Inquiry - Advisory Services"</p>
               </div>
               <div>
-                <h3 className="font-semibold mb-2 dark:text-white">Security Incidents:</h3>
+                <h3 className="font-semibold mb-2 text-navy dark:text-white">Security Incidents:</h3>
                 <p className="text-gray-700 dark:text-gray-200">
                   Email: <a href="mailto:security@ermits.com" className="text-navy dark:text-silver hover:underline">security@ermits.com</a>
                 </p>
@@ -1101,7 +1101,7 @@ export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">13. ACKNOWLEDGMENT</h2>
+            <h2 className="text-2xl font-bold mb-4 text-navy dark:text-white">13. ACKNOWLEDGMENT</h2>
             <p className="text-gray-700 dark:text-gray-200 mb-4">
               By engaging ERMITS Advisory Services, you acknowledge that you have read, understood, and agree to comply with this Acceptable Use Policy. Violations may result in engagement termination and legal action.
             </p>

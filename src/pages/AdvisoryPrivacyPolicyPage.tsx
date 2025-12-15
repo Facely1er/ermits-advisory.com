@@ -999,24 +999,25 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 text-navy dark:text-white">8. YOUR PRIVACY RIGHTS</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">8. YOUR PRIVACY RIGHTS</h2>
             
-            <div className="space-y-4">
+            <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">8.1 Universal Rights (All Clients)</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">8.1 Universal Rights (All Clients)</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3">All clients have the following rights:</p>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Right to Access:</h4>
-                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                    <h4 className="font-semibold mb-2 dark:text-white">Right to Access:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
                       <li>Request copies of all information we hold about you or your organization</li>
                       <li>Receive engagement files and working documents</li>
                       <li>Obtain documentation of data processing activities</li>
-                      <li>Submit a <Link to="/advisory/dsar" className="text-navy dark:text-silver hover:underline font-semibold">Data Subject Access Request (DSAR)</Link> or email: privacy@ermits.com</li>
+                      <li>Request: privacy@ermits.com</li>
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Right to Rectification:</h4>
-                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                    <h4 className="font-semibold mb-2 dark:text-white">Right to Rectification:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
                       <li>Correct inaccurate information in our records</li>
                       <li>Update contact information or organizational details</li>
                       <li>Request corrections to deliverables (during warranty period)</li>
@@ -1024,36 +1025,186 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Right to Deletion:</h4>
-                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                    <h4 className="font-semibold mb-2 dark:text-white">Right to Deletion:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
                       <li>Request deletion of information (subject to legal/professional requirements)</li>
                       <li>Cannot delete financial records (7-year legal requirement)</li>
                       <li>Cannot delete documents under legal hold</li>
                       <li>Deletion completed within 30 days (where legally permissible)</li>
                     </ul>
                   </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Right to Restrict Processing:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Request limitation of data use</li>
+                      <li>Object to specific processing activities</li>
+                      <li>Suspend processing pending dispute resolution</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Right to Data Portability:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Receive engagement data in machine-readable format (JSON, XML, CSV)</li>
+                      <li>Transfer data to another service provider</li>
+                      <li>Provided at no charge within 30 days</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Right to Object:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Object to processing for research or thought leadership</li>
+                      <li>Opt out of anonymized data aggregation</li>
+                      <li>Decline reference or case study requests</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
 
-              <div className="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-                <p className="text-gray-700 dark:text-gray-200 mb-2">
-                  <strong>How to Exercise Your Rights:</strong> Submit requests via our{' '}
-                  <Link to="/advisory/privacy-request" className="text-navy dark:text-silver hover:underline font-semibold">
-                    Privacy Rights Request Form
-                  </Link>{' '}
-                  or via email to{' '}
-                  <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a>{' '}
-                  (Subject: "Privacy Rights Request - Advisory Services")
-                </p>
-                <p className="text-gray-700 dark:text-gray-200 text-sm">
-                  <strong>Response Timeline:</strong> Initial response within 10 business days, complete response within 30-45 days. First two requests per year are free.
-                </p>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">8.2 Additional Rights for EU/UK/Swiss Clients (GDPR)</h3>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Legal Basis for Processing:</h4>
+                    <p className="text-gray-600 dark:text-gray-200 mb-2 text-sm">We process your data based on:</p>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li><strong>Contract:</strong> To perform advisory services under our engagement agreement</li>
+                      <li><strong>Legitimate Interests:</strong> Professional standards compliance, quality assurance, legal compliance</li>
+                      <li><strong>Consent:</strong> For case studies, testimonials, marketing communications (explicit opt-in)</li>
+                      <li><strong>Legal Obligation:</strong> Tax compliance, regulatory requirements, legal process</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Right to Lodge a Complaint:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>File complaint with your local Data Protection Authority (DPA)</li>
+                      <li><strong>EU:</strong> Find your DPA at <a href="https://edpb.europa.eu/about-edpb/board/members_en" className="text-navy dark:text-silver hover:underline" target="_blank" rel="noopener noreferrer">https://edpb.europa.eu/about-edpb/board/members_en</a></li>
+                      <li><strong>UK:</strong> Information Commissioner's Office (ICO) - <a href="https://ico.org.uk" className="text-navy dark:text-silver hover:underline" target="_blank" rel="noopener noreferrer">https://ico.org.uk</a></li>
+                      <li><strong>Switzerland:</strong> FDPIC - <a href="https://www.edoeb.admin.ch" className="text-navy dark:text-silver hover:underline" target="_blank" rel="noopener noreferrer">https://www.edoeb.admin.ch</a></li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Data Protection Officer:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Contact: <a href="mailto:dpo@ermits.com" className="text-navy dark:text-silver hover:underline">dpo@ermits.com</a></li>
+                      <li>Subject: "GDPR Inquiry - Advisory Services"</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Right to Withdraw Consent:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Withdraw consent for optional processing anytime</li>
+                      <li>Does not affect processing based on contract or legal obligation</li>
+                      <li>Does not invalidate prior processing conducted with consent</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">8.3 Additional Rights for California Clients (CCPA/CPRA)</h3>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Right to Know:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Categories of personal information collected</li>
+                      <li>Sources of personal information</li>
+                      <li>Business purposes for collection</li>
+                      <li>Categories of third parties with whom we share information</li>
+                      <li>Specific pieces of personal information collected</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Right to Delete:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Request deletion of personal information (subject to exceptions)</li>
+                      <li>Exceptions: Contract performance, legal compliance, professional standards</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Right to Opt-Out of Sale:</h4>
+                    <p className="text-gray-600 dark:text-gray-200 mb-2 text-sm"><strong>ERMITS Advisory Services does not sell client information</strong></p>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>We have not sold personal information in the past 12 months</li>
+                      <li>We will not sell your information in the future</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Right to Non-Discrimination:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Equal service quality regardless of privacy rights exercise</li>
+                      <li>No penalties for exercising privacy rights</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Authorized Agent:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>May designate an authorized agent to make requests</li>
+                      <li>Agent must provide written authorization</li>
+                      <li>We may require identity verification</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Submit Requests:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Email: <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a> (Subject: "CCPA Request - Advisory Services")</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">8.4 Exercising Your Rights</h3>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">How to Submit Requests:</h4>
+                    <div className="mb-3">
+                      <h5 className="font-semibold mb-1 dark:text-white text-sm">Email:</h5>
+                      <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                        <li>Address: <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a></li>
+                        <li>Subject: "Privacy Rights Request - Advisory Services"</li>
+                        <li>Include: Name, organization, email, description of request</li>
+                      </ul>
+                    </div>
+                    <div className="mb-3">
+                      <h5 className="font-semibold mb-1 dark:text-white text-sm">Online Form:</h5>
+                      <p className="text-gray-600 dark:text-gray-200 text-sm ml-4">
+                        Submit requests via our{' '}
+                        <Link to="/advisory/privacy-request" className="text-navy dark:text-silver hover:underline font-semibold">
+                          Privacy Rights Request Form
+                        </Link>
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Verification Process:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Email verification to registered contact</li>
+                      <li>Additional verification for sensitive requests (government ID, contract details)</li>
+                      <li>Authorized representatives must provide written authorization</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Response Timeline:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Initial acknowledgment: 10 business days</li>
+                      <li>Complete response: 30 days (GDPR), 45 days (CCPA)</li>
+                      <li>Extensions: May extend with notice for complex requests</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">No Cost:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>First two requests per year are free</li>
+                      <li>Reasonable fees for excessive or repetitive requests</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </Card>
         </motion.div>
 
-        {/* Section 9: Special Considerations */}
+        {/* Section 9: International Data Transfers */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -1061,11 +1212,124 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">9. SPECIAL CONSIDERATIONS</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">9. INTERNATIONAL DATA TRANSFERS</h2>
+            
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">9.1 Data Processing Locations</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3">ERMITS Advisory Services operates from the United States. Client data may be:</p>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Processed in:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>United States (primary operations)</li>
+                      <li>European Union (EU-based consultants for EU clients)</li>
+                      <li>Canada (Canadian consulting team)</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Stored in:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>United States (encrypted cloud storage - Supabase US)</li>
+                      <li>European Union (optional EU data residency for EU clients)</li>
+                      <li>Client-designated locations (for on-premises engagements)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">9.2 Safeguards for International Transfers</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3">For data transfers from EEA, UK, or Switzerland to the United States:</p>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Standard Contractual Clauses (SCCs):</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>European Commission-approved SCCs (Decision 2021/914)</li>
+                      <li>Module Two (Controller to Processor) for subprocessors</li>
+                      <li>Module One (Controller to Controller) for consulting relationships</li>
+                      <li>Full text available upon request: <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a></li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">UK International Data Transfer Addendum:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>UK Addendum to EU SCCs for UK clients</li>
+                      <li>Compliance with UK GDPR requirements</li>
+                      <li>Approved by UK Information Commissioner's Office (ICO)</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Swiss Data Transfer Mechanisms:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Swiss-adapted Standard Contractual Clauses</li>
+                      <li>Compliance with Swiss Federal Data Protection Act (FADP)</li>
+                      <li>Swiss FDPIC-approved transfer mechanisms</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Additional Safeguards:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>End-to-end encryption for all data transfers</li>
+                      <li>Access controls and authentication (MFA, RBAC)</li>
+                      <li>Data minimization (collect only what's necessary)</li>
+                      <li>Regular security assessments and audits</li>
+                      <li>Incident notification within 72 hours</li>
+                      <li>Client notification of government access requests (when legally permitted)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">9.3 Data Residency Options</h3>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">EU Data Residency (Available):</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>EU-based consultants for EU client engagements</li>
+                      <li>Data stored in EU regions only (Supabase EU - Frankfurt)</li>
+                      <li>No transfer to United States (unless client authorizes)</li>
+                      <li>Request at engagement initiation: <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a></li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">On-Site Engagements:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Consultant travel to client location</li>
+                      <li>Data processed and stored at client facilities</li>
+                      <li>No transmission to ERMITS infrastructure (if preferred)</li>
+                      <li>Client retains complete control of data</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Client-Controlled Storage:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Store all engagement data on client-provided infrastructure</li>
+                      <li>ERMITS access via secure VPN or on-site only</li>
+                      <li>No ERMITS cloud storage used</li>
+                      <li>Available for sensitive engagements (CUI, classified, ITAR)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Section 10: Special Considerations */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.75 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">10. SPECIAL CONSIDERATIONS</h2>
             
             <div className="space-y-4">
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">9.1 Federal Contractor Clients (CUI/FCI)</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">10.1 Federal Contractor Clients (CUI/FCI)</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-3">
                   For clients handling Controlled Unclassified Information (CUI) or Federal Contract Information (FCI):
                 </p>
@@ -1081,7 +1345,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">9.2 Healthcare Clients (HIPAA)</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">10.2 Healthcare Clients (HIPAA)</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-3">
                   For healthcare organizations subject to HIPAA:
                 </p>
@@ -1097,25 +1361,164 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">9.3 Attorney-Client Engagement Model</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">10.3 Financial Services Clients (GLBA, SOX, PCI-DSS)</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3">
+                  For financial institutions and public companies:
+                </p>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Special Protections:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>No access to customer financial data or payment card information</li>
+                      <li>No storage of financial records on ERMITS systems</li>
+                      <li>Consultants sign confidentiality agreements acknowledging SOX requirements</li>
+                      <li>Support for SOX 404 compliance assessments (IT general controls)</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Compliance Support:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Advisory services designed to support GLBA, SOX, PCI-DSS compliance</li>
+                      <li>No certification or attestation authority (recommend third-party auditors)</li>
+                      <li>Deliverables may be used to support compliance programs</li>
+                      <li>Professional services do not constitute audit or assurance</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Restrictions:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Do not process payment card data (PCI data)</li>
+                      <li>Do not access customer personally identifiable information (PII)</li>
+                      <li>Financial records reviewed on-site or via sanitized/anonymized samples</li>
+                      <li>Client retains all sensitive financial data</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">10.4 Attorney-Client Engagement Model</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-3">
                   For engagements conducted at the direction of legal counsel:
                 </p>
-                <div className="mb-3">
-                  <h4 className="font-semibold mb-2 text-navy dark:text-white">Attorney-Client Privilege Protection:</h4>
-                  <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
-                    <li>ERMITS may be engaged by your legal counsel to provide technical consulting</li>
-                    <li>Work product prepared at counsel's direction may be privileged</li>
-                    <li>Communications routed through legal counsel to preserve privilege</li>
-                    <li>Disclosure restrictions to protect privilege</li>
-                  </ul>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Attorney-Client Privilege Protection:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>ERMITS may be engaged by your legal counsel to provide technical consulting</li>
+                      <li>Work product prepared at counsel's direction may be privileged</li>
+                      <li>Communications routed through legal counsel to preserve privilege</li>
+                      <li>Disclosure restrictions to protect privilege</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Our Role:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Technical advisor to legal counsel</li>
+                      <li>Consultant under attorney work-product doctrine</li>
+                      <li>No independent client relationship (engagement through counsel only)</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Maintaining Privilege:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Clearly identify counsel as client in engagement documents</li>
+                      <li>Route all communications through legal counsel</li>
+                      <li>Mark documents "Attorney-Client Privileged - Prepared at Request of Counsel"</li>
+                      <li>Limit disclosure to preserve privilege</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Not Legal Advice:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>ERMITS provides technical and cybersecurity consulting only</li>
+                      <li>We are not attorneys and do not provide legal advice</li>
+                      <li>Legal counsel responsible for legal advice and strategy</li>
+                      <li>Consult your attorney regarding privilege protections</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           </Card>
         </motion.div>
 
-        {/* Section 10: Contact Information */}
+        {/* Section 11: Children's Privacy */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">11. CHILDREN'S PRIVACY</h2>
+            <p className="text-gray-600 dark:text-gray-200">
+              ERMITS Advisory Services are business-to-business professional services not directed at children under 18. We do not knowingly collect information from children under 18.
+            </p>
+            <p className="text-gray-600 dark:text-gray-200 mt-3">
+              If we learn we have inadvertently collected information from a child under 18, we will delete it immediately.
+            </p>
+          </Card>
+        </motion.div>
+
+        {/* Section 12: Updates to Privacy Policy */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.85 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">12. UPDATES TO THIS PRIVACY POLICY</h2>
+            
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">12.1 Policy Updates</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3">We may update this Privacy Policy to reflect:</p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                  <li>Changes in advisory service offerings</li>
+                  <li>Legal or regulatory developments</li>
+                  <li>Industry best practices for professional services</li>
+                  <li>Client feedback</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">12.2 Notification of Changes</h3>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Material Changes:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>30 days' advance notice via email to active clients</li>
+                      <li>Opportunity to discuss changes with your account manager</li>
+                      <li>Option to terminate engagement if you object to changes (during active engagement)</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Non-Material Changes:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 text-sm">
+                      <li>Update "Last Updated" date</li>
+                      <li>Effective immediately upon posting</li>
+                      <li>Notification in next scheduled client communication</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">12.3 Version History</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">
+                  Previous versions available upon request: <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a>
+                </p>
+                <p className="text-gray-600 dark:text-gray-200">
+                  <strong>Current Version:</strong> 1.0 (November 2025)
+                </p>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Section 13: Contact Information */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
