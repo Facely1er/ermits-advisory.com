@@ -886,6 +886,29 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
             <h2 className="text-2xl font-bold mb-4 dark:text-white">12. LIMITATION OF LIABILITY</h2>
             <div className="space-y-4">
               <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">12.1 Exclusion of Consequential Damages</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-3 font-semibold">
+                  TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL ERMITS LLC, ITS AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, CONSULTANTS, AGENTS, OR SUBCONTRACTORS BE LIABLE FOR:
+                </p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>Indirect, incidental, special, consequential, or punitive damages</li>
+                  <li>Loss of profits, revenue, business opportunities, or anticipated savings</li>
+                  <li>Loss of data, use, goodwill, or other intangible losses</li>
+                  <li>Loss of data or business interruption</li>
+                  <li>Regulatory fines, penalties, or enforcement actions</li>
+                  <li>Failed audits or certification attempts</li>
+                  <li>Reputational harm or loss of goodwill</li>
+                  <li>Cost of procurement of substitute services</li>
+                  <li>Third-party claims arising from Client's use of Deliverables</li>
+                  <li>Reliance on recommendations or advisory guidance</li>
+                  <li>Unauthorized access to or alteration of Client Data</li>
+                  <li>Results of security assessments or compliance evaluations</li>
+                </ul>
+                <p className="text-gray-600 dark:text-gray-200 mt-3 text-sm">
+                  This limitation applies regardless of legal theory (contract, tort, negligence, strict liability, professional liability, or otherwise) and whether or not ERMITS was advised of the possibility of such damages.
+                </p>
+              </div>
+              <div>
                 <h3 className="text-xl font-semibold mb-3 dark:text-white">12.2 Cap on Liability</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-3 font-semibold">
                   ERMITS' TOTAL AGGREGATE LIABILITY ARISING OUT OF OR RELATED TO ANY ENGAGEMENT SHALL NOT EXCEED THE LESSER OF:
@@ -894,6 +917,102 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
                   <li><strong>$100,000 USD</strong>, or</li>
                   <li><strong>Total fees paid by Client to ERMITS for the specific engagement giving rise to the claim</strong></li>
                 </ul>
+                <div className="mt-3">
+                  <h4 className="font-semibold mb-2 dark:text-white">Alternative Cap (if applicable):</h4>
+                  <p className="text-gray-600 dark:text-gray-200 mb-2">For certain engagements, ERMITS' total aggregate liability may be limited to the greater of:</p>
+                  <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                    <li><strong>$100 USD</strong>, or</li>
+                    <li><strong>The total amount paid by Client to ERMITS in the 12 months preceding the claim</strong></li>
+                  </ul>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">12.3 Liability Allocation</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  The limitations in this section reflect the allocation of risk between the parties and the fees charged by ERMITS. The limitations will apply even if any remedy fails of its essential purpose.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">12.4 Basis of the Bargain</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">Client acknowledges and agrees that:</p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>ERMITS has set fees in reliance on these limitations of liability</li>
+                  <li>These limitations reflect the allocation of risk between the parties</li>
+                  <li>These limitations are an essential basis of the bargain</li>
+                  <li>Advisory Services involve professional judgment and interpretation, not guarantees</li>
+                  <li>ERMITS has offered the Services, set pricing, and entered into these Terms in reliance upon the disclaimers and limitations of liability set forth herein</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">12.5 Exceptions</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">The limitations in this section do not apply to:</p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>ERMITS' indemnification obligations under Section 13.2</li>
+                  <li>Claims arising from gross negligence, willful misconduct, or fraud</li>
+                  <li>Violations of confidentiality obligations</li>
+                  <li>Infringement of intellectual property rights</li>
+                  <li>Liabilities that cannot be limited under applicable law</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">12.6 Timely Notice of Claims</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  Client must notify ERMITS in writing of any claims within 90 days of discovery or these limitations apply with full force. Claims not brought within one (1) year of the act or omission giving rise to the claim are barred.
+                </p>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Section 13: Indemnification */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.72 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">13. INDEMNIFICATION</h2>
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">13.1 Client Indemnification</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">
+                  Client agrees to indemnify, defend, and hold harmless ERMITS, its affiliates, consultants, and subcontractors from claims, liabilities, damages, and expenses (including reasonable attorneys' fees) arising from:
+                </p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>Client's breach of these Terms or applicable SOW</li>
+                  <li>Inaccuracy or incompleteness of Client-provided information</li>
+                  <li>Client's implementation of recommendations</li>
+                  <li>Third-party claims that Client Data infringes third-party rights</li>
+                  <li>Client's violation of applicable laws or regulations</li>
+                  <li>Negligence or willful misconduct by Client or its personnel</li>
+                  <li>Client's use of Deliverables beyond scope of license granted</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">13.2 ERMITS Indemnification</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">
+                  ERMITS agrees to indemnify, defend, and hold Client harmless from third-party claims alleging that:
+                </p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>Advisory Services or Deliverables infringe valid U.S. patent, copyright, or trademark</li>
+                  <li>ERMITS' negligence or willful misconduct caused bodily injury or property damage</li>
+                </ul>
+                <div className="mt-3">
+                  <h4 className="font-semibold mb-2 dark:text-white">Conditions:</h4>
+                  <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                    <li>Client promptly notifies ERMITS in writing of claim</li>
+                    <li>ERMITS has sole control of defense and settlement</li>
+                    <li>Client reasonably cooperates in defense</li>
+                    <li>Indemnification does not apply to claims arising from Client modifications or misuse</li>
+                  </ul>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">13.3 Exclusive Remedy</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  Section 13.2 states ERMITS' sole obligation and Client's exclusive remedy for intellectual property infringement claims.
+                </p>
               </div>
             </div>
           </Card>
@@ -910,6 +1029,15 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
             <h2 className="text-2xl font-bold mb-4 dark:text-white">14. TERM AND TERMINATION</h2>
             <div className="space-y-4">
               <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">14.1 Engagement Term</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">Each engagement commences upon SOW execution and continues until:</p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>Completion of all deliverables and acceptance</li>
+                  <li>Termination by either party as provided below</li>
+                  <li>Expiration of retainer period (for retainer engagements)</li>
+                </ul>
+              </div>
+              <div>
                 <h3 className="text-xl font-semibold mb-3 dark:text-white">14.2 Termination for Convenience</h3>
                 <div className="space-y-3">
                   <div>
@@ -917,7 +1045,504 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
                     <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
                       <li>May terminate engagement for any reason with 15 days' written notice</li>
                       <li>Client pays for all services performed and expenses incurred through termination date</li>
-                      <li>Client pays termination fee of 25% of remaining SOW fees</li>
+                      <li>Client pays termination fee of 25% of remaining SOW fees (to compensate for resource commitments)</li>
+                      <li>ERMITS delivers work-in-progress in current state</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">By ERMITS:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                      <li>May terminate engagement for any reason with 30 days' written notice</li>
+                      <li>Client pays only for services performed and expenses incurred through termination date</li>
+                      <li>ERMITS delivers work-in-progress in current state</li>
+                      <li>Pro-rata refund of pre-paid fees (if applicable)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">14.3 Termination for Cause</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">Either party may terminate immediately upon written notice if:</p>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Material Breach:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                      <li>Other party materially breaches Terms or SOW</li>
+                      <li>Breach is not cured within 15 days of written notice</li>
+                      <li>Examples: Non-payment, breach of confidentiality, refusal to cooperate</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Impossibility:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                      <li>Engagement becomes impossible or illegal to perform</li>
+                      <li>Client unable or unwilling to provide necessary access or information</li>
+                      <li>Force majeure event prevents performance for more than 30 days</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Insolvency:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                      <li>Other party files bankruptcy, becomes insolvent, or makes assignment for benefit of creditors</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Effect of Termination for Cause:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                      <li>Immediate cessation of services</li>
+                      <li>Client pays for services performed through termination date (if ERMITS not in breach)</li>
+                      <li>No termination fee if terminating party not in breach</li>
+                      <li>Non-breaching party may pursue legal remedies</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">14.4 Effect of Termination</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">Upon termination:</p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>ERMITS ceases work immediately (unless wind-down period agreed)</li>
+                  <li>Client pays all outstanding invoices within 15 days</li>
+                  <li>ERMITS delivers completed work and work-in-progress in current state</li>
+                  <li>Client owns completed Deliverables upon full payment</li>
+                  <li>Confidentiality obligations survive termination</li>
+                  <li>Provisions that by their nature should survive remain in effect (warranties, liability limitations, indemnification, confidentiality, dispute resolution)</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">14.5 Transition Assistance</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">Upon termination, ERMITS will provide reasonable transition assistance:</p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>Knowledge transfer to Client or successor consultant</li>
+                  <li>Up to 10 hours at standard hourly rate (unless otherwise agreed)</li>
+                  <li>Return or secure destruction of Client Data</li>
+                </ul>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Section 15: Force Majeure */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.76 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">15. FORCE MAJEURE</h2>
+            <p className="text-gray-600 dark:text-gray-200 mb-3">
+              Neither party shall be liable for failure or delay in performance due to causes beyond reasonable control, including:
+            </p>
+            <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4 mb-3">
+              <li>Natural disasters (earthquakes, floods, hurricanes, pandemics)</li>
+              <li>War, terrorism, civil unrest, or government actions</li>
+              <li>Labor disputes, strikes, or lockouts</li>
+              <li>Cyberattacks, data breaches, or infrastructure failures</li>
+              <li>Power outages, telecommunications failures, or internet disruptions</li>
+              <li>Supplier or subcontractor failures</li>
+            </ul>
+            <div>
+              <h4 className="font-semibold mb-2 dark:text-white">Obligations During Force Majeure:</h4>
+              <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                <li>Affected party promptly notifies other party</li>
+                <li>Affected party uses commercially reasonable efforts to mitigate impact</li>
+                <li>Performance deadlines extended by duration of force majeure event</li>
+                <li>If force majeure continues for more than 30 days, either party may terminate without penalty</li>
+              </ul>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Section 16: Insurance */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.77 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">16. INSURANCE</h2>
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">16.1 ERMITS Insurance</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">ERMITS maintains the following insurance coverage:</p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li><strong>Professional Liability (Errors & Omissions):</strong> $2,000,000 per claim / $2,000,000 aggregate</li>
+                  <li><strong>General Liability:</strong> $1,000,000 per occurrence / $2,000,000 aggregate</li>
+                  <li><strong>Cyber Liability:</strong> $1,000,000 per claim / $2,000,000 aggregate</li>
+                  <li><strong>Workers' Compensation:</strong> As required by law</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">16.2 Evidence of Insurance</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  Upon request, ERMITS will provide Client with certificates of insurance evidencing coverage.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">16.3 Additional Insured</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  For large engagements, Client may request to be named as additional insured (additional fees may apply).
+                </p>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Section 17: Dispute Resolution */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.78 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">17. DISPUTE RESOLUTION</h2>
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">17.1 Informal Resolution</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">Before initiating formal dispute resolution, parties agree to:</p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>Negotiate in good faith to resolve disputes</li>
+                  <li>Escalate to senior management (at least Director level)</li>
+                  <li>Attempt to resolve within 30 days of dispute arising</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">17.2 Mediation</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">If informal resolution fails, parties agree to:</p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>Mediate dispute with neutral third-party mediator</li>
+                  <li>Mediation conducted in Washington, D.C. (or mutually agreed location)</li>
+                  <li>Parties split mediation costs equally</li>
+                  <li>Mediation must be attempted before arbitration or litigation</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">17.3 Binding Arbitration (Optional)</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">If SOW specifies binding arbitration:</p>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Arbitration Terms:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                      <li>Administered by American Arbitration Association (AAA)</li>
+                      <li>Commercial Arbitration Rules apply</li>
+                      <li>Single arbitrator (unless dispute value exceeds $500,000)</li>
+                      <li>Arbitration conducted in Washington, D.C.</li>
+                      <li>District of Columbia law applies</li>
+                      <li>Arbitrator's decision is final and binding</li>
+                      <li>Judgment may be entered in any court with jurisdiction</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Exceptions to Arbitration:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                      <li>Injunctive relief for intellectual property infringement</li>
+                      <li>Small claims court actions (within jurisdictional limits)</li>
+                      <li>Enforcement of confidentiality obligations</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Class Action Waiver:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                      <li>Disputes must be brought individually, not as class action or representative proceeding</li>
+                      <li>No consolidation of multiple client disputes without consent</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">17.4 Litigation</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">If arbitration not specified in SOW, disputes shall be resolved by litigation:</p>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Governing Law:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                      <li>Governed by laws of District of Columbia, United States</li>
+                      <li>Federal Arbitration Act applies to arbitration agreements</li>
+                      <li>UN Convention on Contracts for International Sale of Goods does not apply</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Jurisdiction and Venue:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                      <li>Exclusive jurisdiction in federal or state courts located in Washington, D.C.</li>
+                      <li>Both parties consent to personal jurisdiction and venue</li>
+                      <li>Waive any objection to venue or forum non conveniens</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">17.5 Attorneys' Fees</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  Prevailing party in any arbitration or litigation entitled to recover reasonable attorneys' fees and costs from non-prevailing party.
+                </p>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Section 18: General Provisions */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.79 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">18. GENERAL PROVISIONS</h2>
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">18.1 Entire Agreement</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">
+                  These Terms, together with any executed SOW and NDA, constitute the entire agreement between parties regarding Advisory Services and supersede all prior agreements and understandings.
+                </p>
+                <div>
+                  <h4 className="font-semibold mb-2 dark:text-white">Order of Precedence:</h4>
+                  <ol className="list-decimal list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                    <li>Statement of Work (SOW)</li>
+                    <li>These Master Terms of Service</li>
+                    <li>Non-Disclosure Agreement (NDA)</li>
+                  </ol>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">18.2 Amendments</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  Amendments must be in writing and signed by authorized representatives of both parties. Email acceptance by authorized signatory is binding.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">18.3 Severability</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  If any provision is found invalid or unenforceable, remaining provisions continue in full force. Invalid provision shall be modified to minimum extent necessary to make it enforceable.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">18.4 Waiver</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  Failure to enforce any right or provision does not constitute waiver. Waivers must be in writing and signed by party granting waiver.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">18.5 Assignment</h3>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Client Assignment:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                      <li>Client may not assign engagement without ERMITS' prior written consent</li>
+                      <li>Consent not unreasonably withheld</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">ERMITS Assignment:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                      <li>ERMITS may assign to affiliates or successors without consent</li>
+                      <li>ERMITS remains responsible for performance</li>
+                      <li>Client notified of assignment</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">18.6 No Third-Party Beneficiaries</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  These Terms are for benefit of parties only and do not create rights in any third party. Deliverables are for Client's internal use only unless SOW specifies third-party reliance.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">18.7 Independent Contractors</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  Parties are independent contractors. No partnership, joint venture, agency, or employment relationship is created.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">18.8 Notices</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">All notices must be in writing and delivered to:</p>
+                <div className="space-y-2">
+                  <div>
+                    <h4 className="font-semibold mb-1 dark:text-white">For ERMITS:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                      <li>Email: <a href="mailto:legal@ermits.com" className="text-navy dark:text-silver hover:underline">legal@ermits.com</a></li>
+                      <li>Mail: ERMITS LLC, [Physical Address to be inserted], Attn: Legal</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1 dark:text-white">For Client:</h4>
+                    <p className="text-gray-600 dark:text-gray-200 ml-4">Email and mail address specified in SOW</p>
+                  </div>
+                </div>
+                <p className="text-gray-600 dark:text-gray-200 mt-2">
+                  Notices deemed delivered when sent by email (with confirmation) or when received by mail.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">18.9 Publicity</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">
+                  Neither party may issue press releases or public statements regarding engagement without prior written consent. Exceptions:
+                </p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>Disclosure required by law or regulation (with notice to other party)</li>
+                  <li>General listing of Client name in client list (with Client consent)</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">18.10 Export Controls</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  Client shall not export or re-export Deliverables in violation of U.S. export control laws. Client is responsible for compliance with all export regulations.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">18.11 U.S. Government Clients</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">For U.S. Government clients, the following additional terms apply:</p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>Advisory Services are "commercial services" under FAR 12</li>
+                  <li>Delivered under FAR Part 12 commercial terms</li>
+                  <li>Government-specific clauses incorporated by reference as required by FAR</li>
+                  <li>Any inconsistency between these Terms and mandatory FAR clauses resolved in favor of FAR</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">18.12 Survival</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">The following provisions survive termination:</p>
+                <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                  <li>Payment obligations</li>
+                  <li>Confidentiality (for period specified in NDA)</li>
+                  <li>Intellectual property rights</li>
+                  <li>Warranties (for warranty period)</li>
+                  <li>Limitation of liability</li>
+                  <li>Indemnification</li>
+                  <li>Dispute resolution</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">18.13 Counterparts and Electronic Signatures</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  Agreements may be executed in counterparts, each constituting an original. Electronic signatures (DocuSign, Adobe Sign, etc.) are binding and enforceable.
+                </p>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Section 19: Specific Service Provisions */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">19. SPECIFIC SERVICE PROVISIONS</h2>
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">19.1 Virtual CISO (vCISO) Retainer Services</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">For ongoing vCISO advisory services:</p>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Services Include:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                      <li>Strategic cybersecurity leadership and guidance</li>
+                      <li>Board and executive reporting</li>
+                      <li>Cybersecurity program oversight</li>
+                      <li>Incident response leadership (during incidents)</li>
+                      <li>Vendor and budget recommendations</li>
+                      <li>Policy and standards governance</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Service Levels:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                      <li>Defined monthly hours or availability (per SOW)</li>
+                      <li>Priority response time for urgent matters (typically 4 hours)</li>
+                      <li>Regular check-in meetings (weekly, bi-weekly, or monthly)</li>
+                      <li>After-hours emergency availability (for critical incidents)</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Exclusions:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                      <li>Hands-on technical implementation (unless separately contracted)</li>
+                      <li>24/7 SOC or monitoring services</li>
+                      <li>Direct management of Client's security personnel</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">19.2 Incident Response Advisory</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">For incident response consulting:</p>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Retainer Model:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                      <li>Pre-paid retainer for guaranteed availability</li>
+                      <li>Rapid response within agreed timeframe (typically 2-4 hours)</li>
+                      <li>Discounted hourly rates during active incidents</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Time-and-Materials Model:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                      <li>Billed hourly during active incident response</li>
+                      <li>Premium rates for after-hours and emergency response</li>
+                      <li>No guaranteed availability without retainer</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Services Include:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                      <li>Incident response leadership and coordination</li>
+                      <li>Forensic analysis support and guidance</li>
+                      <li>Containment and eradication planning</li>
+                      <li>Recovery and remediation recommendations</li>
+                      <li>Post-incident review and lessons learned</li>
+                      <li>Regulatory notification advisory (HIPAA, state breach laws, etc.)</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Limitations:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                      <li>ERMITS does not preserve evidence for litigation (recommend forensic specialists)</li>
+                      <li>ERMITS does not provide legal advice (engage legal counsel)</li>
+                      <li>Client responsible for notification decisions (with ERMITS guidance)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">19.3 Compliance Assessment Services</h3>
+                <p className="text-gray-600 dark:text-gray-200 mb-2">For CMMC, NIST 800-171, HIPAA, and other compliance assessments:</p>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Services Include:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                      <li>Gap assessment against regulatory requirements</li>
+                      <li>Documentation review and analysis</li>
+                      <li>Stakeholder interviews</li>
+                      <li>Control testing (sampling-based)</li>
+                      <li>Assessment report with findings and recommendations</li>
+                      <li>Remediation roadmap</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Not Included:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                      <li>Certification or attestation (ERMITS is not a certification body)</li>
+                      <li>Guarantee of certification or audit passage</li>
+                      <li>Implementation of remediation (unless separately contracted)</li>
+                      <li>Legal interpretation of regulatory requirements</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Client Responsibilities:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-200 ml-4">
+                      <li>Provide access to systems, documentation, and personnel</li>
+                      <li>Complete self-assessment questionnaires (if applicable)</li>
+                      <li>Provide evidence of control implementation</li>
+                      <li>Designate knowledgeable points of contact</li>
                     </ul>
                   </div>
                 </div>
@@ -946,12 +1571,72 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
                 </p>
               </div>
               <div>
+                <h3 className="font-semibold mb-2 dark:text-white">For technical support inquiries:</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  Email: <a href="mailto:support@ermits.com" className="text-navy dark:text-silver hover:underline">support@ermits.com</a>
+                </p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2 dark:text-white">For privacy inquiries:</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  Email: <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a>
+                </p>
+              </div>
+              <div>
                 <h3 className="font-semibold mb-2 dark:text-white">For compliance and legal inquiries:</h3>
                 <p className="text-gray-600 dark:text-gray-200">
                   Email: <a href="mailto:legal@ermits.com" className="text-navy dark:text-silver hover:underline">legal@ermits.com</a>
                 </p>
               </div>
+              <div>
+                <h3 className="font-semibold mb-2 dark:text-white">For billing and payment inquiries:</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  Email: <a href="mailto:billing@ermits.com" className="text-navy dark:text-silver hover:underline">billing@ermits.com</a>
+                </p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2 dark:text-white">For security and confidentiality concerns:</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  Email: <a href="mailto:security@ermits.com" className="text-navy dark:text-silver hover:underline">security@ermits.com</a>
+                </p>
+              </div>
             </div>
+          </Card>
+        </motion.div>
+
+        {/* Section 21: Effective Date and Acceptance */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.81 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">21. EFFECTIVE DATE AND ACCEPTANCE</h2>
+            <p className="text-gray-600 dark:text-gray-200 mb-2">
+              <strong>Effective Date:</strong> November 19, 2025
+            </p>
+            <p className="text-gray-600 dark:text-gray-200 mb-4">
+              <strong>Last Updated:</strong> November 19, 2025
+            </p>
+            <p className="text-gray-600 dark:text-gray-200">
+              <strong>By executing a Statement of Work for Advisory Services, Client acknowledges that it has read, understood, and agrees to be bound by these Master Terms of Service.</strong>
+            </p>
+          </Card>
+        </motion.div>
+
+        {/* Schedule A: Standard Statement of Work (SOW) Template */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.82 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">SCHEDULE A: STANDARD STATEMENT OF WORK (SOW) TEMPLATE</h2>
+            <p className="text-gray-600 dark:text-gray-200">
+              [SOW template would be attached, including sections for: Engagement Overview, Scope of Services, Deliverables, Timeline and Milestones, Fees and Payment Terms, Client Responsibilities, ERMITS Responsibilities, Acceptance Criteria, Change Management, and Signature Blocks]
+            </p>
           </Card>
         </motion.div>
 
