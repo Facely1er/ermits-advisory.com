@@ -26,10 +26,10 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
             <h1 className="text-3xl md:text-4xl font-bold dark:text-white">ERMITS ADVISORY SERVICES - MASTER TERMS OF SERVICE</h1>
           </div>
           <p className="text-gray-600 dark:text-gray-200 mb-2">
-            <strong>Effective Date:</strong> November 19, 2025
+            <strong>Effective Date:</strong> December 15, 2025
           </p>
           <p className="text-gray-600 dark:text-gray-200 mb-4">
-            <strong>Last Updated:</strong> November 19, 2025
+            <strong>Last Updated:</strong> December 15, 2025
           </p>
           <p className="text-lg text-gray-600 dark:text-gray-100">
             By engaging ERMITS LLC ("ERMITS," "we," "our," or "us") for professional advisory and consulting services (the "Advisory Services"), you ("Client," "you," or "your") agree to be bound by these Master Terms of Service ("Terms"). If you do not agree to these Terms, do not engage our Advisory Services.
@@ -1625,10 +1625,10 @@ export const AdvisoryTermsOfServicePage: React.FC = () => {
           <Card variant="glass" padding="lg">
             <h2 className="text-2xl font-bold mb-4 dark:text-white">21. EFFECTIVE DATE AND ACCEPTANCE</h2>
             <p className="text-gray-600 dark:text-gray-200 mb-2">
-              <strong>Effective Date:</strong> November 19, 2025
+              <strong>Effective Date:</strong> December 15, 2025
             </p>
             <p className="text-gray-600 dark:text-gray-200 mb-4">
-              <strong>Last Updated:</strong> November 19, 2025
+              <strong>Last Updated:</strong> December 15, 2025
             </p>
             <p className="text-gray-600 dark:text-gray-200">
               <strong>By executing a Statement of Work for Advisory Services, Client acknowledges that it has read, understood, and agrees to be bound by these Master Terms of Service.</strong>
