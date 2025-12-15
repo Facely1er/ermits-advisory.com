@@ -89,6 +89,10 @@ const PrivacyPolicyPage = React.lazy(() => import('./pages/PrivacyPolicyPage').t
 const TermsOfServicePage = React.lazy(() => import('./pages/TermsOfServicePage').then(m => ({ default: m.TermsOfServicePage })));
 const CookiePolicyPage = React.lazy(() => import('./pages/CookiePolicyPage').then(m => ({ default: m.CookiePolicyPage })));
 const AcceptableUsePolicyPage = React.lazy(() => import('./pages/AcceptableUsePolicyPage').then(m => ({ default: m.AcceptableUsePolicyPage })));
+const AdvisoryPrivacyPolicyPage = React.lazy(() => import('./pages/AdvisoryPrivacyPolicyPage').then(m => ({ default: m.AdvisoryPrivacyPolicyPage })));
+const AdvisoryTermsOfServicePage = React.lazy(() => import('./pages/AdvisoryTermsOfServicePage').then(m => ({ default: m.AdvisoryTermsOfServicePage })));
+const AdvisoryAcceptableUsePolicyPage = React.lazy(() => import('./pages/AdvisoryAcceptableUsePolicyPage').then(m => ({ default: m.AdvisoryAcceptableUsePolicyPage })));
+const AdvisoryWebsitePortalPolicyPage = React.lazy(() => import('./pages/AdvisoryWebsitePortalPolicyPage').then(m => ({ default: m.AdvisoryWebsitePortalPolicyPage })));
 const PurchaseSuccess = React.lazy(() => import('./pages/PurchaseSuccess').then(m => ({ default: m.PurchaseSuccess })));
 const SteelRadar = React.lazy(() => import('./steel-radar/pages/SteelRadar').then(m => ({ default: m.SteelRadar })));
 const SteelEvaluationPage = React.lazy(() => import('./steel/SteelEvaluationPage').then(m => ({ default: m.default })));
@@ -165,6 +169,10 @@ function App() {
                   <Route path="/terms" element={<TermsOfServicePage />} />
                   <Route path="/cookies" element={<CookiePolicyPage />} />
                   <Route path="/acceptable-use" element={<AcceptableUsePolicyPage />} />
+                  <Route path="/advisory/privacy" element={<AdvisoryPrivacyPolicyPage />} />
+                  <Route path="/advisory/terms" element={<AdvisoryTermsOfServicePage />} />
+                  <Route path="/advisory/acceptable-use" element={<AdvisoryAcceptableUsePolicyPage />} />
+                  <Route path="/advisory/website-portal" element={<AdvisoryWebsitePortalPolicyPage />} />
                   <Route path="/purchase-success" element={<PurchaseSuccess />} />
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>
