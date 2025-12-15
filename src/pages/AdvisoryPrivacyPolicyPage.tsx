@@ -1522,18 +1522,18 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.75 }}
+          transition={{ delay: 0.9 }}
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">10. CONTACT INFORMATION</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">13. CONTACT INFORMATION</h2>
             
-            <div className="space-y-4">
+            <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">10.1 Advisory Services Privacy Inquiries</h3>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">13.1 Advisory Services Privacy Inquiries</h3>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-semibold mb-2 text-navy dark:text-white">General Privacy Questions:</h4>
+                    <h4 className="font-semibold mb-2 dark:text-white">General Privacy Questions:</h4>
                     <p className="text-gray-600 dark:text-gray-200">
                       Email: <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a>
                     </p>
@@ -1541,21 +1541,103 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
                     <p className="text-gray-600 dark:text-gray-200">Website: <a href="https://advisory.ermits.com/privacy" className="text-navy dark:text-silver hover:underline" target="_blank" rel="noopener noreferrer">https://advisory.ermits.com/privacy</a></p>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Data Protection Officer (EU/UK/Swiss):</h4>
+                    <h4 className="font-semibold mb-2 dark:text-white">Data Rights Requests:</h4>
+                    <p className="text-gray-600 dark:text-gray-200">
+                      Email: <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a>
+                    </p>
+                    <p className="text-gray-600 dark:text-gray-200">Subject: "Privacy Rights Request - Advisory Services"</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Engagement-Specific Questions:</h4>
+                    <p className="text-gray-600 dark:text-gray-200">Contact your assigned consultant or project manager</p>
+                    <p className="text-gray-600 dark:text-gray-200">
+                      Email: <a href="mailto:advisory@ermits.com" className="text-navy dark:text-silver hover:underline">advisory@ermits.com</a>
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">For technical support inquiries:</h4>
+                    <p className="text-gray-600 dark:text-gray-200">
+                      Email: <a href="mailto:support@ermits.com" className="text-navy dark:text-silver hover:underline">support@ermits.com</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">13.2 Jurisdiction-Specific Contacts</h3>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">Data Protection Officer (EU/UK/Swiss):</h4>
                     <p className="text-gray-600 dark:text-gray-200">
                       Email: <a href="mailto:dpo@ermits.com" className="text-navy dark:text-silver hover:underline">dpo@ermits.com</a>
                     </p>
                     <p className="text-gray-600 dark:text-gray-200">Subject: "GDPR Inquiry - Advisory Services"</p>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 text-navy dark:text-white">Security Concerns:</h4>
+                    <h4 className="font-semibold mb-2 dark:text-white">California Privacy Requests (CCPA/CPRA):</h4>
                     <p className="text-gray-600 dark:text-gray-200">
-                      Email: <a href="mailto:security@ermits.com" className="text-navy dark:text-silver hover:underline">security@ermits.com</a>
+                      Email: <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a>
                     </p>
-                    <p className="text-gray-600 dark:text-gray-200">Subject: "Security Issue - Advisory Services [Urgent]"</p>
+                    <p className="text-gray-600 dark:text-gray-200">Subject: "CCPA Request - Advisory Services"</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 dark:text-white">HIPAA Privacy Officer (Healthcare Clients):</h4>
+                    <p className="text-gray-600 dark:text-gray-200">
+                      Email: <a href="mailto:hipaa@ermits.com" className="text-navy dark:text-silver hover:underline">hipaa@ermits.com</a>
+                    </p>
+                    <p className="text-gray-600 dark:text-gray-200">Subject: "HIPAA Privacy Matter - Advisory Services"</p>
                   </div>
                 </div>
               </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">13.3 Security Concerns</h3>
+                <div>
+                  <h4 className="font-semibold mb-2 dark:text-white">Security Issues or Data Breaches:</h4>
+                  <p className="text-gray-600 dark:text-gray-200">
+                    Email: <a href="mailto:security@ermits.com" className="text-navy dark:text-silver hover:underline">security@ermits.com</a>
+                  </p>
+                  <p className="text-gray-600 dark:text-gray-200">Subject: "Security Issue - Advisory Services [Urgent]"</p>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-3 dark:text-white">13.4 Mailing Address</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  <strong>ERMITS LLC - Advisory Services</strong>
+                </p>
+                <p className="text-gray-600 dark:text-gray-200">[Physical Address to be inserted]</p>
+                <p className="text-gray-600 dark:text-gray-200">Attn: Privacy Team - Advisory Services</p>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Section 14: Effective Date and Acceptance */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.95 }}
+          className="mb-8"
+        >
+          <Card variant="glass" padding="lg">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">14. EFFECTIVE DATE AND ACCEPTANCE</h2>
+            <div className="space-y-4">
+              <p className="text-gray-600 dark:text-gray-200">
+                <strong>Effective Date:</strong> November 19, 2025
+              </p>
+              <p className="text-gray-600 dark:text-gray-200">
+                <strong>Last Updated:</strong> November 19, 2025
+              </p>
+              <p className="text-gray-600 dark:text-gray-200">
+                <strong>By engaging ERMITS Advisory Services, you acknowledge that you have read, understood, and agree to be bound by this Privacy Policy.</strong>
+              </p>
+              <p className="text-gray-600 dark:text-gray-200">
+                If you do not agree with this Privacy Policy, please discuss concerns with us before engagement commencement or terminate the engagement in accordance with contract terms.
+              </p>
+              <p className="text-gray-600 dark:text-gray-200 mt-4 italic">
+                <strong>ERMITS Advisory Services - Professional. Confidential. Trusted.</strong>
+              </p>
             </div>
           </Card>
         </motion.div>
