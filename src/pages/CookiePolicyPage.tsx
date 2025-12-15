@@ -27,7 +27,7 @@ export const CookiePolicyPage: React.FC = () => {
             <strong>Effective Date:</strong> October 31, 2025
           </p>
           <p className="text-gray-600 dark:text-gray-200 mb-4">
-            <strong>Last Updated:</strong> October 31, 2025
+            <strong>Last Updated:</strong> December 13, 2025
           </p>
           <p className="text-lg text-gray-600 dark:text-gray-100">
             This Cookie Policy explains how ERMITS LLC ("ERMITS," "we," "our," or "us") uses cookies and similar technologies when you use our Services. This policy should be read in conjunction with our Privacy Policy.
@@ -483,7 +483,7 @@ export const CookiePolicyPage: React.FC = () => {
               <div>
                 <h3 className="font-semibold mb-2 dark:text-white">Cookie Policy Questions:</h3>
                 <p className="text-gray-600 dark:text-gray-200">
-                  Email: <a href="mailto:contact@ermits.com" className="text-navy dark:text-silver hover:underline">contact@ermits.com</a>
+                  Email: <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a>
                 </p>
                 <p className="text-gray-600 dark:text-gray-200">Subject: "Cookie Policy Inquiry"</p>
               </div>
@@ -498,7 +498,7 @@ export const CookiePolicyPage: React.FC = () => {
               <div>
                 <h3 className="font-semibold mb-2 dark:text-white">Data Protection Officer (EU/UK/Swiss):</h3>
                 <p className="text-gray-600 dark:text-gray-200">
-                  Email: <a href="mailto:contact@ermits.com" className="text-navy dark:text-silver hover:underline">contact@ermits.com</a>
+                  Email: <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a>
                 </p>
                 <p className="text-gray-600 dark:text-gray-200">Subject: "Cookie GDPR Inquiry"</p>
               </div>

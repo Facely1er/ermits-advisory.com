@@ -19,7 +19,10 @@ export const Footer: React.FC = () => {
                 <span className="block text-sm font-bold">ERMITS</span>
                 <span className="block text-sm font-normal">Advisory</span>
               </span>
-              <p className="text-xs text-silver mt-1 leading-tight">Global Intelligence. Resilient Strategy. Streamlined for Success.</p>
+              <p className="text-xs text-silver mt-1 leading-tight">
+                Global Intelligence. Resilient Strategy.<br />
+                Streamlined for Success.
+              </p>
             </div>
           </div>
 

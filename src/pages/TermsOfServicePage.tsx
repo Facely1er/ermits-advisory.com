@@ -23,7 +23,7 @@ export const TermsOfServicePage: React.FC = () => {
             <strong>Effective Date:</strong> October 31, 2025
           </p>
           <p className="text-gray-600 dark:text-gray-200 mb-4">
-            <strong>Last Updated:</strong> October 31, 2025
+            <strong>Last Updated:</strong> December 13, 2025
           </p>
           <p className="text-lg text-gray-600 dark:text-gray-100">
             By accessing or using any ERMITS LLC ("ERMITS," "we," "our," or "us") products, platforms, or services (collectively, the "Services"), you ("User," "you," or "your") agree to be bound by these Master Terms of Service ("Terms"). If you do not agree to these Terms, do not use our Services.
@@ -610,7 +610,21 @@ export const TermsOfServicePage: React.FC = () => {
               <div>
                 <h3 className="font-semibold mb-2 dark:text-white">For technical support inquiries:</h3>
                 <p className="text-gray-600 dark:text-gray-200">
-                  Email: <a href="mailto:contact@ermits.com" className="text-navy dark:text-silver hover:underline">contact@ermits.com</a>
+                  Email: <a href="mailto:support@ermits.com" className="text-navy dark:text-silver hover:underline">support@ermits.com</a>
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold mb-2 dark:text-white">For privacy inquiries:</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  Email: <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a>
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold mb-2 dark:text-white">For compliance and legal inquiries:</h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  Email: <a href="mailto:legal@ermits.com" className="text-navy dark:text-silver hover:underline">legal@ermits.com</a>
                 </p>
               </div>
             </div>

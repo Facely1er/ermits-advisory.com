@@ -25,7 +25,7 @@ export const PrivacyPolicyPage: React.FC = () => {
             <strong>Effective Date:</strong> October 31, 2025
           </p>
           <p className="text-gray-600 dark:text-gray-200 mb-4">
-            <strong>Last Updated:</strong> October 31, 2025
+            <strong>Last Updated:</strong> December 13, 2025
           </p>
           <p className="text-lg text-gray-600 dark:text-gray-100">
             ERMITS LLC ("ERMITS," "we," "our," or "us") is committed to protecting your privacy through a Privacy-First Architecture that ensures you maintain control over your data. This Privacy Policy explains how we collect, use, disclose, and safeguard information when you use our Services.
@@ -489,7 +489,7 @@ export const PrivacyPolicyPage: React.FC = () => {
               <div className="mt-4 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
                 <p className="text-gray-700 dark:text-gray-200 mb-2">
                   <strong>How to Exercise Your Rights:</strong> Submit requests via email to{' '}
-                  <a href="mailto:contact@ermits.com" className="text-navy dark:text-silver hover:underline">contact@ermits.com</a>{' '}
+                  <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a>{' '}
                   (Subject: "Privacy Rights Request") or through Account Settings → Privacy Rights.
                 </p>
                 <p className="text-gray-700 dark:text-gray-200 text-sm">
@@ -539,7 +539,7 @@ export const PrivacyPolicyPage: React.FC = () => {
               <div>
                 <h3 className="font-semibold mb-2 dark:text-white">Privacy Inquiries:</h3>
                 <p className="text-gray-600 dark:text-gray-200">
-                  Email: <a href="mailto:contact@ermits.com" className="text-navy dark:text-silver hover:underline">contact@ermits.com</a>
+                  Email: <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a>
                 </p>
                 <p className="text-gray-600 dark:text-gray-200">Subject: "Privacy Inquiry"</p>
               </div>
@@ -547,7 +547,7 @@ export const PrivacyPolicyPage: React.FC = () => {
               <div>
                 <h3 className="font-semibold mb-2 dark:text-white">Data Rights Requests:</h3>
                 <p className="text-gray-600 dark:text-gray-200">
-                  Email: <a href="mailto:contact@ermits.com" className="text-navy dark:text-silver hover:underline">contact@ermits.com</a>
+                  Email: <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a>
                 </p>
                 <p className="text-gray-600 dark:text-gray-200">Subject: "Privacy Rights Request"</p>
               </div>
@@ -555,7 +555,7 @@ export const PrivacyPolicyPage: React.FC = () => {
               <div>
                 <h3 className="font-semibold mb-2 dark:text-white">Data Protection Officer (EU/UK/Swiss):</h3>
                 <p className="text-gray-600 dark:text-gray-200">
-                  Email: <a href="mailto:contact@ermits.com" className="text-navy dark:text-silver hover:underline">contact@ermits.com</a>
+                  Email: <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a>
                 </p>
                 <p className="text-gray-600 dark:text-gray-200">Subject: "GDPR Inquiry"</p>
               </div>
@@ -563,7 +563,7 @@ export const PrivacyPolicyPage: React.FC = () => {
               <div>
                 <h3 className="font-semibold mb-2 dark:text-white">California Privacy Requests:</h3>
                 <p className="text-gray-600 dark:text-gray-200">
-                  Email: <a href="mailto:contact@ermits.com" className="text-navy dark:text-silver hover:underline">contact@ermits.com</a>
+                  Email: <a href="mailto:privacy@ermits.com" className="text-navy dark:text-silver hover:underline">privacy@ermits.com</a>
                 </p>
                 <p className="text-gray-600 dark:text-gray-200">Subject: "CCPA Request"</p>
               </div>
