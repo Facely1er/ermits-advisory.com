@@ -18,7 +18,7 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
             <ArrowLeft size={16} className="mr-2" />
             Back to Home
           </Link>
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">ERMITS ADVISORY SERVICES PRIVACY POLICY</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 text-navy dark:text-white">ERMITS ADVISORY SERVICES PRIVACY POLICY</h1>
           <p className="text-gray-600 dark:text-gray-200 mb-2">
             <strong>Effective Date:</strong> November 19, 2025
           </p>
@@ -41,11 +41,11 @@ export const AdvisoryPrivacyPolicyPage: React.FC = () => {
           className="mb-8"
         >
           <Card variant="glass" padding="lg">
-            <h2 className="text-2xl font-bold mb-4 dark:text-white">1. SCOPE AND APPLICABILITY</h2>
+            <h2 className="text-2xl font-bold mb-4 text-navy dark:text-white">1. SCOPE AND APPLICABILITY</h2>
             
             <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-semibold mb-3 dark:text-white">1.1 Services Covered</h3>
+                <h3 className="text-xl font-semibold mb-3 text-navy dark:text-white">1.1 Services Covered</h3>
                 <p className="text-gray-600 dark:text-gray-200 mb-4">
                   This Privacy Policy applies to ERMITS Advisory Services, including:
                 </p>
