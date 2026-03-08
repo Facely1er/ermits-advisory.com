@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
-import { ArrowLeft, Shield } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const AdvisoryAcceptableUsePolicyPage: React.FC = () => {

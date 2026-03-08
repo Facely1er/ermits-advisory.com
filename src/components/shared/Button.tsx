@@ -50,6 +50,7 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <motion.button
+      type={props.type || 'button'}
       whileHover={variant === 'luxury' ? { scale: 1.03, y: -2 } : { scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       className={buttonClasses}

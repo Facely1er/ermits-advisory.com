@@ -59,7 +59,7 @@ export class ErrorBoundary extends Component<Props, State> {
           userAgent: navigator.userAgent,
           url: window.location.href
         });
-      } catch (e) {
+      } catch {
         // Fallback if error object can't be serialized
         console.error('Production Error:', error.message || 'Unknown error');
       }
@@ -132,7 +132,7 @@ export class ErrorBoundary extends Component<Props, State> {
               </Button>
             </div>
 
-            {process.env.NODE_ENV === 'development' && this.state.error && (
+            {(import.meta.env.DEV || import.meta.env.MODE === 'development') && this.state.error && (
               <details className="mt-8 text-left">
                 <summary className="cursor-pointer text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Error Details (Development Only)
