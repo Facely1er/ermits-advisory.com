@@ -150,6 +150,14 @@
     <!-- Security Headers -->
     <!-- Note: X-Frame-Options, X-Content-Type-Options, and X-XSS-Protection are set via HTTP headers in vercel.json -->
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <!-- Google Analytics 4 - inline so it always loads -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEQXJHYNHG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VEQXJHYNHG', { anonymize_ip: true, cookie_flags: 'SameSite=None;Secure' });
+    </script>
   </head>
   <body>
     <div id="root"></div>
