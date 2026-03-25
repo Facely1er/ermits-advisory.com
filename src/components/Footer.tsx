@@ -37,7 +37,7 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/method/steel" className="text-silver hover:text-white transition-colors duration-200 flex items-center text-xs group">
+                <Link to="/steel-evaluation" className="text-silver hover:text-white transition-colors duration-200 flex items-center text-xs group">
                   <Shield size={12} className="mr-1.5 group-hover:scale-110 transition-transform" />
                   STEEL™ Diagnostic
                 </Link>
