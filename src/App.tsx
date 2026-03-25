@@ -4,7 +4,6 @@ import { ThemeProvider } from './contexts/ThemeContext';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { ScrollProgressBar } from './components/shared/ProgressBar';
-import { FloatingActionButton } from './components/shared/FloatingActionButton';
 import { GoogleAnalytics, VercelMarketingAnalytics } from './components/GoogleAnalytics';
 import { ErrorBoundary } from './components/shared/ErrorBoundary';
 
@@ -186,7 +185,6 @@ function App() {
             </main>
             
             <Footer />
-            <FloatingActionButton />
             <VercelMarketingAnalytics />
             </div>
           </>
