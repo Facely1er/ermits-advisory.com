@@ -14,7 +14,7 @@ export const DashboardTemplate: React.FC = () => {
     try {
       await createCheckoutSession({
         productType: 'dashboard-template',
-        successUrl: `${window.location.origin}/purchase-success`,
+        successUrl: `${window.location.origin}/purchase-success?session_id={CHECKOUT_SESSION_ID}&product_type=dashboard-template`,
         cancelUrl: window.location.href,
       });
     } catch (error) {
@@ -131,20 +131,10 @@ export const DashboardTemplate: React.FC = () => {
                 <Lock size={18} className="mr-2" />
                 {loading ? 'Processing...' : 'Buy with Stripe'}
               </Button>
-              
-              <Button
-                variant="outline"
-                size="lg"
-                onClick={() => window.open('https://gumroad.com/ermits/dashboard-template', '_blank')}
-                className="w-full"
-              >
-                <Lock size={18} className="mr-2" />
-                Buy with Gumroad
-              </Button>
             </div>
 
             <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-4">
-              Secure payment options • Instant download
+              Secure payment via Stripe • Download instructions sent by email after purchase
             </p>
           </Card>
         </motion.div>
@@ -341,14 +331,6 @@ export const DashboardTemplate: React.FC = () => {
                 iconPosition="right"
               >
                 {loading ? 'Processing...' : 'Buy with Stripe ($79)'}
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                onClick={() => window.open('https://gumroad.com/ermits/dashboard-template', '_blank')}
-                className="bg-white/10 text-white border-white/30 hover:bg-white/20"
-              >
-                Buy with Gumroad
               </Button>
             </div>
           </Card>

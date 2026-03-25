@@ -3,10 +3,14 @@ import { motion } from 'framer-motion';
 import { Card } from '../components/shared/Card';
 import { Button } from '../components/shared/Button';
 import {
-  CheckCircle, Lock, Zap, Star, TrendingUp,
-  Download, Save, BarChart3, Users, Cloud, Shield
+  CheckCircle, Zap, Star, Users, Shield, Mail
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+
+function toolkitPurchaseContactUrl(service: string, interest: string): string {
+  const p = new URLSearchParams({ type: 'quote', service, interest });
+  return `/contact?${p.toString()}`;
+}
 
 export const ToolkitsPremiumPricing: React.FC = () => {
   const [billingCycle, setBillingCycle] = useState<'annual' | 'lifetime'>('annual');
@@ -47,8 +51,7 @@ export const ToolkitsPremiumPricing: React.FC = () => {
         ]
       },
       demoLink: '/compliance-gap-analysis-premium',
-      buyBasicLink: 'https://gumroad.com/ermits/compliance-toolkit',
-      buyPremiumLink: 'https://gumroad.com/ermits/compliance-toolkit-premium'
+      contactService: 'compliance-readiness'
     },
     {
       name: 'Incident Response Toolkit',
@@ -84,8 +87,7 @@ export const ToolkitsPremiumPricing: React.FC = () => {
         ]
       },
       demoLink: null,
-      buyBasicLink: 'https://gumroad.com/ermits/incident-response-toolkit',
-      buyPremiumLink: 'https://gumroad.com/ermits/incident-response-premium'
+      contactService: 'incident-response'
     },
     {
       name: 'Vendor Risk Toolkit',
@@ -121,8 +123,7 @@ export const ToolkitsPremiumPricing: React.FC = () => {
         ]
       },
       demoLink: '/vendor-risk-scorer-premium',
-      buyBasicLink: 'https://gumroad.com/ermits/vendor-risk-toolkit',
-      buyPremiumLink: 'https://gumroad.com/ermits/vendor-risk-premium'
+      contactService: 'vendor-risk'
     }
   ];
 
@@ -217,10 +218,17 @@ export const ToolkitsPremiumPricing: React.FC = () => {
                     variant="secondary"
                     size="sm"
                     className="w-full"
-                    icon={<Download size={16} />}
-                    onClick={() => window.open(plan.buyBasicLink, '_blank')}
+                    icon={<Mail size={16} />}
+                    onClick={() =>
+                      navigate(
+                        toolkitPurchaseContactUrl(
+                          plan.contactService,
+                          `${plan.name} — Basic templates ($${plan.basic.price} one-time)`
+                        )
+                      )
+                    }
                   >
-                    Download Templates
+                    Request Stripe checkout — Basic
                   </Button>
                 </div>
 
@@ -270,9 +278,17 @@ export const ToolkitsPremiumPricing: React.FC = () => {
                     variant="primary"
                     size="sm"
                     className="w-full bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600"
-                    onClick={() => window.open(plan.buyPremiumLink, '_blank')}
+                    icon={<Mail size={16} />}
+                    onClick={() =>
+                      navigate(
+                        toolkitPurchaseContactUrl(
+                          plan.contactService,
+                          `${plan.name} — Premium (${billingCycle === 'annual' ? 'Annual' : 'Lifetime'}) $${billingCycle === 'annual' ? plan.premium.annual : plan.premium.lifetime}`
+                        )
+                      )
+                    }
                   >
-                    Upgrade to Premium
+                    Request Stripe checkout — Premium
                   </Button>
                 </div>
               </Card>
@@ -337,18 +353,33 @@ export const ToolkitsPremiumPricing: React.FC = () => {
                     variant="secondary"
                     size="lg"
                     className="flex-1"
-                    icon={<Download size={20} />}
-                    onClick={() => window.open('https://gumroad.com/ermits/toolkit-bundle-basic', '_blank')}
+                    icon={<Mail size={20} />}
+                    onClick={() =>
+                      navigate(
+                        toolkitPurchaseContactUrl(
+                          'other',
+                          `Ultimate Toolkit Bundle — Basic ($${bundlePrice.basic} one-time)`
+                        )
+                      )
+                    }
                   >
-                    Basic Bundle
+                    Request Stripe checkout — Basic bundle
                   </Button>
                   <Button
                     variant="primary"
                     size="lg"
                     className="flex-1 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600"
-                    onClick={() => window.open('https://gumroad.com/ermits/toolkit-bundle-premium', '_blank')}
+                    icon={<Mail size={20} />}
+                    onClick={() =>
+                      navigate(
+                        toolkitPurchaseContactUrl(
+                          'other',
+                          `Ultimate Toolkit Bundle — Premium (${billingCycle === 'annual' ? 'Annual' : 'Lifetime'}) $${billingCycle === 'annual' ? bundlePrice.annual : bundlePrice.lifetime}`
+                        )
+                      )
+                    }
                   >
-                    Premium Bundle
+                    Request Stripe checkout — Premium bundle
                   </Button>
                 </div>
               </div>

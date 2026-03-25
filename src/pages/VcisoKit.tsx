@@ -6,14 +6,31 @@ import {
   ArrowRight, CheckCircle, FileText, Clock, 
   Target, Settings,
   Activity, CheckSquare,
-  Briefcase
+  Briefcase, Lock
 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
+import { createCheckoutSession } from '../services/stripe';
 
 export const VcisoKit: React.FC = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<'overview' | 'workflow' | 'services'>('overview');
   const [workflowStep, setWorkflowStep] = useState(0);
+  const [kitCheckoutLoading, setKitCheckoutLoading] = useState(false);
+
+  const handleStarterKitPurchase = async () => {
+    setKitCheckoutLoading(true);
+    try {
+      await createCheckoutSession({
+        productType: 'vciso-kit',
+        successUrl: `${window.location.origin}/purchase-success?session_id={CHECKOUT_SESSION_ID}&product_type=vciso-kit`,
+        cancelUrl: window.location.href,
+      });
+    } catch (error) {
+      console.error('Checkout error:', error);
+      alert('Failed to start checkout. Please try again or contact support.');
+      setKitCheckoutLoading(false);
+    }
+  };
 
   // Workflow Steps
   const workflowSteps = [
@@ -96,6 +113,34 @@ export const VcisoKit: React.FC = () => {
             <div className="text-4xl font-bold text-navy dark:text-silver">Strategic Advisory</div>
             <div className="text-gray-600 dark:text-gray-400">Expert Governance Services</div>
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="max-w-xl mx-auto mb-10"
+          >
+            <Card variant="glass" padding="lg" className="border border-navy/20 dark:border-silver/30 text-center">
+              <p className="text-sm font-semibold text-navy dark:text-silver mb-1">Digital product</p>
+              <h2 className="text-xl font-bold dark:text-white mb-2">vCISO Starter Kit</h2>
+              <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+                37 templates — policies, playbooks, board materials, and checklists (one-time purchase).
+              </p>
+              <div className="text-3xl font-bold text-navy dark:text-white mb-4">$299</div>
+              <Button
+                variant="primary"
+                size="md"
+                className="w-full sm:w-auto"
+                disabled={kitCheckoutLoading}
+                onClick={handleStarterKitPurchase}
+                icon={<Lock size={18} />}
+              >
+                {kitCheckoutLoading ? 'Processing…' : 'Buy with Stripe'}
+              </Button>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-3">
+                Secure checkout via Stripe. For engagements, use the tabs below or contact us.
+              </p>
+            </Card>
+          </motion.div>
 
           {/* Tab Navigation */}
           <div className="flex flex-wrap justify-center gap-4 mb-8">

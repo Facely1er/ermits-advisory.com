@@ -14,7 +14,6 @@ export interface Product {
   price: number;
   currency: string;
   stripePriceId: string;
-  gumroadUrl: string;
   features: string[];
   category: 'assessment' | 'toolkit' | 'template';
 }
@@ -33,7 +32,6 @@ export const PRODUCTS: Record<ProductId, Product> = {
     price: 29,
     currency: 'USD',
     stripePriceId: 'price_1SU74XAjb9YEbEboc4sLuKtV',
-    gumroadUrl: 'https://gumroad.com/ermits/steel-premium',
     category: 'assessment',
     features: [
       'Detailed PDF Reports (20+ pages)',
@@ -51,7 +49,6 @@ export const PRODUCTS: Record<ProductId, Product> = {
     price: 299,
     currency: 'USD',
     stripePriceId: 'price_1SU74YAjb9YEbEbohKsi0HZO',
-    gumroadUrl: 'https://gumroad.com/ermits/vciso-kit',
     category: 'toolkit',
     features: [
       '37 Ready-to-Use Templates',
@@ -69,7 +66,6 @@ export const PRODUCTS: Record<ProductId, Product> = {
     price: 79,
     currency: 'USD',
     stripePriceId: 'price_1SU74YAjb9YEbEboGzeh3o78',
-    gumroadUrl: 'https://gumroad.com/ermits/dashboard-template',
     category: 'template',
     features: [
       'HTML/CSS/JS Template',
@@ -121,12 +117,5 @@ export function getStripePriceId(productId: ProductId): string {
   };
   
   return envMap[productId] || '';
-}
-
-/**
- * Get Gumroad URL for a product
- */
-export function getGumroadUrl(productId: ProductId): string {
-  return PRODUCTS[productId]?.gumroadUrl || '';
 }
 

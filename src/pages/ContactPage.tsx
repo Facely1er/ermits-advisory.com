@@ -25,6 +25,7 @@ type FormErrors = {
 export const ContactPage: React.FC = () => {
   const [searchParams] = useSearchParams();
   const serviceParam = searchParams.get('service') || '';
+  const interestParam = searchParams.get('interest') || '';
   const typeParam = searchParams.get('type') || 'contact'; // 'contact' or 'quote'
   const { t } = useTranslation();
   
@@ -76,6 +77,19 @@ export const ContactPage: React.FC = () => {
       setFormState(prev => ({ ...prev, service: serviceParam }));
     }
   }, [serviceParam]);
+
+  // Pre-fill message for toolkit / product purchase intents (e.g. Stripe checkout request)
+  useEffect(() => {
+    if (!interestParam) return;
+    const decoded = decodeURIComponent(interestParam.replace(/\+/g, ' '));
+    setFormState((prev) => {
+      if (prev.message.trim()) return prev;
+      return {
+        ...prev,
+        message: `${decoded}\n\nPlease send me a Stripe checkout link to complete this purchase.`,
+      };
+    });
+  }, [interestParam]);
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;

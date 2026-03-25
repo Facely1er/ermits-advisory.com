@@ -119,16 +119,6 @@ export const SteelPremium: React.FC = () => {
                 {loading ? 'Processing...' : 'Buy with Stripe'}
               </Button>
               
-              <Button
-                variant="outline"
-                size="lg"
-                onClick={() => window.open('https://gumroad.com/ermits/steel-premium', '_blank')}
-                className="w-full"
-              >
-                <Lock size={18} className="mr-2" />
-                Buy with Gumroad
-              </Button>
-              
               <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
                 <p className="text-center text-sm text-gray-600 dark:text-gray-300 mb-3">
                   Need enterprise features?
@@ -145,7 +135,7 @@ export const SteelPremium: React.FC = () => {
             </div>
 
             <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-4">
-              Secure payment options • Lifetime access
+              Secure payment via Stripe • Lifetime access
             </p>
           </Card>
         </motion.div>
@@ -288,14 +278,6 @@ export const SteelPremium: React.FC = () => {
                 iconPosition="right"
               >
                 {loading ? 'Processing...' : 'Buy with Stripe ($29)'}
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                onClick={() => window.open('https://gumroad.com/ermits/steel-premium', '_blank')}
-                className="bg-white/10 text-white border-white/30 hover:bg-white/20"
-              >
-                Buy with Gumroad
               </Button>
             </div>
           </Card>
