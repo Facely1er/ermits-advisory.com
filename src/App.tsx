@@ -6,6 +6,7 @@ import { Footer } from './components/Footer';
 import { ScrollProgressBar } from './components/shared/ProgressBar';
 import { FloatingActionButton } from './components/shared/FloatingActionButton';
 import { Analytics } from '@vercel/analytics/react';
+import { GoogleAnalytics } from './components/GoogleAnalytics';
 import { ErrorBoundary } from './components/shared/ErrorBoundary';
 
 // Lazy load all page components for better performance
@@ -114,7 +115,9 @@ function App() {
     <ErrorBoundary>
       <ThemeProvider>
         <Router>
-          <div className="min-h-screen flex flex-col">
+          <>
+            <GoogleAnalytics />
+            <div className="min-h-screen flex flex-col">
             {/* Skip to main content link for accessibility */}
             <a 
               href="#main-content" 
@@ -186,7 +189,8 @@ function App() {
             <Footer />
             <FloatingActionButton />
             <Analytics />
-          </div>
+            </div>
+          </>
         </Router>
       </ThemeProvider>
     </ErrorBoundary>
