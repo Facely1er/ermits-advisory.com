@@ -3,10 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { NavLink, Link, useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../contexts/ThemeContext';
-import { Button } from './shared/Button';
 import {
   Sun, Moon, Menu, X,
-  Briefcase, Mail, Users, Layers, Focus, BookOpen
+  Briefcase, Mail, Users, Layers, BookOpen
 } from 'lucide-react';
 import logoImg from '../assets/ermits-advisory.png';
 import { cn } from '../utils/cn';
@@ -18,7 +17,7 @@ interface NavLink {
 }
 
 export const Navigation: React.FC = () => {
-  const { theme, toggleTheme, focusMode, toggleFocusMode } = useTheme();
+  const { theme, toggleTheme } = useTheme();
   const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
@@ -140,24 +139,6 @@ export const Navigation: React.FC = () => {
                 </button>
               </div>
 
-              {/* Focus Mode Toggle */}
-              <button
-                onClick={toggleFocusMode}
-                className={cn(
-                  "p-2 rounded-full transition-colors",
-                  focusMode
-                    ? "bg-navy/20 hover:bg-navy/30 dark:bg-silver/20 dark:hover:bg-silver/30"
-                    : "bg-silver/20 hover:bg-silver/30 dark:bg-navy/40 dark:hover:bg-navy/50"
-                )}
-                aria-label={focusMode ? "Disable focus mode" : "Enable focus mode"}
-                title={focusMode ? "Focus indicators enabled" : "Focus indicators disabled"}
-              >
-                <Focus 
-                  size={16} 
-                  className={focusMode ? "text-navy dark:text-silver" : "text-gray-500 dark:text-gray-400"} 
-                />
-              </button>
-
               {/* Theme Toggle */}
               <button
                 onClick={toggleTheme}
@@ -171,15 +152,15 @@ export const Navigation: React.FC = () => {
                 )}
               </button>
 
-              {/* Contact CTA */}
-              <Button
-                size="sm"
-                variant="primary"
-                icon={<Mail size={16} />}
+              {/* Contact — icon only (label via aria) */}
+              <button
+                type="button"
                 onClick={handleContactClick}
+                className="p-2 rounded-full bg-navy hover:bg-navy-dark text-white shadow-md hover:shadow-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-navy dark:focus-visible:ring-silver"
+                aria-label={t('navigation.contact')}
               >
-                {t('navigation.contact')}
-              </Button>
+                <Mail size={16} className="shrink-0" aria-hidden />
+              </button>
             </div>
           </div>
 
@@ -261,23 +242,6 @@ export const Navigation: React.FC = () => {
                       FR
                     </button>
                   </div>
-                  {/* Focus Mode Toggle */}
-                  <button
-                    onClick={toggleFocusMode}
-                    className={cn(
-                      "p-2 rounded-full transition-colors",
-                      focusMode
-                        ? "bg-navy/20 hover:bg-navy/30 dark:bg-silver/20 dark:hover:bg-silver/30"
-                        : "bg-silver/20 hover:bg-silver/30 dark:bg-navy/40 dark:hover:bg-navy/50"
-                    )}
-                    aria-label={focusMode ? "Disable focus mode" : "Enable focus mode"}
-                    title={focusMode ? "Focus indicators enabled" : "Focus indicators disabled"}
-                  >
-                    <Focus 
-                      size={16} 
-                      className={focusMode ? "text-navy dark:text-silver" : "text-gray-500 dark:text-gray-400"} 
-                    />
-                  </button>
                   <button
                     onClick={toggleTheme}
                     className="p-2 rounded-full bg-silver/20 hover:bg-silver/30 dark:bg-navy/40 dark:hover:bg-navy/50 transition-colors"
@@ -289,14 +253,14 @@ export const Navigation: React.FC = () => {
                       <Moon size={16} className="text-navy" />
                     )}
                   </button>
-                  <Button
-                    size="sm"
-                    variant="primary"
-                    icon={<Mail size={16} />}
+                  <button
+                    type="button"
                     onClick={handleContactClick}
+                    className="p-2 rounded-full bg-navy hover:bg-navy-dark text-white shadow-md hover:shadow-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-navy dark:focus-visible:ring-silver"
+                    aria-label={t('navigation.contact')}
                   >
-                    {t('navigation.contact')}
-                  </Button>
+                    <Mail size={16} className="shrink-0" aria-hidden />
+                  </button>
                 </div>
               </div>
             </div>

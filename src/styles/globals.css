@@ -428,40 +428,6 @@
   background-color: var(--dimension-color, #4c72b0);
 }
 
-
-/* Focus Mode - Optional Enhanced Focus Indicators */
-/* Only applies when focus-mode-enabled class is on html element */
-.focus-mode-enabled button:focus-visible,
-.focus-mode-enabled a:focus-visible,
-.focus-mode-enabled input:focus-visible,
-.focus-mode-enabled select:focus-visible,
-.focus-mode-enabled textarea:focus-visible,
-.focus-mode-enabled [tabindex]:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px white, 0 0 0 4px rgba(0, 75, 135, 0.4), 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
-
-.dark.focus-mode-enabled button:focus-visible,
-.dark.focus-mode-enabled a:focus-visible,
-.dark.focus-mode-enabled input:focus-visible,
-.dark.focus-mode-enabled select:focus-visible,
-.dark.focus-mode-enabled textarea:focus-visible,
-.dark.focus-mode-enabled [tabindex]:focus-visible {
-  box-shadow: 0 0 0 2px #0a0a0a, 0 0 0 4px rgba(201, 230, 255, 0.3), 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-}
-
-/* Subtle focus for interactive cards when focus mode is enabled */
-.focus-mode-enabled .interactive-card:focus-visible,
-.focus-mode-enabled [role="button"]:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px white, 0 0 0 4px rgba(0, 75, 135, 0.3), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-}
-
-.dark.focus-mode-enabled .interactive-card:focus-visible,
-.dark.focus-mode-enabled [role="button"]:focus-visible {
-  box-shadow: 0 0 0 2px #0a0a0a, 0 0 0 4px rgba(201, 230, 255, 0.25), 0 10px 15px -3px rgba(0, 0, 0, 0.4);
-}
-
 /* Steel Questionnaire Form Styles */
 .steel-questionnaire-form {
   /* Container styles */

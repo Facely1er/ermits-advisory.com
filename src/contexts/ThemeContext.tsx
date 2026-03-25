@@ -5,8 +5,6 @@ interface ThemeContextType {
   theme: Theme;
   setTheme: (theme: Theme) => void;
   toggleTheme: () => void;
-  focusMode: boolean;
-  toggleFocusMode: () => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -42,17 +40,6 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     }
     
     return 'light';
-  });
-
-  const [focusMode, setFocusMode] = useState<boolean>(() => {
-    // Check localStorage for saved focus mode preference
-    try {
-      const savedFocusMode = localStorage.getItem('focusMode');
-      return savedFocusMode === 'true';
-    } catch (error) {
-      console.warn('localStorage not available for focus mode:', error);
-      return false; // Default: focus mode OFF
-    }
   });
 
   useEffect(() => {
@@ -97,23 +84,6 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     };
   }, [theme]);
 
-  useEffect(() => {
-    // Apply focus mode class to document root
-    const root = window.document.documentElement;
-    if (focusMode) {
-      root.classList.add('focus-mode-enabled');
-    } else {
-      root.classList.remove('focus-mode-enabled');
-    }
-
-    // Save to localStorage
-    try {
-      localStorage.setItem('focusMode', focusMode.toString());
-    } catch (error) {
-      console.warn('Failed to save focus mode to localStorage:', error);
-    }
-  }, [focusMode]);
-
   const toggleTheme = () => {
     setTheme(prev => {
       if (prev === 'light') return 'dark';
@@ -122,12 +92,8 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     });
   };
 
-  const toggleFocusMode = () => {
-    setFocusMode(prev => !prev);
-  };
-
   return (
-    <ThemeContext.Provider value={{ theme, setTheme, toggleTheme, focusMode, toggleFocusMode }}>
+    <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );
