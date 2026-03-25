@@ -5,8 +5,7 @@ import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { ScrollProgressBar } from './components/shared/ProgressBar';
 import { FloatingActionButton } from './components/shared/FloatingActionButton';
-import { Analytics } from '@vercel/analytics/react';
-import { GoogleAnalytics } from './components/GoogleAnalytics';
+import { GoogleAnalytics, VercelMarketingAnalytics } from './components/GoogleAnalytics';
 import { ErrorBoundary } from './components/shared/ErrorBoundary';
 
 // Lazy load all page components for better performance
@@ -188,7 +187,7 @@ function App() {
             
             <Footer />
             <FloatingActionButton />
-            <Analytics />
+            <VercelMarketingAnalytics />
             </div>
           </>
         </Router>
