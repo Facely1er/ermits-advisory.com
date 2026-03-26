@@ -158,6 +158,17 @@ export const ToolkitsPremiumPricing: React.FC = () => {
               Annual
             </span>
             <button
+              type="button"
+              aria-label={
+                billingCycle === 'lifetime'
+                  ? 'Lifetime billing selected. Switch to annual billing.'
+                  : 'Annual billing selected. Switch to lifetime billing.'
+              }
+              title={
+                billingCycle === 'lifetime'
+                  ? 'Lifetime billing selected. Click to switch to annual.'
+                  : 'Annual billing selected. Click to switch to lifetime.'
+              }
               onClick={() => setBillingCycle(billingCycle === 'annual' ? 'lifetime' : 'annual')}
               className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
                 billingCycle === 'lifetime' ? 'bg-gradient-to-r from-yellow-400 to-orange-500' : 'bg-gray-300 dark:bg-gray-600'
