@@ -71,14 +71,14 @@ export const createCheckoutSession = async (options: CheckoutOptions): Promise<v
 
 /**
  * Get product price ID from product type
- * Uses actual Stripe Price IDs with fallback to environment variables
+ * Uses environment variables — returns empty string if not configured (display guard only;
+ * actual checkout is validated server-side).
  */
 export const getProductPriceId = (productType: ProductType): string => {
-  // Actual Price IDs from Stripe (created products)
   const priceIds: Record<ProductType, string> = {
-    'steel-premium': import.meta.env.VITE_STRIPE_PRICE_STEEL_PREMIUM || 'price_1SU74XAjb9YEbEboc4sLuKtV',
-    'vciso-kit': import.meta.env.VITE_STRIPE_PRICE_VCISO_KIT || 'price_1SU74YAjb9YEbEbohKsi0HZO',
-    'dashboard-template': import.meta.env.VITE_STRIPE_PRICE_DASHBOARD_TEMPLATE || 'price_1SU74YAjb9YEbEboGzeh3o78',
+    'steel-premium': import.meta.env.VITE_STRIPE_PRICE_STEEL_PREMIUM || '',
+    'vciso-kit': import.meta.env.VITE_STRIPE_PRICE_VCISO_KIT || '',
+    'dashboard-template': import.meta.env.VITE_STRIPE_PRICE_DASHBOARD_TEMPLATE || '',
   };
 
   return priceIds[productType];

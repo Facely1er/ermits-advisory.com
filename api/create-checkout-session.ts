@@ -14,12 +14,11 @@ const stripe = stripeSecretKey
     })
   : null;
 
-// Product price IDs - From Stripe live products
-// These should match environment variables, with fallback to actual Price IDs
-const PRICE_IDS: Record<string, string> = {
-  'steel-premium': process.env.STRIPE_PRICE_STEEL_PREMIUM || 'price_1SU74XAjb9YEbEboc4sLuKtV',
-  'vciso-kit': process.env.STRIPE_PRICE_VCISO_KIT || 'price_1SU74YAjb9YEbEbohKsi0HZO',
-  'dashboard-template': process.env.STRIPE_PRICE_DASHBOARD_TEMPLATE || 'price_1SU74YAjb9YEbEboGzeh3o78',
+// Product price IDs - must be set via environment variables
+const PRICE_IDS: Record<string, string | undefined> = {
+  'steel-premium': process.env.STRIPE_PRICE_STEEL_PREMIUM,
+  'vciso-kit': process.env.STRIPE_PRICE_VCISO_KIT,
+  'dashboard-template': process.env.STRIPE_PRICE_DASHBOARD_TEMPLATE,
 };
 
 export default async function handler(
@@ -42,7 +41,8 @@ export default async function handler(
     const { productType, successUrl, cancelUrl } = req.body;
 
     // Validate product type
-    if (!productType || !PRICE_IDS[productType]) {
+    const validProductTypes = ['steel-premium', 'vciso-kit', 'dashboard-template'];
+    if (!productType || !validProductTypes.includes(productType)) {
       return res.status(400).json({ 
         error: 'Invalid product type. Must be: steel-premium, vciso-kit, or dashboard-template' 
       });
@@ -51,8 +51,8 @@ export default async function handler(
     const priceId = PRICE_IDS[productType];
 
     if (!priceId) {
-      return res.status(400).json({ 
-        error: `Price ID not configured for product: ${productType}` 
+      return res.status(500).json({ 
+        error: 'Stripe price configuration missing. Please configure STRIPE_PRICE_* environment variables.' 
       });
     }
 

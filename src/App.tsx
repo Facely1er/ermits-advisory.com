@@ -97,6 +97,7 @@ const AdvisoryWebsitePortalPolicyPage = React.lazy(() => import('./pages/Advisor
 const PurchaseSuccess = React.lazy(() => import('./pages/PurchaseSuccess').then(m => ({ default: m.PurchaseSuccess })));
 const SteelRadar = React.lazy(() => import('./steel-radar/pages/SteelRadar').then(m => ({ default: m.SteelRadar })));
 const SteelEvaluationPage = React.lazy(() => import('./steel/SteelEvaluationPage').then(m => ({ default: m.default })));
+const DownloadPage = React.lazy(() => import('./pages/DownloadPage'));
 
 // Loading component for Suspense fallback
 const LoadingSpinner = () => (
@@ -179,6 +180,7 @@ function App() {
                   <Route path="/advisory/acceptable-use" element={<AdvisoryAcceptableUsePolicyPage />} />
                   <Route path="/advisory/website-portal" element={<AdvisoryWebsitePortalPolicyPage />} />
                   <Route path="/purchase-success" element={<PurchaseSuccess />} />
+                  <Route path="/download/:productType" element={<DownloadPage />} />
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>
               </Suspense>
