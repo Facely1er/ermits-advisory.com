@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERMITS Unified Risk Dashboard | STEEL Intelligence Platform</title>
+    <meta name="description" content="Enterprise risk intelligence hub aggregating all STEEL diagnostics + 4 regional privacy modules.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #0A0C0E;
+            --bg-card: #12161A;
+            --bg-surface: #1A1F24;
+            --border: #2A2F35;
+            --border-light: #3A3F45;
+            --text: #EDF2E8;
+            --text-muted: #8A9BAA;
+            --text-dim: #5A6B78;
+            --green: #10B981;
+            --green-dim: rgba(16,185,129,0.1);
+            --gold: #D4AF37;
+            --gold-dim: rgba(212,175,55,0.1);
+            --orange: #F59E0B;
+            --orange-dim: rgba(245,158,11,0.1);
+            --red: #EF4444;
+            --red-dim: rgba(239,68,68,0.1);
+            --purple: #8B5CF6;
+            --purple-dim: rgba(139,92,246,0.1);
+            --blue: #3B82F6;
+            --cyan: #06B6D4;
+            --teal: #14B8A6;
+            --shadow: 0 8px 20px rgba(0,0,0,0.3);
+            --radius-card: 16px;
+            --radius-sm: 8px;
+        }
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            min-height: 100vh;
+        }
+        .container { max-width: 1400px; margin: 0 auto; padding: 1.5rem; }
+        .header {
+            background: linear-gradient(135deg, #0D1117 0%, #0A0C0E 100%);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-card);
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(139,92,246,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .header-content { position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(139,92,246,0.15);
+            padding: 0.35rem 1rem;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            border: 1px solid rgba(139,92,246,0.3);
+            margin-bottom: 0.75rem;
+        }
+        .header h1 { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.02em; }
+        .header h1 span { color: var(--purple); }
+        .header p { font-size: 0.8rem; opacity: 0.7; max-width: 500px; }
+        .action-buttons { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+        .btn-icon {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            color: var(--text);
+            cursor: pointer;
+            font-size: 0.75rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+        .btn-icon:hover { border-color: var(--purple); color: var(--purple); }
+        .toggle-group {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 40px;
+            padding: 0.25rem;
+            display: inline-flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 4px;
+        }
+        .toggle-group-label {
+            font-size: 0.65rem;
+            padding: 0 0.5rem;
+            color: var(--text-muted);
+        }
+        .toggle-btn {
+            padding: 0.35rem 0.9rem;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: transparent;
+            color: var(--text-muted);
+        }
+        .toggle-btn.active { background: var(--purple); color: white; }
+        .toggle-btn.africa.active { background: var(--gold); }
+        .toggle-btn.europe.active { background: var(--blue); }
+        .toggle-btn.asia.active { background: var(--cyan); }
+        .toggle-btn.americas.active { background: var(--teal); }
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-card);
+            padding: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+        .composite-card {
+            background: linear-gradient(135deg, var(--purple) 0%, #6d28d9 100%);
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .composite-value { font-size: 3.5rem; font-weight: 800; line-height: 1; }
+        .trend-indicator { display: inline-flex; align-items: center; gap: 4px; background: rgba(255,255,255,0.2); padding: 0.2rem 0.7rem; border-radius: 20px; font-size: 0.7rem; margin-left: 0.5rem; }
+        .score-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+        .score-card {
+            background: var(--bg-surface);
+            border-radius: 12px;
+            padding: 0.9rem;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .score-card:hover { transform: translateY(-2px); border-color: var(--purple); }
+        .score-card .score { font-size: 1.6rem; font-weight: 800; margin: 0.25rem 0; }
+        .score-card .category { font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .score-card.completed { border-left: 3px solid var(--green); }
+        .score-card.pending { opacity: 0.6; }
+        .score-card.optional { border-style: dashed; border-color: var(--text-dim); }
+        .tabs { display: flex; gap: 6px; margin-bottom: 1.25rem; flex-wrap: wrap; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+        .tab {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--text-muted);
+            border-radius: 40px;
+            transition: all 0.2s;
+            font-size: 0.85rem;
+        }
+        .tab.active { background: var(--bg-surface); color: var(--purple); }
+        .tab-content { display: none; animation: fadeIn 0.3s ease; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .risk-table { width: 100%; border-collapse: collapse; }
+        .risk-table th, .risk-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.8rem; }
+        .risk-table th { color: var(--text-muted); font-weight: 600; }
+        .priority-critical { color: var(--red); font-weight: 700; }
+        .priority-high { color: var(--orange); font-weight: 700; }
+        .priority-medium { color: var(--gold); font-weight: 700; }
+        .action-item { display: flex; gap: 1rem; padding: 0.75rem; background: var(--bg-surface); border-radius: 10px; margin-bottom: 0.75rem; align-items: center; flex-wrap: wrap; }
+        .action-priority { width: 80px; font-weight: 700; font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 20px; text-align: center; }
+        .action-text { flex: 1; font-size: 0.85rem; }
+        .insight-card { background: var(--bg-surface); border-left: 3px solid var(--gold); border-radius: 10px; padding: 0.75rem 1rem; margin-bottom: 0.75rem; font-size: 0.85rem; }
+        .insight-critical { border-left-color: var(--red); background: var(--red-dim); }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center; }
+        .modal-content { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; max-width: 500px; width: 90%; padding: 1.5rem; }
+        footer { text-align: center; font-size: 0.7rem; color: var(--text-dim); margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+        canvas { max-height: 250px; width: 100%; }
+        @media (max-width: 768px) { .container { padding: 1rem; } .score-grid { grid-template-columns: repeat(2, 1fr); } .toggle-group { width: 100%; justify-content: center; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="header-content">
+            <div>
+                <div class="badge"><i class="fas fa-chart-line"></i> STEEL® Intelligence Platform</div>
+                <h1>Unified <span>Risk Dashboard</span></h1>
+                <p>Enterprise risk intelligence aggregating core diagnostics + 4 regional privacy modules.</p>
+            </div>
+            <div class="action-buttons">
+                <div class="toggle-group">
+                    <span class="toggle-group-label"><i class="fas fa-globe"></i> Regions:</span>
+                    <span class="toggle-btn africa" id="toggleAfrica" onclick="toggleRegion('africa')"><i class="fas fa-globe-africa"></i> Africa</span>
+                    <span class="toggle-btn europe" id="toggleEurope" onclick="toggleRegion('europe')"><i class="fas fa-euro-sign"></i> Europe</span>
+                    <span class="toggle-btn asia" id="toggleAsia" onclick="toggleRegion('asia')"><i class="fas fa-globe-asia"></i> Asia-Pac</span>
+                    <span class="toggle-btn americas" id="toggleAmericas" onclick="toggleRegion('americas')"><i class="fas fa-flag-usa"></i> Americas</span>
+                </div>
+                <button class="btn-icon" id="refreshBtn"><i class="fas fa-sync-alt"></i> Refresh</button>
+                <button class="btn-icon" id="clearHistoryBtn"><i class="fas fa-trash-alt"></i> Clear History</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="composite-card" id="compositeCard">
+        <div class="composite-value" id="compositeScore">--</div>
+        <div class="composite-label" id="compositeLabel">Enterprise Risk Score</div>
+        <div id="trendBadge" class="trend-indicator" style="display: none;"></div>
+        <div id="compositeSubtext" style="font-size: 0.7rem; opacity: 0.7; margin-top: 0.5rem;">Complete diagnostics to see score</div>
+    </div>
+
+    <div class="tabs">
+        <button class="tab active" data-tab="overview"><i class="fas fa-chart-pie"></i> Overview</button>
+        <button class="tab" data-tab="risk-register"><i class="fas fa-list-ul"></i> Risk Register</button>
+        <button class="tab" data-tab="action-plan"><i class="fas fa-clipboard-list"></i> Action Plan</button>
+        <button class="tab" data-tab="trends"><i class="fas fa-chart-line"></i> Trends</button>
+        <button class="tab" data-tab="insights"><i class="fas fa-lightbulb"></i> Insights</button>
+    </div>
+
+    <div id="tab-overview" class="tab-content active">
+        <div class="card"><div class="score-grid" id="scoreGrid"></div></div>
+        <div class="card"><h3 style="margin-bottom: 1rem;"><i class="fas fa-chart-line"></i> Cross-Dimensional Insights</h3><div id="quickInsights"></div></div>
+    </div>
+    <div id="tab-risk-register" class="tab-content">
+        <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap;">
+                <h3><i class="fas fa-list-ul"></i> ISO 31000 Compliant Risk Register</h3>
+                <button class="btn-icon" id="exportRegisterBtn"><i class="fas fa-download"></i> Export CSV</button>
+            </div>
+            <table class="risk-table"><thead><tr><th>Priority</th><th>Risk Category</th><th>Score</th><th>Source</th><th>Trend</th><th>Target</th></tr></thead><tbody id="riskTableBody"></tbody></table>
+        </div>
+    </div>
+    <div id="tab-action-plan" class="tab-content">
+        <div class="card">
+            <h3 style="margin-bottom: 1rem;"><i class="fas fa-clipboard-list"></i> Prioritized Action Plan</h3>
+            <div id="actionPlanContainer"></div>
+            <div style="margin-top: 1rem; padding: 1rem; background: var(--bg-surface); border-radius: 12px;">
+                <strong><i class="fas fa-calendar-alt"></i> Implementation Timeline</strong><br>
+                <div id="timelineSummary"></div>
+            </div>
+        </div>
+    </div>
+    <div id="tab-trends" class="tab-content">
+        <div class="card">
+            <h3 style="margin-bottom: 1rem;"><i class="fas fa-chart-line"></i> Historical Score Trends</h3>
+            <canvas id="trendChart"></canvas>
+            <p style="font-size: 0.7rem; color: var(--text-muted); margin-top: 1rem;">Scores saved weekly when you complete assessments.</p>
+        </div>
+    </div>
+    <div id="tab-insights" class="tab-content">
+        <div class="card"><h3 style="margin-bottom: 1rem;"><i class="fas fa-brain"></i> Strategic Intelligence</h3><div id="fullInsightsContainer"></div></div>
+    </div>
+
+    <footer><i class="fas fa-shield-alt"></i> STEEL Intelligence Platform | Aligned with ISO 31000, COSO ERM, NIST CSF 2.0</footer>
+</div>
+
+<div id="detailModal" class="modal">
+    <div class="modal-content"><div class="modal-header"><h3 id="modalTitle"></h3><button onclick="closeModal()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text);">&times;</button></div><div id="modalBody"></div></div>
+</div>
+
+<script>
+    const CORE_DIAGNOSTICS = [
+        { id: "steel", name: "STEEL® Cybersecurity", key: "steel_diagnostic_pro_v2", category: "Cybersecurity", icon: "fas fa-shield-alt", color: "#8B5CF6", weight: 1.2, link: "core/steel-diagnostic.html" },
+        { id: "financial", name: "FINANCIAL®", key: "financial_diagnostic_v1", category: "Financial", icon: "fas fa-coins", color: "#10B981", weight: 1.0, link: "core/financial-diagnostic.html" },
+        { id: "continuity", name: "CONTINUITY®", key: "continuity_diagnostic_v1", category: "Operations", icon: "fas fa-sync-alt", color: "#D4AF37", weight: 0.9, link: "core/continuity-diagnostic.html" },
+        { id: "compliance", name: "COMPLIANCE®", key: "compliance_diagnostic_v1", category: "Legal", icon: "fas fa-gavel", color: "#EF4444", weight: 1.1, link: "core/compliance-diagnostic.html" },
+        { id: "supplychain", name: "SUPPLY CHAIN®", key: "supplychain_diagnostic_v1", category: "Supply Chain", icon: "fas fa-truck", color: "#F59E0B", weight: 1.0, link: "core/supplychain-diagnostic.html" },
+        { id: "strategic", name: "STRATEGIC®", key: "strategic_diagnostic_v1", category: "Strategy", icon: "fas fa-chart-line", color: "#06B6D4", weight: 1.0, link: "core/strategic-diagnostic.html" },
+        { id: "esg", name: "ESG®", key: "esg_diagnostic_v1", category: "Sustainability", icon: "fas fa-leaf", color: "#22C55E", weight: 0.9, link: "core/esg-diagnostic.html" },
+        { id: "social", name: "SocAudit™", key: "social_audit_answers", category: "Social Accountability", icon: "fas fa-handshake", color: "#3B82F6", weight: 1.0, link: "core/social-audit.html" }
+    ];
+
+    const REGIONAL_MODULES = {
+        africa: { id: "afropd", name: "AfroPDScore™", key: "afropd_answers", category: "Privacy · Africa", icon: "fas fa-globe-africa", color: "#D4AF37", weight: 0.8, link: "regional/afropd-score.html" },
+        europe: { id: "gdpr", name: "GDPRScore™", key: "gdpr_readiness_answers", category: "Privacy · Europe", icon: "fas fa-euro-sign", color: "#3B82F6", weight: 0.8, link: "regional/gdpr-score.html" },
+        asia: { id: "apac", name: "APACPrivacyScore™", key: "apac_privacy_answers", category: "Privacy · Asia-Pac", icon: "fas fa-globe-asia", color: "#06B6D4", weight: 0.8, link: "regional/apac-privacy.html" },
+        americas: { id: "americas", name: "AmericasPrivacyScore™", key: "americas_privacy_answers", category: "Privacy · Americas", icon: "fas fa-flag-usa", color: "#14B8A6", weight: 0.8, link: "regional/americas-privacy.html" }
+    };
+
+    let activeRegions = JSON.parse(localStorage.getItem('active_privacy_regions') || '["africa"]');
+    let diagnostics = [...CORE_DIAGNOSTICS];
+    activeRegions.forEach(region => { if (REGIONAL_MODULES[region]) diagnostics.push(REGIONAL_MODULES[region]); });
+
+    let currentScores = [], trendHistory = [], chartInstance = null;
+    const TREND_STORAGE_KEY = "steel_trend_history_v3";
+
+    function extractScore(data) {
+        if (!data) return null;
+        if (data.composite) return data.composite;
+        if (data.dimScores) {
+            const values = Object.values(data.dimScores);
+            return Math.round(values.reduce((a,b) => a + b, 0) / values.length);
+        }
+        if (data.answers) {
+            const total = Object.values(data.answers).reduce((a,b) => a + b, 0);
+            const max = Object.keys(data.answers).length * 16;
+            return max > 0 ? Math.round((total / max) * 100) : null;
+        }
+        return null;
+    }
+
+    function loadAllScores() {
+        return diagnostics.map(diag => {
+            const raw = localStorage.getItem(diag.key);
+            let score = null, completed = false;
+            if (raw) { try { const data = JSON.parse(raw); score = extractScore(data); if (score !== null) completed = true; } catch(e) {} }
+            return { ...diag, score: score !== null ? score : null, completed, optional: !!diag.region };
+        });
+    }
+
+    function loadTrendHistory() {
+        const stored = localStorage.getItem(TREND_STORAGE_KEY);
+        if (stored) { try { trendHistory = JSON.parse(stored); } catch(e) {} }
+        if (!trendHistory || trendHistory.length === 0) generateDemoTrendData();
+        return trendHistory;
+    }
+
+    function generateDemoTrendData() {
+        trendHistory = [];
+        const now = new Date();
+        for (let i = 12; i >= 0; i--) {
+            const date = new Date(now); date.setDate(now.getDate() - (i * 7));
+            const snapshot = { date: date.toISOString().split('T')[0], scores: {} };
+            for (const diag of diagnostics) {
+                const baseScore = 45 + Math.random() * 30;
+                snapshot.scores[diag.id] = Math.round(Math.min(95, Math.max(30, baseScore + (i * 0.5))));
+            }
+            trendHistory.push(snapshot);
+        }
+        localStorage.setItem(TREND_STORAGE_KEY, JSON.stringify(trendHistory));
+    }
+
+    function saveCurrentToTrend() {
+        const today = new Date().toISOString().split('T')[0];
+        const existingIndex = trendHistory.findIndex(t => t.date === today);
+        const snapshot = { date: today, scores: {} };
+        for (const diag of diagnostics) {
+            const score = currentScores.find(s => s.id === diag.id)?.score;
+            snapshot.scores[diag.id] = score !== null ? score : null;
+        }
+        if (existingIndex >= 0) trendHistory[existingIndex] = snapshot;
+        else { trendHistory.push(snapshot); if (trendHistory.length > 26) trendHistory.shift(); }
+        localStorage.setItem(TREND_STORAGE_KEY, JSON.stringify(trendHistory));
+    }
+
+    function calculateComposite(scores) {
+        const completed = scores.filter(s => s.score !== null);
+        if (completed.length === 0) return null;
+        let weightedSum = 0, totalWeight = 0;
+        for (const s of completed) { weightedSum += s.score * s.weight; totalWeight += s.weight; }
+        return Math.round(weightedSum / totalWeight);
+    }
+
+    function getRiskLevel(score) {
+        if (score >= 80) return { text: "Low Risk", color: "#10B981" };
+        if (score >= 60) return { text: "Moderate Risk", color: "#D4AF37" };
+        if (score >= 40) return { text: "Elevated Risk", color: "#F59E0B" };
+        return { text: "High Risk", color: "#EF4444" };
+    }
+
+    function getPriority(score) {
+        if (score < 40) return { text: "CRITICAL", class: "priority-critical" };
+        if (score < 60) return { text: "HIGH", class: "priority-high" };
+        if (score < 75) return { text: "MEDIUM", class: "priority-medium" };
+        return { text: "LOW", class: "" };
+    }
+
+    function renderScoreGrid() {
+        document.getElementById('scoreGrid').innerHTML = currentScores.map(s => `
+            <div class="score-card ${s.completed ? 'completed' : 'pending'} ${s.optional ? 'optional' : ''}" onclick="showDetail('${s.id}', '${s.name}', ${s.score !== null ? s.score : 'null'}, '${s.link}')">
+                <i class="${s.icon}" style="color: ${s.color}; font-size: 1.2rem;"></i>
+                <div class="score">${s.score !== null ? s.score : '—'}</div>
+                <div class="category">${s.name}</div>
+                <div style="font-size: 0.6rem; margin-top: 0.25rem;">${s.completed ? 'Completed' : 'Not started'} ${s.optional ? '· Optional' : ''}</div>
+                <div style="height: 3px; background: var(--border); border-radius: 2px; margin-top: 0.5rem;"><div style="width: ${s.score !== null ? s.score : 0}%; height: 100%; background: ${s.color}; border-radius: 2px;"></div></div>
+            </div>
+        `).join('');
+    }
+
+    function renderRiskRegister() {
+        const sorted = [...currentScores].filter(s => s.score !== null).sort((a,b) => (a.score || 100) - (b.score || 100));
+        document.getElementById('riskTableBody').innerHTML = sorted.map(s => {
+            const priority = getPriority(s.score);
+            let trendIcon = '<i class="fas fa-minus-circle"></i> New';
+            if (trendHistory.length >= 2) {
+                const prev = trendHistory[trendHistory.length-2]?.scores[s.id];
+                if (prev && s.score) {
+                    if (s.score > prev) trendIcon = '<i class="fas fa-arrow-up" style="color:#10B981;"></i> Improving';
+                    else if (s.score < prev) trendIcon = '<i class="fas fa-arrow-down" style="color:#EF4444;"></i> Declining';
+                    else trendIcon = '<i class="fas fa-minus"></i> Stable';
+                }
+            }
+            return `<tr><td class="${priority.class}">${priority.text}</td><td>${s.category}</td><td>${s.score}</td><td>${s.name}</td><td>${trendIcon}</td><td>${s.score < 60 ? '65' : '85'}</td></tr>`;
+        }).join('');
+    }
+
+    function generateActionPlan() {
+        const critical = currentScores.filter(s => s.score !== null && s.score < 40);
+        const high = currentScores.filter(s => s.score !== null && s.score >= 40 && s.score < 60);
+        const actions = [];
+        for (const s of critical) actions.push({ priority: "CRITICAL", text: `Address critical gaps in ${s.name} (${s.score}/100). Immediate executive review required.`, timeline: "30 days" });
+        for (const s of high) actions.push({ priority: "HIGH", text: `Develop remediation plan for ${s.name} (${s.score}/100). Focus on root causes.`, timeline: "60 days" });
+        document.getElementById('actionPlanContainer').innerHTML = actions.length ? actions.map(a => `
+            <div class="action-item"><div class="action-priority" style="background: ${a.priority === 'CRITICAL' ? '#EF4444' : '#F59E0B'}; color: white;">${a.priority}</div><div class="action-text">${a.text}</div><div><span style="font-size: 0.7rem; background: var(--border); padding: 0.2rem 0.5rem; border-radius: 20px;">${a.timeline}</span></div></div>
+        `).join('') : '<p style="text-align: center; padding: 1rem;">No critical actions identified. Maintain current controls.</p>';
+        document.getElementById('timelineSummary').innerHTML = `<div><i class="fas fa-calendar-week"></i> <strong>30 Days:</strong> ${critical.length} critical actions</div><div><i class="fas fa-calendar-week"></i> <strong>60 Days:</strong> ${high.length} high-priority actions</div>`;
+    }
+
+    function generateInsights() {
+        const completed = currentScores.filter(s => s.score !== null);
+        const lowScores = completed.filter(s => s.score < 50);
+        const avgScore = completed.length ? Math.round(completed.reduce((a,b) => a + b.score, 0) / completed.length) : 0;
+        document.getElementById('quickInsights').innerHTML = lowScores.length ? `<div class="insight-card insight-critical"><i class="fas fa-bell"></i> ${lowScores.length} critical gap${lowScores.length > 1 ? 's' : ''} require immediate attention.</div>` : `<div class="insight-card"><i class="fas fa-check-circle"></i> No critical gaps detected.</div>`;
+        document.getElementById('fullInsightsContainer').innerHTML = `<div class="insight-card"><i class="fas fa-chart-line"></i> <strong>Executive Summary</strong><br>Based on ${completed.length} of ${diagnostics.length} completed assessments, your average risk score is ${avgScore}. ${avgScore >= 70 ? 'Overall posture is strong.' : 'Focus on prioritized improvements.'}</div>${lowScores.length ? `<div class="insight-card insight-critical"><i class="fas fa-exclamation-triangle"></i> <strong>Critical Gaps</strong><br>${lowScores.map(s => `${s.name}: ${s.score}/100`).join(', ')}.</div>` : ''}`;
+    }
+
+    function updateTrendChart() {
+        const ctx = document.getElementById('trendChart').getContext('2d');
+        if (chartInstance) chartInstance.destroy();
+        const dates = trendHistory.map(t => t.date.slice(5));
+        const datasets = [];
+        for (const diag of diagnostics.slice(0, 8)) {
+            const scores = trendHistory.map(t => t.scores[diag.id] || null);
+            if (scores.some(s => s !== null)) {
+                datasets.push({ label: diag.name, data: scores, borderColor: diag.color, borderWidth: 2, tension: 0.3, pointRadius: 2, fill: false });
+            }
+        }
+        chartInstance = new Chart(ctx, { type: 'line', data: { labels: dates, datasets }, options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { position: 'bottom', labels: { font: { size: 10, color: '#8A9BAA' } } } }, scales: { y: { grid: { color: '#2A2F35' }, ticks: { color: '#8A9BAA' } }, x: { ticks: { color: '#8A9BAA' } } } } });
+    }
+
+    function updateComposite() {
+        const composite = calculateComposite(currentScores);
+        const completedCount = currentScores.filter(s => s.score !== null).length;
+        if (composite) {
+            const level = getRiskLevel(composite);
+            document.getElementById('compositeScore').innerHTML = composite;
+            document.getElementById('compositeLabel').innerHTML = `Enterprise Risk Score - ${level.text}`;
+            document.getElementById('compositeCard').style.background = `linear-gradient(135deg, ${level.color}, ${level.color}CC)`;
+            document.getElementById('compositeSubtext').innerHTML = `${completedCount} of ${diagnostics.length} diagnostics completed`;
+            if (trendHistory.length >= 2) {
+                const prevComposite = (() => { let ws=0,tw=0; for(const diag of diagnostics){ const s=trendHistory[trendHistory.length-2]?.scores[diag.id]; if(s){ ws+=s*diag.weight; tw+=diag.weight; } } return tw>0?Math.round(ws/tw):null; })();
+                if (prevComposite) { const diff = composite - prevComposite; document.getElementById('trendBadge').innerHTML = diff > 0 ? `<i class="fas fa-arrow-up"></i> +${diff} from last week` : diff < 0 ? `<i class="fas fa-arrow-down"></i> ${diff} from last week` : `<i class="fas fa-minus"></i> Stable`; document.getElementById('trendBadge').style.display = 'inline-flex'; }
+            }
+        } else { document.getElementById('compositeScore').innerHTML = '--'; document.getElementById('compositeLabel').innerHTML = 'Enterprise Risk Score'; document.getElementById('compositeSubtext').innerHTML = 'Complete diagnostics to see score'; document.getElementById('trendBadge').style.display = 'none'; }
+    }
+
+    function refreshDashboard() { currentScores = loadAllScores(); renderScoreGrid(); renderRiskRegister(); generateActionPlan(); generateInsights(); updateComposite(); updateTrendChart(); saveCurrentToTrend(); }
+    window.showDetail = function(id, name, score, link) { document.getElementById('modalTitle').innerHTML = name; const priority = score !== null ? getPriority(score) : null; document.getElementById('modalBody').innerHTML = `<p><strong>Current Score:</strong> ${score !== null ? `${score}/100` : 'Not completed'}</p>${score !== null ? `<p><strong>Priority:</strong> <span class="${priority?.class}">${priority?.text}</span></p>` : ''}<p><strong>Recommended Action:</strong> ${score !== null ? (score < 40 ? 'Immediate executive intervention required.' : score < 60 ? 'Develop remediation plan within 60 days.' : score < 80 ? 'Optimize controls and monitoring.' : 'Maintain and benchmark.') : 'Complete the assessment to generate recommendations.'}</p><div style="margin-top: 1rem;"><a href="${link}" style="color: var(--purple); text-decoration: none;">${score !== null ? 'Re-assess →' : 'Take Assessment →'}</a></div>`; document.getElementById('detailModal').style.display = 'flex'; };
+    window.closeModal = function() { document.getElementById('detailModal').style.display = 'none'; };
+    function toggleRegion(regionId) { if (activeRegions.includes(regionId)) activeRegions = activeRegions.filter(r => r !== regionId); else activeRegions.push(regionId); localStorage.setItem('active_privacy_regions', JSON.stringify(activeRegions)); diagnostics = [...CORE_DIAGNOSTICS]; activeRegions.forEach(region => { if (REGIONAL_MODULES[region]) diagnostics.push(REGIONAL_MODULES[region]); }); document.getElementById('toggleAfrica').classList.toggle('active', activeRegions.includes('africa')); document.getElementById('toggleEurope').classList.toggle('active', activeRegions.includes('europe')); document.getElementById('toggleAsia').classList.toggle('active', activeRegions.includes('asia')); document.getElementById('toggleAmericas').classList.toggle('active', activeRegions.includes('americas')); refreshDashboard(); }
+    function exportRegisterCSV() { const completed = currentScores.filter(s => s.score !== null); const headers = ['Priority', 'Risk Category', 'Score', 'Source']; const rows = completed.map(s => { const p = getPriority(s.score); return [p.text, s.category, s.score, s.name]; }); const csv = [headers, ...rows].map(row => row.join(',')).join('\n'); const blob = new Blob([csv], { type: 'text/csv' }); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `risk_register_${new Date().toISOString().split('T')[0]}.csv`; a.click(); }
+    function clearHistory() { if (confirm('Clear all trend history?')) { localStorage.removeItem(TREND_STORAGE_KEY); generateDemoTrendData(); loadTrendHistory(); refreshDashboard(); alert('Trend history reset.'); } }
+    document.querySelectorAll('.tab').forEach(tab => { tab.addEventListener('click', () => { document.querySelectorAll('.tab').forEach(t => t.classList.remove('active')); document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active')); tab.classList.add('active'); document.getElementById(`tab-${tab.dataset.tab}`).classList.add('active'); }); });
+    document.getElementById('refreshBtn').addEventListener('click', () => { refreshDashboard(); alert('Dashboard refreshed.'); });
+    document.getElementById('exportRegisterBtn').addEventListener('click', exportRegisterCSV);
+    document.getElementById('clearHistoryBtn').addEventListener('click', clearHistory);
+    document.getElementById('toggleAfrica').classList.toggle('active', activeRegions.includes('africa'));
+    document.getElementById('toggleEurope').classList.toggle('active', activeRegions.includes('europe'));
+    document.getElementById('toggleAsia').classList.toggle('active', activeRegions.includes('asia'));
+    document.getElementById('toggleAmericas').classList.toggle('active', activeRegions.includes('americas'));
+    loadTrendHistory(); refreshDashboard(); setInterval(() => refreshDashboard(), 30000);
+</script>
+</body>
+</html>

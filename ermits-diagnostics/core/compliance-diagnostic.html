@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPLIANCE® Diagnostic | ERMITS Advisory</title>
+    <meta name="description" content="Assess regulatory compliance exposure across data privacy, employment law, industry regulations, and cross-border requirements.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --navy: #0A2540; --navy-dark: #041e32; --purple: #5E6EA6; --gold: #D4AF37; --gray-50: #F8FAFE; --gray-100: #F1F4F9; --gray-200: #E9EDF2; --border-radius-card: 24px; }
+        body { font-family: 'Inter', system-ui, sans-serif; background: linear-gradient(135deg, var(--gray-50) 0%, #F5F7FC 100%); color: #1A2C3E; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .hero { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%); border-radius: var(--border-radius-card); padding: 2.5rem; margin-bottom: 2rem; color: white; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: -30%; right: -10%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(94,110,166,0.15) 0%, transparent 70%); border-radius: 50%; }
+        .hero-content { position: relative; z-index: 2; }
+        .badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(94,110,166,0.2); padding: 0.35rem 1rem; border-radius: 40px; font-size: 0.75rem; font-weight: 600; margin-bottom: 1.25rem; }
+        .hero h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .hero p { font-size: 1rem; opacity: 0.85; max-width: 70%; margin-bottom: 1.5rem; }
+        .stats-row { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1rem; }
+        .stat-pill { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); padding: 0.5rem 1.25rem; border-radius: 40px; font-size: 0.85rem; }
+        .card { background: white; border-radius: var(--border-radius-card); box-shadow: 0 12px 24px -8px rgba(0,0,0,0.08); padding: 2rem; margin-bottom: 2rem; }
+        .dimension-section { margin-top: 1.5rem; }
+        .dimension-header { display: flex; align-items: center; gap: 12px; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--gray-200); }
+        .dimension-icon { width: 40px; height: 40px; background: var(--gray-100); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+        .dimension-title { font-weight: 700; font-size: 1.25rem; color: var(--navy); }
+        .why-matter-card { background: linear-gradient(135deg, #FFF9EF 0%, #FFF5E6 100%); border-left: 4px solid var(--gold); border-radius: 14px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; font-size: 0.9rem; }
+        .question-item { margin-bottom: 1.5rem; padding: 0.5rem 0 0.8rem; border-bottom: 1px solid var(--gray-200); }
+        .question-text { font-weight: 600; margin-bottom: 0.9rem; font-size: 0.95rem; display: flex; align-items: baseline; gap: 8px; }
+        .q-num { color: var(--gold); background: var(--gray-100); width: 26px; height: 26px; display: inline-flex; align-items: center; justify-content: center; border-radius: 30px; font-size: 0.75rem; }
+        .options-grid { display: flex; flex-wrap: wrap; gap: 12px; }
+        .option-btn { background: var(--gray-100); border: 1px solid var(--gray-200); border-radius: 40px; padding: 0.6rem 1.25rem; font-size: 0.85rem; font-weight: 500; cursor: pointer; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; }
+        .option-btn.selected { background: var(--navy); border-color: var(--gold); color: white; }
+        .progress-section { margin: 0.5rem 0 1.5rem; }
+        .progress-bar-bg { background: var(--gray-200); border-radius: 20px; height: 8px; overflow: hidden; }
+        .progress-fill { width: 0%; height: 100%; background: linear-gradient(90deg, var(--purple), var(--gold)); transition: width 0.3s; }
+        .btn { padding: 0.75rem 1.5rem; border-radius: 40px; font-weight: 600; font-size: 0.9rem; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; }
+        .btn-primary { background: var(--purple); color: white; }
+        .btn-primary:hover { background: #4a5790; transform: translateY(-2px); }
+        .btn-secondary { background: white; border: 1px solid var(--gray-200); }
+        .btn-premium { background: linear-gradient(135deg, var(--gold) 0%, #B4942C 100%); color: var(--navy-dark); font-weight: 700; }
+        .action-group { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 1.5rem; }
+        .hidden { display: none; }
+        .composite-card { background: linear-gradient(135deg, var(--purple) 0%, #4a5790 100%); border-radius: 28px; padding: 1.8rem; text-align: center; margin-bottom: 2rem; color: white; }
+        .composite-score { font-size: 4rem; font-weight: 800; }
+        .dimension-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+        .dimension-card { background: var(--gray-100); border-radius: 20px; padding: 1rem; text-align: center; }
+        .recommendation-list { list-style: none; margin-top: 1rem; }
+        .recommendation-list li { margin-bottom: 0.8rem; padding-left: 1.75rem; position: relative; }
+        .recommendation-list li i { position: absolute; left: 0; top: 2px; color: var(--gold); }
+        .upgrade-card { background: linear-gradient(135deg, #FEF9E6 0%, #FFF8E8 100%); border-radius: 20px; padding: 1.5rem; margin-top: 1.5rem; }
+        footer { text-align: center; font-size: 0.7rem; color: #5A6E7C; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--gray-200); }
+        @media (max-width: 768px) { .hero p { max-width: 100%; } .options-grid { flex-direction: column; } .option-btn { width: 100%; justify-content: center; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <div class="hero-content">
+            <div class="badge"><i class="fas fa-gavel"></i><span>COMPLIANCE® Diagnostic v1.0</span></div>
+            <h1>Regulatory Compliance & Legal Risk Assessment</h1>
+            <p>Evaluate exposure to data privacy, employment law, industry regulations, cross-border requirements, and corporate governance standards.</p>
+            <div class="stats-row">
+                <div class="stat-pill"><i class="fas fa-clipboard-list"></i> 18 questions</div>
+                <div class="stat-pill"><i class="fas fa-chart-pie"></i> 6 compliance domains</div>
+                <div class="stat-pill"><i class="fas fa-shield-alt"></i> GDPR | CCPA | SOX</div>
+                <div class="stat-pill"><i class="fas fa-globe"></i> Cross-border</div>
+            </div>
+        </div>
+    </div>
+    <div id="assessmentPanel"><div class="card"><div class="progress-section"><div class="progress-bar-bg"><div class="progress-fill" id="progressFill"></div></div><div class="progress-stats" style="display:flex; justify-content:space-between; margin-top:0.5rem;"><span><i class="far fa-question-circle"></i> Progress</span><span id="progressText">0% completed</span></div></div><div id="questionsContainer"></div><div class="action-group"><button class="btn btn-primary" id="calcBtn"><i class="fas fa-chart-simple"></i> View Results</button><button class="btn btn-secondary" id="resetBtn"><i class="fas fa-undo-alt"></i> Reset</button><button class="btn btn-secondary" id="saveProgressBtn"><i class="fas fa-save"></i> Save Progress</button></div></div></div>
+    <div id="resultsPanel" class="hidden"><div class="card"><div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; margin-bottom:1rem;"><h2 style="color:var(--navy);"><i class="fas fa-chart-gantt"></i> Compliance Report</h2><button class="btn btn-secondary" id="backToAssessment"><i class="fas fa-arrow-left"></i> Back</button></div><div id="resultsContent"></div><div class="action-group"><button class="btn btn-secondary" id="exportResultsBtn"><i class="fas fa-download"></i> Export JSON</button><button class="btn btn-premium" id="upgradeFromResultsBtn"><i class="fas fa-crown"></i> Unlock Premium Report</button><button class="btn btn-primary" id="newAssessmentBtn"><i class="fas fa-plus-circle"></i> New Assessment</button></div></div></div>
+    <footer><i class="fas fa-shield-alt"></i> Privacy-first. Aligned with GDPR, CCPA, SOX, HIPAA, and industry-specific regulations.</footer>
+</div>
+
+<script>
+    const QUESTIONS = [
+        { id: "DP1", dim: "dataprivacy", text: "How do you manage data subject access requests (DSARs) and privacy rights?", options: ["No process", "Manual ad-hoc response", "Formal documented process", "Automated with SLA tracking"] },
+        { id: "DP2", dim: "dataprivacy", text: "Do you have a data processing inventory and records of processing activities?", options: ["No inventory", "Partial informal list", "Complete inventory maintained", "Dynamic with automated updates"] },
+        { id: "DP3", dim: "dataprivacy", text: "How do you manage third-party data sharing and vendor privacy compliance?", options: ["No vendor privacy checks", "Basic contractual clauses", "Formal due diligence for data processors", "Continuous vendor privacy monitoring"] },
+        { id: "EL1", dim: "emplaw", text: "How do you manage employee classification (employee vs contractor)?", options: ["No formal classification", "Basic classification", "Documented with legal review", "Regular audits with remediation"] },
+        { id: "EL2", dim: "emplaw", text: "Do you have compliant wage and hour practices (overtime, breaks, recordkeeping)?", options: ["Significant gaps", "Some compliance issues", "Generally compliant", "Audited and fully compliant"] },
+        { id: "EL3", dim: "emplaw", text: "How do you handle remote work and multi-state employment compliance?", options: ["No multi-state compliance", "Limited awareness", "Proactive registration and compliance", "Fully managed with legal counsel"] },
+        { id: "IN1", dim: "industry", text: "Does your industry have specific regulatory requirements (e.g., HIPAA, FINRA, OSHA)?", options: ["Unaware of requirements", "Aware but gaps exist", "Compliant with core requirements", "Audited and fully compliant"] },
+        { id: "IN2", dim: "industry", text: "How do you manage regulatory reporting and filings?", options: ["Missed deadlines or incomplete", "Ad-hoc with some delays", "Calendar-based with responsible owners", "Automated with reminders and audits"] },
+        { id: "IN3", dim: "industry", text: "Do you have a regulatory change management process?", options: ["No monitoring", "Ad-hoc industry news", "Formal regulatory tracking", "Automated alerts with impact assessments"] },
+        { id: "CB1", dim: "crossborder", text: "Do you transfer personal data across borders? If so, how do you ensure compliance?", options: ["No safeguards", "Standard contractual clauses only", "SCCs + TIA completed", "Adequacy decisions or BCRs in place"] },
+        { id: "CB2", dim: "crossborder", text: "How do you manage export controls and sanctions screening?", options: ["No screening", "Basic denied party screening", "Automated screening for customers/vendors", "Full trade compliance program"] },
+        { id: "CB3", dim: "crossborder", text: "Do you have customs and import/export documentation compliance?", options: ["No formal program", "Broker-managed with gaps", "Documented procedures", "Audited with continuous improvement"] },
+        { id: "CG1", dim: "governance", text: "Do you have a formal code of conduct and ethics training program?", options: ["No code of conduct", "Written but not trained", "Trained annually", "Certified with reporting hotline"] },
+        { id: "CG2", dim: "governance", text: "How do you manage anti-corruption and bribery risks (FCPA/UK Bribery Act)?", options: ["No program", "Basic policy", "Risk-based due diligence and training", "Third-party audited compliance"] },
+        { id: "CG3", dim: "governance", text: "Do you have a whistleblower policy and reporting mechanism?", options: ["No policy", "Internal reporting only", "Anonymous hotline with investigation process", "Third-party managed with non-retaliation"] },
+        { id: "TA1", dim: "tax", text: "How do you manage sales/use tax nexus and collection obligations?", options: ["No nexus analysis", "Basic awareness", "Formal nexus study with automation", "Fully compliant with audits"] },
+        { id: "TA2", dim: "tax", text: "Do you have international tax and transfer pricing documentation?", options: ["Not applicable or none", "Basic local compliance", "Formal transfer pricing documentation", "Audit-ready with benchmarking"] },
+        { id: "TA3", dim: "tax", text: "How do you manage tax filing deadlines and payment obligations?", options: ["Missed deadlines", "Calendar with manual filing", "Managed by external provider", "Automated with integrated calendar"] }
+    ];
+
+    const DIM_NAMES = { dataprivacy: "Data Privacy", emplaw: "Employment Law", industry: "Industry Regulations", crossborder: "Cross-Border Compliance", governance: "Corporate Governance", tax: "Tax Compliance" };
+    const DIM_ICONS = { dataprivacy: "fas fa-lock", emplaw: "fas fa-briefcase", industry: "fas fa-industry", crossborder: "fas fa-globe", governance: "fas fa-gavel", tax: "fas fa-calculator" };
+    const DIM_COLORS = { dataprivacy: "#2C8C6E", emplaw: "#CB6E6E", industry: "#E68A2E", crossborder: "#5E6EA6", governance: "#D4AF37", tax: "#2C6E9E" };
+    const DIM_WHY = { dataprivacy: "GDPR fines reach up to €20M or 4% of global revenue. Privacy compliance is non-negotiable.", emplaw: "Misclassification and wage violations cost SMEs $100K+ in back wages and penalties annually.", industry: "Industry-specific regulations carry steep penalties and potential business closure for violations.", crossborder: "Export violations can result in criminal penalties and loss of export privileges.", governance: "Ethics failures destroy reputation. Whistleblower programs reduce internal fraud risk.", tax: "Sales tax nexus complexity has exploded post-Wayfair. Penalties and interest accrue quickly." };
+    const DIM_MAPPING = { dataprivacy: "GDPR | CCPA | CPRA | PIPEDA | LGPD", emplaw: "FLSA | Worker Classification | State Labor Laws | I-9 Compliance", industry: "HIPAA | FINRA/SEC | OSHA | FDA | EPA Sector Rules", crossborder: "GDPR Chapter V | Export Controls (EAR/ITAR) | OFAC Sanctions", governance: "FCPA | UK Bribery Act | SOX | State Corporate Laws", tax: "Sales Tax Nexus (Wayfair) | International Tax | Transfer Pricing" };
+
+    let userAnswers = {}; const totalQuestions = QUESTIONS.length;
+    function renderQuestions() { let html='', currentDim='', counter=0; QUESTIONS.forEach((q,idx)=>{ const dim=q.dim; counter++; if(dim!==currentDim){ currentDim=dim; html+=`<div class="dimension-section"><div class="dimension-header"><div class="dimension-icon"><i class="${DIM_ICONS[dim]}" style="color:${DIM_COLORS[dim]}"></i></div><div class="dimension-title">${DIM_NAMES[dim]}</div></div><div class="why-matter-card"><i class="fas fa-info-circle"></i> <strong>Why it matters:</strong> ${DIM_WHY[dim]}</div></div>`; } const selectedIdx=userAnswers[q.id]!==undefined?userAnswers[q.id]:-1; html+=`<div class="question-item"><div class="question-text"><span class="q-num">${counter}</span> ${q.text}</div><div class="options-grid" id="opt-${q.id}">`; q.options.forEach((opt,optIdx)=>{ html+=`<button class="option-btn ${selectedIdx===optIdx?'selected':''}" data-qid="${q.id}" data-optidx="${optIdx}"><i class="fas fa-circle-check"></i> ${opt}</button>`; }); html+=`</div></div>`; if(idx===QUESTIONS.length-1 || QUESTIONS[idx+1]?.dim!==dim){ html+=`<div class="regulatory-mapping" style="background:var(--gray-50); border-radius:14px; padding:0.9rem 1.25rem; margin-top:1rem;"><div><i class="fas fa-gavel"></i> <strong>Key Regulations:</strong> ${DIM_MAPPING[dim]}</div></div>`; } }); document.getElementById('questionsContainer').innerHTML=html; attachEvents(); updateProgress(); }
+    function attachEvents(){ document.querySelectorAll('.option-btn').forEach(btn=>{ btn.addEventListener('click',()=>{ const qid=btn.dataset.qid, optIdx=parseInt(btn.dataset.optidx); userAnswers[qid]=optIdx; btn.parentElement.querySelectorAll('.option-btn').forEach(b=>b.classList.remove('selected')); btn.classList.add('selected'); updateProgress(); autoSave(); }); }); }
+    function updateProgress(){ let answered=Object.keys(userAnswers).length; const percent=Math.round((answered/totalQuestions)*100); document.getElementById('progressFill').style.width=`${percent}%`; document.getElementById('progressText').innerText=`${percent}% completed (${answered}/${totalQuestions})`; }
+    function autoSave(){ localStorage.setItem('compliance_diagnostic_v1',JSON.stringify(userAnswers)); }
+    function loadSaved(){ const saved=localStorage.getItem('compliance_diagnostic_v1'); if(saved){ userAnswers=JSON.parse(saved); } renderQuestions(); }
+    function reset(){ if(confirm('Reset all answers?')){ userAnswers={}; localStorage.removeItem('compliance_diagnostic_v1'); renderQuestions(); updateProgress(); } }
+    function calculateScores(){ let dimSum={dataprivacy:0,emplaw:0,industry:0,crossborder:0,governance:0,tax:0}, dimCount={dataprivacy:0,emplaw:0,industry:0,crossborder:0,governance:0,tax:0}; QUESTIONS.forEach(q=>{ const ans=userAnswers[q.id]; if(ans!==undefined){ dimSum[q.dim]+=(ans+1); dimCount[q.dim]+=1; } }); let dimScores={}; let answeredAny=false; for(let dim of Object.keys(dimSum)){ const cnt=dimCount[dim]; if(cnt>0){ const raw=dimSum[dim]; const minPossible=cnt*1, maxPossible=cnt*4; dimScores[dim]=Math.round(((raw-minPossible)/(maxPossible-minPossible))*100); answeredAny=true; } else dimScores[dim]=0; } if(!answeredAny) return null; const composite=Math.round(Object.values(dimScores).reduce((a,b)=>a+b,0)/6); return { dimScores, composite, answeredCount: Object.keys(userAnswers).length }; }
+    function getRiskLevel(score){ if(score>=80) return { text:"Compliant", color:"#2C8C6E", description:"Strong compliance posture. Maintain monitoring and updates." }; if(score>=60) return { text:"Developing", color:"#D4AF37", description:"Good foundation. Address identified gaps systematically." }; if(score>=40) return { text:"Vulnerable", color:"#E68A2E", description:"Significant compliance gaps. Legal exposure likely." }; return { text:"Critical Risk", color:"#CB6E6E", description:"Immediate legal counsel recommended. Potential regulatory action." }; }
+    function showResults(){ const data=calculateScores(); if(!data || data.answeredCount<Math.ceil(totalQuestions*0.6)){ alert(`Please answer at least ${Math.ceil(totalQuestions*0.6)} questions.`); return; } const { dimScores, composite }=data; const level=getRiskLevel(composite); let html=`<div class="composite-card"><div class="composite-score">${composite}</div><div>Compliance Posture Score</div><div style="background:${level.color}20; color:${level.color}; padding:0.25rem 1rem; border-radius:20px; display:inline-block; margin-top:0.5rem;">${level.text}</div></div><div class="dimension-grid">${Object.entries(dimScores).map(([dim,score])=>`<div class="dimension-card"><i class="${DIM_ICONS[dim]}" style="color:${DIM_COLORS[dim]}"></i><h4>${DIM_NAMES[dim]}</h4><div style="font-size:1.8rem; font-weight:800;">${score}</div></div>`).join('')}</div><div style="background:#F5F7FC; border-radius:20px; padding:1rem;"><h4><i class="fas fa-lightbulb" style="color:var(--gold);"></i> Executive Summary</h4><p>${level.description} ${composite<50?'Engage legal counsel immediately to address high-risk areas and prevent penalties.':''}</p></div><h4 style="margin-top:1.5rem;"><i class="fas fa-list-check"></i> Priority Recommendations</h4><ul class="recommendation-list">${Object.entries(dimScores).map(([dim,score])=>`<li><i class="fas fa-arrow-right"></i> <strong>${DIM_NAMES[dim]}</strong> (${score}): ${score<40?'Legal review required.':score<60?'Develop compliance program.':score<80?'Enhance documentation.':'Maintain audits.'}</li>`).join('')}</ul>`; document.getElementById('resultsContent').innerHTML=html; document.getElementById('assessmentPanel').classList.add('hidden'); document.getElementById('resultsPanel').classList.remove('hidden'); }
+    function exportJSON(){ const data=calculateScores(); if(!data) return; const blob=new Blob([JSON.stringify({...data, userAnswers, timestamp:new Date().toISOString()},null,2)],{type:"application/json"}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=`compliance_diagnostic.json`; a.click(); URL.revokeObjectURL(a.href); }
+    const STRIPE_LINK="https://buy.stripe.com/9AQ6qQ4Jf4dN7uwcQ0";
+    function redirectPremium(){ window.open(STRIPE_LINK,'_blank'); alert("Premium unlocks compliance checklists, regulatory tracker templates, and legal readiness guides."); }
+    document.addEventListener('DOMContentLoaded',()=>{ loadSaved(); document.getElementById('calcBtn').addEventListener('click',showResults); document.getElementById('resetBtn').addEventListener('click',reset); document.getElementById('saveProgressBtn').addEventListener('click',()=>{ autoSave(); alert('Progress saved.'); }); document.getElementById('backToAssessment')?.addEventListener('click',()=>{ document.getElementById('assessmentPanel').classList.remove('hidden'); document.getElementById('resultsPanel').classList.add('hidden'); }); document.getElementById('newAssessmentBtn')?.addEventListener('click',()=>{ reset(); document.getElementById('assessmentPanel').classList.remove('hidden'); document.getElementById('resultsPanel').classList.add('hidden'); }); document.getElementById('exportResultsBtn')?.addEventListener('click',exportJSON); document.getElementById('upgradeFromResultsBtn')?.addEventListener('click',redirectPremium); const upgradeDiv=document.createElement('div'); upgradeDiv.className='upgrade-card'; upgradeDiv.innerHTML=`<div style="display:flex; justify-content:space-between; align-items:center;"><div><i class="fas fa-crown" style="color:var(--gold);"></i> <strong>Compliance Professional</strong><div style="font-size:0.8rem;">Regulatory checklists, gap analysis templates, and legal readiness guides</div></div><button class="btn btn-premium" id="floatUpgrade"><i class="fas fa-lock-open"></i> Upgrade ($29)</button></div>`; document.querySelector('#assessmentPanel .card')?.appendChild(upgradeDiv); document.getElementById('floatUpgrade')?.addEventListener('click',redirectPremium); });
+</script>
+</body>
+</html>

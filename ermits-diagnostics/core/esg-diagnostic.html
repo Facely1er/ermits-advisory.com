@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESG® Maturity Diagnostic | ERMITS Advisory</title>
+    <meta name="description" content="Comprehensive ESG maturity assessment aligned with GRI, SASB, TCFD, CSRD, EU Taxonomy, and UN SDGs. Evaluate Environmental, Social, and Governance performance.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0A2540;
+            --navy-dark: #041e32;
+            --navy-light: #1a3a5a;
+            --green: #2C8C6E;
+            --green-dark: #1f6e55;
+            --green-light: #E8F3EF;
+            --gold: #D4AF37;
+            --social: #CB6E6E;
+            --social-dark: #b25151;
+            --governance: #5E6EA6;
+            --governance-dark: #4a5790;
+            --gray-50: #F8FAFE;
+            --gray-100: #F1F4F9;
+            --gray-200: #E9EDF2;
+            --gray-600: #5A6E7C;
+            --gray-700: #3A4A58;
+            --gray-800: #1E2A36;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.03);
+            --shadow-md: 0 12px 24px -8px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.02);
+            --shadow-lg: 0 24px 48px -12px rgba(0, 0, 0, 0.12);
+            --border-radius-card: 24px;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, var(--gray-50) 0%, #F5F7FC 100%);
+            color: var(--gray-800);
+            line-height: 1.5;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+            border-radius: var(--border-radius-card);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(44, 140, 110, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-content { position: relative; z-index: 2; }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(44, 140, 110, 0.2);
+            backdrop-filter: blur(4px);
+            padding: 0.35rem 1rem;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid rgba(44, 140, 110, 0.4);
+            margin-bottom: 1.25rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            opacity: 0.85;
+            max-width: 70%;
+            margin-bottom: 1.5rem;
+        }
+
+        .stats-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .stat-pill {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+            padding: 0.5rem 1.25rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .card {
+            background: white;
+            border-radius: var(--border-radius-card);
+            box-shadow: var(--shadow-md);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        /* Dimension styling */
+        .dimension-section {
+            margin-top: 1.5rem;
+            margin-bottom: 1.25rem;
+            border-radius: 16px;
+        }
+
+        .dimension-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--gray-200);
+        }
+
+        .dimension-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--gray-100) 0%, white 100%);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .dimension-title {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--navy);
+        }
+
+        .why-matter-card {
+            background: linear-gradient(135deg, #FFF9EF 0%, #FFF5E6 100%);
+            border-left: 4px solid var(--gold);
+            border-radius: 14px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.25rem;
+            font-size: 0.9rem;
+        }
+
+        .why-matter-card i { color: var(--gold); margin-right: 8px; }
+
+        .question-item {
+            margin-bottom: 1.5rem;
+            padding: 0.5rem 0 0.8rem 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 0.9rem;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .q-num {
+            color: var(--gold);
+            font-weight: 700;
+            background: var(--gray-100);
+            width: 26px;
+            height: 26px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+            font-size: 0.75rem;
+        }
+
+        .options-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .option-btn {
+            background: var(--gray-100);
+            border: 1px solid var(--gray-200);
+            border-radius: 40px;
+            padding: 0.6rem 1.25rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--gray-700);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .option-btn.selected {
+            background: var(--navy);
+            border-color: var(--gold);
+            color: white;
+        }
+
+        .option-btn.selected i { color: var(--gold); }
+        .option-btn:hover:not(.selected) { background: var(--gray-200); transform: translateY(-1px); }
+
+        .regulatory-mapping {
+            background: var(--gray-50);
+            border-radius: 14px;
+            padding: 0.9rem 1.25rem;
+            margin-top: 1rem;
+            border: 1px solid var(--gray-200);
+            font-size: 0.8rem;
+        }
+
+        .regulatory-mapping .mapping-title {
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .regulatory-badge {
+            display: inline-block;
+            background: var(--navy);
+            color: white;
+            font-size: 0.65rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            margin-right: 0.5rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .progress-section { margin: 0.5rem 0 1.5rem; }
+        .progress-bar-bg { background: var(--gray-200); border-radius: 20px; height: 8px; overflow: hidden; }
+        .progress-fill { width: 0%; height: 100%; background: linear-gradient(90deg, var(--green), var(--gold)); border-radius: 20px; transition: width 0.3s ease; }
+        .progress-stats { display: flex; justify-content: space-between; margin-top: 0.5rem; font-size: 0.75rem; color: var(--gray-600); }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s;
+        }
+        .btn-primary { background: var(--green); color: white; }
+        .btn-primary:hover { background: var(--green-dark); transform: translateY(-2px); }
+        .btn-secondary { background: white; border: 1px solid var(--gray-200); color: var(--gray-700); }
+        .btn-premium { background: linear-gradient(135deg, var(--gold) 0%, #B4942C 100%); color: var(--navy-dark); font-weight: 700; }
+        .action-group { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 1.5rem; }
+        .hidden { display: none; }
+
+        /* Results */
+        .dimension-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .dimension-card {
+            background: var(--gray-100);
+            border-radius: 20px;
+            padding: 1rem;
+            text-align: center;
+        }
+        .composite-card {
+            background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+            border-radius: 28px;
+            padding: 1.8rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: white;
+        }
+        .composite-score { font-size: 4rem; font-weight: 800; }
+        .recommendation-list { list-style: none; margin-top: 1rem; }
+        .recommendation-list li { margin-bottom: 0.8rem; padding-left: 1.75rem; position: relative; }
+        .recommendation-list li i { position: absolute; left: 0; top: 2px; color: var(--gold); }
+        .upgrade-card {
+            background: linear-gradient(135deg, #FEF9E6 0%, #FFF8E8 100%);
+            border: 1px solid #F3E5AB;
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: var(--gray-600);
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--gray-200);
+        }
+        @media (max-width: 768px) {
+            .hero p { max-width: 100%; }
+            .options-grid { flex-direction: column; }
+            .option-btn { width: 100%; justify-content: center; }
+            .card { padding: 1.25rem; }
+        }
+        .risk-tag { display: inline-flex; align-items: center; gap: 6px; padding: 0.25rem 0.9rem; border-radius: 40px; font-size: 0.7rem; font-weight: 700; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <div class="hero-content">
+            <div class="badge"><i class="fas fa-leaf"></i><span>ESG® Maturity Diagnostic v1.0</span></div>
+            <h1>Environmental, Social & Governance Maturity Assessment</h1>
+            <p>Comprehensive ESG diagnostic aligned with GRI, SASB, TCFD, CSRD, EU Taxonomy, UN SDGs, and emerging sustainability regulations.</p>
+            <div class="stats-row">
+                <div class="stat-pill"><i class="fas fa-clipboard-list"></i> 21 strategic questions</div>
+                <div class="stat-pill"><i class="fas fa-chart-pie"></i> 3 core pillars</div>
+                <div class="stat-pill"><i class="fas fa-globe"></i> CSRD | EU Taxonomy</div>
+                <div class="stat-pill"><i class="fas fa-chart-line"></i> TCFD | GRI | SASB</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Assessment Panel -->
+    <div id="assessmentPanel">
+        <div class="card">
+            <!-- Global Context Accordion -->
+            <div style="margin-bottom: 1.25rem; border: 1px solid var(--gray-200); border-radius: 16px; overflow: hidden;">
+                <div onclick="toggleGlobalContext()" style="background: white; padding: 1rem 1.25rem; cursor: pointer; display: flex; justify-content: space-between; font-weight: 600;">
+                    <span><i class="fas fa-chart-line" style="color: var(--green);"></i> Why ESG Matters & Regulatory Landscape</span>
+                    <i class="fas fa-chevron-down" id="globalChevron"></i>
+                </div>
+                <div id="globalContextBody" style="display: none; padding: 1rem 1.25rem; background: var(--gray-50); border-top: 1px solid var(--gray-200);">
+                    <div style="margin-bottom: 12px;"><i class="fas fa-exclamation-triangle" style="color: var(--gold);"></i> <strong>The ESG Imperative:</strong> ESG is now mandatory across major markets. <strong>CSRD (EU)</strong> requires ~50,000 companies to report by 2026. <strong>SEC climate rules</strong>, <strong>California Climate Bills</strong>, and <strong>ISSB</strong> standards are reshaping disclosure requirements.</div>
+                    <div><span class="regulatory-badge">GRI</span><span class="regulatory-badge">SASB</span><span class="regulatory-badge">TCFD</span><span class="regulatory-badge">CSRD (EU)</span><span class="regulatory-badge">EU Taxonomy</span><span class="regulatory-badge">ISSB IFRS S1/S2</span><span class="regulatory-badge">UN SDGs</span><span class="regulatory-badge">SFDR</span><span class="regulatory-badge">SEC Climate Rule</span></div>
+                </div>
+            </div>
+
+            <div class="progress-section">
+                <div class="progress-bar-bg"><div class="progress-fill" id="progressFill"></div></div>
+                <div class="progress-stats"><span><i class="far fa-question-circle"></i> Assessment progress</span><span id="progressText">0% completed</span></div>
+            </div>
+            <div id="questionsContainer"></div>
+            <div class="action-group">
+                <button class="btn btn-primary" id="calcBtn"><i class="fas fa-chart-simple"></i> View Results</button>
+                <button class="btn btn-secondary" id="resetBtn"><i class="fas fa-undo-alt"></i> Reset</button>
+                <button class="btn btn-secondary" id="saveProgressBtn"><i class="fas fa-save"></i> Save Progress</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Panel -->
+    <div id="resultsPanel" class="hidden">
+        <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 1rem;">
+                <h2 style="color: var(--navy);"><i class="fas fa-chart-gantt"></i> ESG Maturity Report</h2>
+                <button class="btn btn-secondary" id="backToAssessment"><i class="fas fa-arrow-left"></i> Back</button>
+            </div>
+            <div id="resultsContent"></div>
+            <div class="action-group">
+                <button class="btn btn-secondary" id="exportResultsBtn"><i class="fas fa-download"></i> Export JSON</button>
+                <button class="btn btn-premium" id="upgradeFromResultsBtn"><i class="fas fa-crown"></i> Unlock Premium Report</button>
+                <button class="btn btn-primary" id="newAssessmentBtn"><i class="fas fa-plus-circle"></i> New Assessment</button>
+            </div>
+        </div>
+    </div>
+    <footer><i class="fas fa-shield-alt"></i> Privacy-first — all data stays local. Aligned with GRI, SASB, TCFD, CSRD, EU Taxonomy, ISSB, and UN SDGs.</footer>
+</div>
+
+<script>
+    // ======================== ESG QUESTIONS (21 questions across 3 pillars) ========================
+    const QUESTIONS = [
+        // ENVIRONMENTAL (7 questions)
+        { id: "EN1", dim: "environmental", text: "How does your organization measure and report greenhouse gas emissions (Scope 1, 2, and 3)?", options: ["No measurement", "Partial Scope 1 & 2 only", "Full Scope 1 & 2, partial Scope 3", "Comprehensive Scope 1,2,3 with third-party assurance"] },
+        { id: "EN2", dim: "environmental", text: "What is your climate risk governance and TCFD-aligned disclosure maturity?", options: ["No climate risk assessment", "Ad-hoc scenario planning", "Formal TCFD alignment in progress", "Full TCFD/ISSB compliance with board oversight"] },
+        { id: "EN3", dim: "environmental", text: "How does your organization manage energy efficiency and renewable energy adoption?", options: ["No targets or monitoring", "Basic energy efficiency initiatives", "Science-based targets with renewable energy procurement", "100% renewable energy with net-zero roadmap"] },
+        { id: "EN4", dim: "environmental", text: "What is your approach to water stewardship and circular economy?", options: ["No water/waste management", "Basic compliance monitoring", "Formal water reduction targets & circular economy pilots", "Circular economy embedded with closed-loop systems"] },
+        { id: "EN5", dim: "environmental", text: "How do you address biodiversity and land use impacts?", options: ["No assessment", "Basic risk identification", "Formal biodiversity policy with mitigation hierarchy", "Nature-positive commitments (TNFD alignment)"] },
+        { id: "EN6", dim: "environmental", text: "What is your supply chain environmental due diligence maturity?", options: ["No supply chain screening", "Basic supplier questionnaires", "Risk-based tier 1 supplier audits", "Full Scope 3 emissions with supplier decarbonization programs"] },
+        { id: "EN7", dim: "environmental", text: "How does your organization align with the EU Taxonomy or other green taxonomies?", options: ["No alignment assessment", "Partial alignment screening", "Substantial alignment for key activities", "Full EU Taxonomy alignment with disclosed KPIs"] },
+        
+        // SOCIAL (7 questions)
+        { id: "SO1", dim: "social", text: "How does your organization measure and report human capital management (DEI, workforce development)?", options: ["No formal DEI metrics", "Basic diversity reporting", "Comprehensive DEI metrics with targets", "Industry-leading inclusive culture with audited data"] },
+        { id: "SO2", dim: "social", text: "What is your approach to health, safety, and employee well-being?", options: ["Basic compliance only", "OSHA/ISO 45001 aligned programs", "Proactive well-being initiatives with measurable outcomes", "Holistic mental/physical health as strategic priority"] },
+        { id: "SO3", dim: "social", text: "How do you ensure human rights and labor practices across operations and supply chain?", options: ["No human rights policy", "Basic code of conduct", "Modern Slavery Act reporting & supplier audits", "Full UN Guiding Principles alignment with remediation"] },
+        { id: "SO4", dim: "social", text: "What is your community engagement and social impact strategy?", options: ["Ad-hoc philanthropy", "Targeted community programs", "Strategic partnerships with measurable impact", "Integrated shared value creation"] },
+        { id: "SO5", dim: "social", text: "How do you manage data privacy, cybersecurity, and digital ethics?", options: ["Basic compliance only", "GDPR/CCPA compliance with policies", "Privacy-by-design with ethical AI framework", "Board-level digital ethics oversight"] },
+        { id: "SO6", dim: "social", text: "What is your product safety, quality, and customer responsibility maturity?", options: ["Basic regulatory compliance", "Formal quality management systems", "Proactive customer feedback loops", "Industry-leading responsible innovation"] },
+        { id: "SO7", dim: "social", text: "How does your organization address supply chain social risk (forced labor, child labor)?", options: ["No due diligence", "Basic supplier code of conduct", "Third-party audits for high-risk suppliers", "Full traceability with worker voice mechanisms"] },
+        
+        // GOVERNANCE (7 questions)
+        { id: "GO1", dim: "governance", text: "How is ESG oversight structured at the board and executive level?", options: ["No formal ESG governance", "Management-level ESG committee", "Board-level ESG committee with charter", "Integrated into full board risk/strategy oversight"] },
+        { id: "GO2", dim: "governance", text: "What is your executive compensation linkage to ESG/sustainability metrics?", options: ["No linkage", "Ad-hoc consideration", "Formal ESG KPIs in executive incentives", "Material weight (10%+) in compensation with stretch targets"] },
+        { id: "GO3", dim: "governance", text: "How do you manage business ethics, anti-corruption, and whistleblower programs?", options: ["Basic code of conduct", "Formal anti-corruption policy with training", "Independent whistleblower hotline with investigations", "Third-party certified ethics program (ISO 37001)"] },
+        { id: "GO4", dim: "governance", text: "What is your approach to tax transparency and responsible tax practices?", options: ["No public disclosure", "Basic country-by-country reporting (private)", "Public tax strategy with GRI 207 alignment", "Full public country-by-country reporting"] },
+        { id: "GO5", dim: "governance", text: "How do you ensure stakeholder engagement and materiality assessment?", options: ["No formal materiality process", "Annual double materiality assessment", "Stakeholder-validated materiality with GRI alignment", "Dynamic materiality with CSRD-level rigor"] },
+        { id: "GO6", dim: "governance", text: "What is your climate lobbying and political contributions transparency?", options: ["No disclosure", "Basic policy on political contributions", "Public disclosure of trade association memberships", "Alignment with net-zero advocacy commitments"] },
+        { id: "GO7", dim: "governance", text: "How does your organization manage cybersecurity risk governance and board oversight?", options: ["IT-level management", "CISO reporting to board annually", "Board cybersecurity committee with regular reviews", "Integrated cyber-risk into ERM with board-level expertise"] }
+    ];
+
+    const DIM_NAMES = { environmental: "Environmental", social: "Social", governance: "Governance" };
+    const DIM_ICONS = { environmental: "fas fa-leaf", social: "fas fa-users", governance: "fas fa-gavel" };
+    const DIM_COLORS = { environmental: "#2C8C6E", social: "#CB6E6E", governance: "#5E6EA6" };
+    
+    // Context content
+    const DIM_WHY = {
+        environmental: "Climate change, resource scarcity, and regulatory pressure (CSRD, EU Taxonomy, SEC) are transforming business operations. Investors demand TCFD/ISSB-aligned disclosures and credible net-zero transition plans.",
+        social: "Stakeholders expect ethical supply chains, DEI, and human rights commitments. Regulatory frameworks like CSRD's social pillar, Modern Slavery Acts, and EU Corporate Sustainability Due Diligence Directive (CSDDD) mandate expanded reporting.",
+        governance: "Board oversight, ethics, and transparency are foundational to ESG credibility. Emerging regulations require robust governance structures, tax transparency, and anti-corruption programs."
+    };
+    
+    const DIM_MAPPING = {
+        environmental: "GRI 300 Series | SASB Climate | TCFD | CSRD ESRS E1-E5 | EU Taxonomy | ISSB IFRS S2 | UN SDGs 7,12,13,15 | SEC Climate Disclosure | TNFD (biodiversity)",
+        social: "GRI 400 Series | SASB Human Capital | CSRD ESRS S1-S4 | UN SDGs 1,3,4,5,8,10 | Modern Slavery Act | CSDDD | UN Guiding Principles on Business & Human Rights",
+        governance: "GRI 200 Series | SASB Leadership & Governance | CSRD ESRS G1 | OECD Guidelines | ISO 37001 Anti-Bribery | UN SDG 16 | EU Audit Reform | SOX / Internal Controls"
+    };
+
+    let userAnswers = {};
+    const totalQuestions = QUESTIONS.length;
+
+    function getScoreForOption(optIdx) { return optIdx + 1; }
+
+    function renderQuestions() {
+        const container = document.getElementById('questionsContainer');
+        if (!container) return;
+        let html = '';
+        let currentDim = '';
+        let questionCounter = 0;
+        QUESTIONS.forEach((q, idx) => {
+            const dim = q.dim;
+            questionCounter++;
+            if (dim !== currentDim) {
+                currentDim = dim;
+                const iconClass = DIM_ICONS[dim];
+                const color = DIM_COLORS[dim];
+                html += `<div class="dimension-section" data-dim="${dim}">
+                            <div class="dimension-header">
+                                <div class="dimension-icon" style="border: 1px solid ${color}20;"><i class="${iconClass}" style="color:${color}"></i></div>
+                                <div class="dimension-title">${DIM_NAMES[dim]}</div>
+                            </div>
+                            <div class="why-matter-card">
+                                <i class="fas fa-info-circle"></i> <strong>Why it matters:</strong> ${DIM_WHY[dim]}
+                            </div>
+                        </div>`;
+            }
+            const selectedIdx = userAnswers[q.id] !== undefined ? userAnswers[q.id] : -1;
+            html += `<div class="question-item" data-qid="${q.id}">
+                        <div class="question-text"><span class="q-num">${questionCounter}</span> ${q.text}</div>
+                        <div class="options-grid" id="opt-${q.id}">`;
+            q.options.forEach((opt, optIdx) => {
+                const isSelected = (selectedIdx === optIdx);
+                html += `<button class="option-btn ${isSelected ? 'selected' : ''}" data-qid="${q.id}" data-optidx="${optIdx}"><i class="fas fa-circle-check"></i> ${opt}</button>`;
+            });
+            html += `</div></div>`;
+            
+            const isLastInDim = (idx === QUESTIONS.length-1) || (QUESTIONS[idx+1] && QUESTIONS[idx+1].dim !== dim);
+            if (isLastInDim) {
+                html += `<div class="regulatory-mapping">
+                            <div class="mapping-title"><i class="fas fa-gavel"></i> Key Regulations & Frameworks</div>
+                            <div>${DIM_MAPPING[dim]}</div>
+                            <div style="margin-top: 8px; font-size:0.75rem; color:var(--gray-600);"><i class="fas fa-check-circle"></i> Aligned with GRI, SASB, TCFD, CSRD, EU Taxonomy, ISSB, and UN SDGs.</div>
+                         </div>`;
+            }
+        });
+        container.innerHTML = html;
+        attachOptionEvents();
+        updateProgressBar();
+    }
+
+    function attachOptionEvents() {
+        document.querySelectorAll('.option-btn').forEach(btn => {
+            btn.removeEventListener('click', optionHandler);
+            btn.addEventListener('click', optionHandler);
+        });
+    }
+
+    function optionHandler(e) {
+        const btn = e.currentTarget;
+        const qid = btn.getAttribute('data-qid');
+        const optIdx = parseInt(btn.getAttribute('data-optidx'), 10);
+        userAnswers[qid] = optIdx;
+        const parentGrid = btn.parentElement;
+        if (parentGrid) parentGrid.querySelectorAll('.option-btn').forEach(opt => opt.classList.remove('selected'));
+        btn.classList.add('selected');
+        updateProgressBar();
+        autoSaveProgress();
+    }
+
+    function updateProgressBar() {
+        let answered = Object.keys(userAnswers).filter(id => QUESTIONS.some(q => q.id === id)).length;
+        const percent = Math.round((answered / totalQuestions) * 100);
+        const fill = document.getElementById('progressFill');
+        const text = document.getElementById('progressText');
+        if (fill) fill.style.width = `${percent}%`;
+        if (text) text.innerText = `${percent}% completed (${answered}/${totalQuestions})`;
+    }
+
+    function autoSaveProgress() { try { localStorage.setItem('esg_diagnostic_v1', JSON.stringify(userAnswers)); } catch(e) {} }
+    function loadSavedProgress() {
+        try { const saved = localStorage.getItem('esg_diagnostic_v1'); if (saved) { userAnswers = JSON.parse(saved); } } catch(e) {}
+        renderQuestions();
+    }
+    function resetAssessment() { if (confirm('Reset all answers?')) { userAnswers = {}; localStorage.removeItem('esg_diagnostic_v1'); renderQuestions(); updateProgressBar(); } }
+
+    function calculateScores() {
+        let dimSum = { environmental: 0, social: 0, governance: 0 };
+        let dimCount = { environmental: 0, social: 0, governance: 0 };
+        QUESTIONS.forEach(q => {
+            const idx = userAnswers[q.id];
+            if (idx !== undefined) { const score = getScoreForOption(idx); dimSum[q.dim] += score; dimCount[q.dim] += 1; }
+        });
+        let dimScores = {}; let answeredAny = false;
+        for (let dim of Object.keys(dimSum)) {
+            const cnt = dimCount[dim];
+            if (cnt > 0) {
+                const raw = dimSum[dim]; const minPossible = cnt * 1; const maxPossible = cnt * 4;
+                dimScores[dim] = Math.round(((raw - minPossible) / (maxPossible - minPossible)) * 100);
+                answeredAny = true;
+            } else dimScores[dim] = 0;
+        }
+        if (!answeredAny) return null;
+        const weights = { environmental: 1.0, social: 0.9, governance: 1.1 };
+        let weightedSum = 0, totalWeight = 0;
+        for (let dim of Object.keys(dimScores)) { weightedSum += dimScores[dim] * weights[dim]; totalWeight += weights[dim]; }
+        const composite = Math.round(weightedSum / totalWeight);
+        return { dimScores, composite, answeredCount: Object.keys(userAnswers).length };
+    }
+
+    function getRiskLevel(score) {
+        if (score >= 80) return { text: "Advanced Maturity", icon: "fas fa-award", color: "#2C8C6E" };
+        if (score >= 60) return { text: "Developing", icon: "fas fa-chart-line", color: "#D4AF37" };
+        if (score >= 40) return { text: "Emerging", icon: "fas fa-exclamation-triangle", color: "#E68A2E" };
+        return { text: "Initial", icon: "fas fa-seedling", color: "#CB6E6E" };
+    }
+
+    function showResults() {
+        const scoreData = calculateScores();
+        if (!scoreData || scoreData.answeredCount < Math.ceil(totalQuestions * 0.6)) {
+            alert(`Please answer at least ${Math.ceil(totalQuestions*0.6)} questions.`);
+            return;
+        }
+        const { dimScores, composite } = scoreData;
+        const level = getRiskLevel(composite);
+        let html = `<div class="composite-card"><div class="composite-score">${composite}</div><div class="risk-tag" style="background:${level.color}20; color:${level.color}; margin-top:8px;"><i class="${level.icon}"></i> ${level.text}</div><div style="font-size:0.8rem;">Weighted ESG maturity score aligned with GRI, CSRD, and TCFD frameworks</div></div>
+                    <div class="dimension-grid">${Object.entries(dimScores).map(([dim,score])=>`<div class="dimension-card"><i class="${DIM_ICONS[dim]}" style="color:${DIM_COLORS[dim]}"></i><h4>${DIM_NAMES[dim]}</h4><div class="dimension-score" style="font-size:1.8rem; font-weight:800;">${score}</div></div>`).join('')}</div>
+                    <div style="background:#F5F7FC; border-radius:20px; padding:1rem; margin:1rem 0;"><h4><i class="fas fa-lightbulb" style="color:var(--gold);"></i> Strategic Context</h4><p>${composite >= 70 ? 'Your ESG program demonstrates robust alignment with leading frameworks. Focus on continuous improvement and emerging regulations.' : 'Accelerate ESG maturity to meet regulatory deadlines (CSRD 2025-2026, SEC climate rules) and investor expectations.'}</p></div>
+                    <h4><i class="fas fa-list-check"></i> Priority Recommendations</h4><ul class="recommendation-list">${Object.entries(dimScores).map(([dim,score])=>`<li><i class="fas fa-arrow-right"></i> <strong>${DIM_NAMES[dim]}</strong> (${score}): ${score<40?'Immediate action: establish baseline reporting and governance':score<60?'Develop: formalize policies and targets':score<80?'Enhance: seek third-party assurance and expand Scope 3':'Maintain: integrate with strategy and report against ISSB'}</li>`).join('')}</ul>`;
+        document.getElementById('resultsContent').innerHTML = html;
+        document.getElementById('assessmentPanel').classList.add('hidden');
+        document.getElementById('resultsPanel').classList.remove('hidden');
+    }
+
+    function exportJSON() {
+        const scoreData = calculateScores();
+        if (!scoreData) return alert("No data");
+        const blob = new Blob([JSON.stringify({ ...scoreData, userAnswers, timestamp: new Date().toISOString(), framework: "ESG Diagnostic" }, null, 2)], {type: "application/json"});
+        const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `esg_diagnostic.json`; a.click(); URL.revokeObjectURL(a.href);
+    }
+
+    const STRIPE_LINK = "https://buy.stripe.com/9AQ6qQ4Jf4dN7uwcQ0";
+    function redirectPremium() { window.open(STRIPE_LINK, '_blank'); alert("Premium unlocks detailed PDF reports, CSRD readiness mapping, and customized recommendations."); }
+
+    function toggleGlobalContext() {
+        const body = document.getElementById('globalContextBody');
+        const chevron = document.getElementById('globalChevron');
+        if (body.style.display === 'none' || !body.style.display) {
+            body.style.display = 'block';
+            chevron.classList.remove('fa-chevron-down');
+            chevron.classList.add('fa-chevron-up');
+        } else {
+            body.style.display = 'none';
+            chevron.classList.remove('fa-chevron-up');
+            chevron.classList.add('fa-chevron-down');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        loadSavedProgress();
+        document.getElementById('calcBtn').addEventListener('click', showResults);
+        document.getElementById('resetBtn').addEventListener('click', resetAssessment);
+        document.getElementById('saveProgressBtn').addEventListener('click', () => { autoSaveProgress(); alert('Progress saved locally.'); });
+        document.getElementById('backToAssessment')?.addEventListener('click', () => { document.getElementById('assessmentPanel').classList.remove('hidden'); document.getElementById('resultsPanel').classList.add('hidden'); });
+        document.getElementById('newAssessmentBtn')?.addEventListener('click', () => { resetAssessment(); document.getElementById('assessmentPanel').classList.remove('hidden'); document.getElementById('resultsPanel').classList.add('hidden'); });
+        document.getElementById('exportResultsBtn')?.addEventListener('click', exportJSON);
+        document.getElementById('upgradeFromResultsBtn')?.addEventListener('click', redirectPremium);
+        const upgradeDiv = document.createElement('div'); upgradeDiv.className = 'upgrade-card'; upgradeDiv.innerHTML = `<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;"><div><i class="fas fa-crown" style="color:var(--gold);"></i> <strong>ESG Professional</strong><div style="font-size:0.8rem;">CSRD gap analysis, EU Taxonomy alignment, and detailed PDF reports</div></div><button class="btn btn-premium" id="floatUpgrade"><i class="fas fa-lock-open"></i> Upgrade ($29)</button></div>`;
+        document.querySelector('#assessmentPanel .card')?.appendChild(upgradeDiv);
+        document.getElementById('floatUpgrade')?.addEventListener('click', redirectPremium);
+    });
+</script>
+</body>
+</html>

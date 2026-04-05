@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTINUITY® Diagnostic | ERMITS Advisory</title>
+    <meta name="description" content="Assess business continuity, disaster recovery, and operational resilience. Aligned with ISO 22301 and NIST SP 800-34.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --navy: #0A2540; --navy-dark: #041e32; --teal: #2C8C6E; --gold: #D4AF37; --gray-50: #F8FAFE; --gray-100: #F1F4F9; --gray-200: #E9EDF2; --border-radius-card: 24px; }
+        body { font-family: 'Inter', system-ui, sans-serif; background: linear-gradient(135deg, var(--gray-50) 0%, #F5F7FC 100%); color: #1A2C3E; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .hero { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%); border-radius: var(--border-radius-card); padding: 2.5rem; margin-bottom: 2rem; color: white; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: -30%; right: -10%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(44,140,110,0.15) 0%, transparent 70%); border-radius: 50%; }
+        .hero-content { position: relative; z-index: 2; }
+        .badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(44,140,110,0.2); padding: 0.35rem 1rem; border-radius: 40px; font-size: 0.75rem; font-weight: 600; margin-bottom: 1.25rem; }
+        .hero h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .hero p { font-size: 1rem; opacity: 0.85; max-width: 70%; margin-bottom: 1.5rem; }
+        .stats-row { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1rem; }
+        .stat-pill { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); padding: 0.5rem 1.25rem; border-radius: 40px; font-size: 0.85rem; }
+        .card { background: white; border-radius: var(--border-radius-card); box-shadow: 0 12px 24px -8px rgba(0,0,0,0.08); padding: 2rem; margin-bottom: 2rem; }
+        .dimension-section { margin-top: 1.5rem; }
+        .dimension-header { display: flex; align-items: center; gap: 12px; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--gray-200); }
+        .dimension-icon { width: 40px; height: 40px; background: var(--gray-100); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+        .dimension-title { font-weight: 700; font-size: 1.25rem; color: var(--navy); }
+        .why-matter-card { background: linear-gradient(135deg, #FFF9EF 0%, #FFF5E6 100%); border-left: 4px solid var(--gold); border-radius: 14px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; font-size: 0.9rem; }
+        .question-item { margin-bottom: 1.5rem; padding: 0.5rem 0 0.8rem; border-bottom: 1px solid var(--gray-200); }
+        .question-text { font-weight: 600; margin-bottom: 0.9rem; font-size: 0.95rem; display: flex; align-items: baseline; gap: 8px; }
+        .q-num { color: var(--gold); background: var(--gray-100); width: 26px; height: 26px; display: inline-flex; align-items: center; justify-content: center; border-radius: 30px; font-size: 0.75rem; }
+        .options-grid { display: flex; flex-wrap: wrap; gap: 12px; }
+        .option-btn { background: var(--gray-100); border: 1px solid var(--gray-200); border-radius: 40px; padding: 0.6rem 1.25rem; font-size: 0.85rem; font-weight: 500; cursor: pointer; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; }
+        .option-btn.selected { background: var(--navy); border-color: var(--gold); color: white; }
+        .progress-section { margin: 0.5rem 0 1.5rem; }
+        .progress-bar-bg { background: var(--gray-200); border-radius: 20px; height: 8px; overflow: hidden; }
+        .progress-fill { width: 0%; height: 100%; background: linear-gradient(90deg, var(--teal), var(--gold)); transition: width 0.3s; }
+        .btn { padding: 0.75rem 1.5rem; border-radius: 40px; font-weight: 600; font-size: 0.9rem; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; }
+        .btn-primary { background: var(--teal); color: white; }
+        .btn-primary:hover { background: #1f6e55; transform: translateY(-2px); }
+        .btn-secondary { background: white; border: 1px solid var(--gray-200); }
+        .btn-premium { background: linear-gradient(135deg, var(--gold) 0%, #B4942C 100%); color: var(--navy-dark); font-weight: 700; }
+        .action-group { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 1.5rem; }
+        .hidden { display: none; }
+        .composite-card { background: linear-gradient(135deg, var(--teal) 0%, #1f6e55 100%); border-radius: 28px; padding: 1.8rem; text-align: center; margin-bottom: 2rem; color: white; }
+        .composite-score { font-size: 4rem; font-weight: 800; }
+        .dimension-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+        .dimension-card { background: var(--gray-100); border-radius: 20px; padding: 1rem; text-align: center; }
+        .recommendation-list { list-style: none; margin-top: 1rem; }
+        .recommendation-list li { margin-bottom: 0.8rem; padding-left: 1.75rem; position: relative; }
+        .recommendation-list li i { position: absolute; left: 0; top: 2px; color: var(--gold); }
+        .upgrade-card { background: linear-gradient(135deg, #FEF9E6 0%, #FFF8E8 100%); border-radius: 20px; padding: 1.5rem; margin-top: 1.5rem; }
+        footer { text-align: center; font-size: 0.7rem; color: #5A6E7C; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--gray-200); }
+        @media (max-width: 768px) { .hero p { max-width: 100%; } .options-grid { flex-direction: column; } .option-btn { width: 100%; justify-content: center; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <div class="hero-content">
+            <div class="badge"><i class="fas fa-chart-line"></i><span>CONTINUITY® Diagnostic v1.0</span></div>
+            <h1>Operational Continuity & Resilience Assessment</h1>
+            <p>Evaluate business continuity planning, disaster recovery capabilities, and crisis management readiness. Essential for operational resilience.</p>
+            <div class="stats-row">
+                <div class="stat-pill"><i class="fas fa-clipboard-list"></i> 18 questions</div>
+                <div class="stat-pill"><i class="fas fa-chart-pie"></i> 6 resilience domains</div>
+                <div class="stat-pill"><i class="fas fa-book"></i> ISO 22301 aligned</div>
+                <div class="stat-pill"><i class="fas fa-database"></i> NIST SP 800-34</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="assessmentPanel"><div class="card"><div class="progress-section"><div class="progress-bar-bg"><div class="progress-fill" id="progressFill"></div></div><div class="progress-stats" style="display:flex; justify-content:space-between; margin-top:0.5rem;"><span><i class="far fa-question-circle"></i> Progress</span><span id="progressText">0% completed</span></div></div><div id="questionsContainer"></div><div class="action-group"><button class="btn btn-primary" id="calcBtn"><i class="fas fa-chart-simple"></i> View Results</button><button class="btn btn-secondary" id="resetBtn"><i class="fas fa-undo-alt"></i> Reset</button><button class="btn btn-secondary" id="saveProgressBtn"><i class="fas fa-save"></i> Save Progress</button></div></div></div>
+    <div id="resultsPanel" class="hidden"><div class="card"><div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; margin-bottom:1rem;"><h2 style="color:var(--navy);"><i class="fas fa-chart-gantt"></i> Continuity Report</h2><button class="btn btn-secondary" id="backToAssessment"><i class="fas fa-arrow-left"></i> Back</button></div><div id="resultsContent"></div><div class="action-group"><button class="btn btn-secondary" id="exportResultsBtn"><i class="fas fa-download"></i> Export JSON</button><button class="btn btn-premium" id="upgradeFromResultsBtn"><i class="fas fa-crown"></i> Unlock Premium Report</button><button class="btn btn-primary" id="newAssessmentBtn"><i class="fas fa-plus-circle"></i> New Assessment</button></div></div></div>
+    <footer><i class="fas fa-shield-alt"></i> Privacy-first. Aligned with ISO 22301, NIST SP 800-34, and NFPA 1600.</footer>
+</div>
+
+<script>
+    const QUESTIONS = [
+        { id: "BC1", dim: "planning", text: "Do you have a documented Business Continuity Plan (BCP)?", options: ["No plan", "Draft/outline only", "Formal plan documented", "Plan with annual exercises"] },
+        { id: "BC2", dim: "planning", text: "How frequently is your BCP tested and updated?", options: ["Never tested", "Tested > 2 years ago", "Annual tabletop exercises", "Full simulation annually"] },
+        { id: "BC3", dim: "planning", text: "Have you identified critical business functions and dependencies?", options: ["No formal identification", "Partial list exists", "Complete critical function inventory", "Mapped with dependencies and RTOs"] },
+        { id: "DR1", dim: "recovery", text: "What is your Recovery Time Objective (RTO) for critical systems?", options: ["> 7 days", "3-7 days", "24-72 hours", "< 24 hours"] },
+        { id: "DR2", dim: "recovery", text: "What is your Recovery Point Objective (RPO) for critical data?", options: ["> 7 days", "1-7 days", "1-24 hours", "< 1 hour"] },
+        { id: "DR3", dim: "recovery", text: "Do you have off-site backups or cloud redundancy?", options: ["No off-site backups", "Manual off-site backups", "Automated cloud backups", "Geo-redundant with failover"] },
+        { id: "IT1", dim: "it", text: "How would you rate your IT infrastructure resilience?", options: ["Single points of failure exist", "Some redundancy but gaps", "Redundant core systems", "Fully redundant with auto-failover"] },
+        { id: "IT2", dim: "it", text: "Do you have documented incident response procedures?", options: ["No procedures", "Basic runbooks", "Formal incident response plan", "Tested plan with dedicated team"] },
+        { id: "IT3", dim: "it", text: "How do you manage cybersecurity backups and restoration?", options: ["No restoration testing", "Annual restoration test", "Quarterly test of critical systems", "Continuous validation"] },
+        { id: "WF1", dim: "workforce", text: "What percentage of roles can be performed remotely?", options: ["< 25%", "25-50%", "50-75%", "> 75%"] },
+        { id: "WF2", dim: "workforce", text: "Do you have key person dependencies or succession plans?", options: ["Critical single points", "Some backup coverage", "Formal succession for key roles", "Fully cross-trained workforce"] },
+        { id: "WF3", dim: "workforce", text: "Do you have crisis communication protocols for employees?", options: ["No protocol", "Email-only communication", "Multiple channels documented", "Tested with backup channels"] },
+        { id: "FA1", dim: "facility", text: "Do you have alternative workspace arrangements?", options: ["No alternatives", "Work-from-home only", "Secondary office space", "Fully redundant facility"] },
+        { id: "FA2", dim: "facility", text: "Have you assessed facility risks (power, internet, natural disasters)?", options: ["No assessment", "Basic checklist", "Formal risk assessment", "Continuous monitoring"] },
+        { id: "FA3", dim: "facility", text: "Do you have physical security and access controls?", options: ["Minimal controls", "Basic locks/keys", "Badge/access system", "Multi-factor with audit trail"] },
+        { id: "CM1", dim: "crisis", text: "Do you have a crisis management team with defined roles?", options: ["No formal team", "Informal group", "Documented team with roles", "Trained team with regular drills"] },
+        { id: "CM2", dim: "crisis", text: "How do you communicate with customers during a disruption?", options: ["No customer communication plan", "Ad-hoc email updates", "Documented customer notification", "Automated multi-channel alerts"] },
+        { id: "CM3", dim: "crisis", text: "Have you conducted crisis simulations in the past 12 months?", options: ["Never", "> 2 years ago", "Within 24 months", "Within 12 months"] }
+    ];
+
+    const DIM_NAMES = { planning: "Business Continuity Planning", recovery: "Disaster Recovery", it: "IT Resilience", workforce: "Workforce Resilience", facility: "Facility Risk", crisis: "Crisis Management" };
+    const DIM_ICONS = { planning: "fas fa-clipboard-list", recovery: "fas fa-database", it: "fas fa-microchip", workforce: "fas fa-users", facility: "fas fa-building", crisis: "fas fa-bullhorn" };
+    const DIM_COLORS = { planning: "#2C8C6E", recovery: "#5E6EA6", it: "#E68A2E", workforce: "#CB6E6E", facility: "#2C6E9E", crisis: "#D4AF37" };
+    const DIM_WHY = { planning: "Without a tested BCP, disruptions become disasters. Planning reduces recovery time by up to 80%.", recovery: "Data loss and downtime directly impact revenue and reputation. Clear RTOs/RPOs set recovery expectations.", it: "IT failures are the #1 cause of business disruption. Resilient infrastructure prevents single points of failure.", workforce: "Key person dependency creates vulnerability. Cross-training and succession planning ensure operational continuity.", facility: "Physical disruptions (power, weather, access) can halt operations. Redundant facilities provide failover options.", crisis: "Poor crisis communication amplifies damage. Structured response preserves stakeholder trust." };
+    const DIM_MAPPING = { planning: "ISO 22301: Business Continuity Management", recovery: "NIST SP 800-34: Contingency Planning", it: "NIST CSF: Recover (RC) Function", workforce: "ISO 22301: People Resources", facility: "NFPA 1600: Facility Risk Assessment", crisis: "ISO 22301: Crisis Communication" };
+
+    let userAnswers = {}; const totalQuestions = QUESTIONS.length;
+    function renderQuestions() { let html='', currentDim='', counter=0; QUESTIONS.forEach((q,idx)=>{ const dim=q.dim; counter++; if(dim!==currentDim){ currentDim=dim; html+=`<div class="dimension-section"><div class="dimension-header"><div class="dimension-icon"><i class="${DIM_ICONS[dim]}" style="color:${DIM_COLORS[dim]}"></i></div><div class="dimension-title">${DIM_NAMES[dim]}</div></div><div class="why-matter-card"><i class="fas fa-info-circle"></i> <strong>Why it matters:</strong> ${DIM_WHY[dim]}</div></div>`; } const selectedIdx=userAnswers[q.id]!==undefined?userAnswers[q.id]:-1; html+=`<div class="question-item"><div class="question-text"><span class="q-num">${counter}</span> ${q.text}</div><div class="options-grid" id="opt-${q.id}">`; q.options.forEach((opt,optIdx)=>{ html+=`<button class="option-btn ${selectedIdx===optIdx?'selected':''}" data-qid="${q.id}" data-optidx="${optIdx}"><i class="fas fa-circle-check"></i> ${opt}</button>`; }); html+=`</div></div>`; if(idx===QUESTIONS.length-1 || QUESTIONS[idx+1]?.dim!==dim){ html+=`<div class="regulatory-mapping" style="background:var(--gray-50); border-radius:14px; padding:0.9rem 1.25rem; margin-top:1rem;"><div><i class="fas fa-gavel"></i> <strong>Framework Alignment:</strong> ${DIM_MAPPING[dim]}</div></div>`; } }); document.getElementById('questionsContainer').innerHTML=html; attachEvents(); updateProgress(); }
+    function attachEvents(){ document.querySelectorAll('.option-btn').forEach(btn=>{ btn.addEventListener('click',()=>{ const qid=btn.dataset.qid, optIdx=parseInt(btn.dataset.optidx); userAnswers[qid]=optIdx; btn.parentElement.querySelectorAll('.option-btn').forEach(b=>b.classList.remove('selected')); btn.classList.add('selected'); updateProgress(); autoSave(); }); }); }
+    function updateProgress(){ let answered=Object.keys(userAnswers).length; const percent=Math.round((answered/totalQuestions)*100); document.getElementById('progressFill').style.width=`${percent}%`; document.getElementById('progressText').innerText=`${percent}% completed (${answered}/${totalQuestions})`; }
+    function autoSave(){ localStorage.setItem('continuity_diagnostic_v1',JSON.stringify(userAnswers)); }
+    function loadSaved(){ const saved=localStorage.getItem('continuity_diagnostic_v1'); if(saved){ userAnswers=JSON.parse(saved); } renderQuestions(); }
+    function reset(){ if(confirm('Reset all answers?')){ userAnswers={}; localStorage.removeItem('continuity_diagnostic_v1'); renderQuestions(); updateProgress(); } }
+    function calculateScores(){ let dimSum={planning:0,recovery:0,it:0,workforce:0,facility:0,crisis:0}, dimCount={planning:0,recovery:0,it:0,workforce:0,facility:0,crisis:0}; QUESTIONS.forEach(q=>{ const ans=userAnswers[q.id]; if(ans!==undefined){ dimSum[q.dim]+=(ans+1); dimCount[q.dim]+=1; } }); let dimScores={}; let answeredAny=false; for(let dim of Object.keys(dimSum)){ const cnt=dimCount[dim]; if(cnt>0){ const raw=dimSum[dim]; const minPossible=cnt*1, maxPossible=cnt*4; dimScores[dim]=Math.round(((raw-minPossible)/(maxPossible-minPossible))*100); answeredAny=true; } else dimScores[dim]=0; } if(!answeredAny) return null; const composite=Math.round(Object.values(dimScores).reduce((a,b)=>a+b,0)/6); return { dimScores, composite, answeredCount: Object.keys(userAnswers).length }; }
+    function getRiskLevel(score){ if(score>=80) return { text:"Resilient", color:"#2C8C6E", description:"Excellent continuity posture. Maintain testing cadence." }; if(score>=60) return { text:"Developing", color:"#D4AF37", description:"Good foundation. Focus on testing and documentation." }; if(score>=40) return { text:"Vulnerable", color:"#E68A2E", description:"Significant gaps. Prioritize BCP development and IT resilience." }; return { text:"Critical Risk", color:"#CB6E6E", description:"Immediate action required. Business continuity at high risk." }; }
+    function showResults(){ const data=calculateScores(); if(!data || data.answeredCount<Math.ceil(totalQuestions*0.6)){ alert(`Please answer at least ${Math.ceil(totalQuestions*0.6)} questions.`); return; } const { dimScores, composite }=data; const level=getRiskLevel(composite); let html=`<div class="composite-card"><div class="composite-score">${composite}</div><div>Continuity Resilience Score</div><div style="background:${level.color}20; color:${level.color}; padding:0.25rem 1rem; border-radius:20px; display:inline-block; margin-top:0.5rem;">${level.text}</div></div><div class="dimension-grid">${Object.entries(dimScores).map(([dim,score])=>`<div class="dimension-card"><i class="${DIM_ICONS[dim]}" style="color:${DIM_COLORS[dim]}"></i><h4>${DIM_NAMES[dim]}</h4><div style="font-size:1.8rem; font-weight:800;">${score}</div></div>`).join('')}</div><div style="background:#F5F7FC; border-radius:20px; padding:1rem;"><h4><i class="fas fa-lightbulb" style="color:var(--gold);"></i> Executive Summary</h4><p>${level.description} ${composite<50?'Prioritize BCP documentation, RTO/RPO definition, and crisis communication plans.':''}</p></div><h4 style="margin-top:1.5rem;"><i class="fas fa-list-check"></i> Priority Recommendations</h4><ul class="recommendation-list">${Object.entries(dimScores).map(([dim,score])=>`<li><i class="fas fa-arrow-right"></i> <strong>${DIM_NAMES[dim]}</strong> (${score}): ${score<40?'Immediate action.':score<60?'Develop plan.':score<80?'Enhance testing.':'Maintain excellence.'}</li>`).join('')}</ul>`; document.getElementById('resultsContent').innerHTML=html; document.getElementById('assessmentPanel').classList.add('hidden'); document.getElementById('resultsPanel').classList.remove('hidden'); }
+    function exportJSON(){ const data=calculateScores(); if(!data) return; const blob=new Blob([JSON.stringify({...data, userAnswers, timestamp:new Date().toISOString()},null,2)],{type:"application/json"}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=`continuity_diagnostic.json`; a.click(); URL.revokeObjectURL(a.href); }
+    const STRIPE_LINK="https://buy.stripe.com/9AQ6qQ4Jf4dN7uwcQ0";
+    function redirectPremium(){ window.open(STRIPE_LINK,'_blank'); alert("Premium unlocks detailed BC/DR plans, RTO/RPO templates, and crisis playbooks."); }
+    document.addEventListener('DOMContentLoaded',()=>{ loadSaved(); document.getElementById('calcBtn').addEventListener('click',showResults); document.getElementById('resetBtn').addEventListener('click',reset); document.getElementById('saveProgressBtn').addEventListener('click',()=>{ autoSave(); alert('Progress saved.'); }); document.getElementById('backToAssessment')?.addEventListener('click',()=>{ document.getElementById('assessmentPanel').classList.remove('hidden'); document.getElementById('resultsPanel').classList.add('hidden'); }); document.getElementById('newAssessmentBtn')?.addEventListener('click',()=>{ reset(); document.getElementById('assessmentPanel').classList.remove('hidden'); document.getElementById('resultsPanel').classList.add('hidden'); }); document.getElementById('exportResultsBtn')?.addEventListener('click',exportJSON); document.getElementById('upgradeFromResultsBtn')?.addEventListener('click',redirectPremium); const upgradeDiv=document.createElement('div'); upgradeDiv.className='upgrade-card'; upgradeDiv.innerHTML=`<div style="display:flex; justify-content:space-between; align-items:center;"><div><i class="fas fa-crown" style="color:var(--gold);"></i> <strong>Continuity Professional</strong><div style="font-size:0.8rem;">BCP templates, RTO/RPO calculators, and crisis playbooks</div></div><button class="btn btn-premium" id="floatUpgrade"><i class="fas fa-lock-open"></i> Upgrade ($29)</button></div>`; document.querySelector('#assessmentPanel .card')?.appendChild(upgradeDiv); document.getElementById('floatUpgrade')?.addEventListener('click',redirectPremium); });
+</script>
+</body>
+</html>

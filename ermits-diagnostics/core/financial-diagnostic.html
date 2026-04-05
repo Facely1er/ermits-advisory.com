@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINANCIAL® Resilience Diagnostic | ERMITS Advisory</title>
+    <meta name="description" content="SME-focused financial health assessment evaluating cash flow, debt structure, revenue concentration, and financial controls. Get actionable insights in 10 minutes.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --navy: #0A2540;
+            --navy-dark: #041e32;
+            --green: #2C8C6E;
+            --gold: #D4AF37;
+            --blue: #2C6E9E;
+            --gray-50: #F8FAFE;
+            --gray-100: #F1F4F9;
+            --gray-200: #E9EDF2;
+            --gray-700: #3A4A58;
+            --shadow-md: 0 12px 24px -8px rgba(0, 0, 0, 0.08);
+            --border-radius-card: 24px;
+        }
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: linear-gradient(135deg, var(--gray-50) 0%, #F5F7FC 100%);
+            color: #1A2C3E;
+            line-height: 1.5;
+            min-height: 100vh;
+        }
+        .container { max-width: 1280px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+            border-radius: var(--border-radius-card);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(44, 110, 158, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero-content { position: relative; z-index: 2; }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(44, 110, 158, 0.2);
+            padding: 0.35rem 1rem;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+        }
+        .hero h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .hero p { font-size: 1rem; opacity: 0.85; max-width: 70%; margin-bottom: 1.5rem; }
+        .stats-row { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1rem; }
+        .stat-pill {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem 1.25rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+        }
+        .card {
+            background: white;
+            border-radius: var(--border-radius-card);
+            box-shadow: var(--shadow-md);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .dimension-section { margin-top: 1.5rem; margin-bottom: 1.25rem; }
+        .dimension-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--gray-200);
+        }
+        .dimension-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gray-100);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        .dimension-title { font-weight: 700; font-size: 1.25rem; color: var(--navy); }
+        .why-matter-card {
+            background: linear-gradient(135deg, #FFF9EF 0%, #FFF5E6 100%);
+            border-left: 4px solid var(--gold);
+            border-radius: 14px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.25rem;
+            font-size: 0.9rem;
+        }
+        .question-item {
+            margin-bottom: 1.5rem;
+            padding: 0.5rem 0 0.8rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 0.9rem;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .q-num {
+            color: var(--gold);
+            background: var(--gray-100);
+            width: 26px;
+            height: 26px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+            font-size: 0.75rem;
+        }
+        .options-grid { display: flex; flex-wrap: wrap; gap: 12px; }
+        .option-btn {
+            background: var(--gray-100);
+            border: 1px solid var(--gray-200);
+            border-radius: 40px;
+            padding: 0.6rem 1.25rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--gray-700);
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .option-btn.selected {
+            background: var(--navy);
+            border-color: var(--gold);
+            color: white;
+        }
+        .regulatory-mapping {
+            background: var(--gray-50);
+            border-radius: 14px;
+            padding: 0.9rem 1.25rem;
+            margin-top: 1rem;
+            border: 1px solid var(--gray-200);
+            font-size: 0.8rem;
+        }
+        .progress-section { margin: 0.5rem 0 1.5rem; }
+        .progress-bar-bg { background: var(--gray-200); border-radius: 20px; height: 8px; overflow: hidden; }
+        .progress-fill { width: 0%; height: 100%; background: linear-gradient(90deg, var(--blue), var(--gold)); transition: width 0.3s; }
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .btn-primary { background: var(--blue); color: white; }
+        .btn-primary:hover { background: #1e5a82; transform: translateY(-2px); }
+        .btn-secondary { background: white; border: 1px solid var(--gray-200); }
+        .btn-premium { background: linear-gradient(135deg, var(--gold) 0%, #B4942C 100%); color: var(--navy-dark); font-weight: 700; }
+        .action-group { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 1.5rem; }
+        .hidden { display: none; }
+        .composite-card {
+            background: linear-gradient(135deg, var(--blue) 0%, #1e5a82 100%);
+            border-radius: 28px;
+            padding: 1.8rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: white;
+        }
+        .composite-score { font-size: 4rem; font-weight: 800; }
+        .dimension-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+        .dimension-card { background: var(--gray-100); border-radius: 20px; padding: 1rem; text-align: center; }
+        .recommendation-list { list-style: none; margin-top: 1rem; }
+        .recommendation-list li { margin-bottom: 0.8rem; padding-left: 1.75rem; position: relative; }
+        .recommendation-list li i { position: absolute; left: 0; top: 2px; color: var(--gold); }
+        footer { text-align: center; font-size: 0.7rem; color: #5A6E7C; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--gray-200); }
+        @media (max-width: 768px) {
+            .hero p { max-width: 100%; }
+            .options-grid { flex-direction: column; }
+            .option-btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <div class="hero-content">
+            <div class="badge"><i class="fas fa-chart-line"></i><span>FINANCIAL® Resilience Diagnostic v1.0</span></div>
+            <h1>Financial Health & Resilience Assessment</h1>
+            <p>SME-focused diagnostic evaluating cash flow stability, debt structure, revenue concentration, and financial controls. Get actionable insights in under 10 minutes.</p>
+            <div class="stats-row">
+                <div class="stat-pill"><i class="fas fa-clipboard-list"></i> 18 questions</div>
+                <div class="stat-pill"><i class="fas fa-chart-pie"></i> 6 risk domains</div>
+                <div class="stat-pill"><i class="fas fa-coins"></i> Cash flow focus</div>
+                <div class="stat-pill"><i class="fas fa-chart-line"></i> IFRS | COSO</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="assessmentPanel">
+        <div class="card">
+            <div class="progress-section">
+                <div class="progress-bar-bg"><div class="progress-fill" id="progressFill"></div></div>
+                <div class="progress-stats" style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                    <span><i class="far fa-question-circle"></i> Assessment progress</span>
+                    <span id="progressText">0% completed</span>
+                </div>
+            </div>
+            <div id="questionsContainer"></div>
+            <div class="action-group">
+                <button class="btn btn-primary" id="calcBtn"><i class="fas fa-chart-simple"></i> View Results</button>
+                <button class="btn btn-secondary" id="resetBtn"><i class="fas fa-undo-alt"></i> Reset</button>
+                <button class="btn btn-secondary" id="saveProgressBtn"><i class="fas fa-save"></i> Save Progress</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="resultsPanel" class="hidden">
+        <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 1rem;">
+                <h2 style="color: var(--navy);"><i class="fas fa-chart-gantt"></i> Financial Resilience Report</h2>
+                <button class="btn btn-secondary" id="backToAssessment"><i class="fas fa-arrow-left"></i> Back</button>
+            </div>
+            <div id="resultsContent"></div>
+            <div class="action-group">
+                <button class="btn btn-secondary" id="exportResultsBtn"><i class="fas fa-download"></i> Export JSON</button>
+                <button class="btn btn-premium" id="upgradeFromResultsBtn"><i class="fas fa-crown"></i> Unlock Premium Report</button>
+                <button class="btn btn-primary" id="newAssessmentBtn"><i class="fas fa-plus-circle"></i> New Assessment</button>
+            </div>
+        </div>
+    </div>
+    <footer><i class="fas fa-shield-alt"></i> Privacy-first — all data stays local. Aligned with IFRS for SMEs, COSO Internal Control, and SME best practices.</footer>
+</div>
+
+<script>
+    // Financial Resilience Questions (18 questions across 6 domains)
+    const QUESTIONS = [
+        // Cash Flow Management
+        { id: "CF1", dim: "cashflow", text: "How many months of operating expenses can you cover with current liquid assets (cash + equivalents)?", options: ["Less than 1 month", "1-3 months", "3-6 months", "More than 6 months"] },
+        { id: "CF2", dim: "cashflow", text: "What is your average Days Sales Outstanding (DSO) - time to collect payments?", options: ["> 90 days", "60-90 days", "30-60 days", "< 30 days"] },
+        { id: "CF3", dim: "cashflow", text: "How predictable is your cash flow forecasting accuracy?", options: ["No formal forecasting", "Rough estimates, often wrong", "Quarterly forecasting with reasonable accuracy", "Rolling 12-month forecast with scenario analysis"] },
+        
+        // Debt & Leverage
+        { id: "DE1", dim: "debt", text: "What is your Debt Service Coverage Ratio (operating cash flow / debt payments)?", options: ["< 1.0x (cannot cover payments)", "1.0x - 1.25x", "1.25x - 2.0x", "> 2.0x (strong coverage)"] },
+        { id: "DE2", dim: "debt", text: "What percentage of total assets is financed by debt?", options: ["> 70%", "50-70%", "30-50%", "< 30%"] },
+        { id: "DE3", dim: "debt", text: "Do you have upcoming debt maturities or refinancing needs in the next 12 months?", options: ["High risk - unable to refinance", "Some risk - uncertain terms", "Manageable - likely to refinance", "No near-term maturities or secured"] },
+        
+        // Revenue Concentration
+        { id: "RC1", dim: "revenue", text: "What percentage of revenue comes from your largest single customer?", options: ["> 50%", "25-50%", "10-25%", "< 10%"] },
+        { id: "RC2", dim: "revenue", text: "What percentage of revenue is recurring (subscriptions, contracts, repeat business)?", options: ["< 20%", "20-50%", "50-80%", "> 80%"] },
+        { id: "RC3", dim: "revenue", text: "How diversified is your revenue across industries or geographies?", options: ["Single industry/region", "2-3 sectors or regions", "Diversified across multiple sectors", "Highly diversified globally"] },
+        
+        // Cost Structure
+        { id: "CS1", dim: "cost", text: "What is your operating leverage (fixed costs as % of total costs)?", options: ["> 70% fixed", "50-70% fixed", "30-50% fixed", "< 30% fixed"] },
+        { id: "CS2", dim: "cost", text: "How quickly can you reduce costs in a downturn?", options: ["> 6 months", "3-6 months", "1-3 months", "< 1 month"] },
+        { id: "CS3", dim: "cost", text: "What is your gross profit margin trend?", options: ["Declining > 5% year-over-year", "Declining < 5%", "Stable", "Improving"] },
+        
+        // Financial Controls
+        { id: "FC1", dim: "controls", text: "How would you rate your internal financial controls and fraud prevention?", options: ["Weak - no segregation of duties", "Basic - some controls but gaps", "Strong - formal controls with review", "Best-in-class - audited annually"] },
+        { id: "FC2", dim: "controls", text: "Do you have regular financial audits or reviews?", options: ["No audits", "Internal reviews only", "Annual external review", "Audited financial statements with opinion"] },
+        { id: "FC3", dim: "controls", text: "How do you manage payment approvals and bank access?", options: ["Single signer with no limits", "Dual approval for large amounts", "Structured approval matrix", "Automated with segregation and limits"] },
+        
+        // Access to Capital
+        { id: "AC1", dim: "capital", text: "What is your access to additional capital or credit lines?", options: ["No access", "Limited personal guarantees required", "Reasonable terms available", "Strong banking relationships with committed lines"] },
+        { id: "AC2", dim: "capital", text: "How long is your financial runway with current cash and available credit?", options: ["< 3 months", "3-6 months", "6-12 months", "> 12 months"] },
+        { id: "AC3", dim: "capital", text: "Do you have relationships with multiple lenders or funding sources?", options: ["Single lender", "Two lenders", "Multiple with diversification", "Access to public/private markets"] }
+    ];
+
+    const DIM_NAMES = { cashflow: "Cash Flow", debt: "Debt & Leverage", revenue: "Revenue Concentration", cost: "Cost Structure", controls: "Financial Controls", capital: "Access to Capital" };
+    const DIM_ICONS = { cashflow: "fas fa-coins", debt: "fas fa-chart-line", revenue: "fas fa-chart-pie", cost: "fas fa-calculator", controls: "fas fa-shield-alt", capital: "fas fa-building-columns" };
+    const DIM_COLORS = { cashflow: "#2C8C6E", debt: "#E68A2E", revenue: "#CB6E6E", cost: "#5E6EA6", controls: "#D4AF37", capital: "#2C6E9E" };
+    
+    const DIM_WHY = {
+        cashflow: "Cash flow is the lifeblood of any SME. Insufficient liquidity is the #1 cause of business failure. Strong cash management enables growth and weathers economic downturns.",
+        debt: "Excessive leverage amplifies risk during rate hikes or revenue declines. Proper debt structure ensures sustainable growth without financial distress.",
+        revenue: "Customer concentration creates single-point-of-failure risk. Diversified revenue streams provide stability and bargaining power.",
+        cost: "Fixed cost structures reduce flexibility. Understanding cost behavior enables rapid adaptation to market changes.",
+        controls: "Weak financial controls lead to fraud, errors, and audit failures. Strong controls build trust with banks, investors, and partners.",
+        capital: "Access to capital determines growth capacity and crisis resilience. Multiple funding sources reduce dependency risk."
+    };
+    
+    const DIM_MAPPING = {
+        cashflow: "IFRS for SMEs (Cash Flow Statement) | Working Capital Management Best Practices | Basel III Liquidity Coverage Ratio (proportional)",
+        debt: "Debt Covenants | Interest Coverage Ratios | SME Lending Standards | Basel III Leverage Ratio (proportional)",
+        revenue: "Customer Concentration Risk | Revenue Recognition (IFRS 15) | Business Model Resilience Assessment",
+        cost: "Operating Leverage | Contribution Margin Analysis | Cost Structure Optimization",
+        controls: "COSO Internal Control Framework | SOX (proportional) | Fraud Prevention Best Practices",
+        capital: "Basel III (proportional) | SME Credit Scoring | Alternative Finance Options | Banking Relationships"
+    };
+
+    let userAnswers = {};
+    const totalQuestions = QUESTIONS.length;
+
+    function renderQuestions() {
+        const container = document.getElementById('questionsContainer');
+        if (!container) return;
+        let html = '';
+        let currentDim = '';
+        let counter = 0;
+        QUESTIONS.forEach((q, idx) => {
+            const dim = q.dim;
+            counter++;
+            if (dim !== currentDim) {
+                currentDim = dim;
+                html += `<div class="dimension-section">
+                            <div class="dimension-header">
+                                <div class="dimension-icon"><i class="${DIM_ICONS[dim]}" style="color:${DIM_COLORS[dim]}"></i></div>
+                                <div class="dimension-title">${DIM_NAMES[dim]}</div>
+                            </div>
+                            <div class="why-matter-card"><i class="fas fa-info-circle"></i> <strong>Why it matters:</strong> ${DIM_WHY[dim]}</div>
+                        </div>`;
+            }
+            const selectedIdx = userAnswers[q.id] !== undefined ? userAnswers[q.id] : -1;
+            html += `<div class="question-item">
+                        <div class="question-text"><span class="q-num">${counter}</span> ${q.text}</div>
+                        <div class="options-grid" id="opt-${q.id}">`;
+            q.options.forEach((opt, optIdx) => {
+                html += `<button class="option-btn ${selectedIdx === optIdx ? 'selected' : ''}" data-qid="${q.id}" data-optidx="${optIdx}"><i class="fas fa-circle-check"></i> ${opt}</button>`;
+            });
+            html += `</div></div>`;
+            
+            const isLastInDim = (idx === QUESTIONS.length-1) || (QUESTIONS[idx+1] && QUESTIONS[idx+1].dim !== dim);
+            if (isLastInDim) {
+                html += `<div class="regulatory-mapping">
+                            <div class="mapping-title"><i class="fas fa-gavel"></i> Frameworks & Best Practices</div>
+                            <div>${DIM_MAPPING[dim]}</div>
+                         </div>`;
+            }
+        });
+        container.innerHTML = html;
+        attachEvents();
+        updateProgress();
+    }
+
+    function attachEvents() {
+        document.querySelectorAll('.option-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const qid = btn.dataset.qid;
+                const optIdx = parseInt(btn.dataset.optidx);
+                userAnswers[qid] = optIdx;
+                const parent = btn.parentElement;
+                parent.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+                updateProgress();
+                autoSave();
+            });
+        });
+    }
+
+    function updateProgress() {
+        let answered = Object.keys(userAnswers).length;
+        const percent = Math.round((answered / totalQuestions) * 100);
+        document.getElementById('progressFill').style.width = `${percent}%`;
+        document.getElementById('progressText').innerText = `${percent}% completed (${answered}/${totalQuestions})`;
+    }
+
+    function autoSave() { localStorage.setItem('financial_diagnostic_v1', JSON.stringify(userAnswers)); }
+    function loadSaved() {
+        const saved = localStorage.getItem('financial_diagnostic_v1');
+        if (saved) { userAnswers = JSON.parse(saved); }
+        renderQuestions();
+    }
+    function reset() { if(confirm('Reset all answers?')) { userAnswers = {}; localStorage.removeItem('financial_diagnostic_v1'); renderQuestions(); updateProgress(); } }
+
+    function calculateScores() {
+        let dimSum = { cashflow:0, debt:0, revenue:0, cost:0, controls:0, capital:0 };
+        let dimCount = { cashflow:0, debt:0, revenue:0, cost:0, controls:0, capital:0 };
+        QUESTIONS.forEach(q => {
+            const ans = userAnswers[q.id];
+            if (ans !== undefined) {
+                dimSum[q.dim] += (ans + 1);
+                dimCount[q.dim] += 1;
+            }
+        });
+        let dimScores = {};
+        let answeredAny = false;
+        for (let dim of Object.keys(dimSum)) {
+            const cnt = dimCount[dim];
+            if (cnt > 0) {
+                const raw = dimSum[dim];
+                const minPossible = cnt * 1;
+                const maxPossible = cnt * 4;
+                dimScores[dim] = Math.round(((raw - minPossible) / (maxPossible - minPossible)) * 100);
+                answeredAny = true;
+            } else dimScores[dim] = 0;
+        }
+        if (!answeredAny) return null;
+        const composite = Math.round(Object.values(dimScores).reduce((a,b) => a + b, 0) / 6);
+        return { dimScores, composite, answeredCount: Object.keys(userAnswers).length };
+    }
+
+    function getRiskLevel(score) {
+        if (score >= 80) return { text: "Strong Resilience", color: "#2C8C6E", description: "Excellent financial health with strong controls and diversified revenue." };
+        if (score >= 60) return { text: "Stable", color: "#D4AF37", description: "Good fundamentals with manageable risks. Monitor key metrics." };
+        if (score >= 40) return { text: "Vulnerable", color: "#E68A2E", description: "Significant gaps requiring attention. Focus on cash flow and debt structure." };
+        return { text: "Critical Risk", color: "#CB6E6E", description: "Immediate action required. Address liquidity and financial controls urgently." };
+    }
+
+    function showResults() {
+        const data = calculateScores();
+        if (!data || data.answeredCount < Math.ceil(totalQuestions * 0.6)) {
+            alert(`Please answer at least ${Math.ceil(totalQuestions*0.6)} questions.`);
+            return;
+        }
+        const { dimScores, composite } = data;
+        const level = getRiskLevel(composite);
+        
+        let html = `<div class="composite-card"><div class="composite-score">${composite}</div><div>Financial Resilience Score</div><div style="background:${level.color}20; color:${level.color}; padding:0.25rem 1rem; border-radius:20px; display:inline-block; margin-top:0.5rem;">${level.text}</div></div>
+                    <div class="dimension-grid">${Object.entries(dimScores).map(([dim,score])=>`<div class="dimension-card"><i class="${DIM_ICONS[dim]}" style="color:${DIM_COLORS[dim]}"></i><h4>${DIM_NAMES[dim]}</h4><div style="font-size:1.8rem; font-weight:800;">${score}</div></div>`).join('')}</div>
+                    <div style="background:#F5F7FC; border-radius:20px; padding:1rem;"><h4><i class="fas fa-lightbulb" style="color:var(--gold);"></i> Executive Summary</h4><p>${level.description} ${composite < 50 ? 'Immediate focus on liquidity, debt management, and revenue diversification is recommended.' : 'Maintain financial discipline and monitor early warning indicators.'}</p></div>
+                    <h4 style="margin-top:1.5rem;"><i class="fas fa-list-check"></i> Priority Recommendations</h4>
+                    <ul class="recommendation-list">
+                        ${Object.entries(dimScores).map(([dim,score]) => `<li><i class="fas fa-arrow-right"></i> <strong>${DIM_NAMES[dim]}</strong> (${score}): ${score<40?'Immediate action required.':score<60?'Develop improvement plan.':score<80?'Enhance monitoring and controls.':'Maintain excellence and benchmark.'}</li>`).join('')}
+                    </ul>`;
+        document.getElementById('resultsContent').innerHTML = html;
+        document.getElementById('assessmentPanel').classList.add('hidden');
+        document.getElementById('resultsPanel').classList.remove('hidden');
+    }
+
+    function exportJSON() {
+        const data = calculateScores();
+        if (!data) return alert("No data");
+        const blob = new Blob([JSON.stringify({...data, userAnswers, timestamp: new Date().toISOString()}, null, 2)], {type:"application/json"});
+        const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `financial_diagnostic.json`; a.click(); URL.revokeObjectURL(a.href);
+    }
+
+    const STRIPE_LINK = "https://buy.stripe.com/9AQ6qQ4Jf4dN7uwcQ0";
+    function redirectPremium() { window.open(STRIPE_LINK, '_blank'); alert("Premium unlocks detailed PDF reports, benchmark comparisons, and customized action plans."); }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        loadSaved();
+        document.getElementById('calcBtn').addEventListener('click', showResults);
+        document.getElementById('resetBtn').addEventListener('click', reset);
+        document.getElementById('saveProgressBtn').addEventListener('click', () => { autoSave(); alert('Progress saved.'); });
+        document.getElementById('backToAssessment')?.addEventListener('click', () => { document.getElementById('assessmentPanel').classList.remove('hidden'); document.getElementById('resultsPanel').classList.add('hidden'); });
+        document.getElementById('newAssessmentBtn')?.addEventListener('click', () => { reset(); document.getElementById('assessmentPanel').classList.remove('hidden'); document.getElementById('resultsPanel').classList.add('hidden'); });
+        document.getElementById('exportResultsBtn')?.addEventListener('click', exportJSON);
+        document.getElementById('upgradeFromResultsBtn')?.addEventListener('click', redirectPremium);
+        const upgradeDiv = document.createElement('div'); upgradeDiv.className = 'upgrade-card'; upgradeDiv.innerHTML = `<div style="display:flex; justify-content:space-between; align-items:center;"><div><i class="fas fa-crown" style="color:var(--gold);"></i> <strong>Financial Resilience Professional</strong><div style="font-size:0.8rem;">Detailed PDF reports, industry benchmarks, and action plans</div></div><button class="btn btn-premium" id="floatUpgrade"><i class="fas fa-lock-open"></i> Upgrade ($29)</button></div>`;
+        document.querySelector('#assessmentPanel .card')?.appendChild(upgradeDiv);
+        document.getElementById('floatUpgrade')?.addEventListener('click', redirectPremium);
+    });
+</script>
+</body>
+</html>

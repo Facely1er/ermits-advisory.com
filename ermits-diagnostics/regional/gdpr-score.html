@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDPRScore™ | European Data Protection Readiness | CyberCorrect™</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #0A0C0E; --bg-card: #12161A; --bg-surface: #1A1F24; --border: #2A2F35;
+            --text: #EDF2E8; --text-muted: #8A9BAA; --green: #10B981; --gold: #D4AF37;
+            --orange: #F59E0B; --red: #EF4444; --blue: #3B82F6; --blue-dim: rgba(59,130,246,0.1);
+            --radius-card: 16px;
+        }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+        .container { max-width: 1280px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .header { background: linear-gradient(135deg, #0D1117 0%, #0A0C0E 100%); border: 1px solid var(--border); border-radius: var(--radius-card); padding: 2rem; margin-bottom: 2rem; }
+        .badge { display: inline-flex; align-items: center; gap: 8px; background: var(--blue-dim); padding: 0.35rem 1rem; border-radius: 40px; font-size: 0.7rem; font-weight: 600; border: 1px solid rgba(59,130,246,0.3); margin-bottom: 1rem; }
+        .header h1 { font-size: 1.8rem; font-weight: 700; } .header h1 span { color: var(--blue); }
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-card); padding: 1.5rem; margin-bottom: 1.5rem; }
+        .ctx-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+        .ctx-field select { width: 100%; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem; color: var(--text); }
+        .progress-bar { background: var(--bg-surface); height: 4px; border-radius: 4px; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, var(--blue), var(--gold)); width: 0%; transition: width 0.3s; }
+        .section-header { display: flex; align-items: center; gap: 12px; margin: 1.5rem 0 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+        .section-title { font-size: 0.9rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; }
+        .question-card { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; margin-bottom: 0.75rem; }
+        .question-card.answered { border-left: 3px solid var(--green); }
+        .question-text { font-size: 0.9rem; font-weight: 500; margin-bottom: 1rem; }
+        .options-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+        .option-btn { background: var(--bg); border: 1px solid var(--border); border-radius: 40px; padding: 0.5rem 1rem; font-size: 0.75rem; cursor: pointer; color: var(--text-muted); }
+        .option-btn.selected-0 { background: var(--red); color: white; }
+        .option-btn.selected-8 { background: var(--orange); color: white; }
+        .option-btn.selected-16 { background: var(--blue); color: white; }
+        .btn { padding: 0.75rem 1.5rem; border-radius: 40px; font-weight: 600; cursor: pointer; }
+        .btn-primary { background: var(--blue); color: white; border: none; }
+        .btn-secondary { background: var(--bg-surface); border: 1px solid var(--border); color: var(--text); }
+        .action-group { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 1rem; }
+        .composite-card { background: linear-gradient(135deg, var(--blue) 0%, #2563eb 100%); border-radius: 20px; padding: 1.5rem; text-align: center; margin-bottom: 1.5rem; }
+        .composite-score { font-size: 3rem; font-weight: 800; }
+        .dimension-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+        .dimension-card { background: var(--bg-surface); border-radius: 12px; padding: 1rem; text-align: center; border: 1px solid var(--border); }
+        .penalty-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1rem 0; }
+        #report { display: none; margin-top: 2rem; } #report.visible { display: block; }
+        @media (max-width: 768px) { .container { padding: 1rem; } .options-grid { flex-direction: column; } .option-btn { width: 100%; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="badge"><i class="fas fa-euro-sign"></i> CyberCorrect™ · GDPRScore™</div>
+        <h1>European <span>GDPR</span> Readiness Assessment</h1>
+        <p>Assess your compliance with GDPR (EU) 2016/679, ePrivacy Directive, and DSA requirements.</p>
+    </div>
+    <div id="assessmentPanel">
+        <div class="card">
+            <div class="ctx-grid"><div class="ctx-field"><select id="ctxType"><option value="">Organization Type</option><option value="controller">Controller</option><option value="processor">Processor</option><option value="both">Both Controller & Processor</option></select></div></div>
+            <div class="progress-section"><div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div><div class="progress-header" style="margin-top:0.5rem;"><span id="progressText">0/16 answered</span></div></div>
+            <div id="questionsContainer"></div>
+            <div class="action-group"><button class="btn btn-primary" id="generateBtn" disabled>Generate Report</button><button class="btn btn-secondary" id="resetBtn">Reset</button><button class="btn btn-secondary" id="backBtn">← Back to Dashboard</button></div>
+        </div>
+    </div>
+    <div id="report"><div class="card"><div class="composite-card"><div class="composite-score" id="compositeScore">--</div><div id="tierDesc"></div></div><div id="reportContent"></div><div class="action-group"><button class="btn btn-secondary" id="newAssessmentBtn">New Assessment</button><button class="btn btn-secondary" id="backReportBtn">← Back to Dashboard</button></div></div></div>
+    <div class="footer-note" style="text-align:center;font-size:0.7rem;margin-top:2rem;">© 2025 ERMITS Corporation · GDPRScore™</div>
+</div>
+<script>
+    const QUESTIONS = [
+        { id:"q1", domain:"Legal Basis", text:"Have you documented lawful bases (Art.6) including LIAs where applicable?", opts:["No documentation","Partial documentation","Full documentation with LIAs"] },
+        { id:"q2", domain:"Consent", text:"Is consent granular, opt-in, with documented withdrawal (Art.7)?", opts:["Pre-ticked boxes","Opt-in with basic withdrawal","Granular opt-in with records"] },
+        { id:"q3", domain:"DSARs", text:"Can you respond to DSARs within 30 days (Art.12,15)?", opts:["No procedure","Procedure exists","Fully documented with tracking"] },
+        { id:"q4", domain:"DPIA", text:"Do you conduct DPIAs for high-risk processing (Art.35)?", opts:["No DPIAs","Inconsistent DPIAs","Documented DPIA process"] },
+        { id:"q5", domain:"DPO", text:"Have you designated a DPO where required (Art.37-39)?", opts:["No DPO","DPO designated","DPO with independence and publication"] },
+        { id:"q6", domain:"ROPA", text:"Do you maintain Records of Processing (Art.30)?", opts:["No ROPA","Partial ROPA","Current ROPA"] },
+        { id:"q7", domain:"Security", text:"Are security measures including encryption implemented (Art.32)?", opts:["Minimal","Basic","Comprehensive"] },
+        { id:"q8", domain:"Breach", text:"Do you have 72-hour breach notification procedures (Art.33)?", opts:["No procedure","Procedure exists","Documented with testing"] },
+        { id:"q9", domain:"Transfers", text:"Have you mapped transfers and implemented SCCs (Chapter V)?", opts:["No mapping","Partial mapping","Comprehensive safeguards"] },
+        { id:"q10", domain:"Processors", text:"Are DPAs executed with all processors (Art.28)?", opts:["No DPAs","DPAs with major vendors","DPAs with all processors"] },
+        { id:"q11", domain:"Subject Rights", text:"Procedures for erasure, portability, objection (Art.17-21)?", opts:["No procedures","Partial","Full procedures"] },
+        { id:"q12", domain:"Automated Decisions", text:"Controls for automated decision-making (Art.22)?", opts:["No controls","Basic","Documented with human review"] },
+        { id:"q13", domain:"Privacy Notice", text:"Notice compliant with Art.13-14 requirements?", opts:["Non-compliant","Partially","Fully compliant"] },
+        { id:"q14", domain:"By Design", text:"Data protection by design and default (Art.25)?", opts:["Not integrated","Ad-hoc","Formal process"] },
+        { id:"q15", domain:"Certifications", text:"GDPR certifications or codes of conduct (Art.42)?", opts:["None","Considering","Active certification"] },
+        { id:"q16", domain:"Accountability", text:"Accountability program with training and monitoring?", opts:["No program","Basic","Comprehensive"] }
+    ];
+    let answers = JSON.parse(localStorage.getItem('gdpr_readiness_answers') || "{}");
+    function render() { let html=""; QUESTIONS.forEach((q,i)=>{ const val=answers[q.id]; html+=`<div class="question-card ${val!==undefined?'answered':''}"><div class="question-text">Q${i+1}. ${q.text}</div><div class="options-grid">${q.opts.map((o,idx)=>{ const score=idx===0?0:idx===1?8:16; return `<button class="option-btn ${val===score?`selected-${score}`:''}" data-qid="${q.id}" data-val="${score}"><span class="opt-score">${score}</span> ${o}</button>`; }).join('')}</div></div>`; }); document.getElementById('questionsContainer').innerHTML=html; attachEvents(); updateProgress(); }
+    function attachEvents(){ document.querySelectorAll('.option-btn').forEach(btn=>{ btn.addEventListener('click',()=>{ const qid=btn.dataset.qid, val=parseInt(btn.dataset.val); answers[qid]=val; localStorage.setItem('gdpr_readiness_answers',JSON.stringify(answers)); render(); }); }); }
+    function updateProgress(){ const c=Object.keys(answers).length; document.getElementById('progressFill').style.width=`${(c/16)*100}%`; document.getElementById('progressText').innerText=`${c}/16 answered`; document.getElementById('generateBtn').disabled=c!==16; }
+    function calcScore(){ return Object.values(answers).reduce((a,b)=>a+b,0); }
+    function getTier(s){ if(s<=80) return {l:"Critical Risk",c:"#EF4444"}; if(s<=140) return {l:"Limited Implementation",c:"#F59E0B"}; if(s<=210) return {l:"Partial Compliance",c:"#D4AF37"}; return {l:"Strong Compliance",c:"#10B981"}; }
+    function generateReport(){ const s=calcScore(), t=getTier(s); document.getElementById('compositeScore').innerHTML=`${s}<span style="font-size:1rem;">/256</span>`; document.getElementById('tierDesc').innerHTML=`<div style="background:${t.c}20; color:${t.c}; padding:0.25rem 1rem; border-radius:20px; display:inline-block;">${t.l}</div>`; let html=`<div class="dimension-grid">${QUESTIONS.map(q=>`<div class="dimension-card"><div>${q.domain}</div><div style="font-size:1.5rem;">${answers[q.id]||0}/16</div></div>`).join('')}</div><div class="penalty-grid"><div class="penalty-card"><div style="color:var(--blue);font-weight:700;">GDPR</div><div>Up to €20M or 4% global turnover</div><div>EDPB + National DPAs</div></div><div class="penalty-card"><div style="color:var(--blue);font-weight:700;">ePrivacy Directive</div><div>Up to €10M or 2% turnover</div><div>National DPAs</div></div></div>`; document.getElementById('reportContent').innerHTML=html; document.getElementById('assessmentPanel').style.display='none'; document.getElementById('report').classList.add('visible'); }
+    function reset(){ if(confirm('Reset?')){ answers={}; localStorage.removeItem('gdpr_readiness_answers'); render(); document.getElementById('report').classList.remove('visible'); document.getElementById('assessmentPanel').style.display='block'; } }
+    document.getElementById('generateBtn').addEventListener('click',generateReport);
+    document.getElementById('resetBtn').addEventListener('click',reset);
+    document.getElementById('backBtn').addEventListener('click',()=>window.location.href='../index.html');
+    document.getElementById('backReportBtn').addEventListener('click',()=>window.location.href='../index.html');
+    document.getElementById('newAssessmentBtn').addEventListener('click',reset);
+    render();
+</script>
+</body>
+</html>

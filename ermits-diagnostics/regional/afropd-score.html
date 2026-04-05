@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfroPDScore™ | Pan-African Data Protection Readiness | CyberCorrect™</title>
+    <meta name="description" content="Assess your organization's data protection readiness across Nigeria, South Africa, Kenya, Côte d'Ivoire, Egypt, and Rwanda/Ghana. Aligned with NDPA, POPIA, Kenya DPA, Loi 2013-450, and AU Malabo Convention.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #0A0C0E; --bg-card: #12161A; --bg-surface: #1A1F24; --border: #2A2F35;
+            --border-light: #3A3F45; --text: #EDF2E8; --text-muted: #8A9BAA; --text-dim: #5A6B78;
+            --green: #10B981; --green-dim: rgba(16,185,129,0.1); --gold: #D4AF37; --gold-dim: rgba(212,175,55,0.1);
+            --orange: #F59E0B; --orange-dim: rgba(245,158,11,0.1); --red: #EF4444; --red-dim: rgba(239,68,68,0.1);
+            --purple: #8B5CF6; --purple-dim: rgba(139,92,246,0.1); --radius-card: 16px; --radius-sm: 8px;
+        }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .header { background: linear-gradient(135deg, #0D1117 0%, #0A0C0E 100%); border: 1px solid var(--border); border-radius: var(--radius-card); padding: 2rem; margin-bottom: 2rem; position: relative; overflow: hidden; }
+        .header::before { content: ''; position: absolute; top: -30%; right: -10%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(212,175,55,0.08) 0%, transparent 70%); border-radius: 50%; }
+        .badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(212,175,55,0.15); padding: 0.35rem 1rem; border-radius: 40px; font-size: 0.7rem; font-weight: 600; border: 1px solid rgba(212,175,55,0.3); margin-bottom: 1rem; }
+        .header h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+        .header h1 span { color: var(--gold); }
+        .header p { font-size: 0.9rem; opacity: 0.7; max-width: 600px; }
+        .jurisdiction-strip { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1rem; }
+        .j-badge { font-size: 0.7rem; padding: 0.25rem 0.75rem; border-radius: 20px; background: var(--bg-surface); border: 1px solid var(--border); color: var(--text-muted); }
+        .j-badge.ng { border-color: var(--green); color: var(--green); }
+        .j-badge.za { border-color: var(--gold); color: var(--gold); }
+        .j-badge.ke { border-color: var(--purple); color: var(--purple); }
+        .j-badge.ci { border-color: var(--orange); color: var(--orange); }
+        .j-badge.eg { border-color: var(--red); color: var(--red); }
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-card); padding: 1.5rem; margin-bottom: 1.5rem; }
+        .ctx-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 1rem; }
+        .ctx-field label { display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.5rem; }
+        .ctx-field select { width: 100%; background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.75rem 1rem; color: var(--text); font-size: 0.85rem; cursor: pointer; }
+        .ctx-field select:focus { outline: none; border-color: var(--gold); }
+        .ctx-note { background: var(--gold-dim); border-left: 3px solid var(--gold); padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted); }
+        .progress-section { margin: 0 0 1.5rem 0; }
+        .progress-header { display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.75rem; color: var(--text-muted); }
+        .progress-bar { background: var(--bg-surface); height: 4px; border-radius: 4px; overflow: hidden; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, var(--gold), var(--purple)); width: 0%; transition: width 0.3s; }
+        .section-header { display: flex; align-items: center; gap: 12px; margin: 1.5rem 0 1rem 0; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+        .section-num { font-size: 0.7rem; color: var(--gold); font-weight: 600; letter-spacing: 0.1em; }
+        .section-title { font-size: 0.9rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; }
+        .question-card { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; margin-bottom: 0.75rem; }
+        .question-card.answered { border-left: 3px solid var(--green); }
+        .q-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 0.75rem; }
+        .q-num { font-size: 0.7rem; color: var(--text-dim); background: var(--bg); padding: 0.2rem 0.5rem; border-radius: 20px; }
+        .q-domain { font-size: 0.65rem; color: var(--gold); background: var(--gold-dim); padding: 0.2rem 0.6rem; border-radius: 20px; text-transform: uppercase; }
+        .question-text { font-size: 0.9rem; font-weight: 500; margin-bottom: 1rem; line-height: 1.5; }
+        .options-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+        .option-btn { background: var(--bg); border: 1px solid var(--border); border-radius: 40px; padding: 0.5rem 1rem; font-size: 0.75rem; font-weight: 500; color: var(--text-muted); cursor: pointer; transition: all 0.2s; }
+        .option-btn:hover { border-color: var(--gold); color: var(--text); }
+        .option-btn.selected-0 { background: var(--red-dim); border-color: var(--red); color: var(--red); }
+        .option-btn.selected-5 { background: var(--orange-dim); border-color: var(--orange); color: var(--orange); }
+        .option-btn.selected-10 { background: var(--gold-dim); border-color: var(--gold); color: var(--gold); }
+        .btn { padding: 0.75rem 1.5rem; border-radius: 40px; font-weight: 600; font-size: 0.85rem; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-primary { background: var(--gold); color: var(--bg); }
+        .btn-primary:hover { background: #b8942e; transform: translateY(-1px); }
+        .btn-secondary { background: var(--bg-surface); border: 1px solid var(--border); color: var(--text); }
+        .action-group { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 1rem; }
+        .report-header { border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1.5rem; }
+        .composite-card { background: linear-gradient(135deg, var(--gold) 0%, #b8942e 100%); border-radius: 20px; padding: 1.5rem; text-align: center; margin-bottom: 1.5rem; }
+        .composite-score { font-size: 3rem; font-weight: 800; }
+        .dimension-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+        .dimension-card { background: var(--bg-surface); border-radius: 12px; padding: 1rem; text-align: center; border: 1px solid var(--border); }
+        .recommendation-item { background: var(--bg-surface); border-left: 3px solid var(--orange); padding: 1rem; margin-bottom: 0.75rem; border-radius: 8px; }
+        .penalty-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1rem 0; }
+        .penalty-card { background: var(--bg-surface); border-radius: 12px; padding: 1rem; border: 1px solid var(--border); }
+        #report { display: none; margin-top: 2rem; }
+        #report.visible { display: block; }
+        .footer-note { text-align: center; font-size: 0.7rem; color: var(--text-dim); margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+        @media (max-width: 768px) { .container { padding: 1rem; } .options-grid { flex-direction: column; } .option-btn { width: 100%; justify-content: center; } }
+        .risk-tag { display: inline-block; padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.7rem; font-weight: 600; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="badge"><i class="fas fa-globe-africa"></i> CyberCorrect™ · AfroPDScore™</div>
+        <h1>Pan-African <span>Data Protection</span> Readiness</h1>
+        <p>Assess your compliance posture across Nigeria (NDPA 2023), South Africa (POPIA), Kenya (DPA 2019), Côte d'Ivoire (Loi 2013-450), Egypt (DPL 2020), and Rwanda/Ghana.</p>
+        <div class="jurisdiction-strip">
+            <span class="j-badge ng">Nigeria · NDPA</span>
+            <span class="j-badge za">South Africa · POPIA</span>
+            <span class="j-badge ke">Kenya · DPA 2019</span>
+            <span class="j-badge ci">Côte d'Ivoire · Loi 2013-450</span>
+            <span class="j-badge eg">Egypt · DPL 2020</span>
+            <span class="j-badge">Rwanda / Ghana</span>
+        </div>
+    </div>
+
+    <div id="assessmentPanel">
+        <div class="card">
+            <div class="ctx-grid">
+                <div class="ctx-field"><label>Organization Type</label><select id="ctxType"><option value="">— Select —</option><option value="multinational">Multinational (3+ African jurisdictions)</option><option value="regional">Regional Enterprise (1–2 jurisdictions)</option><option value="fintech">Fintech / Digital Lender</option><option value="public">Public Sector / NGO</option><option value="techvendor">Pan-African Technology Vendor</option></select></div>
+                <div class="ctx-field"><label>Your Role</label><select id="ctxRole"><option value="">— Select —</option><option value="dpo">DPO / Correspondant DPD</option><option value="legal">Legal / General Counsel</option><option value="cto">CTO / IT Director</option><option value="exec">CEO / Executive</option></select></div>
+            </div>
+            <div class="ctx-note" id="ctxNote">Select your organization type and role to personalize your assessment.</div>
+        </div>
+        <div class="card">
+            <div class="progress-section"><div class="progress-header"><span>Progress</span><span id="progressText">0 / 14 answered</span></div><div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div></div>
+            <div id="questionsContainer"></div>
+            <div class="action-group">
+                <button class="btn btn-primary" id="generateBtn" disabled><i class="fas fa-chart-line"></i> Generate Report</button>
+                <button class="btn btn-secondary" id="resetBtn"><i class="fas fa-undo-alt"></i> Reset</button>
+                <button class="btn btn-secondary" id="saveBtn"><i class="fas fa-save"></i> Save Progress</button>
+                <button class="btn btn-secondary" id="backToDashboardBtn"><i class="fas fa-arrow-left"></i> Back to Dashboard</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="report">
+        <div class="card">
+            <div class="report-header"><div style="font-size:0.7rem;color:var(--gold);">AfroPDScore™ Report</div><h2 style="font-size:1.5rem;">Pan-African Data Protection Readiness</h2><div id="reportMeta" style="font-size:0.7rem;color:var(--text-muted);margin-top:0.5rem;"></div></div>
+            <div class="composite-card"><div class="composite-score" id="compositeScore">--</div><div class="risk-tag" id="riskTag" style="margin-top:0.5rem;"></div><div id="tierDesc" style="font-size:0.8rem;opacity:0.8;margin-top:0.5rem;"></div></div>
+            <div class="dimension-grid" id="domainGrid"></div>
+            <h3 style="margin:1rem 0 0.75rem;">Remediation Roadmap</h3><div id="roadmapList"></div>
+            <h3 style="margin:1rem 0 0.75rem;">Enforcement & Penalty Framework</h3><div class="penalty-grid" id="penaltyGrid"></div>
+            <div id="ctaBlock"></div>
+            <div class="action-group"><button class="btn btn-primary" id="exportHtmlBtn"><i class="fas fa-file-alt"></i> Export Report</button><button class="btn btn-secondary" id="newAssessmentBtn"><i class="fas fa-plus"></i> New Assessment</button><button class="btn btn-secondary" id="backToDashboardReportBtn"><i class="fas fa-arrow-left"></i> Back to Dashboard</button></div>
+        </div>
+    </div>
+    <div class="footer-note">© 2025 ERMITS Corporation · CyberCorrect™ · AfroPDScore™</div>
+</div>
+
+<script>
+    const QUESTIONS = [
+        { id:"q1", domain:"Legal Basis", text:"Has your organization identified a valid lawful basis for each processing activity across all African jurisdictions?", opts:["No documentation","Partial documentation","Full documentation"] },
+        { id:"q2", domain:"Consent", text:"Is consent obtained through opt-in mechanisms with clear withdrawal procedures?", opts:["Pre-ticked boxes","Opt-in with basic withdrawal","Granular opt-in with records"] },
+        { id:"q3", domain:"Subject Rights", text:"Are procedures in place for DSARs with jurisdiction-specific timelines?", opts:["No procedures","Partial procedures","Full procedures with tracking"] },
+        { id:"q4", domain:"Automated Decisions", text:"Do you have controls for automated decision-making?", opts:["No controls","Basic controls","Documented with human review"] },
+        { id:"q5", domain:"Transparency", text:"Are privacy notices localized per jurisdiction with required elements?", opts:["No notice","Generic notice","Jurisdiction-specific notices"] },
+        { id:"q6", domain:"DPO", text:"Have you designated a DPO/Correspondant and completed DPA registrations?", opts:["No DPO","DPO designated but registration incomplete","DPO with full registration"] },
+        { id:"q7", domain:"Security", text:"Are security measures including encryption implemented?", opts:["Minimal controls","Basic controls","Comprehensive with assessment"] },
+        { id:"q8", domain:"Breach", text:"Do you have breach notification procedures with jurisdiction-specific timelines?", opts:["No procedure","Procedure exists","Documented with jurisdiction timelines"] },
+        { id:"q9", domain:"Cross-Border", text:"Have you mapped cross-border transfers and implemented safeguards?", opts:["No mapping","Partial mapping","Comprehensive with safeguards"] },
+        { id:"q10", domain:"Sensitive Data", text:"Have you identified sensitive data with heightened controls?", opts:["Not categorized","Categories identified","Full identification with controls"] },
+        { id:"q11", domain:"Processor Mgmt", text:"Are DPAs executed with all processors?", opts:["No DPAs","DPAs with major vendors","DPAs with all processors"] },
+        { id:"q12", domain:"Processor Oversight", text:"Do you exercise oversight of processors and sub-processors?", opts:["No oversight","Partial oversight","Full oversight with register"] },
+        { id:"q13", domain:"DPIA", text:"Do you conduct DPIAs for high-risk processing?", opts:["No DPIA process","Process exists but inconsistent","Documented DPIA process"] },
+        { id:"q14", domain:"ROPA", text:"Do you maintain Records of Processing Activities (ROPA)?", opts:["No ROPA","Partial ROPA","Current ROPA with training"] }
+    ];
+    const SECTIONS = [
+        { label:"Legal Basis & Consent", keys:["q1","q2"] }, { label:"Data Subject Rights", keys:["q3","q4"] },
+        { label:"Transparency & DPO", keys:["q5","q6"] }, { label:"Security & Breach", keys:["q7","q8"] },
+        { label:"Cross-Border & Sensitive Data", keys:["q9","q10"] }, { label:"Processor Management", keys:["q11","q12"] },
+        { label:"Governance & Accountability", keys:["q13","q14"] }
+    ];
+    const PENALTIES = [
+        { juris:"Nigeria", law:"NDPA 2023 + GAID 2025", amount:"2% annual revenue (major controllers)", ref:"Meta fined ~$220M (2024)" },
+        { juris:"South Africa", law:"POPIA", amount:"Up to R10M (~$540K) + criminal", ref:"Dept. of Basic Education enforcement (2024)" },
+        { juris:"Kenya", law:"DPA 2019", amount:"Up to KES 5M (~$38K)", ref:"ODPC record enforcement 2024" },
+        { juris:"Côte d'Ivoire", law:"Loi 2013-450", amount:"Up to 100M FCFA (~$160K)", ref:"ARTCI compliance survey 2026" },
+        { juris:"Egypt", law:"DPL 2020", amount:"EGP 1M-10M (~$20K-200K)", ref:"MCIT enforcement ramping" }
+    ];
+    let answers = JSON.parse(localStorage.getItem('afropd_answers') || "{}");
+    function renderQuestions() {
+        let html = "";
+        SECTIONS.forEach((sec, secIdx) => {
+            html += `<div class="section-header"><span class="section-num">0${secIdx+1}</span><span class="section-title">${sec.label}</span><div style="flex:1;height:1px;background:var(--border);"></div></div>`;
+            sec.keys.forEach(key => {
+                const q = QUESTIONS.find(q => q.id === key);
+                const val = answers[q.id] !== undefined ? answers[q.id] : null;
+                html += `<div class="question-card ${val !== null ? 'answered' : ''}" id="card-${q.id}"><div class="q-meta"><span class="q-num">${QUESTIONS.findIndex(qq=>qq.id===q.id)+1}</span><span class="q-domain">${q.domain}</span></div><div class="question-text">${q.text}</div><div class="options-grid">`;
+                q.opts.forEach((opt, idx) => { const score = idx === 0 ? 0 : (idx === 1 ? 7 : 14); html += `<button class="option-btn ${val === score ? `selected-${score}` : ''}" data-qid="${q.id}" data-val="${score}"><span class="opt-score">${score}</span> ${opt}</button>`; });
+                html += `</div></div>`;
+            });
+        });
+        document.getElementById('questionsContainer').innerHTML = html;
+        attachEvents(); updateProgress();
+    }
+    function attachEvents() { document.querySelectorAll('.option-btn').forEach(btn => { btn.addEventListener('click', () => { const qid = btn.dataset.qid, val = parseInt(btn.dataset.val); answers[qid] = val; document.querySelectorAll(`#card-${qid} .option-btn`).forEach(b => b.classList.remove('selected-0','selected-7','selected-14')); btn.classList.add(`selected-${val}`); document.getElementById(`card-${qid}`).classList.add('answered'); updateProgress(); localStorage.setItem('afropd_answers', JSON.stringify(answers)); }); }); }
+    function updateProgress() { const answered = Object.keys(answers).length; const pct = (answered/14)*100; document.getElementById('progressFill').style.width = `${pct}%`; document.getElementById('progressText').innerText = `${answered}/14 answered`; document.getElementById('generateBtn').disabled = answered !== 14; }
+    function calculateScore() { return Object.values(answers).reduce((a,b)=>a+b,0); }
+    function getTier(score) { if(score<=40) return {label:"Critical Risk",color:"#EF4444",desc:"Immediate remediation required."}; if(score<=80) return {label:"Limited Implementation",color:"#F59E0B",desc:"Core program elements missing."}; if(score<=120) return {label:"Partial Compliance",color:"#D4AF37",desc:"Foundational compliance exists."}; return {label:"Strong Compliance",color:"#10B981",desc:"Robust compliance posture."}; }
+    function generateReport() {
+        const score = calculateScore(); const tier = getTier(score);
+        document.getElementById('compositeScore').innerHTML = `${score}<span style="font-size:1rem;">/196</span>`;
+        document.getElementById('riskTag').innerHTML = tier.label; document.getElementById('riskTag').style.background = `${tier.color}20`; document.getElementById('riskTag').style.color = tier.color; document.getElementById('tierDesc').innerHTML = tier.desc;
+        document.getElementById('reportMeta').innerHTML = `Score: ${score}/196 · ${tier.label} · ${new Date().toLocaleDateString()}`;
+        let domainHtml = ''; SECTIONS.forEach(sec => { let total = sec.keys.length * 14, scored = sec.keys.reduce((a,k)=>a+(answers[k]||0),0), pct = Math.round((scored/total)*100), barColor = pct>=80?'#10B981':pct>=50?'#D4AF37':'#EF4444'; domainHtml += `<div class="dimension-card"><div style="font-size:0.7rem;color:var(--text-muted);">${sec.label}</div><div style="font-size:1.5rem;font-weight:700;">${scored}/${total}</div><div style="height:4px;background:var(--border);border-radius:2px;"><div style="width:${pct}%;height:100%;background:${barColor};border-radius:2px;"></div></div></div>`; });
+        document.getElementById('domainGrid').innerHTML = domainHtml;
+        let roadmapHtml = ''; const lowQuestions = QUESTIONS.filter(q => (answers[q.id]||0) < 10); lowQuestions.slice(0,6).forEach(q => { roadmapHtml += `<div class="recommendation-item"><strong>${q.domain}</strong><div style="font-size:0.75rem;">Score: ${answers[q.id]||0}/14 · ${(answers[q.id]||0)<7?'Immediate action required':'Develop plan'}</div></div>`; });
+        document.getElementById('roadmapList').innerHTML = roadmapHtml || '<div style="padding:1rem;text-align:center;color:var(--green);">✓ All domains at target levels.</div>';
+        document.getElementById('penaltyGrid').innerHTML = PENALTIES.map(p => `<div class="penalty-card"><div style="color:var(--gold);font-weight:700;">${p.juris}</div><div style="font-size:0.75rem;">${p.law}</div><div style="font-size:0.7rem;color:var(--text-muted);">${p.amount}<br>${p.ref}</div></div>`).join('');
+        document.getElementById('ctaBlock').innerHTML = `<div style="background:var(--bg-surface);border-radius:12px;padding:1rem;text-align:center;"><i class="fas fa-shield-alt" style="color:var(--gold);font-size:1.5rem;"></i><h4>CyberCorrect™ Privacy Intelligence</h4><button class="btn btn-primary" style="margin-top:0.5rem;" onclick="window.open('https://www.cybercorrect.com','_blank')">Explore →</button></div>`;
+        document.getElementById('assessmentPanel').style.display = 'none'; document.getElementById('report').classList.add('visible'); window.scrollTo({top:0});
+    }
+    function resetAssessment() { if(confirm('Reset all answers?')) { answers={}; localStorage.removeItem('afropd_answers'); renderQuestions(); document.getElementById('report').classList.remove('visible'); document.getElementById('assessmentPanel').style.display = 'block'; } }
+    function exportReport() { const content = document.getElementById('report').cloneNode(true); const html = `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>AfroPDScore_Report</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><style>${document.querySelector('style').innerHTML} body{background:#0A0C0E;padding:2rem;}</style></head><body>${content.outerHTML}</body></html>`; const blob = new Blob([html], {type:'text/html'}); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `AfroPDScore_Report_${new Date().toISOString().slice(0,10)}.html`; a.click(); }
+    document.getElementById('generateBtn').addEventListener('click', generateReport);
+    document.getElementById('resetBtn').addEventListener('click', resetAssessment);
+    document.getElementById('saveBtn').addEventListener('click', () => { localStorage.setItem('afropd_answers', JSON.stringify(answers)); alert('Progress saved.'); });
+    document.getElementById('exportHtmlBtn')?.addEventListener('click', exportReport);
+    document.getElementById('newAssessmentBtn')?.addEventListener('click', resetAssessment);
+    document.getElementById('backToDashboardBtn')?.addEventListener('click', () => window.location.href = '../index.html');
+    document.getElementById('backToDashboardReportBtn')?.addEventListener('click', () => window.location.href = '../index.html');
+    renderQuestions();
+</script>
+</body>
+</html>

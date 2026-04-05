@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocAudit™ | Enterprise Social Accountability Score | ERMITS Advisory</title>
+    <meta name="description" content="Assess your organization's social accountability across Workers' Rights, Community Impact, Consumer Protection, Ethical Governance, Supply Chain Social Risk, and Human Rights Due Diligence. Aligned with UN Guiding Principles, ILO Core Standards, and ISO 26000.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #0A0C0E;
+            --bg-card: #12161A;
+            --bg-surface: #1A1F24;
+            --border: #2A2F35;
+            --border-light: #3A3F45;
+            --text: #EDF2E8;
+            --text-muted: #8A9BAA;
+            --text-dim: #5A6B78;
+            --green: #10B981;
+            --green-dim: rgba(16,185,129,0.1);
+            --gold: #D4AF37;
+            --gold-dim: rgba(212,175,55,0.1);
+            --orange: #F59E0B;
+            --orange-dim: rgba(245,158,11,0.1);
+            --red: #EF4444;
+            --red-dim: rgba(239,68,68,0.1);
+            --purple: #8B5CF6;
+            --purple-dim: rgba(139,92,246,0.1);
+            --blue: #3B82F6;
+            --blue-dim: rgba(59,130,246,0.1);
+            --shadow: 0 8px 20px rgba(0,0,0,0.3);
+            --radius-card: 16px;
+            --radius-sm: 8px;
+        }
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            min-height: 100vh;
+        }
+        .container { max-width: 1280px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #0D1117 0%, #0A0C0E 100%);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-card);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(139,92,246,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .header-content { position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(139,92,246,0.15);
+            padding: 0.35rem 1rem;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(139,92,246,0.3);
+            margin-bottom: 1rem;
+        }
+        .header h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+        .header h1 span { color: var(--purple); }
+        .header p { font-size: 0.9rem; opacity: 0.7; max-width: 600px; }
+        .framework-strip { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1rem; }
+        .f-badge {
+            font-size: 0.7rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+        }
+        .f-badge.ungp { border-color: var(--purple); color: var(--purple); }
+        .f-badge.ilo { border-color: var(--blue); color: var(--blue); }
+        .f-badge.iso { border-color: var(--green); color: var(--green); }
+        .f-badge.csddd { border-color: var(--gold); color: var(--gold); }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-card);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: border-color 0.2s;
+        }
+        .card:hover { border-color: var(--border-light); }
+
+        /* Context Grid */
+        .ctx-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 1rem; }
+        .ctx-field label {
+            display: block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+        .ctx-field select {
+            width: 100%;
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 0.75rem 1rem;
+            color: var(--text);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+        .ctx-field select:focus { outline: none; border-color: var(--purple); }
+        .ctx-note {
+            background: var(--purple-dim);
+            border-left: 3px solid var(--purple);
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Progress */
+        .progress-section { margin: 0 0 1.5rem 0; }
+        .progress-header { display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.75rem; color: var(--text-muted); }
+        .progress-bar { background: var(--bg-surface); height: 4px; border-radius: 4px; overflow: hidden; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, var(--purple), var(--gold)); width: 0%; transition: width 0.3s; border-radius: 4px; }
+
+        /* Questions */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 1.5rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .section-num {
+            font-size: 0.7rem;
+            color: var(--purple);
+            font-weight: 600;
+            letter-spacing: 0.1em;
+        }
+        .section-title { font-size: 0.9rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+        .question-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 0.75rem;
+            transition: all 0.2s;
+        }
+        .question-card.answered { border-left: 3px solid var(--purple); }
+        .question-card.elevated { border-left: 3px solid var(--orange); background: rgba(245,158,11,0.03); }
+        .q-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 0.75rem; }
+        .q-num { font-size: 0.7rem; color: var(--text-dim); background: var(--bg); padding: 0.2rem 0.5rem; border-radius: 20px; }
+        .q-domain { font-size: 0.65rem; color: var(--purple); background: var(--purple-dim); padding: 0.2rem 0.6rem; border-radius: 20px; text-transform: uppercase; }
+        .rule-badge { font-size: 0.65rem; padding: 0.2rem 0.6rem; border-radius: 20px; text-transform: uppercase; }
+        .rule-workers { background: var(--blue-dim); color: var(--blue); }
+        .rule-community { background: var(--green-dim); color: var(--green); }
+        .rule-consumer { background: var(--gold-dim); color: var(--gold); }
+        .rule-ethics { background: var(--purple-dim); color: var(--purple); }
+        .rule-supply { background: var(--orange-dim); color: var(--orange); }
+        .rule-hr { background: var(--red-dim); color: var(--red); }
+        .elevated-badge { font-size: 0.65rem; color: var(--orange); background: var(--orange-dim); padding: 0.2rem 0.6rem; border-radius: 20px; margin-left: auto; }
+        .question-text { font-size: 0.9rem; font-weight: 500; margin-bottom: 1rem; line-height: 1.5; }
+        .options-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+        .option-btn {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 40px;
+            padding: 0.5rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .option-btn:hover { border-color: var(--purple); color: var(--text); }
+        .option-btn.selected-0 { background: var(--red-dim); border-color: var(--red); color: var(--red); }
+        .option-btn.selected-5 { background: var(--orange-dim); border-color: var(--orange); color: var(--orange); }
+        .option-btn.selected-10 { background: var(--purple-dim); border-color: var(--purple); color: var(--purple); }
+        .opt-score { font-weight: 700; font-size: 0.85rem; }
+
+        /* Buttons */
+        .btn { padding: 0.75rem 1.5rem; border-radius: 40px; font-weight: 600; font-size: 0.85rem; border: none; cursor: pointer; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-primary { background: var(--purple); color: white; }
+        .btn-primary:hover { background: #7c3aed; transform: translateY(-1px); }
+        .btn-secondary { background: var(--bg-surface); border: 1px solid var(--border); color: var(--text); }
+        .btn-secondary:hover { border-color: var(--purple); color: var(--purple); }
+        .action-group { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 1rem; }
+
+        /* Report */
+        #report { display: none; margin-top: 2rem; }
+        #report.visible { display: block; }
+        .report-header { border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1.5rem; }
+        .composite-card {
+            background: linear-gradient(135deg, var(--purple) 0%, #6d28d9 100%);
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .composite-score { font-size: 3rem; font-weight: 800; }
+        .gauge-block { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .gauge-svg { flex-shrink: 0; }
+        .dimension-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+        .dimension-card { background: var(--bg-surface); border-radius: 12px; padding: 1rem; text-align: center; border: 1px solid var(--border); }
+        .recommendation-item { background: var(--bg-surface); border-left: 3px solid var(--orange); padding: 1rem; margin-bottom: 0.75rem; border-radius: 8px; }
+        .recommendation-item.critical { border-left-color: var(--red); }
+        .recommendation-item.high { border-left-color: var(--orange); }
+        .framework-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1rem 0; }
+        .framework-card { background: var(--bg-surface); border-radius: 12px; padding: 1rem; border: 1px solid var(--border); }
+        .footer-note { text-align: center; font-size: 0.7rem; color: var(--text-dim); margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            .options-grid { flex-direction: column; }
+            .option-btn { width: 100%; justify-content: center; }
+            .gauge-block { flex-direction: column; align-items: center; text-align: center; }
+        }
+        .hidden { display: none; }
+        .risk-tag { display: inline-block; padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.7rem; font-weight: 600; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="header-content">
+            <div>
+                <div class="badge"><i class="fas fa-handshake"></i> SocAudit™ · ERMITS Advisory</div>
+                <h1>Enterprise <span>Social Accountability</span> Score</h1>
+                <p>Assess your organization's social accountability across Workers' Rights, Community Impact, Consumer Protection, Ethical Governance, Supply Chain Social Risk, and Human Rights Due Diligence. Aligned with UN Guiding Principles, ILO Core Standards, and ISO 26000.</p>
+                <div class="framework-strip">
+                    <span class="f-badge ungp">UN Guiding Principles (UNGPs)</span>
+                    <span class="f-badge ilo">ILO Core Labour Standards</span>
+                    <span class="f-badge iso">ISO 26000</span>
+                    <span class="f-badge csddd">EU CSDDD (2026)</span>
+                    <span class="f-badge">African Charter on Human Rights</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Assessment Panel -->
+    <div id="assessmentPanel">
+        <div class="card">
+            <div class="ctx-grid">
+                <div class="ctx-field">
+                    <label><i class="fas fa-building"></i> Organization Type</label>
+                    <select id="ctxType">
+                        <option value="">— Select —</option>
+                        <option value="manufacturing">Manufacturing / Production</option>
+                        <option value="retail">Retail / Consumer Goods</option>
+                        <option value="tech">Technology / Digital Services</option>
+                        <option value="mining">Mining / Extractive Industries</option>
+                        <option value="agriculture">Agriculture / Agribusiness</option>
+                        <option value="financial">Financial Services</option>
+                    </select>
+                </div>
+                <div class="ctx-field">
+                    <label><i class="fas fa-user-tie"></i> Your Role</label>
+                    <select id="ctxRole">
+                        <option value="">— Select —</option>
+                        <option value="hr">HR / People Operations</option>
+                        <option value="sustainability">Sustainability / ESG Lead</option>
+                        <option value="legal">Legal / Compliance</option>
+                        <option value="exec">CEO / Executive</option>
+                        <option value="procurement">Procurement / Supply Chain</option>
+                    </select>
+                </div>
+            </div>
+            <div class="ctx-note" id="ctxNote">Select your organization type and role to personalize your assessment and report framing.</div>
+        </div>
+
+        <div class="card">
+            <div class="progress-section">
+                <div class="progress-header"><span><i class="far fa-question-circle"></i> Assessment Progress</span><span id="progressText">0 / 24 answered</span></div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+            <div id="questionsContainer"></div>
+            <div class="action-group">
+                <button class="btn btn-primary" id="generateBtn" disabled><i class="fas fa-chart-line"></i> Generate Report</button>
+                <button class="btn btn-secondary" id="resetBtn"><i class="fas fa-undo-alt"></i> Reset</button>
+                <button class="btn btn-secondary" id="saveBtn"><i class="fas fa-save"></i> Save Progress</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Panel -->
+    <div id="report">
+        <div class="card">
+            <div class="report-header">
+                <div style="font-size: 0.7rem; color: var(--purple); text-transform: uppercase;">SocAudit™ Report</div>
+                <h2 style="font-size: 1.5rem; margin-top: 0.25rem;">Enterprise Social Accountability Score</h2>
+                <div id="reportMeta" style="font-size: 0.7rem; color: var(--text-muted); margin-top: 0.5rem;"></div>
+            </div>
+            <div class="gauge-block">
+                <div class="gauge-svg" id="gaugeSvg"></div>
+                <div>
+                    <div class="composite-score" id="compositeScore">--</div>
+                    <div class="risk-tag" id="riskTag" style="margin-top: 0.25rem;"></div>
+                    <div id="tierDesc" style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem; max-width: 300px;"></div>
+                </div>
+            </div>
+            <div id="roleBlock"></div>
+            <div id="sectorOverlay"></div>
+            <div class="dimension-grid" id="domainGrid"></div>
+            <h3 style="margin: 1rem 0 0.75rem;"><i class="fas fa-list-check"></i> Remediation Roadmap</h3>
+            <div id="roadmapList"></div>
+            <h3 style="margin: 1rem 0 0.75rem;"><i class="fas fa-gavel"></i> Framework Alignment & Regulatory Context</h3>
+            <div class="framework-grid" id="frameworkGrid"></div>
+            <div id="ctaBlock"></div>
+            <div class="action-group" style="margin-top: 1rem;">
+                <button class="btn btn-primary" id="exportHtmlBtn"><i class="fas fa-file-alt"></i> Export Report</button>
+                <button class="btn btn-secondary" id="newAssessmentBtn"><i class="fas fa-plus"></i> New Assessment</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer-note">© 2025 ERMITS Corporation · SocAudit™ — This tool provides general social accountability guidance and does not constitute legal advice. Aligned with UNGPs, ILO Conventions, ISO 26000, and EU CSDDD.</div>
+</div>
+
+<script>
+    // Questions Data (24 questions, 6 domains)
+    const QUESTIONS = [
+        // Workers' Rights (4 questions)
+        { id:"w1", section:0, rule:"workers", domain:"Workers' Rights", text:"Does your organization pay wages that meet or exceed legal minimums and living wage benchmarks?", opts:["Below legal minimum in some locations","Meets legal minimums only","Meets industry living wage benchmarks","Exceeds living wage with regular benchmarking"] },
+        { id:"w2", section:0, rule:"workers", domain:"Workers' Rights", text:"Do you have documented grievance mechanisms for workers to raise concerns without fear of retaliation?", opts:["No formal grievance mechanism","Internal mechanism with limited accessibility","Third-party administered mechanism","Multi-channel with independent oversight and remedy tracking"] },
+        { id:"w3", section:0, rule:"workers", domain:"Workers' Rights", text:"How does your organization ensure freedom of association and collective bargaining rights?", opts:["No recognition of union rights","Basic compliance with local law","Active engagement with worker representatives","Full support for collective bargaining with documented agreements"] },
+        { id:"w4", section:0, rule:"workers", domain:"Workers' Rights", text:"Does your organization have policies prohibiting forced labor, child labor, and workplace discrimination?", opts:["No formal policies","Policies exist but not enforced","Policies with monitoring and training","Audited policies with remediation and third-party verification"] },
+        // Community Impact (4 questions)
+        { id:"c1", section:1, rule:"community", domain:"Community Impact", text:"Does your organization conduct human rights impact assessments for operations affecting local communities?", opts:["No assessments conducted","Basic stakeholder mapping only","Formal HRIA for high-risk operations","Independent HRIA with community validation and remediation plan"] },
+        { id:"c2", section:1, rule:"community", domain:"Community Impact", text:"What is your organization's approach to local hiring and community economic development?", opts:["No local hiring preference","Some local hiring but no targets","Formal local hiring targets with reporting","Exceeds targets with community investment programs"] },
+        { id:"c3", section:1, rule:"community", domain:"Community Impact", text:"How does your organization address land rights and displacement risks?", opts:["No land rights policy","Basic Free Prior Informed Consent (FPIC) awareness","FPIC process documented for high-risk projects","Independent FPIC verification with remedy mechanisms"] },
+        { id:"c4", section:1, rule:"community", domain:"Community Impact", text:"Does your organization have a community grievance mechanism and stakeholder engagement plan?", opts:["No formal mechanism","Ad-hoc community meetings","Documented engagement plan with feedback loops","Independent grievance mechanism with community oversight"] },
+        // Consumer Protection (4 questions)
+        { id:"cp1", section:2, rule:"consumer", domain:"Consumer Protection", text:"How does your organization ensure product safety and quality standards?", opts:["No formal quality system","Basic compliance with legal requirements","ISO-certified quality management","Independent third-party testing and certifications"] },
+        { id:"cp2", section:2, rule:"consumer", domain:"Consumer Protection", text:"Does your organization have transparent pricing and fair contract terms?", opts:["Hidden fees or unclear terms","Basic disclosure of terms","Transparent pricing with standard contracts","Plain-language terms with independent review"] },
+        { id:"cp3", section:2, rule:"consumer", domain:"Consumer Protection", text:"How does your organization protect vulnerable consumers (elderly, low-literacy, disabled)?", opts:["No specific protections","Basic accessibility compliance","Targeted programs for vulnerable groups","Inclusive design standards with regular audit"] },
+        { id:"cp4", section:2, rule:"consumer", domain:"Consumer Protection", text:"Does your organization have a consumer complaint resolution process?", opts:["No formal complaint process","Basic email/phone support","Documented process with response SLAs","Independent ombudsman with published outcomes"] },
+        // Ethical Governance (4 questions)
+        { id:"e1", section:3, rule:"ethics", domain:"Ethical Governance", text:"Does your organization have a code of conduct and anti-corruption program?", opts:["No code of conduct","Written code but not trained","Trained annually with reporting hotline","Third-party audited compliance (ISO 37001)"] },
+        { id:"e2", section:3, rule:"ethics", domain:"Ethical Governance", text:"How does your organization manage whistleblower protection and non-retaliation?", opts:["No whistleblower policy","Internal reporting only","Anonymous hotline with investigation process","Third-party managed with legal protection and remedy"] },
+        { id:"e3", section:3, rule:"ethics", domain:"Ethical Governance", text:"Does your organization disclose political contributions and lobbying activities?", opts:["No disclosure","Basic disclosure to board","Public disclosure of contributions","Membership in net-zero advocacy commitments with transparency"] },
+        { id:"e4", section:3, rule:"ethics", domain:"Ethical Governance", text:"What is your approach to tax transparency and responsible tax practices?", opts:["No public disclosure","Basic country-by-country reporting (private)","Public tax strategy with GRI 207 alignment","Full public country-by-country reporting with assurance"] },
+        // Supply Chain Social Risk (4 questions)
+        { id:"s1", section:4, rule:"supply", domain:"Supply Chain", text:"Does your organization conduct human rights due diligence on tier 1 suppliers?", opts:["No supplier screening","Basic supplier code of conduct","Risk-based audits for high-risk suppliers","Full traceability with worker voice mechanisms"] },
+        { id:"s2", section:4, rule:"supply", domain:"Supply Chain", text:"Do you have a modern slavery statement and forced labor prevention program?", opts:["No statement","Basic statement meets minimum legal requirements","Detailed statement with supplier disclosures","Third-party verified with remediation tracking"] },
+        { id:"s3", section:4, rule:"supply", domain:"Supply Chain", text:"How does your organization manage sub-supplier (tier 2+) social risk?", opts:["No visibility beyond tier 1","Limited awareness of tier 2","Risk-based tier 2 monitoring","Full multi-tier social compliance mapping"] },
+        { id:"s4", section:4, rule:"supply", domain:"Supply Chain", text:"Does your organization provide worker voice and grievance mechanisms for supply chain workers?", opts:["No access for supply chain workers","Mechanism available but not promoted","Documented access for all tier 1 workers","Independent mechanism accessible to all tier workers"] },
+        // Human Rights Due Diligence (4 questions)
+        { id:"h1", section:5, rule:"hr", domain:"Human Rights", text:"Has your organization conducted a human rights risk assessment aligned with UNGPs?", opts:["No assessment","Basic desktop review","Formal UNGP-aligned assessment","Independent assessment with stakeholder engagement"] },
+        { id:"h2", section:5, rule:"hr", domain:"Human Rights", text:"How does your organization address human rights impacts in conflict-affected areas?", opts:["No operations or no policy","Basic awareness of conflict risks","Formal conflict-sensitive due diligence","OECD-aligned conflict mineral/security protocols"] },
+        { id:"h3", section:5, rule:"hr", domain:"Human Rights", text:"Does your organization provide access to remedy for human rights violations?", opts:["No remedy mechanism","Remedy available through legal system only","Operational-level grievance with remedy tracking","Independent remedy mechanism with compliance panel"] },
+        { id:"h4", section:5, rule:"hr", domain:"Human Rights", text:"Does your organization publicly report on human rights performance?", opts:["No public reporting","Basic disclosure in sustainability report","UNGPs-aligned reporting with metrics","Third-party assured reporting with remedy cases"] }
+    ];
+
+    const SECTIONS = [
+        { label:"Workers' Rights", keys:["w1","w2","w3","w4"], icon:"fas fa-users", color:"#3B82F6" },
+        { label:"Community Impact", keys:["c1","c2","c3","c4"], icon:"fas fa-hand-holding-heart", color:"#10B981" },
+        { label:"Consumer Protection", keys:["cp1","cp2","cp3","cp4"], icon:"fas fa-shopping-cart", color:"#D4AF37" },
+        { label:"Ethical Governance", keys:["e1","e2","e3","e4"], icon:"fas fa-gavel", color:"#8B5CF6" },
+        { label:"Supply Chain Social Risk", keys:["s1","s2","s3","s4"], icon:"fas fa-truck", color:"#F59E0B" },
+        { label:"Human Rights Due Diligence", keys:["h1","h2","h3","h4"], icon:"fas fa-globe", color:"#EF4444" }
+    ];
+
+    let answers = {};
+    let currentType = "", currentRole = "";
+
+    function renderQuestions() {
+        const container = document.getElementById('questionsContainer');
+        if (!container) return;
+        let html = "";
+        QUESTIONS.forEach((q, idx) => {
+            const sec = SECTIONS[q.section];
+            const isSectionStart = idx === 0 || QUESTIONS[idx-1].section !== q.section;
+            if (isSectionStart) {
+                html += `<div class="section-header">
+                            <span class="section-num">0${q.section+1}</span>
+                            <span class="section-title">${sec.label}</span>
+                            <div style="flex:1; height:1px; background:var(--border);"></div>
+                         </div>`;
+            }
+            const selectedVal = answers[q.id] !== undefined ? answers[q.id] : null;
+            const isAnswered = answers[q.id] !== undefined;
+            const isElevated = (currentType === "mining" && ["c3","h2"].includes(q.id)) || (currentType === "manufacturing" && ["w3","s1","s2"].includes(q.id));
+            html += `<div class="question-card ${isAnswered ? 'answered' : ''} ${isElevated ? 'elevated' : ''}" id="card-${q.id}">
+                        <div class="q-meta">
+                            <span class="q-num">Q${idx+1}</span>
+                            <span class="q-domain">${q.domain}</span>
+                            <span class="rule-badge rule-${q.rule}">${q.rule.replace('workers','workers').replace('community','community').replace('consumer','consumer').replace('ethics','ethics').replace('supply','supply').replace('hr','human rights')}</span>
+                            <span class="elevated-badge" id="elevated-${q.id}" style="display:${isElevated ? 'inline-flex' : 'none'}"><i class="fas fa-exclamation-triangle"></i> Elevated Risk</span>
+                        </div>
+                        <div class="question-text">${q.text}</div>
+                        <div class="options-grid">`;
+            q.opts.forEach((opt, optIdx) => {
+                const val = optIdx === 0 ? 0 : (optIdx === 1 ? 5 : (optIdx === 2 ? 10 : 15));
+                const isSelected = selectedVal === val;
+                html += `<button class="option-btn ${isSelected ? `selected-${val}` : ''}" data-qid="${q.id}" data-val="${val}"><span class="opt-score">${val}</span> ${opt}</button>`;
+            });
+            html += `</div></div>`;
+        });
+        container.innerHTML = html;
+        attachEvents();
+        updateProgress();
+    }
+
+    function attachEvents() {
+        document.querySelectorAll('.option-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const qid = btn.dataset.qid;
+                const val = parseInt(btn.dataset.val);
+                answers[qid] = val;
+                const parent = btn.parentElement.parentElement;
+                parent.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected-0', 'selected-5', 'selected-10', 'selected-15'));
+                btn.classList.add(`selected-${val}`);
+                document.getElementById(`card-${qid}`).classList.add('answered');
+                updateProgress();
+                saveToLocal();
+            });
+        });
+    }
+
+    function updateProgress() {
+        const answered = Object.keys(answers).length;
+        const percent = (answered / 24) * 100;
+        document.getElementById('progressFill').style.width = `${percent}%`;
+        document.getElementById('progressText').innerText = `${answered} / 24 answered`;
+        const generateBtn = document.getElementById('generateBtn');
+        if (answered === 24) { generateBtn.disabled = false; generateBtn.textContent = "Generate Report"; }
+        else { generateBtn.disabled = true; generateBtn.textContent = `Generate Report (${24-answered} remaining)`; }
+    }
+
+    function saveToLocal() { localStorage.setItem('social_audit_answers', JSON.stringify(answers)); }
+    function loadSaved() { const saved = localStorage.getItem('social_audit_answers'); if(saved) { answers = JSON.parse(saved); renderQuestions(); } else { renderQuestions(); } }
+    function resetAssessment() { if(confirm('Reset all answers?')) { answers={}; localStorage.removeItem('social_audit_answers'); renderQuestions(); document.getElementById('report').classList.remove('visible'); document.getElementById('assessmentPanel').style.display = 'block'; } }
+
+    function calculateScore() {
+        let total = 0;
+        Object.values(answers).forEach(v => total += v);
+        return total;
+    }
+
+    function getTier(score) {
+        if (score <= 80) return { key:'critical', label:'Critical Risk', color:'#EF4444', desc:'Significant social accountability gaps across multiple domains. Immediate remediation required to address workers\' rights, community impact, and governance failures.' };
+        if (score <= 140) return { key:'limited', label:'Limited Implementation', color:'#F59E0B', desc:'Core social accountability programs are missing or underdeveloped. Structured remediation needed.' };
+        if (score <= 200) return { key:'partial', label:'Partial Accountability', color:'#D4AF37', desc:'Foundational social practices exist but material gaps remain in supply chain and human rights due diligence.' };
+        if (score <= 260) return { key:'substantial', label:'Substantial Accountability', color:'#10B981', desc:'Strong social accountability framework across most domains. Focus on continuous improvement and third-party verification.' };
+        return { key:'full', label:'Leadership Level', color:'#22C55E', desc:'Industry-leading social accountability posture. Maintain through stakeholder engagement and transparent reporting.' };
+    }
+
+    function drawGauge(score, color) {
+        const maxScore = 360; // 24 questions * max 15 = 360
+        const pct = score / maxScore;
+        const r = 65, cx = 80, cy = 80, start = -210, end = 30;
+        const fillDeg = (end - start) * Math.min(pct, 1);
+        function polar(cx,cy,r,deg) { const rad = (deg-90)*Math.PI/180; return { x: cx + r * Math.cos(rad), y: cy + r * Math.sin(rad) }; }
+        function arc(cx,cy,r,start,end) { const s=polar(cx,cy,r,start), e=polar(cx,cy,r,end); const large = (end-start)>180?1:0; return `M ${s.x} ${s.y} A ${r} ${r} 0 ${large} 1 ${e.x} ${e.y}`; }
+        document.getElementById('gaugeSvg').innerHTML = `<svg width="160" height="150" viewBox="0 0 160 150"><path d="${arc(cx,cy,r,start,end)}" fill="none" stroke="#2A2F35" stroke-width="10" stroke-linecap="round"/><path d="${arc(cx,cy,r,start,start+fillDeg)}" fill="none" stroke="${color}" stroke-width="10" stroke-linecap="round"/></svg>`;
+    }
+
+    function generateReport() {
+        const score = calculateScore();
+        const maxScore = 360;
+        const tier = getTier(score);
+        drawGauge(score, tier.color);
+        document.getElementById('compositeScore').innerHTML = `${score}<span style="font-size:1rem;">/${maxScore}</span>`;
+        document.getElementById('riskTag').innerHTML = tier.label;
+        document.getElementById('riskTag').style.background = `${tier.color}20`;
+        document.getElementById('riskTag').style.color = tier.color;
+        document.getElementById('tierDesc').innerHTML = tier.desc;
+        document.getElementById('reportMeta').innerHTML = `Score: ${score}/${maxScore} · ${tier.label} · ${new Date().toLocaleDateString()}`;
+
+        // Domain bars
+        let domainHtml = '';
+        SECTIONS.forEach(sec => {
+            let total = sec.keys.length * 15;
+            let scored = sec.keys.reduce((acc,k) => acc + (answers[k]||0), 0);
+            let pct = Math.round((scored/total)*100);
+            let barColor = pct>=80?'#10B981':pct>=50?'#D4AF37':'#EF4444';
+            domainHtml += `<div class="dimension-card"><i class="${sec.icon}" style="color:${sec.color}; font-size:1.2rem;"></i><div style="font-size:0.7rem;color:var(--text-muted);margin-top:0.25rem;">${sec.label}</div><div style="font-size:1.5rem;font-weight:700;">${scored}/${total}</div><div style="height:4px;background:var(--border);border-radius:2px;margin-top:0.5rem;"><div style="width:${pct}%;height:100%;background:${barColor};border-radius:2px;"></div></div></div>`;
+        });
+        document.getElementById('domainGrid').innerHTML = domainHtml;
+
+        // Roadmap
+        let roadmapHtml = '';
+        const lowQuestions = QUESTIONS.filter(q => (answers[q.id]||0) < 10);
+        lowQuestions.sort((a,b) => (answers[a.id]||0) - (answers[b.id]||0));
+        lowQuestions.slice(0,8).forEach((q,idx) => {
+            const scoreVal = answers[q.id]||0;
+            const priority = scoreVal === 0 ? 'critical' : 'high';
+            roadmapHtml += `<div class="recommendation-item ${priority}"><strong>${q.domain}: ${q.text.substring(0,80)}...</strong><div style="font-size:0.75rem;color:var(--text-muted);margin-top:0.25rem;">Score: ${scoreVal}/15 · ${priority === 'critical' ? 'Immediate action required' : 'Develop remediation plan'}</div></div>`;
+        });
+        if (lowQuestions.length === 0) roadmapHtml = '<div style="padding:1rem;text-align:center;color:var(--green);">✓ All domains at target levels. Maintain stakeholder engagement and continuous improvement.</div>';
+        document.getElementById('roadmapList').innerHTML = roadmapHtml;
+
+        // Framework alignment
+        const frameworks = [
+            {name:"UN Guiding Principles (UNGPs)", pillars:"Protect, Respect, Remedy", relevance:"Framework for business & human rights — all 6 domains mapped to UNGP pillars"},
+            {name:"ILO Core Labour Standards", pillars:"Freedom of Association, Collective Bargaining, Forced Labor, Child Labor, Non-Discrimination", relevance:"Directly maps to Workers' Rights and Supply Chain domains"},
+            {name:"ISO 26000", pillars:"7 core subjects: Organizational governance, Human rights, Labour practices, Environment, Fair operating practices, Consumer issues, Community involvement", relevance:"Comprehensive coverage across all SocAudit domains"},
+            {name:"EU CSDDD (2026)", pillars:"Human rights & environmental due diligence in supply chains", relevance:"Impacts EU-market suppliers; mandatory for large companies operating in EU"}
+        ];
+        document.getElementById('frameworkGrid').innerHTML = frameworks.map(f => `<div class="framework-card"><div style="color:var(--purple);font-weight:700;">${f.name}</div><div style="font-size:0.7rem;color:var(--gold);margin:0.25rem 0;">${f.pillars}</div><div style="font-size:0.7rem;color:var(--text-muted);">${f.relevance}</div></div>`).join('');
+
+        // CTA
+        document.getElementById('ctaBlock').innerHTML = `<div style="background:var(--bg-surface);border-radius:12px;padding:1rem;margin-top:1rem;text-align:center;"><i class="fas fa-handshake" style="color:var(--purple);font-size:1.5rem;"></i><h4 style="margin:0.5rem 0;">Strengthen Your Social Accountability Framework</h4><p style="font-size:0.8rem;color:var(--text-muted);">Remediation plans · Grievance mechanism templates · Human rights impact assessment tools · Supply chain due diligence</p><button class="btn btn-primary" style="margin-top:0.5rem;" onclick="window.open('https://www.ermits.com/social-audit','_blank')">Explore Solutions →</button></div>`;
+
+        document.getElementById('assessmentPanel').style.display = 'none';
+        document.getElementById('report').classList.add('visible');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function exportReport() {
+        const score = calculateScore();
+        const tier = getTier(score);
+        const content = document.getElementById('report').cloneNode(true);
+        const html = `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>SocAudit_Report</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><style>${document.querySelector('style').innerHTML} body{background:#0A0C0E;padding:2rem;}</style></head><body>${content.outerHTML}</body></html>`;
+        const blob = new Blob([html], {type:'text/html'});
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = `SocAudit_Report_${new Date().toISOString().slice(0,10)}.html`;
+        a.click();
+    }
+
+    document.getElementById('generateBtn').addEventListener('click', generateReport);
+    document.getElementById('resetBtn').addEventListener('click', resetAssessment);
+    document.getElementById('saveBtn').addEventListener('click', () => { saveToLocal(); alert('Progress saved.'); });
+    document.getElementById('newAssessmentBtn')?.addEventListener('click', () => { resetAssessment(); document.getElementById('assessmentPanel').style.display = 'block'; document.getElementById('report').classList.remove('visible'); });
+    document.getElementById('exportHtmlBtn')?.addEventListener('click', exportReport);
+    document.getElementById('ctxType').addEventListener('change', (e) => { currentType = e.target.value; document.getElementById('ctxNote').innerHTML = currentType ? `Profile set: ${e.target.options[e.target.selectedIndex].text}. Report will include sector-specific risk factors.` : 'Select your organization type to personalize the assessment.'; renderQuestions(); });
+    document.getElementById('ctxRole').addEventListener('change', (e) => { currentRole = e.target.value; });
+
+    loadSaved();
+</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APACPrivacyScore™ | Asia-Pacific Data Protection | CyberCorrect™</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --bg: #0A0C0E; --bg-card: #12161A; --bg-surface: #1A1F24; --border: #2A2F35; --text: #EDF2E8; --text-muted: #8A9BAA; --green: #10B981; --gold: #D4AF37; --orange: #F59E0B; --red: #EF4444; --cyan: #06B6D4; --cyan-dim: rgba(6,182,212,0.1); --radius-card: 16px; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+        .container { max-width: 1280px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .header { background: linear-gradient(135deg, #0D1117 0%, #0A0C0E 100%); border: 1px solid var(--border); border-radius: var(--radius-card); padding: 2rem; margin-bottom: 2rem; }
+        .badge { display: inline-flex; background: var(--cyan-dim); padding: 0.35rem 1rem; border-radius: 40px; font-size: 0.7rem; border: 1px solid rgba(6,182,212,0.3); margin-bottom: 1rem; }
+        .header h1 span { color: var(--cyan); }
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-card); padding: 1.5rem; margin-bottom: 1.5rem; }
+        .progress-bar { background: var(--bg-surface); height: 4px; border-radius: 4px; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, var(--cyan), var(--gold)); width: 0%; transition: width 0.3s; }
+        .question-card { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; margin-bottom: 0.75rem; }
+        .question-card.answered { border-left: 3px solid var(--green); }
+        .options-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+        .option-btn { background: var(--bg); border: 1px solid var(--border); border-radius: 40px; padding: 0.5rem 1rem; font-size: 0.75rem; cursor: pointer; }
+        .option-btn.selected-0 { background: var(--red); color: white; }
+        .option-btn.selected-8 { background: var(--orange); color: white; }
+        .option-btn.selected-16 { background: var(--cyan); color: white; }
+        .btn { padding: 0.75rem 1.5rem; border-radius: 40px; font-weight: 600; cursor: pointer; }
+        .btn-primary { background: var(--cyan); color: white; border: none; }
+        .btn-secondary { background: var(--bg-surface); border: 1px solid var(--border); color: var(--text); }
+        .action-group { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 1rem; }
+        .composite-card { background: linear-gradient(135deg, var(--cyan) 0%, #0891b2 100%); border-radius: 20px; padding: 1.5rem; text-align: center; margin-bottom: 1.5rem; }
+        .composite-score { font-size: 3rem; font-weight: 800; }
+        #report { display: none; } #report.visible { display: block; }
+        @media (max-width: 768px) { .options-grid { flex-direction: column; } .option-btn { width: 100%; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="badge"><i class="fas fa-globe-asia"></i> CyberCorrect™ · APACPrivacyScore™</div>
+        <h1>Asia-Pacific <span>Data Protection</span> Readiness</h1>
+        <p>Assess compliance with Singapore PDPA, China PIPL, Japan APPI, and India DPDPA.</p>
+    </div>
+    <div id="assessmentPanel">
+        <div class="card">
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            <div id="questionsContainer"></div>
+            <div class="action-group"><button class="btn btn-primary" id="generateBtn" disabled>Generate Report</button><button class="btn btn-secondary" id="resetBtn">Reset</button><button class="btn btn-secondary" id="backBtn">← Back to Dashboard</button></div>
+        </div>
+    </div>
+    <div id="report"><div class="card"><div class="composite-card"><div class="composite-score" id="compositeScore">--</div><div id="tierDesc"></div></div><div id="reportContent"></div><div class="action-group"><button class="btn btn-secondary" id="newAssessmentBtn">New Assessment</button><button class="btn btn-secondary" id="backReportBtn">← Back to Dashboard</button></div></div></div>
+</div>
+<script>
+    const QUESTIONS = [
+        { id:"q1", domain:"Legal Basis", text:"Compliant legal bases under applicable laws?", opts:["No documentation","Partial","Full compliance"] },
+        { id:"q2", domain:"Consent", text:"Jurisdiction-compliant consent mechanisms?", opts:["Non-compliant","Basic","Full compliance"] },
+        { id:"q3", domain:"Localization", text:"Data localization requirements met (China, India)?", opts:["No","Partial","Full compliance"] },
+        { id:"q4", domain:"Cross-Border", text:"Transfer safeguards in place (China security assessment, APEC CBPR)?", opts:["None","Basic","Full safeguards"] },
+        { id:"q5", domain:"DPO", text:"DPO designated where required?", opts:["No","Designated","Published with independence"] },
+        { id:"q6", domain:"Breach", text:"Breach notification procedures meeting local timelines?", opts:["No","Procedure exists","Documented with testing"] },
+        { id:"q7", domain:"Subject Rights", text:"Procedures for access, correction, deletion?", opts:["No","Partial","Full"] },
+        { id:"q8", domain:"DPIA", text:"DPIAs for high-risk processing?", opts:["No","Inconsistent","Documented"] },
+        { id:"q9", domain:"Security", text:"Security measures meeting local standards?", opts:["Minimal","Basic","Comprehensive"] },
+        { id:"q10", domain:"ROPA", text:"Records of Processing maintained?", opts:["No","Partial","Current ROPA"] },
+        { id:"q11", domain:"Processors", text:"DPAs with all processors?", opts:["No","Major vendors","All processors"] },
+        { id:"q12", domain:"Automated Decisions", text:"Controls for automated decision-making?", opts:["No","Basic","Full controls"] },
+        { id:"q13", domain:"Privacy Notice", text:"Notice compliant with local requirements?", opts:["Non-compliant","Partially","Fully compliant"] },
+        { id:"q14", domain:"Retention", text:"Documented retention and deletion policies?", opts:["No","Basic","Documented"] },
+        { id:"q15", domain:"Children's Data", text:"Enhanced protections for children's data?", opts:["No","Basic","Full compliance"] },
+        { id:"q16", domain:"Accountability", text:"Accountability program with training?", opts:["No","Basic","Comprehensive"] }
+    ];
+    let answers = JSON.parse(localStorage.getItem('apac_privacy_answers') || "{}");
+    function render(){ let html=""; QUESTIONS.forEach((q,i)=>{ const val=answers[q.id]; html+=`<div class="question-card ${val!==undefined?'answered':''}"><div>${q.text}</div><div class="options-grid">${q.opts.map((o,idx)=>{ const s=idx===0?0:idx===1?8:16; return `<button class="option-btn ${val===s?`selected-${s}`:''}" data-qid="${q.id}" data-val="${s}">${s} - ${o}</button>`; }).join('')}</div></div>`; }); document.getElementById('questionsContainer').innerHTML=html; attachEvents(); updateProgress(); }
+    function attachEvents(){ document.querySelectorAll('.option-btn').forEach(btn=>{ btn.addEventListener('click',()=>{ answers[btn.dataset.qid]=parseInt(btn.dataset.val); localStorage.setItem('apac_privacy_answers',JSON.stringify(answers)); render(); }); }); }
+    function updateProgress(){ const c=Object.keys(answers).length; document.getElementById('progressFill').style.width=`${(c/16)*100}%`; document.getElementById('generateBtn').disabled=c!==16; }
+    function calcScore(){ return Object.values(answers).reduce((a,b)=>a+b,0); }
+    function getTier(s){ if(s<=80) return {l:"Critical Risk",c:"#EF4444"}; if(s<=140) return {l:"Limited Implementation",c:"#F59E0B"}; if(s<=210) return {l:"Partial Compliance",c:"#D4AF37"}; return {l:"Strong Compliance",c:"#10B981"}; }
+    function generateReport(){ const s=calcScore(), t=getTier(s); document.getElementById('compositeScore').innerHTML=`${s}/256`; document.getElementById('tierDesc').innerHTML=`<div style="background:${t.c}20;color:${t.c};padding:0.25rem 1rem;border-radius:20px;">${t.l}</div>`; document.getElementById('assessmentPanel').style.display='none'; document.getElementById('report').classList.add('visible'); }
+    function reset(){ if(confirm('Reset?')){ answers={}; localStorage.removeItem('apac_privacy_answers'); render(); document.getElementById('report').classList.remove('visible'); document.getElementById('assessmentPanel').style.display='block'; } }
+    document.getElementById('generateBtn').addEventListener('click',generateReport);
+    document.getElementById('resetBtn').addEventListener('click',reset);
+    document.getElementById('backBtn').addEventListener('click',()=>window.location.href='../index.html');
+    document.getElementById('backReportBtn').addEventListener('click',()=>window.location.href='../index.html');
+    document.getElementById('newAssessmentBtn').addEventListener('click',reset);
+    render();
+</script>
+</body>
+</html>
