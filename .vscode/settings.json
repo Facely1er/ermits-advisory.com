@@ -1,8 +1,0 @@
-{
-  "css.lint.unknownAtRules": "ignore",
-  "css.validate": false,
-  "stylelint.validate": ["css", "scss"],
-  "files.associations": {
-    "*.tsx": "typescriptreact"
-  }
-}
